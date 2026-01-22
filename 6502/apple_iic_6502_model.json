@@ -1,0 +1,316 @@
+{
+  "model_metadata": {
+    "name": "Apple IIc 6502 CPU Pipeline",
+    "version": "1.0",
+    "date": "2026-01-22",
+    "architecture": "MOS 6502 (Apple IIc variant)",
+    "description": "Grey-box queueing model for 6502 microprocessor in Apple IIc"
+  },
+  
+  "system_parameters": {
+    "clock_freq_mhz": 1.023,
+    "clock_freq_hz": 1023000,
+    "memory_type": "DRAM (no cache)",
+    "address_bus_width": 16,
+    "data_bus_width": 8,
+    "notes": "Apple IIc uses 65C02 at 1.023 MHz with no cache hierarchy"
+  },
+  
+  "pipeline_stages": [
+    {
+      "stage_id": 1,
+      "name": "Fetch (F)",
+      "queue_type": "M/M/1",
+      "description": "Fetch opcode byte from memory",
+      "service_time_formula": "cycles_fetch_base + p_page_cross * penalty_page_cross",
+      "parameters": {
+        "cycles_fetch_base": {
+          "value": 1,
+          "type": "known",
+          "units": "cycles",
+          "description": "Base fetch time for opcode byte",
+          "source": "6502_datasheet"
+        },
+        "p_page_cross": {
+          "value": 0.05,
+          "type": "unknown",
+          "bounds": [0.0, 0.3],
+          "units": "fraction",
+          "description": "Probability of page boundary crossing during addressing",
+          "calibration_source": "instruction_profiling"
+        },
+        "penalty_page_cross": {
+          "value": 1,
+          "type": "known",
+          "units": "cycles",
+          "description": "Extra cycle penalty for page boundary cross",
+          "source": "6502_datasheet"
+        }
+      }
+    },
+    
+    {
+      "stage_id": 2,
+      "name": "Decode/Execute (D/E)",
+      "queue_type": "M/M/1",
+      "description": "Decode instruction and execute (combined stage in 6502)",
+      "service_time_formula": "p_load * cycles_load + p_store * cycles_store + p_alu_simple * cycles_alu_simple + p_alu_rmw * cycles_alu_rmw + p_branch_taken * cycles_branch_taken + p_branch_not_taken * cycles_branch_not_taken + p_jmp_jsr * cycles_jmp_jsr + p_other * cycles_other",
+      "parameters": {
+        "p_load": {
+          "value": 0.25,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Fraction of load instructions (LDA, LDX, LDY)",
+          "calibration_source": "instruction_profiling",
+          "typical_cycles": "2-4 depending on addressing mode"
+        },
+        "cycles_load": {
+          "value": 3.5,
+          "type": "unknown",
+          "bounds": [2.0, 5.0],
+          "units": "cycles",
+          "description": "Average cycles for load instructions",
+          "calibration_source": "weighted_by_addressing_modes"
+        },
+        "p_store": {
+          "value": 0.15,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Fraction of store instructions (STA, STX, STY)",
+          "calibration_source": "instruction_profiling",
+          "typical_cycles": "3-5 depending on addressing mode"
+        },
+        "cycles_store": {
+          "value": 4.0,
+          "type": "unknown",
+          "bounds": [3.0, 5.0],
+          "units": "cycles",
+          "description": "Average cycles for store instructions",
+          "calibration_source": "weighted_by_addressing_modes"
+        },
+        "p_alu_simple": {
+          "value": 0.30,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Fraction of simple ALU ops (ADC, SBC, AND, ORA, EOR, CMP, register transfers)",
+          "calibration_source": "instruction_profiling",
+          "typical_cycles": "2"
+        },
+        "cycles_alu_simple": {
+          "value": 2.0,
+          "type": "known",
+          "units": "cycles",
+          "description": "Cycles for simple ALU operations",
+          "source": "6502_datasheet"
+        },
+        "p_alu_rmw": {
+          "value": 0.08,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Fraction of read-modify-write ops (INC, DEC, ASL, LSR, ROL, ROR)",
+          "calibration_source": "instruction_profiling",
+          "typical_cycles": "5-7"
+        },
+        "cycles_alu_rmw": {
+          "value": 6.0,
+          "type": "known",
+          "units": "cycles",
+          "description": "Average cycles for RMW operations",
+          "source": "6502_datasheet"
+        },
+        "p_branch_taken": {
+          "value": 0.05,
+          "type": "unknown",
+          "bounds": [0.0, 0.3],
+          "units": "fraction",
+          "description": "Fraction of branch instructions that are taken",
+          "calibration_source": "instruction_profiling",
+          "typical_cycles": "3-4"
+        },
+        "cycles_branch_taken": {
+          "value": 3.5,
+          "type": "known",
+          "units": "cycles",
+          "description": "Cycles for taken branch (3 + page cross penalty)",
+          "source": "6502_datasheet"
+        },
+        "p_branch_not_taken": {
+          "value": 0.05,
+          "type": "unknown",
+          "bounds": [0.0, 0.3],
+          "units": "fraction",
+          "description": "Fraction of branch instructions that are not taken",
+          "calibration_source": "instruction_profiling",
+          "typical_cycles": "2"
+        },
+        "cycles_branch_not_taken": {
+          "value": 2.0,
+          "type": "known",
+          "units": "cycles",
+          "description": "Cycles for not-taken branch",
+          "source": "6502_datasheet"
+        },
+        "p_jmp_jsr": {
+          "value": 0.04,
+          "type": "unknown",
+          "bounds": [0.0, 0.2],
+          "units": "fraction",
+          "description": "Fraction of jump/subroutine instructions (JMP, JSR, RTS)",
+          "calibration_source": "instruction_profiling",
+          "typical_cycles": "3-6"
+        },
+        "cycles_jmp_jsr": {
+          "value": 4.5,
+          "type": "unknown",
+          "bounds": [3.0, 6.0],
+          "units": "cycles",
+          "description": "Average cycles for jumps and subroutines",
+          "calibration_source": "weighted_average"
+        },
+        "p_other": {
+          "value": 0.08,
+          "type": "derived",
+          "formula": "1 - p_load - p_store - p_alu_simple - p_alu_rmw - p_branch_taken - p_branch_not_taken - p_jmp_jsr",
+          "units": "fraction",
+          "description": "Stack ops, flags, NOPs, etc.",
+          "typical_cycles": "2-4"
+        },
+        "cycles_other": {
+          "value": 3.0,
+          "type": "unknown",
+          "bounds": [2.0, 4.0],
+          "units": "cycles",
+          "description": "Average cycles for other operations",
+          "calibration_source": "weighted_average"
+        }
+      },
+      "constraints": [
+        "p_load + p_store + p_alu_simple + p_alu_rmw + p_branch_taken + p_branch_not_taken + p_jmp_jsr + p_other = 1.0"
+      ],
+      "notes": "6502 has no separate decode/execute stages - they are fused"
+    }
+  ],
+  
+  "network_topology": {
+    "type": "series",
+    "description": "Simple 2-stage model: Fetch → Decode/Execute (6502 has no pipeline)",
+    "connections": [
+      {"from": "external", "to": "Fetch", "routing": "deterministic"},
+      {"from": "Fetch", "to": "Decode/Execute", "routing": "deterministic"},
+      {"from": "Decode/Execute", "to": "external", "routing": "deterministic"}
+    ]
+  },
+  
+  "calibration_config": {
+    "objective": "minimize_cpi_error",
+    "tolerance_percent": 5.0,
+    "max_iterations": 20,
+    "learning_rate": 0.15,
+    "priority_order": [
+      "p_load",
+      "p_store",
+      "p_alu_simple",
+      "p_alu_rmw",
+      "p_branch_taken",
+      "p_branch_not_taken",
+      "cycles_load",
+      "cycles_store",
+      "cycles_jmp_jsr",
+      "cycles_other",
+      "p_page_cross"
+    ],
+    "validation_benchmarks": [
+      "Apple II Basic programs",
+      "6502 Dhrystone port",
+      "Simple loop kernels",
+      "Memory access patterns"
+    ]
+  },
+  
+  "measurement_requirements": {
+    "required_profiling": [
+      "instruction distribution (disassemble ROM/program)",
+      "addressing mode usage",
+      "branch behavior",
+      "execution time"
+    ],
+    "recommended_tools": [
+      "AppleWin emulator with cycle counting",
+      "6502 disassemblers (da65, disasm)",
+      "Cycle-accurate emulators",
+      "Real hardware timing with scope"
+    ],
+    "apple_iic_specific": {
+      "no_hardware_counters": "6502 has no performance counters",
+      "measurement_approach": "Cycle-accurate emulation or oscilloscope timing",
+      "typical_programs": "BASIC interpreter, DOS 3.3 operations, games"
+    }
+  },
+  
+  "expected_performance": {
+    "cpi_range": [2.5, 4.5],
+    "typical_cpi": 3.5,
+    "instructions_per_second": "292,000 IPS at 1.023 MHz (CPI=3.5)",
+    "bottleneck_stage": "Decode/Execute (dominates)",
+    "notes": "6502 is NOT pipelined - all work happens in D/E stage. CPI varies widely by instruction mix."
+  },
+  
+  "architecture_notes": {
+    "no_pipeline": "6502 executes instructions sequentially without pipelining",
+    "no_cache": "Apple IIc has no cache - all memory accesses go to DRAM",
+    "addressing_modes": "13 addressing modes with varying cycle counts",
+    "memory_timing": "Memory access takes 1 cycle (synchronous with CPU clock)",
+    "page_boundary": "Some instructions take +1 cycle when crossing 256-byte page boundaries",
+    "key_differences_from_modern": [
+      "No instruction-level parallelism",
+      "No branch prediction",
+      "No speculative execution",
+      "No cache hierarchy",
+      "8-bit data path",
+      "Very simple microarchitecture"
+    ]
+  },
+  
+  "instruction_cycle_reference": {
+    "loads": {
+      "LDA_immediate": 2,
+      "LDA_zeropage": 3,
+      "LDA_zeropage_x": 4,
+      "LDA_absolute": 4,
+      "LDA_absolute_x": 4,
+      "LDA_absolute_y": 4,
+      "LDA_indirect_x": 6,
+      "LDA_indirect_y": 5
+    },
+    "stores": {
+      "STA_zeropage": 3,
+      "STA_zeropage_x": 4,
+      "STA_absolute": 4,
+      "STA_absolute_x": 5,
+      "STA_absolute_y": 5,
+      "STA_indirect_x": 6,
+      "STA_indirect_y": 6
+    },
+    "alu": {
+      "ADC_immediate": 2,
+      "ADC_zeropage": 3,
+      "ADC_absolute": 4,
+      "INC_zeropage": 5,
+      "INC_absolute": 6
+    },
+    "branches": {
+      "BEQ_not_taken": 2,
+      "BEQ_taken_same_page": 3,
+      "BEQ_taken_page_cross": 4
+    },
+    "control": {
+      "JMP_absolute": 3,
+      "JSR": 6,
+      "RTS": 6
+    }
+  }
+}
