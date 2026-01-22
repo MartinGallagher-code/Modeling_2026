@@ -1,0 +1,220 @@
+{
+  "model_metadata": {
+    "name": "Simple In-Order CPU Pipeline",
+    "version": "1.0",
+    "date": "2026-01-22",
+    "architecture": "Scalar RISC 5-Stage Pipeline",
+    "description": "Baseline queueing network model for CPU performance prediction"
+  },
+  
+  "system_parameters": {
+    "clock_freq_ghz": 2.0,
+    "l1_cache_kb": 32,
+    "cache_line_bytes": 64,
+    "notes": "Generic simple in-order CPU specification"
+  },
+  
+  "pipeline_stages": [
+    {
+      "stage_id": 1,
+      "name": "Instruction Fetch (IF)",
+      "queue_type": "M/M/1",
+      "description": "Fetch instruction from L1 I-cache or main memory",
+      "service_time_formula": "(1 - p_icache_miss) * 1 + p_icache_miss * L_miss",
+      "parameters": {
+        "p_icache_miss": {
+          "value": 0.01,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Instruction cache miss rate",
+          "calibration_source": "performance_counters",
+          "counter_name": "L1-icache-misses / instructions"
+        },
+        "L_miss": {
+          "value": 100,
+          "type": "unknown",
+          "bounds": [50, 500],
+          "units": "cycles",
+          "description": "Memory access latency on cache miss",
+          "calibration_source": "latency_benchmark",
+          "typical_range": "100-300 cycles for DRAM"
+        }
+      }
+    },
+    
+    {
+      "stage_id": 2,
+      "name": "Decode (ID)",
+      "queue_type": "M/M/1",
+      "description": "Decode instruction and read register operands",
+      "service_time_formula": "1",
+      "parameters": {
+        "S_ID": {
+          "value": 1,
+          "type": "known",
+          "units": "cycles",
+          "description": "Fixed decode latency for simple RISC ISA",
+          "source": "architectural_specification"
+        }
+      }
+    },
+    
+    {
+      "stage_id": 3,
+      "name": "Execute (EX)",
+      "queue_type": "M/M/1",
+      "description": "Perform ALU operation or calculate memory address",
+      "service_time_formula": "p_alu * 1 + p_mul * 3 + p_div * 10 + p_other * 1",
+      "parameters": {
+        "p_alu": {
+          "value": 0.70,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Fraction of simple ALU operations (add, sub, logical)",
+          "calibration_source": "instruction_profiling",
+          "typical_latency_cycles": 1
+        },
+        "p_mul": {
+          "value": 0.05,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Fraction of integer multiply operations",
+          "calibration_source": "instruction_profiling",
+          "typical_latency_cycles": 3
+        },
+        "p_div": {
+          "value": 0.01,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Fraction of integer divide operations",
+          "calibration_source": "instruction_profiling",
+          "typical_latency_cycles": 10
+        },
+        "p_other": {
+          "value": 0.24,
+          "type": "derived",
+          "formula": "1 - p_alu - p_mul - p_div",
+          "units": "fraction",
+          "description": "Fraction of other operations (shifts, compares, branches)",
+          "typical_latency_cycles": 1
+        }
+      },
+      "constraints": [
+        "p_alu + p_mul + p_div + p_other = 1.0"
+      ]
+    },
+    
+    {
+      "stage_id": 4,
+      "name": "Memory Access (MEM)",
+      "queue_type": "M/M/1",
+      "description": "Access data cache for load/store instructions",
+      "service_time_formula": "p_mem * ((1 - p_dcache_miss) * 1 + p_dcache_miss * L_miss)",
+      "parameters": {
+        "p_mem": {
+          "value": 0.30,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Fraction of memory instructions (loads + stores)",
+          "calibration_source": "instruction_profiling"
+        },
+        "p_dcache_miss": {
+          "value": 0.03,
+          "type": "unknown",
+          "bounds": [0.0, 1.0],
+          "units": "fraction",
+          "description": "Data cache miss rate",
+          "calibration_source": "performance_counters",
+          "counter_name": "L1-dcache-misses / mem_instructions"
+        }
+      },
+      "notes": "Non-memory instructions spend 0 cycles in this stage"
+    },
+    
+    {
+      "stage_id": 5,
+      "name": "Write Back (WB)",
+      "queue_type": "M/M/1",
+      "description": "Write result to register file",
+      "service_time_formula": "1",
+      "parameters": {
+        "S_WB": {
+          "value": 1,
+          "type": "known",
+          "units": "cycles",
+          "description": "Fixed write-back latency",
+          "source": "architectural_specification"
+        }
+      }
+    }
+  ],
+  
+  "network_topology": {
+    "type": "series",
+    "description": "Linear pipeline: IF → ID → EX → MEM → WB",
+    "connections": [
+      {"from": "external", "to": "IF", "routing": "deterministic"},
+      {"from": "IF", "to": "ID", "routing": "deterministic"},
+      {"from": "ID", "to": "EX", "routing": "deterministic"},
+      {"from": "EX", "to": "MEM", "routing": "deterministic"},
+      {"from": "MEM", "to": "WB", "routing": "deterministic"},
+      {"from": "WB", "to": "external", "routing": "deterministic"}
+    ]
+  },
+  
+  "calibration_config": {
+    "objective": "minimize_ipc_error",
+    "tolerance_percent": 2.0,
+    "max_iterations": 10,
+    "learning_rate": 0.1,
+    "priority_order": [
+      "p_icache_miss",
+      "p_dcache_miss",
+      "p_mem",
+      "p_alu",
+      "p_mul",
+      "p_div",
+      "L_miss"
+    ],
+    "validation_benchmarks": [
+      "STREAM",
+      "Dhrystone",
+      "CoreMark",
+      "SPEC CPU2017 (subset)"
+    ]
+  },
+  
+  "measurement_requirements": {
+    "required_counters": [
+      "instructions",
+      "cycles",
+      "L1-icache-misses",
+      "L1-dcache-misses",
+      "branches",
+      "branch-misses"
+    ],
+    "required_profiling": [
+      "instruction mix (ALU, MUL, DIV, MEM)",
+      "memory access patterns",
+      "execution time"
+    ],
+    "recommended_tools": [
+      "Linux perf",
+      "Intel VTune",
+      "AMD uProf",
+      "ARM Streamline"
+    ]
+  },
+  
+  "expected_performance": {
+    "ipc_range": [0.5, 1.0],
+    "typical_ipc": 0.75,
+    "bottleneck_stage": "Memory Access (MEM) or Execute (EX)",
+    "notes": "In-order pipeline typically achieves 0.6-0.8 IPC on integer workloads"
+  }
+}
