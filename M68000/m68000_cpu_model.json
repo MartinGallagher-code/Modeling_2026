@@ -1,0 +1,481 @@
+{
+  "model_name": "Motorola 68000 CPU Queueing Model",
+  "version": "1.0",
+  "date": "2026-01-23",
+  "architecture": {
+    "description": "Motorola 68000 16/32-bit microprocessor",
+    "year": 1979,
+    "designer": "Motorola (Tom Gunter, lead designer)",
+    "data_width_external": 16,
+    "data_width_internal": 32,
+    "address_width": 24,
+    "addressable_space_bytes": 16777216,
+    "registers": {
+      "data": ["D0", "D1", "D2", "D3", "D4", "D5", "D6", "D7"],
+      "address": ["A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7(SP)"],
+      "special": ["PC", "SR", "USP", "SSP"],
+      "description": "Eight 32-bit data registers, eight 32-bit address registers"
+    },
+    "instruction_set": {
+      "instructions": 56,
+      "addressing_modes": 14,
+      "total_variants": "1000+",
+      "description": "Orthogonal CISC architecture with regular instruction encoding"
+    }
+  },
+  "pipeline": {
+    "description": "68000 uses microcoded execution with prefetch queue and overlapped operations",
+    "stages": [
+      {
+        "name": "Prefetch",
+        "abbreviation": "PF",
+        "description": "2-word (4-byte) prefetch queue, fills during execution",
+        "queue_depth_words": 2,
+        "queue_type": "Finite buffer"
+      },
+      {
+        "name": "Instruction Decode",
+        "abbreviation": "ID",
+        "description": "Decode instruction and determine addressing modes",
+        "base_cycles": 4,
+        "queue_type": "M/M/1"
+      },
+      {
+        "name": "Effective Address Calculation",
+        "abbreviation": "EA",
+        "description": "Calculate operand addresses (can be complex for some modes)",
+        "base_cycles": "0-20",
+        "queue_type": "M/M/1",
+        "conditional": true
+      },
+      {
+        "name": "Operand Fetch",
+        "abbreviation": "OF",
+        "description": "Fetch source operands from memory or registers",
+        "base_cycles": "0-12",
+        "queue_type": "M/M/1",
+        "conditional": true
+      },
+      {
+        "name": "Execute",
+        "abbreviation": "EX",
+        "description": "Execute operation (ALU, shifts, multiply, divide)",
+        "base_cycles": "variable",
+        "queue_type": "M/M/1"
+      },
+      {
+        "name": "Write Back",
+        "abbreviation": "WB",
+        "description": "Write result to destination (register or memory)",
+        "base_cycles": "0-12",
+        "queue_type": "M/M/1",
+        "conditional": true
+      }
+    ],
+    "notes": [
+      "68000 has a 2-word prefetch queue that operates in parallel with execution",
+      "Prefetch occurs during idle bus cycles (no performance penalty when possible)",
+      "Bus cycles are 4 clock cycles minimum (can be extended with wait states)",
+      "Internal operations (register-to-register) don't use the bus",
+      "Memory operations require 4, 8, 12, or more clock cycles depending on size and alignment",
+      "Complex addressing modes add significant overhead"
+    ]
+  },
+  "timing": {
+    "clock_frequency_hz": 8000000,
+    "clock_period_ns": 125,
+    "description": "Standard MC68000 at 8 MHz (also available at 4, 10, 12.5, 16 MHz)",
+    "bus_cycle_clocks": 4,
+    "bus_cycle_description": "Minimum bus cycle is 4 clocks (S0-S7 states)",
+    "internal_operation_clocks": 4,
+    "word_size": 16,
+    "longword_accesses": "two_bus_cycles"
+  },
+  "instruction_timing": {
+    "description": "68000 instruction timing in clock cycles (not bus cycles)",
+    "timing_methodology": "Cycles = base + EA_source + EA_dest + execution",
+    "categories": {
+      "register_to_register": {
+        "examples": ["MOVE.L D0,D1", "ADD.L D0,D1", "AND.W D0,D1"],
+        "cycles": {
+          "byte_word": 4,
+          "longword": 8
+        },
+        "description": "Fastest operations, no memory access",
+        "fraction": 0.25
+      },
+      "immediate_to_register": {
+        "examples": ["MOVE.L #imm,D0", "ADD.W #imm,D0"],
+        "cycles": {
+          "byte_word": 8,
+          "longword": 12
+        },
+        "description": "Includes instruction fetch for immediate data",
+        "fraction": 0.15
+      },
+      "memory_to_register": {
+        "examples": ["MOVE.L (A0),D0", "ADD.W (A0),D0"],
+        "cycles": {
+          "byte_word": 8,
+          "longword": 12
+        },
+        "ea_overhead": {
+          "address_register_indirect": 4,
+          "postincrement": 4,
+          "predecrement": 6,
+          "displacement": 8,
+          "indexed": 10,
+          "absolute_short": 8,
+          "absolute_long": 12,
+          "pc_relative": 8,
+          "pc_indexed": 10
+        },
+        "description": "Load from memory with various addressing modes",
+        "fraction": 0.20
+      },
+      "register_to_memory": {
+        "examples": ["MOVE.L D0,(A0)", "ADD.W D0,(A0)"],
+        "cycles": {
+          "byte_word": 8,
+          "longword": 12
+        },
+        "description": "Store to memory",
+        "fraction": 0.15
+      },
+      "memory_to_memory": {
+        "examples": ["MOVE.W (A0),(A1)", "ADD.W (A0),(A1)"],
+        "cycles": {
+          "byte_word": 12,
+          "longword": 20
+        },
+        "description": "68000 supports memory-to-memory operations",
+        "fraction": 0.05
+      },
+      "arithmetic_logic": {
+        "examples": ["ADD", "SUB", "AND", "OR", "EOR", "CMP"],
+        "cycles": {
+          "register": 4,
+          "immediate": 8,
+          "memory": 12
+        },
+        "description": "Standard ALU operations",
+        "fraction": 0.30
+      },
+      "shift_rotate": {
+        "examples": ["LSL", "LSR", "ASL", "ASR", "ROL", "ROR"],
+        "cycles_register": "6 + 2*n",
+        "cycles_memory": 8,
+        "description": "Shift count affects timing (2 cycles per bit)",
+        "fraction": 0.03
+      },
+      "multiply": {
+        "examples": ["MULU", "MULS"],
+        "cycles": {
+          "mulu": 70,
+          "muls": 70
+        },
+        "description": "16x16 -> 32-bit multiply, very expensive",
+        "fraction": 0.01
+      },
+      "divide": {
+        "examples": ["DIVU", "DIVS"],
+        "cycles": {
+          "divu": 140,
+          "divs": 158
+        },
+        "description": "32/16 -> 16-bit divide, extremely expensive",
+        "fraction": 0.005
+      },
+      "branch": {
+        "examples": ["BRA", "Bcc", "BEQ", "BNE"],
+        "cycles": {
+          "taken": 10,
+          "not_taken": 8,
+          "unconditional": 10
+        },
+        "branch_taken_probability": 0.50,
+        "description": "Short branches, PC-relative",
+        "fraction": 0.04
+      },
+      "jump_subroutine": {
+        "examples": ["JSR", "BSR", "JMP", "RTS"],
+        "cycles": {
+          "jsr": 18,
+          "bsr": 18,
+          "jmp": 8,
+          "rts": 16
+        },
+        "description": "Subroutine calls and returns",
+        "fraction": 0.02
+      },
+      "stack": {
+        "examples": ["MOVEM", "LINK", "UNLK"],
+        "cycles": {
+          "movem_registers_to_memory": "8 + 4*n",
+          "movem_memory_to_registers": "12 + 8*n",
+          "link": 16,
+          "unlk": 12
+        },
+        "description": "Stack frame and register save/restore",
+        "fraction": 0.02
+      },
+      "special": {
+        "examples": ["LEA", "PEA", "TRAP", "CHK"],
+        "cycles": {
+          "lea": 4,
+          "pea": 12,
+          "trap": 34,
+          "chk": 10
+        },
+        "description": "Special purpose instructions",
+        "fraction": 0.015
+      }
+    }
+  },
+  "bus_cycles": {
+    "description": "68000 bus cycle timing in clock periods",
+    "read_cycle": {
+      "clocks": 4,
+      "states": ["S0", "S2", "S4", "S6"],
+      "description": "Read word from memory"
+    },
+    "write_cycle": {
+      "clocks": 4,
+      "states": ["S0", "S2", "S4", "S6"],
+      "description": "Write word to memory"
+    },
+    "read_modify_write": {
+      "clocks": 8,
+      "description": "Atomic read-modify-write (TAS instruction)"
+    },
+    "longword_access": {
+      "clocks": 8,
+      "description": "32-bit access requires two 16-bit bus cycles"
+    },
+    "wait_states": {
+      "typical": 0,
+      "slow_memory": 2,
+      "description": "DTACK can extend bus cycles by 2 clocks per wait"
+    }
+  },
+  "prefetch_queue": {
+    "description": "68000 prefetch mechanism",
+    "queue_depth": 2,
+    "queue_size_bytes": 4,
+    "prefetch_timing": {
+      "description": "Prefetch occurs when bus is idle",
+      "parallel_with_execution": true,
+      "stalls_on_branch": true,
+      "refill_cycles": 4
+    },
+    "effectiveness": {
+      "sequential_code": 0.90,
+      "branch_heavy": 0.60,
+      "description": "Prefetch efficiency depends on code characteristics"
+    }
+  },
+  "memory_system": {
+    "description": "68000 memory interface",
+    "address_space_bytes": 16777216,
+    "separate_address_spaces": false,
+    "byte_addressable": true,
+    "alignment": {
+      "word_access": "must be word-aligned",
+      "longword_access": "must be word-aligned",
+      "unaligned_penalty": "exception"
+    },
+    "bus_width": 16,
+    "bus_multiplexing": false
+  },
+  "cache_system": {
+    "l1_instruction": {
+      "present": false,
+      "description": "68000 has no cache, uses prefetch queue only"
+    },
+    "l1_data": {
+      "present": false
+    },
+    "note": "Later 68000 family (68020+) added caches"
+  },
+  "queueing_parameters": {
+    "arrival_rate": {
+      "lambda_instructions_per_second": 500000,
+      "description": "Instructions arriving at pipeline (adjustable)",
+      "constraint": "lambda * max(service_time) < 1 for stability"
+    },
+    "service_times": {
+      "PF": {
+        "description": "Prefetch queue filling",
+        "cycles_per_word": 4,
+        "queue_depth": 2,
+        "effective_service": 2,
+        "note": "Overlapped with execution when possible"
+      },
+      "ID": {
+        "base_cycles": 4,
+        "description": "Decode instruction and determine operation"
+      },
+      "EA": {
+        "base_cycles": 6,
+        "range": "0-20",
+        "probability_needed": 0.60,
+        "description": "Effective address calculation (varies by addressing mode)"
+      },
+      "OF": {
+        "base_cycles": 4,
+        "range": "0-12",
+        "probability_needed": 0.50,
+        "description": "Operand fetch from memory"
+      },
+      "EX": {
+        "weighted_cycles": 8.5,
+        "description": "Weighted average of instruction execution times",
+        "calculation": "sum(fraction_i * cycles_i)"
+      },
+      "WB": {
+        "base_cycles": 4,
+        "range": "0-12",
+        "probability_needed": 0.40,
+        "description": "Write result to memory (if needed)"
+      }
+    },
+    "utilization_targets": {
+      "PF": 0.20,
+      "ID": 0.40,
+      "EA": 0.36,
+      "OF": 0.20,
+      "EX": 0.68,
+      "WB": 0.16,
+      "description": "Target utilization factors (rho = lambda * service_time)"
+    }
+  },
+  "calibration": {
+    "method": "grey_box",
+    "measured_parameters": [
+      "instruction_mix",
+      "addressing_mode_distribution",
+      "memory_access_pattern",
+      "branch_frequency"
+    ],
+    "calibrated_parameters": [
+      "effective_wait_states",
+      "prefetch_effectiveness",
+      "ea_calculation_overhead",
+      "hidden_contention"
+    ],
+    "target_metrics": {
+      "ipc_error_percent": 5.0,
+      "max_iterations": 20
+    }
+  },
+  "m68000_specific_features": {
+    "addressing_modes": {
+      "count": 14,
+      "modes": [
+        "Data Register Direct",
+        "Address Register Direct",
+        "Address Register Indirect",
+        "Address Register Indirect with Postincrement",
+        "Address Register Indirect with Predecrement",
+        "Address Register Indirect with Displacement",
+        "Address Register Indirect with Index",
+        "Absolute Short",
+        "Absolute Long",
+        "Program Counter with Displacement",
+        "Program Counter with Index",
+        "Immediate",
+        "Status Register",
+        "Implied"
+      ],
+      "timing_impact": {
+        "register_direct": 0,
+        "indirect": 4,
+        "indexed": 8,
+        "absolute_long": 12
+      }
+    },
+    "privileged_mode": {
+      "user_mode": "Normal application execution",
+      "supervisor_mode": "Operating system, special instructions",
+      "mode_switch_cycles": 20,
+      "note": "Not modeled in base version"
+    },
+    "exception_processing": {
+      "interrupt_latency": 44,
+      "trap_latency": 34,
+      "bus_error": 50,
+      "note": "Not modeled in base version"
+    },
+    "instruction_orthogonality": {
+      "description": "Most operations work with most addressing modes",
+      "benefit": "Reduces instruction count, increases code density",
+      "cost": "Variable instruction timing"
+    },
+    "register_architecture": {
+      "data_registers": "General purpose, any size (byte/word/long)",
+      "address_registers": "32-bit pointers, word/long operations only",
+      "separation": "Clean separation of data and address operations"
+    }
+  },
+  "comparison_notes": {
+    "vs_8086": {
+      "bus_width": "68000: 16-bit, 8086: 16-bit (8088: 8-bit)",
+      "registers": "68000: 16x32-bit, 8086: 8x16-bit",
+      "addressing": "68000: orthogonal, 8086: segmented",
+      "prefetch": "68000: 2-word queue, 8086: 6-byte queue",
+      "instruction_set": "68000: regular CISC, 8086: irregular CISC",
+      "performance": "68000 generally faster for 32-bit operations"
+    },
+    "vs_z80": {
+      "architecture": "68000: 32-bit internal, Z80: 8-bit",
+      "registers": "68000: 16x32-bit, Z80: 8x8-bit + alternates",
+      "addressing": "68000: 14 modes, Z80: ~6 modes",
+      "timing": "68000 more predictable, Z80 more variable",
+      "performance": "68000 significantly faster (16/32-bit operations)"
+    },
+    "vs_6502": {
+      "complexity": "68000 much more complex",
+      "registers": "68000: 16x32-bit, 6502: 3x8-bit",
+      "addressing": "68000: 14 modes, 6502: 13 modes (simpler)",
+      "performance": "68000 much higher throughput",
+      "use_case": "68000: workstations/high-end, 6502: home computers"
+    }
+  },
+  "validation_benchmarks": {
+    "dhrystone": {
+      "description": "Integer performance benchmark",
+      "expected_cycles_per_iteration": "~3000-5000",
+      "note": "68000 Dhrystone results typically in Dhrystones/second"
+    },
+    "whetstone": {
+      "description": "Floating point benchmark (software emulation)",
+      "note": "68000 has no FPU (68881/68882 coprocessors available)"
+    },
+    "sieve": {
+      "description": "Prime number sieve, good for testing array operations"
+    },
+    "quicksort": {
+      "description": "Tests branching, addressing modes, stack operations"
+    }
+  },
+  "common_systems": [
+    "Apple Macintosh (8 MHz)",
+    "Commodore Amiga (7.16 MHz NTSC, 7.09 MHz PAL)",
+    "Atari ST (8 MHz)",
+    "Sega Genesis/Mega Drive (7.67 MHz)",
+    "Sun-2 workstations (10 MHz)",
+    "Apollo Domain workstations",
+    "Sharp X68000 (10 MHz)",
+    "NeXT Computer (25 MHz 68030)"
+  ],
+  "notes": [
+    "68000 timing is complex due to microcoded execution and addressing modes",
+    "Prefetch queue improves performance but effectiveness varies",
+    "Memory-to-memory operations possible but expensive",
+    "16-bit external bus limits 32-bit operation performance",
+    "Orthogonal instruction set reduces code size",
+    "No instruction cache, relies on prefetch only",
+    "Multiply and divide are very expensive (70-158 cycles)",
+    "Clean, elegant architecture influenced many later designs"
+  ]
+}
