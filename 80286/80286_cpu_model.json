@@ -1,0 +1,188 @@
+{
+  "model_name": "Intel 80286 CPU Queueing Model",
+  "version": "1.0",
+  "date": "2026-01-23",
+  "author": "Grey-Box Performance Modeling Research",
+  
+  "architecture": {
+    "cpu_name": "Intel 80286",
+    "introduction_year": 1982,
+    "data_bus_width": 16,
+    "address_bus_width": 24,
+    "max_memory": "16 MB",
+    "clock_frequency_mhz": 8.0,
+    "clock_frequency_range_mhz": [6, 12.5],
+    "prefetch_queue_size": 6,
+    "pipeline_type": "in-order with prefetch",
+    "protection_modes": ["real", "protected"]
+  },
+  
+  "pipeline_stages": {
+    "prefetch_queue": {
+      "description": "Bus Interface Unit (BIU) prefetch queue",
+      "capacity_bytes": 6,
+      "operates_parallel_to_execution": true,
+      "model_type": "M/M/1/K",
+      "notes": "Fetches ahead of execution, bounded capacity queue"
+    },
+    
+    "decode_and_address_calc": {
+      "description": "Instruction decode, address calculation, MMU translation, protection checks",
+      "base_cycles": 1,
+      "model_type": "M/M/1",
+      "includes": [
+        "instruction decode",
+        "effective address calculation",
+        "MMU address translation (protected mode)",
+        "privilege level checks"
+      ]
+    },
+    
+    "execute": {
+      "description": "ALU operations, multiply, divide",
+      "base_cycles": 1,
+      "model_type": "M/M/1",
+      "instruction_latencies": {
+        "add_sub": 2,
+        "and_or_xor": 2,
+        "shift": 2,
+        "multiply_16bit": 13,
+        "divide_16bit": 17,
+        "load_effective_address": 3
+      },
+      "notes": "~3-4x faster per instruction than 8086 due to improved microcode"
+    },
+    
+    "memory_access": {
+      "description": "Load/store through BIU, contends with prefetch",
+      "base_cycles": 2,
+      "model_type": "M/M/1",
+      "includes": [
+        "data memory access",
+        "BIU arbitration",
+        "protected memory validation"
+      ]
+    },
+    
+    "writeback": {
+      "description": "Register and flag updates",
+      "base_cycles": 1,
+      "model_type": "M/M/1"
+    }
+  },
+  
+  "instruction_mix": {
+    "description": "Default instruction mix (workload dependent)",
+    "alu": 0.60,
+    "multiply": 0.02,
+    "divide": 0.01,
+    "load": 0.20,
+    "store": 0.10,
+    "branch": 0.05,
+    "protected_mode_ops": 0.10,
+    "notes": "Calibrate these from 'perf stat' or profiling data"
+  },
+  
+  "memory_system": {
+    "no_cache": true,
+    "description": "80286 has no on-chip cache, all memory goes to external RAM",
+    "memory_access_cycles": 2,
+    "memory_access_cycles_range": [2, 8],
+    "notes": "Actual cycles depend on wait states (0-3 typical)"
+  },
+  
+  "protection_overhead": {
+    "description": "Protected mode adds MMU translation and privilege checking",
+    "mmu_translation_cycles": 1,
+    "privilege_check_cycles": 1,
+    "privilege_check_probability": 0.15,
+    "segment_limit_check_cycles": 1,
+    "notes": "Overhead only applies in protected mode, not real mode"
+  },
+  
+  "performance": {
+    "effective_speedup_vs_8086": 3.5,
+    "instructions_per_clock_range": [0.4, 0.8],
+    "typical_dhrystone_mips_per_mhz": 0.9,
+    "notes": "80286 at 8MHz ≈ 8086 at 28MHz (3.5x speedup)"
+  },
+  
+  "calibration_parameters": {
+    "adjustable_parameters": [
+      "memory_access_cycles",
+      "mmu_translation_cycles",
+      "privilege_check_probability",
+      "instruction_mix"
+    ],
+    "fixed_parameters": [
+      "prefetch_queue_size",
+      "decode_cycles",
+      "writeback_cycles"
+    ],
+    "calibration_workflow": [
+      "1. Measure real IPC with 'perf stat'",
+      "2. Profile instruction mix with 'perf record'",
+      "3. Run model.calibrate() to adjust memory_access_cycles",
+      "4. Validate error < 2%"
+    ]
+  },
+  
+  "validation_benchmarks": {
+    "dhrystone": {
+      "description": "Integer arithmetic benchmark",
+      "expected_bottleneck": "Execute",
+      "typical_ipc": 0.7
+    },
+    "whetstone": {
+      "description": "Floating point benchmark (software emulation on 80286)",
+      "expected_bottleneck": "Execute",
+      "typical_ipc": 0.3
+    },
+    "memory_copy": {
+      "description": "Memory bandwidth test",
+      "expected_bottleneck": "Memory_Access",
+      "typical_ipc": 0.5
+    },
+    "protection_switch": {
+      "description": "Task switching benchmark (protected mode)",
+      "expected_bottleneck": "Decode_Address_MMU",
+      "typical_ipc": 0.4
+    }
+  },
+  
+  "comparison_to_predecessors": {
+    "8086": {
+      "prefetch_queue": "8086 has 6 bytes, 80286 has 6 bytes (same)",
+      "pipeline": "8086 simpler, 80286 adds MMU and protection",
+      "performance": "80286 is 3-4x faster per instruction"
+    },
+    "8088": {
+      "prefetch_queue": "8088 has 4 bytes, 80286 has 6 bytes",
+      "bus_width": "8088 has 8-bit bus, 80286 has 16-bit bus",
+      "performance": "80286 is 6-8x faster overall"
+    }
+  },
+  
+  "modeling_notes": {
+    "key_innovations": [
+      "Prefetch queue operates in parallel (fork-join network)",
+      "MMU adds address translation overhead",
+      "Protection checks add conditional latency",
+      "BIU/EU separation creates resource contention"
+    ],
+    
+    "modeling_challenges": [
+      "Prefetch queue is bounded (M/M/1/K not M/M/1)",
+      "Parallel operation of BIU and EU (not pure series network)",
+      "Protection overhead is conditional (workload dependent)",
+      "No cache means memory-intensive workloads are slow"
+    ],
+    
+    "future_extensions": [
+      "Add 80287 floating point coprocessor model",
+      "Model task switching overhead (protected mode)",
+      "Add interrupt handling latency",
+      "Model bus contention with DMA"
+    ]
+  }
+}
