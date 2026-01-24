@@ -1,0 +1,220 @@
+{
+  "model_metadata": {
+    "name": "Intel 8085 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Intel 8085 (1976-present)",
+    "description": "Enhanced 8080 with integrated clock, single +5V supply, and improved timings"
+  },
+  
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "clock_frequency_mhz": 3.0,
+    "registers_main": 7,
+    "architecture_type": "accumulator",
+    "pipeline_stages": 1,
+    "notes": "Sequential execution like 8080 but with enhancements and single voltage supply"
+  },
+  
+  "enhancements_over_8080": {
+    "integrated_clock": "On-chip clock generator (vs 8080's external clock)",
+    "single_voltage": "Single +5V supply (vs 8080's +5V, +12V, -5V)",
+    "serial_io": "Built-in serial I/O (SID/SOD pins)",
+    "interrupt_improvements": "Additional interrupts (RST 5.5, 6.5, 7.5, TRAP)",
+    "multiplexed_bus": "Multiplexed AD0-AD7 (address/data) reduces pin count",
+    "faster_instructions": "Some instructions execute faster than 8080"
+  },
+  
+  "pipeline_stages": {
+    "fetch": {
+      "name": "Instruction Fetch",
+      "base_cycles": 4,
+      "description": "Fetch instruction bytes from memory via 8-bit bus",
+      "notes": "Similar to 8080 but with slight optimizations"
+    },
+    "decode_execute": {
+      "name": "Decode and Execute",
+      "base_cycles": 3,
+      "description": "Decode instruction and execute operation",
+      "notes": "Generally same as 8080, some instructions slightly faster"
+    }
+  },
+  
+  "instruction_mix": {
+    "description": "Typical 8085 instruction distribution (very similar to 8080)",
+    "mov_register": 0.25,
+    "alu_operations": 0.35,
+    "load_store": 0.20,
+    "jump_call": 0.15,
+    "io_operations": 0.05,
+    "notes": "Similar to 8080 code patterns"
+  },
+  
+  "instruction_timings": {
+    "mov_register_register": {
+      "cycles": 4,
+      "description": "MOV r, r' - register to register (same as 8080)",
+      "8080_comparison": "Same (4 cycles)"
+    },
+    "mov_memory": {
+      "cycles": 7,
+      "description": "MOV r, M or MOV M, r",
+      "8080_comparison": "Same (7 cycles)"
+    },
+    "alu_register": {
+      "cycles": 4,
+      "description": "ADD, SUB, AND, OR, XOR with register",
+      "8080_comparison": "Same (4 cycles)"
+    },
+    "alu_memory": {
+      "cycles": 7,
+      "description": "ADD M, SUB M - ALU with memory operand",
+      "8080_comparison": "Same (7 cycles)"
+    },
+    "alu_immediate": {
+      "cycles": 7,
+      "description": "ADI, SUI - ALU with immediate",
+      "8080_comparison": "Same (7 cycles)"
+    },
+    "load_store": {
+      "lda": 13,
+      "sta": 13,
+      "lhld": 16,
+      "shld": 16,
+      "description": "Load/store accumulator or register pair",
+      "8080_comparison": "Same cycle counts"
+    },
+    "jump": {
+      "jmp": 10,
+      "jmp_conditional": 10,
+      "description": "Unconditional and conditional jumps",
+      "8080_comparison": "JMP same (10), but conditional may be faster on 8085"
+    },
+    "call_return": {
+      "call": 18,
+      "ret": 10,
+      "description": "Subroutine call and return",
+      "8080_comparison": "CALL same (18), RET same (10)"
+    },
+    "stack": {
+      "push": 12,
+      "pop": 10,
+      "description": "Stack operations",
+      "8080_comparison": "PUSH improved (12 vs 8080's 11), POP same (10)"
+    },
+    "io": {
+      "in": 10,
+      "out": 10,
+      "description": "I/O port access",
+      "8080_comparison": "Same (10 cycles)"
+    },
+    "interrupts": {
+      "rim": 4,
+      "sim": 4,
+      "description": "Read/Set Interrupt Mask (new to 8085)",
+      "8080_comparison": "Not available on 8080"
+    }
+  },
+  
+  "memory_system": {
+    "no_cache": true,
+    "memory_access_cycles": 3,
+    "sequential_access_penalty": 0,
+    "bus_width_bytes": 1,
+    "multiplexed_bus": true,
+    "bus_multiplexing_overhead_percent": 0,
+    "description": "Direct memory access, 8-bit bus, multiplexed address/data"
+  },
+  
+  "bottlenecks": {
+    "primary": "sequential_execution",
+    "secondary": "8-bit_bus_bandwidth",
+    "improvement_over_8080": "Minimal - mainly integration and voltage simplification",
+    "description": "8085 has same fundamental limitations as 8080"
+  },
+  
+  "calibration": {
+    "arrival_rate_initial": 0.18,
+    "arrival_rate_bounds": [0.08, 0.50],
+    "tolerance_percent": 2.0,
+    "max_iterations": 50,
+    "notes": "8085 performance very similar to 8080, expect IPC around 0.07-0.09"
+  },
+  
+  "instruction_length_distribution": {
+    "1_byte": 0.45,
+    "2_byte": 0.35,
+    "3_byte": 0.20,
+    "average_bytes": 1.75,
+    "description": "8085 instructions: 1-3 bytes (same as 8080)"
+  },
+  
+  "execution_characteristics": {
+    "purely_sequential": true,
+    "no_pipeline": true,
+    "no_prefetch": true,
+    "no_branch_prediction": true,
+    "no_superscalar": true,
+    "instruction_level_parallelism": 0,
+    "similar_to_8080": true,
+    "description": "8085 is evolutionary, not revolutionary - same sequential architecture"
+  },
+  
+  "historical_context": {
+    "year_introduced": 1976,
+    "significance": "Integrated 8080 with single voltage supply, easier to use in designs",
+    "common_systems": [
+      "Heathkit H89 computer",
+      "Osborne 1 portable computer",
+      "Kaypro II business computer",
+      "NASA space applications",
+      "Industrial control systems",
+      "Embedded systems (still used today)"
+    ],
+    "designer": "Intel (as 8080 successor)",
+    "compatibility": "Binary compatible with 8080 code",
+    "market_position": "Competed with Z80 for 8080 replacements"
+  },
+  
+  "benchmarks": {
+    "dhrystone_target_ipc": 0.075,
+    "typical_applications": "CP/M systems, business computers, embedded control",
+    "performance_vs_8080": "Same IPC, but easier integration and higher typical clock",
+    "notes": "IPC similar to 8080, advantage is integration not performance"
+  },
+  
+  "performance_comparison": {
+    "vs_8080": {
+      "ipc_difference": "~0% (same architecture)",
+      "clock_advantage": "1.5× typical (3 MHz vs 2 MHz)",
+      "integration_advantage": "Single voltage, on-chip clock",
+      "overall_speedup": "1.5× due to clock only"
+    },
+    "vs_z80": {
+      "ipc_difference": "~0% (both sequential)",
+      "clock_disadvantage": "0.75× (3 MHz vs 4 MHz typical)",
+      "instruction_set": "8085 simpler, Z80 more features",
+      "market_position": "Z80 won home computers, 8085 won embedded"
+    }
+  },
+  
+  "key_improvements_over_8080": {
+    "integration": "On-chip clock generator eliminates external components",
+    "power_supply": "Single +5V vs multiple voltages",
+    "pin_count": "40 pins with multiplexed bus (vs 8080's separate buses)",
+    "interrupts": "5 vectored interrupts (vs 8080's 1)",
+    "serial_io": "Built-in SID/SOD for serial communication",
+    "slightly_faster": "A few instructions execute 1-2 cycles faster"
+  },
+  
+  "why_8085_matters": {
+    "market_impact": "Easier to design with than 8080 (fewer support chips)",
+    "embedded_dominance": "Still manufactured today for embedded applications",
+    "longevity": "50+ years in production (1976-present)",
+    "education": "Widely used in computer architecture education",
+    "lesson": "Integration and ease-of-use matter as much as raw performance"
+  }
+}
