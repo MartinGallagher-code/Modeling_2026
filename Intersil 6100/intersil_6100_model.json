@@ -1,0 +1,42 @@
+{
+  "model_metadata": {
+    "name": "Intersil 6100 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "Intersil 6100 (1974)",
+    "description": "PDP-8 on a chip - first CMOS microprocessor"
+  },
+  "architecture": {
+    "word_size_bits": 12,
+    "data_bus_width_bits": 12,
+    "address_bus_width_bits": 12,
+    "clock_frequency_mhz": 4.0,
+    "registers": 3,
+    "pipeline_stages": 1,
+    "technology": "CMOS",
+    "isa": "PDP-8 compatible"
+  },
+  "pdp8_compatibility": {
+    "instruction_set": "Full PDP-8 compatibility",
+    "software": "Runs PDP-8 software unmodified",
+    "memory": "4K words standard, 32K with extended",
+    "significance": "Minicomputer on a chip"
+  },
+  "cmos_advantages": {
+    "first_cmos_micro": "One of first CMOS microprocessors",
+    "low_power": "Microwatts in standby",
+    "battery_operation": "Enabled portable PDP-8s",
+    "radiation_tolerant": "Used in military/space"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.08,
+    "vs_pdp8": "Slower than minicomputer, but single chip"
+  },
+  "historical_context": {
+    "year_introduced": 1974,
+    "designer": "Intersil",
+    "significance": "Minicomputer architecture in microprocessor form",
+    "applications": ["DEC VT78 terminal", "Military", "Industrial", "Scientific"],
+    "dec_vt78": "Video terminal with built-in PDP-8"
+  }
+}
