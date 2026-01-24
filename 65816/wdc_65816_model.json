@@ -1,0 +1,43 @@
+{
+  "model_metadata": {
+    "name": "WDC 65816 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "WDC 65816 (1984)",
+    "description": "16-bit 6502 - powered Apple IIGS and Super Nintendo"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 24,
+    "clock_frequency_mhz": 2.8,
+    "max_clock_mhz": 14.0,
+    "registers": 7,
+    "pipeline_stages": 1
+  },
+  "registers": {
+    "A": "16-bit accumulator (switchable 8/16)",
+    "X": "16-bit index X (switchable 8/16)",
+    "Y": "16-bit index Y (switchable 8/16)",
+    "S": "16-bit stack pointer",
+    "D": "16-bit direct page register",
+    "PB": "8-bit program bank",
+    "DB": "8-bit data bank"
+  },
+  "key_features": {
+    "16bit_mode": "Native 16-bit operations",
+    "24bit_address": "16MB address space",
+    "6502_compatible": "Full emulation mode",
+    "direct_page": "Relocatable zero page"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.12,
+    "vs_6502": "2-3× faster for 16-bit ops"
+  },
+  "historical_context": {
+    "year_introduced": 1984,
+    "designer": "Bill Mensch at WDC",
+    "systems": ["Apple IIGS", "Super Nintendo (Ricoh 5A22)", "Various accelerators"],
+    "still_produced": true
+  }
+}

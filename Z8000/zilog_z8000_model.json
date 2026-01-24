@@ -1,0 +1,76 @@
+{
+  "model_metadata": {
+    "name": "Zilog Z8000 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Zilog Z8000 (1979)",
+    "description": "Z80's 16-bit successor - technically excellent but commercially failed"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 16,
+    "address_bus_width_bits": 23,
+    "clock_frequency_mhz": 4.0,
+    "max_clock_mhz": 10.0,
+    "registers": 16,
+    "architecture_type": "CISC_orthogonal",
+    "pipeline_stages": 1,
+    "transistor_count": 17500
+  },
+  "variants": {
+    "Z8001": "Segmented (8MB address space)",
+    "Z8002": "Non-segmented (64KB, simpler)"
+  },
+  "register_set": {
+    "R0_R15": "16 × 16-bit general registers",
+    "32bit_pairs": "Can combine as 8 × 32-bit (RR0, RR2, etc.)",
+    "64bit_quads": "Can combine as 4 × 64-bit (RQ0, RQ4, etc.)",
+    "orthogonal": "All registers equal for most operations"
+  },
+  "instruction_mix": {
+    "register_ops": 0.30,
+    "memory_ops": 0.28,
+    "branch_jump": 0.18,
+    "string_ops": 0.05,
+    "multiply_divide": 0.04,
+    "other": 0.15
+  },
+  "instruction_timings": {
+    "register_to_register": 4,
+    "memory_load": 7,
+    "memory_store": 8,
+    "multiply_16": 70,
+    "divide_32_16": 107,
+    "branch": 10,
+    "call": 12
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.12,
+    "mips_at_4mhz": 0.5
+  },
+  "historical_context": {
+    "year_introduced": 1979,
+    "designer": "Zilog",
+    "significance": "Advanced 16-bit design, commercial failure",
+    "systems": ["Olivetti M20", "Onyx C8002", "Some Unix systems"],
+    "competition": "Intel 8086, Motorola 68000",
+    "failure_reasons": ["Late to market", "Complex segmentation", "No IBM PC adoption", "68000 momentum"]
+  },
+  "why_it_failed": {
+    "timing": "1979 was too late - 8086 had IBM PC, 68000 had Apple",
+    "segmentation": "Z8001's segmentation was complex",
+    "no_killer_app": "No system like IBM PC or Mac adopted it",
+    "z80_success_curse": "Zilog focused on Z80 market too long"
+  },
+  "technical_merit": {
+    "register_file": "Excellent - 16 orthogonal registers",
+    "instruction_set": "Clean, powerful",
+    "memory_management": "Good for Unix",
+    "problem": "Technical merit ≠ market success"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.10,
+    "tolerance_percent": 3.0
+  }
+}
