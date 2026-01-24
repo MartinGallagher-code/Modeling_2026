@@ -1,0 +1,87 @@
+{
+  "model_metadata": {
+    "name": "Intel Pentium CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "Intel Pentium (1993)",
+    "description": "First superscalar x86 - defined the 1990s PC era"
+  },
+  "architecture": {
+    "word_size_bits": 32,
+    "data_bus_width_bits": 64,
+    "address_bus_width_bits": 32,
+    "clock_frequency_mhz": 60.0,
+    "max_clock_mhz": 200.0,
+    "registers": 8,
+    "architecture_type": "CISC_superscalar",
+    "pipeline_stages": 5,
+    "superscalar_width": 2,
+    "transistor_count": 3100000,
+    "process_nm": 800
+  },
+  "dual_pipeline": {
+    "U_pipe": "Primary - executes all instructions",
+    "V_pipe": "Secondary - simple instructions only",
+    "pairing_rules": "Complex rules for which instructions can pair",
+    "peak_ipc": 2.0
+  },
+  "caches": {
+    "instruction_cache_kb": 8,
+    "data_cache_kb": 8,
+    "cache_type": "2-way set associative",
+    "separate_caches": "First x86 with separate I/D caches"
+  },
+  "branch_prediction": {
+    "type": "Dynamic",
+    "btb_entries": 256,
+    "accuracy": "~80%"
+  },
+  "fpu": {
+    "on_chip": true,
+    "pipelined": true,
+    "performance": "5-10× faster than 486 FPU",
+    "fdiv_bug": "Early versions had division bug!"
+  },
+  "instruction_mix": {
+    "alu_operations": 0.40,
+    "memory_ops": 0.30,
+    "branch": 0.15,
+    "fpu": 0.05,
+    "other": 0.10
+  },
+  "instruction_timings": {
+    "simple_alu": 1,
+    "complex_alu": 3,
+    "load": 1,
+    "store": 1,
+    "branch_predicted": 1,
+    "branch_mispredicted": 4,
+    "fpu_add": 3,
+    "fpu_mul": 3,
+    "fpu_div": 39
+  },
+  "performance_characteristics": {
+    "ipc_expected": 1.20,
+    "mips_at_66mhz": 112,
+    "mflops_at_66mhz": 63,
+    "vs_486": "2× faster at same clock"
+  },
+  "historical_context": {
+    "year_introduced": "March 22, 1993",
+    "code_name": "P5",
+    "significance": "First superscalar x86, made 'Intel Inside' famous",
+    "price_1993": "$878 (60 MHz)",
+    "systems": ["Every major PC OEM"],
+    "market_impact": "Defined PC computing for a decade"
+  },
+  "famous_bug": {
+    "fdiv_bug": "Floating-point division error in early chips",
+    "discovered": "October 1994",
+    "impact": "$475 million recall",
+    "lesson": "Verification matters"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.80,
+    "tolerance_percent": 2.0
+  }
+}
