@@ -1,0 +1,307 @@
+{
+  "model_metadata": {
+    "name": "Motorola 6809 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Motorola 6809/6809E (1978-1995)",
+    "description": "The most advanced 8-bit processor - orthogonal design, multiple addressing modes, elegant architecture"
+  },
+  
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "clock_frequency_mhz": 1.5,
+    "typical_clock_mhz": 1.0,
+    "max_clock_mhz": 2.0,
+    "registers_main": 10,
+    "architecture_type": "load_store_hybrid",
+    "pipeline_stages": 1,
+    "orthogonal_instruction_set": true,
+    "notes": "Most sophisticated 8-bit architecture ever designed, but too late to market"
+  },
+  
+  "key_innovations": {
+    "orthogonal_design": "Any operation works with any addressing mode",
+    "two_accumulators": "8-bit A and B, or combined 16-bit D",
+    "two_index_registers": "16-bit X and Y with full arithmetic",
+    "user_stack_pointer": "Separate U (user) and S (system) stack pointers",
+    "hardware_multiply": "8×8 → 16-bit multiply in hardware",
+    "position_independent_code": "PC-relative addressing for relocatable code",
+    "advanced_addressing": "13 addressing modes including auto-increment/decrement",
+    "fast_interrupts": "FIRQ saves minimal state for fast response"
+  },
+  
+  "pipeline_stages": {
+    "fetch_decode_execute": {
+      "name": "Fetch, Decode, and Execute",
+      "base_cycles": 2,
+      "description": "Sequential execution with variable instruction timing",
+      "notes": "More efficient than 8080/Z80 due to orthogonal design"
+    }
+  },
+  
+  "register_set": {
+    "accumulators": {
+      "A": "8-bit accumulator (can combine with B)",
+      "B": "8-bit accumulator (can combine with A)",
+      "D": "16-bit accumulator (A:B concatenated)"
+    },
+    "index_registers": {
+      "X": "16-bit index register with full arithmetic",
+      "Y": "16-bit index register with full arithmetic"
+    },
+    "stack_pointers": {
+      "S": "16-bit system stack pointer",
+      "U": "16-bit user stack pointer"
+    },
+    "program_counter": {
+      "PC": "16-bit program counter"
+    },
+    "other": {
+      "DP": "8-bit direct page register (extends direct addressing)",
+      "CC": "8-bit condition code register (flags)"
+    }
+  },
+  
+  "instruction_mix": {
+    "description": "Typical 6809 code - more efficient than 8080/Z80",
+    "load_store": 0.28,
+    "alu_operations": 0.30,
+    "branch_jump": 0.18,
+    "stack_operations": 0.12,
+    "indexed_operations": 0.08,
+    "multiply": 0.02,
+    "other": 0.02,
+    "notes": "Heavy use of indexed addressing due to excellent hardware support"
+  },
+  
+  "instruction_timings": {
+    "load_store": {
+      "lda_immediate": 2,
+      "lda_direct": 4,
+      "lda_extended": 5,
+      "lda_indexed": 4,
+      "sta_direct": 4,
+      "sta_extended": 5,
+      "sta_indexed": 4,
+      "ldd_immediate": 3,
+      "ldd_extended": 6,
+      "description": "Load/store with multiple addressing modes",
+      "notes": "Fast indexed mode (same as direct!)"
+    },
+    "alu_register": {
+      "add_immediate": 2,
+      "add_direct": 4,
+      "add_extended": 5,
+      "add_indexed": 4,
+      "sub_immediate": 2,
+      "description": "Arithmetic/logic operations",
+      "notes": "Consistent timing across operations"
+    },
+    "alu_16bit": {
+      "addd_immediate": 4,
+      "addd_direct": 6,
+      "addd_extended": 7,
+      "description": "16-bit arithmetic (D register)",
+      "notes": "Native 16-bit support unlike other 8-bit processors"
+    },
+    "multiply": {
+      "mul": 11,
+      "description": "8×8 → 16-bit multiply (A × B → D)",
+      "notes": "Hardware multiply! (vs software on 8080/Z80)"
+    },
+    "branch": {
+      "bra": 3,
+      "beq": 3,
+      "bne": 3,
+      "lbra": 5,
+      "description": "Branches (short and long)",
+      "notes": "PC-relative for position-independent code"
+    },
+    "jump_call": {
+      "jsr_direct": 7,
+      "jsr_extended": 8,
+      "jsr_indexed": 7,
+      "rts": 5,
+      "bsr": 7,
+      "description": "Subroutine calls",
+      "notes": "BSR (branch to subroutine) is PC-relative"
+    },
+    "stack": {
+      "pshs": 5,
+      "puls": 5,
+      "pshu": 5,
+      "pulu": 5,
+      "description": "Stack operations (can push/pull multiple registers)",
+      "notes": "Two independent stacks for flexibility"
+    },
+    "indexed": {
+      "leax": 4,
+      "leay": 4,
+      "description": "Load effective address (powerful for array access)",
+      "notes": "Auto-increment/decrement modes available"
+    },
+    "special": {
+      "swi": 19,
+      "cwai": 20,
+      "sync": 4,
+      "description": "System instructions",
+      "notes": "Advanced interrupt handling"
+    }
+  },
+  
+  "addressing_modes": {
+    "count": 13,
+    "modes": [
+      "Immediate",
+      "Direct (with DP register)",
+      "Extended (16-bit address)",
+      "Indexed (X or Y)",
+      "Auto-increment (++X, ++Y)",
+      "Auto-decrement (--X, --Y)",
+      "Constant offset (n,X or n,Y)",
+      "Accumulator offset (A,X or B,Y or D,X or D,Y)",
+      "PC-relative (for position-independent code)",
+      "Indirect",
+      "Indirect indexed",
+      "Inherent",
+      "Relative (branches)"
+    ],
+    "notes": "Most addressing modes of any 8-bit processor"
+  },
+  
+  "memory_system": {
+    "no_cache": true,
+    "memory_access_cycles": 1,
+    "bus_width_bytes": 1,
+    "direct_page_size": 256,
+    "description": "Simple memory access with direct page optimization",
+    "notes": "Direct page register extends addressing efficiency"
+  },
+  
+  "bottlenecks": {
+    "primary": "sequential_execution",
+    "secondary": "slow_typical_clock",
+    "improvement_over_6502": "More orthogonal, better indexed addressing",
+    "vs_z80": "Cleaner architecture but slower clock",
+    "description": "Superior design but limited by technology (slow clock speeds)"
+  },
+  
+  "performance_characteristics": {
+    "cycles_per_instruction_avg": 4.5,
+    "instructions_per_byte_avg": 0.50,
+    "code_density": "Excellent (variable length, 1-5 bytes)",
+    "indexed_addressing_cost": "Very low (same as direct)",
+    "multiply_performance": "11 cycles (vs 100+ in software)",
+    "stack_flexibility": "Excellent (two stacks, multi-register push/pull)"
+  },
+  
+  "calibration": {
+    "arrival_rate_initial": 0.15,
+    "arrival_rate_bounds": [0.05, 0.45],
+    "tolerance_percent": 2.0,
+    "max_iterations": 50,
+    "notes": "6809 should achieve slightly better IPC than 8080/Z80 due to efficiency"
+  },
+  
+  "instruction_length_distribution": {
+    "1_byte": 0.30,
+    "2_byte": 0.40,
+    "3_byte": 0.20,
+    "4_byte": 0.08,
+    "5_byte": 0.02,
+    "average_bytes": 2.12,
+    "description": "Variable length instructions (1-5 bytes)",
+    "notes": "More compact than 8080, similar to Z80"
+  },
+  
+  "execution_characteristics": {
+    "purely_sequential": true,
+    "no_pipeline": true,
+    "no_prefetch": true,
+    "no_branch_prediction": true,
+    "no_superscalar": true,
+    "instruction_level_parallelism": 0,
+    "orthogonal_instruction_set": true,
+    "description": "Sequential but highly efficient execution"
+  },
+  
+  "historical_context": {
+    "year_introduced": 1978,
+    "designer": "Terry Ritter and Joel Boney at Motorola",
+    "significance": "Most advanced 8-bit architecture, but arrived too late",
+    "common_systems": [
+      "TRS-80 Color Computer (CoCo)",
+      "Dragon 32/64 computer",
+      "Vectrex video game console",
+      "Williams pinball machines",
+      "Some Unix workstations",
+      "Embedded industrial systems"
+    ],
+    "market_position": "Technically superior but limited adoption",
+    "competition": "Lost to Z80 (established) and 6502 (cheaper)",
+    "legacy": "Influenced later RISC designs, considered 'the best 8-bit CPU'"
+  },
+  
+  "design_philosophy": {
+    "orthogonality": "Any operation works with any addressing mode (consistency)",
+    "symmetry": "All registers treated equally where possible",
+    "simplicity": "Clean instruction set without special cases",
+    "power": "Advanced features (multiply, dual stacks, 16-bit ops)",
+    "elegance": "Considered the pinnacle of 8-bit design",
+    "notes": "Opposite of x86 philosophy (simple and consistent vs complex and optimized)"
+  },
+  
+  "benchmarks": {
+    "dhrystone_target_ipc": 0.09,
+    "typical_applications": "Home computers, embedded control, games",
+    "performance_vs_z80": "Better per-cycle efficiency, but slower clock",
+    "notes": "Higher IPC than 8080/Z80 but slower absolute performance due to clock"
+  },
+  
+  "advantages_over_competitors": {
+    "vs_8080_z80": {
+      "orthogonal_design": "No special cases or accumulator-centric limitations",
+      "indexed_addressing": "Fast and flexible (same cost as direct)",
+      "hardware_multiply": "11 cycles vs 100+ in software",
+      "dual_stacks": "Better for multitasking and recursion",
+      "16bit_operations": "Native D register for efficient 16-bit math",
+      "code_density": "More compact code due to orthogonality"
+    },
+    "vs_6502": {
+      "more_registers": "10 registers vs 6502's 4",
+      "better_indexed": "X and Y are full 16-bit with arithmetic",
+      "hardware_multiply": "6502 has no multiply instruction",
+      "dual_stacks": "6502 has single fixed stack",
+      "cleaner_design": "More orthogonal than 6502"
+    }
+  },
+  
+  "disadvantages": {
+    "slow_clock": "1-1.5 MHz typical vs Z80's 4 MHz or 8080's 2-3 MHz",
+    "late_to_market": "1978 vs 1974-1976 for competitors",
+    "limited_software": "Less software available than Z80 or 6502",
+    "higher_cost": "More complex chip, more expensive",
+    "technology_lag": "Process technology behind Intel/Zilog"
+  },
+  
+  "why_6809_matters": {
+    "architectural_achievement": "Pinnacle of 8-bit design, most elegant",
+    "influenced_risc": "Orthogonality and consistency inspired RISC philosophy",
+    "position_independent_code": "PC-relative addressing ahead of its time",
+    "proves_design_quality": "Shows excellent architecture ≠ market success",
+    "educational_value": "Taught in universities as example of good design",
+    "cult_following": "Developers who used it loved it",
+    "lesson": "Timing and ecosystem matter more than technical excellence"
+  },
+  
+  "comparison_with_contemporaries": {
+    "technical_superiority": "Generally considered best 8-bit design",
+    "market_performance": "Never achieved mainstream success",
+    "timing_problem": "Arrived when 16-bit (8086, 68000) emerging",
+    "ecosystem_gap": "Less software and third-party support",
+    "conclusion": "Best technology doesn't always win"
+  }
+}
