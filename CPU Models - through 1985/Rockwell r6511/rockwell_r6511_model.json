@@ -1,0 +1,74 @@
+{
+  "model_metadata": {
+    "name": "Rockwell R6511 Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "Rockwell R6511 (1980)",
+    "description": "6502 variant MCU with on-chip I/O and timers"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "on_chip_ram_bytes": 192,
+    "clock_frequency_mhz": 2.0,
+    "architecture_type": "6502_mcu",
+    "pipeline_stages": 1,
+    "transistor_count": 10000
+  },
+  "6502_core": {
+    "compatibility": "6502 instruction set",
+    "registers": ["A", "X", "Y", "SP", "PC", "P"],
+    "addressing_modes": 13
+  },
+  "on_chip_peripherals": {
+    "ram": "192 bytes",
+    "parallel_io": "32 I/O lines (4 ports)",
+    "serial_io": "UART",
+    "timers": "2 x 16-bit counter/timers",
+    "interrupt_controller": "Yes"
+  },
+  "r65xx_family": {
+    "R6500/1": "6502 + 2KB ROM + 64B RAM + I/O",
+    "R6511": "6502 + 192B RAM + I/O + Serial (this chip)",
+    "R6512": "6502 + ROM + enhanced I/O",
+    "R65C00": "CMOS versions",
+    "note": "Rockwell was major 6502 licensee"
+  },
+  "instruction_timings": {
+    "implied": 2,
+    "immediate": 2,
+    "zero_page": 3,
+    "absolute": 4,
+    "indexed": 4,
+    "indirect": 6,
+    "units": "clock_cycles"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.10,
+    "mips_at_2mhz": 0.20
+  },
+  "applications": {
+    "industrial": "PLCs, process control",
+    "terminals": "Point-of-sale, data terminals",
+    "communications": "Modems, protocol converters",
+    "instrumentation": "Test equipment"
+  },
+  "historical_context": {
+    "year_introduced": 1980,
+    "manufacturer": "Rockwell International",
+    "significance": "Made 6502 practical for embedded",
+    "license": "Second-source 6502 licensee",
+    "market": "Industrial embedded systems"
+  },
+  "vs_standalone_6502": {
+    "6502": "CPU only, needs external RAM/ROM/I/O",
+    "R6511": "CPU + RAM + I/O + Serial + Timers",
+    "advantage": "Reduced chip count",
+    "market": "Embedded systems"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.08,
+    "tolerance_percent": 3.0
+  }
+}

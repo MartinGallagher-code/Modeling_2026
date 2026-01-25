@@ -1,0 +1,77 @@
+{
+  "model_metadata": {
+    "name": "Motorola 6802 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "Motorola 6802 (1977)",
+    "description": "6800 with on-chip RAM and clock generator"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "address_space_bytes": 65536,
+    "on_chip_ram_bytes": 128,
+    "clock_frequency_mhz": 1.0,
+    "max_clock_mhz": 4.0,
+    "registers": 6,
+    "architecture_type": "accumulator",
+    "pipeline_stages": 1,
+    "transistor_count": 5000
+  },
+  "improvements_over_6800": {
+    "on_chip_ram": "128 bytes (6800 had none)",
+    "clock_generator": "On-chip (6800 needed external)",
+    "standby_mode": "RAM retention with low power",
+    "single_power": "+5V only (6800 needed +5V, -5V, +12V)"
+  },
+  "register_architecture": {
+    "accumulators": ["A (8-bit)", "B (8-bit)"],
+    "index_register": "X (16-bit)",
+    "stack_pointer": "SP (16-bit)",
+    "program_counter": "PC (16-bit)",
+    "condition_codes": "CC (H, I, N, Z, V, C)"
+  },
+  "instruction_set": {
+    "compatibility": "100% 6800 compatible",
+    "total_instructions": 72,
+    "addressing_modes": 7
+  },
+  "instruction_timings": {
+    "inherent": 2,
+    "immediate": 2,
+    "direct": 3,
+    "extended": 4,
+    "indexed": 5,
+    "relative": 4,
+    "units": "clock_cycles"
+  },
+  "on_chip_ram_map": {
+    "location": "0x0000-0x007F",
+    "size": "128 bytes",
+    "standby": "Can retain with Vstandby pin",
+    "use_cases": ["Stack", "Variables", "Scratch"]
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.10,
+    "mips_at_1mhz": 0.10
+  },
+  "historical_context": {
+    "year_introduced": 1977,
+    "manufacturer": "Motorola",
+    "significance": "Simplified 6800 system design",
+    "market": "Cost-sensitive embedded systems",
+    "successor": "6808 (4 MHz version)"
+  },
+  "family_position": {
+    "6800": "Original (1974)",
+    "6802": "With RAM + clock (1977)",
+    "6808": "6802 at 4 MHz",
+    "6801": "With RAM + ROM + I/O (MCU)",
+    "relationship": "6802 is CPU, 6801 is MCU"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.08,
+    "tolerance_percent": 3.0
+  }
+}

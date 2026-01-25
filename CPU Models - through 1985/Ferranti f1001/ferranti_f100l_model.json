@@ -1,0 +1,75 @@
+{
+  "model_metadata": {
+    "name": "Ferranti F100-L CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "Ferranti F100-L (1976)",
+    "description": "British 16-bit military processor - radiation hardened"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 16,
+    "address_bus_width_bits": 15,
+    "address_space_bytes": 65536,
+    "clock_frequency_mhz": 1.6,
+    "registers": 5,
+    "register_names": ["ACC", "OR", "CR", "PC", "SP"],
+    "architecture_type": "accumulator_16bit",
+    "pipeline_stages": 1,
+    "package": "64-pin ceramic"
+  },
+  "register_architecture": {
+    "accumulator": "ACC (16-bit)",
+    "operand_register": "OR (16-bit pointer)",
+    "control_register": "CR (flags/control)",
+    "program_counter": "PC (15-bit)",
+    "stack_pointer": "SP (hardware stack)"
+  },
+  "instruction_set": {
+    "total_instructions": 45,
+    "instruction_width": 16,
+    "addressing_modes": ["Direct", "Indirect", "Immediate", "Indexed"],
+    "features": ["Hardware multiply", "Block transfer"]
+  },
+  "radiation_hardness": {
+    "technology": "Bipolar with rad-hard design",
+    "applications": ["Military avionics", "Space", "Nuclear"],
+    "why_british": "UK defense independence",
+    "latch_up": "Immune"
+  },
+  "instruction_timings": {
+    "register_ops": 4,
+    "memory_read": 8,
+    "memory_write": 8,
+    "multiply": 16,
+    "units": "clock_cycles"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.08,
+    "mips_at_1_6mhz": 0.13,
+    "note": "Performance secondary to reliability"
+  },
+  "applications": {
+    "tornado_aircraft": "Navigation computer",
+    "rapier_missile": "Fire control",
+    "naval_systems": "Various UK ships",
+    "space": "UK satellites"
+  },
+  "historical_context": {
+    "year_introduced": 1976,
+    "manufacturer": "Ferranti (UK)",
+    "significance": "UK military processor independence",
+    "production_end": "~1990s",
+    "successor": "None - COTS took over"
+  },
+  "why_study": {
+    "british_computing": "Part of UK computer heritage",
+    "mil_spec": "Different design priorities",
+    "rad_hard": "Special requirements",
+    "independence": "Cold War era defense policy"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.07,
+    "tolerance_percent": 3.0
+  }
+}
