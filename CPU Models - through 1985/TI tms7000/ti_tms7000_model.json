@@ -1,0 +1,95 @@
+{
+  "model_metadata": {
+    "name": "Texas Instruments TMS7000 Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "TI TMS7000 (1981)",
+    "description": "TI's 8-bit MCU family - competed with 8051"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "address_space_bytes": 65536,
+    "on_chip_rom_bytes": 4096,
+    "on_chip_ram_bytes": 128,
+    "clock_frequency_mhz": 10.0,
+    "effective_mhz": 5.0,
+    "register_file_size": 128,
+    "architecture_type": "register_file_8bit",
+    "pipeline_stages": 1,
+    "transistor_count": 20000
+  },
+  "register_architecture": {
+    "type": "Register file (like 8096, unlike 8051)",
+    "file_size": "128 bytes (R0-R127)",
+    "accumulators": "A and B (also R0 and R1)",
+    "any_register": "Any R can be accumulator",
+    "stack": "Hardware stack in register file",
+    "note": "Flexible register-to-register ops"
+  },
+  "on_chip_peripherals": {
+    "timer": "8-bit programmable timer",
+    "serial": "Asynchronous serial port",
+    "parallel": "Multiple I/O ports",
+    "interrupt": "Vectored interrupts"
+  },
+  "instruction_set": {
+    "total_instructions": 109,
+    "instruction_width": "1-3 bytes",
+    "features": {
+      "single_bit": "Set/clear/test any bit",
+      "multiply": "8×8=16 hardware multiply",
+      "compare": "Rich compare instructions",
+      "register_ops": "Any register can be operand"
+    }
+  },
+  "instruction_timings": {
+    "register_to_register": 4,
+    "immediate": 5,
+    "memory": 7,
+    "multiply": 21,
+    "branch": 7,
+    "units": "clock_cycles"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.09,
+    "mips_at_10mhz": 0.45,
+    "vs_8051": "Faster for register ops"
+  },
+  "tms7000_family": {
+    "TMS7000": "Base, 2K ROM, 128B RAM",
+    "TMS7020": "ROM-less version",
+    "TMS7040": "4K ROM (this spec)",
+    "TMS7041": "4K ROM + UART",
+    "TMS7042": "4K ROM + A/D",
+    "TMS70C00": "CMOS versions"
+  },
+  "vs_8051": {
+    "8051_registers": "4 banks × 8 registers",
+    "TMS7000_registers": "128-byte register file",
+    "8051_architecture": "Accumulator-based",
+    "TMS7000_architecture": "Register-to-register",
+    "8051_strength": "Bit manipulation",
+    "TMS7000_strength": "General register ops",
+    "market_winner": "8051 (ecosystem)"
+  },
+  "historical_context": {
+    "year_introduced": 1981,
+    "manufacturer": "Texas Instruments",
+    "significance": "TI's main 8-bit MCU family",
+    "competed_with": ["Intel 8051", "Motorola 6805", "Zilog Z8"],
+    "market_result": "Modest success, overshadowed by 8051",
+    "production": "Into 1990s"
+  },
+  "applications": {
+    "consumer": "Appliances, toys",
+    "industrial": "Controllers, instruments",
+    "automotive": "Body electronics",
+    "ti_products": "TI calculators and equipment"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.08,
+    "tolerance_percent": 3.0
+  }
+}
