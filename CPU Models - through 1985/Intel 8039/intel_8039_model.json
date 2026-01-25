@@ -1,0 +1,49 @@
+{
+  "model_metadata": {
+    "name": "Intel 8039 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "Intel 8039 (1976)",
+    "description": "Enhanced ROM-less MCS-48 - 128B RAM, external ROM"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 12,
+    "clock_frequency_mhz": 6.0,
+    "max_clock_mhz": 11.0,
+    "registers": 8,
+    "register_banks": 2,
+    "working_registers": 8,
+    "architecture_type": "MCU_romless_enhanced",
+    "pipeline_stages": 1
+  },
+  "on_chip_resources": {
+    "rom_bytes": 0,
+    "ram_bytes": 128,
+    "note": "ROM-less with DOUBLE RAM (128B vs 64B)",
+    "io_ports": 27,
+    "timer": "8-bit with prescaler",
+    "external_memory": "Up to 4KB ROM, 256B RAM"
+  },
+  "vs_8035": {
+    "8035_ram": 64,
+    "8039_ram": 128,
+    "improvement": "2× internal RAM",
+    "same": "Both ROM-less, same I/O and timer"
+  },
+  "instruction_timings": {
+    "one_cycle": 1,
+    "two_cycle": 2,
+    "description": "Machine cycles (1 cycle = 15 clocks)"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.07,
+    "machine_cycles_per_sec": 400000
+  },
+  "historical_context": {
+    "year_introduced": 1976,
+    "significance": "Enhanced development version with more RAM",
+    "paired_with": "8049 (ROM version with 2KB ROM, 128B RAM)"
+  }
+}
