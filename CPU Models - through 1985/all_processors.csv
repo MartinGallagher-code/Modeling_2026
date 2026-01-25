@@ -1,0 +1,63 @@
+Processor,Year,Bits,Clock_MHz,Family,Category,IPC,MIPS,CPI,Bottleneck
+Intel 4004,1971,4,0.74,Intel,4-bit,0.1183,0.088,8.45,none
+Intel 4040,1974,4,0.74,Intel,4-bit,0.1183,0.088,8.45,none
+Intel 8008,1972,8,0.5,Intel,Simple 8-bit,0.0989,0.049,10.61,memory
+Intel 8080,1974,8,2.0,Intel,Simple 8-bit,0.1674,0.335,6.16,memory
+Intel 8085,1976,8,3.0,Intel,Simple 8-bit,0.1747,0.524,5.91,memory
+Intel 8085a,1976,8,5.0,Intel,Simple 8-bit,0.1747,0.873,5.91,memory
+Intel 8035,1976,8,6.0,Intel,8-bit MCU,0.6220,3.732,1.67,memory
+Intel 8039,1976,8,6.0,Intel,8-bit MCU,0.6220,3.732,1.67,memory
+Intel 8048,1976,8,6.0,Intel,8-bit MCU,0.6220,3.732,1.67,memory
+Intel 8051,1980,8,12.0,Intel,8-bit MCU,0.6220,7.464,1.67,memory
+Intel 8096,1982,16,12.0,Intel,8-bit MCU,0.1806,2.167,5.79,prefetch
+Intel 8086,1978,16,5.0,Intel,16-bit with Prefetch,0.1576,0.788,6.93,memory
+Intel 8088,1979,16,5.0,Intel,16-bit with Prefetch,0.1279,0.640,8.88,memory
+Intel 80186,1982,16,8.0,Intel,16-bit with Prefetch,0.1683,1.346,6.46,memory
+Intel 80188,1982,16,8.0,Intel,16-bit with Prefetch,0.1353,1.083,8.37,memory
+Intel 80286,1982,16,6.0,Intel,16-bit Protected Mode,0.2619,1.571,4.20,memory
+Intel 80386,1985,32,16.0,Intel,Full 32-bit,0.2755,4.408,4.03,branch
+Intel iapx 432,1981,32,5.0,Intel,Special Architecture,0.0487,0.244,11.43,memory
+Motorola 6800,1974,8,1.0,Motorola,Simple 8-bit,0.2881,0.288,3.66,memory
+Motorola 6801,1978,8,1.0,Motorola,8-bit MCU,0.3110,0.311,3.34,memory
+Motorola 6802,1977,8,1.0,Motorola,Simple 8-bit,0.2881,0.288,3.66,memory
+Motorola 6803,1983,8,1.0,Motorola,8-bit MCU,0.3110,0.311,3.34,memory
+Motorola 6805,1979,8,4.0,Motorola,8-bit MCU,0.2400,0.960,4.29,memory
+Motorola 6809,1979,8,1.0,Motorola,Enhanced 8-bit,0.3262,0.326,3.19,memory
+Motorola 68000,1979,32,8.0,Motorola,Early 32-bit,0.1526,1.221,7.17,prefetch
+Motorola 68008,1982,32,8.0,Motorola,Early 32-bit,0.1272,1.017,9.18,prefetch
+Motorola 68010,1982,32,10.0,Motorola,Early 32-bit,0.1591,1.591,6.83,prefetch
+Motorola 68020,1984,32,16.0,Motorola,Full 32-bit,0.3039,4.863,3.72,cache
+MOS 6502,1975,8,1.0,MOS/WDC,Simple 8-bit,0.3262,0.326,3.19,memory
+WDC 65c02,1983,8,4.0,MOS/WDC,Enhanced 8-bit,0.3262,1.305,3.19,memory
+WDC 65802,1984,16,4.0,MOS/WDC,16-bit with Prefetch,0.3262,1.305,3.19,memory
+WDC 65816,1984,16,2.8,MOS/WDC,16-bit with Prefetch,0.3012,0.843,3.51,memory
+Zilog Z80,1976,8,2.5,Zilog,Enhanced 8-bit,0.1747,0.437,5.91,memory
+Zilog Z180,1985,8,6.0,Zilog,Enhanced 8-bit,0.2290,1.374,4.49,memory
+Zilog Z280,1985,16,12.0,Zilog,16-bit Protected Mode,0.2676,3.211,4.29,cache
+Zilog Z8,1979,8,8.0,Zilog,8-bit MCU,0.1357,1.086,7.49,memory
+Zilog Z8000,1979,16,4.0,Zilog,Early 32-bit,0.1991,0.796,5.21,memory
+Zilog Z80 Peripherals,1976,8,2.5,Zilog,Special Architecture,0.1747,0.437,5.91,memory
+RCA 1802,1976,8,2.0,RCA,Special Architecture,0.0374,0.075,15.45,none
+RCA CDP1804,1980,8,2.0,RCA,Special Architecture,0.0419,0.084,13.55,none
+RCA CDP1805,1984,8,4.0,RCA,Special Architecture,0.0479,0.192,11.65,none
+RCA CDP1806,1985,8,4.0,RCA,Special Architecture,0.1026,0.410,9.75,none
+TI TMS1000,1974,4,0.4,Texas Instruments,4-bit,0.6220,0.249,1.67,memory
+TI TMS7000,1981,8,10.0,Texas Instruments,8-bit MCU,0.1719,1.719,5.94,memory
+TI TMS9900,1976,16,3.0,Texas Instruments,Early 32-bit,0.1115,0.335,9.09,memory
+TI TMS9995,1981,16,12.0,Texas Instruments,Early 32-bit,0.1935,2.322,5.29,memory
+NSC NSC800,1979,8,4.0,National Semiconductor,Enhanced 8-bit,0.1747,0.699,5.91,memory
+National Semiconductor NS32016,1982,32,10.0,National Semiconductor,Full 32-bit,0.1842,1.842,5.88,prefetch
+National Semiconductor NS32032,1984,32,10.0,National Semiconductor,Full 32-bit,0.2140,2.140,5.11,prefetch
+NEC V20,1984,16,8.0,NEC,16-bit with Prefetch,0.1874,1.499,5.93,memory
+NEC V30,1984,16,10.0,NEC,16-bit with Prefetch,0.1967,1.967,5.61,memory
+AMD 2901,1975,4,10.0,Other,Special Architecture,0.8333,8.333,1.20,none
+ARM1,1985,32,6.0,Other,RISC,0.5070,3.042,2.20,branch
+MIPS R2000,1985,32,8.0,Other,RISC,0.7013,5.611,1.64,cache
+Fairchild F8,1975,8,2.0,Other,Simple 8-bit,0.2055,0.411,4.99,memory
+Ferranti F100-L,1976,16,8.0,Other,Early 32-bit,0.3373,2.698,3.09,memory
+GI CP1600,1975,16,1.0,Other,Early 32-bit,0.1415,0.141,7.19,memory
+GI PIC1650,1977,8,4.0,Other,8-bit MCU,0.7407,2.963,1.35,none
+Hitachi 6309,1982,8,2.0,Other,Enhanced 8-bit,0.3553,0.711,2.94,memory
+Intersil 6100,1975,12,4.0,Other,Special Architecture,0.2655,1.062,3.89,memory
+Rockwell R6511,1980,8,2.0,Other,8-bit MCU,0.3262,0.652,3.19,memory
+Signetics 2650,1975,8,1.25,Other,Simple 8-bit,0.2055,0.257,4.99,memory
