@@ -1,0 +1,158 @@
+{
+  "processor": "Intel 4004",
+  "improved_config": {
+    "family": "INTEL",
+    "category": "SIMPLE_4BIT",
+    "year": 1971,
+    "bits": 4,
+    "clock_mhz": 0.74,
+    "transistors": 2300,
+    "process_um": 10,
+    "description": "World's first commercial microprocessor",
+    "base_cpi": 10.0,
+    "has_prefetch": false,
+    "has_cache": false,
+    "pipeline_stages": 1,
+    "branch_penalty": 0,
+    "timings": {
+      "alu": 8,
+      "mov": 8,
+      "branch": 16,
+      "memory": 8
+    },
+    "machine_cycle_us": 10.8,
+    "clock_cycles_per_machine": 8,
+    "ips_typical": 74074.07407407407,
+    "ips_peak": 92500,
+    "ips_min": 46250,
+    "kips": 74.07407407407408,
+    "mips": 0.07407407407407407,
+    "validation": {
+      "source": "MCS-4 Users Manual, Intel Datasheet",
+      "expected_ips_range": [
+        46250,
+        92500
+      ],
+      "bcd_add_8digit_us": 850
+    }
+  },
+  "workload_results": {
+    "typical": {
+      "cpi_clocks": 10.0,
+      "cpi_machine": 1.25,
+      "ipc": 0.1,
+      "ips": 74074.07407407407,
+      "mips": 0.07407407407407407,
+      "kips": 74.07407407407408,
+      "avg_instruction_time_us": 13.5,
+      "one_word_fraction": 0.75,
+      "two_word_fraction": 0.25,
+      "expected_ips_range": [
+        46250,
+        92500
+      ],
+      "validation_status": "PASS"
+    },
+    "compute": {
+      "cpi_clocks": 9.600000000000001,
+      "cpi_machine": 1.2000000000000002,
+      "ipc": 0.10416666666666666,
+      "ips": 77160.49382716048,
+      "mips": 0.07716049382716048,
+      "kips": 77.16049382716048,
+      "avg_instruction_time_us": 12.960000000000003,
+      "one_word_fraction": 0.8,
+      "two_word_fraction": 0.2,
+      "expected_ips_range": [
+        46250,
+        92500
+      ],
+      "validation_status": "PASS"
+    },
+    "control": {
+      "cpi_clocks": 10.8,
+      "cpi_machine": 1.35,
+      "ipc": 0.09259259259259259,
+      "ips": 68587.10562414266,
+      "mips": 0.06858710562414265,
+      "kips": 68.58710562414265,
+      "avg_instruction_time_us": 14.580000000000002,
+      "one_word_fraction": 0.65,
+      "two_word_fraction": 0.35,
+      "expected_ips_range": [
+        46250,
+        92500
+      ],
+      "validation_status": "PASS"
+    },
+    "io_heavy": {
+      "cpi_clocks": 9.600000000000001,
+      "cpi_machine": 1.2000000000000002,
+      "ipc": 0.10416666666666666,
+      "ips": 77160.49382716048,
+      "mips": 0.07716049382716048,
+      "kips": 77.16049382716048,
+      "avg_instruction_time_us": 12.960000000000003,
+      "one_word_fraction": 0.8,
+      "two_word_fraction": 0.2,
+      "expected_ips_range": [
+        46250,
+        92500
+      ],
+      "validation_status": "PASS"
+    },
+    "calculator": {
+      "cpi_clocks": 9.76,
+      "cpi_machine": 1.22,
+      "ipc": 0.10245901639344263,
+      "ips": 75895.56769884638,
+      "mips": 0.07589556769884638,
+      "kips": 75.89556769884638,
+      "avg_instruction_time_us": 13.176,
+      "one_word_fraction": 0.78,
+      "two_word_fraction": 0.22,
+      "expected_ips_range": [
+        46250,
+        92500
+      ],
+      "validation_status": "PASS"
+    }
+  },
+  "validation_tests": {
+    "NOP": true,
+    "ADD": true,
+    "SUB": true,
+    "LD": true,
+    "XCH": true,
+    "LDM": true,
+    "BBL": true,
+    "INC": true,
+    "WRM": true,
+    "RDM": true,
+    "IAC": true,
+    "DAC": true,
+    "RAL": true,
+    "RAR": true,
+    "SRC": true,
+    "JIN": true,
+    "JUN": true,
+    "JMS": true,
+    "JCN": true,
+    "FIM": true,
+    "FIN": true,
+    "ISZ": true
+  },
+  "bcd_benchmark": {
+    "machine_cycles": 79,
+    "expected_time_us": 850,
+    "calculated_time_us": 853.2,
+    "error_percent": 0.37647058823529944,
+    "additions_per_second": 1176.4705882352941
+  },
+  "specifications": {
+    "clock_khz": 740,
+    "machine_cycle_us": 10.8,
+    "clocks_per_machine_cycle": 8,
+    "instruction_count": 45
+  }
+}
