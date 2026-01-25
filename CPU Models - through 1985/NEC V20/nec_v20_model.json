@@ -1,0 +1,92 @@
+{
+  "model_metadata": {
+    "name": "NEC V20 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "NEC V20 (1984)",
+    "description": "Faster 8088-compatible + 8080 emulation mode - sparked Intel vs NEC lawsuit"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 20,
+    "address_space_bytes": 1048576,
+    "clock_frequency_mhz": 8.0,
+    "max_clock_mhz": 10.0,
+    "registers": 14,
+    "architecture_type": "CISC_prefetch",
+    "pipeline_stages": 2,
+    "transistor_count": 63000,
+    "process_node_um": 2.0
+  },
+  "compatibility": {
+    "8088_compatible": true,
+    "8086_instructions": true,
+    "8080_emulation": "Native mode switch - runs 8080/Z80 code!",
+    "pin_compatible": "Drop-in replacement for 8088"
+  },
+  "improvements_over_8088": {
+    "faster_multiply": "4× faster MUL/DIV",
+    "faster_shifts": "Single-cycle barrel shifter",
+    "faster_string_ops": "Optimized REP instructions",
+    "block_io": "INM/OUTM instructions",
+    "bit_operations": "New bit manipulation",
+    "overall_speedup": "10-40% faster depending on code"
+  },
+  "8080_emulation_mode": {
+    "description": "Hardware 8080 mode via special instruction",
+    "registers": "Maps V20 regs to 8080 regs",
+    "addressing": "64KB 8080 address space",
+    "use_case": "Run CP/M on PC hardware"
+  },
+  "instruction_mix": {
+    "alu_operations": 0.35,
+    "memory_load": 0.20,
+    "memory_store": 0.10,
+    "branch": 0.15,
+    "string_ops": 0.10,
+    "multiply_divide": 0.05,
+    "other": 0.05
+  },
+  "instruction_timings": {
+    "alu_reg_reg": 2,
+    "alu_reg_mem": 10,
+    "multiply_16": 25,
+    "divide_16": 30,
+    "string_move": 4,
+    "branch_taken": 10,
+    "branch_not_taken": 4,
+    "units": "clock_cycles"
+  },
+  "vs_8088_timings": {
+    "8088_mul_16": 118,
+    "V20_mul_16": 25,
+    "speedup": "4.7×",
+    "8088_div_16": 150,
+    "V20_div_16": 30,
+    "div_speedup": "5×"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.12,
+    "mips_at_8mhz": 0.96,
+    "vs_8088_at_same_clock": "10-40% faster"
+  },
+  "historical_context": {
+    "year_introduced": 1984,
+    "manufacturer": "NEC",
+    "significance": "First major x86 clone, faster than Intel",
+    "lawsuit": "Intel vs NEC (1984-1989) - NEC WON",
+    "lawsuit_impact": "Established right to clean-room x86 clones",
+    "variants": ["V20 (8088 compatible)", "V30 (8086 compatible)"]
+  },
+  "market_impact": {
+    "sold_millions": true,
+    "upgrade_path": "Drop into existing PC/XT for instant speedup",
+    "price": "Similar to Intel, but faster",
+    "turbo_pcs": "Many 'turbo' PCs used V20/V30"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.10,
+    "tolerance_percent": 3.0
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "model_metadata": {
+    "name": "Motorola 68008 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "Motorola 68008 (1982)",
+    "description": "8-bit bus 68000 - like 8088 is to 8086"
+  },
+  "architecture": {
+    "word_size_bits": 32,
+    "internal_data_path": 32,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 20,
+    "address_space_bytes": 1048576,
+    "clock_frequency_mhz": 8.0,
+    "max_clock_mhz": 10.0,
+    "data_registers": 8,
+    "address_registers": 8,
+    "architecture_type": "CISC_microcoded",
+    "pipeline_stages": 2,
+    "transistor_count": 70000,
+    "package": ["48-pin DIP", "52-pin PLCC"]
+  },
+  "vs_68000": {
+    "internal": "Identical - same 32-bit core",
+    "external_bus": "8-bit vs 16-bit",
+    "address_space": "1 MB vs 16 MB",
+    "package": "48-pin vs 64-pin",
+    "speed_penalty": "~60% slower due to 8-bit bus",
+    "cost": "Lower (fewer pins, simpler PCB)"
+  },
+  "instruction_set": {
+    "compatibility": "100% 68000 compatible",
+    "data_sizes": ["byte", "word", "long"],
+    "addressing_modes": 14,
+    "total_instructions": 56
+  },
+  "instruction_mix": {
+    "register_ops": 0.30,
+    "memory_load": 0.25,
+    "memory_store": 0.15,
+    "branch": 0.15,
+    "other": 0.15
+  },
+  "instruction_timings": {
+    "register_to_register": 4,
+    "memory_read_byte": 8,
+    "memory_read_word": 16,
+    "memory_read_long": 32,
+    "branch_taken": 10,
+    "multiply_16": 70,
+    "divide_16": 140,
+    "units": "clock_cycles",
+    "note": "Word/long operations take 2x/4x due to 8-bit bus"
+  },
+  "bus_penalty": {
+    "description": "8-bit bus requires multiple transfers",
+    "word_transfer": "2 bus cycles (vs 1 on 68000)",
+    "long_transfer": "4 bus cycles (vs 2 on 68000)",
+    "impact": "~60% performance loss vs 68000"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.08,
+    "mips_at_8mhz": 0.64,
+    "vs_68000": "About 40% of 68000 speed"
+  },
+  "historical_context": {
+    "year_introduced": 1982,
+    "significance": "Low-cost 68000 for 8-bit systems",
+    "relationship": "68008 : 68000 :: 8088 : 8086",
+    "systems": ["Sinclair QL", "Various embedded"]
+  },
+  "systems_using_68008": {
+    "sinclair_ql": "1984 - innovative but troubled",
+    "embedded": "Industrial controllers",
+    "educational": "University teaching systems"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.07,
+    "tolerance_percent": 3.0
+  }
+}
