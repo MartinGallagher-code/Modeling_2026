@@ -1,0 +1,69 @@
+{
+  "name": "MOS 6510",
+  "year": 1982,
+  "clock_mhz": 1.0,
+  "bus_width": 8,
+  "transistors": 4000,
+  "timing_categories": {
+    "implied": {
+      "cycles": 2,
+      "weight": 0.18,
+      "desc": "Implied"
+    },
+    "immediate": {
+      "cycles": 2,
+      "weight": 0.18,
+      "desc": "Immediate"
+    },
+    "zero_page": {
+      "cycles": 3,
+      "weight": 0.22,
+      "desc": "Zero page"
+    },
+    "zero_page_x": {
+      "cycles": 4,
+      "weight": 0.1,
+      "desc": "Zero page,X"
+    },
+    "absolute": {
+      "cycles": 4,
+      "weight": 0.1,
+      "desc": "Absolute"
+    },
+    "absolute_x": {
+      "cycles": 5,
+      "weight": 0.05,
+      "desc": "Absolute,X"
+    },
+    "branch_taken": {
+      "cycles": 3,
+      "weight": 0.08,
+      "desc": "Branch taken"
+    },
+    "branch_not_taken": {
+      "cycles": 2,
+      "weight": 0.04,
+      "desc": "Branch not taken"
+    },
+    "jsr_rts": {
+      "cycles": 6,
+      "weight": 0.05,
+      "desc": "JSR, RTS"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      430000,
+      1000000
+    ],
+    "cpi_range": [
+      2,
+      7
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "fetch"
+    ]
+  },
+  "source": "MOS 6510 Data Sheet"
+}

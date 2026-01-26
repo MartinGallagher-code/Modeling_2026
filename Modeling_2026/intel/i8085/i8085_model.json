@@ -1,0 +1,69 @@
+{
+  "name": "Intel 8085",
+  "year": 1976,
+  "clock_mhz": 3.0,
+  "bus_width": 8,
+  "transistors": 6500,
+  "timing_categories": {
+    "mov_reg_reg": {
+      "cycles": 4,
+      "weight": 0.22,
+      "desc": "MOV r1,r2"
+    },
+    "mov_reg_mem": {
+      "cycles": 7,
+      "weight": 0.15,
+      "desc": "MOV r,M"
+    },
+    "alu_register": {
+      "cycles": 4,
+      "weight": 0.25,
+      "desc": "ADD/SUB/AND/OR r"
+    },
+    "alu_memory": {
+      "cycles": 7,
+      "weight": 0.08,
+      "desc": "ADD M, etc."
+    },
+    "immediate": {
+      "cycles": 7,
+      "weight": 0.1,
+      "desc": "MVI, ADI"
+    },
+    "branch_taken": {
+      "cycles": 10,
+      "weight": 0.08,
+      "desc": "Conditional jumps"
+    },
+    "branch_not_taken": {
+      "cycles": 7,
+      "weight": 0.04,
+      "desc": "Jcc not taken"
+    },
+    "call_return": {
+      "cycles": 16,
+      "weight": 0.05,
+      "desc": "CALL/RET"
+    },
+    "stack_ops": {
+      "cycles": 12,
+      "weight": 0.03,
+      "desc": "PUSH/POP"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      370000,
+      770000
+    ],
+    "cpi_range": [
+      4,
+      16
+    ],
+    "expected_bottlenecks": [
+      "decode",
+      "memory"
+    ]
+  },
+  "source": "Intel 8085A Users Manual"
+}

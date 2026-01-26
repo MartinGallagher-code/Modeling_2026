@@ -1,0 +1,69 @@
+{
+  "name": "Intel 4004",
+  "year": 1971,
+  "clock_mhz": 0.74,
+  "bus_width": 4,
+  "transistors": 2300,
+  "timing_categories": {
+    "register_ops": {
+      "cycles": 8,
+      "weight": 0.25,
+      "desc": "INC, ADD, SUB, LD, XCH"
+    },
+    "accumulator_imm": {
+      "cycles": 16,
+      "weight": 0.15,
+      "desc": "LDM, FIM"
+    },
+    "memory_ops": {
+      "cycles": 8,
+      "weight": 0.2,
+      "desc": "RDM, WRM, RDR, WRR"
+    },
+    "bcd_arithmetic": {
+      "cycles": 8,
+      "weight": 0.1,
+      "desc": "DAA, CLC, STC"
+    },
+    "jump_unconditional": {
+      "cycles": 16,
+      "weight": 0.08,
+      "desc": "JUN"
+    },
+    "jump_conditional": {
+      "cycles": 16,
+      "weight": 0.07,
+      "desc": "JCN"
+    },
+    "subroutine": {
+      "cycles": 16,
+      "weight": 0.05,
+      "desc": "JMS, BBL"
+    },
+    "io_ops": {
+      "cycles": 8,
+      "weight": 0.08,
+      "desc": "I/O operations"
+    },
+    "nop_misc": {
+      "cycles": 8,
+      "weight": 0.02,
+      "desc": "NOP"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      46000,
+      93000
+    ],
+    "cpi_range": [
+      8,
+      16
+    ],
+    "expected_bottlenecks": [
+      "fetch",
+      "sequential fetch"
+    ]
+  },
+  "source": "MCS-4 Users Manual"
+}

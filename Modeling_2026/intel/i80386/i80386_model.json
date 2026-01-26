@@ -1,0 +1,69 @@
+{
+  "name": "Intel 80386",
+  "year": 1985,
+  "clock_mhz": 16.0,
+  "bus_width": 32,
+  "transistors": 275000,
+  "timing_categories": {
+    "mov_reg_reg": {
+      "cycles": 2,
+      "weight": 0.22,
+      "desc": "MOV r,r"
+    },
+    "mov_reg_mem": {
+      "cycles": 4,
+      "weight": 0.18,
+      "desc": "MOV r,m"
+    },
+    "alu_register": {
+      "cycles": 2,
+      "weight": 0.25,
+      "desc": "ALU r,r"
+    },
+    "alu_memory": {
+      "cycles": 6,
+      "weight": 0.1,
+      "desc": "ALU r,m"
+    },
+    "immediate": {
+      "cycles": 2,
+      "weight": 0.1,
+      "desc": "Immediate ops"
+    },
+    "branch_taken": {
+      "cycles": 10,
+      "weight": 0.06,
+      "desc": "Jcc taken"
+    },
+    "branch_not_taken": {
+      "cycles": 3,
+      "weight": 0.04,
+      "desc": "Jcc not taken"
+    },
+    "call_return": {
+      "cycles": 10,
+      "weight": 0.03,
+      "desc": "CALL/RET"
+    },
+    "multiply": {
+      "cycles": 14,
+      "weight": 0.02,
+      "desc": "MUL/IMUL"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      3000000,
+      11000000
+    ],
+    "cpi_range": [
+      2,
+      6
+    ],
+    "expected_bottlenecks": [
+      "cache",
+      "memory"
+    ]
+  },
+  "source": "Intel 80386 Programmers Reference Manual"
+}

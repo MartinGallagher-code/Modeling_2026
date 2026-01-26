@@ -1,0 +1,59 @@
+{
+  "name": "Harris RTX2000",
+  "year": 1988,
+  "clock_mhz": 10.0,
+  "bus_width": 16,
+  "transistors": 15000,
+  "timing_categories": {
+    "alu": {
+      "cycles": 1,
+      "weight": 0.4,
+      "desc": "ALU operations"
+    },
+    "stack": {
+      "cycles": 1,
+      "weight": 0.2,
+      "desc": "Stack operations"
+    },
+    "memory": {
+      "cycles": 2,
+      "weight": 0.15,
+      "desc": "Memory access"
+    },
+    "call_ret": {
+      "cycles": 1,
+      "weight": 0.1,
+      "desc": "CALL, RET"
+    },
+    "branch": {
+      "cycles": 2,
+      "weight": 0.08,
+      "desc": "Branch"
+    },
+    "multiply": {
+      "cycles": 2,
+      "weight": 0.05,
+      "desc": "Multiply"
+    },
+    "misc": {
+      "cycles": 1,
+      "weight": 0.02,
+      "desc": "Other"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      8000000,
+      12000000
+    ],
+    "cpi_range": [
+      1,
+      2
+    ],
+    "expected_bottlenecks": [
+      "stack",
+      "memory"
+    ]
+  },
+  "source": "Harris RTX2000 Data Sheet"
+}

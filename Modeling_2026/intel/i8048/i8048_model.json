@@ -1,0 +1,64 @@
+{
+  "name": "Intel 8048",
+  "year": 1976,
+  "clock_mhz": 6.0,
+  "bus_width": 8,
+  "transistors": 6000,
+  "timing_categories": {
+    "mov_a_r": {
+      "cycles": 15,
+      "weight": 0.25,
+      "desc": "MOV A,Rn"
+    },
+    "mov_a_mem": {
+      "cycles": 15,
+      "weight": 0.15,
+      "desc": "MOV A,@Ri"
+    },
+    "alu_ops": {
+      "cycles": 15,
+      "weight": 0.25,
+      "desc": "ADD, ADDC, ANL, ORL"
+    },
+    "immediate": {
+      "cycles": 30,
+      "weight": 0.1,
+      "desc": "MOV A,#data"
+    },
+    "jump": {
+      "cycles": 30,
+      "weight": 0.1,
+      "desc": "JMP, CALL"
+    },
+    "conditional": {
+      "cycles": 30,
+      "weight": 0.08,
+      "desc": "JZ, JNZ"
+    },
+    "io_ops": {
+      "cycles": 30,
+      "weight": 0.05,
+      "desc": "IN, OUT"
+    },
+    "misc": {
+      "cycles": 15,
+      "weight": 0.02,
+      "desc": "NOP, other"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      400000,
+      800000
+    ],
+    "cpi_range": [
+      8,
+      15
+    ],
+    "expected_bottlenecks": [
+      "fetch",
+      "decode"
+    ]
+  },
+  "source": "Intel MCS-48 Users Manual"
+}

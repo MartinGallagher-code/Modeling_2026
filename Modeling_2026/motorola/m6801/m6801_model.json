@@ -1,0 +1,69 @@
+{
+  "name": "Motorola 6801",
+  "year": 1978,
+  "clock_mhz": 1.0,
+  "bus_width": 8,
+  "transistors": 15000,
+  "timing_categories": {
+    "inherent": {
+      "cycles": 2,
+      "weight": 0.2,
+      "desc": "Inherent"
+    },
+    "immediate": {
+      "cycles": 2,
+      "weight": 0.18,
+      "desc": "Immediate"
+    },
+    "direct": {
+      "cycles": 3,
+      "weight": 0.2,
+      "desc": "Direct"
+    },
+    "indexed": {
+      "cycles": 4,
+      "weight": 0.15,
+      "desc": "Indexed"
+    },
+    "extended": {
+      "cycles": 4,
+      "weight": 0.1,
+      "desc": "Extended"
+    },
+    "branch": {
+      "cycles": 3,
+      "weight": 0.08,
+      "desc": "Branch"
+    },
+    "jsr_rts": {
+      "cycles": 6,
+      "weight": 0.05,
+      "desc": "JSR, RTS"
+    },
+    "multiply": {
+      "cycles": 10,
+      "weight": 0.02,
+      "desc": "MUL"
+    },
+    "misc": {
+      "cycles": 2,
+      "weight": 0.02,
+      "desc": "Other"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      300000,
+      600000
+    ],
+    "cpi_range": [
+      2,
+      8
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "fetch"
+    ]
+  },
+  "source": "MC6801 Data Sheet"
+}

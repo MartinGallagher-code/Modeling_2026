@@ -1,0 +1,64 @@
+{
+  "name": "Motorola 68882",
+  "year": 1985,
+  "clock_mhz": 25.0,
+  "bus_width": 32,
+  "transistors": 175000,
+  "timing_categories": {
+    "fmove": {
+      "cycles": 15,
+      "weight": 0.2,
+      "desc": "FMOVE"
+    },
+    "fadd": {
+      "cycles": 25,
+      "weight": 0.2,
+      "desc": "FADD"
+    },
+    "fsub": {
+      "cycles": 25,
+      "weight": 0.1,
+      "desc": "FSUB"
+    },
+    "fmul": {
+      "cycles": 35,
+      "weight": 0.2,
+      "desc": "FMUL"
+    },
+    "fdiv": {
+      "cycles": 75,
+      "weight": 0.1,
+      "desc": "FDIV"
+    },
+    "fsqrt": {
+      "cycles": 100,
+      "weight": 0.05,
+      "desc": "FSQRT"
+    },
+    "fsin_fcos": {
+      "cycles": 160,
+      "weight": 0.05,
+      "desc": "FSIN, FCOS"
+    },
+    "fcomp": {
+      "cycles": 20,
+      "weight": 0.1,
+      "desc": "FCMP"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      250000,
+      800000
+    ],
+    "cpi_range": [
+      25,
+      100
+    ],
+    "expected_bottlenecks": [
+      "execute",
+      "fpu"
+    ]
+  },
+  "source": "MC68882 Users Manual"
+}

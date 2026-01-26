@@ -1,0 +1,74 @@
+{
+  "name": "Motorola 68008",
+  "year": 1982,
+  "clock_mhz": 8.0,
+  "bus_width": 8,
+  "transistors": 68000,
+  "timing_categories": {
+    "move_reg": {
+      "cycles": 4,
+      "weight": 0.2,
+      "desc": "MOVE Dn,Dn"
+    },
+    "move_mem": {
+      "cycles": 18,
+      "weight": 0.15,
+      "desc": "MOVE (An),Dn"
+    },
+    "alu_reg": {
+      "cycles": 4,
+      "weight": 0.2,
+      "desc": "ALU register"
+    },
+    "alu_mem": {
+      "cycles": 18,
+      "weight": 0.1,
+      "desc": "ALU memory"
+    },
+    "immediate": {
+      "cycles": 12,
+      "weight": 0.1,
+      "desc": "Immediate"
+    },
+    "branch": {
+      "cycles": 14,
+      "weight": 0.1,
+      "desc": "Branch"
+    },
+    "jsr_rts": {
+      "cycles": 24,
+      "weight": 0.05,
+      "desc": "JSR, RTS"
+    },
+    "multiply": {
+      "cycles": 74,
+      "weight": 0.05,
+      "desc": "Multiply"
+    },
+    "divide": {
+      "cycles": 162,
+      "weight": 0.03,
+      "desc": "Divide"
+    },
+    "misc": {
+      "cycles": 4,
+      "weight": 0.02,
+      "desc": "Other"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      600000,
+      1200000
+    ],
+    "cpi_range": [
+      7,
+      160
+    ],
+    "expected_bottlenecks": [
+      "bus_width",
+      "memory"
+    ]
+  },
+  "source": "M68008 Users Manual"
+}

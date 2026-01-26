@@ -1,0 +1,69 @@
+{
+  "name": "National NS32016",
+  "year": 1982,
+  "clock_mhz": 10.0,
+  "bus_width": 16,
+  "transistors": 60000,
+  "timing_categories": {
+    "mov_reg": {
+      "cycles": 5,
+      "weight": 0.22,
+      "desc": "MOV reg,reg"
+    },
+    "mov_mem": {
+      "cycles": 12,
+      "weight": 0.18,
+      "desc": "MOV mem,reg"
+    },
+    "alu_reg": {
+      "cycles": 5,
+      "weight": 0.22,
+      "desc": "ALU reg,reg"
+    },
+    "alu_mem": {
+      "cycles": 14,
+      "weight": 0.1,
+      "desc": "ALU mem,reg"
+    },
+    "branch": {
+      "cycles": 8,
+      "weight": 0.1,
+      "desc": "Branch"
+    },
+    "call_ret": {
+      "cycles": 20,
+      "weight": 0.06,
+      "desc": "BSR, RET"
+    },
+    "multiply": {
+      "cycles": 25,
+      "weight": 0.05,
+      "desc": "MUL"
+    },
+    "divide": {
+      "cycles": 50,
+      "weight": 0.02,
+      "desc": "DIV"
+    },
+    "misc": {
+      "cycles": 5,
+      "weight": 0.05,
+      "desc": "Other"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      800000,
+      2000000
+    ],
+    "cpi_range": [
+      5,
+      25
+    ],
+    "expected_bottlenecks": [
+      "decode",
+      "memory"
+    ]
+  },
+  "source": "NS32016 Data Sheet"
+}

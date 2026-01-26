@@ -1,0 +1,74 @@
+{
+  "name": "TI TMS9995",
+  "year": 1981,
+  "clock_mhz": 12.0,
+  "bus_width": 8,
+  "transistors": 24000,
+  "timing_categories": {
+    "register": {
+      "cycles": 8,
+      "weight": 0.22,
+      "desc": "Register-register"
+    },
+    "immediate": {
+      "cycles": 10,
+      "weight": 0.15,
+      "desc": "Immediate"
+    },
+    "memory": {
+      "cycles": 16,
+      "weight": 0.18,
+      "desc": "Memory"
+    },
+    "jump": {
+      "cycles": 8,
+      "weight": 0.12,
+      "desc": "Jump"
+    },
+    "cru": {
+      "cycles": 10,
+      "weight": 0.08,
+      "desc": "CRU bit ops"
+    },
+    "shift": {
+      "cycles": 14,
+      "weight": 0.08,
+      "desc": "Shift"
+    },
+    "multiply": {
+      "cycles": 40,
+      "weight": 0.05,
+      "desc": "MPY"
+    },
+    "divide": {
+      "cycles": 60,
+      "weight": 0.02,
+      "desc": "DIV"
+    },
+    "blwp": {
+      "cycles": 18,
+      "weight": 0.05,
+      "desc": "Context switch"
+    },
+    "misc": {
+      "cycles": 8,
+      "weight": 0.05,
+      "desc": "Other"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      500000,
+      1200000
+    ],
+    "cpi_range": [
+      8,
+      40
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "bus_width"
+    ]
+  },
+  "source": "TI TMS9995 Users Guide"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "Motorola 68000",
+  "year": 1979,
+  "clock_mhz": 8.0,
+  "bus_width": 16,
+  "transistors": 68000,
+  "timing_categories": {
+    "move_reg": {
+      "cycles": 4,
+      "weight": 0.2,
+      "desc": "MOVE Dn,Dn"
+    },
+    "move_mem": {
+      "cycles": 12,
+      "weight": 0.15,
+      "desc": "MOVE (An),Dn"
+    },
+    "alu_reg": {
+      "cycles": 4,
+      "weight": 0.2,
+      "desc": "ADD, SUB, AND reg"
+    },
+    "alu_mem": {
+      "cycles": 12,
+      "weight": 0.1,
+      "desc": "ALU with memory"
+    },
+    "immediate": {
+      "cycles": 8,
+      "weight": 0.1,
+      "desc": "MOVE #imm"
+    },
+    "branch": {
+      "cycles": 10,
+      "weight": 0.1,
+      "desc": "Bcc"
+    },
+    "jsr_rts": {
+      "cycles": 18,
+      "weight": 0.05,
+      "desc": "JSR, RTS"
+    },
+    "multiply": {
+      "cycles": 70,
+      "weight": 0.05,
+      "desc": "MULS, MULU"
+    },
+    "divide": {
+      "cycles": 158,
+      "weight": 0.03,
+      "desc": "DIVS, DIVU"
+    },
+    "misc": {
+      "cycles": 4,
+      "weight": 0.02,
+      "desc": "NOP, etc."
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      1000000,
+      2000000
+    ],
+    "cpi_range": [
+      4,
+      158
+    ],
+    "expected_bottlenecks": [
+      "ea_calc",
+      "decode"
+    ]
+  },
+  "source": "M68000 Users Manual"
+}

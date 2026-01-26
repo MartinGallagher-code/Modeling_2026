@@ -1,0 +1,64 @@
+{
+  "name": "Intel 80387",
+  "year": 1987,
+  "clock_mhz": 16.0,
+  "bus_width": 32,
+  "transistors": 104000,
+  "timing_categories": {
+    "fld": {
+      "cycles": 20,
+      "weight": 0.2,
+      "desc": "FLD (load)"
+    },
+    "fst": {
+      "cycles": 25,
+      "weight": 0.15,
+      "desc": "FST (store)"
+    },
+    "fadd": {
+      "cycles": 30,
+      "weight": 0.2,
+      "desc": "FADD"
+    },
+    "fsub": {
+      "cycles": 30,
+      "weight": 0.1,
+      "desc": "FSUB"
+    },
+    "fmul": {
+      "cycles": 50,
+      "weight": 0.15,
+      "desc": "FMUL"
+    },
+    "fdiv": {
+      "cycles": 90,
+      "weight": 0.1,
+      "desc": "FDIV"
+    },
+    "fsqrt": {
+      "cycles": 120,
+      "weight": 0.05,
+      "desc": "FSQRT"
+    },
+    "fcomp": {
+      "cycles": 25,
+      "weight": 0.05,
+      "desc": "FCOMP"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      150000,
+      500000
+    ],
+    "cpi_range": [
+      30,
+      120
+    ],
+    "expected_bottlenecks": [
+      "execute",
+      "fpu"
+    ]
+  },
+  "source": "Intel 80387 Programmers Reference"
+}

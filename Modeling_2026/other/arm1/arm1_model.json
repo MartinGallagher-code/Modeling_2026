@@ -1,0 +1,69 @@
+{
+  "name": "Acorn ARM1",
+  "year": 1985,
+  "clock_mhz": 8.0,
+  "bus_width": 32,
+  "transistors": 25000,
+  "timing_categories": {
+    "data_proc": {
+      "cycles": 1,
+      "weight": 0.35,
+      "desc": "Data processing"
+    },
+    "load_single": {
+      "cycles": 3,
+      "weight": 0.18,
+      "desc": "LDR"
+    },
+    "store_single": {
+      "cycles": 2,
+      "weight": 0.1,
+      "desc": "STR"
+    },
+    "load_multiple": {
+      "cycles": 4,
+      "weight": 0.05,
+      "desc": "LDM"
+    },
+    "branch": {
+      "cycles": 3,
+      "weight": 0.12,
+      "desc": "B, BL"
+    },
+    "branch_link": {
+      "cycles": 4,
+      "weight": 0.05,
+      "desc": "BL"
+    },
+    "multiply": {
+      "cycles": 16,
+      "weight": 0.05,
+      "desc": "MUL"
+    },
+    "swi": {
+      "cycles": 4,
+      "weight": 0.02,
+      "desc": "SWI"
+    },
+    "misc": {
+      "cycles": 1,
+      "weight": 0.08,
+      "desc": "Other"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      4000000,
+      8000000
+    ],
+    "cpi_range": [
+      1,
+      4
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "pipeline"
+    ]
+  },
+  "source": "ARM1 Technical Reference Manual"
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Motorola 6802",
+  "year": 1977,
+  "clock_mhz": 1.0,
+  "bus_width": 8,
+  "transistors": 5000,
+  "timing_categories": {
+    "inherent": {
+      "cycles": 2,
+      "weight": 0.2,
+      "desc": "Inherent addressing"
+    },
+    "immediate": {
+      "cycles": 2,
+      "weight": 0.18,
+      "desc": "Immediate"
+    },
+    "direct": {
+      "cycles": 3,
+      "weight": 0.2,
+      "desc": "Direct page"
+    },
+    "extended": {
+      "cycles": 4,
+      "weight": 0.12,
+      "desc": "Extended"
+    },
+    "indexed": {
+      "cycles": 5,
+      "weight": 0.1,
+      "desc": "Indexed"
+    },
+    "branch_taken": {
+      "cycles": 4,
+      "weight": 0.08,
+      "desc": "Branch taken"
+    },
+    "branch_not_taken": {
+      "cycles": 4,
+      "weight": 0.05,
+      "desc": "Branch not taken"
+    },
+    "jsr_rts": {
+      "cycles": 9,
+      "weight": 0.05,
+      "desc": "JSR, RTS"
+    },
+    "stack": {
+      "cycles": 4,
+      "weight": 0.02,
+      "desc": "Stack ops"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      250000,
+      500000
+    ],
+    "cpi_range": [
+      2,
+      10
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "fetch"
+    ]
+  },
+  "source": "Motorola MC6802 Data Sheet"
+}

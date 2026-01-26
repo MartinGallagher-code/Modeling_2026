@@ -1,0 +1,69 @@
+{
+  "name": "WDC 65816",
+  "year": 1984,
+  "clock_mhz": 2.8,
+  "bus_width": 16,
+  "transistors": 22000,
+  "timing_categories": {
+    "implied": {
+      "cycles": 2,
+      "weight": 0.15,
+      "desc": "Implied"
+    },
+    "immediate": {
+      "cycles": 2,
+      "weight": 0.18,
+      "desc": "Immediate"
+    },
+    "direct": {
+      "cycles": 3,
+      "weight": 0.18,
+      "desc": "Direct page"
+    },
+    "direct_x": {
+      "cycles": 4,
+      "weight": 0.1,
+      "desc": "Direct,X"
+    },
+    "absolute": {
+      "cycles": 4,
+      "weight": 0.12,
+      "desc": "Absolute"
+    },
+    "long": {
+      "cycles": 5,
+      "weight": 0.08,
+      "desc": "Long addressing"
+    },
+    "branch_taken": {
+      "cycles": 3,
+      "weight": 0.08,
+      "desc": "Branch taken"
+    },
+    "branch_not_taken": {
+      "cycles": 2,
+      "weight": 0.04,
+      "desc": "Branch not taken"
+    },
+    "jsr_rts": {
+      "cycles": 8,
+      "weight": 0.07,
+      "desc": "JSR, RTS"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      1000000,
+      2500000
+    ],
+    "cpi_range": [
+      2,
+      8
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "fetch"
+    ]
+  },
+  "source": "WDC 65816 Data Sheet"
+}

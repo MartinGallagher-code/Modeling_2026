@@ -1,0 +1,64 @@
+{
+  "name": "MIPS R2000",
+  "year": 1985,
+  "clock_mhz": 8.0,
+  "bus_width": 32,
+  "transistors": 110000,
+  "timing_categories": {
+    "alu_reg": {
+      "cycles": 1,
+      "weight": 0.3,
+      "desc": "ALU R-type"
+    },
+    "load": {
+      "cycles": 2,
+      "weight": 0.2,
+      "desc": "LW (load delay)"
+    },
+    "store": {
+      "cycles": 1,
+      "weight": 0.12,
+      "desc": "SW"
+    },
+    "branch": {
+      "cycles": 1,
+      "weight": 0.12,
+      "desc": "BEQ, BNE (delay slot)"
+    },
+    "jump": {
+      "cycles": 1,
+      "weight": 0.08,
+      "desc": "J, JAL"
+    },
+    "immediate": {
+      "cycles": 1,
+      "weight": 0.1,
+      "desc": "ADDI, ORI, etc."
+    },
+    "multiply": {
+      "cycles": 12,
+      "weight": 0.05,
+      "desc": "MULT"
+    },
+    "divide": {
+      "cycles": 35,
+      "weight": 0.03,
+      "desc": "DIV"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      5000000,
+      10000000
+    ],
+    "cpi_range": [
+      1,
+      3
+    ],
+    "expected_bottlenecks": [
+      "pipeline",
+      "cache"
+    ]
+  },
+  "source": "MIPS R2000 Users Manual"
+}

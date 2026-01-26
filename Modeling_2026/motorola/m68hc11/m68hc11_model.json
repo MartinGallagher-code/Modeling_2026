@@ -1,0 +1,69 @@
+{
+  "name": "Motorola 68HC11",
+  "year": 1985,
+  "clock_mhz": 2.0,
+  "bus_width": 8,
+  "transistors": 45000,
+  "timing_categories": {
+    "inherent": {
+      "cycles": 2,
+      "weight": 0.18,
+      "desc": "Inherent"
+    },
+    "immediate": {
+      "cycles": 2,
+      "weight": 0.18,
+      "desc": "Immediate"
+    },
+    "direct": {
+      "cycles": 3,
+      "weight": 0.18,
+      "desc": "Direct"
+    },
+    "indexed": {
+      "cycles": 4,
+      "weight": 0.15,
+      "desc": "Indexed"
+    },
+    "extended": {
+      "cycles": 4,
+      "weight": 0.1,
+      "desc": "Extended"
+    },
+    "branch": {
+      "cycles": 3,
+      "weight": 0.08,
+      "desc": "Branch"
+    },
+    "jsr_rts": {
+      "cycles": 5,
+      "weight": 0.05,
+      "desc": "JSR, RTS"
+    },
+    "multiply": {
+      "cycles": 10,
+      "weight": 0.04,
+      "desc": "MUL, IDIV"
+    },
+    "misc": {
+      "cycles": 2,
+      "weight": 0.04,
+      "desc": "Other"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      500000,
+      1000000
+    ],
+    "cpi_range": [
+      2,
+      8
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "decode"
+    ]
+  },
+  "source": "MC68HC11 Reference Manual"
+}
