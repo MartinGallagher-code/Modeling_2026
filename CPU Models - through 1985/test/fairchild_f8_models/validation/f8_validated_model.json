@@ -1,0 +1,86 @@
+{
+  "processor": "Fairchild F8",
+  "config": {
+    "family": "FAIRCHILD",
+    "category": "SIMPLE_8BIT",
+    "year": 1975,
+    "bits": 8,
+    "clock_mhz": 2.0,
+    "transistors": 6000,
+    "process_um": 6,
+    "description": "Multi-chip 8-bit microcontroller with 64-byte scratchpad",
+    "base_cpi": 4.9,
+    "has_prefetch": false,
+    "has_cache": false,
+    "pipeline_stages": 1,
+    "branch_penalty": 2,
+    "timings": {
+      "alu": 4,
+      "mov": 4,
+      "branch": 6,
+      "memory": 6
+    },
+    "cycle_time_us": 2.0,
+    "short_cycle_phi": 4,
+    "long_cycle_phi": 6,
+    "ips_typical": 408163.2653061224,
+    "mips": 0.4081632653061224,
+    "validation": {
+      "source": "Fairchild F8 User's Guide, MAME emulator",
+      "short_cycle": "4 \u03c6 periods",
+      "long_cycle": "6 \u03c6 periods"
+    }
+  },
+  "workloads": {
+    "typical": {
+      "cpi_short": 4,
+      "cpi_long": 6,
+      "avg_cpi": 4.9,
+      "ipc": 0.2040816326530612,
+      "ips": 408163.2653061224,
+      "mips": 0.4081632653061224,
+      "avg_instruction_time_us": 2.45,
+      "validation_status": "PASS"
+    },
+    "compute": {
+      "cpi_short": 4,
+      "cpi_long": 6,
+      "avg_cpi": 4.6,
+      "ipc": 0.2173913043478261,
+      "ips": 434782.6086956522,
+      "mips": 0.4347826086956522,
+      "avg_instruction_time_us": 2.3,
+      "validation_status": "PASS"
+    },
+    "control": {
+      "cpi_short": 4,
+      "cpi_long": 6,
+      "avg_cpi": 5.199999999999999,
+      "ipc": 0.19230769230769235,
+      "ips": 384615.3846153847,
+      "mips": 0.3846153846153847,
+      "avg_instruction_time_us": 2.5999999999999996,
+      "validation_status": "PASS"
+    },
+    "io_heavy": {
+      "cpi_short": 4,
+      "cpi_long": 6,
+      "avg_cpi": 5.300000000000001,
+      "ipc": 0.18867924528301885,
+      "ips": 377358.4905660377,
+      "mips": 0.3773584905660377,
+      "avg_instruction_time_us": 2.6500000000000004,
+      "validation_status": "PASS"
+    },
+    "channel_f": {
+      "cpi_short": 4,
+      "cpi_long": 6,
+      "avg_cpi": 5.0,
+      "ipc": 0.2,
+      "ips": 400000.0,
+      "mips": 0.4,
+      "avg_instruction_time_us": 2.5,
+      "validation_status": "PASS"
+    }
+  }
+}

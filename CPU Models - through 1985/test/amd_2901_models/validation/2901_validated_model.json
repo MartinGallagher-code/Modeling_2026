@@ -1,0 +1,79 @@
+{
+  "processor": "AMD 2901",
+  "config": {
+    "family": "AMD",
+    "category": "BIT_SLICE",
+    "year": 1975,
+    "bits": 4,
+    "clock_mhz": 20.0,
+    "transistors": 200,
+    "process_um": 6,
+    "description": "4-bit bit-slice ALU with 16x4 register file",
+    "base_cpi": 1.0,
+    "microops_per_instruction": 3.5,
+    "has_prefetch": false,
+    "has_cache": false,
+    "pipeline_stages": 1,
+    "branch_penalty": 0,
+    "timings": {
+      "alu": 1,
+      "mov": 1,
+      "branch": 2,
+      "memory": 3
+    },
+    "microops_per_second": 20000000,
+    "macro_ips": 5714285.714285715,
+    "mips": 5.714285714285714,
+    "speedup_vs_8085": 15.444015444015445,
+    "validation": {
+      "source": "AMD Am2900 Family Data Book",
+      "note": "Bit-slice - performance depends on system configuration"
+    }
+  },
+  "workloads": {
+    "typical": {
+      "slices": 4,
+      "data_width": 16,
+      "clock_mhz": 20.0,
+      "cycle_time_ns": 50.0,
+      "microops_per_second": 20000000.0,
+      "macro_ips": 5714285.714285715,
+      "mips": 5.714285714285714,
+      "equivalent_8085_speedup": 15.444015444015445,
+      "validation_status": "CHECK (speedup: 15.4x)"
+    },
+    "compute": {
+      "slices": 4,
+      "data_width": 16,
+      "clock_mhz": 20.0,
+      "cycle_time_ns": 50.0,
+      "microops_per_second": 20000000.0,
+      "macro_ips": 8000000.0,
+      "mips": 8.0,
+      "equivalent_8085_speedup": 21.62162162162162,
+      "validation_status": "CHECK (speedup: 21.6x)"
+    },
+    "control": {
+      "slices": 4,
+      "data_width": 16,
+      "clock_mhz": 20.0,
+      "cycle_time_ns": 50.0,
+      "microops_per_second": 20000000.0,
+      "macro_ips": 4444444.444444444,
+      "mips": 4.444444444444444,
+      "equivalent_8085_speedup": 12.012012012012011,
+      "validation_status": "PASS"
+    },
+    "emulation": {
+      "slices": 4,
+      "data_width": 16,
+      "clock_mhz": 20.0,
+      "cycle_time_ns": 50.0,
+      "microops_per_second": 20000000.0,
+      "macro_ips": 4000000.0,
+      "mips": 4.0,
+      "equivalent_8085_speedup": 10.81081081081081,
+      "validation_status": "PASS"
+    }
+  }
+}
