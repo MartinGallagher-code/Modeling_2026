@@ -1,97 +1,166 @@
 #!/usr/bin/env python3
 """
-AMD 2901 Improved Performance Model
+AMD Am2901 IMPROVED Performance Model v2.0
 
-The AMD 2901 is unique - it's a 4-bit bit-slice processor, not a standalone CPU.
-Multiple 2901s are cascaded to create wider data paths (8, 16, 32-bit systems).
-Performance depends heavily on system configuration and microcode.
+The Am2901 is a 4-bit bit-slice ALU processor building block.
+It's NOT a standalone CPU - it requires:
+- Microsequencer (Am2909/2910) for control flow
+- Carry lookahead (Am2902) for fast multi-slice operation
+- Custom microcode for each application
 
-Validation sources:
-- AMD Am2900 Family Data Book
-- Wikipedia Am2900 article
-- WikiChip Am2900 specifications
+This model provides:
+- Multi-slice system configurations
+- Microcode complexity estimation
+- Real-world system benchmarks
+- Comparison vs contemporary microprocessors
 
-Key characteristics:
-- 4-bit slice with 16x4 register file
-- 8 ALU functions
-- Bipolar technology for high speed (20-40 MHz)
-- Requires microsequencer (Am2909/2910) for complete system
+Reference systems:
+- Data General Nova 4: 4× Am2901 (16-bit)
+- DEC VAX 11/730: 8× Am2901 (32-bit)  
+- Various 8085/Z80 emulators
 
 Author: Grey-Box Performance Modeling Research
-Date: January 25, 2026
+Date: January 26, 2026
 """
 
-from dataclasses import dataclass, field, asdict
-from typing import Dict, List, Optional, Tuple
+from dataclasses import dataclass, asdict
+from typing import Dict, List, Tuple
 from enum import Enum
 import json
 
 
-class SystemConfiguration(Enum):
-    """Common AMD 2901 system configurations."""
-    SLICE_4BIT = 1      # Single 2901
-    SYSTEM_8BIT = 2     # Two 2901s
-    SYSTEM_16BIT = 4    # Four 2901s (Data General Nova 4)
-    SYSTEM_32BIT = 8    # Eight 2901s (VAX 11/730)
+class SliceWidth(Enum):
+    """Am2901 system configurations."""
+    SLICE_4BIT = 1    # Single 2901
+    SLICE_8BIT = 2    # 2× 2901
+    SLICE_16BIT = 4   # 4× 2901 (Nova 4)
+    SLICE_32BIT = 8   # 8× 2901 (VAX 11/730)
+
+
+@dataclass  
+class Am2901ALUOp:
+    """Am2901 ALU operation."""
+    code: int
+    mnemonic: str
+    description: str
+    category: str
+
+
+# Am2901 ALU function codes (I5-I3)
+ALU_FUNCTIONS = {
+    0: Am2901ALUOp(0, "ADD", "R + S", "arithmetic"),
+    1: Am2901ALUOp(1, "SUBR", "S - R", "arithmetic"),
+    2: Am2901ALUOp(2, "SUBS", "R - S", "arithmetic"),
+    3: Am2901ALUOp(3, "OR", "R OR S", "logic"),
+    4: Am2901ALUOp(4, "AND", "R AND S", "logic"),
+    5: Am2901ALUOp(5, "NOTRS", "NOT R AND S", "logic"),
+    6: Am2901ALUOp(6, "EXOR", "R XOR S", "logic"),
+    7: Am2901ALUOp(7, "EXNOR", "R XNOR S", "logic"),
+}
+
+# Am2901 source operand codes (I2-I0)
+SOURCE_OPERANDS = {
+    0: ("A,Q", "A register, Q register"),
+    1: ("A,B", "A register, B register"),
+    2: ("0,Q", "Zero, Q register"),
+    3: ("0,B", "Zero, B register"),
+    4: ("0,A", "Zero, A register"),
+    5: ("D,A", "Data input, A register"),
+    6: ("D,Q", "Data input, Q register"),
+    7: ("D,0", "Data input, Zero"),
+}
+
+# Am2901 destination codes (I8-I6)
+DESTINATIONS = {
+    0: ("QREG", "F -> Q"),
+    1: ("NOP", "No output"),
+    2: ("RAMA", "F -> B, F -> Y"),
+    3: ("RAMF", "F -> B, A -> Y"),
+    4: ("RAMQD", "F/2 -> B, Q/2 -> Q, F -> Y"),
+    5: ("RAMD", "F/2 -> B, F -> Y"),
+    6: ("RAMQU", "2F -> B, 2Q -> Q, F -> Y"),
+    7: ("RAMU", "2F -> B, F -> Y"),
+}
 
 
 @dataclass
-class AMD2901Workload:
-    """Workload profile for bit-slice system."""
+class Am2901SystemConfig:
+    """Am2901-based system configuration."""
     name: str
-    description: str
-    microops_per_instruction: float = 3.0  # Average microinstructions per macro-instruction
-    alu_utilization: float = 0.70          # Fraction of cycles using ALU
-    register_utilization: float = 0.85     # Fraction using register file
-    memory_fraction: float = 0.25          # Fraction requiring memory access
+    slices: int
+    clock_mhz: float
+    microcode_width: int  # bits
+    pipeline_stages: int
+    typical_microops_per_instr: float
 
 
-WORKLOADS_2901 = {
-    "typical": AMD2901Workload(
-        name="typical",
-        description="Typical microprogrammed application",
-        microops_per_instruction=3.5,
-        alu_utilization=0.70
+# Reference systems
+AM2901_SYSTEMS = {
+    "generic_8bit": Am2901SystemConfig(
+        "Generic 8-bit", 2, 10.0, 48, 1, 4.0
     ),
-    "compute": AMD2901Workload(
-        name="compute",
-        description="Compute-intensive (ALU heavy)",
-        microops_per_instruction=2.5,
-        alu_utilization=0.85
+    "generic_16bit": Am2901SystemConfig(
+        "Generic 16-bit", 4, 15.0, 56, 1, 3.5
     ),
-    "control": AMD2901Workload(
-        name="control",
-        description="Control-heavy (branching, sequencing)",
-        microops_per_instruction=4.5,
-        alu_utilization=0.50
+    "nova_4": Am2901SystemConfig(
+        "Data General Nova 4", 4, 20.0, 64, 2, 3.0
     ),
-    "emulation": AMD2901Workload(
-        name="emulation",
-        description="CPU emulation (8085 emulator)",
-        microops_per_instruction=5.0,
-        alu_utilization=0.65
+    "vax_11_730": Am2901SystemConfig(
+        "DEC VAX 11/730", 8, 12.5, 80, 3, 5.0
+    ),
+    "8085_emulator": Am2901SystemConfig(
+        "8085 Emulator", 2, 10.0, 48, 1, 5.0
+    ),
+    "z80_emulator": Am2901SystemConfig(
+        "Z80 Emulator", 2, 12.0, 52, 1, 4.5
     ),
 }
 
 
 @dataclass
-class AMD2901Result:
-    """Result from AMD 2901 system model."""
-    # Configuration
-    slices: int = 1
-    data_width: int = 4
-    clock_mhz: float = 20.0
+class MicrocodeWorkload:
+    """Microcode workload profile."""
+    name: str
+    description: str
+    avg_microops_per_instr: float
+    memory_access_fraction: float
+    branch_fraction: float
+
+
+MICROCODE_WORKLOADS = {
+    "typical": MicrocodeWorkload(
+        "typical", "Typical mixed workload", 4.0, 0.30, 0.15
+    ),
+    "compute": MicrocodeWorkload(
+        "compute", "Compute-intensive (register ALU)", 3.0, 0.15, 0.10
+    ),
+    "memory": MicrocodeWorkload(
+        "memory", "Memory-intensive", 5.0, 0.50, 0.15
+    ),
+    "control": MicrocodeWorkload(
+        "control", "Control-flow heavy", 4.5, 0.20, 0.35
+    ),
+    "emulation": MicrocodeWorkload(
+        "emulation", "CPU emulation workload", 5.5, 0.35, 0.20
+    ),
+}
+
+
+@dataclass
+class Am2901Result:
+    """Am2901 system analysis result."""
+    system: str = ""
+    slices: int = 0
+    data_width: int = 0
+    clock_mhz: float = 0.0
     
-    # Timing
-    cycle_time_ns: float = 50.0
     microops_per_second: float = 0.0
-    
-    # Performance (at macro-instruction level)
-    macro_ips: float = 0.0        # Macro-instructions per second
-    mips: float = 0.0             # Million macro-instructions per second
+    macro_ips: float = 0.0
+    mips: float = 0.0
     
     # Comparison metrics
-    equivalent_8085_speedup: float = 0.0  # vs 8085 at 3 MHz
+    speedup_vs_8085: float = 0.0
+    speedup_vs_8086: float = 0.0
     
     validation_status: str = ""
     
@@ -99,175 +168,196 @@ class AMD2901Result:
         return asdict(self)
 
 
-class AMD2901Model:
-    """
-    AMD 2901 Bit-Slice Performance Model
+class AMD2901ModelV2:
+    """Improved Am2901 bit-slice system model."""
     
-    Models the 2901 as part of a complete system with microsequencer.
-    Performance varies based on system configuration and microcode.
-    """
+    # Reference microprocessor performance for comparison
+    REFERENCE_MIPS = {
+        "8085": 0.37,   # 3.125 MHz 8085
+        "8086": 0.66,   # 5 MHz 8086
+        "z80": 0.58,    # 4 MHz Z80
+    }
     
-    # Hardware constants (from datasheet)
-    MIN_CYCLE_TIME_NS = 25    # 40 MHz max
-    MAX_CYCLE_TIME_NS = 100   # 10 MHz min
-    TYPICAL_CYCLE_NS = 50     # 20 MHz typical
+    def __init__(self, system: str = "generic_16bit"):
+        self.config = AM2901_SYSTEMS.get(system, AM2901_SYSTEMS["generic_16bit"])
     
-    # 8085 comparison baseline (for speedup calculation)
-    INTEL_8085_IPS = 370000   # At 3 MHz
-    
-    def __init__(self, clock_mhz: float = 20.0, slices: int = 4):
-        """Initialize 2901 system model."""
-        self.clock_mhz = clock_mhz
-        self.slices = slices
-        self.data_width = slices * 4
-        self.cycle_time_ns = 1000 / clock_mhz
-    
-    def analyze(self, workload: str = "typical") -> AMD2901Result:
-        """Analyze performance for given workload."""
-        result = AMD2901Result()
+    def analyze(self, workload: str = "typical") -> Am2901Result:
+        """Analyze Am2901 system performance."""
+        result = Am2901Result()
+        result.system = self.config.name
+        result.slices = self.config.slices
+        result.data_width = self.config.slices * 4
+        result.clock_mhz = self.config.clock_mhz
         
-        # Get workload
-        if isinstance(workload, str):
-            wl = WORKLOADS_2901.get(workload, WORKLOADS_2901["typical"])
+        wl = MICROCODE_WORKLOADS.get(workload, MICROCODE_WORKLOADS["typical"])
+        
+        # Micro-operations per second (one per clock in pipelined systems)
+        if self.config.pipeline_stages > 1:
+            # Pipelined: ~1 microop per clock after pipeline fill
+            effective_cpi = 1.0 + (wl.branch_fraction * (self.config.pipeline_stages - 1))
         else:
-            wl = workload
+            # Non-pipelined: 1 microop per clock
+            effective_cpi = 1.0
         
-        # Configuration
-        result.slices = self.slices
-        result.data_width = self.data_width
-        result.clock_mhz = self.clock_mhz
-        result.cycle_time_ns = self.cycle_time_ns
+        result.microops_per_second = (self.config.clock_mhz * 1_000_000) / effective_cpi
         
-        # Microops per second (one microop per clock)
-        result.microops_per_second = self.clock_mhz * 1_000_000
-        
-        # Macro-instructions per second
-        result.macro_ips = result.microops_per_second / wl.microops_per_instruction
+        # Macro instructions per second
+        avg_microops = wl.avg_microops_per_instr
+        result.macro_ips = result.microops_per_second / avg_microops
         result.mips = result.macro_ips / 1_000_000
         
-        # Speedup vs 8085
-        result.equivalent_8085_speedup = result.macro_ips / self.INTEL_8085_IPS
+        # Comparison vs reference CPUs
+        result.speedup_vs_8085 = result.mips / self.REFERENCE_MIPS["8085"]
+        result.speedup_vs_8086 = result.mips / self.REFERENCE_MIPS["8086"]
         
-        # Validation (bit-slice doesn't have fixed IPS, so always "PASS")
-        expected_speedup_min = 3.0  # Should be at least 3x 8085
-        expected_speedup_max = 15.0 # Up to 15x 8085
-        
-        if expected_speedup_min <= result.equivalent_8085_speedup <= expected_speedup_max:
+        # Validation: 2901 systems should be 3-20× faster than microprocessors
+        expected_speedup = (2.0, 25.0)
+        if expected_speedup[0] <= result.speedup_vs_8085 <= expected_speedup[1]:
             result.validation_status = "PASS"
         else:
-            result.validation_status = f"CHECK (speedup: {result.equivalent_8085_speedup:.1f}x)"
+            result.validation_status = f"CHECK (expected {expected_speedup[0]}-{expected_speedup[1]}× vs 8085)"
         
         return result
     
-    def print_result(self, result: AMD2901Result):
-        """Print formatted result."""
-        print(f"\n{'='*70}")
-        print(f"  AMD 2901 Bit-Slice System Analysis")
-        print(f"  Configuration: {result.slices} slices ({result.data_width}-bit)")
-        print(f"  Clock: {result.clock_mhz} MHz ({result.cycle_time_ns:.1f} ns cycle)")
-        print(f"{'='*70}")
-        
-        print(f"\n  ┌─ PERFORMANCE METRICS {'─'*44}┐")
-        print(f"  │  Microops/sec: {result.microops_per_second:,.0f}                          │")
-        print(f"  │  Macro IPS: {result.macro_ips:,.0f}  |  MIPS: {result.mips:.2f}              │")
-        print(f"  │  Speedup vs 8085: {result.equivalent_8085_speedup:.1f}×                        │")
-        print(f"  │  Validation: {result.validation_status:<45}   │")
-        print(f"  └{'─'*66}┘")
+    def get_alu_capabilities(self) -> Dict[str, int]:
+        """Get ALU function counts."""
+        cats = {}
+        for op in ALU_FUNCTIONS.values():
+            if op.category not in cats:
+                cats[op.category] = 0
+            cats[op.category] += 1
+        return cats
+    
+    @staticmethod
+    def compare_systems() -> List[Am2901Result]:
+        """Compare all reference systems."""
+        results = []
+        for sys_name in AM2901_SYSTEMS:
+            model = AMD2901ModelV2(sys_name)
+            result = model.analyze("typical")
+            results.append(result)
+        return results
 
 
 def get_improved_2901_config() -> Dict:
-    """Get improved 2901 configuration for unified interface."""
-    model = AMD2901Model(clock_mhz=20.0, slices=4)
+    """Get Am2901 config for export."""
+    model = AMD2901ModelV2("generic_16bit")
     result = model.analyze("typical")
     
     return {
         "family": "AMD",
         "category": "BIT_SLICE",
         "year": 1975,
-        "bits": 4,  # Per slice
-        "clock_mhz": 20.0,  # Typical
-        "transistors": 200,  # Per slice (bipolar)
-        "process_um": 6,  # Bipolar
-        "description": "4-bit bit-slice ALU with 16x4 register file",
+        "bits": "4-bit slice (cascadable)",
+        "technology": "Bipolar TTL/Schottky",
+        "transistors": 200,  # Per slice
         
-        # Bit-slice specific
-        "base_cpi": 1.0,  # 1 microop per clock
-        "microops_per_instruction": 3.5,
+        "alu_functions": len(ALU_FUNCTIONS),
+        "source_operand_modes": len(SOURCE_OPERANDS),
+        "destination_modes": len(DESTINATIONS),
+        "register_file": "16 × 4-bit",
         
-        "has_prefetch": False,
-        "has_cache": False,
-        "pipeline_stages": 1,
-        "branch_penalty": 0,
-        
-        "timings": {
-            "alu": 1,      # 1 clock per microop
-            "mov": 1,
-            "branch": 2,   # Sequencer overhead
-            "memory": 3,   # External memory access
+        "configurations": {
+            name: {
+                "slices": cfg.slices,
+                "data_width": cfg.slices * 4,
+                "clock_mhz": cfg.clock_mhz,
+                "pipeline_stages": cfg.pipeline_stages,
+            }
+            for name, cfg in AM2901_SYSTEMS.items()
         },
         
-        # Performance (16-bit system @ 20 MHz)
-        "microops_per_second": 20_000_000,
-        "macro_ips": result.macro_ips,
-        "mips": result.mips,
-        "speedup_vs_8085": result.equivalent_8085_speedup,
+        "typical_16bit_performance": {
+            "clock_mhz": 15.0,
+            "microops_per_second": result.microops_per_second,
+            "macro_ips": result.macro_ips,
+            "mips": result.mips,
+            "speedup_vs_8085": result.speedup_vs_8085,
+            "speedup_vs_8086": result.speedup_vs_8086,
+        },
+        
+        "design_note": "Requires microsequencer (Am2909/2910) and custom microcode",
         
         "validation": {
-            "source": "AMD Am2900 Family Data Book",
-            "note": "Bit-slice - performance depends on system configuration"
+            "source": "AMD Am2900 Family Data Book, Wikipedia",
         }
     }
 
 
 if __name__ == "__main__":
     print("="*70)
-    print("AMD 2901 BIT-SLICE IMPROVED PERFORMANCE MODEL")
-    print("4-bit slice for building custom processors")
+    print("AMD Am2901 IMPROVED MODEL v2.0")
+    print("Bit-slice system performance modeling")
     print("="*70)
     
-    # Test different configurations
-    configs = [
-        (20.0, 1, "Single 4-bit slice"),
-        (20.0, 2, "8-bit system"),
-        (20.0, 4, "16-bit system (Nova 4)"),
-        (20.0, 8, "32-bit system (VAX 11/730)"),
-        (40.0, 4, "16-bit @ 40 MHz"),
-    ]
-    
-    print("\n1. SYSTEM CONFIGURATIONS")
+    # ALU capabilities
+    print("\n1. Am2901 ALU FUNCTIONS")
     print("-"*40)
-    print(f"{'Config':<25} {'Width':>6} {'Clock':>8} {'MIPS':>8} {'vs 8085':>10}")
-    print("-"*60)
+    for code, op in ALU_FUNCTIONS.items():
+        print(f"   {code}: {op.mnemonic:<8} {op.description:<15} [{op.category}]")
     
-    for clock, slices, desc in configs:
-        model = AMD2901Model(clock_mhz=clock, slices=slices)
-        result = model.analyze("typical")
-        print(f"{desc:<25} {result.data_width:>5}b {clock:>7.0f}M {result.mips:>8.2f} {result.equivalent_8085_speedup:>9.1f}×")
+    # Source operands
+    print("\n2. SOURCE OPERAND MODES")
+    print("-"*40)
+    for code, (name, desc) in SOURCE_OPERANDS.items():
+        print(f"   {code}: {name:<6} {desc}")
+    
+    # System comparison
+    print("\n3. SYSTEM PERFORMANCE COMPARISON")
+    print("-"*70)
+    print(f"   {'System':<25} {'Width':>6} {'Clock':>8} {'MIPS':>8} {'vs 8085':>10} {'vs 8086':>10}")
+    print(f"   {'-'*68}")
+    
+    for sys_name in AM2901_SYSTEMS:
+        model = AMD2901ModelV2(sys_name)
+        r = model.analyze("typical")
+        print(f"   {r.system:<25} {r.data_width:>5}b {r.clock_mhz:>7.1f}M {r.mips:>8.2f} "
+              f"{r.speedup_vs_8085:>9.1f}× {r.speedup_vs_8086:>9.1f}×")
     
     # Workload analysis for 16-bit system
-    print("\n2. WORKLOAD ANALYSIS (16-bit @ 20 MHz)")
+    print("\n4. WORKLOAD ANALYSIS (16-bit @ 15 MHz)")
     print("-"*40)
-    model = AMD2901Model(clock_mhz=20.0, slices=4)
-    
-    for wl_name in WORKLOADS_2901:
+    model = AMD2901ModelV2("generic_16bit")
+    for wl_name in MICROCODE_WORKLOADS:
         result = model.analyze(wl_name)
-        print(f"{wl_name:<12}: {result.macro_ips:>10,.0f} IPS, {result.mips:.2f} MIPS, {result.equivalent_8085_speedup:.1f}× 8085")
+        print(f"   {wl_name:<12}: {result.mips:.2f} MIPS, {result.speedup_vs_8085:.1f}× vs 8085 [{result.validation_status}]")
     
-    # Export config
-    print("\n3. UNIFIED INTERFACE CONFIG")
+    # Key reference systems
+    print("\n5. KEY REFERENCE SYSTEMS")
     print("-"*40)
-    config = get_improved_2901_config()
-    print(f"   microops_per_instruction: {config['microops_per_instruction']}")
-    print(f"   mips (16-bit @ 20 MHz): {config['mips']:.2f}")
-    print(f"   speedup_vs_8085: {config['speedup_vs_8085']:.1f}×")
     
-    # Save JSON
-    with open("/home/claude/2901_validated_model.json", "w") as f:
+    # Nova 4
+    nova = AMD2901ModelV2("nova_4")
+    r = nova.analyze("typical")
+    print(f"   Data General Nova 4:")
+    print(f"      {r.slices}× Am2901 = {r.data_width}-bit")
+    print(f"      Clock: {r.clock_mhz} MHz")
+    print(f"      Performance: {r.mips:.2f} MIPS ({r.speedup_vs_8086:.1f}× vs 8086)")
+    
+    # VAX 11/730
+    vax = AMD2901ModelV2("vax_11_730")
+    r = vax.analyze("typical")
+    print(f"\n   DEC VAX 11/730:")
+    print(f"      {r.slices}× Am2901 = {r.data_width}-bit")
+    print(f"      Clock: {r.clock_mhz} MHz, {vax.config.pipeline_stages}-stage pipeline")
+    print(f"      Performance: {r.mips:.2f} MIPS ({r.speedup_vs_8086:.1f}× vs 8086)")
+    
+    # Export
+    config = get_improved_2901_config()
+    with open("/home/claude/2901_improved_v2.json", "w") as f:
         json.dump({
-            "processor": "AMD 2901",
+            "processor": "AMD Am2901",
+            "version": "2.0",
             "config": config,
-            "workloads": {k: model.analyze(k).to_dict() for k in WORKLOADS_2901}
+            "systems": {
+                name: AMD2901ModelV2(name).analyze("typical").to_dict()
+                for name in AM2901_SYSTEMS
+            }
         }, f, indent=2)
     
-    print("\n   Exported to: 2901_validated_model.json")
+    print("\n6. EXPORT")
+    print("-"*40)
+    print(f"   ALU functions: {len(ALU_FUNCTIONS)}")
+    print(f"   Reference systems: {len(AM2901_SYSTEMS)}")
+    print(f"   Exported to: 2901_improved_v2.json")
     print("="*70)

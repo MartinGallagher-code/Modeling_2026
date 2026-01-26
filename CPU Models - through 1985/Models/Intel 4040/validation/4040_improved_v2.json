@@ -1,0 +1,154 @@
+{
+  "processor": "Intel 4040",
+  "version": "2.0",
+  "config": {
+    "family": "INTEL",
+    "category": "SIMPLE_4BIT",
+    "year": 1974,
+    "bits": 4,
+    "clock_mhz": 0.74,
+    "transistors": 3000,
+    "process_um": 10,
+    "instruction_count": 60,
+    "original_4004_instructions": 46,
+    "new_4040_instructions": 14,
+    "timing": {
+      "clock_khz": 740,
+      "machine_cycle_clocks": 8,
+      "machine_cycle_us": 10.8,
+      "one_word_cycles": 1,
+      "two_word_cycles": 2
+    },
+    "new_instructions": [
+      {
+        "mnemonic": "HLT",
+        "description": "Halt processor"
+      },
+      {
+        "mnemonic": "BBS",
+        "description": "Branch back from interrupt"
+      },
+      {
+        "mnemonic": "LCR",
+        "description": "Load DCL from ROM"
+      },
+      {
+        "mnemonic": "OR4",
+        "description": "OR A with R4"
+      },
+      {
+        "mnemonic": "OR5",
+        "description": "OR A with R5"
+      },
+      {
+        "mnemonic": "AN6",
+        "description": "AND A with R6"
+      },
+      {
+        "mnemonic": "AN7",
+        "description": "AND A with R7"
+      },
+      {
+        "mnemonic": "DB0",
+        "description": "Select bank 0"
+      },
+      {
+        "mnemonic": "DB1",
+        "description": "Select bank 1"
+      },
+      {
+        "mnemonic": "SB0",
+        "description": "Select ROM bank 0"
+      },
+      {
+        "mnemonic": "SB1",
+        "description": "Select ROM bank 1"
+      },
+      {
+        "mnemonic": "EI",
+        "description": "Enable interrupt"
+      },
+      {
+        "mnemonic": "DI",
+        "description": "Disable interrupt"
+      },
+      {
+        "mnemonic": "RPM",
+        "description": "Read program memory"
+      }
+    ],
+    "enhancements_vs_4004": {
+      "index_registers": "24 (vs 16)",
+      "stack_levels": "7 (vs 3)",
+      "interrupt_support": true,
+      "register_banking": true
+    },
+    "ips_range": [
+      46250,
+      92500
+    ],
+    "ips_typical": 74074.07407407407,
+    "mips": 0.07407407407407407,
+    "validation": {
+      "source": "Intel MCS-40 Users Manual",
+      "timing_note": "Identical to 4004"
+    }
+  },
+  "workloads": {
+    "typical": {
+      "clock_khz": 740,
+      "machine_cycle_us": 10.8,
+      "avg_machine_cycles": 1.25,
+      "avg_clocks": 10.0,
+      "cpi": 10.0,
+      "ips": 74074.07407407407,
+      "kips": 74.07407407407408,
+      "mips": 0.07407407407407407,
+      "validation_status": "PASS"
+    },
+    "compute": {
+      "clock_khz": 740,
+      "machine_cycle_us": 10.8,
+      "avg_machine_cycles": 1.2000000000000002,
+      "avg_clocks": 9.600000000000001,
+      "cpi": 9.600000000000001,
+      "ips": 77160.49382716048,
+      "kips": 77.16049382716048,
+      "mips": 0.07716049382716048,
+      "validation_status": "PASS"
+    },
+    "control": {
+      "clock_khz": 740,
+      "machine_cycle_us": 10.8,
+      "avg_machine_cycles": 1.35,
+      "avg_clocks": 10.8,
+      "cpi": 10.8,
+      "ips": 68587.10562414266,
+      "kips": 68.58710562414265,
+      "mips": 0.06858710562414265,
+      "validation_status": "PASS"
+    },
+    "interrupt": {
+      "clock_khz": 740,
+      "machine_cycle_us": 10.8,
+      "avg_machine_cycles": 1.28,
+      "avg_clocks": 10.24,
+      "cpi": 10.24,
+      "ips": 72337.96296296295,
+      "kips": 72.33796296296295,
+      "mips": 0.07233796296296295,
+      "validation_status": "PASS"
+    },
+    "calculator": {
+      "clock_khz": 740,
+      "machine_cycle_us": 10.8,
+      "avg_machine_cycles": 1.22,
+      "avg_clocks": 9.76,
+      "cpi": 9.76,
+      "ips": 75895.56769884638,
+      "kips": 75.89556769884638,
+      "mips": 0.07589556769884638,
+      "validation_status": "PASS"
+    }
+  }
+}
