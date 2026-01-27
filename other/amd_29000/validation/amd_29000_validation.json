@@ -1,0 +1,41 @@
+{
+  "model_metadata": {
+    "name": "AMD Am29000 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "AMD Am29000 (1987)",
+    "description": "AMD's RISC processor - dominated laser printer market"
+  },
+  "architecture": {
+    "word_size_bits": 32,
+    "data_bus_width_bits": 32,
+    "address_bus_width_bits": 32,
+    "clock_frequency_mhz": 25.0,
+    "max_clock_mhz": 50.0,
+    "registers": 192,
+    "architecture_type": "RISC_register_rich",
+    "pipeline_stages": 4,
+    "transistor_count": 180000
+  },
+  "register_architecture": {
+    "global_registers": 64,
+    "local_registers": 128,
+    "register_stack": "Like SPARC windows",
+    "benefit": "Fast procedure calls"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.75,
+    "mips_at_25mhz": 17
+  },
+  "historical_context": {
+    "year_introduced": 1987,
+    "significance": "Dominated laser printer market",
+    "applications": ["HP LaserJet", "PostScript RIPs", "Embedded graphics"],
+    "market_niche": "Rendering engines"
+  },
+  "why_laser_printers": {
+    "reason": "Fast integer performance for PostScript interpretation",
+    "competitors": "Beat SPARC and MIPS in this niche",
+    "hp_partnership": "HP LaserJet used Am29000 for years"
+  }
+}

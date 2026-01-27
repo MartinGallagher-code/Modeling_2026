@@ -1,0 +1,81 @@
+{
+  "model_metadata": {
+    "name": "Motorola 68030 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Motorola 68030 (1987)",
+    "description": "68020 with on-chip MMU and data cache"
+  },
+  "architecture": {
+    "word_size_bits": 32,
+    "data_bus_width_bits": 32,
+    "address_bus_width_bits": 32,
+    "clock_frequency_mhz": 25.0,
+    "max_clock_mhz": 50.0,
+    "registers": 16,
+    "architecture_type": "CISC_pipelined",
+    "pipeline_stages": 3,
+    "transistor_count": 273000,
+    "process_nm": 800
+  },
+  "cache_system": {
+    "instruction_cache_bytes": 256,
+    "data_cache_bytes": 256,
+    "cache_type": "direct_mapped",
+    "i_cache_hit_rate": 0.90,
+    "d_cache_hit_rate": 0.85,
+    "hit_cycles": 1,
+    "miss_cycles": 4
+  },
+  "mmu": {
+    "on_chip": true,
+    "tlb_entries": 22,
+    "page_sizes": [256, 512, 1024, 2048, 4096, 8192, 16384, 32768],
+    "address_translation": "Demand paging supported",
+    "vs_68020": "68020 needed external 68851 MMU"
+  },
+  "instruction_mix": {
+    "move_operations": 0.30,
+    "alu_operations": 0.28,
+    "branch_jump": 0.16,
+    "load_store": 0.14,
+    "multiply_divide": 0.03,
+    "other": 0.09
+  },
+  "instruction_timings": {
+    "move_reg_reg": 2,
+    "move_reg_mem": 3,
+    "move_mem_reg": 3,
+    "add_reg": 2,
+    "add_mem": 5,
+    "mulu_32": 28,
+    "divu_32": 38,
+    "bra": 4,
+    "bsr": 8,
+    "rts": 8
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.80,
+    "mips_at_25mhz": 8,
+    "vs_68020": "20-30% faster at same clock"
+  },
+  "historical_context": {
+    "year_introduced": 1987,
+    "significance": "First 68k with on-chip MMU",
+    "systems": ["Macintosh IIx/IIcx/IIci", "Macintosh SE/30", "Amiga 3000/4000", 
+                "NeXT Computer", "Sun-3/80", "Atari TT030", "Atari Falcon"],
+    "competition": "Intel 80386",
+    "macintosh_era": "The 'classic' high-end Mac CPU"
+  },
+  "famous_systems": {
+    "mac_se30": "Beloved compact Mac, 68030 @ 16 MHz",
+    "mac_iici": "Popular desktop, 68030 @ 25 MHz",
+    "next_computer": "Steve Jobs' next venture, 68030 @ 25 MHz",
+    "amiga_3000": "Advanced multimedia, 68030 @ 25 MHz"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.50,
+    "tolerance_percent": 2.0
+  }
+}
