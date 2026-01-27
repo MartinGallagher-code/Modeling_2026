@@ -1,4 +1,4 @@
-# I80486 Architectural Documentation
+# SUN_SPARK Architectural Documentation
 
 ## Era Classification
 
@@ -19,10 +19,10 @@
 
 | Parameter | Value |
 |-----------|-------|
-| Manufacturer | Intel |
-| Year | 1989 |
-| Clock | 25.0 MHz |
-| Transistors | 1,200,000 |
+| Manufacturer | Sun |
+| Year | 1987 |
+| Clock | 14.0 MHz |
+| Transistors | 80,000 |
 | Data Width | 32-bit |
 | Address Width | 32-bit |
 
@@ -54,15 +54,15 @@ Actual CPI = 1.0 + cache_misses + hazards + branch_penalties
 
 ## Validation Approach
 
-- Compare against original Intel datasheet
+- Compare against original Sun datasheet
 - Validate with cycle-accurate emulator (if available)
 - Target: <5% IPC prediction error
 
 ## References
 
 - [Original Datasheet](TODO: Add link)
-- [WikiChip](https://en.wikichip.org/wiki/intel/i80486)
-- [Wikipedia](https://en.wikipedia.org/wiki/i80486)
+- [WikiChip](https://en.wikichip.org/wiki/other/sun_spark)
+- [Wikipedia](https://en.wikipedia.org/wiki/sun spark)
 
 ---
 Generated: 2026-01-27

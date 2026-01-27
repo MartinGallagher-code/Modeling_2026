@@ -1,4 +1,4 @@
-# I80486 Architectural Documentation
+# HP_PA_RISC Architectural Documentation
 
 ## Era Classification
 
@@ -19,10 +19,10 @@
 
 | Parameter | Value |
 |-----------|-------|
-| Manufacturer | Intel |
-| Year | 1989 |
-| Clock | 25.0 MHz |
-| Transistors | 1,200,000 |
+| Manufacturer | HP |
+| Year | 1986 |
+| Clock | 8.0 MHz |
+| Transistors | 115,000 |
 | Data Width | 32-bit |
 | Address Width | 32-bit |
 
@@ -54,15 +54,15 @@ Actual CPI = 1.0 + cache_misses + hazards + branch_penalties
 
 ## Validation Approach
 
-- Compare against original Intel datasheet
+- Compare against original HP datasheet
 - Validate with cycle-accurate emulator (if available)
 - Target: <5% IPC prediction error
 
 ## References
 
 - [Original Datasheet](TODO: Add link)
-- [WikiChip](https://en.wikichip.org/wiki/intel/i80486)
-- [Wikipedia](https://en.wikipedia.org/wiki/i80486)
+- [WikiChip](https://en.wikichip.org/wiki/other/hp_pa_risc)
+- [Wikipedia](https://en.wikipedia.org/wiki/hp pa risc)
 
 ---
 Generated: 2026-01-27

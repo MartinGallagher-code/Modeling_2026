@@ -1,4 +1,4 @@
-# I80486 Architectural Documentation
+# PENTIUM Architectural Documentation
 
 ## Era Classification
 
@@ -20,9 +20,9 @@
 | Parameter | Value |
 |-----------|-------|
 | Manufacturer | Intel |
-| Year | 1989 |
-| Clock | 25.0 MHz |
-| Transistors | 1,200,000 |
+| Year | 1993 |
+| Clock | 60.0 MHz |
+| Transistors | 3,100,000 |
 | Data Width | 32-bit |
 | Address Width | 32-bit |
 
@@ -61,8 +61,8 @@ Actual CPI = 1.0 + cache_misses + hazards + branch_penalties
 ## References
 
 - [Original Datasheet](TODO: Add link)
-- [WikiChip](https://en.wikichip.org/wiki/intel/i80486)
-- [Wikipedia](https://en.wikipedia.org/wiki/i80486)
+- [WikiChip](https://en.wikichip.org/wiki/intel/pentium)
+- [Wikipedia](https://en.wikipedia.org/wiki/pentium)
 
 ---
 Generated: 2026-01-27

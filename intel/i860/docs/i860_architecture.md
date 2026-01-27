@@ -1,4 +1,4 @@
-# I80486 Architectural Documentation
+# I860 Architectural Documentation
 
 ## Era Classification
 
@@ -22,8 +22,8 @@
 | Manufacturer | Intel |
 | Year | 1989 |
 | Clock | 25.0 MHz |
-| Transistors | 1,200,000 |
-| Data Width | 32-bit |
+| Transistors | 1,000,000 |
+| Data Width | 64-bit |
 | Address Width | 32-bit |
 
 ## Queueing Model Architecture
@@ -61,8 +61,8 @@ Actual CPI = 1.0 + cache_misses + hazards + branch_penalties
 ## References
 
 - [Original Datasheet](TODO: Add link)
-- [WikiChip](https://en.wikichip.org/wiki/intel/i80486)
-- [Wikipedia](https://en.wikipedia.org/wiki/i80486)
+- [WikiChip](https://en.wikichip.org/wiki/intel/i860)
+- [Wikipedia](https://en.wikipedia.org/wiki/i860)
 
 ---
 Generated: 2026-01-27

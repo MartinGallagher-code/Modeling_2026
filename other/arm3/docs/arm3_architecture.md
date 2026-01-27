@@ -1,4 +1,4 @@
-# I80486 Architectural Documentation
+# ARM3 Architectural Documentation
 
 ## Era Classification
 
@@ -19,12 +19,12 @@
 
 | Parameter | Value |
 |-----------|-------|
-| Manufacturer | Intel |
+| Manufacturer | Acorn |
 | Year | 1989 |
 | Clock | 25.0 MHz |
-| Transistors | 1,200,000 |
+| Transistors | 310,000 |
 | Data Width | 32-bit |
-| Address Width | 32-bit |
+| Address Width | 26-bit |
 
 ## Queueing Model Architecture
 
@@ -54,15 +54,15 @@ Actual CPI = 1.0 + cache_misses + hazards + branch_penalties
 
 ## Validation Approach
 
-- Compare against original Intel datasheet
+- Compare against original Acorn datasheet
 - Validate with cycle-accurate emulator (if available)
 - Target: <5% IPC prediction error
 
 ## References
 
 - [Original Datasheet](TODO: Add link)
-- [WikiChip](https://en.wikichip.org/wiki/intel/i80486)
-- [Wikipedia](https://en.wikipedia.org/wiki/i80486)
+- [WikiChip](https://en.wikichip.org/wiki/other/arm3)
+- [Wikipedia](https://en.wikipedia.org/wiki/arm3)
 
 ---
 Generated: 2026-01-27
