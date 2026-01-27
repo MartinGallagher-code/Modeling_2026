@@ -1,0 +1,65 @@
+# NS32016 Architectural Documentation
+
+## Era Classification
+
+**Era:** Pipelined Execution  
+**Period:** 1979-1985  
+**Queueing Model:** Pipeline queueing network
+
+## Architectural Features
+
+- 3-5 stage pipeline
+- Instruction prefetch buffer
+- Pipeline stalls on hazards
+- Some have instruction cache
+- Microcoded execution
+
+## Processor Specifications
+
+| Parameter | Value |
+|-----------|-------|
+| Manufacturer | Other |
+| Year | Unknown |
+| Clock | Unknown MHz |
+| Transistors | Unknown |
+| Data Width | 8-bit |
+| Address Width | 16-bit |
+
+## Queueing Model Architecture
+
+
+```
+┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐
+│  IF  │─►│  ID  │─►│  OF  │─►│  EX  │─►│  WB  │
+└──────┘  └──────┘  └──────┘  └──────┘  └──────┘
+   │         │         │         │         │
+   I1        I1        I1        I1        I1
+             I2        I2        I2        I2
+                       I3        I3        I3
+                                 I4        I4
+                                           I5
+
+Ideal CPI = 1.0 (one instruction per cycle)
+Actual CPI = 1.0 + hazards + stalls + cache_misses
+```
+
+## Model Implementation Notes
+
+1. This processor uses the **Pipelined Execution** architectural template
+2. Key modeling considerations:
+   - Multi-stage instruction pipeline with parallel stages
+
+## Validation Approach
+
+- Compare against original manufacturer datasheet
+- Validate with cycle-accurate emulator (if available)
+- Target: <5% IPC prediction error
+
+## References
+
+- [Original Datasheet](TODO: Add link)
+- [WikiChip](https://en.wikichip.org/wiki/other/ns32016)
+- [Wikipedia](https://en.wikipedia.org/wiki/ns32016)
+
+---
+Generated: 2026-01-27
