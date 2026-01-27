@@ -1,0 +1,22 @@
+{
+  "processor": "models",
+  "family": "other",
+  "validation_date": "2026-01-27",
+  "sources": {
+    "datasheet": {
+      "name": "MODELS Datasheet",
+      "verified": false
+    },
+    "wikichip": {
+      "url": "https://en.wikichip.org/wiki/other/models",
+      "verified": false
+    }
+  },
+  "timing_tests": [],
+  "accuracy": {
+    "ipc_error_percent": null,
+    "timing_tests_passed": 0,
+    "timing_tests_total": 0
+  },
+  "notes": "TODO: Add validation data"
+}

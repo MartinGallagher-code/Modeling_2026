@@ -161,3 +161,69 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    # ============================================================
+    # AUTO-GENERATED METHOD STUBS - Implement these!
+    # ============================================================
+
+def get_instruction_categories(self) -> Dict[str, 'InstructionCategory']:
+        """
+        Return instruction category definitions.
+        
+        Returns:
+            Dictionary mapping category name to InstructionCategory
+        """
+        raise NotImplementedError("Implement get_instruction_categories() method")
+    
+def get_workload_profiles(self) -> Dict[str, 'WorkloadProfile']:
+        """
+        Return workload profile definitions.
+        
+        Returns:
+            Dictionary mapping profile name to WorkloadProfile
+        """
+        raise NotImplementedError("Implement get_workload_profiles() method")
+
+    # ============================================================
+    # AUTO-GENERATED METHOD STUBS - Implement these!
+    # ============================================================
+
+def get_instruction_categories(self) -> Dict[str, 'InstructionCategory']:
+        """
+        Return instruction category definitions.
+        
+        Returns:
+            Dictionary mapping category name to InstructionCategory
+        """
+        raise NotImplementedError("Implement get_instruction_categories() method")
+    
+def get_workload_profiles(self) -> Dict[str, 'WorkloadProfile']:
+        """
+        Return workload profile definitions.
+        
+        Returns:
+            Dictionary mapping profile name to WorkloadProfile
+        """
+        raise NotImplementedError("Implement get_workload_profiles() method")
+
+    # ============================================================
+    # AUTO-GENERATED METHOD STUBS - Implement these!
+    # ============================================================
+
+def get_instruction_categories(self) -> Dict[str, 'InstructionCategory']:
+        """
+        Return instruction category definitions.
+        
+        Returns:
+            Dictionary mapping category name to InstructionCategory
+        """
+        raise NotImplementedError("Implement get_instruction_categories() method")
+    
+def get_workload_profiles(self) -> Dict[str, 'WorkloadProfile']:
+        """
+        Return workload profile definitions.
+        
+        Returns:
+            Dictionary mapping profile name to WorkloadProfile
+        """
+        raise NotImplementedError("Implement get_workload_profiles() method")

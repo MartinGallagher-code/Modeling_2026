@@ -32,6 +32,135 @@ class PARISCQueueModel:
             self.config = json.load(f)
         self.service_time = 0.9
     
+    # ============================================================
+    # AUTO-GENERATED METHOD STUBS - Implement these!
+    # ============================================================
+
+def analyze(self, workload: str = 'typical') -> 'AnalysisResult':
+        """
+        Analyze processor performance for given workload.
+        
+        Args:
+            workload: Workload profile name ('typical', 'compute', 'memory', 'control')
+            
+        Returns:
+            AnalysisResult with IPC, CPI, bottleneck analysis
+        """
+        raise NotImplementedError("Implement analyze() method")
+    
+def validate(self) -> Dict[str, Any]:
+        """
+        Run validation tests against known timing data.
+        
+        Returns:
+            Dictionary with test results and pass/fail status
+        """
+        raise NotImplementedError("Implement validate() method")
+    
+def get_instruction_categories(self) -> Dict[str, 'InstructionCategory']:
+        """
+        Return instruction category definitions.
+        
+        Returns:
+            Dictionary mapping category name to InstructionCategory
+        """
+        raise NotImplementedError("Implement get_instruction_categories() method")
+    
+def get_workload_profiles(self) -> Dict[str, 'WorkloadProfile']:
+        """
+        Return workload profile definitions.
+        
+        Returns:
+            Dictionary mapping profile name to WorkloadProfile
+        """
+        raise NotImplementedError("Implement get_workload_profiles() method")
+
+    # ============================================================
+    # AUTO-GENERATED METHOD STUBS - Implement these!
+    # ============================================================
+
+def analyze(self, workload: str = 'typical') -> 'AnalysisResult':
+        """
+        Analyze processor performance for given workload.
+        
+        Args:
+            workload: Workload profile name ('typical', 'compute', 'memory', 'control')
+            
+        Returns:
+            AnalysisResult with IPC, CPI, bottleneck analysis
+        """
+        raise NotImplementedError("Implement analyze() method")
+    
+def validate(self) -> Dict[str, Any]:
+        """
+        Run validation tests against known timing data.
+        
+        Returns:
+            Dictionary with test results and pass/fail status
+        """
+        raise NotImplementedError("Implement validate() method")
+    
+def get_instruction_categories(self) -> Dict[str, 'InstructionCategory']:
+        """
+        Return instruction category definitions.
+        
+        Returns:
+            Dictionary mapping category name to InstructionCategory
+        """
+        raise NotImplementedError("Implement get_instruction_categories() method")
+    
+def get_workload_profiles(self) -> Dict[str, 'WorkloadProfile']:
+        """
+        Return workload profile definitions.
+        
+        Returns:
+            Dictionary mapping profile name to WorkloadProfile
+        """
+        raise NotImplementedError("Implement get_workload_profiles() method")
+
+    # ============================================================
+    # AUTO-GENERATED METHOD STUBS - Implement these!
+    # ============================================================
+
+def analyze(self, workload: str = 'typical') -> 'AnalysisResult':
+        """
+        Analyze processor performance for given workload.
+        
+        Args:
+            workload: Workload profile name ('typical', 'compute', 'memory', 'control')
+            
+        Returns:
+            AnalysisResult with IPC, CPI, bottleneck analysis
+        """
+        raise NotImplementedError("Implement analyze() method")
+    
+def validate(self) -> Dict[str, Any]:
+        """
+        Run validation tests against known timing data.
+        
+        Returns:
+            Dictionary with test results and pass/fail status
+        """
+        raise NotImplementedError("Implement validate() method")
+    
+def get_instruction_categories(self) -> Dict[str, 'InstructionCategory']:
+        """
+        Return instruction category definitions.
+        
+        Returns:
+            Dictionary mapping category name to InstructionCategory
+        """
+        raise NotImplementedError("Implement get_instruction_categories() method")
+    
+def get_workload_profiles(self) -> Dict[str, 'WorkloadProfile']:
+        """
+        Return workload profile definitions.
+        
+        Returns:
+            Dictionary mapping profile name to WorkloadProfile
+        """
+        raise NotImplementedError("Implement get_workload_profiles() method")
+
     def predict_ipc(self, arrival_rate: float) -> Tuple[float, List[QueueMetrics]]:
         util = arrival_rate * self.service_time
         if util >= 1.0:
