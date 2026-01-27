@@ -1,0 +1,78 @@
+{
+  "model_metadata": {
+    "name": "Motorola 6800 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Motorola 6800 (1974)",
+    "description": "First Motorola microprocessor - competitor to Intel 8080"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "clock_frequency_mhz": 1.0,
+    "max_clock_mhz": 2.0,
+    "registers": 3,
+    "architecture_type": "accumulator_dual",
+    "pipeline_stages": 1,
+    "endianness": "big"
+  },
+  "register_set": {
+    "A": "8-bit accumulator A",
+    "B": "8-bit accumulator B", 
+    "X": "16-bit index register",
+    "SP": "16-bit stack pointer",
+    "PC": "16-bit program counter",
+    "CC": "8-bit condition codes"
+  },
+  "instruction_mix": {
+    "load_store": 0.28,
+    "alu_operations": 0.35,
+    "branch_jump": 0.18,
+    "stack_ops": 0.10,
+    "index_ops": 0.06,
+    "other": 0.03
+  },
+  "instruction_timings": {
+    "load_immediate": 2,
+    "load_direct": 3,
+    "load_extended": 4,
+    "load_indexed": 5,
+    "store_direct": 4,
+    "store_extended": 5,
+    "alu_immediate": 2,
+    "alu_direct": 3,
+    "alu_extended": 4,
+    "branch_taken": 4,
+    "branch_not_taken": 4,
+    "jmp": 3,
+    "jsr": 9,
+    "rts": 5,
+    "push": 4,
+    "pull": 4
+  },
+  "memory_system": {
+    "no_cache": true,
+    "memory_access_cycles": 1,
+    "bus_width_bytes": 1
+  },
+  "performance_characteristics": {
+    "cycles_per_instruction_avg": 4.0,
+    "ipc_expected": 0.07,
+    "similar_to": "Intel 8080"
+  },
+  "historical_context": {
+    "year_introduced": 1974,
+    "designer": "Motorola (Chuck Peddle before 6502)",
+    "significance": "First Motorola microprocessor, influenced 6502 design",
+    "systems": ["SWTPC 6800", "Altair 680", "Various industrial controllers"],
+    "competition": "Intel 8080",
+    "legacy": "Led to 6809, influenced 68000 philosophy"
+  },
+  "vs_8080": {
+    "advantage": "Cleaner instruction set, dual accumulators",
+    "disadvantage": "Slower clock, fewer registers",
+    "market": "Lost to 8080 in business, found niche in industrial"
+  }
+}

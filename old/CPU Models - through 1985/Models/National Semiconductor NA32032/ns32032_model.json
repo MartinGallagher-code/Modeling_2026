@@ -1,0 +1,31 @@
+{
+  "model_metadata": {
+    "name": "NS32032 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "NS32032 (1984)",
+    "description": "Improved NS32016 - still failed"
+  },
+  "architecture": {
+    "word_size_bits": 32,
+    "data_bus_width_bits": 32,
+    "address_bus_width_bits": 24,
+    "clock_frequency_mhz": 10.0,
+    "registers": 8,
+    "pipeline_stages": 2
+  },
+  "improvements_over_ns32016": {
+    "full_32bit_bus": "32-bit external data bus",
+    "bug_fixes": "Many NS32016 bugs fixed",
+    "faster": "Higher clocks, better timing"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.25,
+    "vs_ns32016": "Much faster, still lost"
+  },
+  "historical_context": {
+    "year_introduced": 1984,
+    "significance": "Too late - 68020 already out",
+    "failure": "By 1984, market had chosen 68k and x86"
+  }
+}

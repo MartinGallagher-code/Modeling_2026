@@ -1,0 +1,140 @@
+{
+  "processor": "AMD Am2901",
+  "version": "2.0",
+  "config": {
+    "family": "AMD",
+    "category": "BIT_SLICE",
+    "year": 1975,
+    "bits": "4-bit slice (cascadable)",
+    "technology": "Bipolar TTL/Schottky",
+    "transistors": 200,
+    "alu_functions": 8,
+    "source_operand_modes": 8,
+    "destination_modes": 8,
+    "register_file": "16 \u00d7 4-bit",
+    "configurations": {
+      "generic_8bit": {
+        "slices": 2,
+        "data_width": 8,
+        "clock_mhz": 10.0,
+        "pipeline_stages": 1
+      },
+      "generic_16bit": {
+        "slices": 4,
+        "data_width": 16,
+        "clock_mhz": 15.0,
+        "pipeline_stages": 1
+      },
+      "nova_4": {
+        "slices": 4,
+        "data_width": 16,
+        "clock_mhz": 20.0,
+        "pipeline_stages": 2
+      },
+      "vax_11_730": {
+        "slices": 8,
+        "data_width": 32,
+        "clock_mhz": 12.5,
+        "pipeline_stages": 3
+      },
+      "8085_emulator": {
+        "slices": 2,
+        "data_width": 8,
+        "clock_mhz": 10.0,
+        "pipeline_stages": 1
+      },
+      "z80_emulator": {
+        "slices": 2,
+        "data_width": 8,
+        "clock_mhz": 12.0,
+        "pipeline_stages": 1
+      }
+    },
+    "typical_16bit_performance": {
+      "clock_mhz": 15.0,
+      "microops_per_second": 15000000.0,
+      "macro_ips": 3750000.0,
+      "mips": 3.75,
+      "speedup_vs_8085": 10.135135135135135,
+      "speedup_vs_8086": 5.681818181818182
+    },
+    "design_note": "Requires microsequencer (Am2909/2910) and custom microcode",
+    "validation": {
+      "source": "AMD Am2900 Family Data Book, Wikipedia"
+    }
+  },
+  "systems": {
+    "generic_8bit": {
+      "system": "Generic 8-bit",
+      "slices": 2,
+      "data_width": 8,
+      "clock_mhz": 10.0,
+      "microops_per_second": 10000000.0,
+      "macro_ips": 2500000.0,
+      "mips": 2.5,
+      "speedup_vs_8085": 6.756756756756757,
+      "speedup_vs_8086": 3.7878787878787876,
+      "validation_status": "PASS"
+    },
+    "generic_16bit": {
+      "system": "Generic 16-bit",
+      "slices": 4,
+      "data_width": 16,
+      "clock_mhz": 15.0,
+      "microops_per_second": 15000000.0,
+      "macro_ips": 3750000.0,
+      "mips": 3.75,
+      "speedup_vs_8085": 10.135135135135135,
+      "speedup_vs_8086": 5.681818181818182,
+      "validation_status": "PASS"
+    },
+    "nova_4": {
+      "system": "Data General Nova 4",
+      "slices": 4,
+      "data_width": 16,
+      "clock_mhz": 20.0,
+      "microops_per_second": 17391304.34782609,
+      "macro_ips": 4347826.086956522,
+      "mips": 4.347826086956522,
+      "speedup_vs_8085": 11.75088131609871,
+      "speedup_vs_8086": 6.587615283267458,
+      "validation_status": "PASS"
+    },
+    "vax_11_730": {
+      "system": "DEC VAX 11/730",
+      "slices": 8,
+      "data_width": 32,
+      "clock_mhz": 12.5,
+      "microops_per_second": 9615384.615384616,
+      "macro_ips": 2403846.153846154,
+      "mips": 2.403846153846154,
+      "speedup_vs_8085": 6.496881496881498,
+      "speedup_vs_8086": 3.6421911421911424,
+      "validation_status": "PASS"
+    },
+    "8085_emulator": {
+      "system": "8085 Emulator",
+      "slices": 2,
+      "data_width": 8,
+      "clock_mhz": 10.0,
+      "microops_per_second": 10000000.0,
+      "macro_ips": 2500000.0,
+      "mips": 2.5,
+      "speedup_vs_8085": 6.756756756756757,
+      "speedup_vs_8086": 3.7878787878787876,
+      "validation_status": "PASS"
+    },
+    "z80_emulator": {
+      "system": "Z80 Emulator",
+      "slices": 2,
+      "data_width": 8,
+      "clock_mhz": 12.0,
+      "microops_per_second": 12000000.0,
+      "macro_ips": 3000000.0,
+      "mips": 3.0,
+      "speedup_vs_8085": 8.108108108108109,
+      "speedup_vs_8086": 4.545454545454545,
+      "validation_status": "PASS"
+    }
+  }
+}

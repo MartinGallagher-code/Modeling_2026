@@ -1,0 +1,101 @@
+{
+  "processor": "Intel 80188",
+  "config": {
+    "family": "INTEL",
+    "category": "COMPLEX_16BIT",
+    "year": 1982,
+    "bits": 16,
+    "external_bus": 8,
+    "clock_mhz": 8.0,
+    "transistors": 55000,
+    "process_um": 3,
+    "description": "80186 with 8-bit external bus",
+    "base_cpi": 8.784543898263635,
+    "has_prefetch": true,
+    "prefetch_size": 4,
+    "has_cache": false,
+    "pipeline_stages": 2,
+    "branch_penalty": 4,
+    "timings": {
+      "alu": 3,
+      "mov": 2,
+      "branch": 15,
+      "memory": 8,
+      "mul_16": 27,
+      "div_16": 29
+    },
+    "integrated_clock": true,
+    "dma_channels": 2,
+    "timers": 3,
+    "interrupt_controller": true,
+    "ips_typical": 910690.4231625834,
+    "mips": 0.9106904231625834,
+    "bus_bandwidth_mb_s": 2.0,
+    "validation": {
+      "source": "Intel 80188 Datasheet",
+      "note": "~30-40% slower than 80186 for memory-heavy code"
+    }
+  },
+  "workloads": {
+    "typical": {
+      "variant": "80188",
+      "clock_mhz": 8.0,
+      "bus_width": 8,
+      "avg_cpi": 8.784543898263635,
+      "ipc": 0.11383630289532293,
+      "ips": 910690.4231625834,
+      "mips": 0.9106904231625834,
+      "speedup_vs_8086": 1.3660356347438751,
+      "bus_bandwidth_mb_s": 2.0,
+      "validation_status": "PASS"
+    },
+    "compute": {
+      "variant": "80188",
+      "clock_mhz": 8.0,
+      "bus_width": 8,
+      "avg_cpi": 6.290577690743391,
+      "ipc": 0.15896791187739462,
+      "ips": 1271743.295019157,
+      "mips": 1.271743295019157,
+      "speedup_vs_8086": 1.9076149425287354,
+      "bus_bandwidth_mb_s": 2.0,
+      "validation_status": "CHECK (expected 0.5-1.0)"
+    },
+    "memory": {
+      "variant": "80188",
+      "clock_mhz": 8.0,
+      "bus_width": 8,
+      "avg_cpi": 10.082118317412434,
+      "ipc": 0.09918550531914895,
+      "ips": 793484.0425531917,
+      "mips": 0.7934840425531916,
+      "speedup_vs_8086": 1.1902260638297875,
+      "bus_bandwidth_mb_s": 2.0,
+      "validation_status": "PASS"
+    },
+    "control": {
+      "variant": "80188",
+      "clock_mhz": 8.0,
+      "bus_width": 8,
+      "avg_cpi": 10.479935191954317,
+      "ipc": 0.09542043740573154,
+      "ips": 763363.4992458523,
+      "mips": 0.7633634992458523,
+      "speedup_vs_8086": 1.1450452488687783,
+      "bus_bandwidth_mb_s": 2.0,
+      "validation_status": "PASS"
+    },
+    "embedded": {
+      "variant": "80188",
+      "clock_mhz": 8.0,
+      "bus_width": 8,
+      "avg_cpi": 9.486166007905137,
+      "ipc": 0.10541666666666669,
+      "ips": 843333.3333333335,
+      "mips": 0.8433333333333335,
+      "speedup_vs_8086": 1.2650000000000001,
+      "bus_bandwidth_mb_s": 2.0,
+      "validation_status": "PASS"
+    }
+  }
+}

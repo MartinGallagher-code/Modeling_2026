@@ -1,0 +1,335 @@
+{
+  "model_metadata": {
+    "name": "Intel 80186 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Intel 80186/80188 (1982-2007)",
+    "description": "8086 with integrated peripherals - the embedded system-on-chip pioneer"
+  },
+  
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 16,
+    "address_bus_width_bits": 20,
+    "clock_frequency_mhz": 8.0,
+    "max_clock_mhz": 25.0,
+    "registers": "8086-compatible",
+    "architecture_type": "CISC_with_prefetch",
+    "pipeline_stages": 2,
+    "prefetch_queue_bytes": 6,
+    "notes": "8086 core with integrated DMA, timers, interrupts, and chip selects"
+  },
+  
+  "key_features": {
+    "integrated_peripherals": "On-chip DMA, timers, interrupt controller, chip selects",
+    "8086_compatible": "Binary compatible with 8086 code",
+    "faster_execution": "10 additional instructions, some optimized timings",
+    "reduced_chip_count": "Replaces 8086 + 8259 + 8253 + 8237 + glue logic",
+    "embedded_focus": "Target: embedded systems, not desktop computers",
+    "power_management": "Includes HALT and power-down modes"
+  },
+  
+  "pipeline_architecture": {
+    "bus_interface_unit": {
+      "name": "BIU - Bus Interface Unit",
+      "function": "Fetch instructions and data, manage bus",
+      "prefetch_queue": "6-byte FIFO",
+      "parallel_operation": "Can fetch while EU executes"
+    },
+    "execution_unit": {
+      "name": "EU - Execution Unit",
+      "function": "Decode and execute instructions",
+      "parallel_operation": "Can execute while BIU fetches"
+    }
+  },
+  
+  "integrated_peripherals": {
+    "dma_controller": {
+      "channels": 2,
+      "description": "On-chip DMA (vs external 8237)",
+      "benefit": "Faster, fewer chips, lower cost"
+    },
+    "timer_counter_unit": {
+      "timers": 3,
+      "description": "16-bit timers (vs external 8253)",
+      "modes": "Square wave, one-shot, PWM"
+    },
+    "interrupt_controller": {
+      "sources": "Multiple internal and external",
+      "description": "Enhanced interrupt handling (vs external 8259)",
+      "priority_levels": "Multiple"
+    },
+    "chip_select_unit": {
+      "chip_selects": 7,
+      "description": "Programmable chip selects for memory/peripherals",
+      "benefit": "Eliminates external address decode logic"
+    },
+    "wait_state_generator": {
+      "description": "Programmable wait states for slow peripherals",
+      "benefit": "No external logic needed"
+    }
+  },
+  
+  "instruction_enhancements": {
+    "new_instructions": {
+      "count": 10,
+      "instructions": [
+        "PUSHA - Push all registers (faster than individual pushes)",
+        "POPA - Pop all registers",
+        "BOUND - Array bounds check",
+        "ENTER - Stack frame creation (for high-level languages)",
+        "LEAVE - Stack frame destruction",
+        "INS/INSB/INSW - Input string from port",
+        "OUTS/OUTSB/OUTSW - Output string to port",
+        "IMUL immediate - Immediate multiply",
+        "SHIFT/ROTATE with immediate count",
+        "Additional addressing modes"
+      ],
+      "benefit": "Compiler support, string I/O, faster stack operations"
+    },
+    "improved_timings": {
+      "push_immediate": "Faster than 8086",
+      "shift_immediate": "Faster than 8086 (no CL register needed)",
+      "multiply_immediate": "New capability",
+      "string_io": "Much faster for block I/O",
+      "enter_leave": "Faster function prologue/epilogue"
+    }
+  },
+  
+  "instruction_mix": {
+    "description": "Typical embedded 80186 code",
+    "mov_operations": 0.26,
+    "alu_operations": 0.32,
+    "load_store": 0.18,
+    "jump_call": 0.14,
+    "stack_operations": 0.06,
+    "string_operations": 0.02,
+    "io_operations": 0.02,
+    "notes": "Similar to 8086 but more I/O and peripheral access"
+  },
+  
+  "instruction_timings": {
+    "basic_mov": {
+      "reg_to_reg": 2,
+      "reg_to_mem": 9,
+      "mem_to_reg": 8,
+      "immediate": 4,
+      "description": "Same as 8086",
+      "notes": "Memory access slower than register"
+    },
+    "alu_operations": {
+      "add_reg": 3,
+      "add_mem": 10,
+      "sub_reg": 3,
+      "and_reg": 3,
+      "description": "Standard ALU timings",
+      "notes": "Similar to 8086"
+    },
+    "enhanced_instructions": {
+      "pusha": 36,
+      "popa": 51,
+      "enter": "variable (12-25 cycles)",
+      "leave": 8,
+      "imul_immediate": 21,
+      "ins_outs": "6 cycles per byte",
+      "description": "New 80186 instructions",
+      "notes": "PUSHA/POPA faster than individual operations"
+    },
+    "multiply_divide": {
+      "mul_8bit": 26,
+      "mul_16bit": 35,
+      "imul_8bit": 28,
+      "imul_16bit": 38,
+      "div_8bit": 29,
+      "div_16bit": 38,
+      "description": "Multiply/divide operations",
+      "notes": "Slightly faster than 8086"
+    },
+    "branch_jump": {
+      "short_jump": 14,
+      "near_jump": 15,
+      "far_jump": 23,
+      "near_call": 15,
+      "far_call": 26,
+      "ret_near": 16,
+      "ret_far": 22,
+      "description": "Branch and call timings",
+      "notes": "Similar to 8086"
+    },
+    "string_operations": {
+      "movs": 14,
+      "lods": 10,
+      "stos": 10,
+      "cmps": 14,
+      "scas": 11,
+      "ins": 14,
+      "outs": 14,
+      "description": "String operations including new I/O",
+      "notes": "INS/OUTS new to 80186"
+    }
+  },
+  
+  "memory_system": {
+    "no_cache": true,
+    "memory_access_cycles": 4,
+    "bus_width_bytes": 2,
+    "prefetch_queue_size": 6,
+    "prefetch_efficiency": 0.88,
+    "wait_states": "Programmable (0-15)",
+    "description": "Same memory architecture as 8086 with programmable wait states"
+  },
+  
+  "prefetch_queue": {
+    "size_bytes": 6,
+    "type": "FIFO",
+    "parallel_operation": true,
+    "queue_empty_probability": 0.12,
+    "queue_full_probability": 0.08,
+    "efficiency": 0.85,
+    "description": "Same prefetch queue as 8086",
+    "notes": "BIU fills queue while EU executes"
+  },
+  
+  "bottlenecks": {
+    "primary": "execution_unit",
+    "secondary": "bus_interface_for_memory_intensive_code",
+    "same_as_8086": true,
+    "improvement": "Integrated peripherals reduce external bus traffic",
+    "description": "Core architecture identical to 8086"
+  },
+  
+  "performance_characteristics": {
+    "ipc_expected": 0.40,
+    "same_as_8086": "Core performance identical",
+    "system_performance": "Better due to integrated peripherals",
+    "peripheral_access": "Much faster (on-chip vs external)",
+    "interrupt_latency": "Lower (integrated controller)",
+    "dma_performance": "Higher (on-chip DMA)"
+  },
+  
+  "calibration": {
+    "arrival_rate_initial": 0.25,
+    "arrival_rate_bounds": [0.15, 0.55],
+    "tolerance_percent": 2.0,
+    "max_iterations": 50,
+    "notes": "80186 should match 8086 IPC for CPU-bound code"
+  },
+  
+  "instruction_length_distribution": {
+    "1_byte": 0.35,
+    "2_byte": 0.30,
+    "3_byte": 0.20,
+    "4_byte": 0.10,
+    "5_byte": 0.04,
+    "6_byte": 0.01,
+    "average_bytes": 2.5,
+    "description": "Same as 8086 with slight variations due to new instructions"
+  },
+  
+  "execution_characteristics": {
+    "pipeline": true,
+    "pipeline_depth": 2,
+    "prefetch_queue": true,
+    "out_of_order": false,
+    "superscalar": false,
+    "instruction_level_parallelism": "Limited (BIU/EU overlap)",
+    "description": "Same pipeline architecture as 8086"
+  },
+  
+  "historical_context": {
+    "year_introduced": 1982,
+    "designer": "Intel",
+    "significance": "First embedded system-on-chip with integrated peripherals",
+    "market_segment": "Embedded systems, industrial control, not desktop PCs",
+    "common_systems": [
+      "Industrial controllers",
+      "Embedded systems",
+      "Process control",
+      "Telecommunications equipment",
+      "Automotive systems",
+      "Some arcade games",
+      "Tandy 2000 (rare desktop use)"
+    ],
+    "market_position": "Dominated embedded market for 16-bit applications",
+    "production_span": "1982-2007 (25 years)",
+    "competition": "Motorola 68000 series in embedded space"
+  },
+  
+  "vs_8086": {
+    "cpu_core": "Identical",
+    "ipc": "Same (~0.40)",
+    "clock_speed": "Faster (8-25 MHz vs 8086's 5-10 MHz)",
+    "integrated_peripherals": "Major advantage (DMA, timers, interrupts)",
+    "chip_count": "Much lower (1 chip vs 5+ chips)",
+    "system_cost": "Lower (fewer chips, simpler PCB)",
+    "power_consumption": "Lower (integration)",
+    "board_space": "Much smaller",
+    "reliability": "Higher (fewer connections)",
+    "new_instructions": "10 additional instructions",
+    "target_market": "Embedded vs desktop"
+  },
+  
+  "vs_80188": {
+    "difference": "Bus width only",
+    "80186_bus": "16-bit data bus",
+    "80188_bus": "8-bit data bus (like 8088)",
+    "80188_use_case": "Cost-sensitive embedded (cheaper memory)",
+    "80188_performance": "Slower for memory-intensive code",
+    "note": "Same relationship as 8086/8088"
+  },
+  
+  "advantages": {
+    "system_integration": "Replaces 5+ chips with 1 chip",
+    "cost_reduction": "Lower total system cost",
+    "space_reduction": "Smaller PCB footprint",
+    "power_reduction": "Lower power consumption",
+    "reliability": "Fewer chips = fewer failures",
+    "faster_peripherals": "On-chip access much faster",
+    "easier_design": "Less external logic needed",
+    "programmable_features": "Chip selects, wait states configurable"
+  },
+  
+  "disadvantages": {
+    "not_for_desktop": "8086 already established in PCs",
+    "late_for_desktop": "IBM PC (8088) launched 1981, 80186 in 1982",
+    "locked_peripheral_config": "Can't swap external chips easily",
+    "higher_cpu_cost": "More expensive than bare 8086",
+    "market_positioning": "Positioned for embedded, not desktop",
+    "ibm_pc_incompatibility": "Different interrupt/DMA addresses than IBM PC"
+  },
+  
+  "why_not_in_ibm_pc": {
+    "timing": "IBM PC launched before 80186 available",
+    "compatibility": "80186 peripherals at different addresses than PC standard",
+    "cost": "More expensive than separate 8088 + support chips",
+    "flexibility": "PC needed expandability, 80186 peripherals fixed",
+    "market_established": "8088 ecosystem already established",
+    "lesson": "System-on-chip great for embedded, not for expandable systems"
+  },
+  
+  "embedded_success": {
+    "market_domination": "Dominated 16-bit embedded market",
+    "longevity": "Produced for 25 years (1982-2007)",
+    "total_production": "Hundreds of millions",
+    "applications": "Industrial, automotive, telecom, control systems",
+    "still_used": "Legacy systems still operating (2026)",
+    "lesson": "Right chip for right market"
+  },
+  
+  "design_philosophy": {
+    "system_on_chip": "Integrate everything for embedded use",
+    "reduce_chip_count": "One chip replaces system",
+    "target_specific_market": "Embedded, not trying to compete in desktop",
+    "cost_optimize_system": "Not CPU, but total system cost",
+    "lesson": "Different markets need different solutions"
+  },
+  
+  "benchmarks": {
+    "ipc_target": 0.40,
+    "same_as_8086": true,
+    "peripheral_advantage": "3-5× faster peripheral access than external chips",
+    "interrupt_latency": "50% lower than external 8259",
+    "dma_throughput": "2× higher than external 8237"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "model_metadata": {
+    "name": "Zilog Z180 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "Zilog Z180 (1985)",
+    "description": "Enhanced Z80 with MMU - the Z80 that should have been"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 20,
+    "clock_frequency_mhz": 6.0,
+    "max_clock_mhz": 33.0,
+    "registers": 18,
+    "pipeline_stages": 1,
+    "transistor_count": 10000
+  },
+  "improvements_over_z80": {
+    "mmu": "On-chip MMU (1MB address space)",
+    "uart": "Two on-chip serial ports",
+    "dma": "Two DMA channels",
+    "clock": "Higher speeds (up to 33 MHz)",
+    "new_instructions": "MLT (multiply), SLP (sleep), etc."
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.09,
+    "vs_z80": "1.5-2× faster at same clock"
+  },
+  "historical_context": {
+    "year_introduced": 1985,
+    "significance": "Extended Z80 life into 1990s",
+    "applications": ["Embedded systems", "Modems", "Industrial", "Point-of-sale"],
+    "still_produced": true
+  }
+}

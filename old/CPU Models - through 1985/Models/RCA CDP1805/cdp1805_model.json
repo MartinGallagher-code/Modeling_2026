@@ -1,0 +1,71 @@
+{
+  "model_metadata": {
+    "name": "CDP1805 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "CDP1805 (1984)",
+    "description": "Enhanced RCA 1802 - more space missions, faster, more instructions"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "clock_frequency_mhz": 4.0,
+    "max_clock_mhz": 5.0,
+    "registers": 16,
+    "architecture_type": "register_rich_CMOS",
+    "pipeline_stages": 1,
+    "technology": "CMOS"
+  },
+  "register_set": {
+    "R0_R15": "16 × 16-bit general registers",
+    "any_can_be_pc": "Any register can serve as program counter",
+    "D": "8-bit data register (accumulator)",
+    "DF": "1-bit data flag (carry)",
+    "P": "4-bit PC selector",
+    "X": "4-bit index register selector"
+  },
+  "improvements_over_1802": {
+    "new_instructions": "Counter/timer, BCD arithmetic, register ops",
+    "counter_timer": "On-chip programmable counter/timer",
+    "faster": "4-5 MHz vs 2 MHz for 1802",
+    "more_efficient": "Some instructions take fewer cycles",
+    "idle_mode": "Low-power wait state"
+  },
+  "instruction_mix": {
+    "register_ops": 0.30,
+    "memory_ops": 0.25,
+    "branch": 0.20,
+    "io_ops": 0.15,
+    "other": 0.10
+  },
+  "instruction_timings": {
+    "short_branch": 2,
+    "long_branch": 3,
+    "register_n": 2,
+    "memory_reference": 2,
+    "io_operation": 2,
+    "description": "Machine cycles (8 clocks each)"
+  },
+  "space_heritage": {
+    "radiation_tolerant": true,
+    "temperature_range": "-55°C to +125°C",
+    "voltage_range": "2V to 6V",
+    "missions": ["Galileo", "Magellan", "Ulysses", "Cassini-Huygens", "New Horizons"],
+    "still_in_space": "Voyager 1 & 2 use 1802, newer missions use 1805"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.06,
+    "vs_1802": "~2× faster at higher clocks"
+  },
+  "historical_context": {
+    "year_introduced": 1984,
+    "designer": "RCA (later Harris, now Renesas)",
+    "significance": "Extended 1802 for demanding space applications",
+    "rad_hard_versions": "Available for space qualification"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.05,
+    "tolerance_percent": 3.0
+  }
+}

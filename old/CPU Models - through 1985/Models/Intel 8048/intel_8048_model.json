@@ -1,0 +1,78 @@
+{
+  "model_metadata": {
+    "name": "Intel 8048 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Intel 8048 (1976)",
+    "description": "First widely-used single-chip microcontroller"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 12,
+    "clock_frequency_mhz": 6.0,
+    "internal_divider": 15,
+    "effective_mhz": 0.4,
+    "registers": 27,
+    "architecture_type": "harvard_microcontroller",
+    "pipeline_stages": 1,
+    "transistor_count": 6000
+  },
+  "on_chip_resources": {
+    "rom_bytes": 1024,
+    "ram_bytes": 64,
+    "io_lines": 27,
+    "timer": "8-bit",
+    "interrupts": 2
+  },
+  "register_set": {
+    "A": "8-bit accumulator",
+    "R0_R7": "8 working registers (bank 0)",
+    "R0_R7_bank1": "8 working registers (bank 1)",
+    "PSW": "Program status word",
+    "PC": "12-bit program counter",
+    "description": "Two register banks for fast interrupt handling"
+  },
+  "instruction_mix": {
+    "register_ops": 0.35,
+    "memory_ops": 0.25,
+    "io_ops": 0.15,
+    "branch_jump": 0.15,
+    "other": 0.10
+  },
+  "instruction_timings": {
+    "register_to_register": 1,
+    "immediate": 2,
+    "memory_indirect": 1,
+    "io_operation": 2,
+    "jump": 2,
+    "call": 2,
+    "return": 2,
+    "description": "Machine cycles (15 clocks each)"
+  },
+  "performance_characteristics": {
+    "machine_cycle_clocks": 15,
+    "ipc_expected": 0.07,
+    "instructions_per_second": 400000
+  },
+  "historical_context": {
+    "year_introduced": 1976,
+    "designer": "Intel",
+    "significance": "First widely successful single-chip microcontroller",
+    "famous_use": "IBM PC keyboard controller",
+    "systems": ["IBM PC keyboard", "Various embedded systems", "Automotive", "Consumer electronics"],
+    "family": "MCS-48 family",
+    "variants": ["8035 (no ROM)", "8048 (1K ROM)", "8049 (2K ROM)", "8050 (4K ROM)"]
+  },
+  "why_important": {
+    "single_chip": "CPU + ROM + RAM + I/O on one chip",
+    "low_cost": "Enabled embedded computing",
+    "ibm_pc": "Every IBM PC had an 8048 in the keyboard",
+    "legacy": "Led to 8051, most successful MCU ever"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.06,
+    "tolerance_percent": 3.0
+  }
+}

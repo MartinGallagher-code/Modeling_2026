@@ -1,0 +1,65 @@
+{
+  "model_metadata": {
+    "name": "Fairchild F8 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Fairchild F8 (1974)",
+    "description": "First single-chip microcontroller architecture - multi-chip CPU"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "clock_frequency_mhz": 2.0,
+    "registers": 64,
+    "architecture_type": "scratchpad_rich",
+    "pipeline_stages": 1,
+    "multi_chip": "CPU (3850) + PSU (3851) minimum"
+  },
+  "unique_features": {
+    "scratchpad_ram": "64 bytes of on-chip scratchpad RAM",
+    "multi_chip_design": "CPU separate from program storage",
+    "no_address_bus": "Address generated internally",
+    "isar": "Indirect Scratchpad Address Register",
+    "video_game_use": "Used in Fairchild Channel F (first cartridge console)"
+  },
+  "instruction_mix": {
+    "scratchpad_ops": 0.35,
+    "alu_ops": 0.25,
+    "branch_jump": 0.20,
+    "io_ops": 0.10,
+    "other": 0.10
+  },
+  "instruction_timings": {
+    "scratchpad_access": 2,
+    "alu_accumulator": 2,
+    "branch": 3,
+    "io": 4,
+    "long_branch": 5,
+    "call_return": 6
+  },
+  "memory_system": {
+    "scratchpad_bytes": 64,
+    "external_memory": "Via PSU chip",
+    "no_direct_addressing": true
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.06,
+    "scratchpad_advantage": "Fast on-chip memory",
+    "complexity_disadvantage": "Multi-chip overhead"
+  },
+  "historical_context": {
+    "year_introduced": 1974,
+    "designer": "Fairchild Semiconductor",
+    "significance": "First microcontroller-like architecture, first video game console CPU",
+    "systems": ["Fairchild Channel F (1976)", "Various industrial controllers"],
+    "channel_f": "First ROM cartridge video game console",
+    "competition": "Intel 8080, Motorola 6800",
+    "legacy": "Pioneered on-chip RAM concept"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.05,
+    "tolerance_percent": 3.0
+  }
+}

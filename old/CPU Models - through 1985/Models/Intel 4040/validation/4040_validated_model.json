@@ -1,0 +1,102 @@
+{
+  "processor": "Intel 4040",
+  "config": {
+    "family": "INTEL",
+    "category": "SIMPLE_4BIT",
+    "year": 1974,
+    "bits": 4,
+    "clock_mhz": 0.74,
+    "transistors": 3000,
+    "process_um": 10,
+    "description": "Enhanced 4004 with interrupts and 24 registers",
+    "base_cpi": 10.0,
+    "has_prefetch": false,
+    "has_cache": false,
+    "pipeline_stages": 1,
+    "branch_penalty": 0,
+    "timings": {
+      "alu": 8,
+      "mov": 8,
+      "branch": 16,
+      "memory": 8
+    },
+    "machine_cycle_us": 10.8,
+    "ips_typical": 74074.07407407407,
+    "ips_peak": 92500,
+    "ips_min": 46250,
+    "kips": 74.07407407407408,
+    "mips": 0.07407407407407407,
+    "total_instructions": 60,
+    "new_instructions": 14,
+    "index_registers": 24,
+    "stack_depth": 7,
+    "has_interrupts": true,
+    "has_register_banking": true,
+    "validation": {
+      "source": "Intel MCS-40 Users Manual",
+      "timing": "Identical to 4004"
+    }
+  },
+  "workloads": {
+    "typical": {
+      "cpi_clocks": 10.0,
+      "cpi_machine": 1.25,
+      "ipc": 0.1,
+      "ips": 74074.07407407407,
+      "kips": 74.07407407407408,
+      "mips": 0.07407407407407407,
+      "avg_instruction_time_us": 13.5,
+      "one_word_fraction": 0.75,
+      "two_word_fraction": 0.25,
+      "validation_status": "PASS"
+    },
+    "compute": {
+      "cpi_clocks": 9.600000000000001,
+      "cpi_machine": 1.2000000000000002,
+      "ipc": 0.10416666666666666,
+      "ips": 77160.49382716048,
+      "kips": 77.16049382716048,
+      "mips": 0.07716049382716048,
+      "avg_instruction_time_us": 12.960000000000003,
+      "one_word_fraction": 0.8,
+      "two_word_fraction": 0.2,
+      "validation_status": "PASS"
+    },
+    "control": {
+      "cpi_clocks": 10.8,
+      "cpi_machine": 1.35,
+      "ipc": 0.09259259259259259,
+      "ips": 68587.10562414266,
+      "kips": 68.58710562414265,
+      "mips": 0.06858710562414265,
+      "avg_instruction_time_us": 14.580000000000002,
+      "one_word_fraction": 0.65,
+      "two_word_fraction": 0.35,
+      "validation_status": "PASS"
+    },
+    "interrupt": {
+      "cpi_clocks": 10.24,
+      "cpi_machine": 1.28,
+      "ipc": 0.09765625,
+      "ips": 72337.96296296295,
+      "kips": 72.33796296296295,
+      "mips": 0.07233796296296295,
+      "avg_instruction_time_us": 13.824000000000002,
+      "one_word_fraction": 0.72,
+      "two_word_fraction": 0.28,
+      "validation_status": "PASS"
+    },
+    "gaming": {
+      "cpi_clocks": 10.399999999999999,
+      "cpi_machine": 1.2999999999999998,
+      "ipc": 0.09615384615384617,
+      "ips": 71225.07122507122,
+      "kips": 71.22507122507122,
+      "mips": 0.07122507122507123,
+      "avg_instruction_time_us": 14.04,
+      "one_word_fraction": 0.7,
+      "two_word_fraction": 0.3,
+      "validation_status": "PASS"
+    }
+  }
+}

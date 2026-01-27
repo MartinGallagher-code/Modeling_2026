@@ -1,0 +1,51 @@
+{
+  "model_metadata": {
+    "name": "Motorola 6803 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "Motorola 6803 (1979)",
+    "description": "ROM-less 6801 - uses external ROM but keeps on-chip RAM"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "clock_frequency_mhz": 1.0,
+    "max_clock_mhz": 2.0,
+    "registers": 6,
+    "architecture_type": "MCU_romless",
+    "pipeline_stages": 1,
+    "transistor_count": 25000
+  },
+  "on_chip_resources": {
+    "rom_bytes": 0,
+    "ram_bytes": 128,
+    "note": "ROM-less version - external ROM required",
+    "timer": "16-bit programmable",
+    "serial": "Full-duplex UART (SCI)",
+    "parallel_io": "13 I/O lines (some used for bus)"
+  },
+  "vs_6801": {
+    "rom": "None (6801 has 2KB)",
+    "ram": "Same 128 bytes",
+    "io_lines": "13 vs 29 (bus uses pins)",
+    "use_case": "Larger programs, external ROM"
+  },
+  "instruction_timings": {
+    "inherent": 2,
+    "immediate": 2,
+    "direct": 3,
+    "extended": 4,
+    "indexed": 5,
+    "multiply": 10
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.08,
+    "vs_6801": "Same performance, more flexibility"
+  },
+  "historical_context": {
+    "year_introduced": 1979,
+    "significance": "Enabled larger programs than 6801's 2KB ROM allowed",
+    "applications": ["Complex embedded systems", "Development systems", "Larger controllers"]
+  }
+}

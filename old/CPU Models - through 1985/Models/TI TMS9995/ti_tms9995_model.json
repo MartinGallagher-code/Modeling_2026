@@ -1,0 +1,79 @@
+{
+  "model_metadata": {
+    "name": "Texas Instruments TMS9995 Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "TI TMS9995 (1981)",
+    "description": "Enhanced TMS9900 - faster, with on-chip RAM"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "address_space_bytes": 65536,
+    "clock_frequency_mhz": 12.0,
+    "internal_divider": 4,
+    "effective_mhz": 3.0,
+    "registers": 16,
+    "workspace_pointer": true,
+    "architecture_type": "memory_to_memory",
+    "pipeline_stages": 1,
+    "transistor_count": 20000
+  },
+  "on_chip_resources": {
+    "ram_bytes": 256,
+    "decrementer": "16-bit timer/counter",
+    "nmi": "Non-maskable interrupt",
+    "note": "First TMS99xx with on-chip RAM!"
+  },
+  "workspace_architecture": {
+    "description": "Registers live in RAM, not on-chip",
+    "workspace_pointer": "WP points to 16-word register block",
+    "context_switch": "Just change WP - instant!",
+    "advantage": "Fast interrupts, multiple register sets",
+    "disadvantage": "Slower register access than on-chip"
+  },
+  "vs_tms9900": {
+    "clock": "12 MHz vs 3 MHz",
+    "bus": "8-bit vs 16-bit external",
+    "on_chip_ram": "256 bytes vs none",
+    "timer": "On-chip vs external",
+    "speed": "About same effective speed",
+    "cost": "Lower (8-bit bus, fewer pins)"
+  },
+  "instruction_mix": {
+    "register_ops": 0.35,
+    "memory_ops": 0.30,
+    "branch": 0.15,
+    "workspace_ops": 0.10,
+    "other": 0.10
+  },
+  "instruction_timings": {
+    "register_to_register": 14,
+    "memory_read": 22,
+    "memory_write": 22,
+    "branch_taken": 10,
+    "context_switch": 26,
+    "units": "clock_cycles"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.07,
+    "mips_at_3mhz_effective": 0.21,
+    "note": "Workspace overhead limits IPC"
+  },
+  "historical_context": {
+    "year_introduced": 1981,
+    "manufacturer": "Texas Instruments",
+    "used_in": ["TI-99/4A (internal)", "Myarc Geneve 9640", "Various embedded"],
+    "ti99_note": "TI-99/4A used TMS9900, but TMS9995 in later designs"
+  },
+  "ti99_connection": {
+    "ti99_4a_cpu": "TMS9900 (original)",
+    "ti99_8": "TMS9995 (unreleased successor)",
+    "geneve_9640": "TMS9995-based TI-99 compatible"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.06,
+    "tolerance_percent": 3.0
+  }
+}

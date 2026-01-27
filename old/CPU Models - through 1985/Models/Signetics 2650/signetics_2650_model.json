@@ -1,0 +1,70 @@
+{
+  "model_metadata": {
+    "name": "Signetics 2650 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Signetics 2650 (1975)",
+    "description": "Innovative but obscure 8-bit processor with unique features"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 15,
+    "clock_frequency_mhz": 1.25,
+    "registers": 7,
+    "architecture_type": "accumulator_with_index",
+    "pipeline_stages": 1,
+    "page_size_bytes": 8192
+  },
+  "unique_features": {
+    "15bit_address": "32KB address space (unusual)",
+    "page_banking": "Memory organized in 8KB pages",
+    "condition_code_register": "Detailed status flags",
+    "relative_addressing": "Good for position-independent code",
+    "sense_flag": "External input directly testable"
+  },
+  "instruction_mix": {
+    "load_store": 0.28,
+    "alu_ops": 0.30,
+    "branch_jump": 0.22,
+    "register_ops": 0.12,
+    "io_ops": 0.05,
+    "other": 0.03
+  },
+  "instruction_timings": {
+    "load_immediate": 2,
+    "load_absolute": 3,
+    "load_relative": 3,
+    "store": 3,
+    "alu_register": 2,
+    "alu_immediate": 2,
+    "branch_relative": 3,
+    "branch_absolute": 3,
+    "subroutine": 5,
+    "return": 3
+  },
+  "memory_system": {
+    "no_cache": true,
+    "memory_access_cycles": 2,
+    "bus_width_bytes": 1,
+    "max_memory_kb": 32
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.06,
+    "page_overhead": "Bank switching adds cycles",
+    "good_for": "Small embedded systems"
+  },
+  "historical_context": {
+    "year_introduced": 1975,
+    "designer": "Signetics (Philips subsidiary)",
+    "significance": "Alternative architecture, never achieved mainstream",
+    "systems": ["Various European computers", "Interton VC 4000 console family", "Industrial controllers"],
+    "competition": "8080, 6800, 6502",
+    "failure_reasons": ["Limited address space", "Unusual architecture", "Poor ecosystem"]
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.05,
+    "tolerance_percent": 3.0
+  }
+}

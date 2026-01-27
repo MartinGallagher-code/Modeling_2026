@@ -1,0 +1,116 @@
+{
+  "model_metadata": {
+    "name": "Western Design Center W65C802 Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "WDC W65C802 (1984)",
+    "description": "65816 in 8-bit package - upgrade path for 6502 systems"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "address_space_bytes": 65536,
+    "clock_frequency_mhz": 4.0,
+    "max_clock_mhz": 14.0,
+    "registers": 9,
+    "architecture_type": "6502_extended_16bit",
+    "pipeline_stages": 1,
+    "transistor_count": 9800,
+    "package": "40-pin DIP (6502 compatible!)",
+    "process": "CMOS"
+  },
+  "the_key_idea": {
+    "65816": "16-bit CPU, 24-bit address, 64-pin package",
+    "65802": "SAME CPU, 8-bit bus, 40-pin package",
+    "benefit": "Drop into 6502 socket, get 16-bit CPU!",
+    "limitation": "64KB address space (vs 65816's 16MB)"
+  },
+  "register_architecture": {
+    "accumulator": "A (16-bit, or 8-bit in emulation)",
+    "index_x": "X (16-bit)",
+    "index_y": "Y (16-bit)",
+    "stack_pointer": "S (16-bit)",
+    "direct_page": "D (16-bit, relocatable zero page!)",
+    "program_bank": "PBR (not used in 65802)",
+    "data_bank": "DBR (not used in 65802)",
+    "program_counter": "PC (16-bit)",
+    "status": "P (8-bit with new flags)"
+  },
+  "modes": {
+    "emulation_mode": {
+      "description": "Acts like 6502/65C02",
+      "registers": "8-bit A, X, Y",
+      "stack": "Page 1 only",
+      "compatibility": "100% 6502 code runs"
+    },
+    "native_mode": {
+      "description": "Full 65816 features",
+      "registers": "16-bit A, X, Y",
+      "stack": "Anywhere in 64KB",
+      "new_instructions": "All 65816 extensions"
+    }
+  },
+  "new_instructions_over_6502": {
+    "block_moves": "MVN, MVP (memory copy)",
+    "16bit_ops": "16-bit math when enabled",
+    "stack_relative": "New addressing mode",
+    "long_branches": "BRL (branch long)",
+    "push_pull": "PHX, PHY, PLX, PLY",
+    "transfers": "TXY, TYX, TCD, TDC, etc.",
+    "multiply": "No hardware, but faster via 16-bit"
+  },
+  "vs_65816": {
+    "65816": {
+      "package": "64-pin",
+      "address": "16 MB (24-bit)",
+      "bus": "8-bit data, 24-bit address",
+      "used_in": "Apple IIGS, SNES"
+    },
+    "65802": {
+      "package": "40-pin (6502!)",
+      "address": "64 KB (16-bit)",
+      "bus": "8-bit data, 16-bit address",
+      "used_in": "6502 upgrades"
+    },
+    "internally": "IDENTICAL CPU core!"
+  },
+  "instruction_timings": {
+    "implied": 2,
+    "immediate_8": 2,
+    "immediate_16": 3,
+    "zero_page": 3,
+    "absolute": 4,
+    "block_move_per_byte": 7,
+    "units": "clock_cycles"
+  },
+  "performance_characteristics": {
+    "ipc_emulation": 0.10,
+    "ipc_native": 0.14,
+    "speedup_16bit": "Near 2x for 16-bit work",
+    "note": "Same core as 65816, limited by 8-bit bus"
+  },
+  "practical_use": {
+    "upgrade_path": "Drop into Apple II, C64, etc.",
+    "new_code": "Write 16-bit software",
+    "old_code": "Emulation mode runs existing",
+    "mixed": "Switch modes as needed"
+  },
+  "historical_context": {
+    "year_introduced": 1984,
+    "manufacturer": "Western Design Center",
+    "designer": "Bill Mensch (6502 co-designer)",
+    "significance": "Upgrade path for 6502 systems",
+    "market": "6502 system upgrades, new designs",
+    "still_available": "Yes! WDC still sells them"
+  },
+  "wdc_family": {
+    "W65C02": "Enhanced 6502 (CMOS)",
+    "W65C802": "65816 in 40-pin (this chip)",
+    "W65C816": "Full 65816 (64-pin, 16MB)"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.09,
+    "tolerance_percent": 3.0
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "model_metadata": {
+    "name": "Intel MCS-96 8096 Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "Intel 8096 (1982)",
+    "description": "16-bit MCU - dominated automotive for decades"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "address_space_bytes": 65536,
+    "on_chip_rom_bytes": 8192,
+    "on_chip_ram_bytes": 232,
+    "clock_frequency_mhz": 12.0,
+    "effective_mhz": 6.0,
+    "register_file_bytes": 232,
+    "architecture_type": "register_to_register_16bit",
+    "pipeline_stages": 1,
+    "transistor_count": 56000,
+    "package": "48-pin/68-pin"
+  },
+  "register_architecture": {
+    "type": "Register file in RAM",
+    "general_purpose": "R0-R255 (232 bytes usable)",
+    "special_function": "Lower 24 bytes (SFRs)",
+    "stack_pointer": "In register file",
+    "word_alignment": "Even addresses for 16-bit",
+    "note": "Any RAM location can be a register!"
+  },
+  "on_chip_peripherals": {
+    "adc": "8-channel 10-bit A/D converter",
+    "pwm": "Pulse Width Modulation output",
+    "hsi": "High-Speed Input (capture)",
+    "hso": "High-Speed Output (compare)",
+    "serial": "Full-duplex UART",
+    "timers": "16-bit timer/counters",
+    "watchdog": "Yes",
+    "pio": "40+ I/O pins"
+  },
+  "automotive_features": {
+    "adc": "For sensors (temp, throttle, O2)",
+    "pwm": "For fuel injectors, ignition",
+    "hsi": "For crankshaft position",
+    "hso": "For precise timing events",
+    "why_automotive": "Perfect for engine control!"
+  },
+  "instruction_set": {
+    "total_instructions": 100,
+    "addressing_modes": ["Register", "Immediate", "Direct", "Indirect", "Indexed"],
+    "features": {
+      "multiply": "16×16=32 in 6.5 µs",
+      "divide": "32/16=16 in 13 µs",
+      "normalize": "For floating point",
+      "block_ops": "Move blocks"
+    }
+  },
+  "instruction_timings": {
+    "register_to_register": 4,
+    "register_memory": 6,
+    "multiply": 39,
+    "divide": 78,
+    "branch": 8,
+    "units": "state_times (2 clocks each)"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.12,
+    "mips_at_12mhz": 0.72,
+    "note": "16-bit ops make it powerful for control"
+  },
+  "mcs96_family": {
+    "8096": "Original (1982) - this chip",
+    "8096BH": "Improved version",
+    "8097": "With ROM",
+    "8098": "ROM-less",
+    "80196": "Enhanced (1987)",
+    "80296": "Further enhanced"
+  },
+  "historical_context": {
+    "year_introduced": 1982,
+    "manufacturer": "Intel",
+    "significance": "Dominated automotive MCU market",
+    "market_share": "Majority of engine controllers 1985-2000",
+    "applications": ["Engine control", "ABS", "Transmission", "Airbags"],
+    "still_used": "Legacy systems still running"
+  },
+  "why_it_won_automotive": {
+    "16_bit": "Needed for engine calculations",
+    "fast_adc": "Quick sensor reading",
+    "hsi_hso": "Precise timing for ignition/injection",
+    "multiply": "Fast math for control loops",
+    "reliability": "Intel quality"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.10,
+    "tolerance_percent": 3.0
+  }
+}

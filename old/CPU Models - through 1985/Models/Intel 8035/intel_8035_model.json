@@ -1,0 +1,52 @@
+{
+  "model_metadata": {
+    "name": "Intel 8035 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "Intel 8035 (1976)",
+    "description": "ROM-less 8048 - the development/external ROM version"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 12,
+    "clock_frequency_mhz": 6.0,
+    "max_clock_mhz": 11.0,
+    "registers": 8,
+    "register_banks": 2,
+    "working_registers": 8,
+    "architecture_type": "MCU_romless",
+    "pipeline_stages": 1
+  },
+  "on_chip_resources": {
+    "rom_bytes": 0,
+    "ram_bytes": 64,
+    "note": "ROM-less - requires external ROM",
+    "io_ports": 27,
+    "timer": "8-bit with prescaler",
+    "external_memory": "Up to 4KB ROM, 256B RAM"
+  },
+  "relationship_to_8048": {
+    "8048": "1KB ROM, 64B RAM - standard",
+    "8035": "No ROM, 64B RAM - development/external",
+    "8748": "1KB EPROM, 64B RAM - prototyping",
+    "8049": "2KB ROM, 128B RAM - enhanced",
+    "8039": "No ROM, 128B RAM - enhanced ROM-less"
+  },
+  "instruction_timings": {
+    "one_cycle": 1,
+    "two_cycle": 2,
+    "description": "Machine cycles (1 cycle = 15 clocks)"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.07,
+    "machine_cycles_per_sec": 400000,
+    "instructions_per_sec": 400000
+  },
+  "historical_context": {
+    "year_introduced": 1976,
+    "significance": "Development version of MCS-48 family",
+    "use_cases": ["Prototyping", "External ROM systems", "Development"],
+    "note": "Same as 8048 but uses external program memory"
+  }
+}

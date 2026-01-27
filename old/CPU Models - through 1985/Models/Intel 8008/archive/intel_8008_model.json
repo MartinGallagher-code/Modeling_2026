@@ -1,0 +1,86 @@
+{
+  "model_metadata": {
+    "name": "Intel 8008 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "Intel 8008 (1972)",
+    "description": "First 8-bit microprocessor - ancestor of all x86"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 14,
+    "address_space_bytes": 16384,
+    "clock_frequency_mhz": 0.5,
+    "max_clock_mhz": 0.8,
+    "registers": 7,
+    "register_names": ["A", "B", "C", "D", "E", "H", "L"],
+    "architecture_type": "accumulator",
+    "pipeline_stages": 1,
+    "transistor_count": 3500,
+    "package": "18-pin DIP",
+    "process_node_um": 10
+  },
+  "register_architecture": {
+    "accumulator": "A (8-bit)",
+    "general_purpose": ["B", "C", "D", "E", "H", "L"],
+    "register_pairs": {
+      "HL": "Memory pointer (pseudo-16-bit)",
+      "note": "H=high, L=low, can address memory as M"
+    },
+    "stack": "On-chip, 7 levels (hardware)",
+    "program_counter": "14-bit",
+    "flags": ["Carry", "Zero", "Sign", "Parity"]
+  },
+  "instruction_set": {
+    "total_instructions": 48,
+    "instruction_size_bytes": [1, 2, 3],
+    "addressing_modes": ["Register", "Immediate", "Direct (via HL)"],
+    "no_multiply": true,
+    "no_divide": true
+  },
+  "instruction_mix": {
+    "register_ops": 0.30,
+    "memory_ops": 0.35,
+    "branch_jump": 0.20,
+    "io_ops": 0.10,
+    "other": 0.05
+  },
+  "instruction_timings": {
+    "register_to_register": 5,
+    "immediate_to_register": 8,
+    "memory_read": 8,
+    "memory_write": 7,
+    "jump_unconditional": 11,
+    "jump_conditional_taken": 11,
+    "jump_conditional_not_taken": 9,
+    "call": 11,
+    "return": 5,
+    "io_operation": 8,
+    "halt": 4,
+    "units": "clock_states"
+  },
+  "timing_details": {
+    "states_per_instruction": "5-11 states typical",
+    "state_duration_us": 2.0,
+    "multiplexed_bus": true,
+    "external_logic_required": true
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.04,
+    "mips_at_500khz": 0.02,
+    "instructions_per_second": 20000
+  },
+  "historical_context": {
+    "year_introduced": 1972,
+    "designer": "Intel",
+    "origin": "Designed for Datapoint 2200 (rejected)",
+    "significance": "First 8-bit microprocessor",
+    "price_usd": 120,
+    "successor": "Intel 8080 (1974)"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.035,
+    "tolerance_percent": 3.0
+  }
+}

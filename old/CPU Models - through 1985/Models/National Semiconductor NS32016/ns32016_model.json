@@ -1,0 +1,86 @@
+{
+  "model_metadata": {
+    "name": "National Semiconductor NS32016 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "NS32016 (1982)",
+    "description": "First commercial 32-bit microprocessor - technically advanced but commercially failed"
+  },
+  "architecture": {
+    "word_size_bits": 32,
+    "data_bus_width_bits": 16,
+    "address_bus_width_bits": 24,
+    "clock_frequency_mhz": 10.0,
+    "max_clock_mhz": 15.0,
+    "registers": 8,
+    "architecture_type": "CISC_minicomputer_derived",
+    "pipeline_stages": 2,
+    "memory_management": "Demand paging support"
+  },
+  "key_features": {
+    "first_32bit": "First commercially available 32-bit microprocessor",
+    "symmetric_design": "All 8 general registers equal",
+    "addressing_modes": "9 orthogonal addressing modes",
+    "memory_management": "Built-in demand paging support",
+    "floating_point": "Optional 32081 FPU coprocessor",
+    "slave_processors": "Modular support for MMU, FPU, custom units"
+  },
+  "instruction_mix": {
+    "move_operations": 0.28,
+    "alu_operations": 0.30,
+    "branch_jump": 0.18,
+    "load_store": 0.12,
+    "string_ops": 0.04,
+    "multiply_divide": 0.02,
+    "other": 0.06
+  },
+  "instruction_timings": {
+    "mov_reg_reg": 3,
+    "mov_reg_mem": 7,
+    "mov_mem_reg": 6,
+    "add_reg": 3,
+    "add_mem": 7,
+    "mul": 23,
+    "div": 31,
+    "branch": 5,
+    "jsr": 10,
+    "ret": 8,
+    "string_move": 8
+  },
+  "memory_system": {
+    "no_cache": true,
+    "memory_access_cycles": 4,
+    "bus_width_bytes": 2,
+    "demand_paging": true
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.45,
+    "theoretical_advantage": "Good architecture",
+    "practical_problem": "Slow, buggy silicon"
+  },
+  "historical_context": {
+    "year_introduced": 1982,
+    "significance": "First 32-bit micro, but plagued by bugs",
+    "designer": "National Semiconductor",
+    "systems": ["Acorn Communicator", "ICL Perq", "Whitechapel MG-1", "Encore Multimax"],
+    "competition": "Motorola 68000 family",
+    "failure_reasons": ["Severe silicon bugs", "Late to market", "Slow actual performance", "Poor ecosystem"]
+  },
+  "bugs_and_issues": {
+    "silicon_bugs": "Multiple errata required workarounds",
+    "slow_silicon": "Much slower than specifications",
+    "late_delivery": "Repeatedly delayed",
+    "market_timing": "Arrived when 68000 established"
+  },
+  "legacy": {
+    "technical_merit": "Good architecture design",
+    "commercial_result": "Complete failure",
+    "lesson": "First to market with working silicon beats best architecture",
+    "influence": "Some ideas appeared in later designs"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.30,
+    "tolerance_percent": 3.0
+  }
+}

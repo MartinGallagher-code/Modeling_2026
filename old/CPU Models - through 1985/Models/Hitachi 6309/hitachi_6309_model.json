@@ -1,0 +1,93 @@
+{
+  "model_metadata": {
+    "name": "Hitachi 6309 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "Hitachi 6309 (1982)",
+    "description": "Enhanced 6809 - the BEST 8-bit processor ever made"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "address_space_bytes": 65536,
+    "clock_frequency_mhz": 2.0,
+    "max_clock_mhz": 3.58,
+    "registers": 12,
+    "architecture_type": "CISC_enhanced",
+    "pipeline_stages": 1,
+    "transistor_count": 12000
+  },
+  "registers": {
+    "from_6809": ["A", "B", "D (A+B)", "X", "Y", "U", "S", "PC", "DP", "CC"],
+    "new_in_6309": ["E", "F", "W (E+F)", "Q (D+W)", "V", "MD"],
+    "description": "Additional E,F registers enable 32-bit operations!"
+  },
+  "native_mode": {
+    "enabled_by": "Setting MD register bit",
+    "improvements": [
+      "New instructions active",
+      "Faster instruction timing",
+      "Additional registers accessible",
+      "32-bit math via Q register"
+    ],
+    "speedup": "Up to 2× faster than 6809"
+  },
+  "new_instructions": {
+    "count": "~60 new instructions",
+    "32_bit_ops": ["ADCR", "ADDR", "ANDR", "EORR", "ORR", "SBCR", "SUBR"],
+    "block_transfer": ["TFM (Transfer Memory) - DMA-like"],
+    "bit_operations": ["BAND", "BOR", "BEOR", "BIAND", "BIOR", "BIEOR"],
+    "divide": "DIVD, DIVQ (hardware divide!)",
+    "multiply": "MULD (16×16=32)"
+  },
+  "instruction_mix": {
+    "register_ops": 0.35,
+    "memory_ops": 0.30,
+    "branch": 0.15,
+    "new_6309_ops": 0.10,
+    "other": 0.10
+  },
+  "instruction_timings": {
+    "inherent": 1,
+    "immediate": 2,
+    "direct": 3,
+    "extended": 4,
+    "indexed": 4,
+    "tfm_per_byte": 3,
+    "divd": 25,
+    "muld": 28,
+    "units": "clock_cycles",
+    "note": "Native mode timings ~30% faster"
+  },
+  "vs_6809": {
+    "compatible": "100% in emulation mode",
+    "native_mode": "2× faster potential",
+    "new_registers": "E, F, W, Q, V, MD",
+    "hardware_divide": "Yes (6809: no)",
+    "block_transfer": "TFM instruction (6809: no)"
+  },
+  "performance_characteristics": {
+    "ipc_emulation_mode": 0.11,
+    "ipc_native_mode": 0.18,
+    "mips_native_2mhz": 0.36,
+    "vs_6809": "Up to 2× faster"
+  },
+  "historical_context": {
+    "year_introduced": 1982,
+    "designer": "Hitachi (6809 second-source)",
+    "status": "Undocumented until 1988!",
+    "discovery": "Users discovered extra features by accident",
+    "significance": "Best 8-bit processor ever made"
+  },
+  "undocumented_history": {
+    "1982": "Hitachi releases 6309 as 6809 second-source",
+    "1986": "Users notice faster execution on some instructions",
+    "1988": "Full documentation finally released",
+    "reason": "Hitachi didn't want to compete with Motorola license"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.15,
+    "tolerance_percent": 3.0
+  }
+}

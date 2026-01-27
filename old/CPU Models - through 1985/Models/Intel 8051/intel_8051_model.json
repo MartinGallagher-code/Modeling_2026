@@ -1,0 +1,95 @@
+{
+  "model_metadata": {
+    "name": "Intel 8051 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Intel 8051 (1980)",
+    "description": "Most successful microcontroller architecture ever - billions shipped"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "clock_frequency_mhz": 12.0,
+    "internal_divider": 12,
+    "effective_mhz": 1.0,
+    "registers": 32,
+    "architecture_type": "harvard_microcontroller",
+    "pipeline_stages": 1,
+    "transistor_count": 12000
+  },
+  "on_chip_resources": {
+    "rom_bytes": 4096,
+    "ram_bytes": 128,
+    "io_lines": 32,
+    "timers": 2,
+    "serial_port": "Full-duplex UART",
+    "interrupts": 5
+  },
+  "register_set": {
+    "A": "8-bit accumulator",
+    "B": "8-bit register (for multiply/divide)",
+    "R0_R7": "8 working registers × 4 banks",
+    "DPTR": "16-bit data pointer",
+    "SP": "8-bit stack pointer",
+    "PSW": "Program status word",
+    "PC": "16-bit program counter"
+  },
+  "special_function_registers": {
+    "count": 21,
+    "examples": ["P0", "P1", "P2", "P3", "TCON", "TMOD", "TH0", "TL0", "SCON", "SBUF", "IE", "IP"],
+    "description": "Memory-mapped peripheral control"
+  },
+  "instruction_mix": {
+    "register_ops": 0.30,
+    "memory_ops": 0.25,
+    "io_ops": 0.15,
+    "branch_jump": 0.15,
+    "bit_ops": 0.10,
+    "other": 0.05
+  },
+  "instruction_timings": {
+    "register_to_register": 1,
+    "immediate": 1,
+    "direct_addressing": 1,
+    "indirect_addressing": 1,
+    "bit_operations": 1,
+    "jump": 2,
+    "call": 2,
+    "multiply": 4,
+    "divide": 4,
+    "description": "Machine cycles (12 clocks each)"
+  },
+  "unique_features": {
+    "bit_addressable": "128 directly addressable bits",
+    "boolean_processor": "Single-bit operations",
+    "four_register_banks": "Fast context switching",
+    "hardware_multiply_divide": "8×8 multiply, 16/8 divide"
+  },
+  "performance_characteristics": {
+    "machine_cycle_clocks": 12,
+    "ipc_expected": 0.08,
+    "mips_at_12mhz": 1.0
+  },
+  "historical_context": {
+    "year_introduced": 1980,
+    "designer": "Intel",
+    "significance": "Most successful MCU architecture ever",
+    "units_shipped": "Billions",
+    "still_produced": true,
+    "clones": "50+ manufacturers",
+    "applications": ["Automotive", "Industrial", "Consumer", "IoT", "Medical", "Everything!"]
+  },
+  "why_successful": {
+    "comprehensive": "Everything needed on one chip",
+    "bit_operations": "Perfect for control applications",
+    "licensing": "Intel licensed widely",
+    "ecosystem": "Huge tool and code base",
+    "longevity": "40+ years and counting"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.07,
+    "tolerance_percent": 3.0
+  }
+}

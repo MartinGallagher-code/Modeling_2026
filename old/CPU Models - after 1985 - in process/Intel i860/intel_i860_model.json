@@ -1,0 +1,52 @@
+{
+  "model_metadata": {
+    "name": "Intel i860 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "Intel i860 (1989)",
+    "description": "Cray on a chip - supercomputer performance, supercomputer difficulty"
+  },
+  "architecture": {
+    "word_size_bits": 64,
+    "data_bus_width_bits": 64,
+    "address_bus_width_bits": 32,
+    "clock_frequency_mhz": 40.0,
+    "max_clock_mhz": 50.0,
+    "registers": 32,
+    "fp_registers": 32,
+    "architecture_type": "VLIW_hybrid",
+    "pipeline_stages": 5,
+    "transistor_count": 1000000
+  },
+  "superscalar_features": {
+    "dual_instruction_mode": "Issue integer AND float simultaneously",
+    "graphics_unit": "3D graphics pipeline",
+    "vector_operations": "64-bit SIMD-like operations",
+    "peak_mflops": 80
+  },
+  "programming_challenges": {
+    "dual_mode_complexity": "Must explicitly schedule both units",
+    "no_interlocks": "Programmer handles pipeline hazards",
+    "branch_delay": "Three delay slots!",
+    "cache_management": "Manual cache control"
+  },
+  "performance_characteristics": {
+    "peak_mflops": 80,
+    "typical_mflops": 20,
+    "ipc_expected": 0.60,
+    "compiler_difficulty": "Extremely hard to optimize"
+  },
+  "historical_context": {
+    "year_introduced": 1989,
+    "designer": "Intel",
+    "marketing": "Cray on a chip",
+    "systems": ["Intel iPSC/860", "NeXT Dimension", "Stardent", "Evans & Sutherland"],
+    "failure": "Too hard to program, compilers couldn't optimize"
+  },
+  "why_it_failed": {
+    "complexity": "Required hand-tuning for performance",
+    "compilers": "Couldn't achieve peak performance",
+    "competition": "MIPS and SPARC easier to use",
+    "lesson": "Peak performance means nothing if unreachable"
+  }
+}

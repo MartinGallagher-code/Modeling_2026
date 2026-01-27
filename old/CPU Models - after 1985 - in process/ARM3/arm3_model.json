@@ -1,0 +1,38 @@
+{
+  "model_metadata": {
+    "name": "ARM3 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "ARM3 (1989)",
+    "description": "First ARM with cache - bridge to modern ARM"
+  },
+  "architecture": {
+    "word_size_bits": 32,
+    "data_bus_width_bits": 32,
+    "address_bus_width_bits": 26,
+    "clock_frequency_mhz": 25.0,
+    "max_clock_mhz": 36.0,
+    "registers": 16,
+    "architecture_type": "RISC_cached",
+    "pipeline_stages": 3,
+    "transistor_count": 300000
+  },
+  "cache": {
+    "unified_cache_kb": 4,
+    "first_arm_with_cache": true,
+    "hit_rate": 0.95,
+    "significance": "Major performance improvement over ARM2"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.75,
+    "vs_arm2": "3× faster at same clock",
+    "mips_at_25mhz": 18
+  },
+  "historical_context": {
+    "year_introduced": 1989,
+    "designer": "Acorn/ARM Ltd",
+    "significance": "First cached ARM, proved ARM could scale",
+    "systems": ["Acorn A5000", "Acorn Archimedes upgrades"],
+    "transition": "Bridge between ARM2 and ARM6"
+  }
+}

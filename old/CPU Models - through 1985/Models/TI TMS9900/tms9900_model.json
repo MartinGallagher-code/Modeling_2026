@@ -1,0 +1,35 @@
+{
+  "model_metadata": {
+    "name": "TMS9900 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "TMS9900 (1976)",
+    "description": "Texas Instruments 16-bit - TI-99/4A home computer"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 16,
+    "address_bus_width_bits": 15,
+    "clock_frequency_mhz": 3.0,
+    "registers": 16,
+    "pipeline_stages": 1,
+    "unique_feature": "Registers in RAM (workspace)"
+  },
+  "workspace_concept": {
+    "description": "Registers are in RAM, not on-chip",
+    "workspace_pointer": "Points to 16 words in RAM as R0-R15",
+    "context_switch": "Just change workspace pointer",
+    "trade_off": "Fast context switch, slow register access"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.08,
+    "register_in_ram_penalty": "Slower than on-chip registers"
+  },
+  "historical_context": {
+    "year_introduced": 1976,
+    "designer": "Texas Instruments",
+    "systems": ["TI-99/4A home computer", "TI minicomputers", "Industrial"],
+    "ti994a_sales": "2.8 million units",
+    "competition": "Lost to Commodore 64"
+  }
+}

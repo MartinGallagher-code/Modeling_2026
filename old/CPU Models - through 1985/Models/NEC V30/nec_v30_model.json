@@ -1,0 +1,76 @@
+{
+  "model_metadata": {
+    "name": "NEC V30 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "NEC V30 (1984)",
+    "description": "Faster 8086-compatible - V20's 16-bit sibling"
+  },
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 16,
+    "address_bus_width_bits": 20,
+    "address_space_bytes": 1048576,
+    "clock_frequency_mhz": 10.0,
+    "max_clock_mhz": 16.0,
+    "registers": 14,
+    "architecture_type": "CISC_prefetch",
+    "pipeline_stages": 2,
+    "transistor_count": 63000,
+    "process_node_um": 2.0
+  },
+  "compatibility": {
+    "8086_compatible": true,
+    "8088_instructions": true,
+    "8080_emulation": "Native mode switch",
+    "pin_compatible": "Drop-in for 8086"
+  },
+  "v20_v30_relationship": {
+    "V20": "8088 replacement (8-bit bus)",
+    "V30": "8086 replacement (16-bit bus)",
+    "same_enhancements": true
+  },
+  "improvements_over_8086": {
+    "faster_multiply": "4× faster MUL/DIV",
+    "faster_shifts": "Single-cycle barrel shifter",
+    "faster_string_ops": "Optimized REP instructions",
+    "block_io": "INM/OUTM instructions",
+    "bit_operations": "New bit manipulation",
+    "overall_speedup": "10-40% faster"
+  },
+  "instruction_timings": {
+    "alu_reg_reg": 2,
+    "alu_reg_mem": 9,
+    "multiply_16": 22,
+    "divide_16": 28,
+    "string_move": 4,
+    "branch_taken": 9,
+    "units": "clock_cycles"
+  },
+  "vs_8086_timings": {
+    "8086_mul_16": 118,
+    "V30_mul_16": 22,
+    "speedup": "5.4×"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.14,
+    "mips_at_10mhz": 1.4,
+    "vs_8086_at_same_clock": "10-40% faster"
+  },
+  "historical_context": {
+    "year_introduced": 1984,
+    "manufacturer": "NEC",
+    "significance": "Faster 8086 clone with 8080 mode",
+    "lawsuit": "Part of Intel vs NEC (NEC won)",
+    "market": "AT-class machines and clones"
+  },
+  "systems_using_v30": {
+    "turbo_ats": "Many turbo AT machines",
+    "portables": "Early laptops",
+    "embedded": "Industrial systems"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.12,
+    "tolerance_percent": 3.0
+  }
+}

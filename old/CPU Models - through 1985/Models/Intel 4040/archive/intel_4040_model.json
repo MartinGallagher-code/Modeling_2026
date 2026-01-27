@@ -1,0 +1,82 @@
+{
+  "model_metadata": {
+    "name": "Intel 4040 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-25",
+    "target_cpu": "Intel 4040 (1974)",
+    "description": "Enhanced 4004 - interrupts, more instructions, larger stack"
+  },
+  "architecture": {
+    "word_size_bits": 4,
+    "data_bus_width_bits": 4,
+    "address_bus_width_bits": 12,
+    "program_memory_bytes": 8192,
+    "data_memory_nibbles": 1280,
+    "clock_frequency_mhz": 0.74,
+    "registers": 24,
+    "index_registers": "16 x 4-bit (as 8 pairs)",
+    "architecture_type": "harvard_4bit",
+    "pipeline_stages": 1,
+    "transistor_count": 3000,
+    "package": "24-pin DIP"
+  },
+  "improvements_over_4004": {
+    "interrupts": "Single-level interrupt (4004 had none!)",
+    "stack": "7 levels (vs 4004's 3 levels)",
+    "instructions": "60 (vs 4004's 46)",
+    "halt": "HLT instruction added",
+    "io": "Improved I/O instructions",
+    "new_instructions": ["HLT", "BBS", "WPM", "PKB", "EIN", "DIN", "RPM"]
+  },
+  "register_architecture": {
+    "accumulator": "4-bit",
+    "index_registers": "R0-R15 (sixteen 4-bit, used as 8 pairs)",
+    "stack": "7-level hardware stack",
+    "program_counter": "12-bit",
+    "flags": ["Carry", "Accumulator (zero)"]
+  },
+  "instruction_set": {
+    "total_instructions": 60,
+    "instruction_sizes": ["8-bit (1 word)", "16-bit (2 words)"],
+    "categories": {
+      "index_register": "FIN, INC, ISZ, etc.",
+      "accumulator": "ADD, SUB, CLB, CLC, etc.",
+      "transfer": "JUN, JIN, JCN, etc.",
+      "io": "WRR, RDR, WRM, RDM, etc.",
+      "new_in_4040": "HLT, BBS, WPM, EIN, DIN, etc."
+    }
+  },
+  "instruction_timings": {
+    "single_word": 8,
+    "double_word": 16,
+    "io_operation": 8,
+    "branch_taken": 16,
+    "units": "clock_cycles"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.06,
+    "instructions_per_second": 45000,
+    "note": "Slightly faster than 4004 due to better instructions"
+  },
+  "historical_context": {
+    "year_introduced": 1974,
+    "manufacturer": "Intel",
+    "significance": "Improved 4004 with interrupts",
+    "why_important": "Interrupts enabled real embedded applications",
+    "successor": "8008 (different architecture)",
+    "family": "MCS-40 (4040 is final member)"
+  },
+  "vs_4004": {
+    "4004_stack": "3 levels",
+    "4040_stack": "7 levels",
+    "4004_interrupts": "None",
+    "4040_interrupts": "Single-level",
+    "4004_instructions": 46,
+    "4040_instructions": 60,
+    "compatibility": "4040 runs all 4004 code"
+  },
+  "calibration": {
+    "arrival_rate_initial": 0.05,
+    "tolerance_percent": 3.0
+  }
+}

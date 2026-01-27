@@ -1,0 +1,37 @@
+{
+  "model_metadata": {
+    "name": "WDC 65C02 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "target_cpu": "WDC 65C02 (1983)",
+    "description": "CMOS 6502 - low power, new instructions, Apple IIc"
+  },
+  "architecture": {
+    "word_size_bits": 8,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 16,
+    "clock_frequency_mhz": 4.0,
+    "max_clock_mhz": 14.0,
+    "registers": 5,
+    "pipeline_stages": 1,
+    "technology": "CMOS"
+  },
+  "improvements_over_6502": {
+    "cmos": "Low power, static operation",
+    "new_instructions": "PHX, PHY, PLX, PLY, STZ, BRA, etc.",
+    "fixed_bugs": "JMP indirect bug fixed",
+    "higher_clocks": "Up to 14 MHz",
+    "rockwell_extensions": "BBR, BBS, RMB, SMB (bit ops)"
+  },
+  "performance_characteristics": {
+    "ipc_expected": 0.10,
+    "vs_6502": "Same IPC but new instructions help"
+  },
+  "historical_context": {
+    "year_introduced": 1983,
+    "designer": "Western Design Center (Bill Mensch)",
+    "significance": "Extended 6502 life, enabled Apple IIc",
+    "systems": ["Apple IIc", "Apple IIe Enhanced", "Commander X16", "Many embedded"],
+    "still_produced": true
+  }
+}

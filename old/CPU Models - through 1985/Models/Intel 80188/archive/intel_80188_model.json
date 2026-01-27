@@ -1,0 +1,228 @@
+{
+  "model_metadata": {
+    "name": "Intel 80188 CPU Queueing Model",
+    "version": "1.0",
+    "date": "2026-01-24",
+    "author": "Grey-Box Performance Modeling Research",
+    "target_cpu": "Intel 80188 (1982-2007)",
+    "description": "80186 with 8-bit bus - cost-optimized embedded system-on-chip"
+  },
+  
+  "architecture": {
+    "word_size_bits": 16,
+    "data_bus_width_bits": 8,
+    "address_bus_width_bits": 20,
+    "clock_frequency_mhz": 8.0,
+    "max_clock_mhz": 20.0,
+    "registers": "8086-compatible (16-bit internal)",
+    "architecture_type": "CISC_with_prefetch",
+    "pipeline_stages": 2,
+    "prefetch_queue_bytes": 4,
+    "notes": "80186 with 8-bit external bus - same relationship as 8086/8088"
+  },
+  
+  "relationship_to_80186": {
+    "cpu_core": "Identical to 80186",
+    "internal_registers": "16-bit (same)",
+    "external_bus": "8-bit (vs 80186's 16-bit)",
+    "prefetch_queue": "4 bytes (vs 80186's 6 bytes)",
+    "integrated_peripherals": "Identical (DMA, timers, interrupts, chip selects)",
+    "performance_impact": "Slower memory access due to 8-bit bus",
+    "cost_advantage": "Cheaper 8-bit memory systems",
+    "analogy": "Same as 8088 is to 8086"
+  },
+  
+  "key_features": {
+    "integrated_peripherals": "Same as 80186 (DMA, timers, interrupts, chip selects)",
+    "8086_compatible": "Binary compatible with 8086/8088 code",
+    "8bit_bus_advantage": "Use cheaper 8-bit memory and peripherals",
+    "cost_optimized": "Lower total system cost than 80186",
+    "embedded_focus": "Ultra-cost-sensitive embedded applications"
+  },
+  
+  "pipeline_architecture": {
+    "bus_interface_unit": {
+      "name": "BIU - Bus Interface Unit",
+      "function": "Fetch instructions and data via 8-bit bus",
+      "prefetch_queue": "4-byte FIFO (smaller than 80186)",
+      "bus_width": "8-bit (fetches 1 byte per bus cycle)",
+      "bottleneck": "Bus bandwidth limited by 8-bit width"
+    },
+    "execution_unit": {
+      "name": "EU - Execution Unit",
+      "function": "Decode and execute instructions",
+      "performance": "Same as 80186 (internal 16-bit)"
+    }
+  },
+  
+  "integrated_peripherals": {
+    "dma_controller": {
+      "channels": 2,
+      "description": "Same as 80186",
+      "note": "DMA transfers limited by 8-bit bus"
+    },
+    "timer_counter_unit": {
+      "timers": 3,
+      "description": "Same as 80186"
+    },
+    "interrupt_controller": {
+      "description": "Same as 80186"
+    },
+    "chip_select_unit": {
+      "chip_selects": 7,
+      "description": "Same as 80186"
+    }
+  },
+  
+  "instruction_mix": {
+    "description": "Typical embedded 80188 code",
+    "mov_operations": 0.26,
+    "alu_operations": 0.32,
+    "load_store": 0.18,
+    "jump_call": 0.14,
+    "stack_operations": 0.06,
+    "string_operations": 0.02,
+    "io_operations": 0.02
+  },
+  
+  "instruction_timings": {
+    "basic_mov": {
+      "reg_to_reg": 2,
+      "reg_to_mem": 13,
+      "mem_to_reg": 12,
+      "immediate": 4,
+      "description": "Memory ops slower due to 8-bit bus",
+      "vs_80186": "Memory operations ~50% slower"
+    },
+    "alu_operations": {
+      "add_reg": 3,
+      "add_mem": 15,
+      "sub_reg": 3,
+      "description": "Register ops same, memory ops slower"
+    },
+    "branch_jump": {
+      "short_jump": 14,
+      "near_jump": 15,
+      "near_call": 19,
+      "ret_near": 20,
+      "description": "Similar to 80186, slightly slower for memory access"
+    },
+    "multiply_divide": {
+      "mul_8bit": 26,
+      "mul_16bit": 35,
+      "div_8bit": 29,
+      "div_16bit": 38,
+      "description": "Same as 80186 (internal operation)"
+    }
+  },
+  
+  "memory_system": {
+    "no_cache": true,
+    "memory_access_cycles": 4,
+    "bus_width_bytes": 1,
+    "prefetch_queue_size": 4,
+    "bytes_per_fetch": 1,
+    "word_access_penalty": "2 bus cycles for 16-bit access",
+    "description": "8-bit bus requires 2 cycles for 16-bit data"
+  },
+  
+  "prefetch_queue": {
+    "size_bytes": 4,
+    "type": "FIFO",
+    "smaller_than_80186": true,
+    "reason": "8-bit bus fills queue slower",
+    "queue_empty_probability": 0.18,
+    "queue_full_probability": 0.05,
+    "efficiency": 0.78,
+    "description": "Smaller queue, fills slower, more stalls"
+  },
+  
+  "bottlenecks": {
+    "primary": "bus_interface_unit",
+    "secondary": "execution_unit",
+    "8bit_bus_impact": "BIU becomes bottleneck (vs EU in 80186)",
+    "same_as_8088": "8-bit bus limits throughput like 8088 vs 8086",
+    "description": "Bus bandwidth is the limiting factor"
+  },
+  
+  "performance_characteristics": {
+    "ipc_expected": 0.33,
+    "vs_80186": "~18% slower due to 8-bit bus",
+    "vs_8088": "Similar performance characteristics",
+    "bus_limited": true,
+    "description": "Same EU performance, but BIU starved by narrow bus"
+  },
+  
+  "calibration": {
+    "arrival_rate_initial": 0.20,
+    "arrival_rate_bounds": [0.10, 0.45],
+    "tolerance_percent": 2.0,
+    "max_iterations": 50
+  },
+  
+  "instruction_length_distribution": {
+    "1_byte": 0.35,
+    "2_byte": 0.30,
+    "3_byte": 0.20,
+    "4_byte": 0.10,
+    "5_byte": 0.04,
+    "6_byte": 0.01,
+    "average_bytes": 2.5,
+    "note": "Same instructions, but 8-bit bus fetches slower"
+  },
+  
+  "historical_context": {
+    "year_introduced": 1982,
+    "designer": "Intel",
+    "significance": "Cost-optimized embedded system-on-chip",
+    "market_segment": "Ultra-cost-sensitive embedded systems",
+    "common_systems": [
+      "Low-cost industrial controllers",
+      "Consumer electronics",
+      "Automotive sensors",
+      "Simple embedded systems",
+      "Cost-sensitive telecom equipment"
+    ],
+    "production_span": "1982-2007 (25 years)",
+    "vs_80186_market": "Even lower cost applications"
+  },
+  
+  "vs_80186": {
+    "cpu_core": "Identical",
+    "integrated_peripherals": "Identical",
+    "bus_width": "8-bit vs 16-bit",
+    "prefetch_queue": "4 bytes vs 6 bytes",
+    "memory_bandwidth": "Half of 80186",
+    "ipc": "~18% lower",
+    "system_cost": "Lower (8-bit memory cheaper)",
+    "target_market": "More cost-sensitive than 80186"
+  },
+  
+  "vs_8088": {
+    "similarity": "Both 8-bit bus versions of 16-bit internal CPUs",
+    "80188_advantage": "Integrated peripherals",
+    "8088_advantage": "IBM PC compatibility",
+    "performance": "Similar (both bus-limited)"
+  },
+  
+  "cost_advantages": {
+    "memory_cost": "8-bit memory systems cheaper",
+    "pcb_cost": "Fewer data bus traces (8 vs 16)",
+    "peripheral_cost": "8-bit peripherals cheaper",
+    "total_system_cost": "Lowest of x86 embedded options"
+  },
+  
+  "design_tradeoff": {
+    "sacrifice": "~18% performance (vs 80186)",
+    "gain": "Lower system cost",
+    "when_to_use": "When cost matters more than performance",
+    "typical_apps": "High-volume, cost-sensitive embedded"
+  },
+  
+  "benchmarks": {
+    "ipc_target": 0.33,
+    "vs_80186": "0.82× (18% slower)",
+    "vs_8088": "Similar",
+    "bottleneck": "Bus bandwidth"
+  }
+}
