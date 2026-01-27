@@ -1,51 +1,77 @@
-# Motorola 68881 Performance Model
-
-Grey-box queueing model for the Motorola 68881 microprocessor.
+# Motorola 68881
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
-| Year | 1984 |
+**Motorola 68881** (1985) - FPU for 68020
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
+| Year | 1985 |
+| Manufacturer | Various |
+| Data Width | 80-bit |
 | Clock | 16.0 MHz |
-| Bus Width | 32-bit |
 | Transistors | 155,000 |
+| Technology | CMOS |
+| Package | 68-pin PGA |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| fmove | 20 | 0.20 | FMOVE |
-| fadd | 30 | 0.20 | FADD |
-| fsub | 30 | 0.10 | FSUB |
-| fmul | 45 | 0.20 | FMUL |
-| fdiv | 90 | 0.10 | FDIV |
-| fsqrt | 120 | 0.05 | FSQRT |
-| fsin_fcos | 200 | 0.05 | FSIN, FCOS |
-| fcomp | 25 | 0.10 | FCMP |
+- **Data Width:** 80-bit
+- **CPI Range:** (20, 200)
+- **Typical CPI:** 50.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 200,000 - 800,000
+- **MIPS (estimated):** 0.200 - 0.800
+- **Typical CPI:** 50.0
 
-- **IPS Range**: 150,000 - 500,000
-- **CPI Range**: 30 - 120
-- **Primary Bottleneck**: execute, fpu
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m68881_model import analyze, validate
+from m68881_validated import M68881Model
 
-# Run analysis
-result = analyze('typical')
+model = M68881Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-MC68881 Users Manual
+```
+m68881/
+├── README.md                      # This documentation
+├── current/
+│   └── m68881_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m68881_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

@@ -1,0 +1,28 @@
+{
+  "processor": "Fairchild F8",
+  "year": 1975,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.0,
+    "transistors": 5000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      20
+    ],
+    "typical_cpi": 7.0
+  },
+  "validated_performance": {
+    "ips_min": 200000,
+    "ips_max": 450000,
+    "mips_typical": 0.2
+  },
+  "notes": "First single-chip MCU design",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

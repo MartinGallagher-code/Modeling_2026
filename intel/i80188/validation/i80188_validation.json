@@ -1,0 +1,28 @@
+{
+  "processor": "Intel 80188",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 8.0,
+    "transistors": 55000,
+    "technology": "NMOS",
+    "package": "68-pin LCC"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      40
+    ],
+    "typical_cpi": 10.0
+  },
+  "validated_performance": {
+    "ips_min": 600000,
+    "ips_max": 1200000,
+    "mips_typical": 0.6
+  },
+  "notes": "8-bit bus 80186",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

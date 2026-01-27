@@ -1,0 +1,28 @@
+{
+  "processor": "Zilog Z8",
+  "year": 1979,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 8.0,
+    "transistors": 12000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      6,
+      20
+    ],
+    "typical_cpi": 10.0
+  },
+  "validated_performance": {
+    "ips_min": 500000,
+    "ips_max": 1300000,
+    "mips_typical": 0.5
+  },
+  "notes": "Single-chip MCU",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

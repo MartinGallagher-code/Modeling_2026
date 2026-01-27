@@ -1,0 +1,28 @@
+{
+  "processor": "MIPS R2000",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 8.0,
+    "transistors": 115000,
+    "technology": "2\u00b5m CMOS",
+    "package": "145-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      5
+    ],
+    "typical_cpi": 2.0
+  },
+  "validated_performance": {
+    "ips_min": 3500000,
+    "ips_max": 7000000,
+    "mips_typical": 3.5
+  },
+  "notes": "MIPS architecture origin",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

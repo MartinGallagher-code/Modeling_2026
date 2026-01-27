@@ -1,0 +1,28 @@
+{
+  "processor": "National SC/MP",
+  "year": 1974,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 1.0,
+    "transistors": 3000,
+    "technology": "PMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      5,
+      22
+    ],
+    "typical_cpi": 10.0
+  },
+  "validated_performance": {
+    "ips_min": 50000,
+    "ips_max": 150000,
+    "mips_typical": 0.05
+  },
+  "notes": "Simple Cost-effective Micro Processor",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

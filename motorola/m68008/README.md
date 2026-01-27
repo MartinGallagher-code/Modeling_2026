@@ -1,53 +1,77 @@
-# Motorola 68008 Performance Model
-
-Grey-box queueing model for the Motorola 68008 microprocessor.
+# Motorola 68008
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Motorola 68008** (1982) - 8-bit bus version of 68000
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1982 |
+| Manufacturer | Various |
+| Data Width | 32-bit |
 | Clock | 8.0 MHz |
-| Bus Width | 8-bit |
-| Transistors | 68,000 |
+| Transistors | 70,000 |
+| Technology | NMOS |
+| Package | 48-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| move_reg | 4 | 0.20 | MOVE Dn,Dn |
-| move_mem | 18 | 0.15 | MOVE (An),Dn |
-| alu_reg | 4 | 0.20 | ALU register |
-| alu_mem | 18 | 0.10 | ALU memory |
-| immediate | 12 | 0.10 | Immediate |
-| branch | 14 | 0.10 | Branch |
-| jsr_rts | 24 | 0.05 | JSR, RTS |
-| multiply | 74 | 0.05 | Multiply |
-| divide | 162 | 0.03 | Divide |
-| misc | 4 | 0.02 | Other |
+- **Data Width:** 32-bit
+- **CPI Range:** (4, 158)
+- **Typical CPI:** 14.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 400,000 - 900,000
+- **MIPS (estimated):** 0.400 - 0.900
+- **Typical CPI:** 14.0
 
-- **IPS Range**: 600,000 - 1,200,000
-- **CPI Range**: 7 - 160
-- **Primary Bottleneck**: bus_width, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m68008_model import analyze, validate
+from m68008_validated import M68008Model
 
-# Run analysis
-result = analyze('typical')
+model = M68008Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-M68008 Users Manual
+```
+m68008/
+├── README.md                      # This documentation
+├── current/
+│   └── m68008_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m68008_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

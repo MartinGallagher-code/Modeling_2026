@@ -1,0 +1,28 @@
+{
+  "processor": "Harris RTX2000",
+  "year": 1988,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 10.0,
+    "transistors": 12000,
+    "technology": "CMOS",
+    "package": "84-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      2
+    ],
+    "typical_cpi": 1.1
+  },
+  "validated_performance": {
+    "ips_min": 7000000,
+    "ips_max": 10000000,
+    "mips_typical": 7.0
+  },
+  "notes": "Forth stack machine",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

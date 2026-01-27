@@ -1,0 +1,28 @@
+{
+  "processor": "TI TMS9900",
+  "year": 1976,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 3.0,
+    "transistors": 8000,
+    "technology": "NMOS",
+    "package": "64-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      8,
+      64
+    ],
+    "typical_cpi": 20.0
+  },
+  "validated_performance": {
+    "ips_min": 100000,
+    "ips_max": 300000,
+    "mips_typical": 0.1
+  },
+  "notes": "Memory-to-memory architecture",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

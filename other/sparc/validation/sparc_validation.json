@@ -1,0 +1,28 @@
+{
+  "processor": "SPARC",
+  "year": 1987,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 16.0,
+    "transistors": 100000,
+    "technology": "1.5\u00b5m CMOS",
+    "package": "175-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      4
+    ],
+    "typical_cpi": 1.3
+  },
+  "validated_performance": {
+    "ips_min": 10000000,
+    "ips_max": 16000000,
+    "mips_typical": 10.0
+  },
+  "notes": "Sun RISC architecture",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

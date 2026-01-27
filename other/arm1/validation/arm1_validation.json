@@ -1,0 +1,28 @@
+{
+  "processor": "ARM1",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 8.0,
+    "transistors": 25000,
+    "technology": "3\u00b5m CMOS",
+    "package": "84-pin PLCC"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      17
+    ],
+    "typical_cpi": 1.8
+  },
+  "validated_performance": {
+    "ips_min": 3000000,
+    "ips_max": 6000000,
+    "mips_typical": 3.0
+  },
+  "notes": "First ARM processor",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

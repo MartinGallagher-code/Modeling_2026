@@ -1,0 +1,28 @@
+{
+  "processor": "Zilog Z80A",
+  "year": 1978,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 4.0,
+    "transistors": 8500,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      23
+    ],
+    "typical_cpi": 7.8
+  },
+  "validated_performance": {
+    "ips_min": 400000,
+    "ips_max": 950000,
+    "mips_typical": 0.4
+  },
+  "notes": "Higher speed Z80",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "processor": "AMD Am2903",
+  "year": 1976,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 10.0,
+    "transistors": 400,
+    "technology": "Bipolar",
+    "package": "48-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      1
+    ],
+    "typical_cpi": 1.0
+  },
+  "validated_performance": {
+    "ips_min": 2500000,
+    "ips_max": 10000000,
+    "mips_typical": 2.5
+  },
+  "notes": "Enhanced Am2901 with multiply",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

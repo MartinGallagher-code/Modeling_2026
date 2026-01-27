@@ -1,0 +1,28 @@
+{
+  "processor": "AMD Am29000",
+  "year": 1988,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 25.0,
+    "transistors": 450000,
+    "technology": "1\u00b5m CMOS",
+    "package": "169-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      4
+    ],
+    "typical_cpi": 1.5
+  },
+  "validated_performance": {
+    "ips_min": 15000000,
+    "ips_max": 25000000,
+    "mips_typical": 15.0
+  },
+  "notes": "Early RISC processor",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

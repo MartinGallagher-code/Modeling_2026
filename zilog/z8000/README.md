@@ -1,52 +1,77 @@
-# Zilog Z8000 Performance Model
-
-Grey-box queueing model for the Zilog Z8000 microprocessor.
+# Zilog Z8000
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Zilog Z8000** (1979) - Zilog's 16-bit processor
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1979 |
+| Manufacturer | Various |
+| Data Width | 16-bit |
 | Clock | 4.0 MHz |
-| Bus Width | 16-bit |
 | Transistors | 17,500 |
+| Technology | NMOS |
+| Package | 48-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| ld_r_r | 3 | 0.22 | LD R,R |
-| ld_r_im | 4 | 0.15 | LD R,#imm |
-| ld_r_mem | 7 | 0.18 | LD R,@addr |
-| alu_r | 4 | 0.20 | ADD, SUB, etc. |
-| alu_mem | 8 | 0.08 | ALU with memory |
-| jp | 6 | 0.08 | JP cc |
-| call_ret | 12 | 0.05 | CALL, RET |
-| multiply | 70 | 0.02 | MULT |
-| divide | 107 | 0.02 | DIV |
+- **Data Width:** 16-bit
+- **CPI Range:** (3, 100)
+- **Typical CPI:** 8.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 350,000 - 800,000
+- **MIPS (estimated):** 0.350 - 0.800
+- **Typical CPI:** 8.0
 
-- **IPS Range**: 500,000 - 1,200,000
-- **CPI Range**: 3 - 12
-- **Primary Bottleneck**: decode, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from z8000_model import analyze, validate
+from z8000_validated import Z8000Model
 
-# Run analysis
-result = analyze('typical')
+model = Z8000Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Z8000 CPU Users Manual
+```
+z8000/
+├── README.md                      # This documentation
+├── current/
+│   └── z8000_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── z8000_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

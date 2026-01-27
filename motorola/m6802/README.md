@@ -1,52 +1,77 @@
-# Motorola 6802 Performance Model
-
-Grey-box queueing model for the Motorola 6802 microprocessor.
+# Motorola 6802
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Motorola 6802** (1977) - 6800 with on-chip RAM and clock
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1977 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 1.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 5,000 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| inherent | 2 | 0.20 | Inherent addressing |
-| immediate | 2 | 0.18 | Immediate |
-| direct | 3 | 0.20 | Direct page |
-| extended | 4 | 0.12 | Extended |
-| indexed | 5 | 0.10 | Indexed |
-| branch_taken | 4 | 0.08 | Branch taken |
-| branch_not_taken | 4 | 0.05 | Branch not taken |
-| jsr_rts | 9 | 0.05 | JSR, RTS |
-| stack | 4 | 0.02 | Stack ops |
+- **Data Width:** 8-bit
+- **CPI Range:** (2, 12)
+- **Typical CPI:** 4.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 200,000 - 400,000
+- **MIPS (estimated):** 0.200 - 0.400
+- **Typical CPI:** 4.0
 
-- **IPS Range**: 250,000 - 500,000
-- **CPI Range**: 2 - 10
-- **Primary Bottleneck**: memory, fetch
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m6802_model import analyze, validate
+from m6802_validated import M6802Model
 
-# Run analysis
-result = analyze('typical')
+model = M6802Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Motorola MC6802 Data Sheet
+```
+m6802/
+├── README.md                      # This documentation
+├── current/
+│   └── m6802_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m6802_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

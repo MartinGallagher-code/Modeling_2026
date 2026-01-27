@@ -1,0 +1,28 @@
+{
+  "processor": "Motorola 68881",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 80,
+    "clock_mhz": 16.0,
+    "transistors": 155000,
+    "technology": "CMOS",
+    "package": "68-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      20,
+      200
+    ],
+    "typical_cpi": 50.0
+  },
+  "validated_performance": {
+    "ips_min": 200000,
+    "ips_max": 800000,
+    "mips_typical": 0.2
+  },
+  "notes": "FPU for 68020",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

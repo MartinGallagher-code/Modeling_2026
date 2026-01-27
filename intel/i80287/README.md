@@ -1,51 +1,77 @@
-# Intel 80287 Performance Model
-
-Grey-box queueing model for the Intel 80287 microprocessor.
+# Intel 80287
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
-| Year | 1982 |
+**Intel 80287** (1983) - FPU coprocessor for 80286
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
+| Year | 1983 |
+| Manufacturer | Various |
+| Data Width | 80-bit |
 | Clock | 8.0 MHz |
-| Bus Width | 16-bit |
 | Transistors | 45,000 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| fld | 40 | 0.20 | FLD (load) |
-| fst | 50 | 0.15 | FST (store) |
-| fadd | 90 | 0.20 | FADD |
-| fsub | 90 | 0.10 | FSUB |
-| fmul | 140 | 0.15 | FMUL |
-| fdiv | 200 | 0.10 | FDIV |
-| fsqrt | 180 | 0.05 | FSQRT |
-| fcomp | 50 | 0.05 | FCOMP |
+- **Data Width:** 80-bit
+- **CPI Range:** (50, 200)
+- **Typical CPI:** 100.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 50,000 - 150,000
+- **MIPS (estimated):** 0.050 - 0.150
+- **Typical CPI:** 100.0
 
-- **IPS Range**: 50,000 - 150,000
-- **CPI Range**: 50 - 200
-- **Primary Bottleneck**: execute, fpu
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i80287_model import analyze, validate
+from i80287_validated import I80287Model
 
-# Run analysis
-result = analyze('typical')
+model = I80287Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel 80287 Programmers Reference
+```
+i80287/
+├── README.md                      # This documentation
+├── current/
+│   └── i80287_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i80287_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

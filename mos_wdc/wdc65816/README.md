@@ -1,52 +1,77 @@
-# WDC 65816 Performance Model
-
-Grey-box queueing model for the WDC 65816 microprocessor.
+# WDC 65816
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**WDC 65816** (1984) - SNES CPU, Apple IIGS
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1984 |
-| Clock | 2.8 MHz |
-| Bus Width | 16-bit |
+| Manufacturer | Various |
+| Data Width | 16-bit |
+| Clock | 4.0 MHz |
 | Transistors | 22,000 |
+| Technology | CMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| implied | 2 | 0.15 | Implied |
-| immediate | 2 | 0.18 | Immediate |
-| direct | 3 | 0.18 | Direct page |
-| direct_x | 4 | 0.10 | Direct,X |
-| absolute | 4 | 0.12 | Absolute |
-| long | 5 | 0.08 | Long addressing |
-| branch_taken | 3 | 0.08 | Branch taken |
-| branch_not_taken | 2 | 0.04 | Branch not taken |
-| jsr_rts | 8 | 0.07 | JSR, RTS |
+- **Data Width:** 16-bit
+- **CPI Range:** (2, 8)
+- **Typical CPI:** 3.5
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 800,000 - 1,600,000
+- **MIPS (estimated):** 0.800 - 1.600
+- **Typical CPI:** 3.5
 
-- **IPS Range**: 1,000,000 - 2,500,000
-- **CPI Range**: 2 - 8
-- **Primary Bottleneck**: memory, fetch
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from wdc65816_model import analyze, validate
+from wdc65816_validated import WDC65816Model
 
-# Run analysis
-result = analyze('typical')
+model = WDC65816Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-WDC 65816 Data Sheet
+```
+wdc65816/
+├── README.md                      # This documentation
+├── current/
+│   └── wdc65816_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── wdc65816_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

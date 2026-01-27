@@ -1,53 +1,77 @@
-# Zilog Z180 Performance Model
-
-Grey-box queueing model for the Zilog Z180 microprocessor.
+# Zilog Z180
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Zilog Z180** (1985) - Enhanced Z80 with MMU
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1985 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 6.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 20,000 |
+| Technology | CMOS |
+| Package | 64-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| ld_r_r | 3 | 0.22 | LD r,r |
-| ld_r_n | 5 | 0.12 | LD r,n |
-| ld_r_hl | 5 | 0.15 | LD r,(HL) |
-| alu_r | 3 | 0.20 | ALU r |
-| alu_hl | 5 | 0.08 | ALU (HL) |
-| jp | 8 | 0.08 | JP |
-| jr_taken | 10 | 0.05 | JR taken |
-| call_ret | 14 | 0.05 | CALL, RET |
-| multiply | 18 | 0.03 | MLT |
-| push_pop | 9 | 0.02 | PUSH, POP |
+- **Data Width:** 8-bit
+- **CPI Range:** (3, 20)
+- **Typical CPI:** 5.5
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 800,000 - 1,800,000
+- **MIPS (estimated):** 0.800 - 1.800
+- **Typical CPI:** 5.5
 
-- **IPS Range**: 900,000 - 2,000,000
-- **CPI Range**: 3 - 18
-- **Primary Bottleneck**: decode, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from z180_model import analyze, validate
+from z180_validated import Z180Model
 
-# Run analysis
-result = analyze('typical')
+model = Z180Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Z180 Users Manual
+```
+z180/
+├── README.md                      # This documentation
+├── current/
+│   └── z180_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── z180_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

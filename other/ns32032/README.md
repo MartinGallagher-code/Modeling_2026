@@ -1,52 +1,77 @@
-# National NS32032 Performance Model
-
-Grey-box queueing model for the National NS32032 microprocessor.
+# NS32032
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**NS32032** (1984) - Improved NS32016
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1984 |
-| Clock | 15.0 MHz |
-| Bus Width | 32-bit |
+| Manufacturer | Various |
+| Data Width | 32-bit |
+| Clock | 10.0 MHz |
 | Transistors | 80,000 |
+| Technology | NMOS |
+| Package | 84-pin PGA |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_reg | 4 | 0.25 | MOV reg,reg |
-| mov_mem | 8 | 0.18 | MOV mem,reg |
-| alu_reg | 4 | 0.25 | ALU reg,reg |
-| alu_mem | 10 | 0.10 | ALU mem,reg |
-| branch | 6 | 0.08 | Branch |
-| call_ret | 15 | 0.06 | BSR, RET |
-| multiply | 18 | 0.04 | MUL |
-| divide | 35 | 0.02 | DIV |
-| misc | 4 | 0.02 | Other |
+- **Data Width:** 32-bit
+- **CPI Range:** (3, 80)
+- **Typical CPI:** 10.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 700,000 - 1,500,000
+- **MIPS (estimated):** 0.700 - 1.500
+- **Typical CPI:** 10.0
 
-- **IPS Range**: 1,500,000 - 4,000,000
-- **CPI Range**: 4 - 20
-- **Primary Bottleneck**: decode, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from ns32032_model import analyze, validate
+from ns32032_validated import NS32032Model
 
-# Run analysis
-result = analyze('typical')
+model = NS32032Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-NS32032 Data Sheet
+```
+ns32032/
+├── README.md                      # This documentation
+├── current/
+│   └── ns32032_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── ns32032_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

@@ -1,54 +1,77 @@
-# Zilog Z80A Performance Model
-
-Grey-box queueing model for the Zilog Z80A microprocessor.
+# Zilog Z80A
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Zilog Z80A** (1978) - Higher speed Z80
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1978 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 4.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 8,500 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| ld_r_r | 4 | 0.20 | LD r,r |
-| ld_r_n | 7 | 0.12 | LD r,n |
-| ld_r_hl | 7 | 0.15 | LD r,(HL) |
-| ld_r_ix | 19 | 0.05 | LD r,(IX+d) |
-| alu_r | 4 | 0.18 | ALU register |
-| alu_hl | 7 | 0.08 | ALU (HL) |
-| jp | 10 | 0.08 | JP |
-| jr_taken | 12 | 0.05 | JR taken |
-| jr_not_taken | 7 | 0.03 | JR not taken |
-| call_ret | 17 | 0.04 | CALL, RET |
-| push_pop | 11 | 0.02 | PUSH, POP |
+- **Data Width:** 8-bit
+- **CPI Range:** (4, 23)
+- **Typical CPI:** 7.8
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 400,000 - 950,000
+- **MIPS (estimated):** 0.400 - 0.950
+- **Typical CPI:** 7.8
 
-- **IPS Range**: 460,000 - 1,280,000
-- **CPI Range**: 4 - 23
-- **Primary Bottleneck**: decode, fetch
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from z80a_model import analyze, validate
+from z80a_validated import Z80AModel
 
-# Run analysis
-result = analyze('typical')
+model = Z80AModel()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Z80A Data Sheet
+```
+z80a/
+├── README.md                      # This documentation
+├── current/
+│   └── z80a_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── z80a_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

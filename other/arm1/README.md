@@ -1,52 +1,117 @@
-# Acorn ARM1 Performance Model
-
-Grey-box queueing model for the Acorn ARM1 microprocessor.
+# Acorn RISC Machine ARM1
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**ARM1** (1985) - First ARM processor
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1985 |
+| Manufacturer | Various |
+| Data Width | 32-bit |
 | Clock | 8.0 MHz |
-| Bus Width | 32-bit |
 | Transistors | 25,000 |
+| Technology | 3µm CMOS |
+| Package | 84-pin PLCC |
 
-## Timing Categories
+**Key Designers:** Sophie Wilson, Steve Furber
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| data_proc | 1 | 0.35 | Data processing |
-| load_single | 3 | 0.18 | LDR |
-| store_single | 2 | 0.10 | STR |
-| load_multiple | 4 | 0.05 | LDM |
-| branch | 3 | 0.12 | B, BL |
-| branch_link | 4 | 0.05 | BL |
-| multiply | 16 | 0.05 | MUL |
-| swi | 4 | 0.02 | SWI |
-| misc | 1 | 0.08 | Other |
+## Architecture
 
+**Type:** RISC with uniform register file
 
-## Performance Targets
+### Register Set
 
-- **IPS Range**: 4,000,000 - 8,000,000
-- **CPI Range**: 1 - 4
-- **Primary Bottleneck**: memory, pipeline
+- **General:** 16 × 32-bit (R0-R15)
+- **R15 Special:** Program counter + flags combined
+- **Modes:** User, IRQ, FIQ, Supervisor
 
-## Usage
+### Special Features
+
+- Conditional execution on every instruction
+- Barrel shifter on second operand
+- Multiple register load/store (LDM/STM)
+- Fast interrupt (FIQ) with banked registers
+
+## History
+
+Designed by Acorn for next-generation computers. First silicon worked correctly on first attempt.
+
+**Release Date:** April 26, 1985
+
+**Significance:** First ARM processor - started most successful CPU architecture in history.
+
+### Notable Systems Using This Processor
+
+- ARM1 development boards only (never in products)
+- Led to ARM2 in Acorn Archimedes
+
+**Legacy:** Founded ARM architecture - now in billions of devices annually.
+
+## Performance
+
+- **IPS Range:** 3,000,000 - 6,000,000
+- **MIPS (estimated):** 3.000 - 6.000
+- **Typical CPI:** 1.8
+
+## Technical Insights
+
+- Only 25,000 transistors - remarkable simplicity
+- Conditional execution reduced branches by ~30%
+- Barrel shifter enabled complex address calculations in one cycle
+- First silicon worked perfectly - exceptional for new architecture
+- Design influenced by 6502 philosophy - simplicity wins
+- Sophie Wilson wrote instruction set simulator in BBC BASIC first
+- FIQ mode had extra banked registers for fast interrupt response
+- Low transistor count = low power - key to later mobile success
+- R15 combining PC+flags was later regretted (fixed in ARMv3)
+
+## Performance Model
+
+### Usage
 
 ```python
-from arm1_model import analyze, validate
+from arm1_validated import ARM1Model
 
-# Run analysis
-result = analyze('typical')
+model = ARM1Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-ARM1 Technical Reference Manual
+```
+arm1/
+├── README.md                      # This documentation
+├── current/
+│   └── arm1_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── arm1_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

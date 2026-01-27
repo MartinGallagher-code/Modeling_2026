@@ -1,0 +1,28 @@
+{
+  "processor": "MOS 6510",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 1.0,
+    "transistors": 3510,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      7
+    ],
+    "typical_cpi": 3.5
+  },
+  "validated_performance": {
+    "ips_min": 250000,
+    "ips_max": 500000,
+    "mips_typical": 0.25
+  },
+  "notes": "Commodore 64 CPU (6502 variant)",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

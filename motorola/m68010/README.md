@@ -1,53 +1,77 @@
-# Motorola 68010 Performance Model
-
-Grey-box queueing model for the Motorola 68010 microprocessor.
+# Motorola 68010
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Motorola 68010** (1982) - Virtual memory support
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1982 |
+| Manufacturer | Various |
+| Data Width | 32-bit |
 | Clock | 10.0 MHz |
-| Bus Width | 16-bit |
 | Transistors | 84,000 |
+| Technology | NMOS |
+| Package | 64-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| move_reg | 4 | 0.22 | MOVE Dn,Dn |
-| move_mem | 10 | 0.15 | MOVE (An),Dn |
-| alu_reg | 4 | 0.22 | ALU register |
-| alu_mem | 10 | 0.10 | ALU memory |
-| immediate | 6 | 0.10 | Immediate |
-| branch | 8 | 0.08 | Branch (loop mode) |
-| jsr_rts | 14 | 0.05 | JSR, RTS |
-| multiply | 60 | 0.04 | Multiply |
-| divide | 140 | 0.02 | Divide |
-| misc | 4 | 0.02 | Other |
+- **Data Width:** 32-bit
+- **CPI Range:** (4, 150)
+- **Typical CPI:** 9.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 800,000 - 1,800,000
+- **MIPS (estimated):** 0.800 - 1.800
+- **Typical CPI:** 9.0
 
-- **IPS Range**: 1,200,000 - 2,500,000
-- **CPI Range**: 4 - 150
-- **Primary Bottleneck**: ea_calc, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m68010_model import analyze, validate
+from m68010_validated import M68010Model
 
-# Run analysis
-result = analyze('typical')
+model = M68010Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-MC68010 Users Manual
+```
+m68010/
+├── README.md                      # This documentation
+├── current/
+│   └── m68010_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m68010_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

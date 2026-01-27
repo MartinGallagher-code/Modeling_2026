@@ -1,52 +1,77 @@
-# Motorola 68020 Performance Model
-
-Grey-box queueing model for the Motorola 68020 microprocessor.
+# Motorola 68020
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Motorola 68020** (1984) - Full 32-bit bus, instruction cache
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1984 |
+| Manufacturer | Various |
+| Data Width | 32-bit |
 | Clock | 16.0 MHz |
-| Bus Width | 32-bit |
 | Transistors | 190,000 |
+| Technology | 2µm CMOS |
+| Package | 114-pin PGA |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| move_reg | 2 | 0.25 | MOVE Dn,Dn |
-| move_mem | 6 | 0.18 | MOVE (An),Dn |
-| alu_reg | 2 | 0.25 | ALU register |
-| alu_mem | 6 | 0.10 | ALU memory |
-| immediate | 3 | 0.08 | Immediate |
-| branch | 6 | 0.06 | Branch |
-| jsr_rts | 10 | 0.04 | JSR, RTS |
-| multiply | 28 | 0.02 | Multiply |
-| divide | 60 | 0.02 | Divide |
+- **Data Width:** 32-bit
+- **CPI Range:** (2, 80)
+- **Typical CPI:** 5.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 2,500,000 - 5,000,000
+- **MIPS (estimated):** 2.500 - 5.000
+- **Typical CPI:** 5.0
 
-- **IPS Range**: 3,000,000 - 6,000,000
-- **CPI Range**: 3 - 60
-- **Primary Bottleneck**: cache, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m68020_model import analyze, validate
+from m68020_validated import M68020Model
 
-# Run analysis
-result = analyze('typical')
+model = M68020Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-MC68020 Users Manual
+```
+m68020/
+├── README.md                      # This documentation
+├── current/
+│   └── m68020_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m68020_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

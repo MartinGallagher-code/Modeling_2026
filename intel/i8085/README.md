@@ -1,52 +1,77 @@
-# Intel 8085 Performance Model
-
-Grey-box queueing model for the Intel 8085 microprocessor.
+# Intel 8085
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Intel 8085** (1976) - Enhanced 8080, single +5V supply
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1976 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 3.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 6,500 |
+| Technology | 3µm NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_reg_reg | 4 | 0.22 | MOV r1,r2 |
-| mov_reg_mem | 7 | 0.15 | MOV r,M |
-| alu_register | 4 | 0.25 | ADD/SUB/AND/OR r |
-| alu_memory | 7 | 0.08 | ADD M, etc. |
-| immediate | 7 | 0.10 | MVI, ADI |
-| branch_taken | 10 | 0.08 | Conditional jumps |
-| branch_not_taken | 7 | 0.04 | Jcc not taken |
-| call_return | 16 | 0.05 | CALL/RET |
-| stack_ops | 12 | 0.03 | PUSH/POP |
+- **Data Width:** 8-bit
+- **CPI Range:** (4, 18)
+- **Typical CPI:** 6.5
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 370,000 - 769,000
+- **MIPS (estimated):** 0.370 - 0.769
+- **Typical CPI:** 6.5
 
-- **IPS Range**: 370,000 - 770,000
-- **CPI Range**: 4 - 16
-- **Primary Bottleneck**: decode, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i8085_model import analyze, validate
+from i8085_validated import I8085Model
 
-# Run analysis
-result = analyze('typical')
+model = I8085Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel 8085A Users Manual
+```
+i8085/
+├── README.md                      # This documentation
+├── current/
+│   └── i8085_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i8085_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

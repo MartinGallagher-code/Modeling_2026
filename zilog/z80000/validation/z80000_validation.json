@@ -1,0 +1,28 @@
+{
+  "processor": "Zilog Z80000",
+  "year": 1986,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 16.0,
+    "transistors": 91000,
+    "technology": "CMOS",
+    "package": "132-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      80
+    ],
+    "typical_cpi": 6.0
+  },
+  "validated_performance": {
+    "ips_min": 2000000,
+    "ips_max": 4500000,
+    "mips_typical": 2.0
+  },
+  "notes": "Zilog's 32-bit processor",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

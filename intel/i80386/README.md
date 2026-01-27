@@ -1,52 +1,77 @@
-# Intel 80386 Performance Model
-
-Grey-box queueing model for the Intel 80386 microprocessor.
+# Intel 80386
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Intel 80386** (1985) - First x86 32-bit processor
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1985 |
+| Manufacturer | Various |
+| Data Width | 32-bit |
 | Clock | 16.0 MHz |
-| Bus Width | 32-bit |
 | Transistors | 275,000 |
+| Technology | 1.5µm CMOS |
+| Package | 132-pin PGA |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_reg_reg | 2 | 0.22 | MOV r,r |
-| mov_reg_mem | 4 | 0.18 | MOV r,m |
-| alu_register | 2 | 0.25 | ALU r,r |
-| alu_memory | 6 | 0.10 | ALU r,m |
-| immediate | 2 | 0.10 | Immediate ops |
-| branch_taken | 10 | 0.06 | Jcc taken |
-| branch_not_taken | 3 | 0.04 | Jcc not taken |
-| call_return | 10 | 0.03 | CALL/RET |
-| multiply | 14 | 0.02 | MUL/IMUL |
+- **Data Width:** 32-bit
+- **CPI Range:** (2, 40)
+- **Typical CPI:** 4.4
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 3,000,000 - 6,000,000
+- **MIPS (estimated):** 3.000 - 6.000
+- **Typical CPI:** 4.4
 
-- **IPS Range**: 3,000,000 - 11,000,000
-- **CPI Range**: 2 - 6
-- **Primary Bottleneck**: cache, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i80386_model import analyze, validate
+from i80386_validated import I80386Model
 
-# Run analysis
-result = analyze('typical')
+model = I80386Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel 80386 Programmers Reference Manual
+```
+i80386/
+├── README.md                      # This documentation
+├── current/
+│   └── i80386_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i80386_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

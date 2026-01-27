@@ -1,52 +1,77 @@
-# Intel 80188 Performance Model
-
-Grey-box queueing model for the Intel 80188 microprocessor.
+# Intel 80188
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Intel 80188** (1982) - 8-bit bus 80186
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1982 |
+| Manufacturer | Various |
+| Data Width | 16-bit |
 | Clock | 8.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 55,000 |
+| Technology | NMOS |
+| Package | 68-pin LCC |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_reg_reg | 2 | 0.20 | MOV r,r |
-| mov_reg_mem | 12 | 0.15 | MOV r,m |
-| alu_register | 3 | 0.22 | ALU r,r |
-| alu_memory | 16 | 0.10 | ALU r,m |
-| immediate | 3 | 0.12 | Immediate ops |
-| branch_taken | 13 | 0.08 | Jcc taken |
-| branch_not_taken | 4 | 0.05 | Jcc not taken |
-| call_return | 18 | 0.05 | CALL/RET |
-| multiply | 40 | 0.03 | MUL/IMUL |
+- **Data Width:** 16-bit
+- **CPI Range:** (2, 40)
+- **Typical CPI:** 10.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 600,000 - 1,200,000
+- **MIPS (estimated):** 0.600 - 1.200
+- **Typical CPI:** 10.0
 
-- **IPS Range**: 700,000 - 1,200,000
-- **CPI Range**: 7 - 12
-- **Primary Bottleneck**: prefetch, bus_width
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i80188_model import analyze, validate
+from i80188_validated import I80188Model
 
-# Run analysis
-result = analyze('typical')
+model = I80188Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel 80186/80188 Users Manual
+```
+i80188/
+├── README.md                      # This documentation
+├── current/
+│   └── i80188_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i80188_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

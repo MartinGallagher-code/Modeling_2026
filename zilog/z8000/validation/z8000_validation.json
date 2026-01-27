@@ -1,0 +1,28 @@
+{
+  "processor": "Zilog Z8000",
+  "year": 1979,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 4.0,
+    "transistors": 17500,
+    "technology": "NMOS",
+    "package": "48-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      100
+    ],
+    "typical_cpi": 8.0
+  },
+  "validated_performance": {
+    "ips_min": 350000,
+    "ips_max": 800000,
+    "mips_typical": 0.35
+  },
+  "notes": "Zilog's 16-bit processor",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

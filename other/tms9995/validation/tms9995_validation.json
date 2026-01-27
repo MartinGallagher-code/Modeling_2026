@@ -1,0 +1,28 @@
+{
+  "processor": "TI TMS9995",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 12.0,
+    "transistors": 20000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      50
+    ],
+    "typical_cpi": 12.0
+  },
+  "validated_performance": {
+    "ips_min": 600000,
+    "ips_max": 1500000,
+    "mips_typical": 0.6
+  },
+  "notes": "Improved TMS9900",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

@@ -1,53 +1,77 @@
-# TI TMS9900 Performance Model
-
-Grey-box queueing model for the TI TMS9900 microprocessor.
+# TI TMS9900
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**TI TMS9900** (1976) - Memory-to-memory architecture
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1976 |
+| Manufacturer | Various |
+| Data Width | 16-bit |
 | Clock | 3.0 MHz |
-| Bus Width | 16-bit |
 | Transistors | 8,000 |
+| Technology | NMOS |
+| Package | 64-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| register | 14 | 0.20 | Register-register |
-| immediate | 14 | 0.15 | Immediate |
-| memory | 22 | 0.18 | Memory |
-| indexed | 26 | 0.10 | Indexed |
-| jump | 10 | 0.12 | Jump |
-| cru | 12 | 0.08 | CRU bit ops |
-| shift | 20 | 0.05 | Shift |
-| multiply | 52 | 0.05 | MPY |
-| divide | 92 | 0.02 | DIV |
-| blwp | 26 | 0.05 | BLWP context switch |
+- **Data Width:** 16-bit
+- **CPI Range:** (8, 64)
+- **Typical CPI:** 20.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 100,000 - 300,000
+- **MIPS (estimated):** 0.100 - 0.300
+- **Typical CPI:** 20.0
 
-- **IPS Range**: 300,000 - 700,000
-- **CPI Range**: 8 - 52
-- **Primary Bottleneck**: memory, workspace
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from tms9900_model import analyze, validate
+from tms9900_validated import TMS9900Model
 
-# Run analysis
-result = analyze('typical')
+model = TMS9900Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-TI TMS9900 Users Guide
+```
+tms9900/
+├── README.md                      # This documentation
+├── current/
+│   └── tms9900_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── tms9900_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

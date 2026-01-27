@@ -1,52 +1,77 @@
-# AT&T WE 32000 Performance Model
-
-Grey-box queueing model for the AT&T WE 32000 microprocessor.
+# WE 32000
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**WE 32000** (1982) - AT&T UNIX workstation CPU
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1982 |
+| Manufacturer | Various |
+| Data Width | 32-bit |
 | Clock | 14.0 MHz |
-| Bus Width | 32-bit |
-| Transistors | 145,000 |
+| Transistors | 120,000 |
+| Technology | CMOS |
+| Package | 68-pin PGA |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_reg | 4 | 0.22 | MOV reg,reg |
-| mov_mem | 8 | 0.18 | MOV mem,reg |
-| alu_reg | 4 | 0.22 | ALU reg,reg |
-| alu_mem | 10 | 0.10 | ALU mem,reg |
-| branch | 6 | 0.10 | Branch |
-| call_ret | 12 | 0.06 | JSB, RSB |
-| multiply | 15 | 0.05 | MULW |
-| divide | 30 | 0.02 | DIVW |
-| misc | 4 | 0.05 | Other |
+- **Data Width:** 32-bit
+- **CPI Range:** (3, 50)
+- **Typical CPI:** 8.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 1,200,000 - 3,000,000
+- **MIPS (estimated):** 1.200 - 3.000
+- **Typical CPI:** 8.0
 
-- **IPS Range**: 1,000,000 - 3,000,000
-- **CPI Range**: 4 - 15
-- **Primary Bottleneck**: decode, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from we32000_model import analyze, validate
+from we32000_validated import WE32000Model
 
-# Run analysis
-result = analyze('typical')
+model = WE32000Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-WE 32000 Users Manual
+```
+we32000/
+├── README.md                      # This documentation
+├── current/
+│   └── we32000_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── we32000_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

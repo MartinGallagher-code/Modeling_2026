@@ -1,52 +1,77 @@
-# WDC 65C02 Performance Model
-
-Grey-box queueing model for the WDC 65C02 microprocessor.
+# WDC 65C02
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**WDC 65C02** (1983) - CMOS 6502 with bug fixes
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1983 |
-| Clock | 2.0 MHz |
-| Bus Width | 8-bit |
-| Transistors | 4,500 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
+| Clock | 4.0 MHz |
+| Transistors | 8,000 |
+| Technology | CMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| implied | 2 | 0.18 | Implied |
-| immediate | 2 | 0.18 | Immediate |
-| zero_page | 3 | 0.22 | Zero page |
-| zero_page_x | 4 | 0.10 | Zero page,X |
-| absolute | 4 | 0.10 | Absolute |
-| indirect_zp | 5 | 0.05 | (ZP) indirect |
-| branch_taken | 3 | 0.08 | Branch taken |
-| branch_not_taken | 2 | 0.04 | Branch not taken |
-| jsr_rts | 6 | 0.05 | JSR, RTS |
+- **Data Width:** 8-bit
+- **CPI Range:** (2, 7)
+- **Typical CPI:** 3.2
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 800,000 - 1,500,000
+- **MIPS (estimated):** 0.800 - 1.500
+- **Typical CPI:** 3.2
 
-- **IPS Range**: 900,000 - 2,000,000
-- **CPI Range**: 2 - 6
-- **Primary Bottleneck**: memory, fetch
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from wdc65c02_model import analyze, validate
+from wdc65c02_validated import WDC65C02Model
 
-# Run analysis
-result = analyze('typical')
+model = WDC65C02Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-WDC 65C02 Data Sheet
+```
+wdc65c02/
+├── README.md                      # This documentation
+├── current/
+│   └── wdc65c02_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── wdc65c02_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

@@ -1,0 +1,28 @@
+{
+  "processor": "Intel 8080",
+  "year": 1974,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.0,
+    "transistors": 4500,
+    "technology": "6\u00b5m NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      18
+    ],
+    "typical_cpi": 7.8
+  },
+  "validated_performance": {
+    "ips_min": 200000,
+    "ips_max": 500000,
+    "mips_typical": 0.2
+  },
+  "notes": "Industry standard, basis for x86",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

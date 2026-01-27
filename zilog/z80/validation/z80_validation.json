@@ -1,0 +1,28 @@
+{
+  "processor": "Zilog Z80",
+  "year": 1976,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.5,
+    "transistors": 8500,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      23
+    ],
+    "typical_cpi": 7.8
+  },
+  "validated_performance": {
+    "ips_min": 250000,
+    "ips_max": 580000,
+    "mips_typical": 0.25
+  },
+  "notes": "Most popular 8-bit CPU ever",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

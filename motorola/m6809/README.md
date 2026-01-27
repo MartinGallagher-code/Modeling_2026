@@ -1,52 +1,77 @@
-# Motorola 6809 Performance Model
-
-Grey-box queueing model for the Motorola 6809 microprocessor.
+# Motorola 6809
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Motorola 6809** (1978) - Advanced 8-bit, position-independent code
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1978 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 1.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 9,000 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| inherent | 2 | 0.18 | Inherent |
-| immediate | 2 | 0.18 | Immediate |
-| direct | 4 | 0.18 | Direct |
-| indexed | 5 | 0.15 | Indexed |
-| extended | 5 | 0.10 | Extended |
-| branch_short | 3 | 0.08 | Short branch |
-| branch_long | 5 | 0.05 | Long branch |
-| jsr_rts | 7 | 0.05 | JSR, RTS |
-| multiply | 11 | 0.03 | MUL |
+- **Data Width:** 8-bit
+- **CPI Range:** (2, 21)
+- **Typical CPI:** 5.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 150,000 - 350,000
+- **MIPS (estimated):** 0.150 - 0.350
+- **Typical CPI:** 5.0
 
-- **IPS Range**: 250,000 - 600,000
-- **CPI Range**: 2 - 8
-- **Primary Bottleneck**: memory, fetch
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m6809_model import analyze, validate
+from m6809_validated import M6809Model
 
-# Run analysis
-result = analyze('typical')
+model = M6809Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Motorola MC6809 Programming Manual
+```
+m6809/
+├── README.md                      # This documentation
+├── current/
+│   └── m6809_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m6809_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

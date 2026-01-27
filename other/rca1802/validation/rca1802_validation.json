@@ -1,0 +1,28 @@
+{
+  "processor": "RCA 1802",
+  "year": 1976,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 3.2,
+    "transistors": 5000,
+    "technology": "CMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      8,
+      24
+    ],
+    "typical_cpi": 12.0
+  },
+  "validated_performance": {
+    "ips_min": 100000,
+    "ips_max": 300000,
+    "mips_typical": 0.1
+  },
+  "notes": "First CMOS microprocessor, Voyager",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

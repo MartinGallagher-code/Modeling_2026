@@ -1,0 +1,28 @@
+{
+  "processor": "Motorola 68000",
+  "year": 1979,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 8.0,
+    "transistors": 68000,
+    "technology": "3.5\u00b5m NMOS",
+    "package": "64-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      158
+    ],
+    "typical_cpi": 10.0
+  },
+  "validated_performance": {
+    "ips_min": 600000,
+    "ips_max": 1400000,
+    "mips_typical": 0.6
+  },
+  "notes": "Macintosh, Amiga, Atari ST CPU",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

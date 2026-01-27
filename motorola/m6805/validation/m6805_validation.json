@@ -1,0 +1,28 @@
+{
+  "processor": "Motorola 6805",
+  "year": 1979,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.0,
+    "transistors": 8000,
+    "technology": "NMOS",
+    "package": "28-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      11
+    ],
+    "typical_cpi": 3.5
+  },
+  "validated_performance": {
+    "ips_min": 400000,
+    "ips_max": 700000,
+    "mips_typical": 0.4
+  },
+  "notes": "Low-cost 8-bit MCU",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

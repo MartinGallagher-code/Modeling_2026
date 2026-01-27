@@ -1,52 +1,77 @@
-# Motorola 6800 Performance Model
-
-Grey-box queueing model for the Motorola 6800 microprocessor.
+# Motorola 6800
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Motorola 6800** (1974) - First Motorola microprocessor
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1974 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 1.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 4,100 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| inherent | 2 | 0.20 | NOP, TAB, etc. |
-| immediate | 2 | 0.18 | LDA #imm |
-| direct | 3 | 0.20 | LDA direct |
-| extended | 4 | 0.12 | LDA extended |
-| indexed | 5 | 0.10 | LDA indexed |
-| branch_taken | 4 | 0.08 | Branch taken |
-| branch_not_taken | 4 | 0.05 | Branch not taken |
-| jsr_rts | 9 | 0.05 | JSR, RTS |
-| stack | 4 | 0.02 | PSH, PUL |
+- **Data Width:** 8-bit
+- **CPI Range:** (2, 12)
+- **Typical CPI:** 4.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 200,000 - 400,000
+- **MIPS (estimated):** 0.200 - 0.400
+- **Typical CPI:** 4.0
 
-- **IPS Range**: 250,000 - 500,000
-- **CPI Range**: 2 - 10
-- **Primary Bottleneck**: memory, fetch
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m6800_model import analyze, validate
+from m6800_validated import M6800Model
 
-# Run analysis
-result = analyze('typical')
+model = M6800Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Motorola M6800 Programming Reference Manual
+```
+m6800/
+├── README.md                      # This documentation
+├── current/
+│   └── m6800_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m6800_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

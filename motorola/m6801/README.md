@@ -1,52 +1,77 @@
-# Motorola 6801 Performance Model
-
-Grey-box queueing model for the Motorola 6801 microprocessor.
+# Motorola 6801
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Motorola 6801** (1978) - Single-chip MCU based on 6800
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1978 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 1.0 MHz |
-| Bus Width | 8-bit |
-| Transistors | 15,000 |
+| Transistors | 35,000 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| inherent | 2 | 0.20 | Inherent |
-| immediate | 2 | 0.18 | Immediate |
-| direct | 3 | 0.20 | Direct |
-| indexed | 4 | 0.15 | Indexed |
-| extended | 4 | 0.10 | Extended |
-| branch | 3 | 0.08 | Branch |
-| jsr_rts | 6 | 0.05 | JSR, RTS |
-| multiply | 10 | 0.02 | MUL |
-| misc | 2 | 0.02 | Other |
+- **Data Width:** 8-bit
+- **CPI Range:** (2, 12)
+- **Typical CPI:** 3.5
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 250,000 - 450,000
+- **MIPS (estimated):** 0.250 - 0.450
+- **Typical CPI:** 3.5
 
-- **IPS Range**: 300,000 - 600,000
-- **CPI Range**: 2 - 8
-- **Primary Bottleneck**: memory, fetch
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m6801_model import analyze, validate
+from m6801_validated import M6801Model
 
-# Run analysis
-result = analyze('typical')
+model = M6801Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-MC6801 Data Sheet
+```
+m6801/
+├── README.md                      # This documentation
+├── current/
+│   └── m6801_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m6801_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

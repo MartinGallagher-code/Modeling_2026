@@ -1,0 +1,28 @@
+{
+  "processor": "INMOS T414",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 15.0,
+    "transistors": 200000,
+    "technology": "1.5\u00b5m CMOS",
+    "package": "84-pin PLCC"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      10
+    ],
+    "typical_cpi": 2.0
+  },
+  "validated_performance": {
+    "ips_min": 5000000,
+    "ips_max": 10000000,
+    "mips_typical": 5.0
+  },
+  "notes": "Transputer with links",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

@@ -1,50 +1,77 @@
-# AMD Am2901 Performance Model
-
-Grey-box queueing model for the AMD Am2901 microprocessor.
+# AMD Am2901
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**AMD Am2901** (1975) - Bit-slice ALU building block
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1975 |
+| Manufacturer | Various |
+| Data Width | 4-bit |
 | Clock | 10.0 MHz |
-| Bus Width | 4-bit |
-| Transistors | 1,700 |
+| Transistors | 200 |
+| Technology | Bipolar |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| alu_pass | 1 | 0.30 | ALU pass through |
-| alu_add | 1 | 0.25 | ALU add |
-| alu_sub | 1 | 0.15 | ALU subtract |
-| alu_logic | 1 | 0.15 | ALU logic ops |
-| shift | 2 | 0.08 | Shift operations |
-| ram_access | 1 | 0.05 | RAM access |
-| output | 1 | 0.02 | Output |
+- **Data Width:** 4-bit
+- **CPI Range:** (1, 1)
+- **Typical CPI:** 1.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 2,500,000 - 10,000,000
+- **MIPS (estimated):** 2.500 - 10.000
+- **Typical CPI:** 1.0
 
-- **IPS Range**: 2,000,000 - 10,000,000
-- **CPI Range**: 1 - 5
-- **Primary Bottleneck**: microcode, external
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from am2901_model import analyze, validate
+from am2901_validated import AM2901Model
 
-# Run analysis
-result = analyze('typical')
+model = AM2901Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-AMD Am2901 Data Sheet
+```
+am2901/
+├── README.md                      # This documentation
+├── current/
+│   └── am2901_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── am2901_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

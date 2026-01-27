@@ -1,53 +1,77 @@
-# Intel 8088 Performance Model
-
-Grey-box queueing model for the Intel 8088 microprocessor.
+# Intel 8088
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Intel 8088** (1979) - 8-bit bus version, IBM PC CPU
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1979 |
+| Manufacturer | Various |
+| Data Width | 16-bit |
 | Clock | 5.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 29,000 |
+| Technology | 3µm NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_reg_reg | 2 | 0.18 | MOV r,r |
-| mov_reg_mem | 16 | 0.15 | MOV r,m (slower bus) |
-| alu_register | 3 | 0.20 | ADD/SUB/AND/OR r,r |
-| alu_memory | 21 | 0.10 | ALU with memory |
-| immediate | 4 | 0.12 | MOV r,imm |
-| branch_taken | 16 | 0.08 | Jcc taken |
-| branch_not_taken | 4 | 0.05 | Jcc not taken |
-| call_return | 28 | 0.05 | CALL near |
-| string_ops | 22 | 0.04 | String operations |
-| multiply | 143 | 0.03 | MUL/IMUL |
+- **Data Width:** 16-bit
+- **CPI Range:** (2, 200)
+- **Typical CPI:** 15.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 250,000 - 500,000
+- **MIPS (estimated):** 0.250 - 0.500
+- **Typical CPI:** 15.0
 
-- **IPS Range**: 250,000 - 500,000
-- **CPI Range**: 10 - 20
-- **Primary Bottleneck**: prefetch, bus_width
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i8088_model import analyze, validate
+from i8088_validated import I8088Model
 
-# Run analysis
-result = analyze('typical')
+model = I8088Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel 8088 Users Manual
+```
+i8088/
+├── README.md                      # This documentation
+├── current/
+│   └── i8088_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i8088_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

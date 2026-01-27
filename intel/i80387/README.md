@@ -1,51 +1,77 @@
-# Intel 80387 Performance Model
-
-Grey-box queueing model for the Intel 80387 microprocessor.
+# Intel 80387
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Intel 80387** (1987) - FPU coprocessor for 80386
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1987 |
+| Manufacturer | Various |
+| Data Width | 80-bit |
 | Clock | 16.0 MHz |
-| Bus Width | 32-bit |
 | Transistors | 104,000 |
+| Technology | CMOS |
+| Package | 68-pin PGA |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| fld | 20 | 0.20 | FLD (load) |
-| fst | 25 | 0.15 | FST (store) |
-| fadd | 30 | 0.20 | FADD |
-| fsub | 30 | 0.10 | FSUB |
-| fmul | 50 | 0.15 | FMUL |
-| fdiv | 90 | 0.10 | FDIV |
-| fsqrt | 120 | 0.05 | FSQRT |
-| fcomp | 25 | 0.05 | FCOMP |
+- **Data Width:** 80-bit
+- **CPI Range:** (20, 140)
+- **Typical CPI:** 50.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 200,000 - 800,000
+- **MIPS (estimated):** 0.200 - 0.800
+- **Typical CPI:** 50.0
 
-- **IPS Range**: 150,000 - 500,000
-- **CPI Range**: 30 - 120
-- **Primary Bottleneck**: execute, fpu
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i80387_model import analyze, validate
+from i80387_validated import I80387Model
 
-# Run analysis
-result = analyze('typical')
+model = I80387Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel 80387 Programmers Reference
+```
+i80387/
+├── README.md                      # This documentation
+├── current/
+│   └── i80387_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i80387_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

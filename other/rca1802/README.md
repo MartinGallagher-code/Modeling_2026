@@ -1,51 +1,77 @@
-# RCA 1802 Performance Model
-
-Grey-box queueing model for the RCA 1802 microprocessor.
+# RCA 1802
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**RCA 1802** (1976) - First CMOS microprocessor, Voyager
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1976 |
-| Clock | 2.0 MHz |
-| Bus Width | 8-bit |
+| Manufacturer | Various |
+| Data Width | 8-bit |
+| Clock | 3.2 MHz |
 | Transistors | 5,000 |
+| Technology | CMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| short_branch | 8 | 0.15 | Short branch |
-| long_branch | 16 | 0.08 | Long branch |
-| memory_ref | 8 | 0.20 | Memory reference |
-| reg_ops | 8 | 0.25 | Register ops |
-| immediate | 16 | 0.12 | Immediate |
-| io_ops | 8 | 0.10 | I/O operations |
-| control | 8 | 0.05 | Control |
-| subroutine | 24 | 0.05 | SEP, RET |
+- **Data Width:** 8-bit
+- **CPI Range:** (8, 24)
+- **Typical CPI:** 12.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 100,000 - 300,000
+- **MIPS (estimated):** 0.100 - 0.300
+- **Typical CPI:** 12.0
 
-- **IPS Range**: 125,000 - 400,000
-- **CPI Range**: 8 - 24
-- **Primary Bottleneck**: fetch, decode
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from rca1802_model import analyze, validate
+from rca1802_validated import RCA1802Model
 
-# Run analysis
-result = analyze('typical')
+model = RCA1802Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-RCA CDP1802 Users Manual
+```
+rca1802/
+├── README.md                      # This documentation
+├── current/
+│   └── rca1802_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── rca1802_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

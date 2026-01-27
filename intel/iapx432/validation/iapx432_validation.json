@@ -1,0 +1,28 @@
+{
+  "processor": "Intel iAPX 432",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 8.0,
+    "transistors": 250000,
+    "technology": "NMOS",
+    "package": "Multi-chip"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      6,
+      400
+    ],
+    "typical_cpi": 50.0
+  },
+  "validated_performance": {
+    "ips_min": 100000,
+    "ips_max": 300000,
+    "mips_typical": 0.1
+  },
+  "notes": "Failed capability-based architecture",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

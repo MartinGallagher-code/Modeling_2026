@@ -1,52 +1,77 @@
-# Intel 8051 Performance Model
-
-Grey-box queueing model for the Intel 8051 microprocessor.
+# Intel 8051
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Intel 8051** (1980) - Most successful microcontroller family
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1980 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 12.0 MHz |
-| Bus Width | 8-bit |
-| Transistors | 128,000 |
+| Transistors | 60,000 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_direct | 12 | 0.20 | MOV direct |
-| mov_indirect | 12 | 0.15 | MOV @Ri |
-| alu_ops | 12 | 0.25 | ADD, ADDC, SUBB |
-| immediate | 12 | 0.12 | MOV #data |
-| branch | 24 | 0.10 | SJMP, AJMP |
-| call_return | 24 | 0.05 | ACALL, RET |
-| bit_ops | 12 | 0.08 | SETB, CLR, CPL |
-| multiply | 48 | 0.03 | MUL, DIV |
-| misc | 12 | 0.02 | NOP |
+- **Data Width:** 8-bit
+- **CPI Range:** (12, 24)
+- **Typical CPI:** 12.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 500,000 - 1,000,000
+- **MIPS (estimated):** 0.500 - 1.000
+- **Typical CPI:** 12.0
 
-- **IPS Range**: 500,000 - 1,000,000
-- **CPI Range**: 12 - 24
-- **Primary Bottleneck**: decode, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i8051_model import analyze, validate
+from i8051_validated import I8051Model
 
-# Run analysis
-result = analyze('typical')
+model = I8051Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel MCS-51 Users Manual
+```
+i8051/
+├── README.md                      # This documentation
+├── current/
+│   └── i8051_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i8051_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

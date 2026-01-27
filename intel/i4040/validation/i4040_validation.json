@@ -1,0 +1,28 @@
+{
+  "processor": "Intel 4040",
+  "year": 1974,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.74,
+    "transistors": 3000,
+    "technology": "10\u00b5m PMOS",
+    "package": "24-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      2
+    ],
+    "typical_cpi": 1.5
+  },
+  "validated_performance": {
+    "ips_min": 50000,
+    "ips_max": 92500,
+    "mips_typical": 0.05
+  },
+  "notes": "Enhanced 4004 with interrupts",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "processor": "Intel 8085",
+  "year": 1976,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 3.0,
+    "transistors": 6500,
+    "technology": "3\u00b5m NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      18
+    ],
+    "typical_cpi": 6.5
+  },
+  "validated_performance": {
+    "ips_min": 370000,
+    "ips_max": 769000,
+    "mips_typical": 0.37
+  },
+  "notes": "Enhanced 8080, single +5V supply",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

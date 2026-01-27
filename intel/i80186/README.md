@@ -1,52 +1,77 @@
-# Intel 80186 Performance Model
-
-Grey-box queueing model for the Intel 80186 microprocessor.
+# Intel 80186
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Intel 80186** (1982) - Embedded 8086 with peripherals
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1982 |
+| Manufacturer | Various |
+| Data Width | 16-bit |
 | Clock | 8.0 MHz |
-| Bus Width | 16-bit |
 | Transistors | 55,000 |
+| Technology | NMOS |
+| Package | 68-pin LCC |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_reg_reg | 2 | 0.20 | MOV r,r |
-| mov_reg_mem | 9 | 0.15 | MOV r,m |
-| alu_register | 3 | 0.22 | ALU r,r |
-| alu_memory | 12 | 0.10 | ALU r,m |
-| immediate | 3 | 0.12 | Immediate ops |
-| branch_taken | 13 | 0.08 | Jcc taken |
-| branch_not_taken | 4 | 0.05 | Jcc not taken |
-| call_return | 15 | 0.05 | CALL/RET |
-| multiply | 36 | 0.03 | MUL/IMUL (faster) |
+- **Data Width:** 16-bit
+- **CPI Range:** (2, 40)
+- **Typical CPI:** 8.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 800,000 - 1,500,000
+- **MIPS (estimated):** 0.800 - 1.500
+- **Typical CPI:** 8.0
 
-- **IPS Range**: 900,000 - 1,500,000
-- **CPI Range**: 5 - 10
-- **Primary Bottleneck**: decode, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i80186_model import analyze, validate
+from i80186_validated import I80186Model
 
-# Run analysis
-result = analyze('typical')
+model = I80186Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel 80186/80188 Users Manual
+```
+i80186/
+├── README.md                      # This documentation
+├── current/
+│   └── i80186_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i80186_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

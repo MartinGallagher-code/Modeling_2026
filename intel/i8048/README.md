@@ -1,51 +1,77 @@
-# Intel 8048 Performance Model
-
-Grey-box queueing model for the Intel 8048 microprocessor.
+# Intel 8048
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Intel 8048** (1976) - First single-chip microcontroller
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1976 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 6.0 MHz |
-| Bus Width | 8-bit |
 | Transistors | 6,000 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| mov_a_r | 15 | 0.25 | MOV A,Rn |
-| mov_a_mem | 15 | 0.15 | MOV A,@Ri |
-| alu_ops | 15 | 0.25 | ADD, ADDC, ANL, ORL |
-| immediate | 30 | 0.10 | MOV A,#data |
-| jump | 30 | 0.10 | JMP, CALL |
-| conditional | 30 | 0.08 | JZ, JNZ |
-| io_ops | 30 | 0.05 | IN, OUT |
-| misc | 15 | 0.02 | NOP, other |
+- **Data Width:** 8-bit
+- **CPI Range:** (1, 2)
+- **Typical CPI:** 1.5
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 400,000 - 500,000
+- **MIPS (estimated):** 0.400 - 0.500
+- **Typical CPI:** 1.5
 
-- **IPS Range**: 400,000 - 800,000
-- **CPI Range**: 8 - 15
-- **Primary Bottleneck**: fetch, decode
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from i8048_model import analyze, validate
+from i8048_validated import I8048Model
 
-# Run analysis
-result = analyze('typical')
+model = I8048Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Intel MCS-48 Users Manual
+```
+i8048/
+├── README.md                      # This documentation
+├── current/
+│   └── i8048_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── i8048_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

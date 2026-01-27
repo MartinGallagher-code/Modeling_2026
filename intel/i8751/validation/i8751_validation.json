@@ -1,0 +1,28 @@
+{
+  "processor": "Intel 8751",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 12.0,
+    "transistors": 60000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      12,
+      24
+    ],
+    "typical_cpi": 12.0
+  },
+  "validated_performance": {
+    "ips_min": 500000,
+    "ips_max": 1000000,
+    "mips_typical": 0.5
+  },
+  "notes": "EPROM version of 8051",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

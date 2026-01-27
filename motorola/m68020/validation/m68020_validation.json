@@ -1,0 +1,28 @@
+{
+  "processor": "Motorola 68020",
+  "year": 1984,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 16.0,
+    "transistors": 190000,
+    "technology": "2\u00b5m CMOS",
+    "package": "114-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      80
+    ],
+    "typical_cpi": 5.0
+  },
+  "validated_performance": {
+    "ips_min": 2500000,
+    "ips_max": 5000000,
+    "mips_typical": 2.5
+  },
+  "notes": "Full 32-bit bus, instruction cache",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

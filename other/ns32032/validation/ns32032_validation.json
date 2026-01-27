@@ -1,0 +1,28 @@
+{
+  "processor": "NS32032",
+  "year": 1984,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 10.0,
+    "transistors": 80000,
+    "technology": "NMOS",
+    "package": "84-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      80
+    ],
+    "typical_cpi": 10.0
+  },
+  "validated_performance": {
+    "ips_min": 700000,
+    "ips_max": 1500000,
+    "mips_typical": 0.7
+  },
+  "notes": "Improved NS32016",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

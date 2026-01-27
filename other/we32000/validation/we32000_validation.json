@@ -1,0 +1,28 @@
+{
+  "processor": "WE 32000",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 14.0,
+    "transistors": 120000,
+    "technology": "CMOS",
+    "package": "68-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      50
+    ],
+    "typical_cpi": 8.0
+  },
+  "validated_performance": {
+    "ips_min": 1200000,
+    "ips_max": 3000000,
+    "mips_typical": 1.2
+  },
+  "notes": "AT&T UNIX workstation CPU",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

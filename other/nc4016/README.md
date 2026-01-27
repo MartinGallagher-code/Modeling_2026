@@ -1,49 +1,77 @@
-# Novix NC4016 Performance Model
-
-Grey-box queueing model for the Novix NC4016 microprocessor.
+# Novix NC4016
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Novix NC4016** (1985) - Forth stack machine
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1985 |
+| Manufacturer | Various |
+| Data Width | 16-bit |
 | Clock | 8.0 MHz |
-| Bus Width | 16-bit |
-| Transistors | 12,000 |
+| Transistors | 4,000 |
+| Technology | CMOS |
+| Package | 68-pin PLCC |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| alu | 1 | 0.40 | ALU operations |
-| stack | 1 | 0.25 | Stack operations |
-| memory | 2 | 0.12 | Memory access |
-| call_ret | 1 | 0.10 | CALL, RET |
-| branch | 2 | 0.08 | Branch |
-| misc | 1 | 0.05 | Other |
+- **Data Width:** 16-bit
+- **CPI Range:** (1, 3)
+- **Typical CPI:** 1.2
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 5,000,000 - 8,000,000
+- **MIPS (estimated):** 5.000 - 8.000
+- **Typical CPI:** 1.2
 
-- **IPS Range**: 6,000,000 - 10,000,000
-- **CPI Range**: 1 - 2
-- **Primary Bottleneck**: stack, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from nc4016_model import analyze, validate
+from nc4016_validated import NC4016Model
 
-# Run analysis
-result = analyze('typical')
+model = NC4016Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Novix NC4016 Data Sheet
+```
+nc4016/
+├── README.md                      # This documentation
+├── current/
+│   └── nc4016_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── nc4016_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

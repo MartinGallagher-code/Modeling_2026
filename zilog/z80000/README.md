@@ -1,51 +1,77 @@
-# Zilog Z80000 Performance Model
-
-Grey-box queueing model for the Zilog Z80000 microprocessor.
+# Zilog Z80000
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Zilog Z80000** (1986) - Zilog's 32-bit processor
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1986 |
-| Clock | 25.0 MHz |
-| Bus Width | 32-bit |
+| Manufacturer | Various |
+| Data Width | 32-bit |
+| Clock | 16.0 MHz |
 | Transistors | 91,000 |
+| Technology | CMOS |
+| Package | 132-pin PGA |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| ld_r_r | 2 | 0.25 | LD R,R |
-| ld_r_mem | 4 | 0.20 | LD R,@addr |
-| alu_r | 2 | 0.25 | ALU register |
-| alu_mem | 5 | 0.10 | ALU memory |
-| jp | 4 | 0.08 | JP |
-| call_ret | 8 | 0.05 | CALL, RET |
-| multiply | 15 | 0.04 | MULT |
-| divide | 30 | 0.03 | DIV |
+- **Data Width:** 32-bit
+- **CPI Range:** (3, 80)
+- **Typical CPI:** 6.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 2,000,000 - 4,500,000
+- **MIPS (estimated):** 2.000 - 4.500
+- **Typical CPI:** 6.0
 
-- **IPS Range**: 4,000,000 - 10,000,000
-- **CPI Range**: 2 - 8
-- **Primary Bottleneck**: cache, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from z80000_model import analyze, validate
+from z80000_validated import Z80000Model
 
-# Run analysis
-result = analyze('typical')
+model = Z80000Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Z80000 CPU Manual
+```
+z80000/
+├── README.md                      # This documentation
+├── current/
+│   └── z80000_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── z80000_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

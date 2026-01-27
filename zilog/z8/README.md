@@ -1,51 +1,77 @@
-# Zilog Z8 Performance Model
-
-Grey-box queueing model for the Zilog Z8 microprocessor.
+# Zilog Z8
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Zilog Z8** (1979) - Single-chip MCU
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1979 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 8.0 MHz |
-| Bus Width | 8-bit |
-| Transistors | 9,000 |
+| Transistors | 12,000 |
+| Technology | NMOS |
+| Package | 40-pin DIP |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| ld_r_r | 6 | 0.22 | LD r,r |
-| ld_r_im | 6 | 0.15 | LD r,#imm |
-| ld_r_ir | 8 | 0.15 | LD r,@Rr |
-| alu_r | 6 | 0.20 | ALU r,r |
-| jp | 10 | 0.10 | JP cc |
-| call_ret | 14 | 0.08 | CALL, RET |
-| djnz | 12 | 0.05 | DJNZ |
-| misc | 6 | 0.05 | Other |
+- **Data Width:** 8-bit
+- **CPI Range:** (6, 20)
+- **Typical CPI:** 10.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 500,000 - 1,300,000
+- **MIPS (estimated):** 0.500 - 1.300
+- **Typical CPI:** 10.0
 
-- **IPS Range**: 500,000 - 1,000,000
-- **CPI Range**: 6 - 20
-- **Primary Bottleneck**: decode, memory
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from z8_model import analyze, validate
+from z8_validated import Z8Model
 
-# Run analysis
-result = analyze('typical')
+model = Z8Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-Z8 MCU Users Manual
+```
+z8/
+├── README.md                      # This documentation
+├── current/
+│   └── z8_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── z8_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

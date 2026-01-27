@@ -1,0 +1,28 @@
+{
+  "processor": "RCA 1805",
+  "year": 1978,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 4.0,
+    "transistors": 6000,
+    "technology": "CMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      8,
+      24
+    ],
+    "typical_cpi": 10.0
+  },
+  "validated_performance": {
+    "ips_min": 150000,
+    "ips_max": 400000,
+    "mips_typical": 0.15
+  },
+  "notes": "Enhanced 1802",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

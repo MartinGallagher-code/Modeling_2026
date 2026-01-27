@@ -1,0 +1,28 @@
+{
+  "processor": "NS32016",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 6.0,
+    "transistors": 60000,
+    "technology": "NMOS",
+    "package": "48-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      100
+    ],
+    "typical_cpi": 12.0
+  },
+  "validated_performance": {
+    "ips_min": 400000,
+    "ips_max": 900000,
+    "mips_typical": 0.4
+  },
+  "notes": "National Semi 32-bit",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

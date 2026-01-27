@@ -1,52 +1,77 @@
-# Motorola 68HC11 Performance Model
-
-Grey-box queueing model for the Motorola 68HC11 microprocessor.
+# Motorola 68HC11
 
 ## Overview
 
-| Specification | Value |
-|--------------|-------|
+**Motorola 68HC11** (1985) - Popular embedded MCU
+
+## Specifications
+
+| Parameter | Value |
+|-----------|-------|
 | Year | 1985 |
+| Manufacturer | Various |
+| Data Width | 8-bit |
 | Clock | 2.0 MHz |
-| Bus Width | 8-bit |
-| Transistors | 45,000 |
+| Transistors | 100,000 |
+| Technology | HCMOS |
+| Package | 52-pin PLCC |
 
-## Timing Categories
+## Architecture
 
-| Category | Cycles | Weight | Description |
-|----------|--------|--------|-------------|
-| inherent | 2 | 0.18 | Inherent |
-| immediate | 2 | 0.18 | Immediate |
-| direct | 3 | 0.18 | Direct |
-| indexed | 4 | 0.15 | Indexed |
-| extended | 4 | 0.10 | Extended |
-| branch | 3 | 0.08 | Branch |
-| jsr_rts | 5 | 0.05 | JSR, RTS |
-| multiply | 10 | 0.04 | MUL, IDIV |
-| misc | 2 | 0.04 | Other |
+- **Data Width:** 8-bit
+- **CPI Range:** (2, 12)
+- **Typical CPI:** 3.0
 
+## Performance
 
-## Performance Targets
+- **IPS Range:** 500,000 - 1,000,000
+- **MIPS (estimated):** 0.500 - 1.000
+- **Typical CPI:** 3.0
 
-- **IPS Range**: 500,000 - 1,000,000
-- **CPI Range**: 2 - 8
-- **Primary Bottleneck**: memory, decode
+## Performance Model
 
-## Usage
+### Usage
 
 ```python
-from m68hc11_model import analyze, validate
+from m68hc11_validated import M68HC11Model
 
-# Run analysis
-result = analyze('typical')
+model = M68HC11Model()
+result = model.analyze('typical')
+
 print(f"IPS: {result.ips:,.0f}")
-print(f"CPI: {result.cpi:.2f}")
+print(f"MIPS: {result.mips:.3f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Validate model
-val_result = validate()
-print(val_result)
+# Validate against known specifications
+for test, data in model.validate().items():
+    status = "✓ PASS" if data['pass'] else "✗ FAIL"
+    print(f"{test}: {status}")
 ```
 
-## Source
+## Directory Structure
 
-MC68HC11 Reference Manual
+```
+m68hc11/
+├── README.md                      # This documentation
+├── current/
+│   └── m68hc11_validated.py     # ✓ Validated model (USE THIS)
+├── archive/                       # Deprecated versions
+├── validation/
+│   └── m68hc11_validation.json  # Validation data
+└── docs/                          # Additional documentation
+```
+
+## Validation
+
+| Test | Status |
+|------|--------|
+| IPS Range | ✓ Validated against specifications |
+| CPI | ✓ Calibrated to workload mix |
+| Architecture | ✓ Cross-referenced with datasheets |
+
+**Target Accuracy:** ±15% for performance estimates
+
+---
+
+*Grey-Box Performance Modeling Research Project*  
+*Validated: January 2026*

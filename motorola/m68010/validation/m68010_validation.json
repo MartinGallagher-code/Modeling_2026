@@ -1,0 +1,28 @@
+{
+  "processor": "Motorola 68010",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 10.0,
+    "transistors": 84000,
+    "technology": "NMOS",
+    "package": "64-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      150
+    ],
+    "typical_cpi": 9.0
+  },
+  "validated_performance": {
+    "ips_min": 800000,
+    "ips_max": 1800000,
+    "mips_typical": 0.8
+  },
+  "notes": "Virtual memory support",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

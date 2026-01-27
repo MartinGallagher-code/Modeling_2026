@@ -1,0 +1,28 @@
+{
+  "processor": "Zilog Z180",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 6.0,
+    "transistors": 20000,
+    "technology": "CMOS",
+    "package": "64-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      20
+    ],
+    "typical_cpi": 5.5
+  },
+  "validated_performance": {
+    "ips_min": 800000,
+    "ips_max": 1800000,
+    "mips_typical": 0.8
+  },
+  "notes": "Enhanced Z80 with MMU",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

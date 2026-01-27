@@ -1,0 +1,28 @@
+{
+  "processor": "Motorola 68882",
+  "year": 1987,
+  "specifications": {
+    "data_width_bits": 80,
+    "clock_mhz": 25.0,
+    "transistors": 175000,
+    "technology": "CMOS",
+    "package": "68-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      15,
+      150
+    ],
+    "typical_cpi": 40.0
+  },
+  "validated_performance": {
+    "ips_min": 400000,
+    "ips_max": 1500000,
+    "mips_typical": 0.4
+  },
+  "notes": "Enhanced FPU",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

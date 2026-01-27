@@ -1,0 +1,28 @@
+{
+  "processor": "Intel 80287",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 80,
+    "clock_mhz": 8.0,
+    "transistors": 45000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      50,
+      200
+    ],
+    "typical_cpi": 100.0
+  },
+  "validated_performance": {
+    "ips_min": 50000,
+    "ips_max": 150000,
+    "mips_typical": 0.05
+  },
+  "notes": "FPU coprocessor for 80286",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

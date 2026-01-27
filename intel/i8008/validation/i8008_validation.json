@@ -1,0 +1,28 @@
+{
+  "processor": "Intel 8008",
+  "year": 1972,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 0.5,
+    "transistors": 3500,
+    "technology": "10\u00b5m PMOS",
+    "package": "18-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      3
+    ],
+    "typical_cpi": 2.0
+  },
+  "validated_performance": {
+    "ips_min": 30000,
+    "ips_max": 80000,
+    "mips_typical": 0.03
+  },
+  "notes": "First 8-bit microprocessor",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}

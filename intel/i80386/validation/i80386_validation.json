@@ -1,0 +1,28 @@
+{
+  "processor": "Intel 80386",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 16.0,
+    "transistors": 275000,
+    "technology": "1.5\u00b5m CMOS",
+    "package": "132-pin PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      40
+    ],
+    "typical_cpi": 4.4
+  },
+  "validated_performance": {
+    "ips_min": 3000000,
+    "ips_max": 6000000,
+    "mips_typical": 3.0
+  },
+  "notes": "First x86 32-bit processor",
+  "model_accuracy": {
+    "target_error_pct": 15,
+    "confidence": "Medium"
+  }
+}
