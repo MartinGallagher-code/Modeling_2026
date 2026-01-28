@@ -6,6 +6,35 @@ This repository contains grey-box queueing models for 61+ historical microproces
 
 **Goal**: Achieve <5% CPI prediction error for each model compared to documented/expected values.
 
+---
+
+## MANDATORY: Documentation Requirements
+
+> **STOP! Read this section before making ANY changes to model files.**
+>
+> Every model change MUST include documentation updates. This is not optional.
+
+### Required Documentation Checklist
+
+After modifying ANY `*_validated.py` file, you MUST complete ALL of these steps:
+
+- [ ] **CHANGELOG.md** - Append a new dated entry documenting what changed and why
+- [ ] **HANDOFF.md** - Rewrite to reflect current state and next steps
+- [ ] **Validation JSON** - Update with new accuracy metrics
+- [ ] **README.md** - Update validation status if accuracy changed significantly
+
+### Why This Matters
+
+- CHANGELOG.md preserves institutional knowledge across sessions
+- HANDOFF.md ensures continuity for future work
+- Skipping documentation creates technical debt and lost context
+
+### Failure to Document
+
+If you modify model files without updating documentation, you have NOT completed the task. Go back and create the documentation files before considering any model work "done."
+
+---
+
 ## Repository Structure
 
 ```
@@ -35,6 +64,19 @@ Each processor has:
 
 ## Working on Models
 
+### After Making Changes (DO THIS FIRST - Read Before Starting)
+
+> **This section is listed first intentionally. Know what documentation you must create BEFORE you start coding.**
+
+For EVERY model you modify, you MUST:
+
+1. **Append to CHANGELOG.md** - add a new dated entry (never delete old entries)
+2. **Update HANDOFF.md** - rewrite to reflect current state and next steps
+3. **Update validation JSON** with new accuracy metrics
+4. **Update README.md** validation status if accuracy improved significantly
+
+If CHANGELOG.md or HANDOFF.md don't exist, CREATE THEM using the templates below.
+
 ### Before Making Changes
 
 1. **Read CHANGELOG.md first** - understand the full history of work on this model
@@ -43,18 +85,11 @@ Each processor has:
 4. **Read the validation file** in `validation/[processor]_validation.json` to understand current accuracy
 5. **Check the architecture docs** in `docs/` for processor specifications
 
-### Making Changes
+### While Making Changes
 
 1. **Test before and after** - always run the model to see current CPI/IPC before editing
 2. **Make incremental changes** - adjust one parameter at a time when calibrating
 3. **Document your reasoning** - you will record this in CHANGELOG.md
-
-### After Making Changes
-
-1. **Append to CHANGELOG.md** - add a new dated entry (never delete old entries)
-2. **Update HANDOFF.md** - rewrite to reflect current state and next steps
-3. **Update validation JSON** with new accuracy metrics
-4. **Update README.md** validation status if accuracy improved significantly
 
 ## Model Documentation Files
 
