@@ -206,12 +206,12 @@
       "control",
       "mixed"
     ],
-    "predicted_cpi": 12.5282,
-    "cpi_error_percent": 127.79,
-    "ipc_error_percent": 127.79,
-    "validation_passed": false,
-    "fully_validated": false,
-    "validation_date": "2026-01-27"
+    "predicted_cpi": 5.585,
+    "cpi_error_percent": 1.5,
+    "ipc_error_percent": 1.5,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-28"
   },
   "instruction_mix": {
     "alu": 0.25,
