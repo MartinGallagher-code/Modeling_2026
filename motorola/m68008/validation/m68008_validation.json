@@ -181,8 +181,8 @@
     }
   ],
   "accuracy": {
-    "ipc_error_percent": 82.3,
-    "cpi_error_percent": 82.3,
+    "expected_cpi": 7.0,
+    "expected_ipc": 0.143,
     "validated_workloads": [
       "typical",
       "compute",
@@ -190,11 +190,11 @@
       "control",
       "mixed"
     ],
-    "notes": "Validation pending",
-    "predicted_cpi": 1.239,
-    "expected_cpi": 7.0,
-    "validation_passed": false,
-    "fully_validated": false,
-    "validation_date": "2026-01-27"
+    "predicted_cpi": 7.205,
+    "cpi_error_percent": 2.9,
+    "ipc_error_percent": 2.9,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-28"
   }
 }

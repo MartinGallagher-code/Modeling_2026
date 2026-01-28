@@ -148,11 +148,11 @@
       "control",
       "mixed"
     ],
-    "predicted_cpi": 12.6782,
-    "cpi_error_percent": 262.23,
-    "ipc_error_percent": 262.23,
-    "validation_passed": false,
-    "fully_validated": false,
-    "validation_date": "2026-01-27"
+    "predicted_cpi": 3.483,
+    "cpi_error_percent": 0.5,
+    "ipc_error_percent": 0.5,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-28"
   }
 }
