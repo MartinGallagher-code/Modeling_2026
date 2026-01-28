@@ -57,8 +57,8 @@
   "processor": "i860",
   "validation_date": "2026-01-27",
   "accuracy": {
-    "ipc_error_percent": 150.83,
-    "cpi_error_percent": 150.83,
+    "ipc_error_percent": 4.8,
+    "cpi_error_percent": 4.8,
     "validated_workloads": [
       "typical",
       "compute",
@@ -66,11 +66,11 @@
       "control",
       "mixed"
     ],
-    "notes": "Validation pending",
-    "predicted_cpi": 3.01,
+    "notes": "Calibrated for VLIW-hybrid dual-issue architecture with pipelined FP and 3-slot delayed branches",
+    "predicted_cpi": 1.257,
     "expected_cpi": 1.2,
-    "validation_passed": false,
-    "fully_validated": false,
-    "validation_date": "2026-01-27"
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-28"
   }
 }

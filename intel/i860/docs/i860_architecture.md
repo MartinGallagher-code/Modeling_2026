@@ -2,18 +2,19 @@
 
 ## Era Classification
 
-**Era:** Cache/RISC Architecture  
-**Period:** 1983-1988  
-**Queueing Model:** Cache hierarchy + pipeline network
+**Era:** VLIW-Hybrid Superscalar
+**Period:** 1989
+**Queueing Model:** Dual-issue pipeline with pipelined FP
 
 ## Architectural Features
 
-- On-chip instruction cache
-- Deep pipeline (5+ stages)
-- Load/store architecture
-- Register windows or large register files
-- Single-cycle execution goal
-- Delayed branches
+- Dual instruction mode (issue int AND fp simultaneously)
+- 5-stage pipeline with 3 branch delay slots
+- 4KB I-cache, 8KB D-cache
+- Pipelined floating-point units (80 MFLOPS peak)
+- No hardware interlocks - programmer handles hazards
+- 64-bit data path
+- "Cray on a chip" architecture
 
 ## Processor Specifications
 
