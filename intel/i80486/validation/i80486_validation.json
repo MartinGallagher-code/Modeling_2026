@@ -32,12 +32,18 @@
   "fpu": {
     "on_chip": true,
     "compatibility": "80387 compatible",
-    "performance": "8-10× faster than 80387",
+    "performance": "8-10\u00d7 faster than 80387",
     "vs_80386": "80386 needed external 80387"
   },
   "pipeline": {
     "stages": 5,
-    "description": ["Prefetch", "Decode1", "Decode2", "Execute", "Writeback"],
+    "description": [
+      "Prefetch",
+      "Decode1",
+      "Decode2",
+      "Execute",
+      "Writeback"
+    ],
     "integer_throughput": "Many instructions in 1 cycle",
     "branch_prediction": "None (static)"
   },
@@ -67,21 +73,26 @@
     "fdiv": 73
   },
   "clock_doubling": {
-    "486DX2": "Internal 2× clock (50/66 MHz)",
-    "486DX4": "Internal 3× clock (75/100 MHz)",
+    "486DX2": "Internal 2\u00d7 clock (50/66 MHz)",
+    "486DX4": "Internal 3\u00d7 clock (75/100 MHz)",
     "innovation": "First mainstream clock multiplier"
   },
   "performance_characteristics": {
     "ipc_expected": 0.85,
     "mips_at_25mhz": 20,
     "mips_at_50mhz_dx2": 40,
-    "vs_80386": "2× faster at same clock"
+    "vs_80386": "2\u00d7 faster at same clock"
   },
   "historical_context": {
     "year_introduced": "April 1989",
     "significance": "First x86 with on-chip FPU and cache",
     "price_1989": "$950",
-    "systems": ["IBM PS/2", "Compaq Deskpro", "Dell systems", "Most early 90s PCs"],
+    "systems": [
+      "IBM PS/2",
+      "Compaq Deskpro",
+      "Dell systems",
+      "Most early 90s PCs"
+    ],
     "competition": "Motorola 68040",
     "market_dominance": "Cemented x86 dominance in PCs"
   },
@@ -95,5 +106,24 @@
   "calibration": {
     "arrival_rate_initial": 0.55,
     "tolerance_percent": 2.0
+  },
+  "processor": "i80486",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": 50.5,
+    "cpi_error_percent": 50.5,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "notes": "Validation pending",
+    "predicted_cpi": 3.01,
+    "expected_cpi": 2.0,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

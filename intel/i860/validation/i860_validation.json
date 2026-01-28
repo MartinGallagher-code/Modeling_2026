@@ -33,14 +33,19 @@
   "performance_characteristics": {
     "peak_mflops": 80,
     "typical_mflops": 20,
-    "ipc_expected": 0.60,
+    "ipc_expected": 0.6,
     "compiler_difficulty": "Extremely hard to optimize"
   },
   "historical_context": {
     "year_introduced": 1989,
     "designer": "Intel",
     "marketing": "Cray on a chip",
-    "systems": ["Intel iPSC/860", "NeXT Dimension", "Stardent", "Evans & Sutherland"],
+    "systems": [
+      "Intel iPSC/860",
+      "NeXT Dimension",
+      "Stardent",
+      "Evans & Sutherland"
+    ],
     "failure": "Too hard to program, compilers couldn't optimize"
   },
   "why_it_failed": {
@@ -48,5 +53,24 @@
     "compilers": "Couldn't achieve peak performance",
     "competition": "MIPS and SPARC easier to use",
     "lesson": "Peak performance means nothing if unreachable"
+  },
+  "processor": "i860",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": 150.83,
+    "cpi_error_percent": 150.83,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "notes": "Validation pending",
+    "predicted_cpi": 3.01,
+    "expected_cpi": 1.2,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

@@ -24,5 +24,108 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel 4004 Datasheet",
+      "url": "http://datasheets.chipdb.org/Intel/MCS-4/datashts/intel-4004.pdf",
+      "verified": false
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/intel/mcs-4/4004",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Intel_4004",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-27",
+  "timing_tests": [
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD",
+      "category": "alu",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "SUB",
+      "category": "alu",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "LD",
+      "category": "data_transfer",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "XCH",
+      "category": "data_transfer",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "JUN",
+      "category": "control",
+      "expected_cycles": 16,
+      "source": "datasheet"
+    },
+    {
+      "name": "JCN",
+      "category": "control",
+      "expected_cycles": 16,
+      "source": "datasheet"
+    },
+    {
+      "name": "FIM",
+      "category": "data_transfer",
+      "expected_cycles": 16,
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP",
+      "category": "control",
+      "expected_cycles": 16,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 10.8,
+    "expected_ipc": 0.0926,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 8.15,
+    "cpi_error_percent": 24.54,
+    "ipc_error_percent": 24.54,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
+  },
+  "instruction_mix": {
+    "alu": 0.3,
+    "data_transfer": 0.35,
+    "control": 0.25,
+    "memory": 0.1
   }
 }

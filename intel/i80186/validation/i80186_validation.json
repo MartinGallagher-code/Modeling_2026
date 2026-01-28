@@ -24,5 +24,58 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/intel/80186",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-27",
+  "timing_tests": [
+    {
+      "name": "MOV_reg_reg",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "source": "reference"
+    },
+    {
+      "name": "ADD_reg_reg",
+      "category": "alu",
+      "expected_cycles": 3,
+      "source": "reference"
+    },
+    {
+      "name": "MUL_reg16",
+      "category": "mul_div",
+      "expected_cycles": 36,
+      "source": "reference",
+      "notes": "Faster than 8086"
+    },
+    {
+      "name": "DIV_reg16",
+      "category": "mul_div",
+      "expected_cycles": 38,
+      "source": "reference"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "expected_ipc": 0.25,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 7.5532,
+    "cpi_error_percent": 88.83,
+    "ipc_error_percent": 88.83,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

@@ -24,5 +24,102 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel 8008 Datasheet",
+      "url": "http://datasheets.chipdb.org/Intel/MCS-8/intel-8008.pdf",
+      "verified": false
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/intel/mcs-8/8008",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Intel_8008",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-27",
+  "timing_tests": [
+    {
+      "name": "MOV_r_r",
+      "category": "data_transfer",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_r_M",
+      "category": "memory",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_r",
+      "category": "alu",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_M",
+      "category": "alu",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP",
+      "category": "control",
+      "expected_cycles": 11,
+      "source": "datasheet"
+    },
+    {
+      "name": "CALL",
+      "category": "control",
+      "expected_cycles": 11,
+      "source": "datasheet"
+    },
+    {
+      "name": "RET",
+      "category": "control",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
+      "name": "INR",
+      "category": "alu",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 4,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 11.0,
+    "expected_ipc": 0.0909,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 8.15,
+    "cpi_error_percent": 25.91,
+    "ipc_error_percent": 25.91,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

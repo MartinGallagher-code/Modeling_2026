@@ -24,5 +24,201 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Zilog Z80 Datasheet",
+      "url": "http://www.z80.info/zip/z80.pdf",
+      "verified": false
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/zilog/z80",
+      "verified": false
+    },
+    {
+      "type": "emulator",
+      "name": "MAME Z80",
+      "url": "https://github.com/mamedev/mame/blob/master/src/devices/cpu/z80/z80.cpp",
+      "verified": true
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Zilog_Z80",
+      "verified": false
+    },
+    {
+      "type": "mame",
+      "name": "Mame",
+      "url": "https://github.com/mamedev/mame/blob/master/src/devices/cpu/z80/z80.cpp",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-27",
+  "timing_tests": [
+    {
+      "name": "LD_r_r",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "LD_r_n",
+      "category": "data_transfer",
+      "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "LD_r_HL",
+      "category": "memory",
+      "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "LD_HL_r",
+      "category": "memory",
+      "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "LD_A_nn",
+      "category": "memory",
+      "expected_cycles": 13,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_A_r",
+      "category": "alu",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_A_n",
+      "category": "alu",
+      "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_HL_rr",
+      "category": "alu",
+      "expected_cycles": 11,
+      "source": "datasheet"
+    },
+    {
+      "name": "INC_r",
+      "category": "alu",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "JP_nn",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "JP_cc_nn",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "JR_e",
+      "category": "control",
+      "expected_cycles": 12,
+      "source": "datasheet"
+    },
+    {
+      "name": "CALL_nn",
+      "category": "control",
+      "expected_cycles": 17,
+      "source": "datasheet"
+    },
+    {
+      "name": "RET",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "PUSH_rr",
+      "category": "stack",
+      "expected_cycles": 11,
+      "source": "datasheet"
+    },
+    {
+      "name": "POP_rr",
+      "category": "stack",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "LDIR",
+      "category": "block",
+      "expected_cycles": 21,
+      "source": "datasheet",
+      "notes": "per iteration when BC!=0"
+    },
+    {
+      "name": "ADD_A_HL",
+      "category": "alu",
+      "expected_cycles": 7,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "PUSH_qq",
+      "category": "stack",
+      "expected_cycles": 11,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "POP_qq",
+      "category": "stack",
+      "expected_cycles": 10,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 5.5,
+    "expected_ipc": 0.1818,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 12.5282,
+    "cpi_error_percent": 127.79,
+    "ipc_error_percent": 127.79,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.2,
+    "control": 0.15,
+    "stack": 0.1,
+    "block": 0.05
   }
 }

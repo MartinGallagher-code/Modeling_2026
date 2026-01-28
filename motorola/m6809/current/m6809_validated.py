@@ -96,50 +96,50 @@ class M6809Model(BaseProcessorModel):
         self.bytes_per_access = self.bus_width // 8
         
         # EU timing by instruction category
-        self.instruction_categories = {{
+        self.instruction_categories = {
             'register_ops': InstructionCategory('register_ops', 2, 0, "Register operations"),
             'immediate': InstructionCategory('immediate', 4, 0, "Immediate operand"),
             'memory_read': InstructionCategory('memory_read', 8, 4, "Load from memory"),
             'memory_write': InstructionCategory('memory_write', 8, 4, "Store to memory"),
             'branch': InstructionCategory('branch', 15, 0, "Branch (flushes queue)"),
             'string_ops': InstructionCategory('string_ops', 9, 4, "String operations"),
-        }}
+        }
         
         # Workload profiles
-        self.workload_profiles = {{
-            'typical': WorkloadProfile('typical', {{
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
                 'register_ops': 0.25,
                 'immediate': 0.20,
                 'memory_read': 0.20,
                 'memory_write': 0.15,
                 'branch': 0.15,
                 'string_ops': 0.05,
-            }}, "Typical mixed workload"),
-            'compute': WorkloadProfile('compute', {{
+            }, "Typical mixed workload"),
+            'compute': WorkloadProfile('compute', {
                 'register_ops': 0.40,
                 'immediate': 0.30,
                 'memory_read': 0.10,
                 'memory_write': 0.05,
                 'branch': 0.12,
                 'string_ops': 0.03,
-            }}, "Compute-intensive"),
-            'memory': WorkloadProfile('memory', {{
+            }, "Compute-intensive"),
+            'memory': WorkloadProfile('memory', {
                 'register_ops': 0.10,
                 'immediate': 0.10,
                 'memory_read': 0.35,
                 'memory_write': 0.25,
                 'branch': 0.10,
                 'string_ops': 0.10,
-            }}, "Memory-intensive"),
-            'control': WorkloadProfile('control', {{
+            }, "Memory-intensive"),
+            'control': WorkloadProfile('control', {
                 'register_ops': 0.15,
                 'immediate': 0.15,
                 'memory_read': 0.15,
                 'memory_write': 0.10,
                 'branch': 0.35,
                 'string_ops': 0.10,
-            }}, "Control-flow intensive"),
-        }}
+            }, "Control-flow intensive"),
+        }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using prefetch queue model with BIU/EU parallelism"""
@@ -186,11 +186,11 @@ class M6809Model(BaseProcessorModel):
             cpi=total_cpi,
             clock_mhz=self.clock_mhz,
             bottleneck=bottleneck,
-            utilizations={{'biu': biu_cycles/total_cpi, 'eu': eu_cycles/total_cpi, 'contention': contention/total_cpi}}
+            utilizations={'biu': biu_cycles/total_cpi, 'eu': eu_cycles/total_cpi, 'contention': contention/total_cpi}
         )
     
     def validate(self) -> Dict[str, Any]:
-        return {{"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}}
+        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories

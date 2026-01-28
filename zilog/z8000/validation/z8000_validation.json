@@ -24,5 +24,51 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "validation_date": "2026-01-27",
+  "sources": [
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia Z8000",
+      "url": "https://en.wikipedia.org/wiki/Zilog_Z8000",
+      "verified": true
+    }
+  ],
+  "timing_tests": [
+    {
+      "name": "LD_R_R",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "source": "reference"
+    },
+    {
+      "name": "ADD_R_R",
+      "category": "alu",
+      "expected_cycles": 4,
+      "source": "reference"
+    },
+    {
+      "name": "JP",
+      "category": "control",
+      "expected_cycles": 7,
+      "source": "reference"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 4.5,
+    "expected_ipc": 0.2222,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 7.4782,
+    "cpi_error_percent": 66.18,
+    "ipc_error_percent": 66.18,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

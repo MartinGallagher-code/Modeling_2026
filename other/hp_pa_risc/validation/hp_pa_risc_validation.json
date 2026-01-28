@@ -23,7 +23,7 @@
     "multimedia": "MAX multimedia extensions (1994)"
   },
   "performance_characteristics": {
-    "ipc_expected": 1.10,
+    "ipc_expected": 1.1,
     "spec_int92": 80,
     "spec_fp92": 150
   },
@@ -31,12 +31,35 @@
     "year_introduced": "1986 (PA-7000), 1992 (PA-7100)",
     "designer": "Hewlett-Packard",
     "significance": "Powered HP workstations and HP-UX servers",
-    "systems": ["HP 9000 series", "HP-UX servers", "HP workstations"],
+    "systems": [
+      "HP 9000 series",
+      "HP-UX servers",
+      "HP workstations"
+    ],
     "end_of_life": "Transitioned to Itanium (2008)"
   },
   "market_position": {
     "strength": "HP-UX ecosystem",
     "competition": "SPARC, MIPS, Alpha",
     "niche": "HP enterprise computing"
+  },
+  "processor": "hp_pa_risc",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": 150.83,
+    "cpi_error_percent": 150.83,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "notes": "Validation pending",
+    "predicted_cpi": 3.01,
+    "expected_cpi": 1.2,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

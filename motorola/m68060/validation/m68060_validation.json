@@ -35,20 +35,36 @@
     "compatibility": "68881/68882 (partial)"
   },
   "performance_characteristics": {
-    "ipc_expected": 1.20,
+    "ipc_expected": 1.2,
     "mips_at_50mhz": 100,
     "mflops": 35,
-    "vs_68040": "2-3× faster"
+    "vs_68040": "2-3\u00d7 faster"
   },
   "historical_context": {
     "year_introduced": 1994,
     "significance": "Last major 68k, too late for market",
-    "systems": ["Amiga 4000T/4060", "Atari Falcon accelerators", "Embedded systems"],
-    "failure_reasons": ["PowerPC already chosen", "Market moved on", "No major system adoption"]
+    "systems": [
+      "Amiga 4000T/4060",
+      "Atari Falcon accelerators",
+      "Embedded systems"
+    ],
+    "failure_reasons": [
+      "PowerPC already chosen",
+      "Market moved on",
+      "No major system adoption"
+    ]
   },
   "tragedy": {
     "technically": "Excellent processor",
     "timing": "1994 was too late - PowerPC Mac shipped same year",
     "market": "68k was dead in consumer, only embedded remained"
+  },
+  "processor": "m68060",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": null,
+    "cpi_error_percent": null,
+    "validated_workloads": [],
+    "notes": "Validation pending"
   }
 }

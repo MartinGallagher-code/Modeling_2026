@@ -24,5 +24,177 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "validation_date": "2026-01-27",
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Datasheet",
+      "url": "http://www.bitsavers.org/components/motorola/68000/MC68000_Users_Manual.pdf",
+      "verified": false
+    },
+    {
+      "type": "wikichip",
+      "name": "Wikichip",
+      "url": "https://en.wikichip.org/wiki/motorola/68000",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Motorola_68000",
+      "verified": false
+    },
+    {
+      "type": "mame",
+      "name": "Mame",
+      "url": "https://github.com/mamedev/mame/blob/master/src/devices/cpu/m68000/m68000.cpp",
+      "verified": false
+    }
+  ],
+  "timing_tests": [
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 4,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOVE_Dn_Dn",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOVE_An_Dn",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOVE_mem_Dn",
+      "category": "memory",
+      "expected_cycles": 8,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOVE_Dn_mem",
+      "category": "memory",
+      "expected_cycles": 8,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_Dn_Dn",
+      "category": "alu",
+      "expected_cycles": 4,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_mem_Dn",
+      "category": "alu",
+      "expected_cycles": 8,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MULU",
+      "category": "mul_div",
+      "expected_cycles": 70,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "DIVU",
+      "category": "mul_div",
+      "expected_cycles": 140,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP",
+      "category": "control",
+      "expected_cycles": 8,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "JSR",
+      "category": "control",
+      "expected_cycles": 16,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "RTS",
+      "category": "control",
+      "expected_cycles": 16,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "Bcc_taken",
+      "category": "control",
+      "expected_cycles": 10,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "Bcc_not_taken",
+      "category": "control",
+      "expected_cycles": 8,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    }
+  ],
+  "accuracy": {
+    "ipc_error_percent": 82.3,
+    "cpi_error_percent": 82.3,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "notes": "Validation pending",
+    "predicted_cpi": 1.239,
+    "expected_cpi": 7.0,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

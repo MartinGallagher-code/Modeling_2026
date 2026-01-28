@@ -30,7 +30,7 @@
     "cache_type": "8-way set associative"
   },
   "performance_characteristics": {
-    "ipc_expected": 1.50,
+    "ipc_expected": 1.5,
     "spec_int92": 65,
     "spec_fp92": 80
   },
@@ -38,7 +38,10 @@
     "year_introduced": "1993",
     "alliance": "Apple + IBM + Motorola (AIM)",
     "significance": "First PowerPC, replaced 68k in Macs",
-    "systems": ["Power Macintosh 6100/7100/8100", "IBM RS/6000"],
+    "systems": [
+      "Power Macintosh 6100/7100/8100",
+      "IBM RS/6000"
+    ],
     "steve_jobs_return": "Began during his absence, ended with his return (Intel switch)"
   },
   "apple_transition": {
@@ -46,5 +49,13 @@
     "to": "PowerPC 601",
     "why": "68k couldn't compete with Pentium",
     "result": "Successful transition, 10+ years of PowerPC Macs"
+  },
+  "processor": "aim__ppc_601",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": null,
+    "cpi_error_percent": null,
+    "validated_workloads": [],
+    "notes": "Validation pending"
   }
 }

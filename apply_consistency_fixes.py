@@ -78,7 +78,7 @@ from {processor_name}_validated import {processor_name.title().replace("_", "")}
 
 model = {processor_name.title().replace("_", "")}Model()
 result = model.analyze(workload='typical')
-print(f"IPC: {{result.ipc:.3f}}")
+print(f"IPC: {result.ipc:.3f}")
 ```
 
 ## Validation Status

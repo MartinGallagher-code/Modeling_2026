@@ -20,9 +20,116 @@
     "ips_max": 500000,
     "mips_typical": 0.25
   },
-  "notes": "8-bit bus version, IBM PC CPU",
+  "notes": "Same as 8086 but with 8-bit external bus, causing memory access penalties",
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel 8088 Datasheet",
+      "url": "http://datasheets.chipdb.org/Intel/x86/808x/datashts/8088.pdf",
+      "verified": false
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/intel/8088",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Intel_8088",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-27",
+  "timing_tests": [
+    {
+      "name": "MOV_reg_reg",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_reg_mem",
+      "category": "memory",
+      "expected_cycles": 12,
+      "source": "datasheet",
+      "notes": "8-bit bus penalty"
+    },
+    {
+      "name": "ADD_reg_reg",
+      "category": "alu",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP_near",
+      "category": "control",
+      "expected_cycles": 15,
+      "source": "datasheet"
+    },
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_r_r",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_r_m",
+      "category": "memory",
+      "expected_cycles": 12,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_r_r",
+      "category": "alu",
+      "expected_cycles": 3,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "CALL_near",
+      "category": "control",
+      "expected_cycles": 23,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 5.2,
+    "expected_ipc": 0.1923,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 12.8282,
+    "cpi_error_percent": 146.7,
+    "ipc_error_percent": 146.7,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

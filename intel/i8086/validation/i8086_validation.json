@@ -24,5 +24,264 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel 8086 Datasheet",
+      "url": "http://datasheets.chipdb.org/Intel/x86/808x/datashts/8086.pdf",
+      "verified": false
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/intel/8086",
+      "verified": false
+    },
+    {
+      "type": "emulator",
+      "name": "DOSBox",
+      "url": "https://www.dosbox.com/",
+      "verified": true
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Intel_8086",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-27",
+  "timing_tests": [
+    {
+      "name": "MOV_reg_reg",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_reg_mem",
+      "category": "memory",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_mem_reg",
+      "category": "memory",
+      "expected_cycles": 9,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_reg_imm",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_reg_reg",
+      "category": "alu",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_reg_mem",
+      "category": "alu",
+      "expected_cycles": 9,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_reg_imm",
+      "category": "alu",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "MUL_reg8",
+      "category": "mul_div",
+      "expected_cycles": 77,
+      "source": "datasheet"
+    },
+    {
+      "name": "MUL_reg16",
+      "category": "mul_div",
+      "expected_cycles": 133,
+      "source": "datasheet"
+    },
+    {
+      "name": "DIV_reg8",
+      "category": "mul_div",
+      "expected_cycles": 90,
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP_near",
+      "category": "control",
+      "expected_cycles": 15,
+      "source": "datasheet"
+    },
+    {
+      "name": "JZ",
+      "category": "control",
+      "expected_cycles": 16,
+      "source": "datasheet"
+    },
+    {
+      "name": "CALL_near",
+      "category": "control",
+      "expected_cycles": 19,
+      "source": "datasheet"
+    },
+    {
+      "name": "RET",
+      "category": "control",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "PUSH",
+      "category": "stack",
+      "expected_cycles": 11,
+      "source": "datasheet"
+    },
+    {
+      "name": "POP",
+      "category": "stack",
+      "expected_cycles": 8,
+      "source": "datasheet"
+    },
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOVSB",
+      "category": "string",
+      "expected_cycles": 18,
+      "source": "datasheet"
+    },
+    {
+      "name": "REP_MOVSB",
+      "category": "string",
+      "expected_cycles": 9,
+      "source": "datasheet",
+      "notes": "per iteration"
+    },
+    {
+      "name": "MOV_r_r",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_r_m",
+      "category": "memory",
+      "expected_cycles": 8,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_m_r",
+      "category": "memory",
+      "expected_cycles": 9,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_r_r",
+      "category": "alu",
+      "expected_cycles": 3,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_r_m",
+      "category": "alu",
+      "expected_cycles": 9,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "MUL_r8",
+      "category": "mul_div",
+      "expected_cycles": 77,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "DIV_r8",
+      "category": "mul_div",
+      "expected_cycles": 90,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "JZ_taken",
+      "category": "control",
+      "expected_cycles": 16,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "JZ_not_taken",
+      "category": "control",
+      "expected_cycles": 4,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    },
+    {
+      "name": "RET_near",
+      "category": "control",
+      "expected_cycles": 8,
+      "measured_cycles": null,
+      "error_percent": null,
+      "passed": false,
+      "source": "datasheet"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 4.5,
+    "expected_ipc": 0.2222,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 7.5532,
+    "cpi_error_percent": 67.85,
+    "ipc_error_percent": 67.85,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.2,
+    "control": 0.15,
+    "stack": 0.1,
+    "string": 0.05
   }
 }

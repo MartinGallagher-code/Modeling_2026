@@ -88,59 +88,59 @@ class M6805Model(BaseProcessorModel):
     
     def __init__(self):
         # Stage timing (cycles)
-        self.stage_timing = {{
+        self.stage_timing = {
             'fetch': 4,      # Instruction fetch
             'decode': 1,     # Decode
             'execute': 3,   # Execute (weighted average)
             'memory': 3,     # Memory access (for load/store)
             'writeback': 0, # Register writeback
-        }}
+        }
         
         # Instruction categories (5-15 recommended)
-        self.instruction_categories = {{
+        self.instruction_categories = {
             'register_ops': InstructionCategory('register_ops', 4, 0, "Register-to-register"),
             'immediate': InstructionCategory('immediate', 7, 0, "Immediate operand"),
             'memory_read': InstructionCategory('memory_read', 7, 3, "Load from memory"),
             'memory_write': InstructionCategory('memory_write', 7, 3, "Store to memory"),
             'branch': InstructionCategory('branch', 10, 0, "Branch/jump"),
             'call_return': InstructionCategory('call_return', 12, 6, "Subroutine call/return"),
-        }}
+        }
         
         # Workload profiles
-        self.workload_profiles = {{
-            'typical': WorkloadProfile('typical', {{
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
                 'register_ops': 0.30,
                 'immediate': 0.15,
                 'memory_read': 0.25,
                 'memory_write': 0.15,
                 'branch': 0.10,
                 'call_return': 0.05,
-            }}, "Typical mixed workload"),
-            'compute': WorkloadProfile('compute', {{
+            }, "Typical mixed workload"),
+            'compute': WorkloadProfile('compute', {
                 'register_ops': 0.50,
                 'immediate': 0.25,
                 'memory_read': 0.10,
                 'memory_write': 0.05,
                 'branch': 0.08,
                 'call_return': 0.02,
-            }}, "Compute-intensive workload"),
-            'memory': WorkloadProfile('memory', {{
+            }, "Compute-intensive workload"),
+            'memory': WorkloadProfile('memory', {
                 'register_ops': 0.15,
                 'immediate': 0.10,
                 'memory_read': 0.40,
                 'memory_write': 0.25,
                 'branch': 0.05,
                 'call_return': 0.05,
-            }}, "Memory-intensive workload"),
-            'control': WorkloadProfile('control', {{
+            }, "Memory-intensive workload"),
+            'control': WorkloadProfile('control', {
                 'register_ops': 0.20,
                 'immediate': 0.10,
                 'memory_read': 0.15,
                 'memory_write': 0.10,
                 'branch': 0.30,
                 'call_return': 0.15,
-            }}, "Control-flow intensive workload"),
-        }}
+            }, "Control-flow intensive workload"),
+        }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""
@@ -156,7 +156,7 @@ class M6805Model(BaseProcessorModel):
         ips = self.clock_mhz * 1e6 * ipc
         
         # Identify bottleneck (highest contribution)
-        contributions = {{}}
+        contributions = {}
         for cat_name, weight in profile.category_weights.items():
             cat = self.instruction_categories[cat_name]
             contributions[cat_name] = weight * cat.total_cycles
@@ -174,7 +174,7 @@ class M6805Model(BaseProcessorModel):
     def validate(self) -> Dict[str, Any]:
         """Run validation tests"""
         # TODO: Implement validation against known timing data
-        return {{"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}}
+        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories

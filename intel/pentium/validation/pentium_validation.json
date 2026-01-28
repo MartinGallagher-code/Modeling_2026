@@ -39,15 +39,15 @@
   "fpu": {
     "on_chip": true,
     "pipelined": true,
-    "performance": "5-10× faster than 486 FPU",
+    "performance": "5-10\u00d7 faster than 486 FPU",
     "fdiv_bug": "Early versions had division bug!"
   },
   "instruction_mix": {
-    "alu_operations": 0.40,
-    "memory_ops": 0.30,
+    "alu_operations": 0.4,
+    "memory_ops": 0.3,
     "branch": 0.15,
     "fpu": 0.05,
-    "other": 0.10
+    "other": 0.1
   },
   "instruction_timings": {
     "simple_alu": 1,
@@ -61,17 +61,19 @@
     "fpu_div": 39
   },
   "performance_characteristics": {
-    "ipc_expected": 1.20,
+    "ipc_expected": 1.2,
     "mips_at_66mhz": 112,
     "mflops_at_66mhz": 63,
-    "vs_486": "2× faster at same clock"
+    "vs_486": "2\u00d7 faster at same clock"
   },
   "historical_context": {
     "year_introduced": "March 22, 1993",
     "code_name": "P5",
     "significance": "First superscalar x86, made 'Intel Inside' famous",
     "price_1993": "$878 (60 MHz)",
-    "systems": ["Every major PC OEM"],
+    "systems": [
+      "Every major PC OEM"
+    ],
     "market_impact": "Defined PC computing for a decade"
   },
   "famous_bug": {
@@ -81,7 +83,26 @@
     "lesson": "Verification matters"
   },
   "calibration": {
-    "arrival_rate_initial": 0.80,
+    "arrival_rate_initial": 0.8,
     "tolerance_percent": 2.0
+  },
+  "processor": "pentium",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": 201.0,
+    "cpi_error_percent": 201.0,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "notes": "Validation pending",
+    "predicted_cpi": 3.01,
+    "expected_cpi": 1.0,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

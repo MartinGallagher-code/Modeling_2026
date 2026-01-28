@@ -20,9 +20,56 @@
     "ips_max": 10000000,
     "mips_typical": 2.5
   },
-  "notes": "Bit-slice ALU building block",
+  "notes": "4-bit slice processor, timing is per microinstruction",
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "AMD Am2901 Datasheet",
+      "url": "http://www.bitsavers.org/components/amd/Am2900/Am2901_Am2901A_Four-Bit_Bipolar_Microprocessor_Slice_May79.pdf",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia Am2900",
+      "url": "https://en.wikipedia.org/wiki/AMD_Am2900",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-27",
+  "timing_tests": [
+    {
+      "name": "ALU_op",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "4-bit slice, 100ns cycle"
+    },
+    {
+      "name": "SHIFT",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 1.0,
+    "expected_ipc": 1.0,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 8.15,
+    "cpi_error_percent": 715.0,
+    "ipc_error_percent": 715.0,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

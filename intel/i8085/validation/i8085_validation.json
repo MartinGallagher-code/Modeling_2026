@@ -24,5 +24,99 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel 8085 Datasheet",
+      "url": "http://datasheets.chipdb.org/Intel/MCS-85/intel-8085.pdf",
+      "verified": false
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/intel/mcs-85/8085",
+      "verified": false
+    },
+    {
+      "type": "emulator",
+      "name": "MAME i8085",
+      "url": "https://github.com/mamedev/mame/blob/master/src/devices/cpu/i8085/i8085.cpp",
+      "verified": true
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Intel_8085",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-27",
+  "timing_tests": [
+    {
+      "name": "MOV_r_r",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_r_M",
+      "category": "memory",
+      "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_r",
+      "category": "alu",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_M",
+      "category": "alu",
+      "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "CALL",
+      "category": "control",
+      "expected_cycles": 18,
+      "source": "datasheet"
+    },
+    {
+      "name": "RET",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 5.5,
+    "expected_ipc": 0.1818,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 8.15,
+    "cpi_error_percent": 48.18,
+    "ipc_error_percent": 48.18,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

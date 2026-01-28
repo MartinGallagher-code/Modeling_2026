@@ -24,5 +24,23 @@
   "model_accuracy": {
     "target_error_pct": 15,
     "confidence": "Medium"
+  },
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": 67.85,
+    "cpi_error_percent": 67.85,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "notes": "Validation pending",
+    "predicted_cpi": 7.5532,
+    "expected_cpi": 4.5,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

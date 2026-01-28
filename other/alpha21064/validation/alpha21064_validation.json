@@ -25,7 +25,7 @@
     "external_cache_mb": "Up to 16 MB"
   },
   "performance_characteristics": {
-    "ipc_expected": 1.30,
+    "ipc_expected": 1.3,
     "spec_int92": 125,
     "spec_fp92": 180,
     "claim": "Fastest microprocessor in the world (1992)"
@@ -39,12 +39,35 @@
     "year_introduced": "1992",
     "designer": "Digital Equipment Corporation (DEC)",
     "significance": "Fastest CPU for years, 64-bit pioneer",
-    "systems": ["DEC Alpha workstations", "AlphaServer", "Cray supercomputers"],
+    "systems": [
+      "DEC Alpha workstations",
+      "AlphaServer",
+      "Cray supercomputers"
+    ],
     "fate": "DEC acquired by Compaq (1998), then HP (2002), discontinued"
   },
   "legacy": {
     "influence": "Influenced AMD64 design",
     "engineers": "Many Alpha engineers went to AMD",
     "x86_64": "AMD64 owes debt to Alpha team"
+  },
+  "processor": "alpha21064",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": 201.0,
+    "cpi_error_percent": 201.0,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "notes": "Validation pending",
+    "predicted_cpi": 3.01,
+    "expected_cpi": 1.0,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

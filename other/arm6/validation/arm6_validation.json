@@ -24,7 +24,7 @@
     "low_power": "Designed for mobile from start"
   },
   "performance_characteristics": {
-    "ipc_expected": 0.70,
+    "ipc_expected": 0.7,
     "mips_at_20mhz": 14,
     "power_mw": 500
   },
@@ -32,7 +32,19 @@
     "year_introduced": 1991,
     "designer": "ARM Ltd",
     "significance": "First ARM designed for licensing, powered Apple Newton",
-    "systems": ["Apple Newton", "3DO console", "Acorn RiscPC"],
+    "systems": [
+      "Apple Newton",
+      "3DO console",
+      "Acorn RiscPC"
+    ],
     "legacy": "All modern ARM derives from ARM6 design"
+  },
+  "processor": "arm6",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": null,
+    "cpi_error_percent": null,
+    "validated_workloads": [],
+    "notes": "Validation pending"
   }
 }

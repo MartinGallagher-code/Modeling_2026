@@ -30,12 +30,24 @@
   "historical_context": {
     "year_introduced": 1987,
     "significance": "Dominated laser printer market",
-    "applications": ["HP LaserJet", "PostScript RIPs", "Embedded graphics"],
+    "applications": [
+      "HP LaserJet",
+      "PostScript RIPs",
+      "Embedded graphics"
+    ],
     "market_niche": "Rendering engines"
   },
   "why_laser_printers": {
     "reason": "Fast integer performance for PostScript interpretation",
     "competitors": "Beat SPARC and MIPS in this niche",
     "hp_partnership": "HP LaserJet used Am29000 for years"
+  },
+  "processor": "amd_29000",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": null,
+    "cpi_error_percent": null,
+    "validated_workloads": [],
+    "notes": "Validation pending"
   }
 }

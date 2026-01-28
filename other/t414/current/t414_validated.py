@@ -103,7 +103,7 @@ class T414Model(BaseProcessorModel):
         self.branch_penalty = 2
         
         # Instruction categories (RISC: most are single-cycle)
-        self.instruction_categories = {{
+        self.instruction_categories = {
             'alu': InstructionCategory('alu', 1, 0, "ALU operations (single-cycle)"),
             'load': InstructionCategory('load', 1, 1, "Load from memory"),
             'store': InstructionCategory('store', 1, 0, "Store to memory"),
@@ -112,31 +112,31 @@ class T414Model(BaseProcessorModel):
             'divide': InstructionCategory('divide', 30, 0, "Divide"),
             'fp_single': InstructionCategory('fp_single', 3, 0, "FP single precision"),
             'fp_double': InstructionCategory('fp_double', 6, 0, "FP double precision"),
-        }}
+        }
         
         # Workload profiles
-        self.workload_profiles = {{
-            'typical': WorkloadProfile('typical', {{
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
                 'alu': 0.40, 'load': 0.20, 'store': 0.10,
                 'branch': 0.15, 'multiply': 0.05, 'divide': 0.02,
                 'fp_single': 0.05, 'fp_double': 0.03,
-            }}, "Typical RISC workload"),
-            'compute': WorkloadProfile('compute', {{
+            }, "Typical RISC workload"),
+            'compute': WorkloadProfile('compute', {
                 'alu': 0.55, 'load': 0.10, 'store': 0.05,
                 'branch': 0.10, 'multiply': 0.10, 'divide': 0.05,
                 'fp_single': 0.03, 'fp_double': 0.02,
-            }}, "Compute-intensive"),
-            'memory': WorkloadProfile('memory', {{
+            }, "Compute-intensive"),
+            'memory': WorkloadProfile('memory', {
                 'alu': 0.20, 'load': 0.35, 'store': 0.20,
                 'branch': 0.15, 'multiply': 0.03, 'divide': 0.02,
                 'fp_single': 0.03, 'fp_double': 0.02,
-            }}, "Memory-intensive"),
-            'control': WorkloadProfile('control', {{
+            }, "Memory-intensive"),
+            'control': WorkloadProfile('control', {
                 'alu': 0.30, 'load': 0.15, 'store': 0.10,
                 'branch': 0.35, 'multiply': 0.03, 'divide': 0.02,
                 'fp_single': 0.03, 'fp_double': 0.02,
-            }}, "Control-flow intensive"),
-        }}
+            }, "Control-flow intensive"),
+        }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using Cache/RISC model"""
@@ -176,7 +176,7 @@ class T414Model(BaseProcessorModel):
         ips = self.clock_mhz * 1e6 * ipc
         
         # Bottleneck
-        penalties = {{'icache': icache_miss_cpi, 'dcache': dcache_miss_cpi, 'branch': branch_cpi}}
+        penalties = {'icache': icache_miss_cpi, 'dcache': dcache_miss_cpi, 'branch': branch_cpi}
         bottleneck = max(penalties, key=penalties.get) if max(penalties.values()) > 0.1 else 'balanced'
         
         return AnalysisResult.from_cpi(
@@ -189,7 +189,7 @@ class T414Model(BaseProcessorModel):
         )
     
     def validate(self) -> Dict[str, Any]:
-        return {{"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}}
+        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories

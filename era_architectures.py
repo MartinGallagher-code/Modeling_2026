@@ -688,59 +688,59 @@ class {ClassName}Model(BaseProcessorModel):
     
     def __init__(self):
         # Stage timing (cycles)
-        self.stage_timing = {{
+        self.stage_timing = {
             'fetch': {FetchCycles},      # Instruction fetch
             'decode': {DecodeCycles},     # Decode
             'execute': {ExecuteCycles},   # Execute (weighted average)
             'memory': {MemoryCycles},     # Memory access (for load/store)
             'writeback': {WritebackCycles}, # Register writeback
-        }}
+        }
         
         # Instruction categories (5-15 recommended)
-        self.instruction_categories = {{
+        self.instruction_categories = {
             'register_ops': InstructionCategory('register_ops', {RegOpsCycles}, 0, "Register-to-register"),
             'immediate': InstructionCategory('immediate', {ImmediateCycles}, 0, "Immediate operand"),
             'memory_read': InstructionCategory('memory_read', {MemReadCycles}, {MemReadMem}, "Load from memory"),
             'memory_write': InstructionCategory('memory_write', {MemWriteCycles}, {MemWriteMem}, "Store to memory"),
             'branch': InstructionCategory('branch', {BranchCycles}, 0, "Branch/jump"),
             'call_return': InstructionCategory('call_return', {CallRetCycles}, {CallRetMem}, "Subroutine call/return"),
-        }}
+        }
         
         # Workload profiles
-        self.workload_profiles = {{
-            'typical': WorkloadProfile('typical', {{
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
                 'register_ops': 0.30,
                 'immediate': 0.15,
                 'memory_read': 0.25,
                 'memory_write': 0.15,
                 'branch': 0.10,
                 'call_return': 0.05,
-            }}, "Typical mixed workload"),
-            'compute': WorkloadProfile('compute', {{
+            }, "Typical mixed workload"),
+            'compute': WorkloadProfile('compute', {
                 'register_ops': 0.50,
                 'immediate': 0.25,
                 'memory_read': 0.10,
                 'memory_write': 0.05,
                 'branch': 0.08,
                 'call_return': 0.02,
-            }}, "Compute-intensive workload"),
-            'memory': WorkloadProfile('memory', {{
+            }, "Compute-intensive workload"),
+            'memory': WorkloadProfile('memory', {
                 'register_ops': 0.15,
                 'immediate': 0.10,
                 'memory_read': 0.40,
                 'memory_write': 0.25,
                 'branch': 0.05,
                 'call_return': 0.05,
-            }}, "Memory-intensive workload"),
-            'control': WorkloadProfile('control', {{
+            }, "Memory-intensive workload"),
+            'control': WorkloadProfile('control', {
                 'register_ops': 0.20,
                 'immediate': 0.10,
                 'memory_read': 0.15,
                 'memory_write': 0.10,
                 'branch': 0.30,
                 'call_return': 0.15,
-            }}, "Control-flow intensive workload"),
-        }}
+            }, "Control-flow intensive workload"),
+        }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""
@@ -756,7 +756,7 @@ class {ClassName}Model(BaseProcessorModel):
         ips = self.clock_mhz * 1e6 * ipc
         
         # Identify bottleneck (highest contribution)
-        contributions = {{}}
+        contributions = {}
         for cat_name, weight in profile.category_weights.items():
             cat = self.instruction_categories[cat_name]
             contributions[cat_name] = weight * cat.total_cycles
@@ -774,7 +774,7 @@ class {ClassName}Model(BaseProcessorModel):
     def validate(self) -> Dict[str, Any]:
         """Run validation tests"""
         # TODO: Implement validation against known timing data
-        return {{"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}}
+        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories
@@ -925,50 +925,50 @@ class {ClassName}Model(BaseProcessorModel):
         self.bytes_per_access = self.bus_width // 8
         
         # EU timing by instruction category
-        self.instruction_categories = {{
+        self.instruction_categories = {
             'register_ops': InstructionCategory('register_ops', {RegOpsCycles}, 0, "Register operations"),
             'immediate': InstructionCategory('immediate', {ImmediateCycles}, 0, "Immediate operand"),
             'memory_read': InstructionCategory('memory_read', {MemReadCycles}, {MemReadBus}, "Load from memory"),
             'memory_write': InstructionCategory('memory_write', {MemWriteCycles}, {MemWriteBus}, "Store to memory"),
             'branch': InstructionCategory('branch', {BranchCycles}, 0, "Branch (flushes queue)"),
             'string_ops': InstructionCategory('string_ops', {StringCycles}, {StringBus}, "String operations"),
-        }}
+        }
         
         # Workload profiles
-        self.workload_profiles = {{
-            'typical': WorkloadProfile('typical', {{
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
                 'register_ops': 0.25,
                 'immediate': 0.20,
                 'memory_read': 0.20,
                 'memory_write': 0.15,
                 'branch': 0.15,
                 'string_ops': 0.05,
-            }}, "Typical mixed workload"),
-            'compute': WorkloadProfile('compute', {{
+            }, "Typical mixed workload"),
+            'compute': WorkloadProfile('compute', {
                 'register_ops': 0.40,
                 'immediate': 0.30,
                 'memory_read': 0.10,
                 'memory_write': 0.05,
                 'branch': 0.12,
                 'string_ops': 0.03,
-            }}, "Compute-intensive"),
-            'memory': WorkloadProfile('memory', {{
+            }, "Compute-intensive"),
+            'memory': WorkloadProfile('memory', {
                 'register_ops': 0.10,
                 'immediate': 0.10,
                 'memory_read': 0.35,
                 'memory_write': 0.25,
                 'branch': 0.10,
                 'string_ops': 0.10,
-            }}, "Memory-intensive"),
-            'control': WorkloadProfile('control', {{
+            }, "Memory-intensive"),
+            'control': WorkloadProfile('control', {
                 'register_ops': 0.15,
                 'immediate': 0.15,
                 'memory_read': 0.15,
                 'memory_write': 0.10,
                 'branch': 0.35,
                 'string_ops': 0.10,
-            }}, "Control-flow intensive"),
-        }}
+            }, "Control-flow intensive"),
+        }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using prefetch queue model with BIU/EU parallelism"""
@@ -1015,11 +1015,11 @@ class {ClassName}Model(BaseProcessorModel):
             cpi=total_cpi,
             clock_mhz=self.clock_mhz,
             bottleneck=bottleneck,
-            utilizations={{'biu': biu_cycles/total_cpi, 'eu': eu_cycles/total_cpi, 'contention': contention/total_cpi}}
+            utilizations={'biu': biu_cycles/total_cpi, 'eu': eu_cycles/total_cpi, 'contention': contention/total_cpi}
         )
     
     def validate(self) -> Dict[str, Any]:
-        return {{"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}}
+        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories
@@ -1140,13 +1140,13 @@ class {ClassName}Model(BaseProcessorModel):
     
     def __init__(self):
         # Pipeline stages and timing
-        self.pipeline_stages = {{
+        self.pipeline_stages = {
             'IF': {IFCycles},   # Instruction Fetch
             'ID': {IDCycles},   # Instruction Decode
             'OF': {OFCycles},   # Operand Fetch
             'EX': {EXCycles},   # Execute
             'WB': {WBCycles},   # Write Back
-        }}
+        }
         
         # Cache parameters
         self.has_icache = {HasICache}
@@ -1154,7 +1154,7 @@ class {ClassName}Model(BaseProcessorModel):
         self.icache_miss_penalty = {ICacheMissPenalty}
         
         # Instruction categories
-        self.instruction_categories = {{
+        self.instruction_categories = {
             'alu_reg': InstructionCategory('alu_reg', {ALURegCycles}, 0, "ALU register operations"),
             'alu_mem': InstructionCategory('alu_mem', {ALUMemCycles}, {ALUMemMem}, "ALU with memory operand"),
             'load': InstructionCategory('load', {LoadCycles}, {LoadMem}, "Load from memory"),
@@ -1162,27 +1162,27 @@ class {ClassName}Model(BaseProcessorModel):
             'branch': InstructionCategory('branch', {BranchCycles}, 0, "Branch/jump"),
             'multiply': InstructionCategory('multiply', {MultiplyCycles}, 0, "Multiply operations"),
             'divide': InstructionCategory('divide', {DivideCycles}, 0, "Divide operations"),
-        }}
+        }
         
         # Workload profiles
-        self.workload_profiles = {{
-            'typical': WorkloadProfile('typical', {{
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
                 'alu_reg': 0.30, 'alu_mem': 0.15, 'load': 0.20,
                 'store': 0.12, 'branch': 0.15, 'multiply': 0.05, 'divide': 0.03,
-            }}, "Typical workload"),
-            'compute': WorkloadProfile('compute', {{
+            }, "Typical workload"),
+            'compute': WorkloadProfile('compute', {
                 'alu_reg': 0.45, 'alu_mem': 0.15, 'load': 0.10,
                 'store': 0.05, 'branch': 0.10, 'multiply': 0.10, 'divide': 0.05,
-            }}, "Compute-intensive"),
-            'memory': WorkloadProfile('memory', {{
+            }, "Compute-intensive"),
+            'memory': WorkloadProfile('memory', {
                 'alu_reg': 0.15, 'alu_mem': 0.20, 'load': 0.30,
                 'store': 0.20, 'branch': 0.10, 'multiply': 0.03, 'divide': 0.02,
-            }}, "Memory-intensive"),
-            'control': WorkloadProfile('control', {{
+            }, "Memory-intensive"),
+            'control': WorkloadProfile('control', {
                 'alu_reg': 0.20, 'alu_mem': 0.10, 'load': 0.15,
                 'store': 0.10, 'branch': 0.35, 'multiply': 0.05, 'divide': 0.05,
-            }}, "Control-flow intensive"),
-        }}
+            }, "Control-flow intensive"),
+        }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using pipelined execution model"""
@@ -1218,11 +1218,11 @@ class {ClassName}Model(BaseProcessorModel):
             cpi=total_cpi,
             clock_mhz=self.clock_mhz,
             bottleneck=bottleneck_stage,
-            utilizations={{s: c/total_cpi for s, c in self.pipeline_stages.items()}}
+            utilizations={s: c/total_cpi for s, c in self.pipeline_stages.items()}
         )
     
     def validate(self) -> Dict[str, Any]:
-        return {{"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}}
+        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories
@@ -1381,7 +1381,7 @@ class {ClassName}Model(BaseProcessorModel):
         self.branch_penalty = {BranchPenalty}
         
         # Instruction categories (RISC: most are single-cycle)
-        self.instruction_categories = {{
+        self.instruction_categories = {
             'alu': InstructionCategory('alu', 1, 0, "ALU operations (single-cycle)"),
             'load': InstructionCategory('load', 1, {LoadLatency}, "Load from memory"),
             'store': InstructionCategory('store', 1, 0, "Store to memory"),
@@ -1390,31 +1390,31 @@ class {ClassName}Model(BaseProcessorModel):
             'divide': InstructionCategory('divide', {DivideCycles}, 0, "Divide"),
             'fp_single': InstructionCategory('fp_single', {FPSingleCycles}, 0, "FP single precision"),
             'fp_double': InstructionCategory('fp_double', {FPDoubleCycles}, 0, "FP double precision"),
-        }}
+        }
         
         # Workload profiles
-        self.workload_profiles = {{
-            'typical': WorkloadProfile('typical', {{
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
                 'alu': 0.40, 'load': 0.20, 'store': 0.10,
                 'branch': 0.15, 'multiply': 0.05, 'divide': 0.02,
                 'fp_single': 0.05, 'fp_double': 0.03,
-            }}, "Typical RISC workload"),
-            'compute': WorkloadProfile('compute', {{
+            }, "Typical RISC workload"),
+            'compute': WorkloadProfile('compute', {
                 'alu': 0.55, 'load': 0.10, 'store': 0.05,
                 'branch': 0.10, 'multiply': 0.10, 'divide': 0.05,
                 'fp_single': 0.03, 'fp_double': 0.02,
-            }}, "Compute-intensive"),
-            'memory': WorkloadProfile('memory', {{
+            }, "Compute-intensive"),
+            'memory': WorkloadProfile('memory', {
                 'alu': 0.20, 'load': 0.35, 'store': 0.20,
                 'branch': 0.15, 'multiply': 0.03, 'divide': 0.02,
                 'fp_single': 0.03, 'fp_double': 0.02,
-            }}, "Memory-intensive"),
-            'control': WorkloadProfile('control', {{
+            }, "Memory-intensive"),
+            'control': WorkloadProfile('control', {
                 'alu': 0.30, 'load': 0.15, 'store': 0.10,
                 'branch': 0.35, 'multiply': 0.03, 'divide': 0.02,
                 'fp_single': 0.03, 'fp_double': 0.02,
-            }}, "Control-flow intensive"),
-        }}
+            }, "Control-flow intensive"),
+        }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using Cache/RISC model"""
@@ -1454,7 +1454,7 @@ class {ClassName}Model(BaseProcessorModel):
         ips = self.clock_mhz * 1e6 * ipc
         
         # Bottleneck
-        penalties = {{'icache': icache_miss_cpi, 'dcache': dcache_miss_cpi, 'branch': branch_cpi}}
+        penalties = {'icache': icache_miss_cpi, 'dcache': dcache_miss_cpi, 'branch': branch_cpi}
         bottleneck = max(penalties, key=penalties.get) if max(penalties.values()) > 0.1 else 'balanced'
         
         return AnalysisResult.from_cpi(
@@ -1467,7 +1467,7 @@ class {ClassName}Model(BaseProcessorModel):
         )
     
     def validate(self) -> Dict[str, Any]:
-        return {{"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}}
+        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories

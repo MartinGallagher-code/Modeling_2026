@@ -39,17 +39,27 @@
   "mmu": {
     "on_chip": true,
     "atc_entries": 64,
-    "page_sizes": [4096, 8192],
+    "page_sizes": [
+      4096,
+      8192
+    ],
     "fully_compatible": "With 68030 MMU"
   },
   "pipeline": {
     "stages": 6,
-    "description": ["Fetch", "Decode", "EA Calculate", "EA Fetch", "Execute", "Write-back"],
+    "description": [
+      "Fetch",
+      "Decode",
+      "EA Calculate",
+      "EA Fetch",
+      "Execute",
+      "Write-back"
+    ],
     "integer_throughput": "Approaching 1 IPC",
     "branch_prediction": "Simple static prediction"
   },
   "instruction_mix": {
-    "move_operations": 0.30,
+    "move_operations": 0.3,
     "alu_operations": 0.28,
     "branch_jump": 0.16,
     "load_store": 0.14,
@@ -71,16 +81,21 @@
     "fdiv": 32
   },
   "performance_characteristics": {
-    "ipc_expected": 0.90,
+    "ipc_expected": 0.9,
     "mips_at_25mhz": 20,
     "mflops_at_25mhz": 3.5,
-    "vs_68030": "2-3× faster at same clock"
+    "vs_68030": "2-3\u00d7 faster at same clock"
   },
   "historical_context": {
     "year_introduced": 1990,
     "significance": "First 68k with on-chip FPU, most powerful 68k",
-    "systems": ["Macintosh Quadra series", "Amiga 4000", "HP 9000/400", 
-                "NeXTstation Turbo", "SGI Indigo (early)"],
+    "systems": [
+      "Macintosh Quadra series",
+      "Amiga 4000",
+      "HP 9000/400",
+      "NeXTstation Turbo",
+      "SGI Indigo (early)"
+    ],
     "competition": "Intel 80486",
     "end_of_era": "Last major 68k before PowerPC transition"
   },
@@ -92,5 +107,24 @@
   "calibration": {
     "arrival_rate_initial": 0.55,
     "tolerance_percent": 2.0
+  },
+  "processor": "m68040",
+  "validation_date": "2026-01-27",
+  "accuracy": {
+    "ipc_error_percent": 50.5,
+    "cpi_error_percent": 50.5,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "notes": "Validation pending",
+    "predicted_cpi": 3.01,
+    "expected_cpi": 2.0,
+    "validation_passed": false,
+    "fully_validated": false,
+    "validation_date": "2026-01-27"
   }
 }

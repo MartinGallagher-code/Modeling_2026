@@ -88,13 +88,13 @@ class I80286Model(BaseProcessorModel):
     
     def __init__(self):
         # Pipeline stages and timing
-        self.pipeline_stages = {{
+        self.pipeline_stages = {
             'IF': 1,   # Instruction Fetch
             'ID': 1,   # Instruction Decode
             'OF': 1,   # Operand Fetch
             'EX': 1,   # Execute
             'WB': 1,   # Write Back
-        }}
+        }
         
         # Cache parameters
         self.has_icache = False
@@ -102,7 +102,7 @@ class I80286Model(BaseProcessorModel):
         self.icache_miss_penalty = 10
         
         # Instruction categories
-        self.instruction_categories = {{
+        self.instruction_categories = {
             'alu_reg': InstructionCategory('alu_reg', 2, 0, "ALU register operations"),
             'alu_mem': InstructionCategory('alu_mem', 4, 2, "ALU with memory operand"),
             'load': InstructionCategory('load', 4, 2, "Load from memory"),
@@ -110,27 +110,27 @@ class I80286Model(BaseProcessorModel):
             'branch': InstructionCategory('branch', 6, 0, "Branch/jump"),
             'multiply': InstructionCategory('multiply', 20, 0, "Multiply operations"),
             'divide': InstructionCategory('divide', 50, 0, "Divide operations"),
-        }}
+        }
         
         # Workload profiles
-        self.workload_profiles = {{
-            'typical': WorkloadProfile('typical', {{
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
                 'alu_reg': 0.30, 'alu_mem': 0.15, 'load': 0.20,
                 'store': 0.12, 'branch': 0.15, 'multiply': 0.05, 'divide': 0.03,
-            }}, "Typical workload"),
-            'compute': WorkloadProfile('compute', {{
+            }, "Typical workload"),
+            'compute': WorkloadProfile('compute', {
                 'alu_reg': 0.45, 'alu_mem': 0.15, 'load': 0.10,
                 'store': 0.05, 'branch': 0.10, 'multiply': 0.10, 'divide': 0.05,
-            }}, "Compute-intensive"),
-            'memory': WorkloadProfile('memory', {{
+            }, "Compute-intensive"),
+            'memory': WorkloadProfile('memory', {
                 'alu_reg': 0.15, 'alu_mem': 0.20, 'load': 0.30,
                 'store': 0.20, 'branch': 0.10, 'multiply': 0.03, 'divide': 0.02,
-            }}, "Memory-intensive"),
-            'control': WorkloadProfile('control', {{
+            }, "Memory-intensive"),
+            'control': WorkloadProfile('control', {
                 'alu_reg': 0.20, 'alu_mem': 0.10, 'load': 0.15,
                 'store': 0.10, 'branch': 0.35, 'multiply': 0.05, 'divide': 0.05,
-            }}, "Control-flow intensive"),
-        }}
+            }, "Control-flow intensive"),
+        }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using pipelined execution model"""
@@ -138,7 +138,7 @@ class I80286Model(BaseProcessorModel):
         
         # Find pipeline bottleneck
         bottleneck_stage = max(self.pipeline_stages, key=self.pipeline_stages.get)
-        base_cpi = self.pipeline_stages[bottleneck_stage]
+        base_cpi = sum(w * self.instruction_categories[c].base_cycles for c, w in profile.category_weights.items() if c in self.instruction_categories)
         
         # Calculate hazard stalls from instruction mix
         hazard_rate = 0.1  # Base structural hazards
@@ -166,11 +166,11 @@ class I80286Model(BaseProcessorModel):
             cpi=total_cpi,
             clock_mhz=self.clock_mhz,
             bottleneck=bottleneck_stage,
-            utilizations={{s: c/total_cpi for s, c in self.pipeline_stages.items()}}
+            utilizations={s: c/total_cpi for s, c in self.pipeline_stages.items()}
         )
     
     def validate(self) -> Dict[str, Any]:
-        return {{"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}}
+        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories
