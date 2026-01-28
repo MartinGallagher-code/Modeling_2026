@@ -156,7 +156,74 @@ class Mos6510Model(BaseProcessorModel):
         )
 
     def validate(self) -> Dict[str, Any]:
-        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
+        """Run validation tests against known 6510 characteristics"""
+        tests = []
+
+        # Test 1: CPI within expected range (target 3.5, allow 5% tolerance)
+        result = self.analyze('typical')
+        expected_cpi = 3.5
+        cpi_error = abs(result.cpi - expected_cpi) / expected_cpi * 100
+        tests.append({
+            'name': 'CPI accuracy',
+            'passed': cpi_error < 5.0,
+            'expected': f'{expected_cpi} +/- 5%',
+            'actual': f'{result.cpi:.2f} ({cpi_error:.1f}% error)'
+        })
+
+        # Test 2: Workload weights sum to 1.0
+        for profile_name, profile in self.workload_profiles.items():
+            weight_sum = sum(profile.category_weights.values())
+            tests.append({
+                'name': f'Weights sum ({profile_name})',
+                'passed': 0.99 <= weight_sum <= 1.01,
+                'expected': '1.0',
+                'actual': f'{weight_sum:.2f}'
+            })
+
+        # Test 3: All cycle counts are positive and reasonable (1-10 for 6510)
+        for cat_name, cat in self.instruction_categories.items():
+            cycles = cat.total_cycles
+            tests.append({
+                'name': f'Cycle count ({cat_name})',
+                'passed': 1.0 <= cycles <= 10.0,
+                'expected': '1-10 cycles',
+                'actual': f'{cycles:.1f}'
+            })
+
+        # Test 4: IPC is in valid range for 6510 (0.2 - 0.5 typical)
+        tests.append({
+            'name': 'IPC range',
+            'passed': 0.15 <= result.ipc <= 0.6,
+            'expected': '0.15-0.6',
+            'actual': f'{result.ipc:.3f}'
+        })
+
+        # Test 5: All workloads produce valid results
+        for workload in self.workload_profiles.keys():
+            try:
+                r = self.analyze(workload)
+                valid = r.cpi > 0 and r.ipc > 0 and r.ips > 0
+                tests.append({
+                    'name': f'Workload analysis ({workload})',
+                    'passed': valid,
+                    'expected': 'Valid CPI/IPC/IPS',
+                    'actual': f'CPI={r.cpi:.2f}' if valid else 'Invalid'
+                })
+            except Exception as e:
+                tests.append({
+                    'name': f'Workload analysis ({workload})',
+                    'passed': False,
+                    'expected': 'No error',
+                    'actual': str(e)
+                })
+
+        passed = sum(1 for t in tests if t['passed'])
+        return {
+            'tests': tests,
+            'passed': passed,
+            'total': len(tests),
+            'accuracy_percent': 100.0 - cpi_error
+        }
 
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories

@@ -5,6 +5,30 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Implement validate() method
+
+**Session goal:** Add self-validation capability to the model
+
+**Starting state:**
+- CPI: 3.49 (0.4% error) - already passing
+- validate() method returned empty results
+
+**Changes made:**
+
+1. Implemented validate() method with 15 tests:
+   - CPI accuracy check (target 3.5 +/- 5%)
+   - Weights sum to 1.0 for all 4 workload profiles
+   - Cycle counts in valid range (1-10) for all 5 categories
+   - IPC in expected range (0.15-0.6)
+   - All workloads produce valid results
+
+**Final state:**
+- 15/15 tests passing
+- Accuracy: 99.6%
+- Model now self-validates
+
+---
+
 ## 2026-01-28 - Initial calibration with actual 6502 timings
 
 **Session goal:** Fix model that had 132.86% CPI error
