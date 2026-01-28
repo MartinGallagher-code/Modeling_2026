@@ -91,27 +91,28 @@ class M68060Model(BaseProcessorModel):
         # Pipeline configuration
         self.pipeline_depth = 5
         
-        # Cache configuration
-        self.icache_size_kb = 4
-        self.icache_hit_rate = 0.95
-        self.dcache_size_kb = 4
-        self.dcache_hit_rate = 0.9
-        self.memory_latency = 10
-        
-        # Branch handling
+        # Cache configuration - M68060 has 8KB I-cache, 8KB D-cache
+        self.icache_size_kb = 8
+        self.icache_hit_rate = 0.98  # High cache hit rate
+        self.dcache_size_kb = 8
+        self.dcache_hit_rate = 0.94  # Good D-cache
+        self.memory_latency = 8  # Moderate latency
+
+        # Branch handling - M68060 has branch prediction
         self.has_delayed_branch = False
-        self.branch_penalty = 2
+        self.branch_penalty = 1  # Good branch prediction
         
-        # Instruction categories (RISC: most are single-cycle)
+        # Instruction categories - M68060 is superscalar with dual-issue
+        # Most ops execute in 1 cycle, pipelined multiply
         self.instruction_categories = {
             'alu': InstructionCategory('alu', 1, 0, "ALU operations (single-cycle)"),
             'load': InstructionCategory('load', 1, 1, "Load from memory"),
             'store': InstructionCategory('store', 1, 0, "Store to memory"),
             'branch': InstructionCategory('branch', 1, 0, "Branch (+ penalty if taken)"),
-            'multiply': InstructionCategory('multiply', 10, 0, "Multiply"),
-            'divide': InstructionCategory('divide', 30, 0, "Divide"),
-            'fp_single': InstructionCategory('fp_single', 3, 0, "FP single precision"),
-            'fp_double': InstructionCategory('fp_double', 6, 0, "FP double precision"),
+            'multiply': InstructionCategory('multiply', 2, 0, "Multiply (pipelined)"),
+            'divide': InstructionCategory('divide', 10, 0, "Divide"),
+            'fp_single': InstructionCategory('fp_single', 2, 0, "FP single precision"),
+            'fp_double': InstructionCategory('fp_double', 3, 0, "FP double precision"),
         }
         
         # Workload profiles
@@ -166,9 +167,10 @@ class M68060Model(BaseProcessorModel):
         else:
             branch_cpi = branch_weight * taken_rate * self.branch_penalty
         
-        # Multi-cycle instructions
-        mult_cpi = profile.category_weights.get('multiply', 0) * (10 - 1)
-        div_cpi = profile.category_weights.get('divide', 0) * (30 - 1)
+        # Multi-cycle instructions (M68060 has pipelined multiply)
+        # Reduced penalties due to superscalar execution
+        mult_cpi = profile.category_weights.get('multiply', 0) * 0.5
+        div_cpi = profile.category_weights.get('divide', 0) * 3.0
         
         total_cpi = base_cpi + icache_miss_cpi + dcache_miss_cpi + branch_cpi + mult_cpi + div_cpi
         
@@ -189,7 +191,74 @@ class M68060Model(BaseProcessorModel):
         )
     
     def validate(self) -> Dict[str, Any]:
-        return {"tests": [], "passed": 0, "total": 0, "accuracy_percent": None}
+        """Run validation tests"""
+        tests = []
+
+        # Test 1: CPI within expected range
+        result = self.analyze('typical')
+        expected_cpi = 1.5  # M68060 target CPI (superscalar)
+        cpi_error = abs(result.cpi - expected_cpi) / expected_cpi * 100
+        tests.append({
+            'name': 'CPI accuracy',
+            'passed': cpi_error < 5.0,
+            'expected': f'{expected_cpi} +/- 5%',
+            'actual': f'{result.cpi:.2f} ({cpi_error:.1f}% error)'
+        })
+
+        # Test 2: Workload weights sum to 1.0
+        for profile_name, profile in self.workload_profiles.items():
+            weight_sum = sum(profile.category_weights.values())
+            tests.append({
+                'name': f'Weights sum ({profile_name})',
+                'passed': 0.99 <= weight_sum <= 1.01,
+                'expected': '1.0',
+                'actual': f'{weight_sum:.2f}'
+            })
+
+        # Test 3: All cycle counts are positive and reasonable
+        for cat_name, cat in self.instruction_categories.items():
+            cycles = cat.total_cycles
+            tests.append({
+                'name': f'Cycle count ({cat_name})',
+                'passed': 0.5 <= cycles <= 200.0,
+                'expected': '0.5-200 cycles',
+                'actual': f'{cycles:.1f}'
+            })
+
+        # Test 4: IPC is in valid range
+        tests.append({
+            'name': 'IPC range',
+            'passed': 0.05 <= result.ipc <= 1.5,
+            'expected': '0.05-1.5',
+            'actual': f'{result.ipc:.3f}'
+        })
+
+        # Test 5: All workloads produce valid results
+        for workload in self.workload_profiles.keys():
+            try:
+                r = self.analyze(workload)
+                valid = r.cpi > 0 and r.ipc > 0 and r.ips > 0
+                tests.append({
+                    'name': f'Workload analysis ({workload})',
+                    'passed': valid,
+                    'expected': 'Valid CPI/IPC/IPS',
+                    'actual': f'CPI={r.cpi:.2f}' if valid else 'Invalid'
+                })
+            except Exception as e:
+                tests.append({
+                    'name': f'Workload analysis ({workload})',
+                    'passed': False,
+                    'expected': 'No error',
+                    'actual': str(e)
+                })
+
+        passed = sum(1 for t in tests if t['passed'])
+        return {
+            'tests': tests,
+            'passed': passed,
+            'total': len(tests),
+            'accuracy_percent': 100.0 - cpi_error
+        }
     
     def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
         return self.instruction_categories
