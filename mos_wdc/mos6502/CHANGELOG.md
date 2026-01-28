@@ -1,0 +1,59 @@
+# MOS 6502 Model Changelog
+
+This file contains the complete history of all work on this model.
+**Append-only: Never delete previous entries.**
+
+---
+
+## 2026-01-28 - Initial calibration with actual 6502 timings
+
+**Session goal:** Fix model that had 132.86% CPI error
+
+**Starting state:**
+- CPI: 8.15 (132.86% error vs expected 3.5)
+- Key issues: Template had completely wrong cycle counts - not based on actual 6502 timings
+
+**Root cause:**
+The model was using a generic "Sequential Execution" template with arbitrary cycle counts:
+- register_ops: 4 cycles (should be 2)
+- immediate: 7 cycles (should be 2)
+- memory_read: 10 cycles (should be 3-4)
+- branch: 10 cycles (should be 2-3)
+- call_return: 18 cycles (should be 6)
+
+**Changes made:**
+
+1. Restructured instruction categories to match validation JSON
+   - Changed from: register_ops, immediate, memory_read, memory_write, branch, call_return
+   - Changed to: alu, data_transfer, memory, control, stack
+   - Reasoning: Matches the instruction_mix in validation JSON
+
+2. Calibrated cycle counts from 6502 datasheet
+   - alu: 3.0 cycles (mix of implied @2 and memory-based @3-4)
+   - data_transfer: 3.5 cycles (LDA/STA mix of addressing modes)
+   - memory: 4.2 cycles (including indexed/indirect modes)
+   - control: 3.0 cycles (branches @2.5 avg, JMP @3)
+   - stack: 3.5 cycles (PHA @3, PLA @4, JSR/RTS @6 weighted)
+
+3. Updated workload profiles
+   - Aligned weights with validation JSON instruction_mix
+   - alu: 0.25, data_transfer: 0.15, memory: 0.30, control: 0.20, stack: 0.10
+
+**What we learned:**
+
+- 6502 instruction timing is well-documented (2-7 cycles range)
+- Zero-page addressing (3 cycles) is key to 6502 performance
+- Indirect addressing modes (5-6 cycles) are used frequently
+- JSR/RTS are both exactly 6 cycles
+- Branch taken/not-taken difference matters (2 vs 3 cycles)
+
+**Final state:**
+- CPI: 3.485 (0.4% error)
+- Validation: PASSED
+
+**References used:**
+- MOS Technology 6502 datasheet (May 1976)
+- VICE emulator timing validation
+- Validation JSON timing_tests section
+
+---
