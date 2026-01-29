@@ -40,7 +40,12 @@
     "year_introduced": 1989,
     "designer": "Intel",
     "marketing": "Cray on a chip",
-    "systems": ["Intel iPSC/860", "NeXT Dimension", "Stardent", "Evans & Sutherland"],
+    "systems": [
+      "Intel iPSC/860",
+      "NeXT Dimension",
+      "Stardent",
+      "Evans & Sutherland"
+    ],
     "failure": "Too hard to program, compilers couldn't optimize"
   },
   "why_it_failed": {
@@ -50,17 +55,23 @@
     "lesson": "Peak performance means nothing if unreachable"
   },
   "processor": "i860",
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
-    "ipc_error_percent": 4.8,
-    "cpi_error_percent": 4.8,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "ipc_error_percent": 4.75,
+    "cpi_error_percent": 4.75,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "notes": "Calibrated for VLIW-hybrid dual-issue architecture with pipelined FP and 3-slot delayed branches",
     "predicted_cpi": 1.257,
     "expected_cpi": 1.2,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "expected_ipc": 0.8333
   },
   "instruction_timing_tests": [
@@ -167,9 +178,18 @@
         "processor": "MIPS R3000",
         "relationship": "contemporary competitor",
         "timing_comparison": {
-          "alu": {"i860": 1, "R3000": 1},
-          "load": {"i860": 1, "R3000": 2},
-          "branch": {"i860": "1 + 3 delay slots", "R3000": "1 + 1 delay slot"}
+          "alu": {
+            "i860": 1,
+            "R3000": 1
+          },
+          "load": {
+            "i860": 1,
+            "R3000": 2
+          },
+          "branch": {
+            "i860": "1 + 3 delay slots",
+            "R3000": "1 + 1 delay slot"
+          }
         },
         "notes": "i860 has 3x more delay slots than MIPS R3000, making scheduling harder"
       },

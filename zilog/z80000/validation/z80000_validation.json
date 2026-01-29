@@ -9,7 +9,10 @@
     "package": "132-pin PGA"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 80],
+    "cycles_per_instruction_range": [
+      3,
+      80
+    ],
     "typical_cpi": 6.0
   },
   "validated_performance": {
@@ -22,7 +25,7 @@
     "target_error_pct": 5,
     "confidence": "Medium"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "sources": [
     {
       "type": "wikipedia",
@@ -199,13 +202,19 @@
   "accuracy": {
     "expected_cpi": 6.0,
     "expected_ipc": 0.1667,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
-    "predicted_cpi": 6.290,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 6.29,
     "cpi_error_percent": 4.83,
     "ipc_error_percent": 4.83,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Calibrated based on Z8000 heritage, estimated timings for 32-bit extension"
   },
   "cross_validation": {
@@ -243,20 +252,72 @@
       "notes": "Tests use estimated values; actual hardware data unavailable"
     },
     "category_weighted_accuracy": {
-      "alu_reg": {"model_cycles": 3.0, "estimated_range": "3-4", "confidence": "medium"},
-      "alu_imm": {"model_cycles": 4.0, "estimated_range": "4-6", "confidence": "medium"},
-      "load": {"model_cycles": 5.0, "estimated_range": "5-10", "confidence": "medium"},
-      "store": {"model_cycles": 5.0, "estimated_range": "5-10", "confidence": "medium"},
-      "control": {"model_cycles": 6.0, "estimated_range": "5-12", "confidence": "medium"},
-      "call_return": {"model_cycles": 10.0, "estimated_range": "8-15", "confidence": "medium"},
-      "multiply": {"model_cycles": 40.0, "estimated_range": "35-50", "confidence": "low"},
-      "divide": {"model_cycles": 55.0, "estimated_range": "50-70", "confidence": "low"}
+      "alu_reg": {
+        "model_cycles": 3.0,
+        "estimated_range": "3-4",
+        "confidence": "medium"
+      },
+      "alu_imm": {
+        "model_cycles": 4.0,
+        "estimated_range": "4-6",
+        "confidence": "medium"
+      },
+      "load": {
+        "model_cycles": 5.0,
+        "estimated_range": "5-10",
+        "confidence": "medium"
+      },
+      "store": {
+        "model_cycles": 5.0,
+        "estimated_range": "5-10",
+        "confidence": "medium"
+      },
+      "control": {
+        "model_cycles": 6.0,
+        "estimated_range": "5-12",
+        "confidence": "medium"
+      },
+      "call_return": {
+        "model_cycles": 10.0,
+        "estimated_range": "8-15",
+        "confidence": "medium"
+      },
+      "multiply": {
+        "model_cycles": 40.0,
+        "estimated_range": "35-50",
+        "confidence": "low"
+      },
+      "divide": {
+        "model_cycles": 55.0,
+        "estimated_range": "50-70",
+        "confidence": "low"
+      }
     },
     "workload_validation": {
-      "typical": {"predicted_cpi": 6.290, "expected_cpi": 6.0, "error_percent": 4.83, "status": "PASS"},
-      "compute": {"predicted_cpi": 6.680, "expected_cpi": 6.5, "error_percent": 2.8, "status": "PASS"},
-      "memory": {"predicted_cpi": 6.590, "expected_cpi": 6.5, "error_percent": 1.4, "status": "PASS"},
-      "control": {"predicted_cpi": 7.830, "expected_cpi": 8.0, "error_percent": 2.1, "status": "PASS"}
+      "typical": {
+        "predicted_cpi": 6.29,
+        "expected_cpi": 6.0,
+        "error_percent": 4.83,
+        "status": "PASS"
+      },
+      "compute": {
+        "predicted_cpi": 6.68,
+        "expected_cpi": 6.5,
+        "error_percent": 2.8,
+        "status": "PASS"
+      },
+      "memory": {
+        "predicted_cpi": 6.59,
+        "expected_cpi": 6.5,
+        "error_percent": 1.4,
+        "status": "PASS"
+      },
+      "control": {
+        "predicted_cpi": 7.83,
+        "expected_cpi": 8.0,
+        "error_percent": 2.1,
+        "status": "PASS"
+      }
     },
     "historical_context": [
       "Released 1986, late to 32-bit market",

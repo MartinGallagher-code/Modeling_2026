@@ -5,11 +5,14 @@
     "data_width_bits": 32,
     "clock_mhz": 8.0,
     "transistors": 25000,
-    "technology": "3µm CMOS",
+    "technology": "3\u00b5m CMOS",
     "package": "84-pin PLCC"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 17],
+    "cycles_per_instruction_range": [
+      1,
+      17
+    ],
     "typical_cpi": 1.8
   },
   "validated_performance": {
@@ -42,7 +45,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_r_r",
@@ -198,13 +201,19 @@
   "accuracy": {
     "expected_cpi": 1.8,
     "expected_ipc": 0.5556,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.856,
-    "cpi_error_percent": 3.1,
-    "ipc_error_percent": 3.1,
+    "cpi_error_percent": 3.11,
+    "ipc_error_percent": 3.11,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "cross_validation": {
@@ -217,7 +226,7 @@
       "ARM2 adds hardware multiplier (MUL/MLA instructions)",
       "ARM2 adds coprocessor interface",
       "ARM2 adds SWP instruction for atomic operations",
-      "ARM2 uses smaller 2µm process vs 3µm"
+      "ARM2 uses smaller 2\u00b5m process vs 3\u00b5m"
     ],
     "family_evolution": {
       "ARM1_1985": {

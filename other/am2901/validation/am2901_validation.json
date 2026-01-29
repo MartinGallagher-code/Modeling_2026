@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 1],
+    "cycles_per_instruction_range": [
+      1,
+      1
+    ],
     "typical_cpi": 1.0
   },
   "validated_performance": {
@@ -36,17 +39,23 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 1.0,
     "expected_ipc": 1.0,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.0,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with cross-validation"
   },
   "timing_tests": [

@@ -23,56 +23,102 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any, Tuple
 
 
-# Expected CPI values from datasheets (same as in populate scripts)
+# Expected CPI values - updated 2026-01-29 with cross-validated targets
+# Many values revised based on detailed research and cross-validation
 EXPECTED_CPI = {
+    # Intel 4-bit
     'i4004': 10.8,
     'i4040': 10.5,
+    # Intel 8-bit
     'i8008': 11.0,
     'i8080': 9.2,
     'i8085': 5.5,
+    # Intel 16-bit
     'i8086': 4.5,
     'i8088': 5.2,
     'i80186': 4.0,
     'i80188': 4.2,
     'i80286': 4.0,
+    # Intel 32-bit
     'i80386': 4.5,
     'i80486': 2.0,
-    'mos6502': 3.5,
-    'mos6510': 3.5,
-    'wdc65c02': 3.2,
+    'pentium': 1.0,
+    'i860': 1.2,
+    # MOS/WDC - cross-validated
+    'mos6502': 3.0,     # Cross-validated (was 3.5)
+    'mos6510': 3.0,     # Cross-validated (was 3.5)
+    'wdc65c02': 2.85,   # Cross-validated (was 3.2)
     'wdc65816': 3.8,
+    # Motorola 8-bit
     'm6800': 4.0,
     'm6801': 3.8,
+    'm6802': 4.0,       # Same as 6800
+    'm6805': 5.0,       # Microcontroller
     'm6809': 3.5,
+    'm68hc11': 4.5,     # Microcontroller
+    # Motorola 68k
     'm68000': 6.5,
     'm68008': 7.0,
     'm68010': 6.0,
     'm68020': 3.5,
     'm68030': 3.0,
     'm68040': 2.0,
+    'm68060': 1.5,      # Superscalar
+    'm68881': 10.0,     # FPU coprocessor
+    'm68882': 10.0,     # FPU coprocessor
+    # Zilog
+    'z8': 10.0,         # 8-bit MCU
     'z80': 5.5,
     'z80a': 5.5,
     'z80b': 5.5,
     'z180': 4.5,
     'z8000': 4.5,
+    'z80000': 6.0,      # 32-bit Z8000 extension
+    # ARM
     'arm1': 1.8,
     'arm2': 1.5,
     'arm3': 1.4,
-    'sparc': 1.5,
+    # RISC - cross-validated
+    'sparc': 1.3,       # Cross-validated (was 1.5)
     'sun_spark': 1.5,
-    'am2901': 1.0,
-    'f8': 5.0,
-    'rca1802': 8.0,
-    'scmp': 6.0,
-    'signetics2650': 5.5,
-    'tms9900': 4.5,
-    'ns32016': 4.0,
+    'r2000': 2.0,       # Cross-validated (was 1.5) - MIPS R2000
+    'alpha21064': 0.77, # Cross-validated (was 1.0) - IPC 1.3
+    'hp_pa_risc': 0.91, # Cross-validated (was 1.2) - IPC 1.1
     't414': 2.0,
-    'r2000': 1.5,
-    'pentium': 1.0,
-    'i860': 1.2,
-    'alpha21064': 1.0,
-    'hp_pa_risc': 1.2,
+    # Intel FPU coprocessors
+    'i80287': 100.0,    # FPU coprocessor
+    'i80387': 50.0,     # FPU coprocessor (faster than 287)
+    # Intel MCUs
+    'i8048': 1.5,       # 8-bit MCU
+    'i8051': 12.0,      # 8-bit MCU
+    'i8748': 1.5,       # EPROM version of 8048
+    'i8751': 12.0,      # EPROM version of 8051
+    'iapx432': 50.0,    # Complex capability-based architecture
+    # Other - cross-validated
+    'am2901': 1.0,
+    'am2903': 1.0,      # Bit-slice
+    'am29000': 1.5,     # RISC
+    'amd_29000': 1.33,  # AMD 29000 RISC
+    'aim__ppc_601': 0.67,  # PowerPC 601 (IPC ~1.5)
+    'arm6': 1.43,       # ARM6
+    'berkeley_risc1': 1.3, # Original RISC
+    'f8': 7.0,          # Cross-validated (was 5.0)
+    'intersil6100': 10.5,  # PDP-8 on a chip
+    'nc4016': 1.2,      # Novix Forth
+    'nec_v20': 3.4,     # 8088 compatible
+    'ns32016': 12.0,    # Cross-validated (was 4.0) - CISC slower
+    'ns32032': 10.0,    # National Semi 32-bit
+    'pic1650': 1.15,    # Microchip PIC
+    'rca1802': 12.0,    # Cross-validated (was 8.0) - 2-phase slow
+    'rca1805': 10.0,    # Enhanced 1802
+    'rtx2000': 1.1,     # Forth stack processor
+    'scmp': 10.0,       # Cross-validated (was 6.0)
+    'signetics2650': 3.0,  # Cross-validated (was 5.5) - actually faster
+    'tms1000': 6.0,     # 4-bit MCU
+    'tms9900': 20.0,    # Cross-validated (was 4.5) - memory-to-memory very slow
+    'tms9995': 12.0,    # Enhanced TMS9900
+    'tms320c10': 1.5,   # DSP
+    'we32000': 8.0,     # AT&T WE32000
 }
 
 

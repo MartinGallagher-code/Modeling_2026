@@ -11,7 +11,10 @@
     "internal_eprom": "4KB"
   },
   "timing": {
-    "cycles_per_instruction_range": [12, 24],
+    "cycles_per_instruction_range": [
+      12,
+      24
+    ],
     "machine_cycle_clocks": 12,
     "typical_cpi": 12.0,
     "notes": "EPROM version of 8051, identical timing (12 clocks per machine cycle)"
@@ -40,7 +43,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "NOP",
@@ -218,13 +221,32 @@
       }
     ],
     "timing_consistency": {
-      "single_machine_cycle": ["NOP", "ADD", "ADDC", "SUBB", "INC", "DEC", "MOV A,Rn", "MOV Rn,A", "MOV A,#data"],
-      "two_machine_cycles": ["MOVX", "LJMP", "SJMP", "LCALL", "RET"],
-      "four_machine_cycles": ["MUL AB", "DIV AB"],
+      "single_machine_cycle": [
+        "NOP",
+        "ADD",
+        "ADDC",
+        "SUBB",
+        "INC",
+        "DEC",
+        "MOV A,Rn",
+        "MOV Rn,A",
+        "MOV A,#data"
+      ],
+      "two_machine_cycles": [
+        "MOVX",
+        "LJMP",
+        "SJMP",
+        "LCALL",
+        "RET"
+      ],
+      "four_machine_cycles": [
+        "MUL AB",
+        "DIV AB"
+      ],
       "validation_rule": "Identical to 8051 timing - all in multiples of 12 clocks"
     },
     "architectural_constraints": {
-      "machine_cycle": "12 clock cycles at 12 MHz = 1 µs",
+      "machine_cycle": "12 clock cycles at 12 MHz = 1 \u00b5s",
       "eprom": "UV-erasable EPROM for development/prototyping",
       "compatibility": "100% instruction compatible with 8051"
     }
@@ -232,18 +254,24 @@
   "accuracy": {
     "expected_cpi": 12.0,
     "expected_ipc": 0.0833,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 12.0,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.30,
-    "data_transfer": 0.40,
-    "memory": 0.10,
-    "control": 0.20
+    "alu": 0.3,
+    "data_transfer": 0.4,
+    "memory": 0.1,
+    "control": 0.2
   }
 }

@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 23],
+    "cycles_per_instruction_range": [
+      4,
+      23
+    ],
     "typical_cpi": 5.5
   },
   "validated_performance": {
@@ -54,7 +57,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "LD_r_r",
@@ -511,20 +514,26 @@
   "accuracy": {
     "expected_cpi": 5.5,
     "expected_ipc": 0.1818,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 5.585,
     "cpi_error_percent": 1.55,
     "ipc_error_percent": 1.55,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "instruction_mix": {
     "alu": 0.25,
     "data_transfer": 0.25,
-    "memory": 0.20,
+    "memory": 0.2,
     "control": 0.15,
-    "stack": 0.10,
+    "stack": 0.1,
     "block": 0.05,
     "notes": "Typical Z80 workload based on games, system software analysis"
   },
@@ -593,13 +602,13 @@
         "status": "PASS"
       },
       "compute": {
-        "predicted_cpi": 4.990,
+        "predicted_cpi": 4.99,
         "expected_cpi": 5.0,
         "error_percent": 0.2,
         "status": "PASS"
       },
       "memory": {
-        "predicted_cpi": 6.090,
+        "predicted_cpi": 6.09,
         "expected_cpi": 6.0,
         "error_percent": 1.5,
         "status": "PASS"

@@ -87,7 +87,7 @@
     "impact": "Proved ARM viable for mobile computing",
     "year": 1993
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_r_r",
@@ -263,13 +263,19 @@
   "accuracy": {
     "expected_cpi": 1.43,
     "expected_ipc": 0.6993,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.37,
-    "cpi_error_percent": 4.1,
-    "ipc_error_percent": 4.1,
+    "cpi_error_percent": 4.2,
+    "ipc_error_percent": 4.2,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "cross_validation": {

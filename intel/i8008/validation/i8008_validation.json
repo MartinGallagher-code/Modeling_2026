@@ -6,12 +6,18 @@
     "data_width_bits": 8,
     "clock_mhz": 0.5,
     "transistors": 3500,
-    "technology": "10µm PMOS",
+    "technology": "10\u00b5m PMOS",
     "package": "18-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [8, 22],
-    "t_states_per_instruction_range": [5, 11],
+    "cycles_per_instruction_range": [
+      8,
+      22
+    ],
+    "t_states_per_instruction_range": [
+      5,
+      11
+    ],
     "cycles_per_t_state": 2,
     "typical_cpi": 11.0,
     "notes": "All timings in T-states multiplied by 2 for machine cycles"
@@ -46,7 +52,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_r_r",
@@ -227,27 +233,31 @@
   ],
   "cross_validation": {
     "family": "Intel 8080 family",
-    "members": ["i8008", "i8080", "i8085"],
+    "members": [
+      "i8008",
+      "i8080",
+      "i8085"
+    ],
     "comparison": {
       "i8008": {
         "year": 1972,
         "clock_mhz": 0.5,
         "typical_cpi": 11.0,
-        "technology": "10µm PMOS",
-        "cycles_range": "8-22 (5-11 T-states × 2)"
+        "technology": "10\u00b5m PMOS",
+        "cycles_range": "8-22 (5-11 T-states \u00d7 2)"
       },
       "i8080": {
         "year": 1974,
         "clock_mhz": 2.0,
         "typical_cpi": 9.2,
-        "technology": "6µm NMOS",
+        "technology": "6\u00b5m NMOS",
         "cycles_range": "4-18"
       },
       "i8085": {
         "year": 1976,
         "clock_mhz": 3.0,
         "typical_cpi": 5.5,
-        "technology": "3µm NMOS",
+        "technology": "3\u00b5m NMOS",
         "cycles_range": "4-18"
       }
     },
@@ -257,18 +267,24 @@
     ],
     "timing_consistency": {
       "verified": true,
-      "notes": "8008 uses T-states (×2 for cycles), 8080/8085 use direct cycle counts"
+      "notes": "8008 uses T-states (\u00d72 for cycles), 8080/8085 use direct cycle counts"
     }
   },
   "accuracy": {
     "expected_cpi": 11.0,
     "expected_ipc": 0.0909,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 11.0,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   }
 }

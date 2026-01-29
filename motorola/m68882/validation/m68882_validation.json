@@ -12,7 +12,10 @@
     "precision": "80-bit extended"
   },
   "timing": {
-    "cycles_per_instruction_range": [15, 400],
+    "cycles_per_instruction_range": [
+      15,
+      400
+    ],
     "typical_cpi": 40.0
   },
   "validated_performance": {
@@ -25,17 +28,23 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 10.0,
     "expected_ipc": 0.1,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
-    "predicted_cpi": 9.950,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 9.95,
     "cpi_error_percent": 0.5,
     "ipc_error_percent": 0.5,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Enhanced FPU - faster than 68881, better pipelining"
   },
   "per_instruction_timing": {

@@ -14,7 +14,10 @@
     "cache_type": "4-way set associative"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 40],
+    "cycles_per_instruction_range": [
+      1,
+      40
+    ],
     "typical_cpi": 2.0
   },
   "validated_performance": {
@@ -47,7 +50,7 @@
       "verified": false
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_reg_reg",
@@ -276,12 +279,18 @@
   "accuracy": {
     "expected_cpi": 2.0,
     "expected_ipc": 0.5,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 2.05,
     "cpi_error_percent": 2.5,
     "ipc_error_percent": 2.5,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   }
 }

@@ -11,7 +11,10 @@
     "internal_eprom": "1KB"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 2],
+    "cycles_per_instruction_range": [
+      1,
+      2
+    ],
     "typical_cpi": 1.5,
     "notes": "EPROM version of 8048, identical timing"
   },
@@ -39,7 +42,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "NOP",
@@ -192,12 +195,29 @@
       }
     ],
     "timing_consistency": {
-      "single_cycle_instructions": ["NOP", "ADD", "ADDC", "ANL", "ORL", "XRL", "MOV A,Rn", "MOV Rn,A", "INC", "DEC"],
-      "two_cycle_instructions": ["MOV A,#data", "MOVX", "JMP", "CALL", "RET"],
+      "single_cycle_instructions": [
+        "NOP",
+        "ADD",
+        "ADDC",
+        "ANL",
+        "ORL",
+        "XRL",
+        "MOV A,Rn",
+        "MOV Rn,A",
+        "INC",
+        "DEC"
+      ],
+      "two_cycle_instructions": [
+        "MOV A,#data",
+        "MOVX",
+        "JMP",
+        "CALL",
+        "RET"
+      ],
       "validation_rule": "Identical to 8048 timing - register ops 1 cycle, memory/control 2 cycles"
     },
     "architectural_constraints": {
-      "machine_cycle": "15 clock periods at 6 MHz = 2.5 µs",
+      "machine_cycle": "15 clock periods at 6 MHz = 2.5 \u00b5s",
       "eprom": "UV-erasable EPROM for development/prototyping",
       "compatibility": "100% instruction compatible with 8048"
     }
@@ -205,18 +225,24 @@
   "accuracy": {
     "expected_cpi": 1.5,
     "expected_ipc": 0.6667,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.45,
-    "cpi_error_percent": 3.3,
-    "ipc_error_percent": 3.3,
+    "cpi_error_percent": 3.33,
+    "ipc_error_percent": 3.33,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.30,
-    "data_transfer": 0.40,
-    "memory": 0.10,
-    "control": 0.20
+    "alu": 0.3,
+    "data_transfer": 0.4,
+    "memory": 0.1,
+    "control": 0.2
   }
 }

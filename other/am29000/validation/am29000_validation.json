@@ -9,7 +9,10 @@
     "package": "169-pin PGA"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 4],
+    "cycles_per_instruction_range": [
+      1,
+      4
+    ],
     "typical_cpi": 1.5
   },
   "validated_performance": {
@@ -22,7 +25,7 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 1.5,
     "expected_ipc": 0.6667,
@@ -30,14 +33,15 @@
       "typical",
       "compute",
       "memory",
-      "control"
+      "control",
+      "mixed"
     ],
     "predicted_cpi": 1.55,
     "cpi_error_percent": 3.33,
     "ipc_error_percent": 3.33,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "per_instruction_timing_tests": [
@@ -165,13 +169,19 @@
       {
         "processor": "sparc",
         "relationship": "Contemporary RISC with similar register windowing",
-        "expected_cpi_range": [1.2, 1.5],
+        "expected_cpi_range": [
+          1.2,
+          1.5
+        ],
         "notes": "Both used large register files for fast context switching"
       },
       {
         "processor": "i960",
         "relationship": "Intel's contemporary RISC for embedded systems",
-        "expected_cpi_range": [1.3, 1.8],
+        "expected_cpi_range": [
+          1.3,
+          1.8
+        ],
         "notes": "Both competed in embedded graphics market"
       }
     ],

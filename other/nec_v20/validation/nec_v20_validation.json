@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 30],
+    "cycles_per_instruction_range": [
+      2,
+      30
+    ],
     "typical_cpi": 3.4
   },
   "validated_performance": {
@@ -22,17 +25,23 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 3.4,
     "expected_ipc": 0.294,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
-    "predicted_cpi": 3.55,
-    "cpi_error_percent": 4.4,
-    "ipc_error_percent": 4.4,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 3.35,
+    "cpi_error_percent": 1.47,
+    "ipc_error_percent": 1.47,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Cross-validated against 8088 with documented speedup factors"
   },
   "per_instruction_timing_tests": [

@@ -11,7 +11,10 @@
     "prefetch_queue_bytes": 6
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 200],
+    "cycles_per_instruction_range": [
+      2,
+      200
+    ],
     "typical_cpi": 12.0,
     "effective_cpi": 4.5,
     "notes": "Effective CPI accounts for prefetch queue overlap"
@@ -46,7 +49,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "instruction_timing_tests": [
     {
       "name": "MOV_reg_reg",
@@ -167,7 +170,10 @@
       "name": "MUL_word",
       "instruction": "MUL BX",
       "category": "mul_div",
-      "expected_cycles_range": [70, 118],
+      "expected_cycles_range": [
+        70,
+        118
+      ],
       "expected_cycles": 94,
       "notes": "Word multiply (16-bit), 70-118 cycles",
       "source": "Intel datasheet"
@@ -176,7 +182,10 @@
       "name": "DIV_word",
       "instruction": "DIV BX",
       "category": "mul_div",
-      "expected_cycles_range": [80, 162],
+      "expected_cycles_range": [
+        80,
+        162
+      ],
       "expected_cycles": 121,
       "notes": "Word divide (16-bit), 80-162 cycles",
       "source": "Intel datasheet"
@@ -289,20 +298,26 @@
   "accuracy": {
     "expected_cpi": 4.5,
     "expected_ipc": 0.2222,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 4.525,
     "cpi_error_percent": 0.56,
     "ipc_error_percent": 0.56,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "instruction_mix": {
     "alu": 0.25,
     "data_transfer": 0.25,
-    "memory": 0.20,
+    "memory": 0.2,
     "control": 0.15,
-    "stack": 0.10,
+    "stack": 0.1,
     "string": 0.05
   }
 }

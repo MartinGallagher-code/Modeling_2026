@@ -51,7 +51,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "LDA_imm_8bit",
@@ -309,14 +309,15 @@
       "typical",
       "compute",
       "memory",
-      "control"
+      "control",
+      "mixed"
     ],
     "predicted_cpi": 3.82,
     "cpi_error_percent": 0.53,
     "ipc_error_percent": 0.53,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Cross-validated for SNES/Apple IIGS typical usage with 16-bit mode overhead"
   },
   "cross_validation": {
@@ -352,8 +353,8 @@
   "instruction_mix": {
     "alu": 0.25,
     "data_transfer": 0.15,
-    "memory": 0.30,
-    "control": 0.20,
-    "stack": 0.10
+    "memory": 0.3,
+    "control": 0.2,
+    "stack": 0.1
   }
 }

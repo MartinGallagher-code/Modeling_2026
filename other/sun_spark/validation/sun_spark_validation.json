@@ -62,7 +62,11 @@
     "year_introduced": 1987,
     "designer": "Sun Microsystems",
     "significance": "Open RISC architecture, defined workstation era",
-    "systems": ["Sun SPARCstation", "Sun Enterprise servers", "Fujitsu servers"],
+    "systems": [
+      "Sun SPARCstation",
+      "Sun Enterprise servers",
+      "Fujitsu servers"
+    ],
     "open_standard": "First open microprocessor architecture"
   },
   "why_important": {
@@ -75,7 +79,7 @@
     "arrival_rate_initial": 0.5,
     "tolerance_percent": 2.0
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "sources": [
     {
       "type": "wikipedia",
@@ -275,7 +279,10 @@
     }
   ],
   "cross_validation": {
-    "related_processors": ["r2000", "sparc"],
+    "related_processors": [
+      "r2000",
+      "sparc"
+    ],
     "architecture_family": "Early RISC (1985-1987)",
     "common_characteristics": {
       "pipeline_stages": "4-5 stages",
@@ -309,15 +316,21 @@
     "validation_notes": "Sun SPARC represents Sun's tuned implementation for Unix workstation workloads"
   },
   "accuracy": {
-    "expected_cpi": 1.43,
+    "expected_cpi": 1.5,
     "expected_ipc": 0.6993,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.429,
-    "cpi_error_percent": 0.07,
-    "ipc_error_percent": 0.07,
+    "cpi_error_percent": 4.73,
+    "ipc_error_percent": 4.73,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model uses weighted instruction mix calibrated for Sun workstation workloads"
   }
 }

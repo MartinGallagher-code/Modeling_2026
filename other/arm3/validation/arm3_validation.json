@@ -33,7 +33,7 @@
     "cache": "4KB unified cache (first ARM with cache)",
     "clock_speed": "25-36 MHz vs 8-12 MHz",
     "memory_performance": "~3x faster memory access on cache hits",
-    "process": "1.5µm vs 2µm"
+    "process": "1.5\u00b5m vs 2\u00b5m"
   },
   "register_set": {
     "R0_R12": "13 general-purpose registers",
@@ -80,7 +80,7 @@
     ],
     "transition": "Bridge between ARM2 and ARM6"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_r_r",
@@ -244,15 +244,21 @@
     }
   ],
   "accuracy": {
-    "expected_cpi": 1.33,
+    "expected_cpi": 1.4,
     "expected_ipc": 0.7519,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.316,
-    "cpi_error_percent": 1.05,
-    "ipc_error_percent": 1.05,
+    "cpi_error_percent": 6.0,
+    "ipc_error_percent": 6.0,
     "validation_passed": true,
-    "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "fully_validated": false,
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "cross_validation": {

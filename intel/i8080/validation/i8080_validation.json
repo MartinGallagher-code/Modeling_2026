@@ -6,11 +6,14 @@
     "data_width_bits": 8,
     "clock_mhz": 2.0,
     "transistors": 4500,
-    "technology": "6µm NMOS",
+    "technology": "6\u00b5m NMOS",
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 18],
+    "cycles_per_instruction_range": [
+      4,
+      18
+    ],
     "typical_cpi": 9.2,
     "notes": "Industry standard 8-bit CPU, basis for x86 ISA"
   },
@@ -50,7 +53,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_r_r",
@@ -279,37 +282,65 @@
   ],
   "cross_validation": {
     "family": "Intel 8080 family",
-    "members": ["i8008", "i8080", "i8085"],
+    "members": [
+      "i8008",
+      "i8080",
+      "i8085"
+    ],
     "comparison": {
       "i8008": {
         "year": 1972,
         "clock_mhz": 0.5,
         "typical_cpi": 11.0,
-        "technology": "10µm PMOS",
-        "cycles_range": "8-22 (5-11 T-states × 2)"
+        "technology": "10\u00b5m PMOS",
+        "cycles_range": "8-22 (5-11 T-states \u00d7 2)"
       },
       "i8080": {
         "year": 1974,
         "clock_mhz": 2.0,
         "typical_cpi": 9.2,
-        "technology": "6µm NMOS",
+        "technology": "6\u00b5m NMOS",
         "cycles_range": "4-18"
       },
       "i8085": {
         "year": 1976,
         "clock_mhz": 3.0,
         "typical_cpi": 5.5,
-        "technology": "3µm NMOS",
+        "technology": "3\u00b5m NMOS",
         "cycles_range": "4-18"
       }
     },
     "instruction_timing_comparison": {
-      "MOV_r_r": { "i8008": 10, "i8080": 5, "i8085": 4 },
-      "MOV_r_M": { "i8008": 16, "i8080": 7, "i8085": 7 },
-      "ADD_r":   { "i8008": 10, "i8080": 4, "i8085": 4 },
-      "JMP":     { "i8008": 22, "i8080": 10, "i8085": 10 },
-      "CALL":    { "i8008": 22, "i8080": 17, "i8085": 18 },
-      "RET":     { "i8008": 10, "i8080": 10, "i8085": 10 }
+      "MOV_r_r": {
+        "i8008": 10,
+        "i8080": 5,
+        "i8085": 4
+      },
+      "MOV_r_M": {
+        "i8008": 16,
+        "i8080": 7,
+        "i8085": 7
+      },
+      "ADD_r": {
+        "i8008": 10,
+        "i8080": 4,
+        "i8085": 4
+      },
+      "JMP": {
+        "i8008": 22,
+        "i8080": 10,
+        "i8085": 10
+      },
+      "CALL": {
+        "i8008": 22,
+        "i8080": 17,
+        "i8085": 18
+      },
+      "RET": {
+        "i8008": 10,
+        "i8080": 10,
+        "i8085": 10
+      }
     },
     "architectural_evolution": [
       "8008->8080: NMOS technology, wider bus, more registers, faster cycles",
@@ -323,19 +354,25 @@
   "accuracy": {
     "expected_cpi": 9.2,
     "expected_ipc": 0.1087,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 9.075,
-    "cpi_error_percent": 1.4,
-    "ipc_error_percent": 1.4,
+    "cpi_error_percent": 1.36,
+    "ipc_error_percent": 1.36,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "instruction_mix": {
     "alu": 0.25,
-    "data_transfer": 0.30,
-    "memory": 0.20,
+    "data_transfer": 0.3,
+    "memory": 0.2,
     "control": 0.15,
-    "stack": 0.10
+    "stack": 0.1
   }
 }

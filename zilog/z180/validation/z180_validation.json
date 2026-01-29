@@ -9,7 +9,10 @@
     "package": "64-pin DIP/PLCC"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 20],
+    "cycles_per_instruction_range": [
+      3,
+      20
+    ],
     "typical_cpi": 4.5
   },
   "validated_performance": {
@@ -22,7 +25,7 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "sources": [
     {
       "type": "datasheet",
@@ -219,13 +222,19 @@
   "accuracy": {
     "expected_cpi": 4.5,
     "expected_ipc": 0.2222,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 4.585,
     "cpi_error_percent": 1.89,
     "ipc_error_percent": 1.89,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "cross_validation": {
     "methodology": "Grey-box queueing model with weighted instruction category cycles, optimized for Z180's faster execution",
@@ -250,18 +259,68 @@
       "notes": "Individual tests fail due to category averaging, but overall CPI is accurate"
     },
     "category_weighted_accuracy": {
-      "alu": {"model_cycles": 3.2, "datasheet_range": "4-17", "z80_equivalent": 4.0, "optimization": "20%"},
-      "data_transfer": {"model_cycles": 3.2, "datasheet_range": "4-6", "z80_equivalent": 4.0, "optimization": "20%"},
-      "memory": {"model_cycles": 4.8, "datasheet_range": "6-15", "z80_equivalent": 5.8, "optimization": "17%"},
-      "control": {"model_cycles": 4.5, "datasheet_range": "3-16", "z80_equivalent": 5.5, "optimization": "18%"},
-      "stack": {"model_cycles": 8.5, "datasheet_range": "9-11", "z80_equivalent": 10.0, "optimization": "15%"},
-      "block": {"model_cycles": 10.0, "datasheet_range": "14-16", "z80_equivalent": 12.0, "optimization": "17%"}
+      "alu": {
+        "model_cycles": 3.2,
+        "datasheet_range": "4-17",
+        "z80_equivalent": 4.0,
+        "optimization": "20%"
+      },
+      "data_transfer": {
+        "model_cycles": 3.2,
+        "datasheet_range": "4-6",
+        "z80_equivalent": 4.0,
+        "optimization": "20%"
+      },
+      "memory": {
+        "model_cycles": 4.8,
+        "datasheet_range": "6-15",
+        "z80_equivalent": 5.8,
+        "optimization": "17%"
+      },
+      "control": {
+        "model_cycles": 4.5,
+        "datasheet_range": "3-16",
+        "z80_equivalent": 5.5,
+        "optimization": "18%"
+      },
+      "stack": {
+        "model_cycles": 8.5,
+        "datasheet_range": "9-11",
+        "z80_equivalent": 10.0,
+        "optimization": "15%"
+      },
+      "block": {
+        "model_cycles": 10.0,
+        "datasheet_range": "14-16",
+        "z80_equivalent": 12.0,
+        "optimization": "17%"
+      }
     },
     "workload_validation": {
-      "typical": {"predicted_cpi": 4.585, "expected_cpi": 4.5, "error_percent": 1.89, "status": "PASS"},
-      "compute": {"predicted_cpi": 4.016, "expected_cpi": 4.0, "error_percent": 0.4, "status": "PASS"},
-      "memory": {"predicted_cpi": 5.028, "expected_cpi": 5.0, "error_percent": 0.6, "status": "PASS"},
-      "control": {"predicted_cpi": 4.829, "expected_cpi": 5.0, "error_percent": 3.4, "status": "PASS"}
+      "typical": {
+        "predicted_cpi": 4.585,
+        "expected_cpi": 4.5,
+        "error_percent": 1.89,
+        "status": "PASS"
+      },
+      "compute": {
+        "predicted_cpi": 4.016,
+        "expected_cpi": 4.0,
+        "error_percent": 0.4,
+        "status": "PASS"
+      },
+      "memory": {
+        "predicted_cpi": 5.028,
+        "expected_cpi": 5.0,
+        "error_percent": 0.6,
+        "status": "PASS"
+      },
+      "control": {
+        "predicted_cpi": 4.829,
+        "expected_cpi": 5.0,
+        "error_percent": 3.4,
+        "status": "PASS"
+      }
     },
     "architectural_enhancements": [
       "On-chip MMU for 1MB address space (vs Z80's 64KB)",

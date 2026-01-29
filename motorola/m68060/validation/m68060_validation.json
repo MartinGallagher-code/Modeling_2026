@@ -11,7 +11,10 @@
     "address_bus_bits": 32
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 30],
+    "cycles_per_instruction_range": [
+      1,
+      30
+    ],
     "typical_cpi": 1.5
   },
   "validated_performance": {
@@ -24,7 +27,7 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "sources": [
     {
       "type": "datasheet",
@@ -324,17 +327,27 @@
     "year_introduced": 1994,
     "significance": "Technically excellent but commercially irrelevant",
     "tragedy": "PowerPC Mac shipped same year - 68K era was over",
-    "systems": ["Amiga 4000T/4060", "Atari Falcon accelerators", "Embedded systems"]
+    "systems": [
+      "Amiga 4000T/4060",
+      "Atari Falcon accelerators",
+      "Embedded systems"
+    ]
   },
   "accuracy": {
     "expected_cpi": 1.5,
     "expected_ipc": 0.667,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.479,
-    "cpi_error_percent": 1.40,
-    "ipc_error_percent": 1.40,
+    "cpi_error_percent": 1.4,
+    "ipc_error_percent": 1.4,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   }
 }

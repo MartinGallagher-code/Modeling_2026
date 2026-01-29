@@ -9,7 +9,10 @@
     "package": "84-pin PGA"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 2],
+    "cycles_per_instruction_range": [
+      1,
+      2
+    ],
     "typical_cpi": 1.1
   },
   "validated_performance": {
@@ -22,17 +25,23 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 1.1,
     "expected_ipc": 0.9091,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.13,
-    "cpi_error_percent": 2.7,
-    "ipc_error_percent": 2.7,
+    "cpi_error_percent": 2.73,
+    "ipc_error_percent": 2.73,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with cross-validation"
   },
   "timing_tests": [

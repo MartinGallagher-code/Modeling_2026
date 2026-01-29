@@ -5,11 +5,14 @@
     "data_width_bits": 32,
     "clock_mhz": 16.0,
     "transistors": 100000,
-    "technology": "1.5µm CMOS",
+    "technology": "1.5\u00b5m CMOS",
     "package": "175-pin PGA"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 39],
+    "cycles_per_instruction_range": [
+      1,
+      39
+    ],
     "typical_cpi": 1.3
   },
   "validated_performance": {
@@ -42,7 +45,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "ADD",
@@ -222,7 +225,10 @@
     }
   ],
   "cross_validation": {
-    "related_processors": ["r2000", "sun_spark"],
+    "related_processors": [
+      "r2000",
+      "sun_spark"
+    ],
     "architecture_family": "Early RISC (1985-1987)",
     "common_characteristics": {
       "pipeline_stages": "4-5 stages",
@@ -255,13 +261,19 @@
   "accuracy": {
     "expected_cpi": 1.3,
     "expected_ipc": 0.7692,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.3,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model uses weighted instruction mix. Category timings reflect average effective cycles including pipeline effects."
   }
 }

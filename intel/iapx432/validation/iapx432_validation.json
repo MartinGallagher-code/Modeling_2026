@@ -9,7 +9,10 @@
     "package": "Multi-chip"
   },
   "timing": {
-    "cycles_per_instruction_range": [6, 400],
+    "cycles_per_instruction_range": [
+      6,
+      400
+    ],
     "typical_cpi": 50.0
   },
   "validated_performance": {
@@ -22,18 +25,24 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "ipc_error_percent": 3.5,
     "cpi_error_percent": 3.5,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "notes": "Model validates within 5% CPI error",
     "expected_cpi": 50.0,
     "expected_ipc": 0.02,
     "predicted_cpi": 48.25,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "instruction_timing_tests": [
     {
@@ -139,10 +148,26 @@
         "processor": "Intel 8086",
         "relationship": "contemporary comparison",
         "timing_comparison": {
-          "alu": {"iAPX432": 25, "8086": 3, "ratio": 8.3},
-          "data_transfer": {"iAPX432": 35, "8086": 4, "ratio": 8.75},
-          "memory_access": {"iAPX432": 60, "8086": 10, "ratio": 6.0},
-          "branch": {"iAPX432": 50, "8086": 16, "ratio": 3.1}
+          "alu": {
+            "iAPX432": 25,
+            "8086": 3,
+            "ratio": 8.3
+          },
+          "data_transfer": {
+            "iAPX432": 35,
+            "8086": 4,
+            "ratio": 8.75
+          },
+          "memory_access": {
+            "iAPX432": 60,
+            "8086": 10,
+            "ratio": 6.0
+          },
+          "branch": {
+            "iAPX432": 50,
+            "8086": 16,
+            "ratio": 3.1
+          }
         },
         "notes": "iAPX 432 was 5-10x slower than 8086, explaining its commercial failure"
       },

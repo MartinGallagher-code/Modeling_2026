@@ -9,7 +9,10 @@
     "package": "48-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 100],
+    "cycles_per_instruction_range": [
+      3,
+      100
+    ],
     "typical_cpi": 4.5
   },
   "validated_performance": {
@@ -22,7 +25,7 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "sources": [
     {
       "type": "datasheet",
@@ -218,13 +221,19 @@
   "accuracy": {
     "expected_cpi": 4.5,
     "expected_ipc": 0.2222,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
-    "predicted_cpi": 4.470,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 4.47,
     "cpi_error_percent": 0.67,
     "ipc_error_percent": 0.67,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "cross_validation": {
     "methodology": "Grey-box queueing model calibrated for Z8000's orthogonal 16-bit architecture",
@@ -257,18 +266,62 @@
       "notes": "Individual tests fail due to category averaging, but overall CPI is highly accurate"
     },
     "category_weighted_accuracy": {
-      "alu": {"model_cycles": 3.2, "datasheet_range": "4-7", "common_ops_match": false},
-      "data_transfer": {"model_cycles": 2.8, "datasheet_range": "3-7", "common_ops_match": true},
-      "memory": {"model_cycles": 5.0, "datasheet_range": "7-14", "common_ops_match": false},
-      "control": {"model_cycles": 4.8, "datasheet_range": "6-15", "common_ops_match": false},
-      "stack": {"model_cycles": 8.0, "datasheet_range": "8-12", "common_ops_match": true},
-      "block": {"model_cycles": 9.0, "datasheet_range": "14-20", "common_ops_match": false}
+      "alu": {
+        "model_cycles": 3.2,
+        "datasheet_range": "4-7",
+        "common_ops_match": false
+      },
+      "data_transfer": {
+        "model_cycles": 2.8,
+        "datasheet_range": "3-7",
+        "common_ops_match": true
+      },
+      "memory": {
+        "model_cycles": 5.0,
+        "datasheet_range": "7-14",
+        "common_ops_match": false
+      },
+      "control": {
+        "model_cycles": 4.8,
+        "datasheet_range": "6-15",
+        "common_ops_match": false
+      },
+      "stack": {
+        "model_cycles": 8.0,
+        "datasheet_range": "8-12",
+        "common_ops_match": true
+      },
+      "block": {
+        "model_cycles": 9.0,
+        "datasheet_range": "14-20",
+        "common_ops_match": false
+      }
     },
     "workload_validation": {
-      "typical": {"predicted_cpi": 4.470, "expected_cpi": 4.5, "error_percent": 0.67, "status": "PASS"},
-      "compute": {"predicted_cpi": 3.794, "expected_cpi": 4.0, "error_percent": 5.2, "status": "MARGINAL"},
-      "memory": {"predicted_cpi": 4.920, "expected_cpi": 5.0, "error_percent": 1.6, "status": "PASS"},
-      "control": {"predicted_cpi": 4.962, "expected_cpi": 5.0, "error_percent": 0.8, "status": "PASS"}
+      "typical": {
+        "predicted_cpi": 4.47,
+        "expected_cpi": 4.5,
+        "error_percent": 0.67,
+        "status": "PASS"
+      },
+      "compute": {
+        "predicted_cpi": 3.794,
+        "expected_cpi": 4.0,
+        "error_percent": 5.2,
+        "status": "MARGINAL"
+      },
+      "memory": {
+        "predicted_cpi": 4.92,
+        "expected_cpi": 5.0,
+        "error_percent": 1.6,
+        "status": "PASS"
+      },
+      "control": {
+        "predicted_cpi": 4.962,
+        "expected_cpi": 5.0,
+        "error_percent": 0.8,
+        "status": "PASS"
+      }
     },
     "variants": {
       "Z8001": "Segmented version with 23-bit address space (8MB)",

@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 12],
+    "cycles_per_instruction_range": [
+      2,
+      12
+    ],
     "typical_cpi": 4.0
   },
   "validated_performance": {
@@ -36,7 +39,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "NOP",
@@ -216,7 +219,13 @@
   ],
   "cross_validation": {
     "family": "Motorola 6800 family",
-    "related_processors": ["M6800", "M6801", "M6805", "M6809", "M68HC11"],
+    "related_processors": [
+      "M6800",
+      "M6801",
+      "M6805",
+      "M6809",
+      "M68HC11"
+    ],
     "timing_comparison": {
       "M6802_vs_M6800": "Identical instruction timing - M6802 adds on-chip clock and 128 bytes RAM",
       "M6802_vs_M6801": "M6801 has more enhancements (MUL, 16-bit ops), M6802 is simpler",
@@ -225,11 +234,46 @@
       "M6802_vs_M68HC11": "M68HC11 evolved from 6801, much more capable"
     },
     "common_instructions": {
-      "NOP": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 2, "M6809": 2, "M68HC11": 2},
-      "LDAA_imm": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 2, "M6809": 2, "M68HC11": 2},
-      "ADDA_imm": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 3, "M6809": 2, "M68HC11": 2},
-      "JSR_ext": {"M6800": 9, "M6801": 9, "M6802": 9, "M6805": 6, "M6809": 8, "M68HC11": 6},
-      "RTS": {"M6800": 5, "M6801": 5, "M6802": 5, "M6805": 6, "M6809": 5, "M68HC11": 5}
+      "NOP": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 2,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "LDAA_imm": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 2,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "ADDA_imm": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 3,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "JSR_ext": {
+        "M6800": 9,
+        "M6801": 9,
+        "M6802": 9,
+        "M6805": 6,
+        "M6809": 8,
+        "M68HC11": 6
+      },
+      "RTS": {
+        "M6800": 5,
+        "M6801": 5,
+        "M6802": 5,
+        "M6805": 6,
+        "M6809": 5,
+        "M68HC11": 5
+      }
     },
     "differences_from_6800": [
       "On-chip oscillator (no external clock components needed)",
@@ -241,13 +285,19 @@
   "accuracy": {
     "expected_cpi": 4.0,
     "expected_ipc": 0.25,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 4.0,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "M6802 is M6800 with on-chip clock and 128 bytes RAM - same timing"
   }
 }

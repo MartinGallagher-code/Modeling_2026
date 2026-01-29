@@ -9,7 +9,10 @@
     "package": "52-pin PLCC"
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 12],
+    "cycles_per_instruction_range": [
+      2,
+      12
+    ],
     "typical_cpi": 4.5
   },
   "validated_performance": {
@@ -36,7 +39,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "NOP",
@@ -228,7 +231,13 @@
   ],
   "cross_validation": {
     "family": "Motorola 6800 family",
-    "related_processors": ["M6800", "M6801", "M6802", "M6805", "M6809"],
+    "related_processors": [
+      "M6800",
+      "M6801",
+      "M6802",
+      "M6805",
+      "M6809"
+    ],
     "timing_comparison": {
       "M68HC11_vs_M6800": "M68HC11 is enhanced 6800 derivative with HCMOS, multiply/divide, extensive peripherals",
       "M68HC11_vs_M6801": "M68HC11 evolved from 6801, adds divide instruction, HCMOS, more peripherals",
@@ -237,12 +246,54 @@
       "M68HC11_vs_M6809": "Different evolution paths - M6809 emphasizes addressing modes, M68HC11 emphasizes peripherals"
     },
     "common_instructions": {
-      "NOP": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 2, "M6809": 2, "M68HC11": 2},
-      "LDAA_imm": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 2, "M6809": 2, "M68HC11": 2},
-      "ADDA_imm": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 3, "M6809": 2, "M68HC11": 2},
-      "MUL": {"M6800": "N/A", "M6801": 10, "M6802": "N/A", "M6805": "N/A", "M6809": 11, "M68HC11": 10},
-      "JSR_ext": {"M6800": 9, "M6801": 9, "M6802": 9, "M6805": 6, "M6809": 8, "M68HC11": 6},
-      "RTS": {"M6800": 5, "M6801": 5, "M6802": 5, "M6805": 6, "M6809": 5, "M68HC11": 5}
+      "NOP": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 2,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "LDAA_imm": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 2,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "ADDA_imm": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 3,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "MUL": {
+        "M6800": "N/A",
+        "M6801": 10,
+        "M6802": "N/A",
+        "M6805": "N/A",
+        "M6809": 11,
+        "M68HC11": 10
+      },
+      "JSR_ext": {
+        "M6800": 9,
+        "M6801": 9,
+        "M6802": 9,
+        "M6805": 6,
+        "M6809": 8,
+        "M68HC11": 6
+      },
+      "RTS": {
+        "M6800": 5,
+        "M6801": 5,
+        "M6802": 5,
+        "M6805": 6,
+        "M6809": 5,
+        "M68HC11": 5
+      }
     },
     "unique_features": [
       "HCMOS technology (low power)",
@@ -259,13 +310,19 @@
   "accuracy": {
     "expected_cpi": 4.5,
     "expected_ipc": 0.222,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 4.5,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Popular embedded MCU - enhanced 6800 with hardware multiply"
   }
 }

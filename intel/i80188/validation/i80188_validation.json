@@ -10,7 +10,10 @@
     "package": "68-pin LCC"
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 44],
+    "cycles_per_instruction_range": [
+      2,
+      44
+    ],
     "typical_cpi": 10.0
   },
   "validated_performance": {
@@ -37,7 +40,7 @@
       "verified": false
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_reg_reg",
@@ -242,12 +245,18 @@
   "accuracy": {
     "expected_cpi": 4.2,
     "expected_ipc": 0.2381,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 4.155,
-    "cpi_error_percent": 1.1,
-    "ipc_error_percent": 1.1,
+    "cpi_error_percent": 1.07,
+    "ipc_error_percent": 1.07,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   }
 }

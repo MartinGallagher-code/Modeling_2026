@@ -11,7 +11,10 @@
     "address_bus_bits": 32
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 60],
+    "cycles_per_instruction_range": [
+      1,
+      60
+    ],
     "typical_cpi": 2.0
   },
   "validated_performance": {
@@ -24,7 +27,7 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "sources": [
     {
       "type": "datasheet",
@@ -314,19 +317,32 @@
   },
   "pipeline": {
     "stages": 6,
-    "description": ["Fetch", "Decode", "EA Calculate", "EA Fetch", "Execute", "Write-back"],
+    "description": [
+      "Fetch",
+      "Decode",
+      "EA Calculate",
+      "EA Fetch",
+      "Execute",
+      "Write-back"
+    ],
     "integer_throughput": "Approaching 1 IPC",
     "branch_prediction": "Simple static prediction"
   },
   "accuracy": {
     "expected_cpi": 2.0,
     "expected_ipc": 0.5,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 2.035,
     "cpi_error_percent": 1.75,
     "ipc_error_percent": 1.75,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   }
 }

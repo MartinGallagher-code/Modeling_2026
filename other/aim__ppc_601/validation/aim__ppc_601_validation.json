@@ -51,7 +51,7 @@
     "result": "Successful transition, 10+ years of PowerPC Macs"
   },
   "processor": "aim__ppc_601",
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 0.67,
     "expected_ipc": 1.4925,
@@ -59,14 +59,15 @@
       "typical",
       "compute",
       "memory",
-      "control"
+      "control",
+      "mixed"
     ],
     "predicted_cpi": 0.674,
-    "cpi_error_percent": 0.60,
-    "ipc_error_percent": 0.60,
+    "cpi_error_percent": 0.6,
+    "ipc_error_percent": 0.6,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "per_instruction_timing_tests": [

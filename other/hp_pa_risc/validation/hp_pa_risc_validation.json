@@ -44,7 +44,7 @@
     "niche": "HP enterprise computing"
   },
   "processor": "hp_pa_risc",
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 0.91,
     "expected_ipc": 1.0989,
@@ -52,14 +52,15 @@
       "typical",
       "compute",
       "memory",
-      "control"
+      "control",
+      "mixed"
     ],
     "predicted_cpi": 0.921,
     "cpi_error_percent": 1.21,
     "ipc_error_percent": 1.21,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "per_instruction_timing_tests": [

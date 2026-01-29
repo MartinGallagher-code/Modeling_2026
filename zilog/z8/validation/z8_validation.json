@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [6, 20],
+    "cycles_per_instruction_range": [
+      6,
+      20
+    ],
     "typical_cpi": 10.0
   },
   "validated_performance": {
@@ -22,7 +25,7 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "sources": [
     {
       "type": "datasheet",
@@ -218,13 +221,19 @@
   "accuracy": {
     "expected_cpi": 10.0,
     "expected_ipc": 0.1,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
-    "predicted_cpi": 9.540,
-    "cpi_error_percent": 4.60,
-    "ipc_error_percent": 4.60,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 9.54,
+    "cpi_error_percent": 4.6,
+    "ipc_error_percent": 4.6,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Calibrated with Z8 register-file architecture timings"
   },
   "cross_validation": {
@@ -258,18 +267,62 @@
       "notes": "Individual tests show variance due to category averaging; overall CPI accurate"
     },
     "category_weighted_accuracy": {
-      "register_ops": {"model_cycles": 6.0, "datasheet_range": "6", "common_ops_match": true},
-      "immediate": {"model_cycles": 6.0, "datasheet_range": "6", "common_ops_match": true},
-      "memory": {"model_cycles": 12.0, "datasheet_range": "10-14", "common_ops_match": false},
-      "control": {"model_cycles": 12.0, "datasheet_range": "6-12", "common_ops_match": false},
-      "stack": {"model_cycles": 14.0, "datasheet_range": "10-14", "common_ops_match": false},
-      "call_return": {"model_cycles": 20.0, "datasheet_range": "14-20", "common_ops_match": false}
+      "register_ops": {
+        "model_cycles": 6.0,
+        "datasheet_range": "6",
+        "common_ops_match": true
+      },
+      "immediate": {
+        "model_cycles": 6.0,
+        "datasheet_range": "6",
+        "common_ops_match": true
+      },
+      "memory": {
+        "model_cycles": 12.0,
+        "datasheet_range": "10-14",
+        "common_ops_match": false
+      },
+      "control": {
+        "model_cycles": 12.0,
+        "datasheet_range": "6-12",
+        "common_ops_match": false
+      },
+      "stack": {
+        "model_cycles": 14.0,
+        "datasheet_range": "10-14",
+        "common_ops_match": false
+      },
+      "call_return": {
+        "model_cycles": 20.0,
+        "datasheet_range": "14-20",
+        "common_ops_match": false
+      }
     },
     "workload_validation": {
-      "typical": {"predicted_cpi": 9.540, "expected_cpi": 10.0, "error_percent": 4.60, "status": "PASS"},
-      "compute": {"predicted_cpi": 7.440, "expected_cpi": 7.5, "error_percent": 0.8, "status": "PASS"},
-      "memory": {"predicted_cpi": 11.340, "expected_cpi": 11.0, "error_percent": 3.1, "status": "PASS"},
-      "control": {"predicted_cpi": 12.100, "expected_cpi": 12.0, "error_percent": 0.8, "status": "PASS"}
+      "typical": {
+        "predicted_cpi": 9.54,
+        "expected_cpi": 10.0,
+        "error_percent": 4.6,
+        "status": "PASS"
+      },
+      "compute": {
+        "predicted_cpi": 7.44,
+        "expected_cpi": 7.5,
+        "error_percent": 0.8,
+        "status": "PASS"
+      },
+      "memory": {
+        "predicted_cpi": 11.34,
+        "expected_cpi": 11.0,
+        "error_percent": 3.1,
+        "status": "PASS"
+      },
+      "control": {
+        "predicted_cpi": 12.1,
+        "expected_cpi": 12.0,
+        "error_percent": 0.8,
+        "status": "PASS"
+      }
     },
     "mcu_considerations": [
       "Target applications: embedded control, industrial automation",

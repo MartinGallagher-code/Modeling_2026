@@ -43,7 +43,7 @@
     "hp_partnership": "HP LaserJet used Am29000 for years"
   },
   "processor": "amd_29000",
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 1.33,
     "expected_ipc": 0.7519,
@@ -51,14 +51,15 @@
       "typical",
       "compute",
       "memory",
-      "control"
+      "control",
+      "mixed"
     ],
     "predicted_cpi": 1.304,
     "cpi_error_percent": 1.95,
     "ipc_error_percent": 1.95,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "per_instruction_timing_tests": [
@@ -186,13 +187,19 @@
       {
         "processor": "sparc",
         "relationship": "Contemporary RISC with similar register windowing",
-        "expected_cpi_range": [1.2, 1.5],
+        "expected_cpi_range": [
+          1.2,
+          1.5
+        ],
         "notes": "SPARC also used register windows, similar philosophy"
       },
       {
         "processor": "mips_r2000",
         "relationship": "Contemporary RISC without register windows",
-        "expected_cpi_range": [1.2, 1.5],
+        "expected_cpi_range": [
+          1.2,
+          1.5
+        ],
         "notes": "MIPS R2000 was a key competitor in embedded space"
       }
     ],

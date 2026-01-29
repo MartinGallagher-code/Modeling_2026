@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [50, 200],
+    "cycles_per_instruction_range": [
+      50,
+      200
+    ],
     "typical_cpi": 100.0
   },
   "validated_performance": {
@@ -22,18 +25,24 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "ipc_error_percent": 3.1,
     "cpi_error_percent": 3.1,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "notes": "Model validates within 5% CPI error",
     "expected_cpi": 100.0,
     "expected_ipc": 0.01,
     "predicted_cpi": 96.9,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "instruction_timing_tests": [
     {
@@ -139,12 +148,36 @@
         "processor": "Intel 80387",
         "relationship": "successor",
         "timing_comparison": {
-          "fp_transfer": {"80287": 20, "80387": 16, "ratio": 1.25},
-          "fp_add": {"80287": 85, "80387": 35, "ratio": 2.43},
-          "fp_mul": {"80287": 140, "80387": 65, "ratio": 2.15},
-          "fp_div": {"80287": 200, "80387": 100, "ratio": 2.00},
-          "fp_sqrt": {"80287": 180, "80387": 140, "ratio": 1.29},
-          "fp_trig": {"80287": 250, "80387": 175, "ratio": 1.43}
+          "fp_transfer": {
+            "80287": 20,
+            "80387": 16,
+            "ratio": 1.25
+          },
+          "fp_add": {
+            "80287": 85,
+            "80387": 35,
+            "ratio": 2.43
+          },
+          "fp_mul": {
+            "80287": 140,
+            "80387": 65,
+            "ratio": 2.15
+          },
+          "fp_div": {
+            "80287": 200,
+            "80387": 100,
+            "ratio": 2.0
+          },
+          "fp_sqrt": {
+            "80287": 180,
+            "80387": 140,
+            "ratio": 1.29
+          },
+          "fp_trig": {
+            "80287": 250,
+            "80387": 175,
+            "ratio": 1.43
+          }
         },
         "notes": "80387 is ~2x faster for arithmetic operations, consistent with improved algorithms and CMOS technology"
       },

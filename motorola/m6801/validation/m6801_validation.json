@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 12],
+    "cycles_per_instruction_range": [
+      2,
+      12
+    ],
     "typical_cpi": 3.8
   },
   "validated_performance": {
@@ -36,7 +39,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "NOP",
@@ -220,7 +223,13 @@
   ],
   "cross_validation": {
     "family": "Motorola 6800 family",
-    "related_processors": ["M6800", "M6802", "M6805", "M6809", "M68HC11"],
+    "related_processors": [
+      "M6800",
+      "M6802",
+      "M6805",
+      "M6809",
+      "M68HC11"
+    ],
     "timing_comparison": {
       "M6801_vs_M6800": "M6801 is upward compatible with 6800, adds 16-bit operations and MUL",
       "M6801_vs_M6802": "M6802 is simpler (6800 + clock/RAM), M6801 has more enhancements",
@@ -229,10 +238,38 @@
       "M6801_vs_M68HC11": "M68HC11 evolved from 6801, adds more peripherals and HCMOS technology"
     },
     "common_instructions": {
-      "NOP": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 2, "M6809": 2, "M68HC11": 2},
-      "LDAA_imm": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 2, "M6809": 2, "M68HC11": 2},
-      "ADDA_imm": {"M6800": 2, "M6801": 2, "M6802": 2, "M6805": 3, "M6809": 2, "M68HC11": 2},
-      "MUL": {"M6800": "N/A", "M6801": 10, "M6802": "N/A", "M6805": "N/A", "M6809": 11, "M68HC11": 10}
+      "NOP": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 2,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "LDAA_imm": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 2,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "ADDA_imm": {
+        "M6800": 2,
+        "M6801": 2,
+        "M6802": 2,
+        "M6805": 3,
+        "M6809": 2,
+        "M68HC11": 2
+      },
+      "MUL": {
+        "M6800": "N/A",
+        "M6801": 10,
+        "M6802": "N/A",
+        "M6805": "N/A",
+        "M6809": 11,
+        "M68HC11": 10
+      }
     },
     "enhancements_over_6800": [
       "Hardware 8x8 multiply (MUL)",
@@ -246,12 +283,18 @@
   "accuracy": {
     "expected_cpi": 3.8,
     "expected_ipc": 0.263,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 3.81,
     "cpi_error_percent": 0.26,
     "ipc_error_percent": 0.26,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   }
 }

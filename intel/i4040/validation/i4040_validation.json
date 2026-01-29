@@ -5,11 +5,14 @@
     "data_width_bits": 4,
     "clock_mhz": 0.74,
     "transistors": 3000,
-    "technology": "10µm PMOS",
+    "technology": "10\u00b5m PMOS",
     "package": "24-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [8, 16],
+    "cycles_per_instruction_range": [
+      8,
+      16
+    ],
     "machine_cycle_clocks": 8,
     "typical_cpi": 10.5,
     "notes": "Compatible with 4004 timing, same 8/16 cycle pattern"
@@ -44,7 +47,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "NOP",
@@ -192,12 +195,29 @@
       }
     ],
     "timing_consistency": {
-      "single_cycle_instructions": ["NOP", "ADD", "SUB", "INC", "HLT", "LD", "XCH", "LDM", "RPL", "WRM", "RDM"],
-      "two_cycle_instructions": ["JUN", "JCN", "FIM", "JMS"],
+      "single_cycle_instructions": [
+        "NOP",
+        "ADD",
+        "SUB",
+        "INC",
+        "HLT",
+        "LD",
+        "XCH",
+        "LDM",
+        "RPL",
+        "WRM",
+        "RDM"
+      ],
+      "two_cycle_instructions": [
+        "JUN",
+        "JCN",
+        "FIM",
+        "JMS"
+      ],
       "validation_rule": "Same 8/16 cycle timing as 4004"
     },
     "architectural_constraints": {
-      "machine_cycle": "8 clock cycles at 740 kHz = 10.8 µs",
+      "machine_cycle": "8 clock cycles at 740 kHz = 10.8 \u00b5s",
       "interrupt_support": "Added interrupt capability with RPL instruction",
       "stack_depth": "Increased to 7 levels from 4004's 3 levels"
     }
@@ -205,16 +225,22 @@
   "accuracy": {
     "expected_cpi": 10.5,
     "expected_ipc": 0.0952,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 10.57,
-    "cpi_error_percent": 0.7,
-    "ipc_error_percent": 0.7,
+    "cpi_error_percent": 0.67,
+    "ipc_error_percent": 0.67,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.30,
+    "alu": 0.3,
     "data_transfer": 0.35,
     "control": 0.24,
     "memory": 0.11

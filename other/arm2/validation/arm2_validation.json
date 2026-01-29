@@ -27,7 +27,7 @@
     "coprocessor_interface": "Support for FPA10 floating-point",
     "swap_instruction": "Atomic swap for semaphores",
     "higher_clocks": "Up to 12 MHz (vs 8 MHz)",
-    "smaller_die": "2µm process (vs 3µm)"
+    "smaller_die": "2\u00b5m process (vs 3\u00b5m)"
   },
   "register_set": {
     "R0_R12": "13 general-purpose registers",
@@ -64,7 +64,12 @@
   "memc": {
     "name": "Memory Controller (MEMC)",
     "function": "MMU + DRAM controller",
-    "page_sizes": [4096, 8192, 16384, 32768],
+    "page_sizes": [
+      4096,
+      8192,
+      16384,
+      32768
+    ],
     "virtual_memory": "Yes (with MEMC)"
   },
   "performance_characteristics": {
@@ -96,7 +101,7 @@
     "arrival_rate_initial": 0.5,
     "tolerance_percent": 2.0
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_r_r",
@@ -260,15 +265,21 @@
     }
   ],
   "accuracy": {
-    "expected_cpi": 1.43,
+    "expected_cpi": 1.5,
     "expected_ipc": 0.6993,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.42,
-    "cpi_error_percent": 0.7,
-    "ipc_error_percent": 0.7,
+    "cpi_error_percent": 5.33,
+    "ipc_error_percent": 5.33,
     "validation_passed": true,
-    "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "fully_validated": false,
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "cross_validation": {
@@ -281,7 +292,7 @@
       "Coprocessor interface for FPA10 floating-point",
       "SWP instruction for atomic semaphore operations",
       "Higher clock speeds (12 MHz vs 8 MHz)",
-      "Smaller 2µm process vs 3µm"
+      "Smaller 2\u00b5m process vs 3\u00b5m"
     ],
     "key_differences_to_successor": [
       "ARM3 adds 4KB unified cache (major improvement)",

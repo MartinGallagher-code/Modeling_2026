@@ -52,7 +52,7 @@
     "x86_64": "AMD64 owes debt to Alpha team"
   },
   "processor": "alpha21064",
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 0.77,
     "expected_ipc": 1.2987,
@@ -60,14 +60,15 @@
       "typical",
       "compute",
       "memory",
-      "control"
+      "control",
+      "mixed"
     ],
     "predicted_cpi": 0.806,
     "cpi_error_percent": 4.68,
     "ipc_error_percent": 4.68,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests"
   },
   "per_instruction_timing_tests": [

@@ -57,7 +57,7 @@
       "verified": false
     }
   ],
-  "validation_date": "2026-01-27",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "LDA_imm",
@@ -357,14 +357,15 @@
       "typical",
       "compute",
       "memory",
-      "control"
+      "control",
+      "mixed"
     ],
     "predicted_cpi": 3.065,
-    "cpi_error_percent": 1.22,
-    "ipc_error_percent": 1.22,
+    "cpi_error_percent": 2.17,
+    "ipc_error_percent": 2.17,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
+    "validation_date": "2026-01-29",
     "notes": "Cross-validated against MOS datasheet timings and realistic instruction mix"
   },
   "cross_validation": {

@@ -16,7 +16,10 @@
     "data_cache_kb": 8
   },
   "timing": {
-    "cycles_per_instruction_range": [0.5, 39],
+    "cycles_per_instruction_range": [
+      0.5,
+      39
+    ],
     "typical_cpi": 1.0
   },
   "validated_performance": {
@@ -49,7 +52,7 @@
       "verified": false
     }
   ],
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "timing_tests": [
     {
       "name": "MOV_reg_reg",
@@ -316,12 +319,18 @@
   "accuracy": {
     "expected_cpi": 1.0,
     "expected_ipc": 1.0,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 0.985,
     "cpi_error_percent": 1.5,
     "ipc_error_percent": 1.5,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   }
 }

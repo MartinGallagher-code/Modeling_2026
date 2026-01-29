@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 23],
+    "cycles_per_instruction_range": [
+      4,
+      23
+    ],
     "typical_cpi": 5.5
   },
   "validated_performance": {
@@ -22,7 +25,7 @@
     "target_error_pct": 5,
     "confidence": "High"
   },
-  "validation_date": "2026-01-28",
+  "validation_date": "2026-01-29",
   "sources": [
     {
       "type": "datasheet",
@@ -270,13 +273,19 @@
   "accuracy": {
     "expected_cpi": 5.5,
     "expected_ipc": 0.1818,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 5.585,
     "cpi_error_percent": 1.55,
     "ipc_error_percent": 1.55,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28"
+    "validation_date": "2026-01-29"
   },
   "cross_validation": {
     "methodology": "Grey-box queueing model with weighted instruction category cycles, validated against Z80 datasheet timing",
@@ -303,23 +312,79 @@
       "notes": "Individual tests fail due to category averaging, but overall CPI is accurate"
     },
     "category_weighted_accuracy": {
-      "alu": {"model_cycles": 4.0, "datasheet_range": "4-11", "common_ops_match": true},
-      "data_transfer": {"model_cycles": 4.0, "datasheet_range": "4-7", "common_ops_match": true},
-      "memory": {"model_cycles": 5.8, "datasheet_range": "7-16", "common_ops_match": false},
-      "control": {"model_cycles": 5.5, "datasheet_range": "4-17", "common_ops_match": false},
-      "stack": {"model_cycles": 10.0, "datasheet_range": "10-11", "common_ops_match": true},
-      "block": {"model_cycles": 12.0, "datasheet_range": "16-21", "common_ops_match": false}
+      "alu": {
+        "model_cycles": 4.0,
+        "datasheet_range": "4-11",
+        "common_ops_match": true
+      },
+      "data_transfer": {
+        "model_cycles": 4.0,
+        "datasheet_range": "4-7",
+        "common_ops_match": true
+      },
+      "memory": {
+        "model_cycles": 5.8,
+        "datasheet_range": "7-16",
+        "common_ops_match": false
+      },
+      "control": {
+        "model_cycles": 5.5,
+        "datasheet_range": "4-17",
+        "common_ops_match": false
+      },
+      "stack": {
+        "model_cycles": 10.0,
+        "datasheet_range": "10-11",
+        "common_ops_match": true
+      },
+      "block": {
+        "model_cycles": 12.0,
+        "datasheet_range": "16-21",
+        "common_ops_match": false
+      }
     },
     "workload_validation": {
-      "typical": {"predicted_cpi": 5.585, "expected_cpi": 5.5, "error_percent": 1.55, "status": "PASS"},
-      "compute": {"predicted_cpi": 4.990, "expected_cpi": 5.0, "error_percent": 0.2, "status": "PASS"},
-      "memory": {"predicted_cpi": 6.090, "expected_cpi": 6.0, "error_percent": 1.5, "status": "PASS"},
-      "control": {"predicted_cpi": 5.915, "expected_cpi": 6.0, "error_percent": 1.4, "status": "PASS"}
+      "typical": {
+        "predicted_cpi": 5.585,
+        "expected_cpi": 5.5,
+        "error_percent": 1.55,
+        "status": "PASS"
+      },
+      "compute": {
+        "predicted_cpi": 4.99,
+        "expected_cpi": 5.0,
+        "error_percent": 0.2,
+        "status": "PASS"
+      },
+      "memory": {
+        "predicted_cpi": 6.09,
+        "expected_cpi": 6.0,
+        "error_percent": 1.5,
+        "status": "PASS"
+      },
+      "control": {
+        "predicted_cpi": 5.915,
+        "expected_cpi": 6.0,
+        "error_percent": 1.4,
+        "status": "PASS"
+      }
     },
     "variant_comparison": {
-      "z80": {"clock_mhz": 2.5, "cpi": 5.585, "ips": "447K"},
-      "z80a": {"clock_mhz": 4.0, "cpi": 5.585, "ips": "716K"},
-      "z80b": {"clock_mhz": 6.0, "cpi": 5.585, "ips": "1.07M"}
+      "z80": {
+        "clock_mhz": 2.5,
+        "cpi": 5.585,
+        "ips": "447K"
+      },
+      "z80a": {
+        "clock_mhz": 4.0,
+        "cpi": 5.585,
+        "ips": "716K"
+      },
+      "z80b": {
+        "clock_mhz": 6.0,
+        "cpi": 5.585,
+        "ips": "1.07M"
+      }
     },
     "validation_confidence": "High - identical to validated Z80 model, CPI error 1.55%",
     "conclusion": "Z80B model is valid. Uses same timing as Z80 (confirmed by datasheet). Only clock frequency differs. Highest performance Z80 variant delivers ~1.07 MIPS. CPI prediction within 1.55% of expected values."
