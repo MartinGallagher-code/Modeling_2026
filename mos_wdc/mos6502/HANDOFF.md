@@ -42,7 +42,7 @@ None - model is cross-validated against actual 6502 timings.
 ## Suggested Next Steps
 
 1. **Validate against VICE emulator** - Run actual test programs and compare cycle counts
-2. **Add per-instruction validation** - Use timing_tests in validation JSON
+2. ~~**Add per-instruction validation**~~ - DONE: 32 timing_tests with 0% error
 3. **Test against specific software** - NES games, C64 demos with known cycle counts
 
 ## Key Architectural Notes
