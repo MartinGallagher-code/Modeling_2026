@@ -62,16 +62,16 @@ class Signetics2650Model(BaseProcessorModel):
     clock_mhz = 1.25
 
     def __init__(self):
-        # Calibrated cycles to achieve CPI = 5.5
-        # Early 8-bit with unique architecture
-        # Calculation: 0.35*4 + 0.18*5 + 0.20*7 + 0.12*7 + 0.10*6 + 0.05*8 = 5.5
+        # Calibrated cycles to achieve CPI = 3.0
+        # Signetics 2650 was relatively fast for its era
+        # Calculation: 0.35*2 + 0.18*3 + 0.20*4 + 0.12*4 + 0.10*3 + 0.05*5 = 3.0
         self.instruction_categories = {
-            'register_ops': InstructionCategory('register_ops', 4.0, 0, "Register-to-register"),
-            'immediate': InstructionCategory('immediate', 5.0, 0, "Immediate operand"),
-            'memory_read': InstructionCategory('memory_read', 4.0, 3.0, "Load from memory"),
-            'memory_write': InstructionCategory('memory_write', 4.0, 3.0, "Store to memory"),
-            'branch': InstructionCategory('branch', 6.0, 0, "Branch/jump"),
-            'call_return': InstructionCategory('call_return', 8.0, 0, "Subroutine call/return"),
+            'register_ops': InstructionCategory('register_ops', 2.0, 0, "Register-to-register"),
+            'immediate': InstructionCategory('immediate', 3.0, 0, "Immediate operand"),
+            'memory_read': InstructionCategory('memory_read', 4.0, 0, "Load from memory"),
+            'memory_write': InstructionCategory('memory_write', 4.0, 0, "Store to memory"),
+            'branch': InstructionCategory('branch', 3.0, 0, "Branch/jump"),
+            'call_return': InstructionCategory('call_return', 5.0, 0, "Subroutine call/return"),
         }
 
         # Workload profiles - weights sum to 1.0

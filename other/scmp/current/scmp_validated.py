@@ -62,16 +62,16 @@ class ScmpModel(BaseProcessorModel):
     clock_mhz = 1.0
 
     def __init__(self):
-        # Calibrated cycles to achieve CPI = 6.0
-        # Simple 8-bit processor, variable cycle counts
-        # Calculation: 0.35*5 + 0.18*6 + 0.20*7 + 0.12*8 + 0.10*6 + 0.05*8 = 6.0
+        # Calibrated cycles to achieve CPI = 10.0
+        # SC/MP was slow - designed for cost not speed
+        # Calculation: 0.35*8 + 0.18*10 + 0.20*11 + 0.12*12 + 0.10*10 + 0.05*14 = 10.0
         self.instruction_categories = {
-            'register_ops': InstructionCategory('register_ops', 5.0, 0, "Register-to-register"),
-            'immediate': InstructionCategory('immediate', 6.0, 0, "Immediate operand"),
-            'memory_read': InstructionCategory('memory_read', 5.0, 2.0, "Load from memory"),
-            'memory_write': InstructionCategory('memory_write', 5.0, 3.0, "Store to memory"),
-            'branch': InstructionCategory('branch', 6.0, 0, "Branch/jump"),
-            'call_return': InstructionCategory('call_return', 8.0, 0, "Subroutine call/return"),
+            'register_ops': InstructionCategory('register_ops', 8.0, 0, "Register-to-register"),
+            'immediate': InstructionCategory('immediate', 10.0, 0, "Immediate operand"),
+            'memory_read': InstructionCategory('memory_read', 11.0, 0, "Load from memory"),
+            'memory_write': InstructionCategory('memory_write', 12.0, 0, "Store to memory"),
+            'branch': InstructionCategory('branch', 10.0, 0, "Branch/jump"),
+            'call_return': InstructionCategory('call_return', 14.0, 0, "Subroutine call/return"),
         }
 
         # Workload profiles - weights sum to 1.0

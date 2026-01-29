@@ -96,14 +96,16 @@ class Rca1802Model(BaseProcessorModel):
             'writeback': 0, # Register writeback
         }
         
-        # Instruction categories (5-15 recommended)
+        # Instruction categories - RCA1802 was very slow (CMOS, radiation-hardened)
+        # Calibrated for CPI = 12.0
+        # Calculation: 0.30*8 + 0.15*12 + 0.25*14 + 0.15*14 + 0.10*14 + 0.05*20 = 12.0
         self.instruction_categories = {
-            'register_ops': InstructionCategory('register_ops', 4, 0, "Register-to-register"),
-            'immediate': InstructionCategory('immediate', 7, 0, "Immediate operand"),
-            'memory_read': InstructionCategory('memory_read', 7, 3, "Load from memory"),
-            'memory_write': InstructionCategory('memory_write', 7, 3, "Store to memory"),
-            'branch': InstructionCategory('branch', 10, 0, "Branch/jump"),
-            'call_return': InstructionCategory('call_return', 12, 6, "Subroutine call/return"),
+            'register_ops': InstructionCategory('register_ops', 8, 0, "Register-to-register"),
+            'immediate': InstructionCategory('immediate', 12, 0, "Immediate operand"),
+            'memory_read': InstructionCategory('memory_read', 14, 0, "Load from memory"),
+            'memory_write': InstructionCategory('memory_write', 14, 0, "Store to memory"),
+            'branch': InstructionCategory('branch', 14, 0, "Branch/jump"),
+            'call_return': InstructionCategory('call_return', 20, 0, "Subroutine call/return"),
         }
         
         # Workload profiles

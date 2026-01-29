@@ -63,15 +63,15 @@ class Alpha21064Model(BaseProcessorModel):
     address_width = 64
 
     def __init__(self):
-        # Superscalar RISC - calibrated for CPI 1.0
-        # 0.50*0.7 + 0.20*1.2 + 0.12*1.0 + 0.15*1.3 + 0.02*3.0 + 0.01*8.0 = 1.0
+        # Superscalar RISC - calibrated for CPI 0.77 (IPC ~1.3)
+        # 0.50*0.5 + 0.20*1.0 + 0.12*0.8 + 0.15*1.0 + 0.02*2.5 + 0.01*6.0 = 0.77
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 0.70, 0, "ALU ops (dual-issue)"),
-            'load': InstructionCategory('load', 1.20, 0, "Load (cache hits)"),
-            'store': InstructionCategory('store', 1.00, 0, "Store"),
-            'branch': InstructionCategory('branch', 1.30, 0, "Branch"),
-            'multiply': InstructionCategory('multiply', 3.0, 0, "Integer multiply"),
-            'divide': InstructionCategory('divide', 8.0, 0, "Integer divide"),
+            'alu': InstructionCategory('alu', 0.50, 0, "ALU ops (dual-issue)"),
+            'load': InstructionCategory('load', 1.00, 0, "Load (cache hits)"),
+            'store': InstructionCategory('store', 0.80, 0, "Store"),
+            'branch': InstructionCategory('branch', 1.00, 0, "Branch (predicted)"),
+            'multiply': InstructionCategory('multiply', 2.5, 0, "Integer multiply"),
+            'divide': InstructionCategory('divide', 6.0, 0, "Integer divide"),
         }
 
         self.workload_profiles = {

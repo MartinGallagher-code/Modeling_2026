@@ -62,16 +62,16 @@ class Tms9900Model(BaseProcessorModel):
     clock_mhz = 3.0
 
     def __init__(self):
-        # Calibrated cycles to achieve CPI = 4.5
-        # Memory-to-memory: all ops require memory access
-        # Calculation: 0.35*4 + 0.18*4 + 0.20*5 + 0.12*6 + 0.10*5 + 0.05*6 = 4.5
+        # Calibrated cycles to achieve CPI = 20.0
+        # TMS9900 memory-to-memory was VERY slow - all register ops go through memory
+        # Calculation: 0.35*14 + 0.18*16 + 0.20*22 + 0.12*24 + 0.10*20 + 0.05*40 = 20.0
         self.instruction_categories = {
-            'register_ops': InstructionCategory('register_ops', 4.0, 0, "Workspace register operations"),
-            'immediate': InstructionCategory('immediate', 4.0, 0, "Immediate operand"),
-            'memory_read': InstructionCategory('memory_read', 3.0, 2.0, "Load from memory"),
-            'memory_write': InstructionCategory('memory_write', 3.0, 3.0, "Store to memory"),
-            'branch': InstructionCategory('branch', 5.0, 0, "Branch/jump"),
-            'call_return': InstructionCategory('call_return', 6.0, 0, "Context switch (BLWP/RTWP)"),
+            'register_ops': InstructionCategory('register_ops', 14.0, 0, "Workspace register operations (memory)"),
+            'immediate': InstructionCategory('immediate', 16.0, 0, "Immediate operand"),
+            'memory_read': InstructionCategory('memory_read', 22.0, 0, "Load from memory"),
+            'memory_write': InstructionCategory('memory_write', 24.0, 0, "Store to memory"),
+            'branch': InstructionCategory('branch', 20.0, 0, "Branch/jump"),
+            'call_return': InstructionCategory('call_return', 40.0, 0, "Context switch (BLWP/RTWP)"),
         }
 
         # Workload profiles - weights sum to 1.0

@@ -63,15 +63,16 @@ class F8Model(BaseProcessorModel):
     clock_mhz = 2.0
 
     def __init__(self):
-        # Calibrated cycles to achieve CPI = 5.0
-        # Calculation: 0.40*4 + 0.20*5 + 0.18*5 + 0.10*5 + 0.08*6 + 0.04*8 = 5.0
+        # Calibrated cycles to achieve CPI = 7.0
+        # F8 was slow multi-chip design with external memory
+        # Calculation: 0.40*5.5 + 0.20*7 + 0.18*8 + 0.10*8 + 0.08*9 + 0.04*12 = 7.0
         self.instruction_categories = {
-            'register_ops': InstructionCategory('register_ops', 4.0, 0, "Register-to-register operations"),
-            'immediate': InstructionCategory('immediate', 5.0, 0, "Immediate operand instructions"),
-            'memory_read': InstructionCategory('memory_read', 3.0, 2.0, "Load from memory"),
-            'memory_write': InstructionCategory('memory_write', 3.0, 2.0, "Store to memory"),
-            'branch': InstructionCategory('branch', 6.0, 0, "Branch/jump instructions"),
-            'call_return': InstructionCategory('call_return', 8.0, 0, "Subroutine call/return"),
+            'register_ops': InstructionCategory('register_ops', 5.5, 0, "Register-to-register operations"),
+            'immediate': InstructionCategory('immediate', 7.0, 0, "Immediate operand instructions"),
+            'memory_read': InstructionCategory('memory_read', 8.0, 0, "Load from memory"),
+            'memory_write': InstructionCategory('memory_write', 8.0, 0, "Store to memory"),
+            'branch': InstructionCategory('branch', 9.0, 0, "Branch/jump instructions"),
+            'call_return': InstructionCategory('call_return', 12.0, 0, "Subroutine call/return"),
         }
 
         # Workload profiles - weights sum to 1.0

@@ -63,18 +63,18 @@ class HpPaRiscModel(BaseProcessorModel):
     clock_mhz = 100.0
 
     def __init__(self):
-        # Calibrated cycles to achieve CPI = 1.2
-        # RISC: most instructions single-cycle, loads have small latency
-        # Calculation: 0.45*1 + 0.20*1.5 + 0.10*1 + 0.15*1.2 + 0.05*2 + 0.02*3 + 0.02*1 + 0.01*4 = 1.2
+        # Calibrated cycles to achieve CPI = 0.91 (superscalar, IPC ~1.1)
+        # RISC: most instructions single-cycle, dual-issue helps
+        # Calculation: 0.45*0.7 + 0.20*1.1 + 0.10*0.8 + 0.15*0.9 + 0.05*1.5 + 0.02*2.5 + 0.02*0.8 + 0.01*3.0 = 0.91
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 1.0, 0, "ALU operations (single-cycle)"),
-            'load': InstructionCategory('load', 1.0, 0.5, "Load from cache"),
-            'store': InstructionCategory('store', 1.0, 0, "Store to cache"),
-            'branch': InstructionCategory('branch', 1.2, 0, "Branch with prediction"),
-            'multiply': InstructionCategory('multiply', 2.0, 0, "Integer multiply"),
-            'divide': InstructionCategory('divide', 3.0, 0, "Integer divide"),
-            'fp_ops': InstructionCategory('fp_ops', 1.0, 0, "FP operations"),
-            'fp_complex': InstructionCategory('fp_complex', 4.0, 0, "FP divide/sqrt"),
+            'alu': InstructionCategory('alu', 0.70, 0, "ALU operations (dual-issue)"),
+            'load': InstructionCategory('load', 1.10, 0, "Load from cache"),
+            'store': InstructionCategory('store', 0.80, 0, "Store to cache"),
+            'branch': InstructionCategory('branch', 0.90, 0, "Branch with prediction"),
+            'multiply': InstructionCategory('multiply', 1.50, 0, "Integer multiply"),
+            'divide': InstructionCategory('divide', 2.50, 0, "Integer divide"),
+            'fp_ops': InstructionCategory('fp_ops', 0.80, 0, "FP operations"),
+            'fp_complex': InstructionCategory('fp_complex', 3.00, 0, "FP divide/sqrt"),
         }
 
         # Workload profiles - weights sum to 1.0

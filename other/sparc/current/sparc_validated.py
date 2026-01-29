@@ -62,18 +62,18 @@ class SparcModel(BaseProcessorModel):
     clock_mhz = 16.0
 
     def __init__(self):
-        # Calibrated cycles to achieve CPI = 1.5
+        # Calibrated cycles to achieve CPI = 1.30
         # RISC with register windows, delayed branches
-        # Calculation: 0.40*1 + 0.20*2 + 0.10*1 + 0.15*2 + 0.08*2 + 0.04*3 + 0.02*1 + 0.01*4 = 1.5
+        # Calculation: 0.40*1 + 0.20*1.5 + 0.10*1 + 0.15*1.5 + 0.08*1.5 + 0.04*2.5 + 0.02*1 + 0.01*3.5 = 1.30
         self.instruction_categories = {
             'alu': InstructionCategory('alu', 1.0, 0, "ALU operations"),
-            'load': InstructionCategory('load', 1.0, 1.0, "Load from memory"),
+            'load': InstructionCategory('load', 1.5, 0, "Load from memory"),
             'store': InstructionCategory('store', 1.0, 0, "Store to memory"),
-            'branch': InstructionCategory('branch', 2.0, 0, "Branch with delay slot"),
-            'call_ret': InstructionCategory('call_ret', 2.0, 0, "Call/return with register windows"),
-            'multiply': InstructionCategory('multiply', 3.0, 0, "Multiply"),
+            'branch': InstructionCategory('branch', 1.5, 0, "Branch with delay slot"),
+            'call_ret': InstructionCategory('call_ret', 1.5, 0, "Call/return with register windows"),
+            'multiply': InstructionCategory('multiply', 2.5, 0, "Multiply"),
             'shift': InstructionCategory('shift', 1.0, 0, "Shift operations"),
-            'divide': InstructionCategory('divide', 4.0, 0, "Divide"),
+            'divide': InstructionCategory('divide', 3.5, 0, "Divide"),
         }
 
         # Workload profiles - weights sum to 1.0

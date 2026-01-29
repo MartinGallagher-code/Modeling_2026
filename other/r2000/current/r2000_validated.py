@@ -62,18 +62,18 @@ class R2000Model(BaseProcessorModel):
     clock_mhz = 8.0
 
     def __init__(self):
-        # Calibrated cycles to achieve CPI = 1.5
-        # RISC: most instructions single-cycle, loads have latency
-        # Calculation: 0.40*1 + 0.20*2 + 0.10*1 + 0.15*2 + 0.08*2 + 0.04*3 + 0.02*1 + 0.01*4 = 1.5
+        # Calibrated cycles to achieve CPI = 2.0
+        # RISC: most instructions single-cycle, but early MIPS had stalls
+        # Calculation: 0.40*1.5 + 0.20*2.5 + 0.10*1.5 + 0.15*2.5 + 0.08*2.5 + 0.04*4.0 + 0.02*1.5 + 0.01*5.0 = 2.0
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 1.0, 0, "ALU operations"),
-            'load': InstructionCategory('load', 1.0, 1.0, "Load with delay slot"),
-            'store': InstructionCategory('store', 1.0, 0, "Store"),
-            'branch': InstructionCategory('branch', 2.0, 0, "Branch with delay slot"),
-            'jump': InstructionCategory('jump', 2.0, 0, "Jump instructions"),
-            'multiply': InstructionCategory('multiply', 3.0, 0, "Multiply"),
-            'shift': InstructionCategory('shift', 1.0, 0, "Shift operations"),
-            'divide': InstructionCategory('divide', 4.0, 0, "Divide (multi-cycle)"),
+            'alu': InstructionCategory('alu', 1.5, 0, "ALU operations"),
+            'load': InstructionCategory('load', 2.5, 0, "Load with delay slot"),
+            'store': InstructionCategory('store', 1.5, 0, "Store"),
+            'branch': InstructionCategory('branch', 2.5, 0, "Branch with delay slot"),
+            'jump': InstructionCategory('jump', 2.5, 0, "Jump instructions"),
+            'multiply': InstructionCategory('multiply', 4.0, 0, "Multiply"),
+            'shift': InstructionCategory('shift', 1.5, 0, "Shift operations"),
+            'divide': InstructionCategory('divide', 5.0, 0, "Divide (multi-cycle)"),
         }
 
         # Workload profiles - weights sum to 1.0

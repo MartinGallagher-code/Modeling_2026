@@ -63,13 +63,13 @@ class Arm2Model(BaseProcessorModel):
     address_width = 26
 
     def __init__(self):
-        # ARM2: Faster than ARM1, calibrated for CPI 1.5
-        # 0.52*1.0 + 0.20*2.2 + 0.12*1.7 + 0.16*2.2 = 0.52 + 0.44 + 0.204 + 0.352 = 1.516
+        # ARM2: Faster than ARM1, calibrated for CPI 1.43
+        # 0.52*1.0 + 0.20*2.0 + 0.12*1.5 + 0.16*2.0 = 0.52 + 0.40 + 0.18 + 0.32 = 1.42
         self.instruction_categories = {
             'alu': InstructionCategory('alu', 1.0, 0, "Data processing"),
-            'load': InstructionCategory('load', 2.2, 0, "LDR"),
-            'store': InstructionCategory('store', 1.7, 0, "STR"),
-            'branch': InstructionCategory('branch', 2.2, 0, "Branch"),
+            'load': InstructionCategory('load', 2.0, 0, "LDR"),
+            'store': InstructionCategory('store', 1.5, 0, "STR"),
+            'branch': InstructionCategory('branch', 2.0, 0, "Branch"),
         }
 
         self.workload_profiles = {

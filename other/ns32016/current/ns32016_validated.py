@@ -62,17 +62,17 @@ class Ns32016Model(BaseProcessorModel):
     clock_mhz = 6.0
 
     def __init__(self):
-        # Calibrated cycles to achieve CPI = 4.0
-        # CISC: variable cycle counts, microcoded
-        # Calculation: 0.30*3 + 0.18*4 + 0.18*5 + 0.12*5 + 0.12*4 + 0.05*6 + 0.05*6 = 4.0
+        # Calibrated cycles to achieve CPI = 12.0
+        # NS32016 was slow due to microcoded CISC design and external bus
+        # Calculation: 0.30*8 + 0.18*10 + 0.18*14 + 0.12*14 + 0.12*12 + 0.05*18 + 0.05*18 = 12.0
         self.instruction_categories = {
-            'register_ops': InstructionCategory('register_ops', 3.0, 0, "Register-to-register"),
-            'immediate': InstructionCategory('immediate', 4.0, 0, "Immediate operand"),
-            'memory_read': InstructionCategory('memory_read', 3.0, 2.0, "Load from memory"),
-            'memory_write': InstructionCategory('memory_write', 3.0, 2.0, "Store to memory"),
-            'branch': InstructionCategory('branch', 4.0, 0, "Branch/jump"),
-            'call_return': InstructionCategory('call_return', 6.0, 0, "Subroutine call/return"),
-            'complex': InstructionCategory('complex', 6.0, 0, "Complex addressing modes"),
+            'register_ops': InstructionCategory('register_ops', 8.0, 0, "Register-to-register"),
+            'immediate': InstructionCategory('immediate', 10.0, 0, "Immediate operand"),
+            'memory_read': InstructionCategory('memory_read', 14.0, 0, "Load from memory"),
+            'memory_write': InstructionCategory('memory_write', 14.0, 0, "Store to memory"),
+            'branch': InstructionCategory('branch', 12.0, 0, "Branch/jump"),
+            'call_return': InstructionCategory('call_return', 18.0, 0, "Subroutine call/return"),
+            'complex': InstructionCategory('complex', 18.0, 0, "Complex addressing modes"),
         }
 
         # Workload profiles - weights sum to 1.0
