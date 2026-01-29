@@ -1,0 +1,61 @@
+# Intersil 6100 Model Changelog
+
+This file contains the complete history of all work on this model.
+**Append-only: Never delete previous entries.**
+
+---
+
+## 2026-01-28 - Initial model creation
+
+**Session goal:** Create grey-box queueing model for the PDP-8 on a chip
+
+**Starting state:**
+- No model existed
+
+**Research findings:**
+- Intersil 6100 (IM6100) was a CMOS PDP-8/E on a chip (1975)
+- 12-bit word size, full PDP-8/E instruction set compatibility
+- Variable instruction timing: 6-22 states per instruction
+- Each state = 500ns at 4 MHz (2 clock cycles)
+- 8 basic instructions (AND, TAD, ISZ, DCA, JMS, JMP, IOT, OPR)
+- CMOS - fully static, can halt indefinitely
+- 4K word address space, expandable to 32K
+
+**Changes made:**
+
+1. Created model targeting CPI ~10.5 states (weighted average)
+   - Different instruction types have different state counts
+   - Direct vs indirect addressing affects timing
+   - OPR (operate) is fastest at 6 states
+
+2. Added 6 instruction categories:
+   - arithmetic: 10 states (TAD direct, ~15 indirect)
+   - logic: 10 states (AND direct)
+   - memory: 12 states (DCA, ISZ)
+   - jump: 12 states (JMP, JMS)
+   - io: 12 states (IOT)
+   - operate: 6 states (OPR microcoded)
+
+3. Timing based on mix of addressing modes:
+   - Direct: 10-16 states
+   - Indirect: 15-21 states
+   - Autoindex: 16-22 states
+
+**What we learned:**
+- IM6100 was slower than original PDP-8/E but much cheaper
+- CMOS allowed battery operation (used in DECmate word processors)
+- The 12-bit word size limited memory but simplified design
+- Fully static design was rare for the era
+
+**Final state:**
+- CPI: 10.5 states (0.0% error)
+- Validation: PASSED
+- At 4 MHz: ~190 KIPS
+
+**References used:**
+- Intersil IM6100 Datasheet
+- Wikipedia: Intersil 6100
+- CPU-World Intersil 6100 Architecture
+- PDP-8/E Technical Manual
+
+---

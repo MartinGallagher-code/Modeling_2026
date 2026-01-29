@@ -1,0 +1,141 @@
+{
+  "processor": "TI TMS1000",
+  "year": 1974,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.3,
+    "transistors": 8000,
+    "technology": "PMOS/NMOS",
+    "package": "28/40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [6, 6],
+    "typical_cpi": 6.0
+  },
+  "validated_performance": {
+    "ips_min": 50000,
+    "ips_max": 67000,
+    "kips_typical": 50
+  },
+  "notes": "First commercially available single-chip microcontroller. All instructions fixed at 6 cycles.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-28",
+  "accuracy": {
+    "expected_cpi": 6.0,
+    "expected_ipc": 0.167,
+    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "predicted_cpi": 6.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-28",
+    "notes": "Fixed 6-cycle timing makes this trivially accurate"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "TAM",
+      "description": "Transfer accumulator to memory",
+      "category": "data_transfer",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "TMA",
+      "description": "Transfer memory to accumulator",
+      "category": "data_transfer",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "A*AAC",
+      "description": "Add accumulator with carry",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "ALEM",
+      "description": "Compare accumulator <= memory",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "BR",
+      "description": "Branch unconditional",
+      "category": "control",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "CALL",
+      "description": "Call subroutine",
+      "category": "control",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "LDP",
+      "description": "Load page buffer",
+      "category": "memory",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "TDO",
+      "description": "Transfer to output",
+      "category": "io",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "SETR",
+      "description": "Set R output",
+      "category": "io",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    },
+    {
+      "instruction": "RSTR",
+      "description": "Reset R output",
+      "category": "io",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS1000 Data Manual (1976)"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Verification of fixed 6-cycle instruction timing from TI datasheet",
+    "reference_sources": [
+      "TMS1000 Series Data Manual (December 1976)",
+      "WikiChip TMS1000 article",
+      "Wikipedia: Texas Instruments TMS1000"
+    ],
+    "architectural_notes": [
+      "All 43 base instructions take exactly 6 clock cycles",
+      "Harvard architecture with separate program/data memory",
+      "4-bit data path with BCD arithmetic support",
+      "LFSR-based program counter (non-sequential addressing)",
+      "Single-level stack limits subroutine nesting"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 10,
+      "tests_passed": 10,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  }
+}

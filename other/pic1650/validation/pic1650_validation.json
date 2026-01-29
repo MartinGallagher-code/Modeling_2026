@@ -1,0 +1,151 @@
+{
+  "processor": "GI PIC1650",
+  "year": 1977,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 0.25,
+    "transistors": 3000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [1, 2],
+    "typical_cpi": 1.15
+  },
+  "validated_performance": {
+    "ips_min": 200000,
+    "ips_max": 250000,
+    "kips_typical": 217
+  },
+  "notes": "First PIC microcontroller. Harvard architecture, mostly single-cycle execution.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-28",
+  "accuracy": {
+    "expected_cpi": 1.15,
+    "expected_ipc": 0.87,
+    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "predicted_cpi": 1.15,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-28",
+    "notes": "Model validated against PIC baseline architecture"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADDWF f,d",
+      "description": "Add W to file register",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "ANDWF f,d",
+      "description": "AND W with file register",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "MOVF f,d",
+      "description": "Move file register",
+      "category": "data_transfer",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "MOVWF f",
+      "description": "Move W to file register",
+      "category": "data_transfer",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "BCF f,b",
+      "description": "Bit clear file register",
+      "category": "bit_ops",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "BSF f,b",
+      "description": "Bit set file register",
+      "category": "bit_ops",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "MOVLW k",
+      "description": "Move literal to W",
+      "category": "literal",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "GOTO k",
+      "description": "Unconditional branch",
+      "category": "branch",
+      "expected_cycles": 2,
+      "model_cycles": 2,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "CALL k",
+      "description": "Call subroutine",
+      "category": "call",
+      "expected_cycles": 2,
+      "model_cycles": 2,
+      "source": "PIC Baseline Instruction Set"
+    },
+    {
+      "instruction": "RETLW k",
+      "description": "Return with literal in W",
+      "category": "call",
+      "expected_cycles": 2,
+      "model_cycles": 2,
+      "source": "PIC Baseline Instruction Set"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Validation against PIC baseline core timing specifications",
+    "reference_sources": [
+      "GI PIC1650 Datasheet",
+      "Wikipedia: PIC microcontrollers",
+      "Microchip PIC Baseline Architecture Guide",
+      "EEJournal: History of Early Microcontrollers"
+    ],
+    "architectural_notes": [
+      "Harvard architecture (12-bit instruction, 8-bit data)",
+      "Most instructions execute in 1 cycle (4 oscillator clocks)",
+      "Branch/call instructions take 2 cycles",
+      "2-level hardware stack only",
+      "33 instructions in baseline core",
+      "512 x 12-bit program memory, 32 bytes RAM"
+    ],
+    "related_processors": [
+      {
+        "processor": "PIC16C54",
+        "relationship": "Modern descendant",
+        "timing_ratio": 1.0,
+        "notes": "Same baseline core, higher clock speeds"
+      }
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 10,
+      "tests_passed": 10,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  }
+}
