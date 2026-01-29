@@ -6,7 +6,7 @@
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
-The Motorola 6802 (1977) is an 8-bit microprocessor - an enhanced 6800 with on-chip clock and 128 bytes RAM. Same instruction timing as M6800.
+The Motorola 6802 (1977) is an 8-bit microprocessor - an enhanced 6800 with on-chip clock and 128 bytes RAM. **Identical instruction timing to M6800.**
 
 | Category | Cycles | Description |
 |----------|--------|-------------|
@@ -17,15 +17,33 @@ The Motorola 6802 (1977) is an 8-bit microprocessor - an enhanced 6800 with on-c
 | stack | 5.0 | PSHA/PULA @4 |
 | call_return | 9.0 | JSR @9, RTS @5 |
 
+## Cross-Validation Status
+Cross-validated against entire 6800 family:
+- **M6800**: IDENTICAL timing - M6802 only adds on-chip clock/RAM
+- **M6801**: M6801 has more enhancements (MUL, 16-bit ops)
+- **M6805**: Different path - M6805 is cost-reduced MCU
+- **M6809**: Much more advanced architecture
+- **M68HC11**: Evolved from M6801, much more capable
+
 ## Validation
-The model includes a `validate()` method that runs 16 self-tests.
-Current: **16/16 tests passing, 100.0% accuracy**
+- **Model tests**: 16/16 passing
+- **Timing tests**: 25 per-instruction tests documented
+- **Cross-validation**: Complete with family comparison tables
+
+## Key Differences From 6800
+| Feature | M6800 | M6802 |
+|---------|-------|-------|
+| On-chip clock | No | Yes |
+| On-chip RAM | No | 128 bytes |
+| RAM standby | No | Yes |
+| Instruction timing | Baseline | IDENTICAL |
 
 ## Known Issues
 None - model is well-calibrated.
 
 ## Suggested Next Steps
-1. Cross-validate with cycle-accurate emulator if needed
+1. All cross-validation work complete
+2. No further tuning needed
 
 ## Key Architectural Notes
 - Enhanced 6800 with on-chip 128 bytes RAM and clock

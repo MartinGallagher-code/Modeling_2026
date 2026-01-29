@@ -10,13 +10,20 @@
 - Clock: 8 MHz
 - Target CPI: 1.2
 - Key instruction categories: stack_ops, memory, alu, branch, literals
+- Cross-validated with 15 per-instruction timing tests
 
 ## Known Issues
 - None currently - model validates within 5% error
 
 ## Suggested Next Steps
-- Consider adding more workload profiles if specific use cases are needed
+- Consider adding more workload profiles for specific Forth applications
 - Could refine cycle counts if more accurate documentation is found
 
 ## Key Architectural Notes
-- Novix Forth processor (1985). Hardware stack machine designed specifically for Forth language. Single-cycle stack operations enable very efficient Forth execution.
+- Novix NC4016 (1985) was the first hardware Forth processor
+- Hardware dual stacks: data stack and return stack
+- Most stack and ALU operations execute in single cycle
+- Memory operations require 2 cycles
+- Only 4000 transistors - very efficient design
+- Designed specifically for Forth language execution
+- Predecessor to the Harris RTX2000

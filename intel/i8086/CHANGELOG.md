@@ -31,3 +31,57 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-28 - Cross-validation with Intel 8088
+
+**Session goal:** Cross-validate 8086 and 8088 models against Intel datasheet timings
+
+**Starting state:**
+- CPI: 4.525 (0.56% error vs expected 4.5)
+- Validation: PASSED
+
+**Verification performed:**
+
+1. Verified model instruction categories against Intel datasheet timings:
+   - MOV reg,reg: 2 cycles (model uses 2.5 avg for data_transfer category)
+   - MOV reg,imm: 4 cycles
+   - MOV reg,mem: 8+EA cycles (model uses 7.0 for memory category)
+   - ADD reg,reg: 3 cycles (model uses 2.5 for alu category)
+   - JMP near: 15 cycles (model uses 10.0 for control category)
+   - Category-based averaging is appropriate for grey-box modeling
+
+2. Added comprehensive instruction timing tests (28 tests):
+   - Data transfer: MOV reg,reg, MOV reg,imm, LEA, XCHG
+   - Memory: MOV reg,mem, MOV mem,reg
+   - ALU: ADD, SUB, CMP, AND, OR, XOR, INC, SHL
+   - Control: JMP, Jcc taken/not taken, CALL, RET, LOOP, NOP
+   - Stack: PUSH, POP
+   - Mul/div: MUL word (70-118), DIV word (80-162)
+   - String: MOVSB, REP MOVSB
+
+3. Added cross_validation section documenting 8086/8088 relationship:
+   - Same internal architecture (16-bit)
+   - 8086: 16-bit external bus, 6-byte prefetch queue
+   - 8088: 8-bit external bus, 4-byte prefetch queue
+   - Performance ratio: 8088 is 86.5% of 8086 speed
+   - Memory ops add 4 cycles on 8088 for 16-bit data
+
+**What we learned:**
+- The 8086 model uses effective cycle counts that average prefetch queue overlap
+- Raw instruction timings from datasheet are 2-200+ cycles
+- Effective CPI of 4.5 accounts for BIU/EU parallelism
+- Model categories represent weighted averages, not individual instruction timings
+- Cross-validation with 8088 confirms the 8-bit bus penalty model is consistent
+
+**Final state:**
+- CPI: 4.525 (0.56% error)
+- Validation: PASSED
+- 28 instruction timing tests documented
+- Cross-validation with 8088 complete
+
+**References used:**
+- Intel 8086 Datasheet (chipdb.org)
+- Intel 8086/8088 User's Manual
+- WikiChip 8086 article
+
+---

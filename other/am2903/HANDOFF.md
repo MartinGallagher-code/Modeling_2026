@@ -6,17 +6,26 @@
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
-- Architecture: 4-bit slice with multiply
+- Architecture: 4-bit slice ALU with multiply
 - Clock: 10 MHz
-- Target CPI: 1.0
+- Target CPI: 1.0 (per microinstruction)
 - Key instruction categories: alu, multiply, shift, pass
+- Cross-validated with 15 per-microinstruction timing tests
 
 ## Known Issues
 - None currently - model validates within 5% error
 
 ## Suggested Next Steps
-- Consider adding more workload profiles if specific use cases are needed
-- Could refine cycle counts if more accurate documentation is found
+- Consider modeling cascaded configurations (16-bit, 32-bit systems)
+- Could add microsequencer timing for complete system modeling
+- May model full multiply sequence (multiple steps)
 
 ## Key Architectural Notes
-- Enhanced version of Am2901 (1976) with hardware multiply support. Bipolar bit-slice architecture with single-cycle microinstruction execution.
+- AMD Am2903 (1976) is an enhanced Am2901 with hardware multiply support
+- All microinstructions still execute in single cycle
+- Multiply uses iterative steps, each step is one cycle
+- Bipolar technology for high speed
+- Suitable for DSP and floating-point applications
+- Normalization support for floating-point operations
+- Part of the Am2900 bit-slice family
+- Approximately 400 transistors

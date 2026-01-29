@@ -3,16 +3,14 @@
   "year": 1982,
   "specifications": {
     "data_width_bits": 16,
+    "external_bus_width_bits": 8,
     "clock_mhz": 8.0,
     "transistors": 55000,
     "technology": "NMOS",
     "package": "68-pin LCC"
   },
   "timing": {
-    "cycles_per_instruction_range": [
-      2,
-      40
-    ],
+    "cycles_per_instruction_range": [2, 44],
     "typical_cpi": 10.0
   },
   "validated_performance": {
@@ -25,23 +23,231 @@
     "target_error_pct": 15,
     "confidence": "Medium"
   },
-  "validation_date": "2026-01-27",
-  "accuracy": {
-    "ipc_error_percent": 1.1,
-    "cpi_error_percent": 1.1,
-    "validated_workloads": [
-      "typical",
-      "compute",
-      "memory",
-      "control",
-      "mixed"
+  "sources": [
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/intel/80188",
+      "verified": false
+    },
+    {
+      "type": "datasheet",
+      "name": "Intel 80186/80188 Datasheet",
+      "url": "http://datasheets.chipdb.org/Intel/x86/80186/",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-28",
+  "timing_tests": [
+    {
+      "name": "MOV_reg_reg",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "source": "datasheet",
+      "notes": "Same as 80186 for register operations"
+    },
+    {
+      "name": "MOV_reg_imm",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_reg_mem",
+      "category": "memory",
+      "expected_cycles": 7,
+      "source": "datasheet",
+      "notes": "Extra cycle for 8-bit bus (word access requires 2 bus cycles)"
+    },
+    {
+      "name": "MOV_mem_reg",
+      "category": "memory",
+      "expected_cycles": 7,
+      "source": "datasheet",
+      "notes": "Extra cycle for 8-bit bus"
+    },
+    {
+      "name": "ADD_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_reg_imm",
+      "category": "alu",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "SUB_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "CMP_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "AND_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "OR_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "XOR_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "MUL_reg16",
+      "category": "mul_div",
+      "expected_cycles": 36,
+      "source": "datasheet",
+      "notes": "Same as 80186"
+    },
+    {
+      "name": "IMUL_reg16",
+      "category": "mul_div",
+      "expected_cycles": 36,
+      "source": "datasheet"
+    },
+    {
+      "name": "DIV_reg16",
+      "category": "mul_div",
+      "expected_cycles": 38,
+      "source": "datasheet"
+    },
+    {
+      "name": "IDIV_reg16",
+      "category": "mul_div",
+      "expected_cycles": 44,
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP_near",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "datasheet",
+      "notes": "Slightly slower due to instruction fetch"
+    },
+    {
+      "name": "JMP_short",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "Jcc_taken",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "Jcc_not_taken",
+      "category": "control",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "CALL_near",
+      "category": "control",
+      "expected_cycles": 12,
+      "source": "datasheet"
+    },
+    {
+      "name": "RET",
+      "category": "control",
+      "expected_cycles": 13,
+      "source": "datasheet"
+    },
+    {
+      "name": "PUSH_reg",
+      "category": "memory",
+      "expected_cycles": 6,
+      "source": "datasheet",
+      "notes": "Extra cycle for 16-bit write via 8-bit bus"
+    },
+    {
+      "name": "POP_reg",
+      "category": "memory",
+      "expected_cycles": 6,
+      "source": "datasheet"
+    },
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "INC_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    }
+  ],
+  "cross_validation": {
+    "family": "Intel 80x86",
+    "position_in_family": "8-bit bus variant of 80186 for embedded systems",
+    "predecessor": {
+      "processor": "Intel 8088",
+      "year": 1979,
+      "key_differences": [
+        "80188 has faster instruction timing (optimized microcode)",
+        "80188 integrates DMA controller, timers, interrupt controller",
+        "80188 adds ENTER/LEAVE, BOUND, INS/OUTS instructions",
+        "80188 MUL/DIV significantly faster"
+      ]
+    },
+    "sibling": {
+      "processor": "Intel 80186",
+      "year": 1982,
+      "key_differences": [
+        "80186 has 16-bit external bus (faster memory access)",
+        "80188 has 8-bit external bus (lower system cost)",
+        "Register operations identical in timing",
+        "Memory operations ~1 cycle slower on 80188 for word access"
+      ]
+    },
+    "successor": {
+      "processor": "Intel 80286",
+      "year": 1982,
+      "key_differences": [
+        "80286 has protected mode, 24-bit addressing",
+        "80286 designed for PC market, 80188 for embedded",
+        "80286 has 16-bit external bus"
+      ]
+    },
+    "architectural_notes": [
+      "80188 trades bus width for lower system cost (fewer chips, traces)",
+      "Word operations require two bus cycles instead of one",
+      "Prefetch queue can be starved more easily than on 80186",
+      "Popular in embedded systems where cost mattered more than speed"
     ],
-    "notes": "Validation pending",
-    "predicted_cpi": 4.155,
+    "expected_cpi_relationship": {
+      "vs_80186": "~5% higher CPI due to 8-bit bus memory penalty",
+      "vs_8088": "Lower CPI due to optimized microcode"
+    }
+  },
+  "accuracy": {
     "expected_cpi": 4.2,
+    "expected_ipc": 0.2381,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "predicted_cpi": 4.155,
+    "cpi_error_percent": 1.1,
+    "ipc_error_percent": 1.1,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
-    "expected_ipc": 0.2381
+    "validation_date": "2026-01-28"
   }
 }

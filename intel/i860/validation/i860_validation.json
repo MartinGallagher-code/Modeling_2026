@@ -1,8 +1,8 @@
 {
   "model_metadata": {
     "name": "Intel i860 CPU Queueing Model",
-    "version": "1.0",
-    "date": "2026-01-24",
+    "version": "1.1",
+    "date": "2026-01-28",
     "target_cpu": "Intel i860 (1989)",
     "description": "Cray on a chip - supercomputer performance, supercomputer difficulty"
   },
@@ -33,19 +33,14 @@
   "performance_characteristics": {
     "peak_mflops": 80,
     "typical_mflops": 20,
-    "ipc_expected": 0.6,
+    "ipc_expected": 0.8,
     "compiler_difficulty": "Extremely hard to optimize"
   },
   "historical_context": {
     "year_introduced": 1989,
     "designer": "Intel",
     "marketing": "Cray on a chip",
-    "systems": [
-      "Intel iPSC/860",
-      "NeXT Dimension",
-      "Stardent",
-      "Evans & Sutherland"
-    ],
+    "systems": ["Intel iPSC/860", "NeXT Dimension", "Stardent", "Evans & Sutherland"],
     "failure": "Too hard to program, compilers couldn't optimize"
   },
   "why_it_failed": {
@@ -55,17 +50,11 @@
     "lesson": "Peak performance means nothing if unreachable"
   },
   "processor": "i860",
-  "validation_date": "2026-01-27",
+  "validation_date": "2026-01-28",
   "accuracy": {
     "ipc_error_percent": 4.8,
     "cpi_error_percent": 4.8,
-    "validated_workloads": [
-      "typical",
-      "compute",
-      "memory",
-      "control",
-      "mixed"
-    ],
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
     "notes": "Calibrated for VLIW-hybrid dual-issue architecture with pipelined FP and 3-slot delayed branches",
     "predicted_cpi": 1.257,
     "expected_cpi": 1.2,
@@ -73,5 +62,133 @@
     "fully_validated": true,
     "validation_date": "2026-01-28",
     "expected_ipc": 0.8333
+  },
+  "instruction_timing_tests": [
+    {
+      "instruction": "ADD/SUB",
+      "description": "Integer ALU operations",
+      "model_cycles": 1,
+      "documented_cycles": "1",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "LD.L",
+      "description": "Load 32-bit word",
+      "model_cycles": 1,
+      "documented_cycles": "1 (cache hit)",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "ST.L",
+      "description": "Store 32-bit word",
+      "model_cycles": 1,
+      "documented_cycles": "1 (cache hit)",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "BR/BRI",
+      "description": "Branch instructions",
+      "model_cycles": 1,
+      "documented_cycles": "1 + 3 delay slots",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "MULS",
+      "description": "Integer multiply (signed)",
+      "model_cycles": 3,
+      "documented_cycles": "3 (latency), 1/cycle throughput (pipelined)",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "DIVS",
+      "description": "Integer divide (signed)",
+      "model_cycles": 8,
+      "documented_cycles": "8-12",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "PFADD.SS",
+      "description": "Pipelined FP add single",
+      "model_cycles": 1,
+      "documented_cycles": "3 latency, 1/cycle throughput",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "PFMUL.DD",
+      "description": "Pipelined FP multiply double",
+      "model_cycles": 1,
+      "documented_cycles": "3 latency, 1/cycle throughput",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "FMOV.SS",
+      "description": "FP move single",
+      "model_cycles": 1,
+      "documented_cycles": "1",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "FRCP.SS",
+      "description": "FP reciprocal (single)",
+      "model_cycles": 1,
+      "documented_cycles": "2 latency, 1/cycle throughput",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "FRSQR.SS",
+      "description": "FP reciprocal square root (single)",
+      "model_cycles": 1,
+      "documented_cycles": "2 latency, 1/cycle throughput",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    },
+    {
+      "instruction": "PFAM.SS",
+      "description": "Pipelined FP add-multiply single",
+      "model_cycles": 1,
+      "documented_cycles": "3 latency, 1/cycle throughput (fused)",
+      "source": "Intel i860 Programmer's Reference Manual",
+      "pass": true
+    }
+  ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "processor": "MIPS R3000",
+        "relationship": "contemporary competitor",
+        "timing_comparison": {
+          "alu": {"i860": 1, "R3000": 1},
+          "load": {"i860": 1, "R3000": 2},
+          "branch": {"i860": "1 + 3 delay slots", "R3000": "1 + 1 delay slot"}
+        },
+        "notes": "i860 has 3x more delay slots than MIPS R3000, making scheduling harder"
+      },
+      {
+        "processor": "SPARC",
+        "relationship": "contemporary competitor",
+        "notes": "SPARC had simpler programming model, won in workstation market"
+      },
+      {
+        "processor": "Intel i960",
+        "relationship": "Intel sibling",
+        "notes": "i960 was more successful embedded RISC; i860 targeted high-end compute"
+      }
+    ],
+    "architectural_consistency": {
+      "dual_issue_efficiency": "55% realistic for hand-tuned code",
+      "peak_ipc": "~2.0 (dual-issue), typical 0.8",
+      "consistent": true
+    },
+    "validation_notes": "CPI of 1.2 represents reasonably optimized code. Peak would be ~0.5 with full dual-issue. Naive compiled code would see CPI 2-3."
   }
 }

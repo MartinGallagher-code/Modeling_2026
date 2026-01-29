@@ -31,3 +31,40 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-28 - Cross-validation with per-instruction timing tests
+
+**Session goal:** Add comprehensive per-instruction timing tests and cross-validation with related processors
+
+**Starting state:**
+- CPI: 12.0 (0.0% error vs expected 12.0)
+- Model validated but lacked detailed timing tests
+
+**Changes made:**
+
+1. Added 17 per-instruction timing tests to validation JSON
+   - Documented opcodes and machine cycle counts for each instruction
+   - Single machine cycle (12 clocks): NOP, ADD, ADDC, SUBB, INC, DEC, MOV A,Rn, MOV Rn,A, MOV A,#data
+   - Two machine cycles (24 clocks): MOVX, LJMP, SJMP, LCALL, RET
+   - Four machine cycles (48 clocks): MUL AB, DIV AB
+
+2. Added cross_validation section
+   - Documented relationship with Intel 8751 (EPROM variant - identical timing)
+   - Documented relationship with Intel 8052 (larger memory variant)
+   - Documented relationship with Intel 8048 (predecessor, different architecture)
+
+**What we learned:**
+- The 8051 has 12 clock cycles per machine cycle (1 us at 12 MHz)
+- All instruction timing is in multiples of 12 clocks
+- MUL and DIV are the slowest instructions at 4 machine cycles
+
+**Final state:**
+- CPI: 12.0 (0.0% error) - unchanged, model already validated
+- Cross-validation: Added relationships with 8751, 8052, 8048
+- Timing tests: 17 instructions documented with opcodes
+
+**References used:**
+- Intel 8051 datasheet (chipdb.org)
+- WikiChip MCS-51 documentation
+
+---

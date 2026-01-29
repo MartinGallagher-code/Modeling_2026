@@ -31,3 +31,43 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-28 - Cross-validation with Intel 8080 family
+
+**Session goal:** Cross-validate i8080 against i8008 and i8085 family members
+
+**Starting state:**
+- CPI: 9.075 (1.4% error vs expected 9.2)
+- Validation: PASSED
+
+**Changes made:**
+
+1. Added comprehensive timing tests (32 instructions)
+   - Data transfer: MOV_r_r, MVI_r, LXI (5-10 cycles)
+   - Memory: MOV_r_M, MOV_M_r, MVI_M, LDA, STA, IN, OUT (7-13 cycles)
+   - ALU: ADD_r, ADD_M, ADI, SUB_r, INR_r, DCR_r, INX, DCX, DAD (4-10 cycles)
+   - Control: JMP, Jcond, CALL, Ccond, RET, Rcond, NOP, HLT (4-17 cycles)
+   - Stack: PUSH, POP, XTHL (10-18 cycles)
+
+2. Added cross_validation section
+   - Family comparison with i8008, i8085
+   - Instruction timing comparison table (MOV, ADD, JMP, CALL, RET, NOP)
+   - Documented architectural evolution from 8008 to 8085
+   - Verified timing consistency with 8085 (same ISA)
+
+**What we learned:**
+- 8080 uses 4-18 cycles directly (no T-state multiplication like 8008)
+- Conditional instructions have different timing for taken vs not-taken
+- CALL (17 cycles) vs RET (10 cycles) asymmetry due to stack operations
+- XTHL is slowest instruction at 18 cycles (exchange with memory)
+
+**Final state:**
+- CPI: 9.075 (1.4% error)
+- Validation: PASSED
+- Cross-validation: Complete
+
+**References used:**
+- Intel 8080 datasheet instruction timing
+- MAME emulator timing tables
+
+---

@@ -5,6 +5,40 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation of 6800 family
+
+**Session goal:** Cross-validate M6805 against M6800, M6801, M6802, M6809, M68HC11
+
+**Starting state:**
+- CPI: 5.00 (0.0% error)
+- Model already validated
+
+**Changes made:**
+
+1. Added 25 per-instruction timing tests based on Motorola datasheet values
+   - Includes 6805-unique bit manipulation: BSET, BCLR, BRSET, BRCLR (5 cycles each)
+   - Documented opcodes for each instruction
+
+2. Added cross_validation section to validation JSON
+   - Documents M6805 as cost-reduced MCU variant
+   - Lists unique features: single accumulator, bit manipulation instructions
+
+**What we learned:**
+- M6805 is simplified for low-cost embedded applications
+- Single accumulator (A only, no B register)
+- Bit manipulation instructions (BSET/BCLR/BRSET/BRCLR) are key feature
+- Some instructions slightly slower: INCA @3 (vs @2 on 6800)
+- Branches are faster: BRA @3 (vs @4 on 6800)
+- JSR is faster: @6 (vs @9 on 6800) due to simpler stack handling
+- 13-bit address space in some variants
+
+**Final state:**
+- CPI: 5.00 (0.0% error)
+- Validation: PASSED
+- Timing tests: 25 per-instruction tests documented
+
+---
+
 ## 2026-01-28 - Calibration fix
 
 **Session goal:** Fix CPI accuracy (was 63.0% error)

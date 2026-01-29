@@ -1,5 +1,56 @@
 # Z8000 Model Changelog
 
+This file contains the complete history of all work on this model.
+**Append-only: Never delete previous entries.**
+
+---
+
+## 2026-01-28: Cross-validation with per-instruction timing tests
+
+**Session goal:** Add comprehensive per-instruction timing tests and cross-validation documentation
+
+**Starting state:**
+- CPI: 4.470 (0.67% error)
+- Status: PASS
+
+**Changes made:**
+
+1. Added 17 per-instruction timing tests to validation JSON
+   - Data transfer: LD_R_R, LD_R_IM
+   - Memory: LD_R_IR, LD_IR_R
+   - ALU: ADD_R_R, ADD_R_IM, INC_R, DEC_R, CP_R_R
+   - Control: JP_cc, JR_cc, CALL, RET, NOP
+   - Stack: PUSH_R, POP_R
+   - Block: LDIR
+
+2. Added comprehensive cross_validation section documenting:
+   - Orthogonal 16-bit architecture notes
+   - Z80 comparison (NOT related architecturally)
+   - Datasheet comparison methodology
+   - Per-instruction accuracy analysis (2/17 passed, 11.8%)
+   - Category-weighted accuracy breakdown
+   - Workload validation results
+   - Variant information (Z8001 segmented, Z8002 non-segmented)
+   - Historical context
+
+**What we learned:**
+- Z8000 is NOT related to Z80 - completely different 16-bit architecture
+- Orthogonal instruction set with 16 general-purpose 16-bit registers
+- Fast register operations (LD R,R @3 cycles)
+- Commercial failure due to competition from 68000 and timing
+
+**Final state:**
+- CPI: 4.470 (0.67% error) - unchanged
+- Validation: PASS (best accuracy among Zilog family)
+- Per-instruction tests: 17 tests, 11.8% pass rate (low due to category averaging)
+
+**References used:**
+- Zilog Z8000 CPU Datasheet (ps0045.pdf)
+- Z8000 CPU Technical Manual (um0016.pdf)
+- Wikipedia Z8000 article
+
+---
+
 ## 2026-01-28: Initial Calibration
 
 ### Changes Made

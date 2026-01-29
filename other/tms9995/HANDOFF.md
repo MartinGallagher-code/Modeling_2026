@@ -6,17 +6,29 @@
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
-- Architecture: Memory-to-memory with on-chip RAM
+- Architecture: Memory-to-memory with on-chip workspace RAM
 - Clock: 12 MHz
 - Target CPI: 12.0
+- Predicted CPI: 12.10
 - Key instruction categories: register_ops, immediate, memory_read, memory_write, branch, call_return
 
+## Cross-Validation Status
+- **Instruction timing tests**: 15 tests added
+- **Family comparison**: 40-50% faster than TMS9900 predecessor
+- **Era comparison**: Compared against Intel 8088 and Z80
+
 ## Known Issues
-- None currently - model validates within 5% error
+- None currently - model validates within 5% error (excellent 0.8%)
+- Very accurate model for this processor
 
 ## Suggested Next Steps
-- Consider adding more workload profiles if specific use cases are needed
-- Could refine cycle counts if more accurate documentation is found
+- Model is well-calibrated, minimal changes needed
+- Could add external memory vs on-chip workspace timing differentiation
 
 ## Key Architectural Notes
-- Improved TMS9900 from Texas Instruments (1981). Added some on-chip workspace registers but retained memory-to-memory architecture. Higher clock speed than 9900.
+- Enhanced TMS9900 from Texas Instruments (1981)
+- Added 256 bytes of on-chip RAM for workspace registers
+- Still uses workspace pointer architecture but eliminates memory latency for register access
+- Higher clock speed (12 MHz vs 3 MHz on TMS9900)
+- Includes internal timer/event counter
+- Context switch remains efficient via workspace pointer

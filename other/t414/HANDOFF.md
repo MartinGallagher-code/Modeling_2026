@@ -10,13 +10,20 @@
 - Clock: 15 MHz
 - Target CPI: 2.0
 - Key instruction categories: stack_ops, memory, alu, branch, link_ops, complex
+- Cross-validated with 15 per-instruction timing tests
 
 ## Known Issues
 - None currently - model validates within 5% error
 
 ## Suggested Next Steps
-- Consider adding more workload profiles if specific use cases are needed
-- Could refine cycle counts if more accurate documentation is found
+- Consider adding parallel workload profiles for multi-transputer systems
+- Could model link communication latency more precisely
 
 ## Key Architectural Notes
-- INMOS transputer (1985) designed for parallel processing. Built-in communication links for multiprocessor systems. Stack-based architecture with efficient instruction encoding.
+- INMOS T414 (1985) was a transputer designed for parallel processing
+- Built-in communication links for multiprocessor systems
+- Stack-based architecture with efficient instruction encoding
+- Stack operations: 1 cycle
+- Memory operations: 2-3 cycles
+- Link operations: 2+ cycles (depends on communication)
+- Hardware support for Occam language and CSP concurrency

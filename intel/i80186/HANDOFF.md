@@ -10,15 +10,30 @@
 - Year: 1982
 - Clock: 8.0 MHz
 - Target CPI: 4.0
-- Instruction categories: data transfer, ALU, mul_div
+- Predicted CPI: 3.85
+- Instruction categories: alu (2 cycles), data_transfer (2), memory (6), control (9)
+
+## Cross-Validation Status
+- **Family**: Intel 80x86
+- **Position**: Enhanced 8086 for embedded market
+- **Predecessor**: Intel 8086 (1978) - optimized microcode, integrated peripherals
+- **Sibling**: Intel 80188 (8-bit bus variant)
+- **Successor**: Intel 80286 (1982) - protected mode for PC market
+
+## Timing Tests
+- 25 per-instruction timing tests documented in validation JSON
+- Tests cover ALU, data transfer, memory, multiply/divide, control flow
 
 ## Known Issues
 - None - model validates within 5% error
 
 ## Suggested Next Steps
-- Add more workload profiles for specific use cases if needed
-- Refine cycle counts if better documentation found
+- Model is fully validated and cross-referenced with family
+- Add additional timing tests if original datasheet becomes available
+- Consider adding workload profiles specific to embedded use cases
 
 ## Key Architectural Notes
-- The Intel 80186 was an embedded 8086 with on-chip DMA, timers, and interrupt controller.
-- While not used in PCs, it became very successful in embedded systems, telecommunications, and industrial control.
+- Intel 80186 was never used in PCs - dedicated to embedded market
+- Integrated DMA controller, timers, interrupt controller (eliminated 8237/8253/8259)
+- MUL instruction ~3x faster than 8086 (36 vs 118-133 cycles)
+- 80188 variant uses 8-bit external bus for lower system cost

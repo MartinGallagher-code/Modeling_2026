@@ -5,6 +5,41 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation of 6800 family
+
+**Session goal:** Cross-validate M68HC11 against M6800, M6801, M6802, M6805, M6809
+
+**Starting state:**
+- CPI: 4.50 (0.0% error)
+- Model already validated
+
+**Changes made:**
+
+1. Added 26 per-instruction timing tests based on Motorola datasheet values
+   - Includes 68HC11-specific features: MUL (10 cycles), IDIV/FDIV (41 cycles), XGDX
+   - Documented opcodes for each instruction
+
+2. Added cross_validation section to validation JSON
+   - Documents M68HC11 as evolved from 6801 with extensive peripherals
+   - Lists unique features: HCMOS, A/D converter, divide instructions
+
+**What we learned:**
+- M68HC11 evolved from 6801, not 6809
+- MUL is same as 6801 (10 cycles) - slightly faster than 6809 (11 cycles)
+- IDIV/FDIV divide instructions are slow (41 cycles) but still valuable
+- HCMOS technology provides low power consumption
+- JSR is faster than 6800/6801/6802 (6 cycles vs 9)
+- Branches match 6809 timing (3 cycles)
+- XGDX instruction exchanges D and X registers (3 cycles)
+- Rich peripheral set: A/D, timers, SPI, SCI, EEPROM
+
+**Final state:**
+- CPI: 4.50 (0.0% error)
+- Validation: PASSED
+- Timing tests: 26 per-instruction tests documented
+
+---
+
 ## 2026-01-28 - Calibration fix
 
 **Session goal:** Fix CPI accuracy (was 67.8% error)

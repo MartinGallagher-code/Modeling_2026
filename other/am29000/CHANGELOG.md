@@ -5,6 +5,39 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation and per-instruction timing tests
+
+**Session goal:** Add cross-validation section and per-instruction timing tests
+
+**Starting state:**
+- CPI: 1.55 (3.33% error)
+- Validation: PASSED
+
+**Changes made:**
+
+1. Added 14 per-instruction timing tests to validation JSON
+   - ALU: ADD, ADDC, SLL, XOR (1.0 cycles each)
+   - Load: LOAD, LOADL (2.0 cycles)
+   - Store: STORE, STOREL (1.5 cycles)
+   - Branch: JMPI, JMPTI (2.0 cycles)
+   - Multiply: MUL, MULU (4.0 cycles)
+   - Call/Return: CALL, RET (2.0 cycles)
+
+2. Added cross_validation section
+   - Compared against amd_29000, sparc, i960
+   - Added 4 architectural consistency checks (all passed)
+   - Added MIPS and Dhrystone benchmark references
+
+**What we learned:**
+- The 192 register file (64 global + 128 local stack) enabled fast procedure calls
+- Competed successfully with Intel i960 in embedded graphics market
+
+**Final state:**
+- CPI: 1.55 (3.33% error)
+- Validation: PASSED
+
+---
+
 ## 2026-01-28 - Initial calibration
 
 **Session goal:** Achieve <5% CPI prediction error

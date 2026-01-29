@@ -5,6 +5,39 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation with 68K family
+
+**Session goal:** Add per-instruction timing tests and cross-validate across 68K family
+
+**Changes made:**
+1. Added 25 per-instruction timing tests with expected cycles from datasheet
+2. Added cross_validation section documenting relationships to M68040/M68030/M68020
+3. Updated validation JSON with superscalar and branch prediction specifications
+
+**Timing tests added:**
+- Register ops: MOVE.L Dn,Dn, ADD.L Dn,Dn, SUB.L Dn,Dn, CLR.L, CMP.L, LEA, AND.L, LSL.L
+- Memory ops: MOVE.L mem,Dn, MOVE.L Dn,mem, ADD.L mem,Dn
+- Multiply/divide: MULU.L, MULS.L, DIVU.L, DIVS.L
+- Control: BRA predicted/mispredicted, Bcc predicted/mispredicted, JSR, RTS
+- FPU: FADD.D, FMUL.D, FDIV.D
+
+**Cross-validation notes:**
+- M68060 is last and fastest 68K - superscalar dual-issue
+- 2-3x faster than M68040 at same clock
+- 10-stage pipeline with branch prediction (256-entry cache)
+- 8KB I-cache, 8KB D-cache (4-way set-associative)
+- Pipelined multiply (2 cycles vs 5 in 68040)
+- Much faster divide (10 cycles vs 38 in 68040)
+- Dual-issue - can execute 2 instructions per cycle
+- Historically: Released 1994, same year as PowerPC Mac - too late for market
+
+**Final state:**
+- CPI: 1.479 (1.40% error)
+- Validation: PASSED
+- No model changes needed (accuracy within 5%)
+
+---
+
 ## 2026-01-28 - Calibration fix
 
 **Session goal:** Fix CPI accuracy (was 100.7% error)

@@ -5,6 +5,42 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation with 80x86 family
+
+**Session goal:** Add comprehensive instruction timing tests and cross-validation documentation
+
+**Starting state:**
+- CPI: 4.0 (0.0% error)
+- Validation: PASSED
+
+**Changes made:**
+
+1. Added 25 per-instruction timing tests to validation JSON
+   - ALU: ADD, SUB, CMP, AND, OR, XOR, INC (2 cycles each)
+   - Data transfer: MOV variants (2-5 cycles)
+   - Multiply/divide: MUL/DIV 16-bit (21-25 cycles - faster than 80186!)
+   - Control: JMP, Jcc, CALL, RET (3-11 cycles)
+   - Memory: PUSH, POP (3-5 cycles)
+
+2. Added cross_validation section documenting:
+   - Position as first protected mode x86, IBM PC/AT CPU
+   - Predecessor: 80186 (added protected mode, 24-bit addressing)
+   - Successor: 80386 (32-bit, paging, virtual 8086 mode)
+   - Famous limitation: cannot exit protected mode without reset
+
+**What we learned:**
+- First x86 with CMOS technology (previous were NMOS)
+- MUL/DIV faster than 80186 (21 vs 36 cycles)
+- Segment-based protection, no paging
+- Powered the IBM PC/AT that defined the AT standard
+
+**Final state:**
+- CPI: 4.0 (0.0% error vs expected 4.0)
+- Validation: PASSED
+- Timing tests: 25 instruction tests added
+
+---
+
 ## 2026-01-28 - Initial calibration
 
 **Session goal:** Achieve <5% CPI prediction error

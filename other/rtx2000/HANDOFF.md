@@ -6,17 +6,26 @@
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
-- Architecture: Forth stack machine
+- Architecture: Hardware Forth stack machine
 - Clock: 10 MHz
 - Target CPI: 1.1
 - Key instruction categories: stack_ops, memory, alu, branch, literals
+- Near single-cycle execution for most operations
+- Cross-validated with 15 per-instruction timing tests
 
 ## Known Issues
 - None currently - model validates within 5% error
 
 ## Suggested Next Steps
-- Consider adding more workload profiles if specific use cases are needed
+- Consider adding more workload profiles for specific embedded applications
 - Could refine cycle counts if more accurate documentation is found
+- May want to model the 256-deep hardware stacks more explicitly
 
 ## Key Architectural Notes
-- Harris advanced Forth processor (1988). Hardware stack support enables near single-cycle execution for most operations. More efficient than NC4016.
+- Harris RTX2000 (1988) is an advanced Forth stack processor
+- Hardware dual stacks: 256-deep data stack and 256-deep return stack
+- Most stack and ALU operations execute in single cycle
+- Memory operations require 2 cycles
+- Designed for real-time and embedded applications
+- Successor to the Novix NC4016 with improved performance
+- Part of the "Real-Time Express" processor family

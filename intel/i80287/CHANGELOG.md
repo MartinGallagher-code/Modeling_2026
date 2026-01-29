@@ -5,6 +5,42 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation and instruction timing tests
+
+**Session goal:** Add per-instruction timing validation and cross-validation with related processors
+
+**Starting state:**
+- CPI: 96.9 (3.1% error) - already validated
+
+**Changes made:**
+
+1. Added 12 per-instruction timing tests to validation JSON
+   - FLD, FST: 20 cycles (documented: 17-22)
+   - FADD, FSUB: 85 cycles (documented: 80-90)
+   - FMUL: 140 cycles (documented: 130-145)
+   - FDIV: 200 cycles (documented: 190-210)
+   - FSQRT: 180 cycles (documented: 175-185)
+   - FSIN, FCOS, FTAN: 250 cycles (documented: ~250)
+   - FLDPI, FXCH: 20 cycles (documented: 15-22)
+   - All timings within documented ranges
+
+2. Added cross-validation section
+   - Compared with 80387 (successor): 80287 is ~2x slower
+   - Timing ratios: fp_add 2.43x, fp_mul 2.15x, fp_div 2.0x
+   - Consistent with technology and algorithm improvements
+
+**What we learned:**
+- 80287 timing is approximately 2x slower than 80387 across all operations
+- This ratio is consistent with NMOS->CMOS transition and improved algorithms
+- The 8087 predecessor had similar timing; 80287 added protected mode support
+
+**Final state:**
+- CPI: 96.9 (3.1% error vs expected 100.0)
+- Validation: PASSED
+- Cross-validation: CONSISTENT with 80387
+
+---
+
 ## 2026-01-28 - Initial calibration
 
 **Session goal:** Achieve <5% CPI prediction error

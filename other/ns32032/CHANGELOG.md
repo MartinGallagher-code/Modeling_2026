@@ -28,3 +28,41 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-28 - Cross-validation and per-instruction timing tests
+
+**Session goal:** Add comprehensive instruction timing tests and cross-validation data
+
+**Starting state:**
+- CPI: 10.16 (1.6% error)
+- Model calibrated and passing validation
+
+**Changes made:**
+
+1. Added 15 per-instruction timing tests to validation JSON
+   - Register operations: ADDD, MOVD, SUBD, ANDD (4-5 cycles)
+   - Immediate operations: ADDD imm, MOVQD (6-8 cycles)
+   - Memory operations: MOVD load/store, MOVB, MOVW (10-12 cycles)
+   - Branch operations: BR, Bcc (8-10 cycles)
+   - Subroutine: BSR, RET (12 cycles)
+   - Complex: MOVMD block move (16 cycles per doubleword)
+
+2. Added cross_validation section
+   - Family comparison: 15-20% faster than NS32016 due to 32-bit external bus
+   - Era comparison: Slower than Motorola 68020 and Intel 80386
+   - Architecture notes: Full 32-bit external bus, orthogonal ISA
+
+**What we learned:**
+- 32-bit external bus allows single-cycle 32-bit memory access (vs 2 on NS32016)
+- Still heavily microcoded, causing higher CPI than contemporaries
+- Orthogonal instruction set design trades execution speed for code density
+
+**Final state:**
+- CPI: 10.16 (1.6% error) - unchanged, no model modifications needed
+- Validation: PASSED with cross-validation
+
+**References used:**
+- NS32032 Databook (1984)
+- National Semiconductor Series 32000 Reference Manual
+
+---

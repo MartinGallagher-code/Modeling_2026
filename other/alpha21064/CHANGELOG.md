@@ -5,6 +5,39 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation and per-instruction timing tests
+
+**Session goal:** Add cross-validation section and per-instruction timing tests
+
+**Starting state:**
+- CPI: 0.806 (4.68% error)
+- Validation: PASSED
+
+**Changes made:**
+
+1. Added 14 per-instruction timing tests to validation JSON
+   - ALU: ADDQ, SUBQ, AND, S4ADDQ (0.5 cycles effective)
+   - Load: LDQ, LDL (1.0 cycles)
+   - Store: STQ, STL (0.8 cycles)
+   - Branch: BR, BEQ, JSR (1.0 cycles)
+   - Multiply: MULQ, MULL (2.5 cycles throughput)
+   - Divide: DIVQ (6.0 cycles amortized)
+
+2. Added cross_validation section
+   - Compared against aim__ppc_601, hp_pa_risc, mips_r4000
+   - Added 4 architectural consistency checks (all passed)
+   - Added SPECint92, SPECfp92, MIPS benchmark references
+
+**What we learned:**
+- First 64-bit RISC with 2-way superscalar achieved industry-leading performance
+- 7-stage pipeline enabled 150+ MHz clock speeds
+
+**Final state:**
+- CPI: 0.806 (4.68% error)
+- Validation: PASSED
+
+---
+
 ## 2026-01-28 - Initial calibration
 
 **Session goal:** Achieve <5% CPI prediction error

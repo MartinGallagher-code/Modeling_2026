@@ -5,6 +5,42 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation with 80x86 family
+
+**Session goal:** Add comprehensive instruction timing tests and cross-validation documentation
+
+**Starting state:**
+- CPI: 3.85 (3.8% error)
+- Validation: PASSED
+
+**Changes made:**
+
+1. Added 25 per-instruction timing tests to validation JSON
+   - ALU: ADD, SUB, CMP, AND, OR, XOR, INC (2 cycles each)
+   - Data transfer: MOV reg/imm/mem variants (2-6 cycles)
+   - Multiply/divide: MUL/DIV 16-bit (36-44 cycles)
+   - Control: JMP, Jcc, CALL, RET (4-12 cycles)
+   - Memory: PUSH, POP (5 cycles)
+
+2. Added cross_validation section documenting:
+   - Position as enhanced 8086 for embedded market
+   - Predecessor: 8086 (faster microcode, integrated peripherals)
+   - Successor: 80286 (protected mode, PC market)
+   - 80186/80188 sibling relationship
+
+**What we learned:**
+- 80186 MUL instruction ~3x faster than 8086 (36 vs 118-133 cycles)
+- Same instruction set as 8086 but with optimized microcode
+- Integrated peripherals (DMA, timers, interrupt controller) made it ideal for embedded
+- 80188 is bus-reduced variant like 8088 vs 8086
+
+**Final state:**
+- CPI: 3.85 (3.8% error vs expected 4.0)
+- Validation: PASSED
+- Timing tests: 25 instruction tests added
+
+---
+
 ## 2026-01-28 - Initial calibration
 
 **Session goal:** Achieve <5% CPI prediction error

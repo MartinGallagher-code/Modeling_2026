@@ -1,5 +1,53 @@
 # Z80B Model Changelog
 
+This file contains the complete history of all work on this model.
+**Append-only: Never delete previous entries.**
+
+---
+
+## 2026-01-28: Cross-validation with per-instruction timing tests
+
+**Session goal:** Add comprehensive per-instruction timing tests and cross-validation documentation
+
+**Starting state:**
+- CPI: 5.585 (1.55% error)
+- Status: PASS
+
+**Changes made:**
+
+1. Added 19 per-instruction timing tests to validation JSON
+   - Data transfer: LD_r_r, LD_r_n, EX_DE_HL
+   - ALU: ADD_A_r, ADD_A_HL, INC_r, DEC_r, SUB_r
+   - Memory: LD_r_HL, LD_HL_r
+   - Control: NOP, JP_nn, JP_cc_nn, JR_e, CALL_nn, RET
+   - Stack: PUSH_qq, POP_qq
+   - Block: LDIR
+
+2. Added comprehensive cross_validation section documenting:
+   - Z80 timing inheritance rationale
+   - Datasheet comparison methodology
+   - Per-instruction accuracy analysis (9/19 passed, 47.4%)
+   - Category-weighted accuracy breakdown
+   - Workload validation results
+   - Z80 variant comparison (Z80/Z80A/Z80B clock speeds and IPS)
+
+**What we learned:**
+- Z80B uses IDENTICAL instruction timing to Z80 (same die, speed-binned for highest clock)
+- Only difference is clock frequency: 6 MHz (highest standard Z80)
+- Delivers approximately 1.07 MIPS at typical CPI
+
+**Final state:**
+- CPI: 5.585 (1.55% error) - unchanged
+- Validation: PASS
+- Per-instruction tests: 19 tests, 47.4% pass rate (expected due to category averaging)
+
+**References used:**
+- Zilog Z80 Datasheet (z80.pdf)
+- MAME Z80 emulator source (z80.cpp)
+- Z80 Heaven instruction reference
+
+---
+
 ## 2026-01-28: Initial Calibration
 
 ### Changes Made

@@ -5,6 +5,46 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation and instruction timing tests
+
+**Session goal:** Add per-instruction timing validation and cross-validation with related processors
+
+**Starting state:**
+- CPI: 1.257 (4.8% error) - already validated
+
+**Changes made:**
+
+1. Added 12 per-instruction timing tests to validation JSON
+   - ALU ops (ADD/SUB): 1 cycle
+   - Load/Store (LD.L, ST.L): 1 cycle (cache hit)
+   - Branch (BR/BRI): 1 cycle + 3 delay slots
+   - Integer multiply (MULS): 3 cycles latency, 1/cycle throughput
+   - Integer divide (DIVS): 8 cycles (documented: 8-12)
+   - Pipelined FP (PFADD.SS, PFMUL.DD): 3 latency, 1/cycle throughput
+   - FP move (FMOV.SS): 1 cycle
+   - FP reciprocal (FRCP.SS, FRSQR.SS): 2 latency, 1/cycle throughput
+   - Fused FP (PFAM.SS): 3 latency, 1/cycle throughput
+
+2. Added cross-validation section
+   - Compared with MIPS R3000: i860 has 3x more delay slots
+   - Compared with SPARC: simpler programming model won the market
+   - Compared with Intel i960: i960 more successful in embedded
+   - Dual-issue efficiency 55% is realistic for hand-tuned code
+   - Peak IPC ~2.0, typical 0.8, naive compiled ~0.3-0.5
+
+**What we learned:**
+- i860's 3 branch delay slots (vs 1 for MIPS) made scheduling very hard
+- Pipelined FP operations have high throughput but require careful scheduling
+- "Cray on a chip" performance was only achievable with hand assembly
+- Commercial failure was due to programming difficulty, not hardware
+
+**Final state:**
+- CPI: 1.257 (4.8% error vs expected 1.2)
+- Validation: PASSED
+- Cross-validation: CONSISTENT with VLIW-hybrid architecture expectations
+
+---
+
 ## 2026-01-28 - Major calibration overhaul
 
 **Session goal:** Fix model that had 150% CPI error

@@ -3,16 +3,14 @@
   "year": 1982,
   "specifications": {
     "data_width_bits": 16,
+    "address_width_bits": 24,
     "clock_mhz": 8.0,
     "transistors": 134000,
-    "technology": "1.5\u00b5m CMOS",
+    "technology": "1.5um CMOS",
     "package": "68-pin LCC"
   },
   "timing": {
-    "cycles_per_instruction_range": [
-      2,
-      25
-    ],
+    "cycles_per_instruction_range": [2, 25],
     "typical_cpi": 4.8
   },
   "validated_performance": {
@@ -45,10 +43,16 @@
       "verified": false
     }
   ],
-  "validation_date": "2026-01-27",
+  "validation_date": "2026-01-28",
   "timing_tests": [
     {
       "name": "MOV_reg_reg",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_reg_imm",
       "category": "data_transfer",
       "expected_cycles": 2,
       "source": "datasheet"
@@ -60,13 +64,62 @@
       "source": "datasheet"
     },
     {
+      "name": "MOV_mem_reg",
+      "category": "memory",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
       "name": "ADD_reg_reg",
       "category": "alu",
       "expected_cycles": 2,
       "source": "datasheet"
     },
     {
+      "name": "ADD_reg_imm",
+      "category": "alu",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "SUB_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "CMP_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "AND_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "OR_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
+      "name": "XOR_reg_reg",
+      "category": "alu",
+      "expected_cycles": 2,
+      "source": "datasheet"
+    },
+    {
       "name": "MUL_reg16",
+      "category": "mul_div",
+      "expected_cycles": 21,
+      "source": "datasheet",
+      "notes": "Faster than 80186 (36 cycles)"
+    },
+    {
+      "name": "IMUL_reg16",
       "category": "mul_div",
       "expected_cycles": 21,
       "source": "datasheet"
@@ -78,9 +131,33 @@
       "source": "datasheet"
     },
     {
+      "name": "IDIV_reg16",
+      "category": "mul_div",
+      "expected_cycles": 25,
+      "source": "datasheet"
+    },
+    {
       "name": "JMP_near",
       "category": "control",
       "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP_short",
+      "category": "control",
+      "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "Jcc_taken",
+      "category": "control",
+      "expected_cycles": 7,
+      "source": "datasheet"
+    },
+    {
+      "name": "Jcc_not_taken",
+      "category": "control",
+      "expected_cycles": 3,
       "source": "datasheet"
     },
     {
@@ -90,61 +167,77 @@
       "source": "datasheet"
     },
     {
+      "name": "RET",
+      "category": "control",
+      "expected_cycles": 11,
+      "source": "datasheet"
+    },
+    {
+      "name": "PUSH_reg",
+      "category": "memory",
+      "expected_cycles": 3,
+      "source": "datasheet"
+    },
+    {
+      "name": "POP_reg",
+      "category": "memory",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
       "name": "NOP",
       "category": "control",
       "expected_cycles": 3,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
       "source": "datasheet"
     },
     {
-      "name": "MOV_r_r",
-      "category": "data_transfer",
-      "expected_cycles": 2,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
-      "source": "datasheet"
-    },
-    {
-      "name": "MOV_r_m",
-      "category": "memory",
-      "expected_cycles": 5,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
-      "source": "datasheet"
-    },
-    {
-      "name": "ADD_r_r",
+      "name": "INC_reg",
       "category": "alu",
       "expected_cycles": 2,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
-      "source": "datasheet"
-    },
-    {
-      "name": "MUL_r16",
-      "category": "mul_div",
-      "expected_cycles": 21,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
       "source": "datasheet"
     }
   ],
+  "cross_validation": {
+    "family": "Intel 80x86",
+    "position_in_family": "First protected mode x86, IBM PC/AT CPU",
+    "predecessor": {
+      "processor": "Intel 80186",
+      "year": 1982,
+      "key_differences": [
+        "80286 adds protected mode with segment descriptors",
+        "80286 has 24-bit addressing (16MB vs 1MB)",
+        "80286 adds privilege levels (rings 0-3)",
+        "80286 instructions generally faster than 80186",
+        "80286 cannot return from protected to real mode without reset"
+      ]
+    },
+    "successor": {
+      "processor": "Intel 80386",
+      "year": 1985,
+      "key_differences": [
+        "80386 is full 32-bit (registers, address, data bus)",
+        "80386 has paging support for virtual memory",
+        "80386 has virtual 8086 mode",
+        "80386 can switch from protected to real mode",
+        "80386 has much larger address space (4GB vs 16MB)"
+      ]
+    },
+    "architectural_notes": [
+      "First x86 with hardware memory protection",
+      "Segment-based protection (no paging)",
+      "Famously could not exit protected mode without reset",
+      "Powered the IBM PC/AT that defined the AT standard",
+      "CMOS technology (first x86 to use CMOS)"
+    ],
+    "expected_cpi_relationship": {
+      "vs_80186": "Lower CPI due to faster microcode and CMOS",
+      "vs_80386": "Similar CPI in real mode, 80386 faster for 32-bit ops"
+    }
+  },
   "accuracy": {
     "expected_cpi": 4.0,
     "expected_ipc": 0.25,
-    "validated_workloads": [
-      "typical",
-      "compute",
-      "memory",
-      "control",
-      "mixed"
-    ],
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
     "predicted_cpi": 4.0,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,

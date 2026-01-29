@@ -28,3 +28,40 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-28 - Cross-validation and per-instruction timing tests
+
+**Session goal:** Add comprehensive instruction timing tests and cross-validation data
+
+**Starting state:**
+- CPI: 1.55 (3.3% error)
+- Model calibrated and passing validation
+
+**Changes made:**
+
+1. Added 15 per-instruction timing tests to validation JSON
+   - MAC operations: MPY, MAC, MPYK (1 cycle each - single-cycle MAC)
+   - ALU operations: ADD, SUB, AND, LACK (1-2 cycles)
+   - Memory/I/O: IN, OUT, TBLR (2-3 cycles)
+   - Branch operations: B, BANZ, CALL (2 cycles)
+   - Control: RET, NOP (1-2 cycles)
+
+2. Added cross_validation section
+   - Family comparison: TMS320C25 successor is 2x faster
+   - Era comparison: Compared to Intel 2920 (earlier signal processor) and NEC uPD7720
+   - Architecture notes: Harvard architecture with single-cycle MAC
+
+**What we learned:**
+- Harvard architecture enables parallel instruction fetch and data access
+- Single-cycle 16x16 multiply-accumulate is key DSP advantage
+- Very low CPI (1.5) compared to general-purpose processors
+
+**Final state:**
+- CPI: 1.55 (3.3% error) - unchanged, no model modifications needed
+- Validation: PASSED with cross-validation
+
+**References used:**
+- TMS320C10 User's Guide (1983)
+- TI Digital Signal Processing Applications
+
+---

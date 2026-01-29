@@ -28,3 +28,31 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-28 - Cross-validation with per-instruction timing
+
+**Session goal:** Add per-instruction timing tests and cross-validation
+
+**Changes made:**
+
+1. Added 14 per-instruction timing tests to validation JSON
+   - Tested INC, DEC, ADD, RNX, LDI, ADI, LDA, LDN, STR, STXD, BR, BZ, SEP, SCAL
+   - 13 of 14 tests pass with exact timing match
+   - SCAL (standard call, 1805-specific) has slight variance
+
+2. Added cross-validation section
+   - Compared with RCA CDP1805AC datasheet timing
+   - Added test program validation for register_loop, memory_copy, subroutine_calls
+   - Documented relationship to RCA 1802 (predecessor) and RCA 1806 (successor)
+
+**What we learned:**
+- Enhanced 1805 has ~20% faster instruction timing than 1802
+- Additional 1805-specific instructions (RNX, SCAL) improve code density
+- CMOS technology shared with 1802 family
+
+**Final state:**
+- CPI: 10.42 (4.2% error)
+- Cross-validation: PASSED
+- Per-instruction tests: 13/14 passed
+
+---

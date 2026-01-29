@@ -6,14 +6,14 @@
     "clock_mhz": 6.0,
     "transistors": 8000,
     "technology": "NMOS",
-    "package": "40-pin DIP"
+    "package": "40-pin DIP",
+    "internal_ram": "64 bytes",
+    "internal_eprom": "1KB"
   },
   "timing": {
-    "cycles_per_instruction_range": [
-      1,
-      2
-    ],
-    "typical_cpi": 1.5
+    "cycles_per_instruction_range": [1, 2],
+    "typical_cpi": 1.5,
+    "notes": "EPROM version of 8048, identical timing"
   },
   "validated_performance": {
     "ips_min": 400000,
@@ -22,26 +22,201 @@
   },
   "notes": "EPROM version of 8048",
   "model_accuracy": {
-    "target_error_pct": 15,
-    "confidence": "Medium"
+    "target_error_pct": 5,
+    "confidence": "High"
   },
-  "validation_date": "2026-01-27",
-  "accuracy": {
-    "ipc_error_percent": 3.3,
-    "cpi_error_percent": 3.3,
-    "validated_workloads": [
-      "typical",
-      "compute",
-      "memory",
-      "control",
-      "mixed"
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel 8748 Datasheet",
+      "url": "http://datasheets.chipdb.org/Intel/MCS-48/datashts/8748.pdf",
+      "verified": true
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip MCS-48",
+      "url": "https://en.wikichip.org/wiki/intel/mcs-48",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-28",
+  "timing_tests": [
+    {
+      "name": "NOP",
+      "opcode": "0x00",
+      "category": "control",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "No operation - same as 8048"
+    },
+    {
+      "name": "ADD A,Rn",
+      "opcode": "0x68-0x6F",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "Add register to accumulator"
+    },
+    {
+      "name": "ADDC A,Rn",
+      "opcode": "0x78-0x7F",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "Add register with carry"
+    },
+    {
+      "name": "ANL A,Rn",
+      "opcode": "0x58-0x5F",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "AND register with accumulator"
+    },
+    {
+      "name": "ORL A,Rn",
+      "opcode": "0x48-0x4F",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "OR register with accumulator"
+    },
+    {
+      "name": "XRL A,Rn",
+      "opcode": "0xD8-0xDF",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "XOR register with accumulator"
+    },
+    {
+      "name": "MOV A,Rn",
+      "opcode": "0xF8-0xFF",
+      "category": "data_transfer",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "Move register to accumulator"
+    },
+    {
+      "name": "MOV Rn,A",
+      "opcode": "0xA8-0xAF",
+      "category": "data_transfer",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "Move accumulator to register"
+    },
+    {
+      "name": "MOV A,#data",
+      "opcode": "0x23",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "source": "datasheet",
+      "notes": "Load immediate to accumulator"
+    },
+    {
+      "name": "MOVX A,@R0",
+      "opcode": "0x80",
+      "category": "memory",
+      "expected_cycles": 2,
+      "source": "datasheet",
+      "notes": "Move external memory to accumulator"
+    },
+    {
+      "name": "MOVX @R0,A",
+      "opcode": "0x90",
+      "category": "memory",
+      "expected_cycles": 2,
+      "source": "datasheet",
+      "notes": "Move accumulator to external memory"
+    },
+    {
+      "name": "JMP addr",
+      "opcode": "0x04/0x24/0x44/0x64/0x84/0xA4/0xC4/0xE4",
+      "category": "control",
+      "expected_cycles": 2,
+      "source": "datasheet",
+      "notes": "Unconditional jump"
+    },
+    {
+      "name": "CALL addr",
+      "opcode": "0x14/0x34/0x54/0x74/0x94/0xB4/0xD4/0xF4",
+      "category": "control",
+      "expected_cycles": 2,
+      "source": "datasheet",
+      "notes": "Call subroutine"
+    },
+    {
+      "name": "RET",
+      "opcode": "0x83",
+      "category": "control",
+      "expected_cycles": 2,
+      "source": "datasheet",
+      "notes": "Return from subroutine"
+    },
+    {
+      "name": "INC A",
+      "opcode": "0x17",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "Increment accumulator"
+    },
+    {
+      "name": "DEC A",
+      "opcode": "0x07",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "datasheet",
+      "notes": "Decrement accumulator"
+    }
+  ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "name": "Intel 8048",
+        "relationship": "ROM variant",
+        "expected_similarity": "identical",
+        "notes": "Same CPU core, 8748 has EPROM instead of mask ROM"
+      },
+      {
+        "name": "Intel 8749",
+        "relationship": "family member",
+        "expected_similarity": "high",
+        "notes": "Larger EPROM variant (2KB EPROM, 128B RAM)"
+      },
+      {
+        "name": "Intel 8751",
+        "relationship": "MCS-51 equivalent",
+        "expected_similarity": "low",
+        "notes": "Different architecture with 12 clocks per machine cycle"
+      }
     ],
-    "notes": "Validation pending",
+    "timing_consistency": {
+      "single_cycle_instructions": ["NOP", "ADD", "ADDC", "ANL", "ORL", "XRL", "MOV A,Rn", "MOV Rn,A", "INC", "DEC"],
+      "two_cycle_instructions": ["MOV A,#data", "MOVX", "JMP", "CALL", "RET"],
+      "validation_rule": "Identical to 8048 timing - register ops 1 cycle, memory/control 2 cycles"
+    },
+    "architectural_constraints": {
+      "machine_cycle": "15 clock periods at 6 MHz = 2.5 µs",
+      "eprom": "UV-erasable EPROM for development/prototyping",
+      "compatibility": "100% instruction compatible with 8048"
+    }
+  },
+  "accuracy": {
     "expected_cpi": 1.5,
     "expected_ipc": 0.6667,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
     "predicted_cpi": 1.45,
+    "cpi_error_percent": 3.3,
+    "ipc_error_percent": 3.3,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-28"
+  },
+  "instruction_mix": {
+    "alu": 0.30,
+    "data_transfer": 0.40,
+    "memory": 0.10,
+    "control": 0.20
   }
 }

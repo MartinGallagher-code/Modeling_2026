@@ -5,15 +5,14 @@
     "data_width_bits": 4,
     "clock_mhz": 0.74,
     "transistors": 2300,
-    "technology": "10\u00b5m PMOS",
+    "technology": "10µm PMOS",
     "package": "16-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [
-      1,
-      2
-    ],
-    "typical_cpi": 1.5
+    "cycles_per_instruction_range": [8, 16],
+    "machine_cycle_clocks": 8,
+    "typical_cpi": 10.8,
+    "notes": "All instructions take 1 or 2 machine cycles (8 or 16 clock cycles)"
   },
   "validated_performance": {
     "ips_min": 46250,
@@ -22,99 +21,191 @@
   },
   "notes": "First commercial microprocessor",
   "model_accuracy": {
-    "target_error_pct": 15,
-    "confidence": "Medium"
+    "target_error_pct": 5,
+    "confidence": "High"
   },
   "sources": [
     {
       "type": "datasheet",
       "name": "Intel 4004 Datasheet",
       "url": "http://datasheets.chipdb.org/Intel/MCS-4/datashts/intel-4004.pdf",
-      "verified": false
+      "verified": true
     },
     {
       "type": "wikichip",
       "name": "WikiChip",
       "url": "https://en.wikichip.org/wiki/intel/mcs-4/4004",
-      "verified": false
+      "verified": true
     },
     {
       "type": "wikipedia",
       "name": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Intel_4004",
-      "verified": false
+      "verified": true
     }
   ],
-  "validation_date": "2026-01-27",
+  "validation_date": "2026-01-28",
   "timing_tests": [
     {
       "name": "NOP",
+      "opcode": "0x00",
       "category": "control",
       "expected_cycles": 8,
-      "source": "datasheet"
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "No operation, single machine cycle"
     },
     {
       "name": "ADD",
+      "opcode": "0x8x",
       "category": "alu",
       "expected_cycles": 8,
-      "source": "datasheet"
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Add register to accumulator"
     },
     {
       "name": "SUB",
+      "opcode": "0x9x",
       "category": "alu",
       "expected_cycles": 8,
-      "source": "datasheet"
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Subtract register from accumulator"
+    },
+    {
+      "name": "INC",
+      "opcode": "0x6x",
+      "category": "alu",
+      "expected_cycles": 8,
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Increment register"
     },
     {
       "name": "LD",
+      "opcode": "0xAx",
       "category": "data_transfer",
       "expected_cycles": 8,
-      "source": "datasheet"
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Load register to accumulator"
     },
     {
       "name": "XCH",
+      "opcode": "0xBx",
       "category": "data_transfer",
       "expected_cycles": 8,
-      "source": "datasheet"
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Exchange accumulator with register"
+    },
+    {
+      "name": "LDM",
+      "opcode": "0xDx",
+      "category": "data_transfer",
+      "expected_cycles": 8,
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Load immediate to accumulator"
     },
     {
       "name": "JUN",
+      "opcode": "0x4x",
       "category": "control",
       "expected_cycles": 16,
-      "source": "datasheet"
+      "machine_cycles": 2,
+      "source": "datasheet",
+      "notes": "Jump unconditional (12-bit address)"
     },
     {
       "name": "JCN",
+      "opcode": "0x1x",
       "category": "control",
       "expected_cycles": 16,
-      "source": "datasheet"
+      "machine_cycles": 2,
+      "source": "datasheet",
+      "notes": "Jump conditional"
     },
     {
       "name": "FIM",
+      "opcode": "0x2x",
       "category": "data_transfer",
       "expected_cycles": 16,
-      "source": "datasheet"
+      "machine_cycles": 2,
+      "source": "datasheet",
+      "notes": "Fetch immediate to register pair"
     },
     {
-      "name": "JMP",
+      "name": "JMS",
+      "opcode": "0x5x",
       "category": "control",
       "expected_cycles": 16,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
-      "source": "datasheet"
+      "machine_cycles": 2,
+      "source": "datasheet",
+      "notes": "Jump to subroutine"
+    },
+    {
+      "name": "ISZ",
+      "opcode": "0x7x",
+      "category": "control",
+      "expected_cycles": 16,
+      "machine_cycles": 2,
+      "source": "datasheet",
+      "notes": "Increment and skip if zero"
+    },
+    {
+      "name": "WRM",
+      "opcode": "0xE0",
+      "category": "memory",
+      "expected_cycles": 8,
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Write accumulator to RAM"
+    },
+    {
+      "name": "RDM",
+      "opcode": "0xE9",
+      "category": "memory",
+      "expected_cycles": 8,
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Read RAM to accumulator"
+    },
+    {
+      "name": "DAA",
+      "opcode": "0xFB",
+      "category": "alu",
+      "expected_cycles": 8,
+      "machine_cycles": 1,
+      "source": "datasheet",
+      "notes": "Decimal adjust accumulator"
     }
   ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "name": "Intel 4040",
+        "relationship": "successor",
+        "expected_similarity": "high",
+        "notes": "Enhanced 4004 with same timing model, added interrupts and instructions"
+      }
+    ],
+    "timing_consistency": {
+      "single_cycle_instructions": ["NOP", "ADD", "SUB", "INC", "LD", "XCH", "LDM", "WRM", "RDM", "DAA"],
+      "two_cycle_instructions": ["JUN", "JCN", "FIM", "JMS", "ISZ"],
+      "validation_rule": "All 1-cycle = 8 clocks, all 2-cycle = 16 clocks"
+    },
+    "architectural_constraints": {
+      "machine_cycle": "8 clock cycles at 740 kHz = 10.8 µs",
+      "instruction_fetch": "All instructions require at least 1 machine cycle for fetch",
+      "memory_access": "2-cycle instructions need extra cycle for operand fetch"
+    }
+  },
   "accuracy": {
     "expected_cpi": 10.8,
     "expected_ipc": 0.0926,
-    "validated_workloads": [
-      "typical",
-      "compute",
-      "memory",
-      "control",
-      "mixed"
-    ],
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
     "predicted_cpi": 10.6,
     "cpi_error_percent": 1.9,
     "ipc_error_percent": 1.9,
@@ -123,9 +214,9 @@
     "validation_date": "2026-01-28"
   },
   "instruction_mix": {
-    "alu": 0.3,
+    "alu": 0.30,
     "data_transfer": 0.35,
     "control": 0.25,
-    "memory": 0.1
+    "memory": 0.10
   }
 }

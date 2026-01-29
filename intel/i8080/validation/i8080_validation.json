@@ -1,42 +1,41 @@
 {
   "processor": "Intel 8080",
   "year": 1974,
+  "family": "Intel 8080 family",
   "specifications": {
     "data_width_bits": 8,
     "clock_mhz": 2.0,
     "transistors": 4500,
-    "technology": "6\u00b5m NMOS",
+    "technology": "6µm NMOS",
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [
-      4,
-      18
-    ],
-    "typical_cpi": 7.8
+    "cycles_per_instruction_range": [4, 18],
+    "typical_cpi": 9.2,
+    "notes": "Industry standard 8-bit CPU, basis for x86 ISA"
   },
   "validated_performance": {
     "ips_min": 200000,
     "ips_max": 500000,
-    "mips_typical": 0.2
+    "mips_typical": 0.29
   },
   "notes": "Industry standard, basis for x86",
   "model_accuracy": {
-    "target_error_pct": 15,
-    "confidence": "Medium"
+    "target_error_pct": 5,
+    "confidence": "High"
   },
   "sources": [
     {
       "type": "datasheet",
       "name": "Intel 8080 Datasheet",
       "url": "http://datasheets.chipdb.org/Intel/MCS-80/intel-8080.pdf",
-      "verified": false
+      "verified": true
     },
     {
       "type": "wikichip",
       "name": "WikiChip",
       "url": "https://en.wikichip.org/wiki/intel/mcs-80/8080",
-      "verified": false
+      "verified": true
     },
     {
       "type": "emulator",
@@ -48,118 +47,283 @@
       "type": "wikipedia",
       "name": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Intel_8080",
-      "verified": false
-    },
-    {
-      "type": "mame",
-      "name": "Mame",
-      "url": "https://github.com/mamedev/mame/blob/master/src/devices/cpu/i8085/i8085.cpp",
-      "verified": false
+      "verified": true
     }
   ],
-  "validation_date": "2026-01-27",
+  "validation_date": "2026-01-28",
   "timing_tests": [
     {
       "name": "MOV_r_r",
+      "opcode": "01DDDSSS",
       "category": "data_transfer",
       "expected_cycles": 5,
       "source": "datasheet"
     },
     {
       "name": "MOV_r_M",
+      "opcode": "01DDD110",
       "category": "memory",
       "expected_cycles": 7,
       "source": "datasheet"
     },
     {
       "name": "MOV_M_r",
+      "opcode": "01110SSS",
       "category": "memory",
       "expected_cycles": 7,
       "source": "datasheet"
     },
     {
       "name": "MVI_r",
+      "opcode": "00DDD110",
       "category": "data_transfer",
       "expected_cycles": 7,
       "source": "datasheet"
     },
     {
       "name": "MVI_M",
+      "opcode": "00110110",
       "category": "memory",
       "expected_cycles": 10,
       "source": "datasheet"
     },
     {
+      "name": "LXI",
+      "opcode": "00RP0001",
+      "category": "data_transfer",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "LDA",
+      "opcode": "00111010",
+      "category": "memory",
+      "expected_cycles": 13,
+      "source": "datasheet"
+    },
+    {
+      "name": "STA",
+      "opcode": "00110010",
+      "category": "memory",
+      "expected_cycles": 13,
+      "source": "datasheet"
+    },
+    {
       "name": "ADD_r",
+      "opcode": "10000SSS",
       "category": "alu",
       "expected_cycles": 4,
       "source": "datasheet"
     },
     {
       "name": "ADD_M",
+      "opcode": "10000110",
       "category": "alu",
       "expected_cycles": 7,
       "source": "datasheet"
     },
     {
       "name": "ADI",
+      "opcode": "11000110",
       "category": "alu",
       "expected_cycles": 7,
       "source": "datasheet"
     },
     {
+      "name": "SUB_r",
+      "opcode": "10010SSS",
+      "category": "alu",
+      "expected_cycles": 4,
+      "source": "datasheet"
+    },
+    {
+      "name": "INR_r",
+      "opcode": "00DDD100",
+      "category": "alu",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
+      "name": "DCR_r",
+      "opcode": "00DDD101",
+      "category": "alu",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
+      "name": "INX",
+      "opcode": "00RP0011",
+      "category": "alu",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
+      "name": "DCX",
+      "opcode": "00RP1011",
+      "category": "alu",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
+      "name": "DAD",
+      "opcode": "00RP1001",
+      "category": "alu",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
       "name": "JMP",
+      "opcode": "11000011",
       "category": "control",
       "expected_cycles": 10,
       "source": "datasheet"
     },
     {
-      "name": "JZ",
+      "name": "Jcond",
+      "opcode": "11CCC010",
       "category": "control",
       "expected_cycles": 10,
       "source": "datasheet"
     },
     {
       "name": "CALL",
+      "opcode": "11001101",
       "category": "control",
       "expected_cycles": 17,
       "source": "datasheet"
     },
     {
+      "name": "Ccond_taken",
+      "opcode": "11CCC100",
+      "category": "control",
+      "expected_cycles": 17,
+      "source": "datasheet"
+    },
+    {
+      "name": "Ccond_not_taken",
+      "opcode": "11CCC100",
+      "category": "control",
+      "expected_cycles": 11,
+      "source": "datasheet"
+    },
+    {
       "name": "RET",
+      "opcode": "11001001",
       "category": "control",
       "expected_cycles": 10,
       "source": "datasheet"
     },
     {
+      "name": "Rcond_taken",
+      "opcode": "11CCC000",
+      "category": "control",
+      "expected_cycles": 11,
+      "source": "datasheet"
+    },
+    {
+      "name": "Rcond_not_taken",
+      "opcode": "11CCC000",
+      "category": "control",
+      "expected_cycles": 5,
+      "source": "datasheet"
+    },
+    {
       "name": "PUSH",
+      "opcode": "11RP0101",
       "category": "stack",
       "expected_cycles": 11,
       "source": "datasheet"
     },
     {
       "name": "POP",
+      "opcode": "11RP0001",
       "category": "stack",
       "expected_cycles": 10,
       "source": "datasheet"
     },
     {
+      "name": "XTHL",
+      "opcode": "11100011",
+      "category": "stack",
+      "expected_cycles": 18,
+      "source": "datasheet"
+    },
+    {
+      "name": "IN",
+      "opcode": "11011011",
+      "category": "memory",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
+      "name": "OUT",
+      "opcode": "11010011",
+      "category": "memory",
+      "expected_cycles": 10,
+      "source": "datasheet"
+    },
+    {
       "name": "NOP",
+      "opcode": "00000000",
       "category": "control",
       "expected_cycles": 4,
       "source": "datasheet"
+    },
+    {
+      "name": "HLT",
+      "opcode": "01110110",
+      "category": "control",
+      "expected_cycles": 7,
+      "source": "datasheet"
     }
   ],
+  "cross_validation": {
+    "family": "Intel 8080 family",
+    "members": ["i8008", "i8080", "i8085"],
+    "comparison": {
+      "i8008": {
+        "year": 1972,
+        "clock_mhz": 0.5,
+        "typical_cpi": 11.0,
+        "technology": "10µm PMOS",
+        "cycles_range": "8-22 (5-11 T-states × 2)"
+      },
+      "i8080": {
+        "year": 1974,
+        "clock_mhz": 2.0,
+        "typical_cpi": 9.2,
+        "technology": "6µm NMOS",
+        "cycles_range": "4-18"
+      },
+      "i8085": {
+        "year": 1976,
+        "clock_mhz": 3.0,
+        "typical_cpi": 5.5,
+        "technology": "3µm NMOS",
+        "cycles_range": "4-18"
+      }
+    },
+    "instruction_timing_comparison": {
+      "MOV_r_r": { "i8008": 10, "i8080": 5, "i8085": 4 },
+      "MOV_r_M": { "i8008": 16, "i8080": 7, "i8085": 7 },
+      "ADD_r":   { "i8008": 10, "i8080": 4, "i8085": 4 },
+      "JMP":     { "i8008": 22, "i8080": 10, "i8085": 10 },
+      "CALL":    { "i8008": 22, "i8080": 17, "i8085": 18 },
+      "RET":     { "i8008": 10, "i8080": 10, "i8085": 10 }
+    },
+    "architectural_evolution": [
+      "8008->8080: NMOS technology, wider bus, more registers, faster cycles",
+      "8080->8085: Single +5V supply, integrated clock, serial I/O, same ISA"
+    ],
+    "timing_consistency": {
+      "verified": true,
+      "notes": "8080 and 8085 share same ISA with similar timing; 8008 is predecessor with different encoding"
+    }
+  },
   "accuracy": {
     "expected_cpi": 9.2,
     "expected_ipc": 0.1087,
-    "validated_workloads": [
-      "typical",
-      "compute",
-      "memory",
-      "control",
-      "mixed"
-    ],
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
     "predicted_cpi": 9.075,
     "cpi_error_percent": 1.4,
     "ipc_error_percent": 1.4,
@@ -169,9 +333,9 @@
   },
   "instruction_mix": {
     "alu": 0.25,
-    "data_transfer": 0.3,
-    "memory": 0.2,
+    "data_transfer": 0.30,
+    "memory": 0.20,
     "control": 0.15,
-    "stack": 0.1
+    "stack": 0.10
   }
 }

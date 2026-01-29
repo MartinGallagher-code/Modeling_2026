@@ -5,6 +5,39 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation and per-instruction timing tests
+
+**Session goal:** Add cross-validation section and per-instruction timing tests
+
+**Starting state:**
+- CPI: 1.304 (1.95% error)
+- Validation: PASSED
+
+**Changes made:**
+
+1. Added 14 per-instruction timing tests to validation JSON
+   - ALU: ADD, SUB, AND, OR (1.0 cycles each)
+   - Load: LOAD, LOADM (1.5 cycles)
+   - Store: STORE, STOREM (1.2 cycles)
+   - Branch: JMP, JMPT/JMPF (1.8 cycles)
+   - Multiply: MULTIPLY (2.0 cycles)
+   - Call/Return: CALL, CALLI, RETURN (3.0 cycles)
+
+2. Added cross_validation section
+   - Compared against am29000, sparc, mips_r2000
+   - Added 4 architectural consistency checks (all passed)
+   - Added MIPS benchmark reference
+
+**What we learned:**
+- Register windowing architecture similar to SPARC explains the 3-cycle call/return overhead
+- 192 register file reduced memory traffic significantly
+
+**Final state:**
+- CPI: 1.304 (1.95% error)
+- Validation: PASSED
+
+---
+
 ## 2026-01-28 - Initial calibration
 
 **Session goal:** Achieve <5% CPI prediction error

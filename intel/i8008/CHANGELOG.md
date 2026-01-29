@@ -31,3 +31,43 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-28 - Cross-validation with Intel 8080 family
+
+**Session goal:** Cross-validate i8008 against i8080 and i8085 family members
+
+**Starting state:**
+- CPI: 11.0 (0.0% error)
+- Validation: PASSED
+
+**Changes made:**
+
+1. Added comprehensive timing tests (22 instructions)
+   - Data transfer: MOV_r_r, MVI_r (10-16 cycles)
+   - Memory: MOV_r_M, MOV_M_r, MVI_M, IN, OUT (12-18 cycles)
+   - ALU: ADD_r, ADD_M, ADI, SUB_r, SUB_M, INR_r, DCR_r (10-16 cycles)
+   - Control: JMP, CALL, RET, RST, HLT, NOP (8-22 cycles)
+   - All timings based on T-states x 2 (cycles per T-state)
+
+2. Added cross_validation section
+   - Family comparison with i8080, i8085
+   - Instruction timing comparison across all three processors
+   - Documented architectural evolution
+   - Verified timing consistency across family
+
+**What we learned:**
+- i8008 uses T-states (5-11) multiplied by 2 for machine cycles (10-22)
+- Significantly slower than 8080/8085 due to PMOS technology
+- Different instruction encoding from 8080/8085 (predecessor, not binary compatible)
+- JMP/CALL at 22 cycles vs 10/17 cycles on 8080
+
+**Final state:**
+- CPI: 11.0 (0.0% error)
+- Validation: PASSED
+- Cross-validation: Complete
+
+**References used:**
+- Intel 8008 datasheet table 2 (instruction timing)
+- WikiChip Intel 8008 specifications
+
+---

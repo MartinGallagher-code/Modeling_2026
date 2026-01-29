@@ -5,6 +5,40 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation and per-instruction timing tests
+
+**Session goal:** Add cross-validation section and per-instruction timing tests
+
+**Starting state:**
+- CPI: 0.674 (0.60% error)
+- Validation: PASSED
+
+**Changes made:**
+
+1. Added 15 per-instruction timing tests to validation JSON
+   - ALU: add, addi, and, or (0.5 cycles effective)
+   - Load: lwz, lbz (1.0 cycles)
+   - Store: stw, stb (0.5 cycles)
+   - Branch: b, bc (0.8 cycles)
+   - Multiply: mullw (1.0 cycles throughput)
+   - Divide: divw (1.5 cycles amortized)
+   - FP: fadd, fmul (0.5 cycles), fdiv (2.0 cycles)
+
+2. Added cross_validation section
+   - Compared against mc68040 (predecessor), alpha21064, pentium
+   - Added 4 architectural consistency checks (all passed)
+   - Added SPECint92, SPECfp92, MIPS benchmark references
+
+**What we learned:**
+- 3-way superscalar enables CPI < 1.0 (IPC 1.5)
+- Justified Apple's transition from 68k with 3x performance improvement
+
+**Final state:**
+- CPI: 0.674 (0.60% error)
+- Validation: PASSED
+
+---
+
 ## 2026-01-28 - Initial calibration
 
 **Session goal:** Achieve <5% CPI prediction error

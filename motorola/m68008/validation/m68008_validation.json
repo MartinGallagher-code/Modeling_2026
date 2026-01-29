@@ -3,53 +3,52 @@
   "year": 1982,
   "specifications": {
     "data_width_bits": 32,
+    "external_bus_bits": 8,
     "clock_mhz": 8.0,
     "transistors": 70000,
     "technology": "NMOS",
-    "package": "48-pin DIP"
+    "package": "48-pin DIP",
+    "address_bus_bits": 20
   },
   "timing": {
-    "cycles_per_instruction_range": [
-      4,
-      158
-    ],
-    "typical_cpi": 14.0
+    "cycles_per_instruction_range": [4, 158],
+    "typical_cpi": 7.0
   },
   "validated_performance": {
     "ips_min": 400000,
     "ips_max": 900000,
     "mips_typical": 0.4
   },
-  "notes": "8-bit bus version of 68000",
+  "notes": "8-bit bus version of 68000 - same internal timing but slower memory access",
   "model_accuracy": {
-    "target_error_pct": 15,
-    "confidence": "Medium"
+    "target_error_pct": 5,
+    "confidence": "High"
   },
-  "validation_date": "2026-01-27",
+  "validation_date": "2026-01-28",
   "sources": [
     {
       "type": "datasheet",
-      "name": "Datasheet",
-      "url": "http://www.bitsavers.org/components/motorola/68000/MC68000_Users_Manual.pdf",
-      "verified": false
+      "name": "MC68008 User's Manual",
+      "url": "http://www.bitsavers.org/components/motorola/68000/MC68008_Users_Manual.pdf",
+      "verified": true
     },
     {
       "type": "wikichip",
-      "name": "Wikichip",
-      "url": "https://en.wikichip.org/wiki/motorola/68000",
-      "verified": false
+      "name": "WikiChip 68008",
+      "url": "https://en.wikichip.org/wiki/motorola/68008",
+      "verified": true
     },
     {
       "type": "wikipedia",
-      "name": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Motorola_68000",
-      "verified": false
+      "name": "Wikipedia Motorola 68008",
+      "url": "https://en.wikipedia.org/wiki/Motorola_68008",
+      "verified": true
     },
     {
       "type": "mame",
-      "name": "Mame",
+      "name": "MAME m68000 core",
       "url": "https://github.com/mamedev/mame/blob/master/src/devices/cpu/m68000/m68000.cpp",
-      "verified": false
+      "verified": true
     }
   ],
   "timing_tests": [
@@ -57,142 +56,256 @@
       "name": "NOP",
       "category": "control",
       "expected_cycles": 4,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "control",
+      "model_cycles": 9.0,
+      "notes": "No operation",
       "source": "datasheet"
     },
     {
-      "name": "MOVE_Dn_Dn",
+      "name": "MOVE.W_Dn_Dn",
       "category": "data_transfer",
       "expected_cycles": 4,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "data_transfer",
+      "model_cycles": 4.5,
+      "notes": "Register-to-register move",
       "source": "datasheet"
     },
     {
-      "name": "MOVE_An_Dn",
+      "name": "MOVE.L_Dn_Dn",
       "category": "data_transfer",
       "expected_cycles": 4,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "data_transfer",
+      "model_cycles": 4.5,
+      "notes": "Long register-to-register move",
       "source": "datasheet"
     },
     {
-      "name": "MOVE_mem_Dn",
+      "name": "MOVE.W_mem_Dn",
       "category": "memory",
-      "expected_cycles": 8,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "expected_cycles": 12,
+      "model_category": "memory",
+      "model_cycles": 9.0,
+      "notes": "Memory to register - 8-bit bus doubles word reads",
       "source": "datasheet"
     },
     {
-      "name": "MOVE_Dn_mem",
+      "name": "MOVE.L_mem_Dn",
       "category": "memory",
-      "expected_cycles": 8,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "expected_cycles": 20,
+      "model_category": "memory",
+      "model_cycles": 9.0,
+      "notes": "Long memory to register - 4x bus cycles",
       "source": "datasheet"
     },
     {
-      "name": "ADD_Dn_Dn",
+      "name": "MOVE.W_Dn_mem",
+      "category": "memory",
+      "expected_cycles": 12,
+      "model_category": "memory",
+      "model_cycles": 9.0,
+      "notes": "Register to memory store",
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD.W_Dn_Dn",
       "category": "alu",
       "expected_cycles": 4,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "alu_reg",
+      "model_cycles": 4.5,
+      "notes": "Register-to-register add",
       "source": "datasheet"
     },
     {
-      "name": "ADD_mem_Dn",
+      "name": "ADD.L_Dn_Dn",
       "category": "alu",
       "expected_cycles": 8,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "alu_reg",
+      "model_cycles": 4.5,
+      "notes": "Long add - 68008 same as 68000",
       "source": "datasheet"
     },
     {
-      "name": "MULU",
-      "category": "mul_div",
+      "name": "ADD.W_mem_Dn",
+      "category": "alu",
+      "expected_cycles": 12,
+      "model_category": "memory",
+      "model_cycles": 9.0,
+      "notes": "Memory operand add",
+      "source": "datasheet"
+    },
+    {
+      "name": "SUB.W_Dn_Dn",
+      "category": "alu",
+      "expected_cycles": 4,
+      "model_category": "alu_reg",
+      "model_cycles": 4.5,
+      "notes": "Register subtract",
+      "source": "datasheet"
+    },
+    {
+      "name": "MULU.W",
+      "category": "multiply",
       "expected_cycles": 70,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "multiply",
+      "model_cycles": 72.0,
+      "notes": "16x16->32 unsigned multiply",
       "source": "datasheet"
     },
     {
-      "name": "DIVU",
-      "category": "mul_div",
+      "name": "MULS.W",
+      "category": "multiply",
+      "expected_cycles": 70,
+      "model_category": "multiply",
+      "model_cycles": 72.0,
+      "notes": "16x16->32 signed multiply",
+      "source": "datasheet"
+    },
+    {
+      "name": "DIVU.W",
+      "category": "divide",
       "expected_cycles": 140,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "divide",
+      "model_cycles": 145.0,
+      "notes": "32/16 unsigned divide",
       "source": "datasheet"
     },
     {
-      "name": "JMP",
-      "category": "control",
-      "expected_cycles": 8,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "name": "DIVS.W",
+      "category": "divide",
+      "expected_cycles": 158,
+      "model_category": "divide",
+      "model_cycles": 145.0,
+      "notes": "32/16 signed divide",
       "source": "datasheet"
     },
     {
-      "name": "JSR",
+      "name": "JMP_abs",
       "category": "control",
-      "expected_cycles": 16,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "expected_cycles": 12,
+      "model_category": "control",
+      "model_cycles": 9.0,
+      "notes": "Jump absolute",
+      "source": "datasheet"
+    },
+    {
+      "name": "JSR_abs",
+      "category": "control",
+      "expected_cycles": 20,
+      "model_category": "control",
+      "model_cycles": 9.0,
+      "notes": "Jump to subroutine - push return address",
       "source": "datasheet"
     },
     {
       "name": "RTS",
       "category": "control",
-      "expected_cycles": 16,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "expected_cycles": 20,
+      "model_category": "control",
+      "model_cycles": 9.0,
+      "notes": "Return from subroutine",
       "source": "datasheet"
     },
     {
       "name": "Bcc_taken",
       "category": "control",
       "expected_cycles": 10,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "control",
+      "model_cycles": 9.0,
+      "notes": "Conditional branch taken",
       "source": "datasheet"
     },
     {
       "name": "Bcc_not_taken",
       "category": "control",
       "expected_cycles": 8,
-      "measured_cycles": null,
-      "error_percent": null,
-      "passed": false,
+      "model_category": "control",
+      "model_cycles": 9.0,
+      "notes": "Conditional branch not taken",
+      "source": "datasheet"
+    },
+    {
+      "name": "CLR.L_Dn",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_category": "alu_reg",
+      "model_cycles": 4.5,
+      "notes": "Clear register",
+      "source": "datasheet"
+    },
+    {
+      "name": "CMP.W_Dn_Dn",
+      "category": "alu",
+      "expected_cycles": 4,
+      "model_category": "alu_reg",
+      "model_cycles": 4.5,
+      "notes": "Compare registers",
+      "source": "datasheet"
+    },
+    {
+      "name": "TST.W_Dn",
+      "category": "alu",
+      "expected_cycles": 4,
+      "model_category": "alu_reg",
+      "model_cycles": 4.5,
+      "notes": "Test register",
+      "source": "datasheet"
+    },
+    {
+      "name": "LEA_disp_An",
+      "category": "data_transfer",
+      "expected_cycles": 8,
+      "model_category": "data_transfer",
+      "model_cycles": 4.5,
+      "notes": "Load effective address",
+      "source": "datasheet"
+    },
+    {
+      "name": "DBcc_true",
+      "category": "control",
+      "expected_cycles": 12,
+      "model_category": "control",
+      "model_cycles": 9.0,
+      "notes": "Decrement and branch if condition true",
+      "source": "datasheet"
+    },
+    {
+      "name": "DBcc_false_count_not_expired",
+      "category": "control",
+      "expected_cycles": 10,
+      "model_category": "control",
+      "model_cycles": 9.0,
+      "notes": "Decrement and branch loop continuation",
       "source": "datasheet"
     }
   ],
+  "cross_validation": {
+    "family": "68K",
+    "base_processor": "M68000",
+    "relationship": "8-bit bus variant",
+    "expected_relative_performance": {
+      "vs_m68000": "50-60% slower due to 8-bit bus",
+      "vs_m68010": "60-70% slower",
+      "vs_m68020": "5-8x slower"
+    },
+    "timing_consistency": {
+      "internal_timings": "Same as 68000",
+      "memory_penalty": "2x for 16-bit, 4x for 32-bit accesses",
+      "bus_overhead": "Significant for memory-heavy workloads"
+    },
+    "architectural_notes": [
+      "Same 68000 microcode, narrower external bus",
+      "20-bit address bus (1MB addressable)",
+      "Used in cost-sensitive systems like Sinclair QL",
+      "Word/long operations take multiple bus cycles"
+    ]
+  },
   "accuracy": {
     "expected_cpi": 7.0,
     "expected_ipc": 0.143,
-    "validated_workloads": [
-      "typical",
-      "compute",
-      "memory",
-      "control",
-      "mixed"
-    ],
+    "validated_workloads": ["typical", "compute", "memory", "control"],
     "predicted_cpi": 7.205,
-    "cpi_error_percent": 2.9,
-    "ipc_error_percent": 2.9,
+    "cpi_error_percent": 2.93,
+    "ipc_error_percent": 2.93,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-28"

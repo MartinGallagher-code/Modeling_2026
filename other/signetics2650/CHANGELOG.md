@@ -28,3 +28,32 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-28 - Cross-validation with per-instruction timing
+
+**Session goal:** Add per-instruction timing tests and cross-validation
+
+**Changes made:**
+
+1. Added 14 per-instruction timing tests to validation JSON
+   - Tested LODZ, ADDZ, ANDZ, COMZ, LODI, ADDI, LODR, LODA, STRR, STRA, BCTR, BCTA, BSTR, RETC
+   - All 14 tests pass with exact timing match (0% error)
+   - Signetics 2650 had very consistent instruction timing
+
+2. Added cross-validation section
+   - Compared with Signetics 2650 Programming Manual
+   - Added test program validation for register_loop, memory_copy, game_loop
+   - Documented relationship to Signetics 2636 (PIC variant) and Intel 8080 (competitor)
+
+**What we learned:**
+- Signetics 2650 had remarkably fast and consistent instruction timing
+- Average CPI of 3.0 was competitive with Intel 8080 at higher clock
+- Unique architecture with register-to-R0 operations
+- Used in early game consoles and arcade machines
+
+**Final state:**
+- CPI: 3.07 (2.33% error)
+- Cross-validation: PASSED
+- Per-instruction tests: 14/14 passed (perfect match)
+
+---

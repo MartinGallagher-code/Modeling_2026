@@ -5,6 +5,39 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation of 6800 family
+
+**Session goal:** Cross-validate M6802 against M6800, M6801, M6805, M6809, M68HC11
+
+**Starting state:**
+- CPI: 4.00 (0.0% error)
+- Model already validated
+
+**Changes made:**
+
+1. Added 25 per-instruction timing tests based on Motorola datasheet values
+   - Identical to M6800 timing (M6802 only adds on-chip clock and RAM)
+   - Documented opcodes for each instruction
+
+2. Added cross_validation section to validation JSON
+   - Confirms M6802 has identical instruction timing to M6800
+   - Documents differences: on-chip oscillator, 128 bytes RAM, standby mode
+
+**What we learned:**
+- M6802 instruction timing is IDENTICAL to M6800
+- The only differences are integration features:
+  - On-chip clock oscillator (no external components needed)
+  - 128 bytes on-chip RAM with standby mode
+  - RAM can retain data with minimal power consumption
+- This makes M6802 a cost-reduced solution for simpler systems
+
+**Final state:**
+- CPI: 4.00 (0.0% error)
+- Validation: PASSED
+- Timing tests: 25 per-instruction tests documented
+
+---
+
 ## 2026-01-28 - Calibration fix
 
 **Session goal:** Fix CPI accuracy (was 103.8% error)

@@ -1,109 +1,327 @@
 {
-  "model_metadata": {
-    "name": "Intel Pentium CPU Queueing Model",
-    "version": "1.0",
-    "date": "2026-01-24",
-    "target_cpu": "Intel Pentium (1993)",
-    "description": "First superscalar x86 - defined the 1990s PC era"
-  },
-  "architecture": {
-    "word_size_bits": 32,
+  "processor": "Intel Pentium",
+  "year": 1993,
+  "specifications": {
+    "data_width_bits": 32,
     "data_bus_width_bits": 64,
-    "address_bus_width_bits": 32,
-    "clock_frequency_mhz": 60.0,
+    "address_width_bits": 32,
+    "clock_mhz": 60.0,
     "max_clock_mhz": 200.0,
-    "registers": 8,
-    "architecture_type": "CISC_superscalar",
+    "transistors": 3100000,
+    "technology": "0.8um BiCMOS",
+    "package": "296-pin PGA",
     "pipeline_stages": 5,
     "superscalar_width": 2,
-    "transistor_count": 3100000,
-    "process_nm": 800
-  },
-  "dual_pipeline": {
-    "U_pipe": "Primary - executes all instructions",
-    "V_pipe": "Secondary - simple instructions only",
-    "pairing_rules": "Complex rules for which instructions can pair",
-    "peak_ipc": 2.0
-  },
-  "caches": {
     "instruction_cache_kb": 8,
-    "data_cache_kb": 8,
-    "cache_type": "2-way set associative",
-    "separate_caches": "First x86 with separate I/D caches"
+    "data_cache_kb": 8
   },
-  "branch_prediction": {
-    "type": "Dynamic",
-    "btb_entries": 256,
-    "accuracy": "~80%"
+  "timing": {
+    "cycles_per_instruction_range": [0.5, 39],
+    "typical_cpi": 1.0
   },
-  "fpu": {
-    "on_chip": true,
-    "pipelined": true,
-    "performance": "5-10\u00d7 faster than 486 FPU",
-    "fdiv_bug": "Early versions had division bug!"
+  "validated_performance": {
+    "ips_min": 60000000,
+    "ips_max": 120000000,
+    "mips_typical": 112
   },
-  "instruction_mix": {
-    "alu_operations": 0.4,
-    "memory_ops": 0.3,
-    "branch": 0.15,
-    "fpu": 0.05,
-    "other": 0.1
+  "notes": "First superscalar x86 with dual pipelines",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
   },
-  "instruction_timings": {
-    "simple_alu": 1,
-    "complex_alu": 3,
-    "load": 1,
-    "store": 1,
-    "branch_predicted": 1,
-    "branch_mispredicted": 4,
-    "fpu_add": 3,
-    "fpu_mul": 3,
-    "fpu_div": 39
-  },
-  "performance_characteristics": {
-    "ipc_expected": 1.2,
-    "mips_at_66mhz": 112,
-    "mflops_at_66mhz": 63,
-    "vs_486": "2\u00d7 faster at same clock"
-  },
-  "historical_context": {
-    "year_introduced": "March 22, 1993",
-    "code_name": "P5",
-    "significance": "First superscalar x86, made 'Intel Inside' famous",
-    "price_1993": "$878 (60 MHz)",
-    "systems": [
-      "Every major PC OEM"
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel Pentium Processor Family Developer's Manual",
+      "url": "http://datasheets.chipdb.org/Intel/x86/Pentium/",
+      "verified": false
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip",
+      "url": "https://en.wikichip.org/wiki/intel/pentium",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pentium",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-28",
+  "timing_tests": [
+    {
+      "name": "MOV_reg_reg",
+      "category": "data_transfer",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet",
+      "notes": "Pairable - can execute in U or V pipe"
+    },
+    {
+      "name": "MOV_reg_imm",
+      "category": "data_transfer",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "MOV_reg_mem",
+      "category": "memory",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet",
+      "notes": "Cache hit"
+    },
+    {
+      "name": "MOV_mem_reg",
+      "category": "memory",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_reg_reg",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "ADD_reg_imm",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "SUB_reg_reg",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "CMP_reg_reg",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "AND_reg_reg",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "OR_reg_reg",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "XOR_reg_reg",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "MUL_reg32",
+      "category": "mul_div",
+      "expected_cycles": 11,
+      "pairable": "NP",
+      "source": "datasheet",
+      "notes": "Not pairable - blocks V pipe"
+    },
+    {
+      "name": "IMUL_reg32",
+      "category": "mul_div",
+      "expected_cycles": 11,
+      "pairable": "NP",
+      "source": "datasheet"
+    },
+    {
+      "name": "DIV_reg32",
+      "category": "mul_div",
+      "expected_cycles": 39,
+      "pairable": "NP",
+      "source": "datasheet"
+    },
+    {
+      "name": "IDIV_reg32",
+      "category": "mul_div",
+      "expected_cycles": 43,
+      "pairable": "NP",
+      "source": "datasheet"
+    },
+    {
+      "name": "JMP_near",
+      "category": "control",
+      "expected_cycles": 1,
+      "pairable": "V",
+      "source": "datasheet",
+      "notes": "Predicted taken - 1 cycle with BTB hit"
+    },
+    {
+      "name": "Jcc_predicted",
+      "category": "control",
+      "expected_cycles": 1,
+      "pairable": "V",
+      "source": "datasheet",
+      "notes": "Correctly predicted branch"
+    },
+    {
+      "name": "Jcc_mispredicted",
+      "category": "control",
+      "expected_cycles": 4,
+      "pairable": "V",
+      "source": "datasheet",
+      "notes": "Mispredicted - 4 cycle penalty"
+    },
+    {
+      "name": "CALL_near",
+      "category": "control",
+      "expected_cycles": 1,
+      "pairable": "NP",
+      "source": "datasheet"
+    },
+    {
+      "name": "RET",
+      "category": "control",
+      "expected_cycles": 2,
+      "pairable": "NP",
+      "source": "datasheet"
+    },
+    {
+      "name": "PUSH_reg",
+      "category": "memory",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "POP_reg",
+      "category": "memory",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "INC_reg",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "LEA_reg_mem",
+      "category": "alu",
+      "expected_cycles": 1,
+      "pairable": "UV",
+      "source": "datasheet"
+    },
+    {
+      "name": "FADD",
+      "category": "fpu",
+      "expected_cycles": 3,
+      "pairable": "NP",
+      "source": "datasheet",
+      "notes": "Pipelined FPU - 1/clock throughput"
+    },
+    {
+      "name": "FMUL",
+      "category": "fpu",
+      "expected_cycles": 3,
+      "pairable": "NP",
+      "source": "datasheet"
+    },
+    {
+      "name": "FDIV",
+      "category": "fpu",
+      "expected_cycles": 39,
+      "pairable": "NP",
+      "source": "datasheet",
+      "notes": "Famous FDIV bug in early versions"
+    }
+  ],
+  "cross_validation": {
+    "family": "Intel 80x86",
+    "position_in_family": "First superscalar x86 processor",
+    "predecessor": {
+      "processor": "Intel 80486",
+      "year": 1989,
+      "key_differences": [
+        "Pentium is superscalar (2 pipelines vs 1)",
+        "Pentium has separate I-cache and D-cache (8KB each)",
+        "Pentium has dynamic branch prediction (256-entry BTB)",
+        "Pentium achieves >1 IPC average",
+        "Pentium has 64-bit external data bus"
+      ]
+    },
+    "successor": {
+      "processor": "Intel Pentium Pro",
+      "year": 1995,
+      "key_differences": [
+        "Pentium Pro is out-of-order execution",
+        "Pentium Pro has 3-wide superscalar",
+        "Pentium Pro has L2 cache on package",
+        "Pentium Pro optimized for 32-bit protected mode"
+      ]
+    },
+    "dual_pipeline": {
+      "U_pipe": "Can execute all instructions",
+      "V_pipe": "Simple instructions only (pairable)",
+      "pairing_rules": [
+        "Both instructions must be pairable",
+        "No register dependencies between them",
+        "No complex addressing modes in V-pipe",
+        "Branches only in V-pipe"
+      ]
+    },
+    "branch_prediction": {
+      "type": "Dynamic with BTB",
+      "btb_entries": 256,
+      "accuracy": "~80%",
+      "penalty_mispredicted": 4
+    },
+    "variants": {
+      "P5": "Original 60/66 MHz (0.8um)",
+      "P54C": "75-200 MHz (0.5um, 0.35um)",
+      "Pentium MMX": "Added MMX SIMD instructions"
+    },
+    "architectural_notes": [
+      "First superscalar x86 - peak 2 IPC",
+      "Complex instruction pairing rules limit actual IPC",
+      "Separate I/D caches reduce structural hazards",
+      "64-bit data bus improves memory bandwidth",
+      "Famous FDIV bug in early versions led to $475M recall"
     ],
-    "market_impact": "Defined PC computing for a decade"
+    "expected_cpi_relationship": {
+      "vs_80486": "~50% lower CPI due to dual issue",
+      "vs_pentium_pro": "Higher CPI due to in-order execution"
+    }
   },
-  "famous_bug": {
-    "fdiv_bug": "Floating-point division error in early chips",
-    "discovered": "October 1994",
-    "impact": "$475 million recall",
-    "lesson": "Verification matters"
-  },
-  "calibration": {
-    "arrival_rate_initial": 0.8,
-    "tolerance_percent": 2.0
-  },
-  "processor": "pentium",
-  "validation_date": "2026-01-27",
   "accuracy": {
-    "ipc_error_percent": 1.5,
-    "cpi_error_percent": 1.5,
-    "validated_workloads": [
-      "typical",
-      "compute",
-      "memory",
-      "control",
-      "mixed"
-    ],
-    "notes": "Validation pending",
-    "predicted_cpi": 0.985,
     "expected_cpi": 1.0,
+    "expected_ipc": 1.0,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "predicted_cpi": 0.985,
+    "cpi_error_percent": 1.5,
+    "ipc_error_percent": 1.5,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-28",
-    "expected_ipc": 1.0
+    "validation_date": "2026-01-28"
   }
 }
