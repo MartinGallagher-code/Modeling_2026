@@ -119,6 +119,60 @@ EXPECTED_CPI = {
     'tms9995': 12.0,    # Enhanced TMS9900
     'tms320c10': 1.5,   # DSP
     'we32000': 8.0,     # AT&T WE32000
+    # New models added 2026-01-29
+    # Tier 1 - High priority
+    'ricoh_2a03': 3.0,  # NES CPU (6502 without BCD)
+    'mos6507': 3.0,     # Atari 2600 (6502 variant)
+    'pps4': 12.0,       # Rockwell PPS-4 (3rd microprocessor)
+    'nec_v30': 3.2,     # 16-bit V20 sibling
+    'hitachi_6309': 3.0, # Enhanced 6809
+    # Tier 2
+    'cp1600': 6.0,      # GI CP1600 (Intellivision)
+    'berkeley_risc2': 1.2, # RISC II
+    'i8096': 4.0,       # Intel 16-bit MCU
+    'am9511': 25.0,     # AMD APU
+    'upd7720': 1.5,     # NEC DSP
+    # 6502 variants
+    'mos6509': 3.0,     # CBM-II CPU
+    'r65c02': 2.85,     # Rockwell CMOS 6502
+    'sy6502a': 3.0,     # Synertek 6502
+    # Japanese processors
+    'upd780': 5.5,      # NEC Z80 clone
+    'hd64180': 4.5,     # Hitachi Z180
+    'hd6301': 3.5,      # Hitachi 6801
+    'mb8861': 4.0,      # Fujitsu 6800 clone
+    # 4-bit processors
+    'pps4_1': 10.0,     # PPS-4/1 single-chip
+    'ucom4': 6.0,       # NEC uCOM-4
+    'upd751': 8.0,      # NEC uPD751
+    # Embedded MCUs
+    'r6511': 3.0,       # Rockwell 6511
+    'm68hc05': 5.0,     # Motorola 68HC05
+    'i8039': 1.5,       # Intel 8039 (MCS-48)
+    'mostek_3870': 6.0, # Mostek F8 derivative
+    # Bit-slice and APUs
+    'i3002': 1.0,       # Intel 3002 bit-slice
+    'sn74s481': 1.0,    # TI bit-slice
+    'am9512': 20.0,     # AMD FP APU
+    'ns32081': 15.0,    # NS32000 FPU
+    # DSPs and signal processors
+    'ami_s2811': 8.0,   # AMI signal processor
+    'signetics_8x300': 1.0, # Bipolar signal processor
+    # 16-bit pioneers
+    'imp16': 8.0,       # National IMP-16
+    'pace': 10.0,       # National PACE
+    'mn601': 4.0,       # Data General microNova
+    'wd16': 5.0,        # Western Digital LSI-11
+    'f100l': 4.0,       # Ferranti F100-L
+    # RCA COSMAC variants
+    'cdp1804': 10.0,    # COSMAC with timer
+    'cdp1806': 8.0,     # Final COSMAC
+    'hm6100': 8.0,      # Harris CMOS PDP-8
+    # Other
+    'lh5801': 6.0,      # Sharp pocket computer
+    'mn1610': 8.0,      # Panafacom 16-bit
+    'stanford_mips': 1.2, # Stanford MIPS (academic)
+    'mm6701': 1.0,      # Monolithic Memories bit-slice
 }
 
 

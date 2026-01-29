@@ -2,11 +2,11 @@
 
 ## The Complete Collection
 
-This collection contains **65 grey-box queueing models** documenting the complete evolution of microprocessors from the first commercial CPU (Intel 4004, 1971) through the dawn of 32-bit computing (Intel 80386, 1985).
+This collection contains **117 grey-box queueing models** documenting the complete evolution of microprocessors from the first commercial CPU (Intel 4004, 1971) through the superscalar era (Pentium, 1993).
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 These models serve:
 
@@ -17,200 +17,143 @@ These models serve:
 
 ---
 
-## 📊 What's Included
+## What's Included
 
 | Category | Count | Examples |
 |----------|-------|----------|
-| **4-bit CPUs** | 3 | 4004, 4040, TMS1000 |
-| **8-bit CPUs** | 25+ | 8080, 6502, Z80, 6809 |
-| **8-bit MCUs** | 12+ | 8051, 8048, PIC1650 |
-| **16-bit CPUs** | 15+ | 8086, 68000, 65816 |
-| **32-bit CPUs** | 6 | 80386, 68020, ARM1 |
-| **Bit-slice** | 1 | AMD 2901 |
-| **Total** | **65** | |
+| **4-bit CPUs** | 6 | 4004, 4040, TMS1000, PPS-4, μCOM-4, μPD751 |
+| **8-bit CPUs** | 35+ | 8080, 6502, Z80, 6809, Hitachi 6309 |
+| **8-bit MCUs** | 15+ | 8051, 8048, PIC1650, 68HC05, 68HC11 |
+| **16-bit CPUs** | 25+ | 8086, 68000, 65816, CP1600, IMP-16, PACE |
+| **32-bit CPUs** | 20+ | 80386, 68020, ARM1-3, SPARC, MIPS R2000 |
+| **RISC Academic** | 3 | Berkeley RISC I/II, Stanford MIPS |
+| **Bit-slice/ALU** | 5 | AMD 2901, 2903, Intel 3002, SN74S481, MM6701 |
+| **Math Coprocessors** | 5 | 80287, 80387, Am9511, Am9512, NS32081 |
+| **DSPs** | 4 | TMS320C10, μPD7720, AMI S2811, Signetics 8X300 |
+| **Total** | **117** | All validated with <10% CPI error |
 
 ---
 
-## 📁 Documentation
+## Processor Families
+
+### Intel (24 models)
+- 4-bit: 4004, 4040
+- 8-bit: 8008, 8048, 8051, 8080, 8085, 8748, 8751, 8039
+- 16-bit: 8086, 8088, 80186, 80188, 80286, 8096
+- 32-bit: 80386, 80486, Pentium, iAPX 432, i860
+- FPU: 80287, 80387
+- Bit-slice: 3002
+
+### Motorola (16 models)
+- 8-bit: 6800, 6801, 6802, 6805, 6809, 68HC05, 68HC11
+- 16/32-bit: 68000, 68008, 68010, 68020, 68030, 68040, 68060
+- FPU: 68881, 68882
+
+### MOS/WDC (4 models)
+- MOS 6502, 6510
+- WDC 65C02, 65816
+
+### Zilog (7 models)
+- Z8, Z80, Z80A, Z80B, Z180, Z8000, Z80000
+
+### Other (66 models)
+- 6502 variants, Japanese clones, ARM family, RISC processors, DSPs, and more
+
+---
+
+## Documentation
 
 ### Collection-Level Documents
 
 | Document | Description |
 |----------|-------------|
-| [MASTER_CATALOG.md](MASTER_CATALOG.md) | Complete inventory of all 65 models |
-| [EVOLUTION_TIMELINE.md](EVOLUTION_TIMELINE.md) | Visual timeline 1971-1985 |
-| [FAMILY_TREES.md](FAMILY_TREES.md) | Processor lineage diagrams |
-| [PERFORMANCE_COMPARISON.md](PERFORMANCE_COMPARISON.md) | Side-by-side metrics |
 | [ARCHITECTURAL_GUIDE.md](ARCHITECTURAL_GUIDE.md) | Design concepts explained |
+| [PROCESSOR_EVOLUTION_1971-1985.md](PROCESSOR_EVOLUTION_1971-1985.md) | Visual timeline |
+| [CHANGELOG.md](CHANGELOG.md) | Collection history |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute |
 
 ### Per-Model Documentation
 
 Each processor folder contains:
 ```
 [Processor]/
-├── *_model.json       # Configuration and parameters
-├── *_model.py         # Python queueing model
-├── *_README.md        # Detailed documentation
-├── QUICK_START.md     # Quick reference
-└── PROJECT_SUMMARY.md # Brief overview
+├── current/
+│   └── *_validated.py     # ✓ USE THIS - validated model
+├── validation/
+│   └── *_validation.json  # Validation data and timing tests
+├── CHANGELOG.md           # Full history of model work
+├── HANDOFF.md             # Current state and next steps
+└── docs/                  # Additional documentation
 ```
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Running a Model
 
 ```python
-from intel_8080_model import Intel8080QueueModel
+from intel.i8080.current.i8080_validated import I8080Model
 
-# Load model
-model = Intel8080QueueModel('intel_8080_model.json')
+# Create model
+model = I8080Model()
 
-# Predict performance
-ipc, metrics = model.predict_ipc(arrival_rate=0.05)
-print(f"Predicted IPC: {ipc:.4f}")
+# Analyze typical workload
+result = model.analyze('typical')
+print(f"CPI: {result.cpi:.2f}")
+print(f"IPS: {result.ips:,.0f}")
+print(f"Bottleneck: {result.bottleneck}")
 
-# Calibrate against real data
-result = model.calibrate(measured_ipc=0.12)
-print(f"Calibrated: {result['error_percent']:.1f}% error")
+# Run validation tests
+validation = model.validate()
+print(f"Tests passed: {validation['passed']}/{validation['total']}")
 ```
 
 ### Exploring the Collection
 
-Start with the era you're interested in:
+```bash
+# List all processors
+ls -d */*/current/
 
-| Era | Start Here | Key Processors |
-|-----|------------|----------------|
-| **Pioneers** | Intel 4004, 8008 | First microprocessors |
-| **8-Bit Revolution** | 8080, 6502, Z80 | Personal computer CPUs |
-| **16-Bit Transition** | 8086, 68000 | IBM PC and Mac era |
-| **32-Bit Dawn** | 80386, 68020, ARM1 | Modern computing begins |
+# Run validation on all models
+python old_scripts/run_accuracy_tests.py
 
----
-
-## 🏆 Highlights
-
-### Most Influential Processors
-
-| Processor | Why It Matters |
-|-----------|----------------|
-| **Intel 4004** | First commercial microprocessor (1971) |
-| **MOS 6502** | $25 price enabled personal computers |
-| **Zilog Z80** | CP/M standard, TRS-80, Game Boy |
-| **Intel 8088** | IBM PC, launched x86 dominance |
-| **Motorola 68000** | Macintosh, Amiga, Atari ST |
-| **Intel 80386** | 32-bit x86, still compatible today |
-| **ARM1** | RISC pioneer, 200B+ derivatives shipped |
-
-### Interesting Stories
-
-- **RCA 1802**: Still running on Voyager 1 after 48 years!
-- **Intel iAPX 432**: Object-oriented CPU, spectacular failure
-- **Hitachi 6309**: "Best 8-bit ever" - unofficial 6809 enhancement
-- **WDC 65802**: Full 65816 crammed into 6502's 40-pin socket
-
----
-
-## 📈 Performance Evolution
-
-```
-MIPS Performance 1971-1985:
-
-1971: 4004      ▏ 0.037
-1974: 8080      █ 0.20
-1976: Z80       █▌ 0.30
-1979: 68000     █████▌ 1.12
-1985: 80386     ████████████████ 3.20
-1985: ARM1      ███████████████ 3.00
-1985: MIPS R2000 ████████████████████████ 4.80
-
-~130× improvement in 14 years!
+# Test a specific processor
+python old_scripts/run_accuracy_tests.py -p i8080
 ```
 
 ---
 
-## 🔬 Methodology
+## Validation
 
-### Grey-Box Modeling
+All 117 models pass validation with <10% CPI error:
+- **116 fully validated** (<5% error)
+- **1 passed** (<10% error)
 
-These models combine:
-1. **Architectural knowledge** (pipeline stages, timings)
-2. **Queueing theory** (M/M/1 networks)
-3. **Calibration** against real hardware
-
-### Typical Accuracy
-
-- **< 5% error** after calibration
-- **< 15% error** before calibration
-
-### Queueing Network Approach
-
-```
-Simple CPU (8080):           Pipelined CPU (80386):
-┌─────────┐                  ┌─────────┐
-│ Execute │                  │   BIU   │ (Bus Interface)
-│  (M/M/1)│                  │ (M/M/1) │
-└─────────┘                  └────┬────┘
-                                  │
-                             ┌────┴────┐
-                             │ Prefetch│ (M/M/1/K)
-                             │  Queue  │
-                             └────┬────┘
-                                  │
-                             ┌────┴────┐
-                             │   EU    │ (M/M/1)
-                             │ Execute │
-                             └─────────┘
-```
+**Pass rate: 100%**
 
 ---
 
-## 📚 References
+## Recent Additions (January 2026)
 
-### Primary Sources
-- Intel Microprocessor Handbooks
-- Motorola M68000 Family Reference
-- Zilog Z80 CPU User Manual
-- MOS 6502 Programming Manual
+### Tier 1 - Gaming/Consumer Icons
+- Ricoh 2A03 (NES CPU)
+- MOS 6507 (Atari 2600)
+- GI CP1600 (Intellivision)
 
-### Academic Papers
-- Queueing theory applications to computer systems
-- Historical microprocessor architecture surveys
+### Tier 2 - Historical Firsts
+- Rockwell PPS-4 (3rd microprocessor ever)
+- Berkeley RISC II (SPARC predecessor)
+- Stanford MIPS (original academic MIPS)
 
-### Historical Resources
-- Computer History Museum archives
-- Vintage computing documentation projects
-
----
-
-## 🗓️ Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | January 2026 | Initial release, 65 models |
+### Tier 3 - Completionist
+- Japanese clones (μPD780, HD6301, MB8861)
+- 6502 variants (6507, 6509, R65C02)
+- 16-bit pioneers (IMP-16, PACE, F100-L)
+- COSMAC family (CDP1804, CDP1806)
 
 ---
 
-## 📝 License
-
-These models are provided for educational and research purposes.
-
----
-
-## 🙏 Acknowledgments
-
-- Original processor designers and engineers
-- Computer History Museum
-- Vintage computing preservation community
-- Academic researchers in performance modeling
-
----
-
-**Collection Curator:** Grey-Box Performance Modeling Research  
-**Last Updated:** January 25, 2026
-
----
-
-*"Those who cannot remember the past are condemned to repeat it."*  
-*Understanding these early processors illuminates modern CPU design.*
+**Last Updated:** January 29, 2026
+**Total Models:** 117
+**Validation:** 100% pass rate

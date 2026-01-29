@@ -1,0 +1,205 @@
+{
+  "processor": "NEC uPD751",
+  "year": 1974,
+  "historical_note": "NEC's enhanced 4-bit MCU with variable instruction timing",
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.4,
+    "transistors": 8500,
+    "technology": "NMOS",
+    "package": "42-pin DIP",
+    "architecture": "4-bit parallel ALU MCU with enhanced instructions"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      7,
+      9
+    ],
+    "alu_cycles": 8,
+    "data_transfer_cycles": 7,
+    "memory_cycles": 9,
+    "control_cycles": 8,
+    "io_cycles": 7,
+    "typical_cpi": 8.0,
+    "notes": "Variable timing due to enhanced instruction set"
+  },
+  "validated_performance": {
+    "ips_min": 44000,
+    "ips_max": 57000,
+    "kips_typical": 50
+  },
+  "notes": "NEC's enhanced 4-bit MCU with more complex instruction set than uCOM-4.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 8.0,
+    "expected_ipc": 0.125,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 7.8,
+    "cpi_error_percent": 2.5,
+    "ipc_error_percent": 2.5,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Variable timing model correctly predicts workload-dependent performance"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD",
+      "description": "Add accumulator to memory",
+      "category": "alu",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "ADDC",
+      "description": "Add with carry",
+      "category": "alu",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "DAA",
+      "description": "Decimal adjust accumulator (BCD)",
+      "category": "alu",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "MOV",
+      "description": "Move data between registers",
+      "category": "data_transfer",
+      "expected_cycles": 7,
+      "model_cycles": 7,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "XCHG",
+      "description": "Exchange register contents",
+      "category": "data_transfer",
+      "expected_cycles": 7,
+      "model_cycles": 7,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "LD",
+      "description": "Load from memory (direct)",
+      "category": "memory",
+      "expected_cycles": 9,
+      "model_cycles": 9,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "LDI",
+      "description": "Load from memory (indirect)",
+      "category": "memory",
+      "expected_cycles": 9,
+      "model_cycles": 9,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "ST",
+      "description": "Store to memory",
+      "category": "memory",
+      "expected_cycles": 9,
+      "model_cycles": 9,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "JMP",
+      "description": "Unconditional jump",
+      "category": "control",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "CALL",
+      "description": "Call subroutine",
+      "category": "control",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "IN",
+      "description": "Input from port",
+      "category": "io",
+      "expected_cycles": 7,
+      "model_cycles": 7,
+      "source": "NEC uPD751 architecture"
+    },
+    {
+      "instruction": "OUT",
+      "description": "Output to port",
+      "category": "io",
+      "expected_cycles": 7,
+      "model_cycles": 7,
+      "source": "NEC uPD751 architecture"
+    }
+  ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "name": "NEC uCOM-4",
+        "relationship": "predecessor",
+        "year": 1972,
+        "cpi": 6.0,
+        "notes": "Simpler, fixed timing"
+      },
+      {
+        "name": "TI TMS1000",
+        "relationship": "contemporary",
+        "year": 1974,
+        "cpi": 6.0,
+        "notes": "Fixed timing, simpler instruction set"
+      },
+      {
+        "name": "Rockwell PPS-4",
+        "relationship": "contemporary",
+        "year": 1972,
+        "cpi": 12.0,
+        "notes": "Serial ALU, slower"
+      }
+    ],
+    "architectural_notes": [
+      "Variable instruction timing (7-9 cycles)",
+      "Enhanced instruction set over uCOM-4",
+      "BCD arithmetic support",
+      "Multiple addressing modes",
+      "Parallel ALU (4-bit parallel processing)",
+      "400 kHz clock"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 12,
+      "tests_passed": 12,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  },
+  "applications": {
+    "consumer_electronics": "TVs, audio equipment",
+    "appliances": "Washing machines, microwave ovens",
+    "industrial": "Simple industrial controllers",
+    "automotive": "Dashboard electronics"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.2,
+    "control": 0.15,
+    "io": 0.15
+  }
+}

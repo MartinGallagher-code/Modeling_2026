@@ -1,0 +1,84 @@
+{
+  "processor": "Hitachi HD64180",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 6.0,
+    "transistors": 20000,
+    "technology": "CMOS",
+    "package": "64-pin QFP/DIP",
+    "compatibility": "Z180 equivalent"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      20
+    ],
+    "typical_cpi": 4.5
+  },
+  "validated_performance": {
+    "ips_min": 400000,
+    "ips_max": 1800000,
+    "mips_typical": 1.33
+  },
+  "notes": "Hitachi Z180-equivalent with on-chip peripherals",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Zilog Z180 Datasheet (timing reference)",
+      "url": "https://www.zilog.com/docs/z180/z180.pdf",
+      "verified": true
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia - Zilog Z180",
+      "url": "https://en.wikipedia.org/wiki/Zilog_Z180",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 4.5,
+    "expected_ipc": 0.222,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 4.585,
+    "cpi_error_percent": 1.89,
+    "validation_passed": true,
+    "ipc_error_percent": 1.89,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.2,
+    "control": 0.15,
+    "stack": 0.1,
+    "block": 0.05,
+    "notes": "Typical Z180/HD64180 workload for embedded applications"
+  },
+  "cross_validation": {
+    "methodology": "Uses identical timing to Zilog Z180",
+    "reference_processor": "Zilog Z180",
+    "timing_verified": true,
+    "improvement_vs_z80": "~18% faster CPI",
+    "notes": "Hitachi produced HD64180 as Z180 second-source"
+  },
+  "on_chip_peripherals": {
+    "mmu": "1 MB address space with banking",
+    "dma": "2-channel DMA controller",
+    "uart": "2 asynchronous serial channels",
+    "timers": "2 programmable reload timers",
+    "csio": "Clocked serial I/O port"
+  }
+}

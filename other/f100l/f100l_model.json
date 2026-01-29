@@ -1,0 +1,64 @@
+{
+  "name": "Ferranti F100-L",
+  "year": 1976,
+  "clock_mhz": 1.0,
+  "bus_width": 16,
+  "transistors": 6000,
+  "timing_categories": {
+    "alu": {
+      "cycles": 3,
+      "weight": 0.25,
+      "desc": "ALU operations"
+    },
+    "memory": {
+      "cycles": 5,
+      "weight": 0.20,
+      "desc": "Memory access"
+    },
+    "immediate": {
+      "cycles": 4,
+      "weight": 0.15,
+      "desc": "Immediate operand"
+    },
+    "branch": {
+      "cycles": 3,
+      "weight": 0.12,
+      "desc": "Branch instructions"
+    },
+    "jump": {
+      "cycles": 4,
+      "weight": 0.08,
+      "desc": "Jump/subroutine"
+    },
+    "shift": {
+      "cycles": 4,
+      "weight": 0.08,
+      "desc": "Shift operations"
+    },
+    "io": {
+      "cycles": 5,
+      "weight": 0.07,
+      "desc": "I/O operations"
+    },
+    "control": {
+      "cycles": 4,
+      "weight": 0.05,
+      "desc": "Control instructions"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      200000,
+      400000
+    ],
+    "cpi_range": [
+      3,
+      5
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "alu"
+    ]
+  },
+  "source": "Ferranti F100-L Reference Manual"
+}

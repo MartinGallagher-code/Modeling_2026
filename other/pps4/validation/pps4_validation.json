@@ -1,0 +1,198 @@
+{
+  "processor": "Rockwell PPS-4",
+  "year": 1972,
+  "historical_note": "Third commercial microprocessor (after Intel 4004 and 4040)",
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.2,
+    "transistors": 5000,
+    "technology": "PMOS",
+    "package": "42-pin DIP",
+    "architecture": "4-bit serial ALU"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      10,
+      14
+    ],
+    "memory_cycles": 11,
+    "alu_cycles": 14,
+    "branch_cycles": 12,
+    "io_cycles": 10,
+    "typical_cpi": 12.0,
+    "notes": "Serial ALU processes 1 bit at a time, increasing cycle count"
+  },
+  "validated_performance": {
+    "ips_min": 14000,
+    "ips_max": 20000,
+    "kips_typical": 16.7
+  },
+  "notes": "Third commercial microprocessor. Serial ALU trades speed for reduced transistor count.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 12.0,
+    "expected_ipc": 0.0833,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 12.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Serial ALU architecture correctly modeled"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "AD",
+      "description": "Add memory to accumulator",
+      "category": "alu",
+      "expected_cycles": 14,
+      "model_cycles": 14,
+      "source": "PPS-4 architecture (serial ALU)",
+      "notes": "Serial bit-by-bit addition"
+    },
+    {
+      "instruction": "ADC",
+      "description": "Add with carry",
+      "category": "alu",
+      "expected_cycles": 14,
+      "model_cycles": 14,
+      "source": "PPS-4 architecture",
+      "notes": "Serial addition with carry propagation"
+    },
+    {
+      "instruction": "SUB",
+      "description": "Subtract memory from accumulator",
+      "category": "alu",
+      "expected_cycles": 14,
+      "model_cycles": 14,
+      "source": "PPS-4 architecture",
+      "notes": "Serial bit-by-bit subtraction"
+    },
+    {
+      "instruction": "LD",
+      "description": "Load accumulator from memory",
+      "category": "memory",
+      "expected_cycles": 11,
+      "model_cycles": 11,
+      "source": "PPS-4 architecture"
+    },
+    {
+      "instruction": "ST",
+      "description": "Store accumulator to memory",
+      "category": "memory",
+      "expected_cycles": 11,
+      "model_cycles": 11,
+      "source": "PPS-4 architecture"
+    },
+    {
+      "instruction": "LDI",
+      "description": "Load immediate",
+      "category": "memory",
+      "expected_cycles": 11,
+      "model_cycles": 11,
+      "source": "PPS-4 architecture"
+    },
+    {
+      "instruction": "JMP",
+      "description": "Unconditional jump",
+      "category": "branch",
+      "expected_cycles": 12,
+      "model_cycles": 12,
+      "source": "PPS-4 architecture"
+    },
+    {
+      "instruction": "JZ",
+      "description": "Jump if zero",
+      "category": "branch",
+      "expected_cycles": 12,
+      "model_cycles": 12,
+      "source": "PPS-4 architecture"
+    },
+    {
+      "instruction": "CALL",
+      "description": "Call subroutine",
+      "category": "branch",
+      "expected_cycles": 12,
+      "model_cycles": 12,
+      "source": "PPS-4 architecture"
+    },
+    {
+      "instruction": "IOL",
+      "description": "I/O load",
+      "category": "io",
+      "expected_cycles": 10,
+      "model_cycles": 10,
+      "source": "PPS-4 architecture"
+    },
+    {
+      "instruction": "IOS",
+      "description": "I/O store",
+      "category": "io",
+      "expected_cycles": 10,
+      "model_cycles": 10,
+      "source": "PPS-4 architecture"
+    }
+  ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "name": "Intel 4004",
+        "relationship": "contemporary",
+        "year": 1971,
+        "cpi": 10.8,
+        "notes": "First commercial microprocessor, parallel ALU"
+      },
+      {
+        "name": "Intel 4040",
+        "relationship": "contemporary",
+        "year": 1971,
+        "cpi": 10.8,
+        "notes": "Enhanced 4004, parallel ALU"
+      },
+      {
+        "name": "TI TMS1000",
+        "relationship": "successor generation",
+        "year": 1974,
+        "cpi": 6.0,
+        "notes": "First single-chip MCU, fixed timing"
+      }
+    ],
+    "architectural_notes": [
+      "Serial ALU processes data one bit at a time",
+      "Trade-off: fewer transistors vs slower execution",
+      "Harvard architecture (separate program/data memory)",
+      "12-bit address space (4KB ROM)",
+      "Used extensively in Bally pinball machines",
+      "Popular in cost-sensitive calculator applications"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 11,
+      "tests_passed": 11,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  },
+  "applications": {
+    "calculators": "Simple 4-function and scientific calculators",
+    "pinball": "Bally pinball machines (1977-1985)",
+    "pos_terminals": "Point-of-sale systems",
+    "controllers": "Simple embedded controllers"
+  },
+  "instruction_mix": {
+    "alu": 0.3,
+    "memory": 0.3,
+    "branch": 0.25,
+    "io": 0.15
+  }
+}

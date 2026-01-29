@@ -1,0 +1,221 @@
+{
+  "processor": "NEC uPD7720",
+  "year": 1980,
+  "specifications": {
+    "data_width_bits": 16,
+    "instruction_width_bits": 13,
+    "clock_mhz": 8.0,
+    "transistors": 10000,
+    "technology": "NMOS",
+    "package": "64-pin DIP",
+    "architecture": "Harvard DSP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      2
+    ],
+    "typical_cpi": 1.5
+  },
+  "validated_performance": {
+    "ips_min": 4000000,
+    "ips_max": 8000000,
+    "mips_typical": 5.33
+  },
+  "notes": "Early DSP designed for LPC speech synthesis",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 1.5,
+    "expected_ipc": 0.6667,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 1.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Model calibrated for LPC vocoder speech synthesis workloads"
+  },
+  "instruction_timing_tests": [
+    {
+      "instruction": "MUL (Multiply)",
+      "addressing_mode": "Register",
+      "expected_cycles": 1,
+      "model_category": "mac",
+      "model_cycles": 1,
+      "source": "uPD7720 datasheet",
+      "notes": "16x16 multiply with pipelined execution"
+    },
+    {
+      "instruction": "MAC (Multiply-Accumulate)",
+      "addressing_mode": "Register",
+      "expected_cycles": 1,
+      "model_category": "mac",
+      "model_cycles": 1,
+      "source": "uPD7720 datasheet",
+      "notes": "Single-cycle MAC - core DSP operation for LPC"
+    },
+    {
+      "instruction": "MACN (MAC with Negate)",
+      "addressing_mode": "Register",
+      "expected_cycles": 1,
+      "model_category": "mac",
+      "model_cycles": 1,
+      "source": "uPD7720 datasheet",
+      "notes": "Multiply-accumulate with negation for filter taps"
+    },
+    {
+      "instruction": "ADD (Add)",
+      "addressing_mode": "Register",
+      "expected_cycles": 1,
+      "model_category": "alu",
+      "model_cycles": 1,
+      "source": "uPD7720 datasheet",
+      "notes": "16-bit addition"
+    },
+    {
+      "instruction": "SUB (Subtract)",
+      "addressing_mode": "Register",
+      "expected_cycles": 1,
+      "model_category": "alu",
+      "model_cycles": 1,
+      "source": "uPD7720 datasheet",
+      "notes": "16-bit subtraction"
+    },
+    {
+      "instruction": "SHR (Shift Right)",
+      "addressing_mode": "Immediate",
+      "expected_cycles": 1,
+      "model_category": "alu",
+      "model_cycles": 1,
+      "source": "uPD7720 datasheet",
+      "notes": "Arithmetic shift for scaling"
+    },
+    {
+      "instruction": "LD (Load)",
+      "addressing_mode": "Direct",
+      "expected_cycles": 2,
+      "model_category": "memory",
+      "model_cycles": 2,
+      "source": "uPD7720 datasheet",
+      "notes": "Load from data memory"
+    },
+    {
+      "instruction": "ST (Store)",
+      "addressing_mode": "Direct",
+      "expected_cycles": 2,
+      "model_category": "memory",
+      "model_cycles": 2,
+      "source": "uPD7720 datasheet",
+      "notes": "Store to data memory"
+    },
+    {
+      "instruction": "LDTBL (Load Table)",
+      "addressing_mode": "Indirect",
+      "expected_cycles": 2,
+      "model_category": "memory",
+      "model_cycles": 2,
+      "source": "uPD7720 datasheet",
+      "notes": "Load coefficient from lookup table"
+    },
+    {
+      "instruction": "JMP (Jump)",
+      "addressing_mode": "Absolute",
+      "expected_cycles": 2,
+      "model_category": "branch",
+      "model_cycles": 2,
+      "source": "uPD7720 datasheet",
+      "notes": "Unconditional jump with pipeline flush"
+    },
+    {
+      "instruction": "JZ (Jump if Zero)",
+      "addressing_mode": "Absolute",
+      "expected_cycles": 2,
+      "model_category": "branch",
+      "model_cycles": 2,
+      "source": "uPD7720 datasheet",
+      "notes": "Conditional branch"
+    },
+    {
+      "instruction": "CALL (Subroutine Call)",
+      "addressing_mode": "Absolute",
+      "expected_cycles": 2,
+      "model_category": "branch",
+      "model_cycles": 2,
+      "source": "uPD7720 datasheet",
+      "notes": "Call with return address save"
+    }
+  ],
+  "cross_validation": {
+    "family_comparison": {
+      "upd77c25": {
+        "relationship": "Enhanced CMOS successor",
+        "expected_improvement": "Lower power, higher clock",
+        "notes": "CMOS version with improved specifications"
+      },
+      "upd7725": {
+        "relationship": "Later variant",
+        "expected_improvement": "1.5x performance",
+        "notes": "Enhanced version used in various applications"
+      }
+    },
+    "era_comparison": {
+      "tms320c10": {
+        "relationship": "Contemporary DSP (1983)",
+        "cpi_ratio_expected": 1.0,
+        "notes": "Similar performance, TI's answer to NEC DSP"
+      },
+      "intel_2920": {
+        "relationship": "Earlier analog signal processor",
+        "cpi_ratio_expected": 0.3,
+        "notes": "2920 was hybrid analog/digital, not true DSP"
+      }
+    },
+    "architecture_notes": {
+      "unique_features": [
+        "Early DSP architecture (1980)",
+        "16-bit data path with 13-bit instructions",
+        "Harvard architecture - separate program/data memory",
+        "Single-cycle pipelined multiply-accumulate",
+        "Optimized for LPC vocoder implementation",
+        "On-chip data RAM and program ROM",
+        "Used in Super Nintendo S-SMP audio processor"
+      ],
+      "performance_implications": [
+        "MAC operations execute in single cycle via pipelining",
+        "Harvard architecture enables parallel fetch/execute",
+        "Compact 13-bit instruction encoding saves program memory",
+        "Branch operations require pipeline flush (2 cycles)",
+        "Optimized for real-time speech synthesis"
+      ]
+    },
+    "validation_methodology": {
+      "sources": [
+        "NEC uPD7720 Datasheet",
+        "LPC Vocoder Implementation Notes",
+        "SNES APU Technical Documentation"
+      ],
+      "confidence_level": "High",
+      "cross_validated_date": "2026-01-29"
+    }
+  },
+  "applications": {
+    "primary": "Speech synthesis (LPC vocoders)",
+    "notable_uses": [
+      "Consumer electronics voice synthesis",
+      "Telephone voice processing",
+      "Super Nintendo S-SMP audio processor",
+      "Musical instrument digital interfaces"
+    ]
+  }
+}

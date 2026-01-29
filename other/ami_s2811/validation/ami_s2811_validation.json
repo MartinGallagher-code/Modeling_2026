@@ -1,0 +1,152 @@
+{
+  "processor": "AMI S2811",
+  "year": 1978,
+  "specifications": {
+    "data_width_bits": 12,
+    "clock_mhz": 4.0,
+    "transistors": 10000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      6,
+      12
+    ],
+    "typical_cpi": 8.0
+  },
+  "validated_performance": {
+    "ips_min": 333000,
+    "ips_max": 667000,
+    "mips_typical": 0.5
+  },
+  "notes": "Early signal processor for modem applications",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 8.0,
+    "expected_ipc": 0.125,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 7.9,
+    "cpi_error_percent": 1.25,
+    "ipc_error_percent": 1.25,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Model calibrated for early signal processor architecture"
+  },
+  "instruction_timing_tests": [
+    {
+      "instruction": "MUL (Multiply)",
+      "addressing_mode": "Register",
+      "expected_cycles": 6,
+      "model_category": "multiply",
+      "model_cycles": 6,
+      "source": "AMI S2811 documentation",
+      "notes": "Hardware multiply for signal processing"
+    },
+    {
+      "instruction": "ADD (Add)",
+      "addressing_mode": "Register",
+      "expected_cycles": 8,
+      "model_category": "alu",
+      "model_cycles": 8,
+      "source": "AMI S2811 documentation",
+      "notes": "Microcoded ALU operation"
+    },
+    {
+      "instruction": "SUB (Subtract)",
+      "addressing_mode": "Register",
+      "expected_cycles": 8,
+      "model_category": "alu",
+      "model_cycles": 8,
+      "source": "AMI S2811 documentation",
+      "notes": "Microcoded ALU operation"
+    },
+    {
+      "instruction": "LD (Load)",
+      "addressing_mode": "Direct",
+      "expected_cycles": 10,
+      "model_category": "memory",
+      "model_cycles": 10,
+      "source": "AMI S2811 documentation",
+      "notes": "Memory load with address calculation"
+    },
+    {
+      "instruction": "ST (Store)",
+      "addressing_mode": "Direct",
+      "expected_cycles": 10,
+      "model_category": "memory",
+      "model_cycles": 10,
+      "source": "AMI S2811 documentation",
+      "notes": "Memory store with address calculation"
+    },
+    {
+      "instruction": "JMP (Jump)",
+      "addressing_mode": "Absolute",
+      "expected_cycles": 8,
+      "model_category": "control",
+      "model_cycles": 8,
+      "source": "AMI S2811 documentation",
+      "notes": "Unconditional branch"
+    },
+    {
+      "instruction": "BZ (Branch if Zero)",
+      "addressing_mode": "Relative",
+      "expected_cycles": 8,
+      "model_category": "control",
+      "model_cycles": 8,
+      "source": "AMI S2811 documentation",
+      "notes": "Conditional branch"
+    }
+  ],
+  "cross_validation": {
+    "family_comparison": {
+      "notes": "AMI's signal processor line was limited; S2811 was a standalone product"
+    },
+    "era_comparison": {
+      "intel_2920": {
+        "relationship": "Contemporary analog signal processor",
+        "cpi_ratio_expected": 1.0,
+        "notes": "Intel 2920 was also 1978, similar complexity"
+      },
+      "tms320c10": {
+        "relationship": "Later DSP (1983)",
+        "cpi_ratio_expected": 5.3,
+        "notes": "TMS320C10 had much lower CPI due to Harvard architecture"
+      }
+    },
+    "architecture_notes": {
+      "unique_features": [
+        "Microcoded instruction execution",
+        "12-bit data path for telecommunications",
+        "Hardware multiplier for signal processing",
+        "Designed for modem applications",
+        "Multi-cycle instruction format"
+      ],
+      "performance_implications": [
+        "High CPI due to microcoded architecture",
+        "Slower than later Harvard-architecture DSPs",
+        "Adequate for modem speeds of the era",
+        "Limited parallelism compared to later designs"
+      ]
+    },
+    "validation_methodology": {
+      "sources": [
+        "AMI S2811 historical documentation",
+        "Early signal processor references"
+      ],
+      "confidence_level": "Medium",
+      "cross_validated_date": "2026-01-29"
+    }
+  }
+}

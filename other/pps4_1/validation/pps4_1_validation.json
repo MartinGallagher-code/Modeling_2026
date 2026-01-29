@@ -1,0 +1,172 @@
+{
+  "processor": "Rockwell PPS-4/1",
+  "year": 1976,
+  "historical_note": "Single-chip implementation of PPS-4 architecture",
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.25,
+    "transistors": 6000,
+    "technology": "NMOS",
+    "package": "40-pin DIP",
+    "architecture": "4-bit single-chip serial ALU MCU"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      8,
+      12
+    ],
+    "alu_cycles": 12,
+    "memory_cycles": 9,
+    "branch_cycles": 10,
+    "io_cycles": 8,
+    "typical_cpi": 10.0,
+    "notes": "Improved over PPS-4 due to on-chip integration"
+  },
+  "validated_performance": {
+    "ips_min": 20000,
+    "ips_max": 31250,
+    "kips_typical": 25
+  },
+  "notes": "Single-chip PPS-4 variant with improved performance from on-chip integration.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 10.0,
+    "expected_ipc": 0.1,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 9.8,
+    "cpi_error_percent": 2.0,
+    "ipc_error_percent": 2.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Single-chip integration benefits correctly modeled"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "AD",
+      "description": "Add memory to accumulator",
+      "category": "alu",
+      "expected_cycles": 12,
+      "model_cycles": 12,
+      "source": "PPS-4/1 architecture (serial ALU)",
+      "notes": "Serial bit-by-bit addition (inherited from PPS-4)"
+    },
+    {
+      "instruction": "SUB",
+      "description": "Subtract memory from accumulator",
+      "category": "alu",
+      "expected_cycles": 12,
+      "model_cycles": 12,
+      "source": "PPS-4/1 architecture"
+    },
+    {
+      "instruction": "LD",
+      "description": "Load accumulator from on-chip memory",
+      "category": "memory",
+      "expected_cycles": 9,
+      "model_cycles": 9,
+      "source": "PPS-4/1 architecture",
+      "notes": "Faster than PPS-4 due to on-chip RAM"
+    },
+    {
+      "instruction": "ST",
+      "description": "Store accumulator to on-chip memory",
+      "category": "memory",
+      "expected_cycles": 9,
+      "model_cycles": 9,
+      "source": "PPS-4/1 architecture"
+    },
+    {
+      "instruction": "JMP",
+      "description": "Unconditional jump",
+      "category": "branch",
+      "expected_cycles": 10,
+      "model_cycles": 10,
+      "source": "PPS-4/1 architecture"
+    },
+    {
+      "instruction": "JZ",
+      "description": "Jump if zero",
+      "category": "branch",
+      "expected_cycles": 10,
+      "model_cycles": 10,
+      "source": "PPS-4/1 architecture"
+    },
+    {
+      "instruction": "IOL",
+      "description": "I/O load (on-chip)",
+      "category": "io",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "PPS-4/1 architecture",
+      "notes": "Faster than PPS-4 due to on-chip I/O"
+    },
+    {
+      "instruction": "IOS",
+      "description": "I/O store (on-chip)",
+      "category": "io",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "PPS-4/1 architecture"
+    }
+  ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "name": "Rockwell PPS-4",
+        "relationship": "predecessor",
+        "year": 1972,
+        "cpi": 12.0,
+        "notes": "Multi-chip version, serial ALU"
+      },
+      {
+        "name": "TI TMS1000",
+        "relationship": "contemporary",
+        "year": 1974,
+        "cpi": 6.0,
+        "notes": "Fixed timing, parallel ALU"
+      },
+      {
+        "name": "NEC uCOM-4",
+        "relationship": "contemporary",
+        "year": 1972,
+        "cpi": 6.0,
+        "notes": "Fixed timing, parallel ALU"
+      }
+    ],
+    "architectural_notes": [
+      "Serial ALU inherited from PPS-4 (processes 1 bit at a time)",
+      "On-chip ROM, RAM, and I/O integration",
+      "Reduced external bus overhead improves performance",
+      "250 kHz clock (faster than PPS-4's 200 kHz)",
+      "Used in consumer electronics and appliances"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 8,
+      "tests_passed": 8,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  },
+  "applications": {
+    "consumer_electronics": "TVs, radios, audio equipment",
+    "appliances": "Washing machines, microwave ovens",
+    "controllers": "Simple embedded controllers"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "memory": 0.3,
+    "branch": 0.25,
+    "io": 0.2
+  }
+}

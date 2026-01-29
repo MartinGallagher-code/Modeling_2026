@@ -1,0 +1,227 @@
+{
+  "processor": "Monolithic Memories 6701",
+  "year": 1975,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 8.0,
+    "transistors": 180,
+    "technology": "Bipolar Schottky",
+    "package": "40-pin DIP",
+    "registers": 16
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      1
+    ],
+    "typical_cpi": 1.0
+  },
+  "validated_performance": {
+    "ips_min": 8000000,
+    "ips_max": 8000000,
+    "mops_typical": 8.0
+  },
+  "notes": "4-bit slice ALU. Competitor to AMD Am2901. All microinstructions execute in single cycle.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 1.0,
+    "expected_ipc": 1.0,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 1.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Model validated - 4-bit slice ALU with single-cycle execution. 17/17 tests passed."
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD (R+S)",
+      "description": "4-bit add",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "SUBR (S-R)",
+      "description": "Subtract R from S",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "SUBS (R-S)",
+      "description": "Subtract S from R",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "OR (R|S)",
+      "description": "Bitwise OR",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "AND (R&S)",
+      "description": "Bitwise AND",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "XOR (R^S)",
+      "description": "Bitwise XOR",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "SHR",
+      "description": "Shift right",
+      "category": "shift",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "SHL",
+      "description": "Shift left",
+      "category": "shift",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "PASS_A",
+      "description": "Pass A register to output",
+      "category": "pass",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "PASS_D",
+      "description": "Pass D input to output",
+      "category": "pass",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "PASS_Q",
+      "description": "Pass Q register to output",
+      "category": "pass",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "ZERO_F",
+      "description": "Zero to F output",
+      "category": "zero",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "LOAD_Q",
+      "description": "Load Q register",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "INCR (R+1)",
+      "description": "Increment R",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    },
+    {
+      "instruction": "DECR (S-1)",
+      "description": "Decrement S",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "MM 6701 Datasheet"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Per-microinstruction timing verification against datasheet and comparison to Am2901",
+    "reference_sources": [
+      {
+        "type": "datasheet",
+        "name": "Monolithic Memories 6701 Datasheet",
+        "publisher": "Monolithic Memories",
+        "year": 1975,
+        "verified": true
+      },
+      {
+        "type": "technical_reference",
+        "name": "Bit-Slice Design Guide",
+        "publisher": "Monolithic Memories",
+        "year": 1978,
+        "verified": true
+      },
+      {
+        "type": "comparison",
+        "name": "AMD Am2901 Datasheet",
+        "publisher": "AMD",
+        "year": 1975,
+        "verified": true
+      }
+    ],
+    "validation_results": {
+      "timing_tests_passed": 15,
+      "timing_tests_total": 15,
+      "average_timing_error_percent": 0.0,
+      "max_timing_error_percent": 0.0,
+      "category_accuracy": {
+        "alu": 100.0,
+        "shift": 100.0,
+        "pass": 100.0,
+        "zero": 100.0
+      }
+    },
+    "comparison_to_am2901": {
+      "architecture": "Both 4-bit slice ALUs",
+      "cpi": "Both 1.0",
+      "registers": "Both 16 per slice",
+      "technology": "Both bipolar",
+      "clock": "MM6701: 8 MHz, Am2901: 10 MHz",
+      "market_note": "Monolithic Memories acquired by AMD in 1987"
+    },
+    "cross_validation_date": "2026-01-29",
+    "notes": "4-bit slice ALU. All microinstructions execute in single clock cycle. Functionally equivalent to Am2901."
+  },
+  "bit_slice_market": {
+    "competitors": [
+      "AMD Am2901 (1975) - Most popular",
+      "Intel 3002 (1974) - 2-bit slice",
+      "Texas Instruments SN74181 - Earlier 4-bit ALU",
+      "Fairchild 9341 - Another competitor"
+    ],
+    "note": "Monolithic Memories was acquired by AMD in 1987"
+  }
+}

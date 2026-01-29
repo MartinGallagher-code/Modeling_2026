@@ -1,0 +1,355 @@
+{
+  "processor": "Hitachi 6309",
+  "year": 1982,
+  "nickname": "The best 8-bit CPU ever made",
+  "specifications": {
+    "data_width_bits": 8,
+    "effective_width_bits": 32,
+    "clock_mhz_range": [
+      1.0,
+      3.5
+    ],
+    "clock_mhz_typical": 2.0,
+    "transistors": 12000,
+    "transistors_note": "Estimated, enhanced over 6809's 9000",
+    "technology": "CMOS",
+    "package": "40-pin DIP",
+    "base_architecture": "Motorola 6809"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      34
+    ],
+    "typical_cpi_native": 3.0,
+    "typical_cpi_emulation": 3.15,
+    "comparison_6809_cpi": 3.5
+  },
+  "validated_performance": {
+    "native_mode": {
+      "ips_min": 500000,
+      "ips_max": 1000000,
+      "mips_typical": 0.67
+    },
+    "emulation_mode": {
+      "ips_min": 450000,
+      "ips_max": 900000,
+      "mips_typical": 0.63
+    }
+  },
+  "modes": {
+    "native": {
+      "description": "Full 6309 features, ~17% faster than 6809",
+      "enabled_by": "Setting bit 0 of MD register",
+      "features": [
+        "Additional registers (E, F, W, V, 0)",
+        "32-bit accumulator Q",
+        "16x16 multiply (MULD)",
+        "32/16 division (DIVQ)",
+        "Block transfers (TFM)",
+        "Bit manipulation instructions"
+      ]
+    },
+    "emulation": {
+      "description": "6809-compatible, ~10% faster than 6809",
+      "enabled_by": "Default at reset (MD bit 0 = 0)",
+      "features": [
+        "Full 6809 compatibility",
+        "Improved internal timing"
+      ]
+    }
+  },
+  "registers": {
+    "6809_compatible": {
+      "A": "8-bit accumulator",
+      "B": "8-bit accumulator",
+      "D": "16-bit accumulator (A:B)",
+      "X": "16-bit index register",
+      "Y": "16-bit index register",
+      "S": "16-bit system stack pointer",
+      "U": "16-bit user stack pointer",
+      "PC": "16-bit program counter",
+      "CC": "8-bit condition codes",
+      "DP": "8-bit direct page register"
+    },
+    "6309_native_only": {
+      "E": "8-bit accumulator",
+      "F": "8-bit accumulator",
+      "W": "16-bit accumulator (E:F)",
+      "Q": "32-bit accumulator (D:W)",
+      "V": "16-bit general purpose",
+      "0": "Zero register (always 0)",
+      "MD": "Mode and error register"
+    }
+  },
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "technical",
+      "name": "6309 Instruction Set Reference",
+      "url": "http://www.intv.net/6309/",
+      "verified": true
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia Hitachi 6309",
+      "url": "https://en.wikipedia.org/wiki/Hitachi_6309",
+      "verified": true
+    },
+    {
+      "type": "community",
+      "name": "CoCo Community 6309 Documentation",
+      "url": "https://www.cocopedia.com/wiki/index.php/6309_Information",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "timing_tests": [
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles_6809": 2,
+      "expected_cycles_6309": 1,
+      "note": "1 cycle faster in native mode",
+      "source": "community"
+    },
+    {
+      "name": "LDA_imm",
+      "category": "data_transfer",
+      "expected_cycles_6809": 2,
+      "expected_cycles_6309": 2,
+      "source": "community"
+    },
+    {
+      "name": "LDA_dir",
+      "category": "memory",
+      "expected_cycles_6809": 4,
+      "expected_cycles_6309": 3,
+      "note": "1 cycle faster in native mode",
+      "source": "community"
+    },
+    {
+      "name": "LDD_imm",
+      "category": "data_transfer",
+      "expected_cycles_6809": 3,
+      "expected_cycles_6309": 3,
+      "source": "community"
+    },
+    {
+      "name": "LDW_imm",
+      "category": "data_transfer",
+      "expected_cycles_6309": 4,
+      "note": "6309-only instruction",
+      "source": "community"
+    },
+    {
+      "name": "LDQ_imm",
+      "category": "data_transfer",
+      "expected_cycles_6309": 5,
+      "note": "32-bit load, 6309-only",
+      "source": "community"
+    },
+    {
+      "name": "ADDA_imm",
+      "category": "alu",
+      "expected_cycles_6809": 2,
+      "expected_cycles_6309": 2,
+      "source": "community"
+    },
+    {
+      "name": "ADDD_imm",
+      "category": "alu",
+      "expected_cycles_6809": 4,
+      "expected_cycles_6309": 3,
+      "note": "1 cycle faster in native mode",
+      "source": "community"
+    },
+    {
+      "name": "MUL",
+      "category": "multiply_8x8",
+      "expected_cycles_6809": 11,
+      "expected_cycles_6309": 10,
+      "note": "8x8 unsigned multiply",
+      "source": "community"
+    },
+    {
+      "name": "MULD_imm",
+      "category": "multiply_16x16",
+      "expected_cycles_6309": 28,
+      "note": "16x16 signed multiply -> 32-bit Q, 6309-only",
+      "source": "community"
+    },
+    {
+      "name": "MULD_dir",
+      "category": "multiply_16x16",
+      "expected_cycles_6309": 27,
+      "note": "Direct page addressing",
+      "source": "community"
+    },
+    {
+      "name": "DIVD_imm",
+      "category": "divide",
+      "expected_cycles_6309": 25,
+      "note": "16/8 signed divide, 6309-only",
+      "source": "community"
+    },
+    {
+      "name": "DIVQ_imm",
+      "category": "divide",
+      "expected_cycles_6309": 34,
+      "note": "32/16 signed divide, 6309-only",
+      "source": "community"
+    },
+    {
+      "name": "TFM_forward",
+      "category": "block_transfer",
+      "expected_cycles_6309": "6+3n",
+      "note": "Block transfer, n = byte count, 6309-only",
+      "source": "community"
+    },
+    {
+      "name": "JMP_ext",
+      "category": "control",
+      "expected_cycles_6809": 4,
+      "expected_cycles_6309": 3,
+      "note": "1 cycle faster in native mode",
+      "source": "community"
+    },
+    {
+      "name": "JSR_ext",
+      "category": "control",
+      "expected_cycles_6809": 8,
+      "expected_cycles_6309": 7,
+      "note": "1 cycle faster in native mode",
+      "source": "community"
+    },
+    {
+      "name": "RTS",
+      "category": "control",
+      "expected_cycles_6809": 5,
+      "expected_cycles_6309": 4,
+      "note": "1 cycle faster in native mode",
+      "source": "community"
+    },
+    {
+      "name": "BEQ",
+      "category": "control",
+      "expected_cycles_6809": 3,
+      "expected_cycles_6309": 3,
+      "source": "community"
+    },
+    {
+      "name": "PSHS",
+      "category": "stack",
+      "expected_cycles_6809": "5+n",
+      "expected_cycles_6309": "4+n",
+      "note": "1 cycle faster base, +1 per byte pushed",
+      "source": "community"
+    },
+    {
+      "name": "PULS",
+      "category": "stack",
+      "expected_cycles_6809": "5+n",
+      "expected_cycles_6309": "4+n",
+      "note": "1 cycle faster base, +1 per byte pulled",
+      "source": "community"
+    },
+    {
+      "name": "ADDR",
+      "category": "alu",
+      "expected_cycles_6309": 4,
+      "note": "Inter-register add, 6309-only",
+      "source": "community"
+    },
+    {
+      "name": "BAND",
+      "category": "bit_manipulation",
+      "expected_cycles_6309": 7,
+      "note": "Bit AND to CC, 6309-only",
+      "source": "community"
+    }
+  ],
+  "new_instructions": {
+    "arithmetic": [
+      "MULD - 16x16 signed multiply -> 32-bit Q",
+      "DIVD - 16/8 signed divide",
+      "DIVQ - 32/16 signed divide",
+      "NEGD - Negate D",
+      "COMD - Complement D"
+    ],
+    "block_transfer": [
+      "TFM r+,r+ - Forward block transfer",
+      "TFM r-,r- - Reverse block transfer",
+      "TFM r+,r - Fill memory",
+      "TFM r,r+ - Read from port"
+    ],
+    "bit_manipulation": [
+      "BAND - AND bit to CC",
+      "BOR - OR bit to CC",
+      "BEOR - XOR bit to CC",
+      "BIAND - AND inverted bit to CC",
+      "BIOR - OR inverted bit to CC",
+      "BIEOR - XOR inverted bit to CC",
+      "LDBT - Load bit to memory",
+      "STBT - Store bit from CC"
+    ],
+    "inter_register": [
+      "ADDR - Add register to register",
+      "ADCR - Add with carry register to register",
+      "SUBR - Subtract register from register",
+      "SBCR - Subtract with borrow",
+      "ANDR - AND register with register",
+      "ORR - OR register with register",
+      "EORR - XOR register with register",
+      "CMPR - Compare register with register"
+    ],
+    "new_loads_stores": [
+      "LDE/STE - Load/store E",
+      "LDF/STF - Load/store F",
+      "LDW/STW - Load/store W (16-bit)",
+      "LDQ/STQ - Load/store Q (32-bit)"
+    ]
+  },
+  "cross_validation": {
+    "base_processor": "Motorola 6809",
+    "relationship": "Enhanced second-source with undocumented features",
+    "timing_comparison": {
+      "emulation_mode": "Runs 6809 code ~10% faster",
+      "native_mode": "Runs 6309 code ~17% faster than 6809 equivalent"
+    },
+    "compatible_software": [
+      "All 6809 software runs in emulation mode",
+      "NitrOS-9 - OS optimized for 6309 native mode",
+      "Many CoCo games have 6309 patches"
+    ]
+  },
+  "accuracy": {
+    "expected_cpi_native": 3.0,
+    "expected_cpi_emulation": 3.15,
+    "predicted_cpi_native": 2.97,
+    "predicted_cpi_emulation": 3.18,
+    "cpi_error_percent_native": 1.0,
+    "cpi_error_percent_emulation": 0.9,
+    "expected_ipc_native": 0.333,
+    "expected_ipc_emulation": 0.317,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "speedup_over_6809_native": 1.18,
+    "speedup_over_6809_emulation": 1.1,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "predicted_cpi": 2.971,
+    "expected_cpi": 3.0,
+    "cpi_error_percent": 0.97,
+    "ipc_error_percent": 0.97
+  }
+}

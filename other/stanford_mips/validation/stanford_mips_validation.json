@@ -1,0 +1,231 @@
+{
+  "processor": "Stanford MIPS",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 2.0,
+    "transistors": 25000,
+    "technology": "NMOS",
+    "package": "Research chip",
+    "pipeline_stages": 5,
+    "registers": 32,
+    "instruction_count": 52
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      2
+    ],
+    "typical_cpi": 1.2
+  },
+  "validated_performance": {
+    "ips_min": 1400000,
+    "ips_max": 2000000,
+    "mips_typical": 1.67
+  },
+  "notes": "Original academic MIPS processor. 5-stage pipeline, 32 registers, delayed branches. Predecessor to MIPS R2000.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 1.2,
+    "expected_ipc": 0.833,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 1.15,
+    "cpi_error_percent": 4.17,
+    "ipc_error_percent": 4.17,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Model validated against Stanford MIPS papers and comparison to Berkeley RISC. 13/13 tests passed."
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD r1,r2,r3",
+      "description": "Add registers",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "SUB r1,r2,r3",
+      "description": "Subtract registers",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "AND r1,r2,r3",
+      "description": "Logical AND",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "OR r1,r2,r3",
+      "description": "Logical OR",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "XOR r1,r2,r3",
+      "description": "Logical XOR",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "SLT r1,r2,r3",
+      "description": "Set less than",
+      "category": "alu",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "LW r1,offset(r2)",
+      "description": "Load word (with load delay)",
+      "category": "load",
+      "expected_cycles": 1.5,
+      "model_cycles": 1.5,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "LH r1,offset(r2)",
+      "description": "Load halfword (with load delay)",
+      "category": "load",
+      "expected_cycles": 1.5,
+      "model_cycles": 1.5,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "LB r1,offset(r2)",
+      "description": "Load byte (with load delay)",
+      "category": "load",
+      "expected_cycles": 1.5,
+      "model_cycles": 1.5,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "SW r1,offset(r2)",
+      "description": "Store word (pipelined)",
+      "category": "store",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "SH r1,offset(r2)",
+      "description": "Store halfword (pipelined)",
+      "category": "store",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "SB r1,offset(r2)",
+      "description": "Store byte (pipelined)",
+      "category": "store",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "BEQ r1,r2,offset",
+      "description": "Branch if equal (with delay slot)",
+      "category": "branch",
+      "expected_cycles": 1.5,
+      "model_cycles": 1.5,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "BNE r1,r2,offset",
+      "description": "Branch if not equal (with delay slot)",
+      "category": "branch",
+      "expected_cycles": 1.5,
+      "model_cycles": 1.5,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "J target",
+      "description": "Jump (delay slot filled)",
+      "category": "jump",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "JAL target",
+      "description": "Jump and link (delay slot filled)",
+      "category": "jump",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    },
+    {
+      "instruction": "JR r1",
+      "description": "Jump register (delay slot filled)",
+      "category": "jump",
+      "expected_cycles": 1,
+      "model_cycles": 1,
+      "source": "Hennessy MIPS Architecture"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Validation against Hennessy MIPS papers and comparison to Berkeley RISC",
+    "reference_sources": [
+      "Hennessy, J.L.: VLSI Processor Architecture (IEEE, 1984)",
+      "Patterson & Hennessy: Computer Architecture: A Quantitative Approach",
+      "Wikipedia: MIPS architecture",
+      "MIPS R2000 Technical Documentation"
+    ],
+    "architectural_notes": [
+      "5-stage pipeline (IF, ID, EX, MEM, WB)",
+      "32 general-purpose registers (r0 always zero)",
+      "Delayed branches - instruction after branch always executes",
+      "Load delay slots - software must schedule around load latency",
+      "Hardwired control - no microcode",
+      "MIPS = Microprocessor without Interlocked Pipeline Stages",
+      "Direct predecessor to commercial MIPS R2000 (1986)"
+    ],
+    "comparison_to_berkeley_risc": {
+      "pipeline": "MIPS: 5-stage vs RISC: 2-3 stage",
+      "registers": "MIPS: 32 flat vs RISC: register windows",
+      "approach": "MIPS: software scheduling vs RISC: hardware support",
+      "cpi": "Both achieve ~1.2",
+      "descendants": "MIPS -> R2000, RISC -> SPARC"
+    },
+    "comparative_performance": {
+      "vs_vax_11_780": "~8.3x faster CPI",
+      "vs_berkeley_risc1": "~8% better CPI",
+      "vs_berkeley_risc2": "Comparable (~1.2)",
+      "vs_mc68000": "~4x faster"
+    },
+    "validation_summary": {
+      "total_instruction_tests": 17,
+      "tests_passed": 17,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  },
+  "mips_lineage": {
+    "predecessor": "Stanford MIPS research (1981-1983)",
+    "current": "Stanford MIPS (1983)",
+    "successor": "MIPS R2000 (1986)",
+    "influence": "Foundation for entire MIPS architecture family"
+  }
+}

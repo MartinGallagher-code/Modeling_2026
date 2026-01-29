@@ -1,0 +1,184 @@
+{
+  "processor": "NEC uCOM-4",
+  "year": 1972,
+  "historical_note": "NEC's first microcontroller, TMS1000 competitor",
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.4,
+    "transistors": 7500,
+    "technology": "PMOS/NMOS",
+    "package": "28/42-pin DIP",
+    "architecture": "4-bit parallel ALU MCU"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      6,
+      6
+    ],
+    "typical_cpi": 6.0,
+    "notes": "Fixed 6-cycle timing like TMS1000"
+  },
+  "validated_performance": {
+    "ips_min": 66000,
+    "ips_max": 67000,
+    "kips_typical": 66.7
+  },
+  "notes": "NEC's TMS1000 competitor with fixed instruction timing and higher clock speed.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 6.0,
+    "expected_ipc": 0.167,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 6.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Fixed 6-cycle timing makes this trivially accurate"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD",
+      "description": "Add accumulator to memory",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "SUB",
+      "description": "Subtract memory from accumulator",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "AND",
+      "description": "Logical AND",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "MOV",
+      "description": "Move data between registers",
+      "category": "data_transfer",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "LD",
+      "description": "Load from memory",
+      "category": "memory",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "ST",
+      "description": "Store to memory",
+      "category": "memory",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "JMP",
+      "description": "Unconditional jump",
+      "category": "control",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "CALL",
+      "description": "Call subroutine",
+      "category": "control",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "IN",
+      "description": "Input from port",
+      "category": "io",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    },
+    {
+      "instruction": "OUT",
+      "description": "Output to port",
+      "category": "io",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "NEC uCOM-4 architecture"
+    }
+  ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "name": "TI TMS1000",
+        "relationship": "competitor",
+        "year": 1974,
+        "cpi": 6.0,
+        "notes": "American competitor, same fixed timing"
+      },
+      {
+        "name": "Rockwell PPS-4",
+        "relationship": "contemporary",
+        "year": 1972,
+        "cpi": 12.0,
+        "notes": "Serial ALU, much slower"
+      },
+      {
+        "name": "NEC uPD751",
+        "relationship": "successor",
+        "year": 1974,
+        "cpi": 8.0,
+        "notes": "Enhanced version with variable timing"
+      }
+    ],
+    "architectural_notes": [
+      "Fixed 6-cycle instruction timing (all instructions)",
+      "Parallel ALU (4-bit parallel processing)",
+      "Harvard architecture (separate program/data memory)",
+      "400 kHz clock (faster than TMS1000's 300 kHz)",
+      "NEC's first microcontroller design",
+      "Demonstrated Japanese semiconductor competitiveness"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 10,
+      "tests_passed": 10,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  },
+  "applications": {
+    "calculators": "Simple 4-function calculators",
+    "watches": "Digital watches and clocks",
+    "consumer_electronics": "TVs, radios, appliances",
+    "automotive": "Early automotive electronics"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.2,
+    "control": 0.15,
+    "io": 0.15
+  }
+}

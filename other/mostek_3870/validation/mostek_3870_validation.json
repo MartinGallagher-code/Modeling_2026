@@ -1,0 +1,172 @@
+{
+  "processor": "Mostek 3870",
+  "year": 1977,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 4.0,
+    "transistors": 8000,
+    "technology": "NMOS",
+    "package": "40-pin DIP",
+    "internal_ram": "64 bytes (scratchpad)",
+    "internal_rom": "2KB"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      20
+    ],
+    "typical_cpi": 6.0,
+    "notes": "F8-compatible but faster due to single-chip integration"
+  },
+  "validated_performance": {
+    "ips_min": 400000,
+    "ips_max": 700000,
+    "mips_typical": 0.67
+  },
+  "notes": "Single-chip F8 derivative, faster than multi-chip F8",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Mostek 3870 Datasheet",
+      "url": "http://www.bitsavers.org/components/mostek/3870/",
+      "verified": true
+    },
+    {
+      "type": "reference",
+      "name": "Fairchild F8 Guide to Programming (base architecture)",
+      "url": "http://www.bitsavers.org/components/fairchild/f8/",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "timing_tests": [
+    {
+      "name": "LR A,r",
+      "category": "register_ops",
+      "expected_cycles": 4,
+      "source": "F8 compatible, ~10% faster"
+    },
+    {
+      "name": "LR r,A",
+      "category": "register_ops",
+      "expected_cycles": 4,
+      "source": "F8 compatible, ~10% faster"
+    },
+    {
+      "name": "AS r",
+      "category": "register_ops",
+      "expected_cycles": 4,
+      "source": "F8 compatible"
+    },
+    {
+      "name": "LI n",
+      "category": "immediate",
+      "expected_cycles": 5,
+      "source": "F8 compatible"
+    },
+    {
+      "name": "AI n",
+      "category": "immediate",
+      "expected_cycles": 5,
+      "source": "F8 compatible"
+    },
+    {
+      "name": "LM",
+      "category": "memory_read",
+      "expected_cycles": 7,
+      "source": "F8 compatible"
+    },
+    {
+      "name": "AM",
+      "category": "memory_read",
+      "expected_cycles": 7,
+      "source": "F8 compatible"
+    },
+    {
+      "name": "ST",
+      "category": "memory_write",
+      "expected_cycles": 7,
+      "source": "F8 compatible"
+    },
+    {
+      "name": "BR addr",
+      "category": "branch",
+      "expected_cycles": 6,
+      "source": "F8 compatible, slightly faster"
+    },
+    {
+      "name": "BZ addr",
+      "category": "branch",
+      "expected_cycles": 6,
+      "source": "F8 compatible"
+    },
+    {
+      "name": "PI addr",
+      "category": "call_return",
+      "expected_cycles": 12,
+      "source": "F8 compatible"
+    },
+    {
+      "name": "POP",
+      "category": "call_return",
+      "expected_cycles": 11,
+      "source": "F8 compatible"
+    }
+  ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "name": "Fairchild F8",
+        "relationship": "base architecture",
+        "expected_similarity": "high",
+        "notes": "Mostek 3870 is faster single-chip version of F8"
+      },
+      {
+        "name": "Fairchild 3850",
+        "relationship": "CPU portion",
+        "expected_similarity": "high",
+        "notes": "3850 is the CPU chip of the multi-chip F8"
+      },
+      {
+        "name": "Mostek 3870/22",
+        "relationship": "variant",
+        "expected_similarity": "identical",
+        "notes": "Different ROM size variant"
+      }
+    ],
+    "timing_comparison": {
+      "F8_vs_3870": "3870 is ~15% faster due to single-chip integration",
+      "clock_comparison": "F8 @ 2MHz, 3870 @ 4MHz = 2x raw clock but same machine cycle concept"
+    },
+    "validation_rule": "F8-compatible with ~15% speedup factor for single-chip"
+  },
+  "accuracy": {
+    "expected_cpi": 6.0,
+    "expected_ipc": 0.1667,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 6.04,
+    "cpi_error_percent": 0.67,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "ipc_error_percent": 0.67
+  },
+  "instruction_mix": {
+    "register_ops": 0.4,
+    "immediate": 0.2,
+    "memory_read": 0.18,
+    "memory_write": 0.1,
+    "branch": 0.08,
+    "call_return": 0.04
+  }
+}

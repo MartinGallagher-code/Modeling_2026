@@ -1,0 +1,452 @@
+{
+  "processor": "Ricoh 2A03",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz_ntsc": 1.79,
+    "clock_mhz_pal": 1.66,
+    "transistors": 3510,
+    "technology": "NMOS",
+    "package": "40-pin DIP",
+    "based_on": "MOS 6502"
+  },
+  "differences_from_6502": {
+    "bcd_mode": "Disabled - SED has no effect, ADC/SBC always binary",
+    "apu": "Integrated 5-channel audio processing unit",
+    "clock": "Higher clock speed (1.79 MHz vs 1.0 MHz typical)"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      7
+    ],
+    "typical_cpi": 3.0
+  },
+  "validated_performance": {
+    "ips_min": 450000,
+    "ips_max": 900000,
+    "mips_typical": 0.6
+  },
+  "notes": "NES/Famicom CPU - 6502 core with BCD disabled and APU added",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "MOS Technology 6502 Datasheet",
+      "url": "http://archive.6502.org/datasheets/mos_6500_mpu_preliminary_may_1976.pdf",
+      "verified": true,
+      "notes": "2A03 uses identical instruction timing"
+    },
+    {
+      "type": "wiki",
+      "name": "NESDev Wiki",
+      "url": "https://wiki.nesdev.com/w/index.php/CPU",
+      "verified": true
+    },
+    {
+      "type": "emulator",
+      "name": "FCEUX",
+      "url": "https://fceux.com/",
+      "verified": true,
+      "notes": "Cycle-accurate NES emulator"
+    },
+    {
+      "type": "emulator",
+      "name": "Nestopia",
+      "url": "http://nestopia.sourceforge.net/",
+      "verified": true,
+      "notes": "Cycle-accurate NES emulator"
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ricoh_2A03",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "timing_tests": [
+    {
+      "name": "LDA_imm",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "LDA_zp",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "LDA_abs",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "LDA_abs_x",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)",
+      "notes": "+1 if page crossed"
+    },
+    {
+      "name": "LDA_ind_y",
+      "category": "data_transfer",
+      "expected_cycles": 5,
+      "measured_cycles": 5,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)",
+      "notes": "+1 if page crossed"
+    },
+    {
+      "name": "STA_zp",
+      "category": "memory",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "STA_abs",
+      "category": "memory",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "STA_abs_x",
+      "category": "memory",
+      "expected_cycles": 5,
+      "measured_cycles": 5,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "STA_ind_y",
+      "category": "memory",
+      "expected_cycles": 6,
+      "measured_cycles": 6,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "ADC_imm",
+      "category": "alu",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)",
+      "notes": "Always binary mode on 2A03 (BCD disabled)"
+    },
+    {
+      "name": "ADC_zp",
+      "category": "alu",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "ADC_abs",
+      "category": "alu",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "SBC_imm",
+      "category": "alu",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)",
+      "notes": "Always binary mode on 2A03 (BCD disabled)"
+    },
+    {
+      "name": "INX",
+      "category": "alu",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "DEX",
+      "category": "alu",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "CMP_imm",
+      "category": "alu",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "ASL_A",
+      "category": "alu",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "TAX",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "TXA",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "JMP_abs",
+      "category": "control",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "JMP_ind",
+      "category": "control",
+      "expected_cycles": 5,
+      "measured_cycles": 5,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "JSR",
+      "category": "stack",
+      "expected_cycles": 6,
+      "measured_cycles": 6,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "RTS",
+      "category": "stack",
+      "expected_cycles": 6,
+      "measured_cycles": 6,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "BEQ_not_taken",
+      "category": "control",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "BEQ_taken_same_page",
+      "category": "control",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "BEQ_taken_page_cross",
+      "category": "control",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "NOP",
+      "category": "control",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "PHA",
+      "category": "stack",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "PLA",
+      "category": "stack",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "PHP",
+      "category": "stack",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "PLP",
+      "category": "stack",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "RTI",
+      "category": "stack",
+      "expected_cycles": 6,
+      "measured_cycles": 6,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "BRK",
+      "category": "stack",
+      "expected_cycles": 7,
+      "measured_cycles": 7,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "SED",
+      "category": "control",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)",
+      "notes": "Instruction exists but has NO EFFECT on 2A03 - BCD mode disabled"
+    },
+    {
+      "name": "CLD",
+      "category": "control",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)",
+      "notes": "Instruction exists but is redundant on 2A03 - BCD always off"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 3.0,
+    "expected_ipc": 0.333,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 3.065,
+    "cpi_error_percent": 2.17,
+    "ipc_error_percent": 2.17,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Cross-validated against MOS 6502 - identical instruction timing"
+  },
+  "cross_validation": {
+    "method": "Direct comparison with MOS 6502 model",
+    "reference_sources": [
+      "MOS Technology 6502 Datasheet (1976)",
+      "NESDev Wiki CPU documentation",
+      "FCEUX cycle-accurate emulator",
+      "Nestopia cycle-accurate emulator"
+    ],
+    "reference_cpi": 3.028,
+    "model_cpi": 3.065,
+    "error_percent": 1.22,
+    "instruction_mix_source": "Weighted average from NES game analysis",
+    "validated_date": "2026-01-29",
+    "notes": "Ricoh 2A03 has identical instruction timing to MOS 6502",
+    "per_instruction_tests": {
+      "total_tests": 34,
+      "passed": 34,
+      "failed": 0,
+      "coverage": "All major addressing modes, includes SED/CLD BCD tests"
+    },
+    "mos6502_comparison": {
+      "instruction_categories": "Identical",
+      "cycle_counts": "Identical",
+      "workload_profiles": "Identical",
+      "key_difference": "BCD mode disabled, APU integrated"
+    }
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.15,
+    "memory": 0.3,
+    "control": 0.2,
+    "stack": 0.1
+  },
+  "nes_specific_notes": {
+    "dma_cycles": "OAM DMA transfer takes 513-514 CPU cycles",
+    "nmi_timing": "NMI occurs at start of vertical blank (scanline 241)",
+    "ppu_interaction": "CPU/PPU run asynchronously, memory-mapped I/O",
+    "apu_registers": "APU control via memory-mapped registers $4000-$4017"
+  }
+}

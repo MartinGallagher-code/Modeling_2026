@@ -1,0 +1,64 @@
+{
+  "name": "National IMP-16",
+  "year": 1973,
+  "clock_mhz": 0.5,
+  "bus_width": 16,
+  "transistors": 6000,
+  "timing_categories": {
+    "register": {
+      "cycles": 6,
+      "weight": 0.20,
+      "desc": "Register-register"
+    },
+    "immediate": {
+      "cycles": 8,
+      "weight": 0.15,
+      "desc": "Immediate operand"
+    },
+    "memory": {
+      "cycles": 10,
+      "weight": 0.20,
+      "desc": "Memory operations"
+    },
+    "indexed": {
+      "cycles": 12,
+      "weight": 0.10,
+      "desc": "Indexed addressing"
+    },
+    "branch": {
+      "cycles": 6,
+      "weight": 0.15,
+      "desc": "Branch instructions"
+    },
+    "jump": {
+      "cycles": 8,
+      "weight": 0.08,
+      "desc": "Jump/subroutine"
+    },
+    "shift": {
+      "cycles": 10,
+      "weight": 0.07,
+      "desc": "Shift operations"
+    },
+    "io": {
+      "cycles": 12,
+      "weight": 0.05,
+      "desc": "I/O operations"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      50000,
+      100000
+    ],
+    "cpi_range": [
+      6,
+      12
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "bit_slice"
+    ]
+  },
+  "source": "National IMP-16 Users Manual"
+}

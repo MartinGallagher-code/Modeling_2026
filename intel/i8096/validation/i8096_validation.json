@@ -1,0 +1,553 @@
+{
+  "processor": "Intel 8096",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 16,
+    "address_width_bits": 16,
+    "clock_mhz_range": [
+      8,
+      12
+    ],
+    "clock_mhz_typical": 12.0,
+    "transistors": 120000,
+    "technology": "CHMOS",
+    "package": "68-pin PLCC, 48-pin DIP",
+    "register_file_bytes": 232,
+    "dedicated_registers": 8,
+    "internal_ram": "232 bytes (register file)",
+    "internal_rom": "8KB (8096BH)"
+  },
+  "timing": {
+    "state_time_clocks": 3,
+    "cycles_per_instruction_range": [
+      2,
+      12
+    ],
+    "typical_cpi": 4.0,
+    "notes": "1 state time = 3 clock cycles; most instructions 2-4 states"
+  },
+  "validated_performance": {
+    "ips_min": 1000000,
+    "ips_max": 3000000,
+    "mips_typical": 3.0
+  },
+  "notes": "Dominated automotive ECUs 1985-2005",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel 8096 Datasheet",
+      "url": "http://datasheets.chipdb.org/Intel/MCS-96/datashts/8096.pdf",
+      "verified": true
+    },
+    {
+      "type": "manual",
+      "name": "MCS-96 Family User's Manual",
+      "url": "https://bitsavers.org/components/intel/MCS96/",
+      "verified": true
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip MCS-96",
+      "url": "https://en.wikichip.org/wiki/intel/mcs-96",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "timing_tests": [
+    {
+      "name": "ADD Rw,Rw",
+      "opcode": "0x64",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Add word register to word register"
+    },
+    {
+      "name": "ADDC Rw,Rw",
+      "opcode": "0x74",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Add with carry"
+    },
+    {
+      "name": "SUB Rw,Rw",
+      "opcode": "0x68",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Subtract word register from word register"
+    },
+    {
+      "name": "SUBC Rw,Rw",
+      "opcode": "0x78",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Subtract with carry"
+    },
+    {
+      "name": "AND Rw,Rw",
+      "opcode": "0x60",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Logical AND"
+    },
+    {
+      "name": "OR Rw,Rw",
+      "opcode": "0x80",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Logical OR"
+    },
+    {
+      "name": "XOR Rw,Rw",
+      "opcode": "0x84",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Logical XOR"
+    },
+    {
+      "name": "INC Rw",
+      "opcode": "0x07",
+      "category": "alu",
+      "expected_cycles": 2,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Increment word register"
+    },
+    {
+      "name": "DEC Rw",
+      "opcode": "0x05",
+      "category": "alu",
+      "expected_cycles": 2,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Decrement word register"
+    },
+    {
+      "name": "NOT Rw",
+      "opcode": "0x02",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Complement (one's complement)"
+    },
+    {
+      "name": "NEG Rw",
+      "opcode": "0x03",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Negate (two's complement)"
+    },
+    {
+      "name": "CLR Rw",
+      "opcode": "0x01",
+      "category": "alu",
+      "expected_cycles": 2,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Clear register to zero"
+    },
+    {
+      "name": "SHL Rw,#",
+      "opcode": "0x09",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Shift left by immediate"
+    },
+    {
+      "name": "SHR Rw,#",
+      "opcode": "0x08",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Shift right logical by immediate"
+    },
+    {
+      "name": "SHRA Rw,#",
+      "opcode": "0x0A",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Shift right arithmetic by immediate"
+    },
+    {
+      "name": "CMP Rw,Rw",
+      "opcode": "0x88",
+      "category": "alu",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Compare word registers"
+    },
+    {
+      "name": "LD Rw,[Rw]",
+      "opcode": "0xA0",
+      "category": "memory",
+      "expected_cycles": 4,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Load word indirect"
+    },
+    {
+      "name": "LDB Rb,[Rw]",
+      "opcode": "0xB0",
+      "category": "memory",
+      "expected_cycles": 4,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Load byte indirect"
+    },
+    {
+      "name": "ST Rw,[Rw]",
+      "opcode": "0xC0",
+      "category": "memory",
+      "expected_cycles": 5,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Store word indirect"
+    },
+    {
+      "name": "STB Rb,[Rw]",
+      "opcode": "0xC4",
+      "category": "memory",
+      "expected_cycles": 5,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Store byte indirect"
+    },
+    {
+      "name": "PUSH Rw",
+      "opcode": "0xC8",
+      "category": "memory",
+      "expected_cycles": 5,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Push word to stack"
+    },
+    {
+      "name": "POP Rw",
+      "opcode": "0xCC",
+      "category": "memory",
+      "expected_cycles": 5,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Pop word from stack"
+    },
+    {
+      "name": "MUL Rl,Rw",
+      "opcode": "0xFE/0x6C",
+      "category": "multiply",
+      "expected_cycles": 6,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "16x16->32 signed multiply (hardware)"
+    },
+    {
+      "name": "MULU Rl,Rw",
+      "opcode": "0xFE/0x4C",
+      "category": "multiply",
+      "expected_cycles": 6,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "16x16->32 unsigned multiply (hardware)"
+    },
+    {
+      "name": "DIV Rl,Rw",
+      "opcode": "0xFE/0x8C",
+      "category": "divide",
+      "expected_cycles": 12,
+      "state_times": 4,
+      "source": "datasheet",
+      "notes": "32/16->16 signed divide (hardware)"
+    },
+    {
+      "name": "DIVU Rl,Rw",
+      "opcode": "0xFE/0x0C",
+      "category": "divide",
+      "expected_cycles": 12,
+      "state_times": 4,
+      "source": "datasheet",
+      "notes": "32/16->16 unsigned divide (hardware)"
+    },
+    {
+      "name": "SJMP",
+      "opcode": "0x20",
+      "category": "branch",
+      "expected_cycles": 3,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Short jump (8-bit displacement)"
+    },
+    {
+      "name": "LJMP",
+      "opcode": "0xE7",
+      "category": "branch",
+      "expected_cycles": 4,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Long jump (16-bit address)"
+    },
+    {
+      "name": "BR [Rw]",
+      "opcode": "0xE3",
+      "category": "branch",
+      "expected_cycles": 4,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Branch indirect"
+    },
+    {
+      "name": "SCALL",
+      "opcode": "0x28",
+      "category": "branch",
+      "expected_cycles": 5,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Short call (8-bit displacement)"
+    },
+    {
+      "name": "LCALL",
+      "opcode": "0xEF",
+      "category": "branch",
+      "expected_cycles": 6,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Long call (16-bit address)"
+    },
+    {
+      "name": "RET",
+      "opcode": "0xF0",
+      "category": "branch",
+      "expected_cycles": 5,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Return from subroutine"
+    },
+    {
+      "name": "JC",
+      "opcode": "0xDB",
+      "category": "branch",
+      "expected_cycles": 4,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Jump if carry (taken)"
+    },
+    {
+      "name": "JNC",
+      "opcode": "0xD3",
+      "category": "branch",
+      "expected_cycles": 4,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Jump if not carry (taken)"
+    },
+    {
+      "name": "JE",
+      "opcode": "0xDF",
+      "category": "branch",
+      "expected_cycles": 4,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Jump if equal (taken)"
+    },
+    {
+      "name": "JNE",
+      "opcode": "0xD7",
+      "category": "branch",
+      "expected_cycles": 4,
+      "state_times": 2,
+      "source": "datasheet",
+      "notes": "Jump if not equal (taken)"
+    },
+    {
+      "name": "NOP",
+      "opcode": "0xFD",
+      "category": "peripheral",
+      "expected_cycles": 2,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "No operation"
+    },
+    {
+      "name": "DI",
+      "opcode": "0xFA",
+      "category": "peripheral",
+      "expected_cycles": 2,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Disable interrupts"
+    },
+    {
+      "name": "EI",
+      "opcode": "0xFB",
+      "category": "peripheral",
+      "expected_cycles": 2,
+      "state_times": 1,
+      "source": "datasheet",
+      "notes": "Enable interrupts"
+    },
+    {
+      "name": "TRAP",
+      "opcode": "0xF7",
+      "category": "peripheral",
+      "expected_cycles": 8,
+      "state_times": 3,
+      "source": "datasheet",
+      "notes": "Software interrupt"
+    },
+    {
+      "name": "RST",
+      "opcode": "0xFF",
+      "category": "peripheral",
+      "expected_cycles": 8,
+      "state_times": 3,
+      "source": "datasheet",
+      "notes": "Software reset"
+    }
+  ],
+  "cross_validation": {
+    "related_processors": [
+      {
+        "name": "Intel 8051",
+        "relationship": "predecessor (8-bit MCU)",
+        "expected_similarity": "low",
+        "notes": "Different architecture - accumulator vs register file"
+      },
+      {
+        "name": "Intel 8097",
+        "relationship": "ROM-less variant",
+        "expected_similarity": "identical",
+        "notes": "Same CPU core, external ROM required"
+      },
+      {
+        "name": "Intel 80196",
+        "relationship": "enhanced version",
+        "expected_similarity": "high",
+        "notes": "More I/O, faster clock, same instruction set"
+      },
+      {
+        "name": "Intel 80296",
+        "relationship": "family member",
+        "expected_similarity": "high",
+        "notes": "Extended addressing, more features"
+      }
+    ],
+    "timing_consistency": {
+      "one_state_time": [
+        "ADD",
+        "SUB",
+        "AND",
+        "OR",
+        "XOR",
+        "NOT",
+        "NEG",
+        "INC",
+        "DEC",
+        "CLR",
+        "SHL",
+        "SHR",
+        "SHRA",
+        "CMP",
+        "NOP",
+        "DI",
+        "EI",
+        "SJMP"
+      ],
+      "two_state_times": [
+        "LD",
+        "LDB",
+        "ST",
+        "STB",
+        "PUSH",
+        "POP",
+        "MUL",
+        "MULU",
+        "LJMP",
+        "BR",
+        "SCALL",
+        "LCALL",
+        "RET",
+        "JC",
+        "JNC",
+        "JE",
+        "JNE"
+      ],
+      "four_state_times": [
+        "DIV",
+        "DIVU"
+      ],
+      "validation_rule": "All timing in state times (1 state = 3 clocks)"
+    },
+    "architectural_constraints": {
+      "state_time": "3 clock cycles",
+      "register_file": "232 bytes at addresses 00h-E7h",
+      "dedicated_registers": "R0-R14 (word aligned)",
+      "sfr_space": "Addresses E8h-FFh",
+      "hardware_multiply": "16x16->32 in 6 cycles",
+      "hardware_divide": "32/16->16+rem in 12 cycles"
+    }
+  },
+  "automotive_features": {
+    "pwm_outputs": "3 channels for motor control",
+    "adc_resolution": "10-bit",
+    "adc_channels": 8,
+    "high_speed_io": "4 capture/compare channels",
+    "serial_port": "Full-duplex UART",
+    "watchdog_timer": "For safety-critical operation",
+    "applications": [
+      "Engine control units (ECU)",
+      "Anti-lock braking systems (ABS)",
+      "Transmission control",
+      "Fuel injection",
+      "Climate control"
+    ]
+  },
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "expected_ipc": 0.25,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 4.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.35,
+    "memory": 0.25,
+    "multiply": 0.05,
+    "divide": 0.02,
+    "branch": 0.18,
+    "peripheral": 0.15
+  }
+}

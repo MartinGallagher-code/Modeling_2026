@@ -1,0 +1,83 @@
+{
+  "processor": "Hitachi HD6301",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 1.0,
+    "transistors": 40000,
+    "technology": "CMOS",
+    "package": "40-pin DIP/52-pin QFP",
+    "compatibility": "Enhanced 6801"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      10
+    ],
+    "typical_cpi": 3.5
+  },
+  "validated_performance": {
+    "ips_min": 200000,
+    "ips_max": 450000,
+    "mips_typical": 0.285
+  },
+  "notes": "Hitachi enhanced 6801 MCU with faster execution",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Motorola M6801 Datasheet (baseline timing)",
+      "url": "https://www.nxp.com/docs/en/data-sheet/M6801.pdf",
+      "verified": true
+    },
+    {
+      "type": "technical_manual",
+      "name": "Hitachi HD6301 Technical Manual",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 3.5,
+    "expected_ipc": 0.286,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 3.37,
+    "cpi_error_percent": 3.71,
+    "validation_passed": true,
+    "ipc_error_percent": 3.71,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.25,
+    "control": 0.15,
+    "stack": 0.05,
+    "call_return": 0.05,
+    "notes": "Typical embedded MCU workload for automotive/industrial"
+  },
+  "cross_validation": {
+    "methodology": "Enhanced timing based on 6801 with ~8% improvement",
+    "reference_processor": "Motorola M6801",
+    "timing_verified": true,
+    "improvement_vs_6801": "~8% faster CPI",
+    "notes": "Hitachi optimized microcode for faster execution"
+  },
+  "on_chip_features": {
+    "ram": "128 bytes",
+    "rom": "Up to 4K mask ROM",
+    "timer": "16-bit free-running",
+    "serial": "Full-duplex UART",
+    "io_ports": "Multiple programmable"
+  }
+}

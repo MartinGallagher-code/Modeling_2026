@@ -1,0 +1,69 @@
+{
+  "name": "National PACE",
+  "year": 1975,
+  "clock_mhz": 2.0,
+  "bus_width": 16,
+  "transistors": 10000,
+  "timing_categories": {
+    "register": {
+      "cycles": 8,
+      "weight": 0.18,
+      "desc": "Register-register"
+    },
+    "immediate": {
+      "cycles": 10,
+      "weight": 0.15,
+      "desc": "Immediate operand"
+    },
+    "memory": {
+      "cycles": 12,
+      "weight": 0.20,
+      "desc": "Memory operations"
+    },
+    "indexed": {
+      "cycles": 14,
+      "weight": 0.10,
+      "desc": "Indexed addressing"
+    },
+    "branch": {
+      "cycles": 8,
+      "weight": 0.12,
+      "desc": "Branch instructions"
+    },
+    "jump": {
+      "cycles": 10,
+      "weight": 0.08,
+      "desc": "Jump/subroutine"
+    },
+    "stack": {
+      "cycles": 12,
+      "weight": 0.07,
+      "desc": "Stack operations"
+    },
+    "io": {
+      "cycles": 14,
+      "weight": 0.05,
+      "desc": "I/O operations"
+    },
+    "special": {
+      "cycles": 10,
+      "weight": 0.05,
+      "desc": "Special instructions"
+    }
+  },
+  "validation_targets": {
+    "ips_range": [
+      150000,
+      300000
+    ],
+    "cpi_range": [
+      8,
+      14
+    ],
+    "expected_bottlenecks": [
+      "memory",
+      "p_channel"
+    ]
+  },
+  "source": "National PACE Users Manual"
+}

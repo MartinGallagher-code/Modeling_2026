@@ -1,0 +1,230 @@
+{
+  "processor": "MOS 6509",
+  "year": 1980,
+  "specifications": {
+    "data_width_bits": 8,
+    "address_width_bits": 16,
+    "banked_address_bits": 20,
+    "address_space_mb": 1,
+    "clock_mhz": 1.0,
+    "transistors": 4000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "comparison_to_6502": {
+    "instruction_set": "identical",
+    "instruction_timing": "identical",
+    "differences": [
+      "Bank switching via $0000 (IndBank) and $0001 (ExecBank)",
+      "20-bit address space with banking (1 MB)",
+      "LDA (zp),Y uses IndBank for address",
+      "All other access uses ExecBank"
+    ]
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      7
+    ],
+    "typical_cpi": 3.0
+  },
+  "validated_performance": {
+    "ips_min": 250000,
+    "ips_max": 500000,
+    "mips_typical": 0.326
+  },
+  "notes": "Commodore CBM-II (B128, B256, P500) CPU with bank switching",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "MOS Technology 6502 Datasheet",
+      "url": "http://archive.6502.org/datasheets/mos_6500_mpu_preliminary_may_1976.pdf",
+      "verified": true,
+      "notes": "6509 uses same core timing as 6502"
+    },
+    {
+      "type": "reference",
+      "name": "Commodore CBM-II Technical Reference",
+      "url": "https://www.commodore.ca/commodore-products/commodore-b128-the-humble-6509/",
+      "verified": true
+    },
+    {
+      "type": "cross_reference",
+      "name": "MOS 6502 Model (this project)",
+      "url": "mos_wdc/mos6502/current/mos6502_validated.py",
+      "verified": true,
+      "notes": "Timing data cross-validated from 6502 model"
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "timing_tests": [
+    {
+      "name": "LDA_imm",
+      "category": "data_transfer",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "LDA_zp",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "LDA_abs",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "STA_zp",
+      "category": "memory",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "STA_abs",
+      "category": "memory",
+      "expected_cycles": 4,
+      "measured_cycles": 4,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "ADC_imm",
+      "category": "alu",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "INX",
+      "category": "alu",
+      "expected_cycles": 2,
+      "measured_cycles": 2,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "JMP_abs",
+      "category": "control",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "JSR",
+      "category": "stack",
+      "expected_cycles": 6,
+      "measured_cycles": 6,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "RTS",
+      "category": "stack",
+      "expected_cycles": 6,
+      "measured_cycles": 6,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "MOS 6502 Datasheet (1976)"
+    },
+    {
+      "name": "STA_IndBank",
+      "category": "memory",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "CBM-II Technical Reference",
+      "notes": "Store to $0000 (IndBank) - normal zero-page timing"
+    },
+    {
+      "name": "STA_ExecBank",
+      "category": "memory",
+      "expected_cycles": 3,
+      "measured_cycles": 3,
+      "error_percent": 0.0,
+      "passed": true,
+      "source": "CBM-II Technical Reference",
+      "notes": "Store to $0001 (ExecBank) - normal zero-page timing"
+    }
+  ],
+  "accuracy": {
+    "expected_cpi": 3.0,
+    "expected_ipc": 0.333,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 3.065,
+    "cpi_error_percent": 2.17,
+    "ipc_error_percent": 2.17,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Timing identical to 6502 - cross-validated from MOS datasheet"
+  },
+  "cross_validation": {
+    "method": "Cross-reference with validated MOS 6502 model",
+    "reference_sources": [
+      "MOS Technology 6502 Datasheet (1976)",
+      "MOS 6502 model (this project)",
+      "CBM-II Technical Reference"
+    ],
+    "reference_cpi": 3.028,
+    "model_cpi": 3.065,
+    "error_percent": 1.22,
+    "instruction_mix_source": "Weighted average from 6502 programs",
+    "validated_date": "2026-01-29",
+    "notes": "6509 is 6502 with bank switching - same timing applies",
+    "per_instruction_tests": {
+      "total_tests": 12,
+      "passed": 12,
+      "failed": 0,
+      "coverage": "Core instructions plus bank register access"
+    }
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.15,
+    "memory": 0.3,
+    "control": 0.2,
+    "stack": 0.1
+  },
+  "bank_switching": {
+    "indbank_address": "0x0000",
+    "execbank_address": "0x0001",
+    "bank_bits": 4,
+    "num_banks": 16,
+    "bank_size_kb": 64,
+    "total_addressable_mb": 1,
+    "notes": "IndBank affects (zp),Y addressing; ExecBank affects all other access"
+  }
+}

@@ -1,10 +1,11 @@
 {
-  "generated": "2026-01-28T22:51:00.963567",
-  "total_processors": 80,
+  "generated": "2026-01-29T12:01:23.681982",
+  "total_processors": 122,
   "families": {
     "intel": {
-      "count": 21,
+      "count": 24,
       "processors": [
+        "i3002",
         "i4004",
         "i4040",
         "i8008",
@@ -14,6 +15,7 @@
         "i80287",
         "i80386",
         "i80387",
+        "i8039",
         "i8048",
         "i80486",
         "i8051",
@@ -21,6 +23,7 @@
         "i8085",
         "i8086",
         "i8088",
+        "i8096",
         "i860",
         "i8748",
         "i8751",
@@ -29,7 +32,7 @@
       ]
     },
     "motorola": {
-      "count": 15,
+      "count": 16,
       "processors": [
         "m6800",
         "m68000",
@@ -45,6 +48,7 @@
         "m6809",
         "m68881",
         "m68882",
+        "m68hc05",
         "m68hc11"
       ]
     },
@@ -70,604 +74,80 @@
       ]
     },
     "other": {
-      "count": 33,
+      "count": 71,
       "processors": [
         "aim__ppc_601",
         "alpha21064",
         "am29000",
         "am2901",
         "am2903",
+        "am9511",
+        "am9512",
         "amd_29000",
+        "ami_s2811",
         "arm1",
         "arm2",
         "arm3",
         "arm6",
         "berkeley_risc1",
+        "berkeley_risc2",
+        "cdp1804",
+        "cdp1806",
+        "cp1600",
+        "f100l",
         "f8",
+        "hd6301",
+        "hd64180",
+        "hitachi_6309",
+        "hm6100",
         "hp_pa_risc",
+        "imp16",
         "intersil6100",
+        "lh5801",
+        "mb8861",
+        "mm6701",
+        "mn1610",
+        "mn601",
+        "mos6507",
+        "mos6509",
+        "mostek_3870",
         "nc4016",
         "nec_v20",
+        "nec_v30",
         "ns32016",
         "ns32032",
+        "ns32081",
+        "pace",
         "pic1650",
+        "pps4",
+        "pps4_1",
         "r2000",
+        "r6511",
+        "r65c02",
         "rca1802",
         "rca1805",
+        "ricoh_2a03",
         "rtx2000",
         "scmp",
         "signetics2650",
+        "signetics_8x300",
+        "sn74s481",
         "sparc",
+        "stanford_mips",
         "sun_spark",
+        "sy6502a",
         "t414",
         "tms1000",
         "tms320c10",
         "tms9900",
         "tms9995",
+        "ucom4",
+        "upd751",
+        "upd7720",
+        "upd780",
+        "wd16",
         "we32000"
       ]
-    }
-  },
-  "processors": {
-    "intel/i8085": {
-      "family": "intel",
-      "name": "i8085",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i80386": {
-      "family": "intel",
-      "name": "i80386",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i8048": {
-      "family": "intel",
-      "name": "i8048",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i80387": {
-      "family": "intel",
-      "name": "i80387",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i8748": {
-      "family": "intel",
-      "name": "i8748",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i80486": {
-      "family": "intel",
-      "name": "i80486",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i8008": {
-      "family": "intel",
-      "name": "i8008",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i4004": {
-      "family": "intel",
-      "name": "i4004",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i4040": {
-      "family": "intel",
-      "name": "i4040",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i80188": {
-      "family": "intel",
-      "name": "i80188",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i80186": {
-      "family": "intel",
-      "name": "i80186",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i8086": {
-      "family": "intel",
-      "name": "i8086",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i8088": {
-      "family": "intel",
-      "name": "i8088",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i8080": {
-      "family": "intel",
-      "name": "i8080",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i8751": {
-      "family": "intel",
-      "name": "i8751",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/pentium": {
-      "family": "intel",
-      "name": "pentium",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i80286": {
-      "family": "intel",
-      "name": "i80286",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i80287": {
-      "family": "intel",
-      "name": "i80287",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i8051": {
-      "family": "intel",
-      "name": "i8051",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/i860": {
-      "family": "intel",
-      "name": "i860",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "intel/iapx432": {
-      "family": "intel",
-      "name": "iapx432",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m6805": {
-      "family": "motorola",
-      "name": "m6805",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m6802": {
-      "family": "motorola",
-      "name": "m6802",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68040": {
-      "family": "motorola",
-      "name": "m68040",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68881": {
-      "family": "motorola",
-      "name": "m68881",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68030": {
-      "family": "motorola",
-      "name": "m68030",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68008": {
-      "family": "motorola",
-      "name": "m68008",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68000": {
-      "family": "motorola",
-      "name": "m68000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m6801": {
-      "family": "motorola",
-      "name": "m6801",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m6800": {
-      "family": "motorola",
-      "name": "m6800",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m6809": {
-      "family": "motorola",
-      "name": "m6809",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68hc11": {
-      "family": "motorola",
-      "name": "m68hc11",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68882": {
-      "family": "motorola",
-      "name": "m68882",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68010": {
-      "family": "motorola",
-      "name": "m68010",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68020": {
-      "family": "motorola",
-      "name": "m68020",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "motorola/m68060": {
-      "family": "motorola",
-      "name": "m68060",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "mos_wdc/wdc65816": {
-      "family": "mos_wdc",
-      "name": "wdc65816",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "mos_wdc/mos6510": {
-      "family": "mos_wdc",
-      "name": "mos6510",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "mos_wdc/wdc65c02": {
-      "family": "mos_wdc",
-      "name": "wdc65c02",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "mos_wdc/mos6502": {
-      "family": "mos_wdc",
-      "name": "mos6502",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "zilog/z80a": {
-      "family": "zilog",
-      "name": "z80a",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "zilog/z80": {
-      "family": "zilog",
-      "name": "z80",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "zilog/z8000": {
-      "family": "zilog",
-      "name": "z8000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "zilog/z80b": {
-      "family": "zilog",
-      "name": "z80b",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "zilog/z8": {
-      "family": "zilog",
-      "name": "z8",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "zilog/z180": {
-      "family": "zilog",
-      "name": "z180",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "zilog/z80000": {
-      "family": "zilog",
-      "name": "z80000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/pic1650": {
-      "family": "other",
-      "name": "pic1650",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/berkeley_risc1": {
-      "family": "other",
-      "name": "berkeley_risc1",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/sun_spark": {
-      "family": "other",
-      "name": "sun_spark",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/amd_29000": {
-      "family": "other",
-      "name": "amd_29000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/intersil6100": {
-      "family": "other",
-      "name": "intersil6100",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/am2903": {
-      "family": "other",
-      "name": "am2903",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/arm3": {
-      "family": "other",
-      "name": "arm3",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/tms9900": {
-      "family": "other",
-      "name": "tms9900",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/rca1805": {
-      "family": "other",
-      "name": "rca1805",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/rca1802": {
-      "family": "other",
-      "name": "rca1802",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/arm2": {
-      "family": "other",
-      "name": "arm2",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/alpha21064": {
-      "family": "other",
-      "name": "alpha21064",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/scmp": {
-      "family": "other",
-      "name": "scmp",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/nec_v20": {
-      "family": "other",
-      "name": "nec_v20",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/tms1000": {
-      "family": "other",
-      "name": "tms1000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/hp_pa_risc": {
-      "family": "other",
-      "name": "hp_pa_risc",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/rtx2000": {
-      "family": "other",
-      "name": "rtx2000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/aim__ppc_601": {
-      "family": "other",
-      "name": "aim__ppc_601",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/am2901": {
-      "family": "other",
-      "name": "am2901",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/we32000": {
-      "family": "other",
-      "name": "we32000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/ns32016": {
-      "family": "other",
-      "name": "ns32016",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/t414": {
-      "family": "other",
-      "name": "t414",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/tms9995": {
-      "family": "other",
-      "name": "tms9995",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/r2000": {
-      "family": "other",
-      "name": "r2000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/tms320c10": {
-      "family": "other",
-      "name": "tms320c10",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/nc4016": {
-      "family": "other",
-      "name": "nc4016",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/f8": {
-      "family": "other",
-      "name": "f8",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/arm1": {
-      "family": "other",
-      "name": "arm1",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/ns32032": {
-      "family": "other",
-      "name": "ns32032",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/arm6": {
-      "family": "other",
-      "name": "arm6",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/signetics2650": {
-      "family": "other",
-      "name": "signetics2650",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/sparc": {
-      "family": "other",
-      "name": "sparc",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
-    },
-    "other/am29000": {
-      "family": "other",
-      "name": "am29000",
-      "has_validated_model": true,
-      "has_validation_data": true,
-      "has_documentation": true
     }
   }
 }

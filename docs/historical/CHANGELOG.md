@@ -4,6 +4,85 @@ All notable changes to the Modeling_2026 project are documented here.
 
 ---
 
+## [3.0.0] - January 29, 2026
+
+### Major Release: Complete Pre-1986 Collection (117 Models)
+
+#### Added - 37 New Processor Models
+
+**Tier 1 - Gaming/Consumer Icons:**
+- Ricoh 2A03 (1983) - NES/Famicom CPU (6502 without BCD)
+- MOS 6507 (1975) - Atari 2600 CPU
+- GI CP1600 (1975) - Intellivision game console CPU
+- NEC V30 (1984) - 16-bit companion to V20
+- Hitachi 6309 (1982) - Enhanced 6809, "best 8-bit ever"
+
+**Tier 2 - Historical Firsts:**
+- Rockwell PPS-4 (1972) - Third commercial microprocessor
+- Berkeley RISC II (1983) - SPARC predecessor
+- Stanford MIPS (1983) - Original academic MIPS
+- Intel 8096 (1982) - 16-bit automotive MCU
+- AMD Am9511 (1977) - First math coprocessor
+- NEC μPD7720 (1980) - Early speech DSP
+
+**6502 Family Variants:**
+- MOS 6509 (1980) - CBM-II CPU with bank switching
+- Rockwell R65C02 (1983) - CMOS 6502 with extensions
+- Synertek SY6502A (1978) - Licensed 6502
+- Rockwell R6511 (1980) - 6502 with peripherals
+
+**Japanese Processors:**
+- NEC μPD780 (1976) - Z80 clone
+- Hitachi HD64180 (1985) - Z180 equivalent
+- Hitachi HD6301 (1983) - Enhanced 6801 MCU
+- Fujitsu MB8861 (1977) - 6800 clone
+- Sharp LH5801 (1981) - Pocket computer CPU
+- Panafacom MN1610 (1975) - Early Japanese 16-bit
+
+**4-bit Processors:**
+- Rockwell PPS-4/1 (1976) - Single-chip PPS-4
+- NEC μCOM-4 (1972) - TMS1000 competitor
+- NEC μPD751 (1974) - Early 4-bit MCU
+
+**Bit-slice and Math Coprocessors:**
+- Intel 3002 (1974) - Intel's bit-slice
+- TI SN74S481 (1976) - TI bit-slice ALU
+- Monolithic Memories 6701 (1975) - Bit-slice ALU
+- AMD Am9512 (1979) - Floating-point APU
+- National NS32081 (1982) - NS32000 FPU
+
+**DSPs and Signal Processors:**
+- AMI S2811 (1978) - Early signal processor
+- Signetics 8X300 (1976) - Bipolar signal processor
+
+**16-bit Pioneers:**
+- National IMP-16 (1973) - Early 16-bit bit-slice based
+- National PACE (1975) - p-channel MOS 16-bit
+- Data General mN601 (1977) - microNova
+- Western Digital WD16 (1977) - LSI-11 compatible
+- Ferranti F100-L (1976) - British military 16-bit
+
+**COSMAC and Other:**
+- RCA CDP1804 (1980) - COSMAC with timer
+- RCA CDP1806 (1985) - Final COSMAC
+- Harris HM6100 (1978) - Faster CMOS PDP-8
+- Motorola 68HC05 (1984) - Low-cost 6805
+- Intel 8039 (1976) - MCS-48 ROM-less
+- Mostek 3870 (1977) - F8 single-chip
+
+#### Changed
+- Updated all validation with cross-validated CPI targets
+- Reorganized expected CPI database with research-based values
+- TODO_PRE1986_CPUS.md now shows all 42 items complete
+
+#### Validation
+- **117 models total** (was 80)
+- **100% pass rate** (117/117)
+- **116 fully validated** (<5% error)
+- **1 passed** (<10% error): NEC V30 at 5.5%
+
+---
+
 ## [2.0.0] - January 24, 2026
 
 ### Major Release: Comprehensive Historical Coverage
