@@ -266,3 +266,385 @@ New candidates identified for future modeling work.
 | Stack Machines | 2 | ✓ Complete |
 | Unique/Other | 4 | ✓ Complete |
 | **TOTAL Phase 2** | **77** | **✓ ALL COMPLETE** |
+
+---
+
+# PHASE 3: Further Pre-1986 Processors
+
+Additional historically significant pre-1986 CPUs not yet in the collection.
+
+---
+
+## 4-Bit Processors
+
+- [ ] **National COP400** (1977) - Hugely popular 4-bit MCU, billions manufactured, used in everything from appliances to toys
+- [ ] **National COP420** (1979) - Enhanced COP400 with more RAM/ROM
+- [ ] **National COP444** (1982) - Top-end COP4xx, 2KB ROM, 160 nibbles RAM
+- [ ] **Matsushita MN1400** (1974) - Early Japanese 4-bit, used in Panasonic consumer products
+- [ ] **Sharp SM4** (1980s) - Sharp's 4-bit MCU, used in calculators and Game & Watch handhelds
+- [ ] **Sharp SM5** (1980s) - Enhanced SM4, massively produced for LCD games
+- [ ] **NEC µPD546** (1975) - Early calculator/appliance 4-bit MCU
+- [ ] **Hitachi HMCS40 (HD44780 MCU)** (1980) - 4-bit MCU behind the iconic HD44780 LCD controller
+
+## 8-Bit Processors
+
+- [ ] **TI TMS7000** (1981) - TI's main 8-bit MCU family, used in speech/modem products and TI-CC40
+- [ ] **National NSC800** (1979) - Z80-compatible CMOS, used in Epson HX-20 (first laptop) and military systems
+- [ ] **Zilog Super8 (Z8S800)** (1982) - Enhanced Z8 with pipelining and expanded addressing
+- [ ] **Zilog Z280** (1985) - Enhanced Z80 with MMU, cache, and on-chip peripherals
+- [ ] **Motorola 6803** (1981) - Enhanced 6801 with more I/O, widely used in automotive
+- [ ] **Motorola 6804** (1983) - Minimal 8-bit (just 1KB ROM, 64B RAM), ultra-low-cost applications
+- [ ] **MOS 8501** (1984) - Commodore C16/Plus4 CPU, HMOS 6502 variant with integrated clock
+- [ ] **MOS 8502** (1985) - Commodore C128 CPU, 2MHz 6502 variant
+- [ ] **NEC µPD7801** (1980) - NEC's proprietary 8-bit MCU, large Japanese market share
+- [ ] **NEC µPD7810** (1983) - Enhanced 7801, 16-bit ops, used in printers and terminals
+- [ ] **Matsushita MN1800** (1980) - Panasonic's 8-bit MCU for consumer electronics
+- [ ] **OKI MSM80C85** (1983) - CMOS 8085 second-source, notable for low-power portable use
+
+## 16-Bit Processors
+
+- [ ] **TI TMS9980** (1976) - Cost-reduced 8-bit-bus TMS9900, used in TI-99/4
+- [ ] **TI TMS9985** (1978) - Single-chip TMS9900 with on-chip RAM
+- [ ] **DEC T-11 (DC310)** (1981) - PDP-11 on a chip, used in PDP-11/03 and military systems
+- [ ] **DEC J-11 (DC333)** (1983) - Fastest PDP-11 chip, used in PDP-11/73 and 11/84
+- [ ] **Inmos T212** (1985) - 16-bit transputer, parallel processing pioneer
+- [ ] **Data General mN602** (1982) - Enhanced microNova, Data General minicomputer lineage
+- [ ] **Matsushita MN10200** (1985) - 16-bit MCU for VCRs and camcorders
+
+## Arcade / Gaming Custom Chips
+
+- [ ] **General Instrument AY-3-8500** (1976) - The Pong-on-a-chip, launched home gaming revolution
+- [ ] **General Instrument AY-3-8900** (1978) - Intellivision STIC graphics, programmable sprite processor
+- [ ] **Signetics 2636 PVI** (1977) - Programmable Video Interface, used in Arcadia 2001 / VC4000
+- [ ] **Atari ANTIC** (1979) - Atari 400/800 display co-processor with its own instruction set
+- [ ] **Atari POKEY** (1979) - Audio/I/O controller with pseudo-random noise and serial I/O
+- [ ] **Commodore VIC (6560/6561)** (1980) - VIC-20 video chip, programmable character graphics
+- [ ] **Williams Special Chip (SC1)** (1981) - Blitter/DMA for Williams arcade games (Defender, Robotron)
+
+## Math / Floating-Point
+
+- [ ] **Weitek 1064/1065** (1985) - High-speed FPU pair, used in workstations and Cray
+- [ ] **Motorola MC68881** - Already modeled, but **MC68882** (1985) was the enhanced dual-bus version
+- [ ] **Intel 8231** (1977) - Arithmetic Processing Unit, simpler than 8087
+- [ ] **National NS32381** (1985) - NS32000 FPU, higher performance than NS32081
+
+## European / Military Processors
+
+- [ ] **Ferranti ULA (Uncommitted Logic Array)** (1981) - Basis for ZX Spectrum, semi-custom gate array
+- [ ] **INMOS T414** - Already modeled, but **T424** (1985) - 32-bit variant with more on-chip RAM
+- [ ] **Thomson EFCIS 90435** (1980) - French 8-bit for military (Mirage fighter systems)
+- [ ] **Marconi Elliot MAS281** (1979) - British military 16-bit for naval systems
+
+## Early Parallel / Dataflow
+
+- [ ] **iWarp (Intel/CMU)** (1985 design) - VLIW/systolic array processor, precursor to modern GPU thinking
+- [ ] **Inmos T800** (1987) - 32-bit transputer with on-chip FPU (slightly post-cutoff but architecturally important)
+- [ ] **Goodyear MPP / STARAN** (associative array) - Bit-serial massively parallel, used by NASA
+- [ ] **ICL DAP** (1980) - 4096-element SIMD array processor, early massively parallel
+
+## Telecommunications / Voice
+
+- [ ] **OKI MSM5205** (1983) - ADPCM speech synthesis, used in hundreds of arcade games
+- [ ] **General Instrument SP0256** (1981) - Allophone speech processor, used in Intellivoice and Type & Talk
+- [ ] **TI TMS5100** (1978) - The Speak & Spell chip, LPC speech synthesis pioneer
+- [ ] **Motorola MC6854** (1980) - ADLC for packet data, programmable data link controller
+
+## Notable Omissions from Existing Families
+
+- [ ] **Intel 80186 variants (80C186)** - CMOS embedded version, billions in networking equipment
+- [ ] **AMD Am2910** (1977) - Microprogram sequencer, essential companion to Am2901 bit-slice
+- [ ] **AMD Am29116** (1983) - 16-bit single-chip microprogrammable CPU
+- [ ] **Motorola 68HC11 variants (68HC11A1, E2)** - Specific popular sub-variants
+- [ ] **RCA CDP1861 (Pixie)** (1976) - Video display controller for COSMAC, used in CHIP-8 systems
+
+---
+
+## Phase 3 Summary
+
+| Category | Count |
+|----------|-------|
+| 4-Bit Processors | 8 |
+| 8-Bit Processors | 12 |
+| 16-Bit Processors | 7 |
+| Arcade / Gaming | 7 |
+| Math / Floating-Point | 4 |
+| European / Military | 4 |
+| Early Parallel / Dataflow | 4 |
+| Telecommunications / Voice | 4 |
+| Family Variants | 5 |
+| **TOTAL Phase 3** | **55** |
+
+---
+
+# PHASE 4: Deep Cuts - Pre-1986 Processors
+
+Processors that round out comprehensive coverage of the pre-1986 microprocessor landscape: coprocessors, minicomputer-on-a-chip designs, second-sources, sound/video processors with programmable elements, Eastern Bloc clones, and niche architectures.
+
+---
+
+## Coprocessors & I/O Processors
+
+- [ ] **Intel 8087** (1980) - The original x87 FPU that defined floating-point for a generation; not yet modeled despite 80287/80387 being present
+- [ ] **Intel 8089** (1979) - Dedicated I/O processor with its own instruction set, designed to offload DMA/channel work from 8086
+- [ ] **Intel 8087-2** (1982) - 8MHz variant of 8087, required for 80286 systems
+- [ ] **Motorola 68851 PMMU** (1984) - Paged MMU for 68020, has its own micro-instruction sequencer
+- [ ] **National NS32082 MMU** (1983) - Demand-paged virtual memory for NS32000 family
+- [ ] **Zilog Z8016 DMA** (1981) - DMA transfer controller with programmable channel logic
+
+## Minicomputer-on-a-Chip (32-bit)
+
+- [ ] **DEC MicroVAX 78032 (DC333)** (1984) - First single-chip VAX, ran full VMS; milestone in CISC integration
+- [ ] **Fairchild Clipper C100** (1985) - 33MHz 32-bit RISC, used in Intergraph workstations
+- [ ] **Ridge 32** (1982) - Early commercial RISC-like 32-bit, predates MIPS R2000
+- [ ] **Apollo DN300 PRISM** (1983) - Custom Motorola 68000-derived workstation CPU
+- [ ] **Sequoia S-16** (1983) - Fault-tolerant 16/32-bit for transaction processing
+
+## Calculator & Pocket Computer CPUs
+
+- [ ] **HP Saturn** (1984) - HP's proprietary 64-bit-register calculator CPU, used in HP-71B and later HP-48 series
+- [ ] **Sharp SC61860 (ESR-H)** (1980) - 8-bit CPU in Sharp pocket computers (PC-1211 through PC-1500)
+- [ ] **TI TMS0800** (1973) - TI's single-chip calculator processor, billions produced
+- [ ] **Casio NEC µPD1007C** (1978) - Custom calculator CPU for Casio FX series
+- [ ] **Mostek MK5005** (1972) - Early calculator-on-a-chip, used in Busicom designs
+
+## Sound / Audio Processors
+
+- [ ] **MOS 6581 SID** (1982) - Commodore 64 sound chip; 3 oscillators, ring mod, filters, programmable via register writes
+- [ ] **MOS 8580 SID** (1986) - Revised SID with improved filter, HMOS-II (borderline date)
+- [ ] **Yamaha YM2151 OPM** (1983) - 4-operator FM synthesis, the arcade audio standard (Out Run, many others)
+- [ ] **Yamaha YM3526 OPL** (1984) - 2-operator FM, basis for AdLib PC sound card
+- [ ] **Yamaha YM3812 OPL2** (1985) - Enhanced OPL, Sound Blaster standard
+- [ ] **General Instrument AY-3-8910 PSG** (1978) - Programmable Sound Generator; MSX, ZX Spectrum 128, Intellivision, hundreds of arcade games
+- [ ] **TI SN76489** (1980) - Square wave PSG used in BBC Micro, Sega Master System, ColecoVision, TI-99
+- [ ] **Ensoniq ES5503 DOC** (1985) - 32-oscillator wavetable chip, Apple IIGS sound
+
+## Video / Graphics Processors
+
+- [ ] **TI TMS9918A VDP** (1979) - Video Display Processor for MSX, ColecoVision, TI-99/4A; sprites and tile-based display
+- [ ] **Ricoh RP2C02 PPU** (1983) - NES Picture Processing Unit; sprite engine with 64 sprites, scrolling
+- [ ] **Ricoh RP2C07 PPU** (1986) - PAL variant of NES PPU
+- [ ] **Commodore VIC-II (6567/6569)** (1982) - C64 video; sprites, smooth scrolling, raster interrupts
+- [ ] **Commodore TED (7360/8360)** (1984) - C16/Plus4 video+sound+timer, integrated design
+- [ ] **Sega 315-5124 VDP** (1985) - Master System video, enhanced TMS9918 derivative
+- [ ] **Yamaha V9938** (1985) - MSX2 video processor, 512-color, hardware sprites, bitmap modes
+
+## Soviet & Eastern Bloc (Additional)
+
+- [ ] **K1801VM1** (1980) - Soviet PDP-11-compatible, CPU of BK-0010 home computer
+- [ ] **K1801VM2** (1983) - Enhanced Soviet PDP-11 chip, BK-0011/DVK-3 computers
+- [ ] **K1801VM3** (1985) - Final Soviet PDP-11 chip, used in Elektronika MS 0511 (UKNC)
+- [ ] **Polish MCY7880** (1979) - CEMI 8080A clone, used in Polish Meritum computer
+- [ ] **Romanian MPA1008** (1980s) - Romanian Z80A clone, IPRS Baneasa, used in CoBra/TIM-S computers
+- [ ] **Hungarian TVC CPU** (1983) - Modified Z80 clone by MEV/Tungsram for Videoton TVC computer
+- [ ] **Soviet K1810VM88** (1980s) - 8088 clone for Iskra-1030 PC compatibles
+- [ ] **Soviet K580IK51** (1980s) - 8051-compatible MCU clone
+
+## Second-Source & Licensed Clones (Non-Eastern Bloc)
+
+- [ ] **Siemens SAB8080A** (1976) - West German 8080 second-source, supplied to NATO and European industry
+- [ ] **Siemens SAB8085** (1978) - West German 8085 clone
+- [ ] **Siemens SAB80515** (1983) - Enhanced 8051 for European automotive (BMW, Bosch)
+- [ ] **Siemens SAB80C166** (1985) - 16-bit automotive MCU, predecessor to Infineon C166
+- [ ] **SGS-Thomson Z8400 (Z80)** (1980) - Italian Z80 production, supplied Southern European markets
+- [ ] **Sharp LH0080 (Z80)** (1976) - Sharp's Z80 second-source, used in many Japanese home computers
+- [ ] **NEC µPD8080AF** (1975) - NEC 8080 clone, predates V20/V30 era
+- [ ] **OKI MSM80C85AH** (1983) - CMOS 8085, battery-powered portable applications
+- [ ] **AMD Am8085A** (1978) - AMD's 8085 second-source
+
+## Automotive & Industrial Control
+
+- [ ] **Intel 8061** (1978) - Ford EEC-III/IV engine controller, one of the highest-volume embedded CPUs ever
+- [ ] **Intel 8044** (1980) - RUPI (Remote Universal Peripheral Interface), factory/process control
+- [ ] **Motorola 6805R2** (1982) - Low-cost MCU for appliance control, millions in washing machines and microwaves
+- [ ] **TI TMS370** (1985) - TI's industrial control MCU, automotive applications
+- [ ] **Hitachi HD6305** (1983) - Hitachi's 6805-compatible, Japanese automotive market
+
+## Network & Communications
+
+- [ ] **Zilog Z8530 SCC** (1981) - Serial Communication Controller, in every early Mac and Sun workstation
+- [ ] **Intel 82586** (1983) - First Ethernet LAN coprocessor, complex microcoded processor
+- [ ] **Intel 82730** (1983) - Text coprocessor, offloaded character rendering from main CPU
+- [ ] **Western Digital WD2010** (1983) - Hard disk controller chip, essentially a disk I/O CPU
+- [ ] **Zilog Z80-SIO** (1977) - Serial I/O with its own state machine, predecessor to Z8530
+
+## Forth & Stack Machine Processors
+
+- [ ] **Harris RTX32P** (1985) - 32-bit Forth engine, evolved from NC4016 lineage
+- [ ] **Novix NC4000** (1983) - Original Forth-on-a-chip by Chuck Moore, predecessor to NC4016
+- [ ] **MuP21** (1985 design) - Chuck Moore's minimal Forth chip, 21 instructions, extreme simplicity
+
+## Analog, Mixed-Signal & Early DSP
+
+- [ ] **Brooktree Bt101** (1984) - Early RAMDAC with programmable palette logic
+- [ ] **Analog Devices ADSP-2100** (1986) - First Analog Devices DSP, 40ns cycle (borderline date)
+- [ ] **NEC µPD7725** (1985) - Enhanced DSP, successor to µPD7720, faster multiply-accumulate
+- [ ] **Nippon Columbia CX-1** (1983) - Custom DSP for audio effects in arcade games
+
+## LISP Machines & AI Processors
+
+- [ ] **Symbolics CADR** (1981) - MIT AI Lab / Symbolics LISP machine CPU, tagged architecture with hardware GC support
+- [ ] **TI Explorer (Compact LISP Machine)** (1985) - TI's single-board LISP CPU, 32-bit tagged architecture
+- [ ] **Xerox PARC Alto CPU** (1973) - Custom TTL; bit-serial ALU, microcode-driven, foundational to GUI computing
+- [ ] **LMI Lambda (NuBus)** (1984) - LISP Machines Inc. CADR derivative
+
+## Pre-Microprocessor Programmable Logic Extensions
+
+- [ ] **Intel 3003** (1975) - Look-ahead carry generator completing the 3001/3002 family
+- [ ] **Signetics 8X305** (1982) - Enhanced 8X300 bipolar signal processor
+- [ ] **MMI 67110** (1978) - Enhanced bit-slice sequencer, extends 6701 family
+- [ ] **Raytheon RP-32** (1980s) - 32-bit military bit-slice, extends RP-16
+
+---
+
+## Phase 4 Summary
+
+| Category | Count |
+|----------|-------|
+| Coprocessors & I/O | 6 |
+| Minicomputer-on-a-Chip | 5 |
+| Calculator / Pocket | 5 |
+| Sound / Audio | 8 |
+| Video / Graphics | 7 |
+| Soviet & Eastern Bloc | 8 |
+| Second-Source Clones | 9 |
+| Automotive / Industrial | 5 |
+| Network / Communications | 5 |
+| Forth & Stack Machines | 3 |
+| Analog / Mixed / DSP | 4 |
+| LISP / AI Processors | 4 |
+| Programmable Logic Ext. | 4 |
+| **TOTAL Phase 4** | **73** |
+
+---
+
+---
+
+# PHASE 5: Complete Instruction Timing Collection
+
+Rather than modeling more chips, this phase collects **complete per-instruction cycle timing tables** for ~50 architecturally distinct, well-documented CPUs. This data validates the category-based timing assumptions used across all queueing models and provides a structured dataset for cross-chip analysis.
+
+**Scope:** Only chips that are (1) general-purpose CPUs, (2) have surviving datasheet timing tables, and (3) are architecturally distinct from each other. Clones and speed-binned variants are excluded — same timings, different clock.
+
+---
+
+## Tier 1 - Essential (Most Impactful)
+
+These are the most important architectures. Complete timing tables exist in datasheets and community resources.
+
+- [ ] **Intel 4004** (1971) - 46 instructions, 8/16-cycle. Source: Intel MCS-4 datasheet
+- [ ] **Intel 8008** (1972) - 48 instructions, 5-11 cycles. Source: Intel 8008 datasheet
+- [ ] **Intel 8080** (1974) - 78 instructions, 4-18 cycles. Source: Intel 8080A datasheet
+- [ ] **Intel 8085** (1976) - 80 instructions, 4-18 cycles. Source: Intel 8085A datasheet
+- [ ] **Intel 8086** (1978) - ~130 instructions. Source: iAPX 86/88 User's Manual, Appendix A
+- [ ] **Intel 80286** (1982) - ~140 instructions. Source: iAPX 286 Programmer's Reference
+- [ ] **Motorola 6800** (1974) - 72 instructions, 2-12 cycles. Source: M6800 Programming Reference
+- [ ] **Motorola 6809** (1978) - 86 instructions, 2-19 cycles. Source: MC6809 datasheet
+- [ ] **Motorola 68000** (1979) - ~56 base instructions with many addressing modes. Source: M68000 Programmer's Reference Manual
+- [ ] **Motorola 68020** (1984) - Adds cache; timing more complex. Source: MC68020 User's Manual
+- [ ] **MOS 6502** (1975) - 56 instructions, 2-7 cycles. Source: MOS MCS6500 Family Hardware Manual
+- [ ] **WDC 65C02** (1983) - 67 instructions. Source: WDC W65C02S datasheet
+- [ ] **WDC 65816** (1984) - 92 instructions, 16-bit extensions. Source: WDC W65C816S datasheet
+- [ ] **Zilog Z80** (1976) - 158 instructions (with prefix), 4-23 cycles. Source: Z80 CPU Technical Manual
+- [ ] **Zilog Z8000** (1979) - ~110 instructions. Source: Z8000 CPU Technical Manual
+- [ ] **RCA 1802** (1976) - 91 instructions, 16/24 cycles. Source: RCA CDP1802 datasheet
+
+## Tier 2 - Important Architectures
+
+Distinct instruction sets that fill major architectural gaps.
+
+- [ ] **Intel 80186** (1982) - 8086 superset with new instructions. Source: 80186/80188 datasheet
+- [ ] **Motorola 6801** (1978) - 6800 superset with hardware multiply. Source: MC6801 datasheet
+- [ ] **Motorola 68010** (1982) - Virtual memory support, loop mode. Source: MC68010 datasheet
+- [ ] **Zilog Z8** (1979) - Register-file architecture, 47 instructions. Source: Z8 CPU datasheet
+- [ ] **Zilog Z180** (1985) - Z80 superset with MMU and multiply. Source: Z180 MPU datasheet
+- [ ] **NEC V20** (1984) - 8086+8080 mode, bit manipulation. Source: NEC V20/V30 User's Manual
+- [ ] **Signetics 2650** (1975) - Condition code architecture, 75 instructions. Source: 2650 datasheet
+- [ ] **Fairchild F8** (1975) - Scratchpad-based, 70 instructions. Source: F8 Guide to Programming
+- [ ] **National SC/MP** (1976) - Minimal 46-instruction set. Source: ISP-8A/500D datasheet
+- [ ] **National PACE** (1975) - 16-bit, 45 instructions. Source: IPC-16A datasheet
+- [ ] **National NS32016** (1982) - Symmetric 32-bit CISC. Source: NS32016 datasheet
+- [ ] **TI TMS9900** (1976) - Memory-to-memory, workspace pointer. Source: TMS9900 datasheet
+- [ ] **GI PIC1650** (1977) - Harvard architecture, 33 instructions. Source: PIC1650 datasheet
+- [ ] **GI CP1600** (1975) - Intellivision CPU, 10-bit opcodes. Source: CP1600 datasheet
+
+## Tier 3 - Specialized & RISC
+
+Architecturally important but timing is either simpler (RISC: most instructions = 1 cycle) or harder to source.
+
+- [ ] **Berkeley RISC I** (1982) - 31 instructions, mostly single-cycle. Source: Patterson & Sequin papers
+- [ ] **Berkeley RISC II** (1983) - 39 instructions. Source: Berkeley tech reports
+- [ ] **Stanford MIPS** (1983) - Interlocked pipeline. Source: Hennessy papers
+- [ ] **MIPS R2000** (1985) - Commercial MIPS, 5-stage pipeline. Source: MIPS R2000 datasheet
+- [ ] **ARM1** (1985) - 44 instructions, barrel shifter. Source: VLSI Technology ARM datasheet
+- [ ] **ARM2** (1986) - Adds multiply, coprocessor interface. Source: ARM2 datasheet
+- [ ] **SPARC** (1985) - Register windows, delayed branches. Source: SPARC Architecture Manual v7
+- [ ] **Intel i860** (1989) - VLIW, dual-operation mode. Source: i860 Programmer's Reference
+
+## Tier 4 - MCUs & Niche
+
+Smaller instruction sets; useful for validating MCU-class models.
+
+- [ ] **Intel 8048** (1976) - MCS-48 family, 96 instructions. Source: MCS-48 Family User's Manual
+- [ ] **Intel 8051** (1980) - MCS-51 family, 111 instructions. Source: MCS-51 Family User's Manual
+- [ ] **Intel 8096** (1982) - 16-bit MCU, register-to-register. Source: 8096 datasheet
+- [ ] **Motorola 6805** (1979) - Reduced 6800, 62 instructions. Source: MC6805 datasheet
+- [ ] **Motorola 68HC11** (1984) - 6801 superset, 145 instructions. Source: MC68HC11 Reference Manual
+- [ ] **Hitachi 6309** (1982) - 6809 superset with 32-bit ops. Source: Community-documented (lost Hitachi docs)
+- [ ] **TI TMS1000** (1974) - 43 instructions, 4-bit. Source: TMS1000 Programming Reference
+- [ ] **Rockwell PPS-4** (1972) - 50 instructions, 4-bit. Source: PPS-4 datasheet
+- [ ] **TI TMS320C10** (1983) - DSP, 16x16 single-cycle multiply. Source: TMS320C10 User's Guide
+- [ ] **AMD Am29000** (1987) - 119 instructions, large register file. Source: Am29000 User's Manual
+
+---
+
+## Deliverable Format
+
+For each chip, collect a structured table:
+
+```
+processor: z80
+source: "Z80 CPU Technical Manual, March 1976, Table 8"
+instructions:
+  - mnemonic: "LD r, r'"
+    bytes: 1
+    cycles: 4
+    t_states: 4
+    category: load
+    notes: "Register to register"
+  - mnemonic: "LD r, n"
+    bytes: 2
+    cycles: 7
+    t_states: 7
+    category: load
+    notes: "Immediate to register"
+  ...
+```
+
+Store as YAML or JSON in a new `timing/` directory per processor.
+
+---
+
+## Phase 5 Summary
+
+| Tier | Count | Description |
+|------|-------|-------------|
+| Tier 1 - Essential | 16 | Core architectures, highest impact |
+| Tier 2 - Important | 14 | Distinct ISAs filling gaps |
+| Tier 3 - RISC / Specialized | 8 | RISC + pipeline timing |
+| Tier 4 - MCU / Niche | 10 | Smaller sets, MCU validation |
+| **TOTAL Phase 5** | **48** | |
+
+---
+
+**Cumulative TODO Totals:**
+
+| Phase | Count | Status |
+|-------|-------|--------|
+| Phase 1 | 42 | All complete |
+| Phase 2 | 77 | All complete |
+| Phase 3 | 55 | Pending |
+| Phase 4 | 73 | Pending |
+| Phase 5 | 48 | Pending (timing collection) |
+| **Grand Total** | **295** | **196 complete, 176 pending** |
+
+**Last Updated:** 2026-01-29
