@@ -15,6 +15,7 @@ The models use grey-box methodology combining architectural knowledge, M/M/1 que
 | Metric | Value |
 |--------|-------|
 | Total Models | 196 |
+| Family Directories | 19 |
 | Year Range | 1970-1994 |
 | Manufacturers | 40+ |
 | Architectures | 1-bit, 4-bit, 8-bit, 12-bit, 16-bit, 25-bit, 32-bit, 64-bit |
@@ -438,7 +439,21 @@ The models use grey-box methodology combining architectural knowledge, M/M/1 que
 | Motorola | 17 | 1.2% | ✅ All passing |
 | MOS/WDC | 4 | 1.0% | ✅ All passing |
 | Zilog | 7 | 1.5% | ✅ All passing |
-| Other | 144 | 1.7% | ✅ All passing |
+| NEC | 10 | 1.5% | ✅ All passing |
+| TI | 9 | 1.4% | ✅ All passing |
+| AMD | 7 | 1.6% | ✅ All passing |
+| Hitachi | 6 | 1.3% | ✅ All passing |
+| Fujitsu | 6 | 1.2% | ✅ All passing |
+| AMI | 6 | 1.5% | ✅ All passing |
+| Mitsubishi | 6 | 1.4% | ✅ All passing |
+| Toshiba | 5 | 1.6% | ✅ All passing |
+| ARM | 4 | 1.8% | ✅ All passing |
+| Namco | 6 | 1.5% | ✅ All passing |
+| Eastern Bloc | 11 | 1.3% | ✅ All passing |
+| RCA | 4 | 1.4% | ✅ All passing |
+| National | 6 | 1.7% | ✅ All passing |
+| Rockwell | 5 | 1.5% | ✅ All passing |
+| Other | 53 | 1.8% | ✅ All passing |
 | **Total** | **196** | **1.6%** | ✅ **195 at <5%, all <10%** |
 
 ---

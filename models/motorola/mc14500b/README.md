@@ -10,7 +10,7 @@
 
 ## Model
 
-Path: `motorola/mc14500b/current/mc14500b_validated.py`
+Path: `models/motorola/mc14500b/current/mc14500b_validated.py`
 
 ```python
 from motorola.mc14500b.current.mc14500b_validated import Mc14500bModel

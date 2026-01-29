@@ -2,7 +2,7 @@
 
 ## Project Purpose
 
-This repository contains grey-box queueing models for 61+ historical microprocessors (1971-1989). Each model predicts processor performance (CPI, IPC, IPS) using category-based instruction timing and M/M/1 queueing theory.
+This repository contains grey-box queueing models for 196 historical microprocessors (1970-1994) organized into 19 manufacturer/family directories. Each model predicts processor performance (CPI, IPC, IPS) using category-based instruction timing and M/M/1 queueing theory.
 
 **Goal**: Achieve <5% CPI prediction error for each model compared to documented/expected values.
 
@@ -40,13 +40,29 @@ If you modify model files without updating documentation, you have NOT completed
 ```
 Modeling_2026/
 ├── CLAUDE.md                 # This file
-├── index.json                # Master index of all processors
+├── index.json                # Master index of all 196 processors
+├── models/                   # All processor model families
+│   ├── intel/                # Intel (24)
+│   ├── motorola/             # Motorola (17)
+│   ├── mos_wdc/              # MOS Technology & WDC (4)
+│   ├── zilog/                # Zilog (7)
+│   ├── nec/                  # NEC (10) - V-series, μPD
+│   ├── ti/                   # Texas Instruments (9) - TMS, SN74181
+│   ├── amd/                  # AMD (7) - Am2901, Am9511
+│   ├── hitachi/              # Hitachi (6) - 6309, HD series
+│   ├── fujitsu/              # Fujitsu (6) - MB884x arcade
+│   ├── ami/                  # AMI (6) - S2000 calculator
+│   ├── mitsubishi/           # Mitsubishi (6) - MELPS families
+│   ├── toshiba/              # Toshiba (5) - TLCS series
+│   ├── arm/                  # ARM (4) - ARM1-ARM6
+│   ├── namco/                # Namco (6) - Arcade custom
+│   ├── eastern_bloc/         # Eastern Bloc (11) - DDR, Soviet
+│   ├── rca/                  # RCA (4) - COSMAC family
+│   ├── national/             # National Semi (6) - NS32000
+│   ├── rockwell/             # Rockwell (5) - PPS-4, 6502
+│   └── other/                # Other manufacturers (53)
 ├── common/                   # Shared base classes and utilities
-├── intel/                    # Intel processor models
-├── motorola/                 # Motorola processor models
-├── mos_wdc/                  # MOS Technology & WDC models
-├── zilog/                    # Zilog processor models
-└── other/                    # Other manufacturers
+└── docs/                     # Methodology, family trees, comparisons
 ```
 
 Each processor has:
@@ -241,7 +257,7 @@ When a model has high error, check these common issues:
 
 ```python
 import sys
-sys.path.insert(0, '[family]/[processor]/current')
+sys.path.insert(0, 'models/[family]/[processor]/current')
 from [processor]_validated import [Processor]Model
 
 model = [Processor]Model()

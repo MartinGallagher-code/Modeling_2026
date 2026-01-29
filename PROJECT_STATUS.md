@@ -182,11 +182,20 @@ The Modeling_2026 project has successfully completed comprehensive coverage of t
 | Early ARM | 4/4 | ✅ Complete |
 | Early RISC | 5/5 | ✅ Complete |
 | Bit-slice | 2/2 | ✅ Complete |
-| Pre-1986 Extended | 119/119 | ✅ Complete |
+| NEC | 10/10 | ✅ Complete |
+| TI | 9/9 | ✅ Complete |
+| AMD | 7/7 | ✅ Complete |
+| Hitachi | 6/6 | ✅ Complete |
+| Fujitsu | 6/6 | ✅ Complete |
+| AMI | 6/6 | ✅ Complete |
+| Mitsubishi | 6/6 | ✅ Complete |
+| Toshiba | 5/5 | ✅ Complete |
+| ARM | 4/4 | ✅ Complete |
+| Namco | 6/6 | ✅ Complete |
 | Eastern Bloc | 11/11 | ✅ Complete |
-| Gaming/Arcade | 9/9 | ✅ Complete |
-| Japanese Extended | 13/13 | ✅ Complete |
-| DSP Extended | 6/6 | ✅ Complete |
+| RCA | 4/4 | ✅ Complete |
+| National Semi | 6/6 | ✅ Complete |
+| Rockwell | 5/5 | ✅ Complete |
 
 ### Gaps Identified (Future Work)
 

@@ -1,7 +1,77 @@
 {
-  "generated": "2026-01-29T14:42:37.780475",
+  "generated": "2026-01-29T15:02:47.105166",
   "total_processors": 196,
   "families": {
+    "amd": {
+      "count": 7,
+      "processors": [
+        "am29000",
+        "am2901",
+        "am2903",
+        "am29c101",
+        "am9511",
+        "am9512",
+        "amd_29000"
+      ]
+    },
+    "ami": {
+      "count": 6,
+      "processors": [
+        "ami_s2000",
+        "ami_s2150",
+        "ami_s2200",
+        "ami_s2400",
+        "ami_s2811",
+        "ami_s28211"
+      ]
+    },
+    "arm": {
+      "count": 4,
+      "processors": [
+        "arm1",
+        "arm2",
+        "arm3",
+        "arm6"
+      ]
+    },
+    "eastern_bloc": {
+      "count": 11,
+      "processors": [
+        "cm630",
+        "im1821vm85a",
+        "k1810vm86",
+        "kr1858vm1",
+        "kr580vm1",
+        "kr581ik1",
+        "kr581ik2",
+        "tesla_mhb8080a",
+        "u8001",
+        "u808",
+        "u880"
+      ]
+    },
+    "fujitsu": {
+      "count": 6,
+      "processors": [
+        "mb8841",
+        "mb8842",
+        "mb8843",
+        "mb8844",
+        "mb8845",
+        "mb8861"
+      ]
+    },
+    "hitachi": {
+      "count": 6,
+      "processors": [
+        "fd1089",
+        "fd1094",
+        "hd6301",
+        "hd63484",
+        "hd64180",
+        "hitachi_6309"
+      ]
+    },
     "intel": {
       "count": 24,
       "processors": [
@@ -31,6 +101,26 @@
         "pentium"
       ]
     },
+    "mitsubishi": {
+      "count": 6,
+      "processors": [
+        "m50740",
+        "m50747",
+        "melps4",
+        "melps41",
+        "melps42",
+        "melps740"
+      ]
+    },
+    "mos_wdc": {
+      "count": 4,
+      "processors": [
+        "mos6502",
+        "mos6510",
+        "wdc65816",
+        "wdc65c02"
+      ]
+    },
     "motorola": {
       "count": 17,
       "processors": [
@@ -53,13 +143,142 @@
         "mc14500b"
       ]
     },
-    "mos_wdc": {
+    "namco": {
+      "count": 6,
+      "processors": [
+        "namco_05xx",
+        "namco_50xx",
+        "namco_51xx",
+        "namco_52xx",
+        "namco_53xx",
+        "namco_54xx"
+      ]
+    },
+    "national": {
+      "count": 6,
+      "processors": [
+        "imp16",
+        "ns32016",
+        "ns32032",
+        "ns32081",
+        "pace",
+        "scmp"
+      ]
+    },
+    "nec": {
+      "count": 10,
+      "processors": [
+        "nec_v20",
+        "nec_v30",
+        "nec_v60",
+        "nec_v70",
+        "ucom4",
+        "upd612x",
+        "upd7220",
+        "upd751",
+        "upd7720",
+        "upd780"
+      ]
+    },
+    "other": {
+      "count": 53,
+      "processors": [
+        "aim__ppc_601",
+        "alpha21064",
+        "att_dsp1",
+        "att_dsp20",
+        "berkeley_risc1",
+        "berkeley_risc2",
+        "cp1600",
+        "dsp56000",
+        "f100l",
+        "f8",
+        "fairchild9440",
+        "g65sc802",
+        "g65sc816",
+        "hc55516",
+        "hm6100",
+        "hp_nano",
+        "hp_pa_risc",
+        "intel2920",
+        "intersil6100",
+        "ks57",
+        "lc87",
+        "lc88",
+        "lh5801",
+        "mac4",
+        "mc10800",
+        "miproc",
+        "mm6701",
+        "mn1610",
+        "mn1613",
+        "mn601",
+        "mos6507",
+        "mos6509",
+        "mostek_3870",
+        "msm5840",
+        "nc4016",
+        "pic1650",
+        "r2000",
+        "ricoh_2a03",
+        "rp16",
+        "rtx2000",
+        "signetics2650",
+        "signetics_8x300",
+        "sm83",
+        "sparc",
+        "stanford_mips",
+        "sun_spark",
+        "sy6502a",
+        "t414",
+        "wd16",
+        "wd9000",
+        "we32000",
+        "wisc16",
+        "wisc32"
+      ]
+    },
+    "rca": {
       "count": 4,
       "processors": [
-        "mos6502",
-        "mos6510",
-        "wdc65816",
-        "wdc65c02"
+        "cdp1804",
+        "cdp1806",
+        "rca1802",
+        "rca1805"
+      ]
+    },
+    "rockwell": {
+      "count": 5,
+      "processors": [
+        "pps4",
+        "pps4_1",
+        "r6500_1",
+        "r6511",
+        "r65c02"
+      ]
+    },
+    "ti": {
+      "count": 9,
+      "processors": [
+        "sbp0400",
+        "sbp0401",
+        "sn74181",
+        "sn74s481",
+        "tms1000",
+        "tms320c10",
+        "tms34010",
+        "tms9900",
+        "tms9995"
+      ]
+    },
+    "toshiba": {
+      "count": 5,
+      "processors": [
+        "tlcs12",
+        "tlcs12a",
+        "tlcs47",
+        "tlcs870",
+        "tlcs90"
       ]
     },
     "zilog": {
@@ -72,155 +291,6 @@
         "z80000",
         "z80a",
         "z80b"
-      ]
-    },
-    "other": {
-      "count": 144,
-      "processors": [
-        "aim__ppc_601",
-        "alpha21064",
-        "am29000",
-        "am2901",
-        "am2903",
-        "am29c101",
-        "am9511",
-        "am9512",
-        "amd_29000",
-        "ami_s2000",
-        "ami_s2150",
-        "ami_s2200",
-        "ami_s2400",
-        "ami_s2811",
-        "ami_s28211",
-        "arm1",
-        "arm2",
-        "arm3",
-        "arm6",
-        "att_dsp1",
-        "att_dsp20",
-        "berkeley_risc1",
-        "berkeley_risc2",
-        "cdp1804",
-        "cdp1806",
-        "cm630",
-        "cp1600",
-        "dsp56000",
-        "f100l",
-        "f8",
-        "fairchild9440",
-        "fd1089",
-        "fd1094",
-        "g65sc802",
-        "g65sc816",
-        "hc55516",
-        "hd6301",
-        "hd63484",
-        "hd64180",
-        "hitachi_6309",
-        "hm6100",
-        "hp_nano",
-        "hp_pa_risc",
-        "im1821vm85a",
-        "imp16",
-        "intel2920",
-        "intersil6100",
-        "k1810vm86",
-        "kr1858vm1",
-        "kr580vm1",
-        "kr581ik1",
-        "kr581ik2",
-        "ks57",
-        "lc87",
-        "lc88",
-        "lh5801",
-        "m50740",
-        "m50747",
-        "mac4",
-        "mb8841",
-        "mb8842",
-        "mb8843",
-        "mb8844",
-        "mb8845",
-        "mb8861",
-        "mc10800",
-        "melps4",
-        "melps41",
-        "melps42",
-        "melps740",
-        "miproc",
-        "mm6701",
-        "mn1610",
-        "mn1613",
-        "mn601",
-        "mos6507",
-        "mos6509",
-        "mostek_3870",
-        "msm5840",
-        "namco_05xx",
-        "namco_50xx",
-        "namco_51xx",
-        "namco_52xx",
-        "namco_53xx",
-        "namco_54xx",
-        "nc4016",
-        "nec_v20",
-        "nec_v30",
-        "nec_v60",
-        "nec_v70",
-        "ns32016",
-        "ns32032",
-        "ns32081",
-        "pace",
-        "pic1650",
-        "pps4",
-        "pps4_1",
-        "r2000",
-        "r6500_1",
-        "r6511",
-        "r65c02",
-        "rca1802",
-        "rca1805",
-        "ricoh_2a03",
-        "rp16",
-        "rtx2000",
-        "sbp0400",
-        "sbp0401",
-        "scmp",
-        "signetics2650",
-        "signetics_8x300",
-        "sm83",
-        "sn74181",
-        "sn74s481",
-        "sparc",
-        "stanford_mips",
-        "sun_spark",
-        "sy6502a",
-        "t414",
-        "tesla_mhb8080a",
-        "tlcs12",
-        "tlcs12a",
-        "tlcs47",
-        "tlcs870",
-        "tlcs90",
-        "tms1000",
-        "tms320c10",
-        "tms34010",
-        "tms9900",
-        "tms9995",
-        "u8001",
-        "u808",
-        "u880",
-        "ucom4",
-        "upd612x",
-        "upd7220",
-        "upd751",
-        "upd7720",
-        "upd780",
-        "wd16",
-        "wd9000",
-        "we32000",
-        "wisc16",
-        "wisc32"
       ]
     }
   }

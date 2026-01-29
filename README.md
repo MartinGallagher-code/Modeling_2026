@@ -14,46 +14,50 @@ This repository contains validated grey-box queueing models for **196 microproce
 | Motorola | 17 | 1974-1994 | 6800 to 68060, MC14500B |
 | MOS/WDC | 4 | 1975-1984 | 6502 family |
 | Zilog | 7 | 1976-1986 | Z80 family |
-| Other | 144 | 1970-1992 | ARM, MIPS, SPARC, DSPs, Eastern Bloc, arcade, etc. |
-| **Total** | **196** | **1970-1994** | |
+| NEC | 10 | 1972-1987 | V20/V30/V60/V70, μPD series |
+| TI | 9 | 1970-1986 | TMS series, SN74181, first GPU |
+| AMD | 7 | 1975-1987 | Am2901 bit-slice, Am9511 APU |
+| Hitachi | 6 | 1977-1985 | 6309, HD series, FD crypto |
+| Fujitsu | 6 | 1977 | MB884x arcade family |
+| AMI | 6 | 1970-1979 | S2000 calculator, S2811 DSP |
+| Mitsubishi | 6 | 1978-1984 | MELPS 4-bit & 740 8-bit |
+| Toshiba | 5 | 1973-1985 | TLCS-12 (first Japanese μP) |
+| ARM | 4 | 1985-1991 | ARM1 to ARM6 |
+| Namco | 6 | 1980s | Pac-Man era arcade custom |
+| Eastern Bloc | 11 | 1978-1991 | DDR, Soviet, Czech, Bulgarian |
+| RCA | 4 | 1976-1985 | COSMAC space processors |
+| National | 6 | 1973-1984 | IMP-16, PACE, NS32000 |
+| Rockwell | 5 | 1972-1983 | PPS-4, 6502 variants |
+| Other | 53 | 1975-1993 | RISC pioneers, DSPs, misc. |
+| **Total** | **196** | **1970-1994** | **19 families** |
 
 ## Directory Structure
 
 ```
 Modeling_2026/
-├── index.json              # Master index of all processors
-├── intel/                  # Intel family (24 processors)
-│   ├── i4004/             # First microprocessor (1971)
-│   ├── i8080/             # Industry standard 8-bit
-│   ├── i8086/             # x86 foundation
-│   ├── i8096/             # 16-bit automotive MCU
-│   ├── pentium/           # First superscalar x86
-│   └── ...
-├── motorola/              # Motorola family (17 processors)
-│   ├── m6800/             # First Motorola CPU
-│   ├── m68000/            # Macintosh/Amiga CPU
-│   ├── m68hc05/           # Low-cost MCU
-│   ├── m68060/            # Last 68K, superscalar
-│   └── ...
-├── mos_wdc/               # MOS Technology & WDC (4 processors)
-│   ├── mos6502/           # Apple II/C64 CPU
-│   ├── wdc65816/          # SNES CPU
-│   └── ...
-├── zilog/                 # Zilog family (7 processors)
-│   ├── z80/               # Most popular 8-bit
-│   ├── z8000/             # 16-bit Zilog
-│   └── ...
-└── other/                 # Other manufacturers (144 processors)
-    ├── ricoh_2a03/        # NES CPU
-    ├── mos6507/           # Atari 2600 CPU
-    ├── arm1/              # First ARM processor
-    ├── berkeley_risc1/    # First RISC processor
-    ├── stanford_mips/     # Original MIPS
-    ├── u880/              # East German Z80 clone
-    ├── tms34010/          # First programmable GPU
-    ├── sm83/              # Game Boy CPU
-    ├── mb8841/            # Arcade gaming (Galaga)
-    └── ...                # 144 processors total
+├── index.json              # Master index of all 196 processors
+├── models/                 # All processor model families
+│   ├── intel/              # Intel (24) - 4004 to Pentium
+│   ├── motorola/           # Motorola (17) - 6800 to 68060
+│   ├── mos_wdc/            # MOS/WDC (4) - 6502 family
+│   ├── zilog/              # Zilog (7) - Z80 family
+│   ├── nec/                # NEC (10) - V20/V30/V60, μPD series
+│   ├── ti/                 # Texas Instruments (9) - TMS, SN74181
+│   ├── amd/                # AMD (7) - Am2901, Am9511
+│   ├── hitachi/            # Hitachi (6) - 6309, HD series
+│   ├── fujitsu/            # Fujitsu (6) - MB884x arcade
+│   ├── ami/                # AMI (6) - S2000 calculator chips
+│   ├── mitsubishi/         # Mitsubishi (6) - MELPS families
+│   ├── toshiba/            # Toshiba (5) - TLCS series
+│   ├── arm/                # ARM (4) - ARM1 to ARM6
+│   ├── namco/              # Namco (6) - Pac-Man era arcade
+│   ├── eastern_bloc/       # Eastern Bloc (11) - DDR, Soviet, Czech
+│   ├── rca/                # RCA (4) - COSMAC space processors
+│   ├── national/           # National Semi (6) - IMP-16, NS32000
+│   ├── rockwell/           # Rockwell (5) - PPS-4, 6502 variants
+│   └── other/              # Other manufacturers (53)
+├── common/                 # Shared base classes and utilities
+└── docs/                   # Methodology, family trees, comparisons
 ```
 
 ## Each Processor Package Contains
@@ -137,32 +141,71 @@ print(f"Tests passed: {validation['passed']}/{validation['total']}")
 ### Zilog (7)
 - Z8, Z80, Z80A, Z80B, Z180, Z8000, Z80000
 
-### Other (144)
-- **6502 Family**: Ricoh 2A03, MOS 6507, MOS 6509, R65C02, SY6502A, R6511, R6500/1, G65SC802, G65SC816
-- **6800 Clones**: Hitachi 6309, HD6301, Fujitsu MB8861
-- **Z80 Clones**: NEC μPD780, Hitachi HD64180
-- **4-bit (Early)**: PPS-4, PPS-4/1, μCOM-4, μPD751, TMS1000, AMI S2000/S2150/S2200/S2400
-- **4-bit (Fujitsu)**: MB8841, MB8842, MB8843, MB8844, MB8845
-- **4-bit (Mitsubishi)**: MELPS 4, MELPS 41, MELPS 42
-- **4-bit (Other)**: OKI MSM5840, Samsung KS57, NEC μPD612xA
-- **8-bit (Mitsubishi)**: MELPS 740, M50740, M50747
-- **8-bit (Toshiba)**: TLCS-870, TLCS-90
-- **8-bit (Other)**: HP Nanoprocessor, Sanyo LC87
+### NEC (10)
+- **V-series**: V20, V30, V60, V70
+- **μPD**: μPD780 (Z80 clone), μPD7720 (DSP), μPD7220 (GPU), μPD751, μPD612xA
+- **μCOM-4**: Early 4-bit MCU
+
+### TI (9)
+- **TMS CPUs**: TMS9900, TMS9995, TMS1000 (first MCU)
+- **DSP/GPU**: TMS320C10, TMS34010 (first programmable GPU)
+- **Bit-slice/ALU**: SN74181, SN74S481, SBP0400, SBP0401
+
+### AMD (7)
+- **Bit-slice**: Am2901, Am2903, Am29C101
+- **Math**: Am9511 (APU), Am9512 (FPU)
+- **RISC**: Am29000
+
+### Hitachi (6)
+- **8-bit**: 6309 ("best 8-bit"), HD6301, HD64180
+- **Graphics**: HD63484 (ACRTC)
+- **Sega crypto**: FD1089, FD1094
+
+### Fujitsu (6)
+- MB8841 (Galaga), MB8842, MB8843, MB8844, MB8845, MB8861 (6800 clone)
+
+### AMI (6)
+- **Calculator**: S2000, S2150, S2200, S2400
+- **DSP**: S2811, S28211
+
+### Mitsubishi (6)
+- **4-bit**: MELPS 4, MELPS 41, MELPS 42
+- **8-bit**: MELPS 740, M50740, M50747
+
+### Toshiba (5)
+- TLCS-12 (first Japanese μP), TLCS-12A, TLCS-47, TLCS-870, TLCS-90
+
+### ARM (4)
+- ARM1 (1985), ARM2 (1986), ARM3 (1989), ARM6 (1991)
+
+### Namco (6)
+- Arcade custom: 05xx (starfield), 50xx, 51xx, 52xx, 53xx, 54xx
+
+### Eastern Bloc (11)
+- **DDR**: U880 (Z80), U808 (8008), U8001 (Z8000)
+- **Soviet**: KR580VM1, KR1858VM1, IM1821VM85A, K1810VM86, KR581IK1, KR581IK2
+- **Czechoslovak**: Tesla MHB8080A
+- **Bulgarian**: CM630 (6502 clone)
+
+### RCA (4)
+- COSMAC: 1802 (Voyager), CDP1804, 1805, CDP1806
+
+### National Semiconductor (6)
+- IMP-16, PACE, SC/MP, NS32016, NS32032, NS32081
+
+### Rockwell (5)
+- PPS-4, PPS-4/1, R65C02, R6511, R6500/1
+
+### Other (53)
 - **Academic RISC**: Berkeley RISC I/II, Stanford MIPS
 - **Commercial RISC**: MIPS R2000, SPARC, Sun SPARC, HP PA-RISC
-- **ARM**: ARM1, ARM2, ARM3, ARM6
-- **Supercomputers**: Alpha 21064, PowerPC 601, Intel i860
+- **Supercomputers**: Alpha 21064, PowerPC 601
 - **Transputer**: INMOS T414
 - **Stack Machines**: Novix NC4016, Harris RTX2000, WISC CPU/16, WISC CPU/32
-- **DSP**: TMS320C10, NEC μPD7720, AMI S2811, Signetics 8X300, Motorola DSP56000, AT&T DSP-1, AT&T DSP-20, AMI S28211, Intel 2920
-- **Bit-slice**: Am2901, Am2903, TI SN74S481, MM6701, SN74181, TI SBP0400/SBP0401, MC10800, Am29C101, Raytheon RP-16
-- **Math Coprocessors**: Am9511, Am9512, NS32081
-- **16-bit Pioneers**: IMP-16, PACE, mN601, WD16, F100-L, CP1600, MN1610, MN1613, Plessey MIPROC, Toshiba TLCS-12/12A, WD9000 Pascal MicroEngine, Sanyo LC88
-- **Graphics**: NEC μPD7220 (first LSI GPU), Hitachi HD63484, TI TMS34010 (first programmable GPU)
-- **Gaming/Arcade**: Namco 05xx/50xx/51xx/52xx/53xx/54xx, Hitachi FD1089/FD1094, Harris HC-55516, Sharp SM83 (Game Boy), Fairchild 9440
-- **Eastern Bloc**: U880 (DDR Z80), U808 (DDR 8008), U8001 (DDR Z8000), KR580VM1, KR1858VM1, IM1821VM85A, K1810VM86, KR581IK1/IK2, Tesla MHB8080A, CM630
-- **COSMAC**: RCA 1802, 1804, 1805, 1806
-- **Other**: NEC V20, V30, V60, V70, Intersil 6100, Harris HM6100, GI PIC1650, Signetics 2650, NS32016/32032, TMS9900/9995, WE32000, SC/MP, F8, Mostek 3870, Sharp LH5801, Bell Labs MAC-4, Toshiba TLCS-47
+- **DSP**: DSP56000, AT&T DSP-1/DSP-20, Intel 2920, Signetics 8X300
+- **Bit-slice**: MC10800, MM6701, Raytheon RP-16
+- **6502 variants**: MOS 6507, MOS 6509, SY6502A, Ricoh 2A03, G65SC802, G65SC816
+- **Other**: Intersil 6100, Harris HM6100, GI PIC1650/CP1600, Signetics 2650, WE32000, F8, Mostek 3870, Sharp LH5801, Fairchild 9440, HC-55516, SM83 (Game Boy), MAC-4, and more
 
 ## Validation Results
 
@@ -174,7 +217,21 @@ All 196 models pass validation:
 | Motorola | 17 | 17 | 0 |
 | MOS/WDC | 4 | 4 | 0 |
 | Zilog | 7 | 7 | 0 |
-| Other | 144 | 143 | 1 |
+| NEC | 10 | 10 | 0 |
+| TI | 9 | 9 | 0 |
+| AMD | 7 | 7 | 0 |
+| Hitachi | 6 | 6 | 0 |
+| Fujitsu | 6 | 6 | 0 |
+| AMI | 6 | 6 | 0 |
+| Mitsubishi | 6 | 6 | 0 |
+| Toshiba | 5 | 5 | 0 |
+| ARM | 4 | 4 | 0 |
+| Namco | 6 | 6 | 0 |
+| Eastern Bloc | 11 | 11 | 0 |
+| RCA | 4 | 4 | 0 |
+| National | 6 | 6 | 0 |
+| Rockwell | 5 | 5 | 0 |
+| Other | 53 | 52 | 1 |
 | **Total** | **196** | **195** | **1** |
 
 ## Validation Sources
