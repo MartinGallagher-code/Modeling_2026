@@ -13,61 +13,92 @@ This document traces the architectural evolution of microprocessors from the fir
        │   (4-bit, 740 kHz, 2300 transistors)
        │
 1972 ──┼── Intel 8008 ─────────────────── First 8-bit
-       │   (8-bit, 500 kHz, 3500 transistors)
+       │   Rockwell PPS-4                  Third commercial µP!
+       │   NEC µCOM-4
+       │
+1973 ──┼── National IMP-16 ────────────── Early 16-bit bit-slice
+       │   SC/MP
        │
 1974 ──┼── Intel 8080 ─────────────────── Industry takes off
        │   Intel 4040                      (Altair, CP/M)
        │   Motorola 6800
        │   TI TMS1000 (first mass MCU)
+       │   NEC µPD751
+       │   Intel 3002 (bit-slice)
+       │   Intersil 6100
        │
 1975 ──┼── MOS 6502 ───────────────────── The $25 revolution
-       │   Fairchild F8                    (Apple II, C64, NES)
+       │   MOS 6507 (Atari 2600)           (Apple II, C64, NES)
+       │   Fairchild F8
        │   Signetics 2650
-       │   AMD 2901 (bit-slice)
-       │   Intersil 6100
-       │   GI CP1600
+       │   AMD 2901/2903 (bit-slice)
+       │   MM6701 (bit-slice ALU)
+       │   GI CP1600 (Intellivision)
+       │   National PACE
+       │   Panafacom MN1610
        │
 1976 ──┼── Zilog Z80 ──────────────────── CP/M dominance
-       │   Intel 8085                      (TRS-80, MSX)
+       │   NEC µPD780 (Z80 clone)          (TRS-80, MSX)
+       │   Intel 8085
+       │   Intel 8048/8039 (MCS-48)
        │   RCA 1802
        │   TI TMS9900
-       │   Intel 8048 (MCS-48)
+       │   TI SN74S481 (bit-slice)
+       │   Signetics 8X300
        │   Ferranti F100-L
+       │   Rockwell PPS-4/1
        │
 1977 ──┼── Motorola 6802
        │   GI PIC1650 (first PIC)
+       │   AMD Am9511 (first APU)
+       │   Fujitsu MB8861 (6800 clone)
+       │   Mostek 3870 (F8 single-chip)
+       │   WD WD16 (LSI-11 compatible)
+       │   Data General mN601 (microNova)
        │
 1978 ──┼── Intel 8086 ─────────────────── x86 is born
        │   Motorola 6801
+       │   Synertek SY6502A
+       │   AMI S2811 (signal processor)
+       │   Harris HM6100 (faster 6100)
        │
 1979 ──┼── Intel 8088 ─────────────────── IBM PC chip selected
        │   Motorola 68000                  (Mac, Amiga, Atari ST)
        │   Motorola 6809
        │   Zilog Z8, Z8000
        │   Motorola 6805
-       │   NSC NSC800
+       │   AMD Am9512 (floating point APU)
        │
 1980 ──┼── Intel 8051 ─────────────────── MCU standard (still made!)
        │   RCA CDP1804
-       │   Rockwell R6511
+       │   Rockwell R6511 (6502+periph)
+       │   MOS 6509 (CBM-II)
+       │   NEC µPD7720 (speech DSP)
        │
 1981 ──┼── Intel iAPX 432 ─────────────── Famous failure
-       │   TI TMS7000
+       │   Sharp LH5801 (pocket CPU)
        │   TI TMS9995
        │
 1982 ──┼── Intel 80286 ─────────────────── IBM AT processor
        │   Intel 80186/80188              Berkeley RISC I (first RISC!)
-       │   Intel 8096
+       │   Intel 8096 (automotive MCU)
        │   Motorola 68008, 68010
-       │   Hitachi 6309
-       │   NS NS32016
+       │   Hitachi 6309 ("best 8-bit")
+       │   NS NS32016, NS32081 (FPU)
        │   TI TMS320C10 (first TI DSP)
+       │   WE WE32000
        │
 1983 ──┼── WDC 65C02
-       │   Motorola 6803
+       │   Rockwell R65C02
+       │   Ricoh 2A03 (NES CPU)
+       │   Hitachi HD6301
+       │   Berkeley RISC II
+       │   Stanford MIPS (academic)
+       │   Novix NC4016 (Forth stack)
        │
 1984 ──┼── Motorola 68020 ─────────────── True 32-bit 68k
-       │   WDC 65802, 65816               (Apple IIGS, SNES)
+       │   Motorola 68HC05               (Apple IIGS, SNES)
+       │   WDC 65816
        │   NEC V20, V30
        │   NS NS32032
        │   RCA CDP1805
@@ -75,8 +106,10 @@ This document traces the architectural evolution of microprocessors from the fir
 1985 ──┴── Intel 80386 ─────────────────── 32-bit x86 arrives
            ARM1                            (RISC begins)
            MIPS R2000
-           Zilog Z180, Z280
+           Zilog Z180
+           Hitachi HD64180 (Z180 equiv)
            RCA CDP1806
+           Harris RTX2000 (stack machine)
 ```
 
 ---
@@ -89,15 +122,21 @@ This document traces the architectural evolution of microprocessors from the fir
 |------|-----------|------|-------------|-------|--------------|
 | 1971 | Intel 4004 | 4 | 2,300 | 740 kHz | **THE FIRST** |
 | 1972 | Intel 8008 | 8 | 3,500 | 500 kHz | First 8-bit |
+| 1972 | Rockwell PPS-4 | 4 | 5,000 | 200 kHz | **THIRD** commercial µP |
+| 1972 | NEC µCOM-4 | 4 | 2,500 | 1 MHz | Japanese 4-bit |
 | 1974 | Intel 8080 | 8 | 4,500 | 2 MHz | Enabled Altair |
 | 1974 | Motorola 6800 | 8 | 4,100 | 1 MHz | Motorola enters |
 | 1974 | Intel 4040 | 4 | 3,000 | 740 kHz | 4004 + interrupts |
+| 1974 | TI TMS1000 | 4 | 8,000 | 400 kHz | First mass MCU |
+| 1974 | Intersil 6100 | 12 | 4,000 | 4 MHz | PDP-8 on chip! |
 
 ### Key Architectural Features
 - **4004**: Harvard architecture, 4-bit ALU, 46 instructions
 - **8008**: 8-bit, but still slow and limited
+- **PPS-4**: Calculator-focused, parallel 4-bit bus
 - **8080**: Full 8-bit, 78 instructions, usable for real computing
 - **6800**: Clean dual-accumulator design
+- **6100**: Minicomputer ISA (PDP-8) in microprocessor form
 
 ---
 
@@ -108,10 +147,18 @@ This document traces the architectural evolution of microprocessors from the fir
 | Year | Processor | Transistors | Clock | Key Innovation |
 |------|-----------|-------------|-------|----------------|
 | 1975 | MOS 6502 | 3,510 | 1 MHz | **$25 price point** |
+| 1975 | MOS 6507 | 3,510 | 1 MHz | 6502 in 28-pin (Atari 2600) |
+| 1975 | Fairchild F8 | 5,000 | 2 MHz | Multi-chip architecture |
+| 1975 | Signetics 2650 | 6,000 | 1 MHz | Unique addressing modes |
+| 1975 | GI CP1600 | 10,000 | 1 MHz | Intellivision CPU |
 | 1976 | Zilog Z80 | 8,500 | 2.5 MHz | 8080 compatible + extensions |
+| 1976 | NEC µPD780 | 8,500 | 2.5 MHz | Z80 clone |
 | 1976 | Intel 8085 | 6,500 | 3 MHz | Single +5V supply |
+| 1976 | Intel 8048/8039 | 4,500 | 6 MHz | First widely-used MCU |
 | 1976 | RCA 1802 | 5,000 | 2 MHz | Radiation-hard CMOS |
 | 1976 | TI TMS9900 | 8,000 | 3 MHz | Workspace registers |
+| 1977 | Mostek 3870 | 5,500 | 4 MHz | F8 single-chip |
+| 1977 | Fujitsu MB8861 | 4,100 | 1 MHz | 6800 clone |
 
 ### Platform Wars Begin
 
@@ -128,9 +175,16 @@ This document traces the architectural evolution of microprocessors from the fir
 ```
 
 ### MCU Revolution
-- **Intel 8048** (1976): First widely-used MCU
+- **Intel 8048/8039** (1976): First widely-used MCU family
 - **TI TMS1000** (1974): Billions shipped in calculators
 - **PIC1650** (1977): Birth of PIC family
+- **Mostek 3870** (1977): F8 in single-chip form
+
+### Bit-Slice Era
+- **AMD 2901/2903** (1975): Build-your-own CPU
+- **Intel 3002** (1974): Intel's bit-slice entry
+- **TI SN74S481** (1976): High-speed ALU slice
+- **MM6701** (1975): Monolithic bit-slice ALU
 
 ---
 
@@ -138,13 +192,22 @@ This document traces the architectural evolution of microprocessors from the fir
 
 ### The 16-Bit Transition
 
-| Year | Processor | Transistors | Clock | Address Space |
-|------|-----------|-------------|-------|---------------|
-| 1978 | Intel 8086 | 29,000 | 5 MHz | 1 MB |
-| 1979 | Intel 8088 | 29,000 | 5 MHz | 1 MB (8-bit bus) |
-| 1979 | Motorola 68000 | 68,000 | 8 MHz | 16 MB |
-| 1979 | Zilog Z8000 | 17,500 | 4 MHz | 8 MB |
-| 1982 | Intel 80286 | 134,000 | 6 MHz | 16 MB virtual |
+| Year | Processor | Transistors | Clock | Address Space | Notes |
+|------|-----------|-------------|-------|---------------|-------|
+| 1973 | National IMP-16 | - | 750 kHz | 64 KB | Early bit-slice 16-bit |
+| 1975 | National PACE | 10,000 | 2 MHz | 64 KB | p-channel MOS 16-bit |
+| 1975 | Panafacom MN1610 | 12,000 | 2 MHz | 64 KB | Japanese 16-bit pioneer |
+| 1976 | Ferranti F100-L | 8,000 | 1 MHz | 32 KB | British military |
+| 1977 | WD WD16 | 10,000 | 4 MHz | 64 KB | LSI-11 compatible |
+| 1977 | DG mN601 | 7,000 | 3 MHz | 64 KB | microNova |
+| 1978 | Intel 8086 | 29,000 | 5 MHz | 1 MB | x86 origin |
+| 1979 | Intel 8088 | 29,000 | 5 MHz | 1 MB (8-bit bus) | IBM PC |
+| 1979 | Motorola 68000 | 68,000 | 8 MHz | 16 MB | Mac/Amiga/Atari |
+| 1979 | Zilog Z8000 | 17,500 | 4 MHz | 8 MB | Zilog 16-bit |
+| 1982 | Intel 80286 | 134,000 | 6 MHz | 16 MB virtual | Protected mode |
+| 1982 | Intel 8096 | 55,000 | 12 MHz | 64 KB | Automotive MCU |
+| 1984 | WDC 65816 | 22,000 | 2.8 MHz | 16 MB | SNES, Apple IIGS |
+| 1984 | NEC V20/V30 | 63,000 | 8-10 MHz | 1 MB | Faster 808x |
 
 ### The IBM PC Decision (1981)
 
@@ -186,6 +249,8 @@ Intel 8086:                     Motorola 68000:
 |------|-----------|-------------|-------|--------------|
 | 1981 | iAPX 432 | 250,000 | 5 MHz | Object-oriented (failed) |
 | 1982 | NS32016 | 60,000 | 10 MHz | Traditional CISC |
+| 1982 | WE32000 | 125,000 | 14 MHz | Unix workstations |
+| 1984 | NS32032 | 70,000 | 10 MHz | Improved NS32016 |
 | 1984 | MC68020 | 190,000 | 16 MHz | Full 32-bit 68k |
 | 1985 | Intel 80386 | 275,000 | 16 MHz | 32-bit x86 |
 
@@ -194,8 +259,11 @@ Intel 8086:                     Motorola 68000:
 | Year | Processor | Transistors | Clock | Philosophy |
 |------|-----------|-------------|-------|------------|
 | 1982 | Berkeley RISC I | 44,000 | 1 MHz | First RISC (academic) |
+| 1983 | Berkeley RISC II | 41,000 | 3 MHz | Register windows refined |
+| 1983 | Stanford MIPS | 25,000 | 2 MHz | Original interlocked pipeline |
 | 1985 | ARM1 | 25,000 | 6 MHz | Simple is faster |
 | 1985 | MIPS R2000 | 110,000 | 8 MHz | Pipeline everything |
+| 1987 | SPARC | 100,000 | 16 MHz | RISC I/II heritage |
 
 ```
 CISC (Complex):                 RISC (Reduced):
@@ -208,7 +276,33 @@ CISC (Complex):                 RISC (Reduced):
 └─────────────────────┘         └─────────────────────┘
 
 ARM1: Only 25,000 transistors, outperformed 80286!
+Berkeley RISC II: Register windows influenced SPARC
+Stanford MIPS: Led directly to MIPS R2000
 ```
+
+### Specialized Processors
+
+#### Stack Machines (Forth)
+| Year | Processor | Clock | Notes |
+|------|-----------|-------|-------|
+| 1983 | Novix NC4016 | 8 MHz | Native Forth execution |
+| 1985 | Harris RTX2000 | 10 MHz | Improved NC4016 |
+
+#### DSPs (Digital Signal Processors)
+| Year | Processor | Clock | Application |
+|------|-----------|-------|-------------|
+| 1978 | AMI S2811 | 8 MHz | Early signal processor |
+| 1980 | NEC µPD7720 | 8 MHz | Speech synthesis |
+| 1982 | TI TMS320C10 | 20 MHz | First commercial TI DSP |
+
+#### Math Coprocessors
+| Year | Processor | Notes |
+|------|-----------|-------|
+| 1977 | AMD Am9511 | First arithmetic processor |
+| 1979 | AMD Am9512 | Floating-point APU |
+| 1982 | NS32081 | NS32000 family FPU |
+| 1980 | Intel 80287 | x86 coprocessor |
+| 1985 | Intel 80387 | 80386 coprocessor |
 
 ---
 
@@ -302,6 +396,6 @@ Processors from this era still in production or active use (2026):
 
 ---
 
-**Document Version:** 1.1
+**Document Version:** 2.0
 **Last Updated:** January 29, 2026
-**Processors Covered:** 80
+**Processors Covered:** 117

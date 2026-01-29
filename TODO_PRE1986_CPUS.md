@@ -1,8 +1,9 @@
-# TODO: Missing Pre-1986 Processors
+# TODO: Pre-1986 Processors
 
 Processors from the pre-1986 era that could be added to the collection.
 
-**Status: ALL COMPLETE ✓** (as of 2026-01-29)
+**Phase 1 Status: ALL COMPLETE ✓** (117 models as of 2026-01-29)
+**Phase 2 Status: 77 NEW CANDIDATES IDENTIFIED**
 
 ---
 
@@ -116,5 +117,182 @@ These were on the original list and were already done:
 
 **Last Updated:** 2026-01-29
 **Current Model Count:** 117
-**TODO Count:** 0 (all complete!)
+**Phase 1 TODO Count:** 0 (all complete!)
 **Pass Rate:** 100% (117/117 models validated)
+
+---
+
+# PHASE 2: Additional Pre-1986 Processors
+
+New candidates identified for future modeling work.
+
+---
+
+## Tier 1 - Top Priority (Excellent Documentation + High Historical Significance)
+
+- [ ] **TI SN74181** (1970) - First single-chip ALU, bridge to microprocessor era
+- [ ] **Motorola MC14500B** (1976) - Unique 1-bit industrial controller, ~500 transistors
+- [ ] **Intel 2920** (1979) - First Intel DSP attempt with ADC/DAC, 25-bit
+- [ ] **Toshiba TLCS-12** (1973) - **First Japanese microprocessor** (for Ford EEC), 12-bit
+- [ ] **Fujitsu MB8841** (1977) - Arcade gaming icon (Galaga, Xevious), 4-bit
+- [ ] **Western Digital Pascal MicroEngine (WD9000)** (1979) - Executes p-code directly, 16-bit
+- [ ] **NEC µPD7220** (1981) - **First LSI graphics processor**
+- [ ] **Mitsubishi MELPS 740** (1984) - Enhanced 6502, 600+ variants still in use
+- [ ] **East German U880** (1980) - Most used Eastern Bloc CPU (Z80 clone)
+- [ ] **Fairchild 9440/9445 MICROFLAME** (1979) - Data General Nova on a chip
+
+## 4-Bit Processors
+
+- [ ] **Fujitsu MB8842** (1977) - MB8841 variant, arcade use
+- [ ] **Fujitsu MB8843** (1977) - MB8841 variant
+- [ ] **Fujitsu MB8844** (1977) - MB8841 variant
+- [ ] **Fujitsu MB8845** (1977) - MB8841 variant
+- [ ] **Mitsubishi MELPS 4** (1978) - Original pMOS 4-bit MCU family
+- [ ] **Mitsubishi MELPS 41** (1980s) - Enhanced MELPS 4
+- [ ] **Mitsubishi MELPS 42** (1980s) - CMOS MELPS 4
+- [ ] **OKI MSM5840** (1980s) - 4-bit with LCD controller
+- [ ] **AMI S2000** (1970) - First complete system under $10
+- [ ] **AMI S2150** (1970s) - S2000 variant
+- [ ] **AMI S2200** (1970s) - S2000 variant
+- [ ] **AMI S2400** (1970s) - S2000 variant
+- [ ] **NEC µPD612xA** (1980s) - Extended µCOM-4 with LCD
+- [ ] **Samsung KS57 series** (1980s) - Korean 4-bit MCU entry
+
+## 8-Bit Processors
+
+- [ ] **Mitsubishi M50740** (1984) - MELPS 740 family, enhanced 6502
+- [ ] **Mitsubishi M50747** (1984) - MELPS 740 variant
+- [ ] **HP Nanoprocessor** (1977) - HP's proprietary MCU for calculators
+- [ ] **Rockwell R6500/1** (1978) - Single-chip 6502 MCU (AIM-65)
+- [ ] **GTE G65SC802** (1985) - WDC 65C816 second-source, 6502 pin-compatible
+- [ ] **GTE G65SC816** (1985) - WDC 65C816 second-source
+
+## 16-Bit Processors
+
+- [ ] **Toshiba TLCS-12A** (1975) - Improved TLCS-12
+- [ ] **Panafacom MN1613** (1980s) - Improved MN1610
+- [ ] **Plessey MIPROC** (1975) - PDP-11 compatible, NATO crypto systems
+- [ ] **Western Digital WD16** - Already have, verify coverage
+
+## 32-Bit Processors (Pre-1986 designs)
+
+- [ ] **NEC V60** (1986) - Japan's first widely available 32-bit (borderline)
+- [ ] **NEC V70** (1987) - V60 variant (post-cutoff but related)
+
+## Bit-Slice Processors
+
+- [ ] **TI SBP0400** (1975) - TI's I2L bit-slice answer to Am2901
+- [ ] **TI SBP0401** (1975) - SBP0400 variant
+- [ ] **Motorola MC10800** (1979) - ECL bit-slice for maximum speed
+- [ ] **AMD Am29C101** (1980s) - Four Am2901s in single chip
+- [ ] **Raytheon RP-16** (1970s) - Military-grade 16-bit bit-slice
+
+## DSP / Signal Processors
+
+- [ ] **Motorola DSP56000** (1986) - 24-bit audio DSP (borderline date)
+- [ ] **AT&T DSP-1** (1980) - Bell Labs early DSP (limited docs)
+- [ ] **AT&T DSP-20** (1980s) - Bell Labs DSP
+- [ ] **AMI S28211** (1979) - DSP peripheral for 6800 systems
+
+## Japanese Processors
+
+- [ ] **Hitachi HD63484 ACRTC** (1984) - Advanced CRT controller
+- [ ] **Toshiba TLCS-47** (1980s) - Toshiba 4-bit MCU family
+- [ ] **Toshiba TLCS-870** (1980s) - Toshiba 8-bit MCU
+- [ ] **Toshiba TLCS-90** (1980s) - Toshiba 8-bit MCU (Z80-like)
+- [ ] **Sanyo LC87** (1980s) - 8-bit MCU
+- [ ] **Sanyo LC88** (1980s) - 16-bit MCU
+
+## Eastern Bloc Processors
+
+### East German (DDR)
+- [ ] **U808** (1978) - First East German µP (Intel 8008 clone)
+- [ ] **U8001** (1984) - First 16-bit in Eastern Bloc (Z8000 clone)
+
+### Soviet
+- [ ] **KR580VM1** (1980s) - **Unique** 8080 extension with 128KB addressing
+- [ ] **KR1858VM1 / T34VM1** (1991) - Soviet Z80 clone (from U880 masks)
+- [ ] **IM1821VM85A** (1980s) - Soviet Intel 8085 clone
+- [ ] **K1810VM86** (1980s) - Soviet Intel 8086 clone
+- [ ] **KR581IK1** (1980s) - Soviet MCP-1600 clone
+- [ ] **KR581IK2** (1980s) - Soviet MCP-1600 clone
+
+### Czechoslovak
+- [ ] **Tesla MHB8080A** (1982) - Intel 8080 clone for PMI-80/PMD 85
+
+### Bulgarian
+- [ ] **CM630** (1980s) - CMOS 6502 clone for Pravetz computers
+
+## Gaming / Arcade Processors
+
+- [ ] **Namco 50xx** (1980s) - Custom chip for Pac-Man era games
+- [ ] **Namco 51xx** (1980s) - I/O controller
+- [ ] **Namco 52xx** (1980s) - Sample player
+- [ ] **Namco 53xx** (1980s) - Multiplexer
+- [ ] **Namco 54xx** (1980s) - Sound generator (possibly Z80-based)
+- [ ] **Namco 05xx** (1980s) - Famous starfield generator
+- [ ] **Hitachi FD1089** (1980s) - Encrypted 68000 variant (Sega)
+- [ ] **Hitachi FD1094** (1980s) - Encrypted 68000 variant (Sega)
+- [ ] **Harris HC-55516** (1980s) - CVSD sound decoder (Williams pinball)
+
+## Stack Machines
+
+- [ ] **WISC CPU/16** (1986) - Writable Instruction Set Computer, TTL
+- [ ] **WISC CPU/32** (1980s) - 32-bit WISC
+
+## Unique / Other
+
+- [ ] **TI TMS34010** (1986) - **First programmable GPU** (borderline date)
+- [ ] **Bell Labs MAC-4** (1980s) - Telecommunications MCU
+- [ ] **Sharp SM83 / LR35902** (1989) - Game Boy CPU (post-cutoff but iconic)
+
+---
+
+## Phase 2 Summary
+
+| Category | Count | Priority |
+|----------|-------|----------|
+| Tier 1 (Top Priority) | 10 | High |
+| 4-Bit Processors | 14 | Medium |
+| 8-Bit Processors | 6 | Medium |
+| 16-Bit Processors | 4 | Medium |
+| 32-Bit Processors | 2 | Low (post-cutoff) |
+| Bit-Slice | 5 | Medium |
+| DSP | 4 | Medium |
+| Japanese | 6 | Medium |
+| Eastern Bloc | 11 | Medium-High |
+| Gaming/Arcade | 9 | Medium |
+| Stack Machines | 2 | Low |
+| Unique/Other | 4 | Varies |
+| **TOTAL Phase 2** | **77** | |
+
+---
+
+## Documentation Quality Notes
+
+**Excellent (model immediately):**
+- TI SN74181, MC14500B, Intel 2920, Pascal MicroEngine, Fujitsu MB8841
+
+**Good (straightforward):**
+- U880, Tesla MHB8080A, MELPS 740, Namco customs (MAME), R6500/1
+
+**Medium (requires research):**
+- TLCS-12, MN1613, MIPROC, Soviet clones
+
+**Limited (challenging):**
+- Bell Labs DSP-1, Sanyo LC87, some arcade customs
+
+---
+
+## Recommended Implementation Order
+
+1. **SN74181** - Foundational, excellent docs
+2. **MC14500B** - Unique 1-bit, excellent handbook
+3. **Fujitsu MB8841** - Arcade history, MAME support
+4. **Intel 2920** - DSP pioneer, complete handbook
+5. **U880** - Eastern Bloc history, Z80 comparison
+6. **Tesla MHB8080A** - Czechoslovak history
+7. **TLCS-12** - First Japanese µP
+8. **Pascal MicroEngine** - Unique architecture
+9. **MELPS 740** - 6502 evolution
+10. **µPD7220** - Graphics pioneer
