@@ -2,13 +2,13 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0%
+- **CPI Error**: 2.3%
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
 - Architecture: 8-bit
 - Clock: 1.25 MHz
-- Target CPI: 5.5
+- Target CPI: 3.0
 - Key instruction categories: register_ops, immediate, memory_read, memory_write, branch, call_return
 
 ## Known Issues

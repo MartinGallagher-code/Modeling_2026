@@ -2,13 +2,13 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0%
+- **CPI Error**: 0.6%
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
 - Architecture: 8-bit microcontroller
 - Clock: 2 MHz
-- Target CPI: 5.0
+- Target CPI: 7.0
 - Key instruction categories: register_ops, immediate, memory_read, memory_write, branch, call_return
 
 ## Known Issues

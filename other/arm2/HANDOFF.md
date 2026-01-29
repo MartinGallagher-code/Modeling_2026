@@ -2,13 +2,13 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 1.1%
+- **CPI Error**: 0.7%
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
 - Architecture: 32-bit RISC
 - Clock: 8 MHz
-- Target CPI: 1.5
+- Target CPI: 1.43
 - Key instruction categories: alu, load, store, branch
 
 ## Known Issues

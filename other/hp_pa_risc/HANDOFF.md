@@ -2,13 +2,13 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0%
+- **CPI Error**: 1.2%
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
 - Architecture: Superscalar RISC
 - Clock: 100 MHz
-- Target CPI: 1.2
+- Target CPI: 0.91
 - Key instruction categories: alu, load, store, branch, multiply, divide, fp_ops, fp_complex
 
 ## Known Issues

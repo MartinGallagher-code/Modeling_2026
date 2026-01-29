@@ -2,13 +2,13 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0%
+- **CPI Error**: 4.7%
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
 - Architecture: Memory-to-memory
 - Clock: 3 MHz
-- Target CPI: 4.5
+- Target CPI: 20.0
 - Key instruction categories: register_ops, immediate, memory_read, memory_write, branch, call_return
 
 ## Known Issues

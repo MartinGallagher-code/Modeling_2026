@@ -2,13 +2,13 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0%
+- **CPI Error**: 3.0%
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
 - Architecture: 32-bit CISC
 - Clock: 6 MHz
-- Target CPI: 4.0
+- Target CPI: 12.0
 - Key instruction categories: register_ops, immediate, memory_read, memory_write, branch, call_return, complex
 
 ## Known Issues

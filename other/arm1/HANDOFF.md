@@ -2,7 +2,7 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 3.9%
+- **CPI Error**: 3.1%
 - **Last Updated**: 2026-01-28
 
 ## Current Model Summary
