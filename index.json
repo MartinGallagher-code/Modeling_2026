@@ -1,6 +1,6 @@
 {
   "generated": "2026-01-29T12:01:23.681982",
-  "total_processors": 122,
+  "total_processors": 123,
   "families": {
     "intel": {
       "count": 24,
@@ -32,7 +32,7 @@
       ]
     },
     "motorola": {
-      "count": 16,
+      "count": 17,
       "processors": [
         "m6800",
         "m68000",
@@ -49,7 +49,8 @@
         "m68881",
         "m68882",
         "m68hc05",
-        "m68hc11"
+        "m68hc11",
+        "mc14500b"
       ]
     },
     "mos_wdc": {

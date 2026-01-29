@@ -131,7 +131,7 @@ New candidates identified for future modeling work.
 ## Tier 1 - Top Priority (Excellent Documentation + High Historical Significance)
 
 - [ ] **TI SN74181** (1970) - First single-chip ALU, bridge to microprocessor era
-- [ ] **Motorola MC14500B** (1976) - Unique 1-bit industrial controller, ~500 transistors
+- [x] **Motorola MC14500B** (1976) - Unique 1-bit industrial controller, ~500 transistors
 - [ ] **Intel 2920** (1979) - First Intel DSP attempt with ADC/DAC, 25-bit
 - [ ] **Toshiba TLCS-12** (1973) - **First Japanese microprocessor** (for Ford EEC), 12-bit
 - [ ] **Fujitsu MB8841** (1977) - Arcade gaming icon (Galaga, Xevious), 4-bit

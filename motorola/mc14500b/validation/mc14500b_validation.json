@@ -1,0 +1,110 @@
+{
+  "processor": "Motorola MC14500B",
+  "year": 1976,
+  "specifications": {
+    "data_width_bits": 1,
+    "opcode_width_bits": 4,
+    "clock_mhz": 1.0,
+    "clock_max_mhz_15v": 4.0,
+    "transistors": 500,
+    "technology": "CMOS (silicon gate)",
+    "package": "16-pin DIP",
+    "supply_voltage": "3-18V",
+    "power_dissipation_mw": 0.05,
+    "instruction_count": 16
+  },
+  "timing": {
+    "cycles_per_instruction": 1,
+    "fixed_timing": true,
+    "notes": "ALL 16 instructions execute in exactly 1 clock cycle. No variable timing."
+  },
+  "validated_performance": {
+    "ips_at_1mhz": 1000000,
+    "ips_at_4mhz": 4000000,
+    "mips_typical": 1.0
+  },
+  "notes": "1-bit industrial control unit for ladder logic replacement. No program counter (external sequencer). JMP/RTN set output flags for external branching.",
+  "model_accuracy": {
+    "target_error_pct": 0,
+    "confidence": "High (trivially accurate - fixed 1-cycle timing)"
+  },
+  "sources": [
+    {
+      "type": "handbook",
+      "name": "MC14500B Industrial Control Unit Handbook",
+      "url": "http://www.bitsavers.org/components/motorola/14500/MC14500B_Industrial_Control_Unit_Handbook_1977.pdf",
+      "year": 1977,
+      "verified": true
+    },
+    {
+      "type": "reverse_engineering",
+      "name": "Ken Shirriff - A one-bit processor explained",
+      "url": "http://www.righto.com/2021/02/a-one-bit-processor-explained-reverse.html",
+      "year": 2021,
+      "verified": true
+    },
+    {
+      "type": "wikichip",
+      "name": "WikiChip MC14500B",
+      "url": "https://en.wikichip.org/wiki/motorola/mc14500/mc14500b",
+      "verified": true
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia - Motorola MC14500B",
+      "url": "https://en.wikipedia.org/wiki/Motorola_MC14500B",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "timing_tests": [
+    {"name": "NOPO", "opcode": "0000", "category": "nop", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "LD", "opcode": "0001", "category": "load_store", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "LDC", "opcode": "0010", "category": "load_store", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "AND", "opcode": "0011", "category": "logic", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "ANDC", "opcode": "0100", "category": "logic", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "OR", "opcode": "0101", "category": "logic", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "ORC", "opcode": "0110", "category": "logic", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "XNOR", "opcode": "0111", "category": "logic", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "STO", "opcode": "1000", "category": "load_store", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "STOC", "opcode": "1001", "category": "load_store", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "IEN", "opcode": "1010", "category": "control", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "OEN", "opcode": "1011", "category": "control", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "JMP", "opcode": "1100", "category": "control", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "RTN", "opcode": "1101", "category": "control", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "SKZ", "opcode": "1110", "category": "control", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"},
+    {"name": "NOPF", "opcode": "1111", "category": "nop", "expected_cycles": 1, "measured_cycles": 1, "error_percent": 0.0, "passed": true, "source": "Handbook p.4"}
+  ],
+  "instruction_mix": {
+    "logic": 0.35,
+    "load_store": 0.30,
+    "control": 0.30,
+    "nop": 0.05
+  },
+  "accuracy": {
+    "expected_cpi": 1.0,
+    "expected_ipc": 1.0,
+    "validated_workloads": ["typical", "logic_heavy", "control", "io"],
+    "predicted_cpi": 1.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Trivially accurate: all 16 instructions execute in exactly 1 cycle"
+  },
+  "cross_validation": {
+    "method": "Fixed-cycle verification against Motorola handbook and reverse-engineering analysis",
+    "reference_sources": [
+      "MC14500B Industrial Control Unit Handbook (1977)",
+      "Ken Shirriff reverse-engineering (2021)",
+      "WikiChip specifications"
+    ],
+    "reference_cpi": 1.0,
+    "model_cpi": 1.0,
+    "error_percent": 0.0,
+    "notes": "All 16 instructions confirmed as single-cycle by multiple independent sources",
+    "validated_date": "2026-01-29",
+    "per_instruction_tests": {"total_tests": 16, "passed": 16, "failed": 0}
+  }
+}

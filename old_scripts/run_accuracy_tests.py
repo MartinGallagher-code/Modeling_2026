@@ -56,6 +56,7 @@ EXPECTED_CPI = {
     'm6805': 5.0,       # Microcontroller
     'm6809': 3.5,
     'm68hc11': 4.5,     # Microcontroller
+    'mc14500b': 1.0,    # 1-bit ICU, all instructions 1 cycle
     # Motorola 68k
     'm68000': 6.5,
     'm68008': 7.0,
