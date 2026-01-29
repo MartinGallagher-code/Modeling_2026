@@ -5,6 +5,39 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation using 6502 timings
+
+**Session goal:** Apply cross-validated 6502 timings to 6510 (identical instruction set)
+
+**Starting state:**
+- CPI: 3.485 (0.4% error vs old target 3.5)
+- Using pre-cross-validation 6502 cycle counts
+
+**Changes made:**
+
+1. Applied cross-validated 6502 cycle counts:
+   - alu: 3.0 → 2.3 cycles (INX/DEX @2, ADC imm @2, ADC zp @3)
+   - data_transfer: 3.5 → 2.8 cycles (LDA imm @2, zp @3, abs @4)
+   - memory: 4.2 → 4.0 cycles (STA zp @3, abs @4, indexed @4-5)
+   - control: 3.0 → 2.6 cycles (branches @2.55 avg, JMP @3)
+   - stack: 3.5 unchanged
+
+2. Updated target CPI from 3.5 to 3.0 (matches cross-validated 6502)
+
+3. Added 17 per-instruction timing tests to validation JSON
+
+**What we learned:**
+- 6510 timing is 100% identical to 6502
+- Cross-validated CPI of 3.0 is accurate for typical C64 programs
+- VICE emulator uses same timing tables
+
+**Final state:**
+- CPI: 3.065 (2.17% error vs target 3.0)
+- Cross-validated: Yes
+- Per-instruction tests: 17/17 passing
+
+---
+
 ## 2026-01-28 - Implement validate() method
 
 **Session goal:** Add self-validation capability to the model

@@ -5,6 +5,47 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-28 - Cross-validation with 16-bit timing analysis
+
+**Session goal:** Add per-instruction timing tests and document 16-bit mode overhead
+
+**Starting state:**
+- CPI: 3.82 (0.5% error vs target 3.8)
+- Model already calibrated but needed timing tests
+
+**Analysis:**
+Used Super Famicom Development Wiki and WDC datasheet to verify timing:
+- 16-bit mode (m=0): LDA/STA/ADC add +1 cycle
+- Long addressing (24-bit): adds +1 cycle
+- JSL = 8 cycles, RTL = 6 cycles
+- SEP/REP for mode switching = 3 cycles each
+
+**Changes made:**
+
+1. Added 26 per-instruction timing tests covering:
+   - 8-bit vs 16-bit mode variants for LDA, STA, ADC, PHA, PLA
+   - Long addressing instructions (JML, JSL, RTL)
+   - Mode switching instructions (SEP, REP)
+
+2. Documented mode assumptions in cross_validation:
+   - 50% accumulator 16-bit usage
+   - 30% index 16-bit usage
+   - 20% long addressing usage
+
+3. Model CPI of 3.82 is ~33% slower than 65C02's 2.84 (expected)
+
+**What we learned:**
+- SNES games typically ran with 16-bit accumulator, 8-bit index
+- Mode switching overhead is significant (SEP/REP @ 3 cycles each)
+- The 24-bit address space justified the performance cost
+
+**Final state:**
+- CPI: 3.82 (0.53% error vs target 3.8)
+- Cross-validated: Yes
+- Per-instruction tests: 26/26 passing
+
+---
+
 ## 2026-01-28 - Implement validate() method
 
 **Session goal:** Add self-validation capability to the model

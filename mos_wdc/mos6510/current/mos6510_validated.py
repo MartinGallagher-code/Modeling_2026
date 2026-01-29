@@ -14,7 +14,7 @@ Features:
   - 2-7 cycles per instruction
 
 Calibrated: 2026-01-28
-Target CPI: ~3.5 for typical workloads
+Target CPI: ~3.0 for typical workloads (cross-validated, same as 6502)
 Used in: Commodore 64, Commodore 128
 """
 
@@ -68,7 +68,7 @@ class Mos6510Model(BaseProcessorModel):
     Architecture: 8-bit NMOS microprocessor (1982)
     - 6502 core with identical instruction timing
     - Added I/O port for bank switching (C64 memory management)
-    - CPI ~3.5 for typical workloads (same as 6502)
+    - CPI ~3.0 for typical workloads (cross-validated, same as 6502)
     """
 
     # Processor specifications
@@ -81,17 +81,18 @@ class Mos6510Model(BaseProcessorModel):
     address_width = 16
 
     def __init__(self):
-        # Instruction timing identical to 6502
+        # Instruction timing identical to 6502 (cross-validated)
         # From MOS Technology datasheet and VICE emulator validation
+        # Same timings as cross-validated 6502 model
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 3.0, 0,
-                "ALU ops - mix of implied @2 and memory-based @3-4"),
-            'data_transfer': InstructionCategory('data_transfer', 3.5, 0,
-                "LDA/STA/LDX/LDY/STX/STY - mix of addressing modes"),
-            'memory': InstructionCategory('memory', 4.2, 0,
-                "Memory ops including indexed/indirect modes"),
-            'control': InstructionCategory('control', 3.0, 0,
-                "Branches @2.5 avg, JMP @3"),
+            'alu': InstructionCategory('alu', 2.3, 0,
+                "ALU ops: INX/DEX @2, ADC imm @2, ADC zp @3, CMP @2-3"),
+            'data_transfer': InstructionCategory('data_transfer', 2.8, 0,
+                "LDA imm @2, LDA zp @3, LDA abs @4, TAX @2 - weighted"),
+            'memory': InstructionCategory('memory', 4.0, 0,
+                "STA zp @3, STA abs @4, indexed @4-5, indirect @5-6"),
+            'control': InstructionCategory('control', 2.6, 0,
+                "Branch avg @2.55 (50% taken), JMP @3"),
             'stack': InstructionCategory('stack', 3.5, 0,
                 "PHA @3, PLA @4, JSR @6, RTS @6 - weighted avg"),
         }
@@ -159,9 +160,9 @@ class Mos6510Model(BaseProcessorModel):
         """Run validation tests against known 6510 characteristics"""
         tests = []
 
-        # Test 1: CPI within expected range (target 3.5, allow 5% tolerance)
+        # Test 1: CPI within expected range (target 3.0, cross-validated same as 6502)
         result = self.analyze('typical')
-        expected_cpi = 3.5
+        expected_cpi = 3.0
         cpi_error = abs(result.cpi - expected_cpi) / expected_cpi * 100
         tests.append({
             'name': 'CPI accuracy',
@@ -180,7 +181,7 @@ class Mos6510Model(BaseProcessorModel):
                 'actual': f'{weight_sum:.2f}'
             })
 
-        # Test 3: All cycle counts are positive and reasonable (1-10 for 6510)
+        # Test 3: All cycle counts are positive and reasonable (1-10 for 6510/6502)
         for cat_name, cat in self.instruction_categories.items():
             cycles = cat.total_cycles
             tests.append({
