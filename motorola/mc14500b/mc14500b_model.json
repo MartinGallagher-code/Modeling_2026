@@ -7,13 +7,14 @@
   "timing_categories": {
     "logic": { "cycles": 1.0, "weight": 0.35, "desc": "Boolean ops: AND, ANDC, OR, ORC, XNOR" },
     "load_store": { "cycles": 1.0, "weight": 0.30, "desc": "Data: LD, LDC, STO, STOC" },
-    "control": { "cycles": 1.0, "weight": 0.30, "desc": "Control: JMP, RTN, SKZ, IEN, OEN" },
+    "flow": { "cycles": 1.0, "weight": 0.15, "desc": "Flow: JMP, RTN, SKZ" },
+    "io_enable": { "cycles": 1.0, "weight": 0.15, "desc": "I/O enable: IEN, OEN" },
     "nop": { "cycles": 1.0, "weight": 0.05, "desc": "No-op: NOPO, NOPF" }
   },
   "validation_targets": {
     "ips_range": [1000000, 1000000],
     "cpi_range": [1.0, 1.0],
-    "expected_bottlenecks": ["logic", "load_store", "control"],
+    "expected_bottlenecks": ["fetch", "decode", "execute", "memory"],
     "sources": ["Motorola MC14500B Industrial Control Unit Handbook (1977)"]
   },
   "notes": "All 16 instructions execute in exactly 1 clock cycle. No pipeline, no program counter (external). 1-bit datapath.",
