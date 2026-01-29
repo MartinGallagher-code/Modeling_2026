@@ -68,6 +68,7 @@ This document provides side-by-side comparisons of key performance metrics acros
 | Motorola 68020 | 1984 | 16.0 | 190,000 | 0.22 | 3.52 | 4 GB | Full 32-bit 68k |
 | NS NS32016 | 1982 | 10.0 | 60,000 | 0.10 | 1.00 | 16 MB | Early 32-bit |
 | NS NS32032 | 1984 | 10.0 | 70,000 | 0.12 | 1.20 | 4 GB | Improved NS |
+| Berkeley RISC I | 1982 | 1.00 | 44,000 | 0.58 | 0.58 | 32-bit | First RISC (academic) |
 | ARM1 | 1985 | 6.00 | 25,000 | 0.50 | 3.00 | 26-bit | RISC pioneer |
 | MIPS R2000 | 1985 | 8.00 | 110,000 | 0.60 | 4.80 | 4 GB | RISC pioneer |
 
@@ -216,11 +217,13 @@ iAPX 432        █ 0.001 ← Bloated!
 | 68000 | 32-bit registers, orthogonal ISA |
 | 80286 | Protected mode, privilege levels |
 | 80386 | Paging, 32-bit x86 |
+| RISC I | Register windows, first RISC |
 | ARM1 | RISC simplicity, load/store |
 | R2000 | 5-stage pipeline, delay slots |
 | 1802 | Radiation hardness |
 | 8051 | Integrated peripherals, bit addressing |
 | 8096 | HSI/HSO for real-time control |
+| TMS320C10 | First successful commercial DSP |
 
 ---
 
@@ -310,5 +313,6 @@ iAPX 432        █ 0.001 ← Bloated!
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** January 25, 2026
+**Document Version:** 1.1
+**Last Updated:** January 29, 2026
+**Processors Covered:** 80

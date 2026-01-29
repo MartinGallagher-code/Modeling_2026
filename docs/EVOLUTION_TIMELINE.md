@@ -56,11 +56,12 @@ This document traces the architectural evolution of microprocessors from the fir
        │   TI TMS9995
        │
 1982 ──┼── Intel 80286 ─────────────────── IBM AT processor
-       │   Intel 80186/80188
+       │   Intel 80186/80188              Berkeley RISC I (first RISC!)
        │   Intel 8096
        │   Motorola 68008, 68010
        │   Hitachi 6309
        │   NS NS32016
+       │   TI TMS320C10 (first TI DSP)
        │
 1983 ──┼── WDC 65C02
        │   Motorola 6803
@@ -192,6 +193,7 @@ Intel 8086:                     Motorola 68000:
 
 | Year | Processor | Transistors | Clock | Philosophy |
 |------|-----------|-------------|-------|------------|
+| 1982 | Berkeley RISC I | 44,000 | 1 MHz | First RISC (academic) |
 | 1985 | ARM1 | 25,000 | 6 MHz | Simple is faster |
 | 1985 | MIPS R2000 | 110,000 | 8 MHz | Pipeline everything |
 
@@ -300,5 +302,6 @@ Processors from this era still in production or active use (2026):
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** January 25, 2026
+**Document Version:** 1.1
+**Last Updated:** January 29, 2026
+**Processors Covered:** 80
