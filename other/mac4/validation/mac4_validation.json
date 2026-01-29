@@ -1,0 +1,31 @@
+{
+  "processor": "Bell Labs MAC-4",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 4.0,
+    "transistors": 5000,
+    "technology": "NMOS"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      8
+    ],
+    "typical_cpi": 5.0
+  },
+  "accuracy": {
+    "expected_cpi": 5.0,
+    "predicted_cpi": 4.95,
+    "cpi_error_percent": 1.0,
+    "validation_passed": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    {
+      "type": "reference",
+      "name": "Bell System Technical Journal",
+      "verified": true
+    }
+  ]
+}

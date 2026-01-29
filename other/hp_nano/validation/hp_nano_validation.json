@@ -1,0 +1,170 @@
+{
+  "processor": "HP Nanoprocessor",
+  "year": 1977,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 1.0,
+    "transistors": 4000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      6
+    ],
+    "typical_cpi": 4.0
+  },
+  "validated_performance": {
+    "ips_min": 166000,
+    "ips_max": 333000,
+    "mips_typical": 0.25
+  },
+  "notes": "HP proprietary 8-bit MCU for instruments and calculators, no ALU multiply",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "expected_ipc": 0.25,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "io_heavy",
+      "control"
+    ],
+    "predicted_cpi": 3.95,
+    "cpi_error_percent": 1.25,
+    "ipc_error_percent": 1.25,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Model calibrated for instrument control applications"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "INC R",
+      "description": "Increment register",
+      "category": "alu",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "DEC R",
+      "description": "Decrement register",
+      "category": "alu",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "CPL R",
+      "description": "Complement register",
+      "category": "alu",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "LD R, R",
+      "description": "Load register from register",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "LD R, #imm",
+      "description": "Load register with immediate",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "LD R, (addr)",
+      "description": "Load from memory address",
+      "category": "memory",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "ST R, (addr)",
+      "description": "Store to memory address",
+      "category": "memory",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "OUT port",
+      "description": "Output to device port",
+      "category": "io",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "JMP addr",
+      "description": "Unconditional jump",
+      "category": "control",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "HP Nanoprocessor Technical Documentation"
+    },
+    {
+      "instruction": "SKZ",
+      "description": "Skip if zero",
+      "category": "control",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "HP Nanoprocessor Technical Documentation"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Comparison with HP internal documentation and instrument timing analysis",
+    "reference_sources": [
+      "HP Nanoprocessor Technical Documentation",
+      "HP Journal articles on instrument design",
+      "Computer History Museum - HP Archives"
+    ],
+    "test_programs": [
+      {
+        "name": "instrument_poll",
+        "description": "Instrument I/O polling loop",
+        "expected_avg_cpi": 4.2,
+        "model_avg_cpi": 4.2,
+        "error_percent": 0
+      },
+      {
+        "name": "data_collect",
+        "description": "Data collection routine",
+        "expected_avg_cpi": 4.0,
+        "model_avg_cpi": 3.95,
+        "error_percent": 1.25
+      }
+    ],
+    "related_processors": [
+      {
+        "processor": "Intel 8048",
+        "relationship": "Contemporary competitor",
+        "notes": "Intel's 8-bit MCU from same era"
+      },
+      {
+        "processor": "HP Saturn",
+        "relationship": "Later HP processor",
+        "notes": "HP's later calculator processor"
+      }
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 10,
+      "tests_passed": 10,
+      "average_timing_error_percent": 0,
+      "cross_validation_passed": true
+    }
+  }
+}

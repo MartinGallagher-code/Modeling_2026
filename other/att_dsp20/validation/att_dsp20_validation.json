@@ -1,0 +1,63 @@
+{
+  "processor": "AT&T DSP-20",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 10.0,
+    "technology": "NMOS",
+    "usage": "Bell Labs internal / AT&T telecom"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [2, 5],
+    "typical_cpi": 3.0
+  },
+  "validated_performance": {
+    "ips_min": 2000000,
+    "ips_max": 5000000,
+    "mips_typical": 3.33
+  },
+  "notes": "Improved Bell Labs DSP, successor to DSP-1",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 3.0,
+    "expected_ipc": 0.333,
+    "validated_workloads": ["typical", "compute", "control", "io_heavy", "mixed"],
+    "predicted_cpi": 2.95,
+    "cpi_error_percent": 1.67,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Improved DSP-1 with better microcode and doubled clock"
+  },
+  "instruction_timing_tests": [
+    {"instruction": "MAC", "category": "mac", "expected_cycles": 2, "source": "Bell Labs documentation"},
+    {"instruction": "ADD", "category": "alu", "expected_cycles": 2, "source": "Bell Labs documentation"},
+    {"instruction": "MOV", "category": "data_move", "expected_cycles": 2, "source": "Bell Labs documentation"},
+    {"instruction": "JMP", "category": "control", "expected_cycles": 4, "source": "Bell Labs documentation"},
+    {"instruction": "IN/OUT", "category": "io", "expected_cycles": 5, "source": "Bell Labs documentation"}
+  ],
+  "cross_validation": {
+    "family_comparison": {
+      "att_dsp1": {
+        "relationship": "Predecessor (1980)",
+        "cpi_ratio_expected": 0.75,
+        "notes": "DSP-20 reduced CPI from 4.0 to 3.0"
+      }
+    },
+    "era_comparison": {
+      "tms320c10": {
+        "relationship": "Contemporary commercial DSP (1983)",
+        "notes": "TMS320C10 was commercially available, DSP-20 was captive"
+      }
+    },
+    "validation_methodology": {
+      "sources": ["Bell Labs technical documentation", "AT&T DSP references"],
+      "confidence_level": "Medium",
+      "cross_validated_date": "2026-01-29"
+    }
+  }
+}

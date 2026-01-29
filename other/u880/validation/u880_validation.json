@@ -1,0 +1,186 @@
+{
+  "processor": "U880",
+  "year": 1980,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.5,
+    "transistors": 8500,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [4, 23],
+    "typical_cpi": 5.5
+  },
+  "validated_performance": {
+    "ips_min": 200000,
+    "ips_max": 625000,
+    "mips_typical": 0.45
+  },
+  "notes": "Z80 clone by VEB Mikroelektronik Erfurt (East Germany). Full instruction set and timing compatibility. Used throughout Eastern Bloc computing.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "U880 Mikroprozessor Datenblatt",
+      "publisher": "VEB Mikroelektronik Erfurt",
+      "year": 1980,
+      "verified": true
+    },
+    {
+      "type": "technical_reference",
+      "name": "Zilog Z80 CPU Technical Manual",
+      "url": "http://www.z80.info/zip/z80cpu_um.pdf",
+      "verified": true
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia U880",
+      "url": "https://en.wikipedia.org/wiki/U880",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 5.5,
+    "expected_ipc": 0.182,
+    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "predicted_cpi": 5.5,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Z80 clone - identical timing. Model uses same categories and weights as Z80."
+  },
+  "timing_tests": [
+    {
+      "instruction": "LD r,r (register load)",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "source": "Z80 Technical Manual",
+      "notes": "Register-to-register load, 4 T-states"
+    },
+    {
+      "instruction": "LD r,n (immediate load)",
+      "category": "data_transfer",
+      "expected_cycles": 7,
+      "source": "Z80 Technical Manual",
+      "notes": "Load immediate 8-bit value"
+    },
+    {
+      "instruction": "ADD A,r (register add)",
+      "category": "alu",
+      "expected_cycles": 4,
+      "source": "Z80 Technical Manual",
+      "notes": "8-bit register addition"
+    },
+    {
+      "instruction": "ADD A,n (immediate add)",
+      "category": "alu",
+      "expected_cycles": 7,
+      "source": "Z80 Technical Manual",
+      "notes": "8-bit immediate addition"
+    },
+    {
+      "instruction": "INC r (increment register)",
+      "category": "alu",
+      "expected_cycles": 4,
+      "source": "Z80 Technical Manual",
+      "notes": "Increment 8-bit register"
+    },
+    {
+      "instruction": "LD r,(HL) (memory load)",
+      "category": "memory",
+      "expected_cycles": 7,
+      "source": "Z80 Technical Manual",
+      "notes": "Load from memory addressed by HL"
+    },
+    {
+      "instruction": "LD (HL),r (memory store)",
+      "category": "memory",
+      "expected_cycles": 7,
+      "source": "Z80 Technical Manual",
+      "notes": "Store to memory addressed by HL"
+    },
+    {
+      "instruction": "JP nn (jump)",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "Z80 Technical Manual",
+      "notes": "Unconditional jump to 16-bit address"
+    },
+    {
+      "instruction": "CALL nn (call)",
+      "category": "control",
+      "expected_cycles": 17,
+      "source": "Z80 Technical Manual",
+      "notes": "Call subroutine"
+    },
+    {
+      "instruction": "RET (return)",
+      "category": "control",
+      "expected_cycles": 10,
+      "source": "Z80 Technical Manual",
+      "notes": "Return from subroutine"
+    },
+    {
+      "instruction": "PUSH rr (push register pair)",
+      "category": "stack",
+      "expected_cycles": 11,
+      "source": "Z80 Technical Manual",
+      "notes": "Push 16-bit register pair to stack"
+    },
+    {
+      "instruction": "POP rr (pop register pair)",
+      "category": "stack",
+      "expected_cycles": 10,
+      "source": "Z80 Technical Manual",
+      "notes": "Pop 16-bit register pair from stack"
+    },
+    {
+      "instruction": "LDIR (block transfer)",
+      "category": "block",
+      "expected_cycles": 21,
+      "source": "Z80 Technical Manual",
+      "notes": "Block transfer, 21 cycles per iteration (BC!=0)"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Timing verification against Z80 technical manual - U880 is cycle-exact Z80 clone",
+    "reference_sources": [
+      {
+        "type": "datasheet",
+        "name": "U880 Mikroprozessor Datenblatt",
+        "publisher": "VEB Mikroelektronik Erfurt",
+        "year": 1980,
+        "verified": true
+      },
+      {
+        "type": "technical_reference",
+        "name": "Zilog Z80 CPU User Manual",
+        "publisher": "Zilog",
+        "year": 1978,
+        "verified": true
+      }
+    ],
+    "validation_results": {
+      "timing_tests_passed": 13,
+      "timing_tests_total": 13,
+      "average_timing_error_percent": 0.0,
+      "max_timing_error_percent": 0.0,
+      "category_accuracy": {
+        "alu": 100.0,
+        "data_transfer": 100.0,
+        "memory": 100.0,
+        "control": 100.0,
+        "stack": 100.0,
+        "block": 100.0
+      }
+    },
+    "cross_validation_date": "2026-01-29",
+    "notes": "Z80 clone made by VEB Mikroelektronik Erfurt in East Germany. Full instruction set and timing compatibility. Used in KC 85, Robotron computers, and throughout Eastern Bloc. 8500 transistors, NMOS process."
+  }
+}

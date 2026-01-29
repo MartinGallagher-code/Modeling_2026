@@ -1,0 +1,49 @@
+{
+  "processor": "Namco 05xx",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 1.5,
+    "transistors": 2000,
+    "technology": "Custom NMOS",
+    "function": "Starfield visual effect generator"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 5],
+    "typical_cpi": 4.0
+  },
+  "validated_performance": {
+    "ips_min": 250000,
+    "ips_max": 500000,
+    "mips_typical": 0.375
+  },
+  "notes": "Produces the iconic scrolling starfield backgrounds in Galaga and Bosconian",
+  "model_accuracy": {
+    "target_error_pct": 10,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "emulator",
+      "name": "MAME Namco 05xx emulation",
+      "url": "https://github.com/mamedev/mame",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "predicted_cpi": 3.7,
+    "cpi_error_percent": 7.5,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "star_calc": 0.30,
+    "pixel_out": 0.25,
+    "scroll": 0.15,
+    "control": 0.15,
+    "timing": 0.15
+  }
+}

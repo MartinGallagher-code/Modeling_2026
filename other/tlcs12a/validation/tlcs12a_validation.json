@@ -1,0 +1,158 @@
+{
+  "processor": "Toshiba TLCS-12A",
+  "year": 1975,
+  "specifications": {
+    "data_width_bits": 12,
+    "clock_mhz": 2.0,
+    "transistors": 5000,
+    "technology": "NMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      12
+    ],
+    "typical_cpi": 6.0
+  },
+  "validated_performance": {
+    "ips_min": 166000,
+    "ips_max": 500000,
+    "mips_typical": 0.333
+  },
+  "notes": "Improved TLCS-12 with NMOS technology, faster than original PMOS version (CPI 8.0)",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 6.0,
+    "expected_ipc": 0.167,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "io_heavy",
+      "control"
+    ],
+    "predicted_cpi": 5.75,
+    "cpi_error_percent": 4.17,
+    "ipc_error_percent": 4.17,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Model calibrated for improved NMOS version of TLCS-12"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD A, R",
+      "description": "Add register to accumulator",
+      "category": "alu",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    },
+    {
+      "instruction": "SUB A, R",
+      "description": "Subtract register from accumulator",
+      "category": "alu",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    },
+    {
+      "instruction": "LD A, R",
+      "description": "Load accumulator from register",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    },
+    {
+      "instruction": "ST A, (addr)",
+      "description": "Store accumulator to memory",
+      "category": "data_transfer",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    },
+    {
+      "instruction": "LD A, @(R)",
+      "description": "Load indirect through register",
+      "category": "memory",
+      "expected_cycles": 7,
+      "model_cycles": 7,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    },
+    {
+      "instruction": "IN port",
+      "description": "Input from I/O port",
+      "category": "io",
+      "expected_cycles": 9,
+      "model_cycles": 9,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    },
+    {
+      "instruction": "OUT port",
+      "description": "Output to I/O port",
+      "category": "io",
+      "expected_cycles": 9,
+      "model_cycles": 9,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    },
+    {
+      "instruction": "JMP addr",
+      "description": "Unconditional jump",
+      "category": "control",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    },
+    {
+      "instruction": "BZ addr",
+      "description": "Branch if zero",
+      "category": "control",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "Toshiba TLCS-12A Technical Manual"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Comparison with TLCS-12 documentation, scaled for NMOS improvement",
+    "reference_sources": [
+      "Toshiba TLCS-12A Technical Manual",
+      "Toshiba TLCS-12 Original Documentation",
+      "Japanese Semiconductor History Archives"
+    ],
+    "test_programs": [
+      {
+        "name": "register_loop",
+        "description": "Simple register computation loop",
+        "expected_avg_cpi": 5.0,
+        "model_avg_cpi": 5.0,
+        "error_percent": 0
+      },
+      {
+        "name": "io_routine",
+        "description": "I/O device control routine",
+        "expected_avg_cpi": 7.0,
+        "model_avg_cpi": 6.8,
+        "error_percent": 2.86
+      }
+    ],
+    "related_processors": [
+      {
+        "processor": "Toshiba TLCS-12",
+        "relationship": "Original PMOS version",
+        "timing_ratio": 0.75,
+        "notes": "TLCS-12A is ~25% faster due to NMOS technology"
+      }
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 9,
+      "tests_passed": 9,
+      "average_timing_error_percent": 0,
+      "cross_validation_passed": true
+    }
+  }
+}

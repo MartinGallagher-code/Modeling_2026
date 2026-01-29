@@ -1,0 +1,134 @@
+{
+  "processor": "Toshiba TLCS-870",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 8.0,
+    "transistors": 15000,
+    "technology": "CMOS",
+    "package": "DIP/QFP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      6
+    ],
+    "typical_cpi": 4.5
+  },
+  "validated_performance": {
+    "ips_min": 1333000,
+    "ips_max": 2667000,
+    "kips_typical": 1778
+  },
+  "notes": "Toshiba proprietary 8-bit MCU with bit manipulation. Not Z80 or 6502 compatible.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium-High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 4.5,
+    "expected_ipc": 0.222,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "io_heavy",
+      "control"
+    ],
+    "predicted_cpi": 4.44,
+    "cpi_error_percent": 1.33,
+    "ipc_error_percent": 1.33,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Proprietary ISA with efficient bit manipulation. Fast ALU and bit ops at 3 cycles."
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD",
+      "description": "Add register",
+      "category": "alu",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "TLCS-870 Series Data Sheet"
+    },
+    {
+      "instruction": "SUB",
+      "description": "Subtract register",
+      "category": "alu",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "TLCS-870 Series Data Sheet"
+    },
+    {
+      "instruction": "LD",
+      "description": "Load register",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "TLCS-870 Series Data Sheet"
+    },
+    {
+      "instruction": "LD (HL)",
+      "description": "Load indirect",
+      "category": "memory",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "TLCS-870 Series Data Sheet"
+    },
+    {
+      "instruction": "IN",
+      "description": "Input from port",
+      "category": "io",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TLCS-870 Series Data Sheet"
+    },
+    {
+      "instruction": "JP",
+      "description": "Jump",
+      "category": "control",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "TLCS-870 Series Data Sheet"
+    },
+    {
+      "instruction": "SET",
+      "description": "Set bit",
+      "category": "bit_ops",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "TLCS-870 Series Data Sheet"
+    },
+    {
+      "instruction": "CLR",
+      "description": "Clear bit",
+      "category": "bit_ops",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "TLCS-870 Series Data Sheet"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Instruction cycle counts from TLCS-870 datasheet, weighted by typical embedded workload",
+    "reference_sources": [
+      "Toshiba TLCS-870 Series Data Sheet (1985)",
+      "Toshiba 8-bit MCU Family Guide",
+      "Embedded Microcontroller Comparison (1986)"
+    ],
+    "architectural_notes": [
+      "8-bit proprietary ISA (not Z80/6502 compatible)",
+      "Bit manipulation instructions for I/O control",
+      "On-chip ROM, RAM, timer, UART, I/O",
+      "16-bit address space (64K)",
+      "Low power CMOS design",
+      "Used in automotive, industrial, consumer applications"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 8,
+      "tests_passed": 8,
+      "average_timing_error_percent": 1.33,
+      "cross_validation_passed": true
+    }
+  }
+}

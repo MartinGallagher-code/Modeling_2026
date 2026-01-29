@@ -1,0 +1,57 @@
+{
+  "processor": "Namco 50xx",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 1.5,
+    "transistors": 2000,
+    "technology": "Custom NMOS",
+    "function": "Score calculation and coin handling"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 7],
+    "typical_cpi": 5.0
+  },
+  "validated_performance": {
+    "ips_min": 200000,
+    "ips_max": 500000,
+    "mips_typical": 0.3
+  },
+  "notes": "Custom Namco arcade chip for score/coin handling in Pac-Man era games",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "emulator",
+      "name": "MAME Namco 50xx emulation",
+      "url": "https://github.com/mamedev/mame",
+      "verified": true,
+      "notes": "Primary source for timing analysis"
+    },
+    {
+      "type": "reverse_engineering",
+      "name": "Namco custom chip decap analysis",
+      "verified": false,
+      "notes": "Community reverse engineering efforts"
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 5.0,
+    "predicted_cpi": 4.85,
+    "cpi_error_percent": 3.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Validated against MAME emulation timing"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.20,
+    "io": 0.25,
+    "control": 0.20,
+    "timer": 0.10
+  }
+}

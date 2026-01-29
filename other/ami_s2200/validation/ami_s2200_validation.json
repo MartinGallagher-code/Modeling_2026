@@ -1,0 +1,32 @@
+{
+  "processor": "AMI S2200",
+  "year": 1972,
+  "historical_note": "S2000 variant with expanded ROM",
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.2,
+    "transistors": 3500,
+    "technology": "PMOS",
+    "package": "28-pin DIP",
+    "architecture": "4-bit PMOS calculator chip"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [6, 10],
+    "typical_cpi": 8.0,
+    "notes": "Same timing as S2000, expanded ROM"
+  },
+  "validated_performance": {
+    "ips_min": 20000,
+    "ips_max": 33333,
+    "kips_typical": 25.0
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 8.0,
+    "predicted_cpi": 8.0,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"]
+  }
+}

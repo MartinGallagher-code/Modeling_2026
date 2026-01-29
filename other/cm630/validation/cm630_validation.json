@@ -1,0 +1,65 @@
+{
+  "processor": "CM630",
+  "year": 1984,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 1.0,
+    "transistors": 4000,
+    "technology": "CMOS",
+    "package": "40-pin DIP",
+    "compatibility": "WDC 65C02 clone (CMOS 6502)"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [2, 7],
+    "typical_cpi": 2.85
+  },
+  "validated_performance": {
+    "ips_min": 250000,
+    "ips_max": 450000,
+    "mips_typical": 0.35
+  },
+  "notes": "Bulgarian CMOS 6502 clone, used in Pravetz Apple II clones (Pravetz 82, 8M)",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "WDC 65C02 Datasheet (timing reference)",
+      "url": "https://en.wikipedia.org/wiki/WDC_65C02",
+      "verified": true
+    },
+    {
+      "type": "reference",
+      "name": "Pravetz computer series",
+      "url": "https://en.wikipedia.org/wiki/Pravetz_series_8",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 2.85,
+    "expected_ipc": 0.3509,
+    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "predicted_cpi": 2.85,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.30,
+    "memory": 0.15,
+    "control": 0.20,
+    "stack": 0.10,
+    "notes": "Typical 65C02 workload for Apple II compatible software"
+  },
+  "cross_validation": {
+    "methodology": "Clone uses identical timing to WDC 65C02",
+    "reference_processor": "WDC 65C02",
+    "timing_verified": true,
+    "notes": "Bulgarian CMOS clone maintains full 65C02 timing compatibility"
+  }
+}

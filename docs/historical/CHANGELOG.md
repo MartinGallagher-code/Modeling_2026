@@ -4,6 +4,98 @@ All notable changes to the Modeling_2026 project are documented here.
 
 ---
 
+## [4.0.0] - January 29, 2026
+
+### Major Release: Extended Pre-1986 Coverage (196 Models)
+
+#### Added - 79 New Processor Models (Phase 2 Pre-1986)
+
+**Tier 1 - Landmark Processors (10):**
+- TI SN74181 (1970) - First single-chip ALU
+- Motorola MC14500B (1976) - 1-bit industrial controller
+- Intel 2920 (1979) - First Intel DSP with ADC/DAC
+- Toshiba TLCS-12 (1973) - First Japanese microprocessor
+- Fujitsu MB8841 (1977) - Arcade gaming icon (Galaga, Xevious)
+- WD9000 Pascal MicroEngine (1979) - Direct p-code execution
+- NEC μPD7220 (1981) - First LSI graphics processor
+- Mitsubishi MELPS 740 (1984) - Enhanced 6502, 600+ variants
+- East German U880 (1980) - Most-used Eastern Bloc CPU (Z80 clone)
+- Fairchild 9440 MICROFLAME (1979) - Data General Nova on a chip
+
+**4-Bit Processors (14):**
+- Fujitsu MB8842-MB8845 (1977) - MB8841 arcade variants
+- Mitsubishi MELPS 4/41/42 (1978-1980s) - 4-bit MCU family
+- OKI MSM5840 (1980s) - 4-bit with LCD controller
+- AMI S2000/S2150/S2200/S2400 (1970-1970s) - Early calculator chips
+- NEC μPD612xA (1980s) - Extended μCOM-4 with LCD
+- Samsung KS57 (1980s) - Korean 4-bit MCU entry
+
+**8-Bit Processors (6):**
+- Mitsubishi M50740/M50747 (1984) - MELPS 740 family
+- HP Nanoprocessor (1977) - HP's proprietary calculator MCU
+- Rockwell R6500/1 (1978) - Single-chip 6502
+- GTE G65SC802/G65SC816 (1985) - WDC 65C816 second-source
+
+**16-Bit Processors (4):**
+- Toshiba TLCS-12A (1975) - Improved TLCS-12
+- Panafacom MN1613 (1980s) - Improved MN1610
+- Plessey MIPROC (1975) - PDP-11 compatible, NATO crypto
+
+**32-Bit Processors (2):**
+- NEC V60 (1986) - Japan's first major 32-bit
+- NEC V70 (1987) - V60 variant
+
+**Bit-Slice Processors (5):**
+- TI SBP0400/SBP0401 (1975) - I2L bit-slice
+- Motorola MC10800 (1979) - ECL bit-slice
+- AMD Am29C101 (1980s) - Four Am2901s in one chip
+- Raytheon RP-16 (1970s) - Military-grade 16-bit
+
+**DSP / Signal Processors (4):**
+- Motorola DSP56000 (1986) - 24-bit audio DSP
+- AT&T DSP-1 (1980) - Bell Labs early DSP
+- AT&T DSP-20 (1980s) - Bell Labs DSP
+- AMI S28211 (1979) - DSP peripheral for 6800
+
+**Japanese Processors (6):**
+- Hitachi HD63484 (1984) - Advanced CRT controller
+- Toshiba TLCS-47 (1980s) - 4-bit MCU family
+- Toshiba TLCS-870/TLCS-90 (1980s) - 8-bit MCU family
+- Sanyo LC87/LC88 (1980s) - 8-bit and 16-bit MCU
+
+**Eastern Bloc Processors (11):**
+- U808 (DDR, 1978) - First East German μP (8008 clone)
+- U8001 (DDR, 1984) - First 16-bit in Eastern Bloc (Z8000 clone)
+- KR580VM1 (Soviet) - Unique 8080 extension with 128KB addressing
+- KR1858VM1 (Soviet) - Z80 clone from U880 masks
+- IM1821VM85A (Soviet) - 8085 clone
+- K1810VM86 (Soviet) - 8086 clone
+- KR581IK1/KR581IK2 (Soviet) - MCP-1600 clones
+- Tesla MHB8080A (Czechoslovak, 1982) - 8080 clone
+- CM630 (Bulgarian) - CMOS 6502 clone (Pravetz)
+
+**Gaming / Arcade Processors (9):**
+- Namco 05xx/50xx/51xx/52xx/53xx/54xx - Pac-Man era custom chips
+- Hitachi FD1089/FD1094 - Encrypted 68000 (Sega)
+- Harris HC-55516 - CVSD sound decoder (Williams pinball)
+
+**Stack Machines (2):**
+- WISC CPU/16 (1986) - Writable Instruction Set Computer
+- WISC CPU/32 (1980s) - 32-bit WISC
+
+**Other Notable (4):**
+- TI TMS34010 (1986) - First programmable GPU
+- Bell Labs MAC-4 (1980s) - Telecommunications MCU
+- Sharp SM83/LR35902 (1989) - Game Boy CPU
+
+#### Validation
+- **196 models total** (was 117)
+- **100% pass rate** (196/196 at <10%)
+- **195 fully validated** (<5% error)
+- **1 passed** (<10% error)
+
+---
+
 ## [3.0.0] - January 29, 2026
 
 ### Major Release: Complete Pre-1986 Collection (117 Models)
@@ -202,14 +294,13 @@ This project uses semantic versioning:
 
 ## Roadmap
 
-### [3.0.0] - Planned Q2 2026
+### [5.0.0] - Planned Q2 2026
 - Modern x86 (Pentium Pro through Athlon 64)
 - Out-of-order execution modeling
 
-### [4.0.0] - Planned Q3 2026
+### [6.0.0] - Planned Q3 2026
 - Modern ARM (ARM7 through Cortex)
 - Apple A-series preliminary models
 
-### [5.0.0] - Planned Q4 2026
-- Specialized processors (consoles, DSP)
+### [7.0.0] - Planned Q4 2026
 - Multi-core modeling framework

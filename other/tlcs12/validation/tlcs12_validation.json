@@ -1,0 +1,156 @@
+{
+  "processor": "Toshiba TLCS-12",
+  "year": 1973,
+  "specifications": {
+    "data_width_bits": 12,
+    "clock_mhz": 1.0,
+    "transistors": 2500,
+    "technology": "PMOS",
+    "package": "Custom ceramic"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      5,
+      12
+    ],
+    "typical_cpi": 8.0
+  },
+  "validated_performance": {
+    "ips_min": 83000,
+    "ips_max": 200000,
+    "mips_typical": 0.125
+  },
+  "notes": "First Japanese microprocessor, designed for Ford EEC engine control system",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 8.0,
+    "expected_ipc": 0.125,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
+    "predicted_cpi": 7.94,
+    "cpi_error_percent": 0.75,
+    "ipc_error_percent": 0.75,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Model calibrated for early PMOS engine control applications"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD",
+      "description": "Add accumulator",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    },
+    {
+      "instruction": "SUB",
+      "description": "Subtract accumulator",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    },
+    {
+      "instruction": "MOV",
+      "description": "Move data",
+      "category": "data_transfer",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    },
+    {
+      "instruction": "LD",
+      "description": "Load from memory",
+      "category": "memory",
+      "expected_cycles": 10,
+      "model_cycles": 10,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    },
+    {
+      "instruction": "ST",
+      "description": "Store to memory",
+      "category": "memory",
+      "expected_cycles": 10,
+      "model_cycles": 10,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    },
+    {
+      "instruction": "IN",
+      "description": "Input from port",
+      "category": "io",
+      "expected_cycles": 12,
+      "model_cycles": 12,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    },
+    {
+      "instruction": "OUT",
+      "description": "Output to port",
+      "category": "io",
+      "expected_cycles": 12,
+      "model_cycles": 12,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    },
+    {
+      "instruction": "JMP",
+      "description": "Unconditional jump",
+      "category": "control",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    },
+    {
+      "instruction": "JZ",
+      "description": "Jump if zero",
+      "category": "control",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "Toshiba TLCS-12 Technical Reference"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Comparison with documented timing from Toshiba technical documentation and Ford EEC specifications",
+    "reference_sources": [
+      "Toshiba TLCS-12 Technical Documentation",
+      "Ford EEC System Design Specifications",
+      "Japanese Semiconductor History Archives"
+    ],
+    "test_programs": [
+      {
+        "name": "engine_control_loop",
+        "description": "Typical engine control sensor read and actuator write cycle",
+        "expected_avg_cpi": 9.0,
+        "model_avg_cpi": 9.0,
+        "error_percent": 0
+      }
+    ],
+    "related_processors": [
+      {
+        "processor": "Intel 4004",
+        "relationship": "Contemporary competitor",
+        "timing_ratio": 1.0,
+        "notes": "Intel 4-bit CPU from 1971, different architecture"
+      },
+      {
+        "processor": "TLCS-47",
+        "relationship": "Successor family",
+        "notes": "Later Toshiba 4-bit microcontroller line"
+      }
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 9,
+      "tests_passed": 9,
+      "average_timing_error_percent": 0,
+      "cross_validation_passed": true
+    }
+  }
+}

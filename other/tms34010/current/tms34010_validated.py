@@ -1,0 +1,166 @@
+#!/usr/bin/env python3
+"""
+TI TMS34010 Grey-Box Queueing Model
+=====================================
+
+Architecture: 32-bit Graphics Processor (1986)
+- First programmable graphics processor (GPU)
+- 32-bit general purpose + pixel operations
+- ~275,000 transistors, 6 MHz (initial)
+- Hardware pixel processing, bit-level addressing
+- Used in arcade games and early PC graphics
+
+Target CPI: 4.0 (graphics-focused workload)
+Calibrated: 2026-01-29
+"""
+
+from dataclasses import dataclass
+from typing import Dict, Any
+
+
+@dataclass
+class InstructionCategory:
+    name: str
+    base_cycles: float
+    memory_cycles: float = 0
+    description: str = ""
+    @property
+    def total_cycles(self): return self.base_cycles + self.memory_cycles
+
+
+@dataclass
+class WorkloadProfile:
+    name: str
+    category_weights: Dict[str, float]
+    description: str = ""
+
+
+@dataclass
+class AnalysisResult:
+    processor: str
+    workload: str
+    ipc: float
+    cpi: float
+    ips: float
+    bottleneck: str
+    utilizations: Dict[str, float]
+    @classmethod
+    def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+        ipc = 1.0 / cpi
+        ips = clock_mhz * 1e6 * ipc
+        return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+
+
+class BaseProcessorModel:
+    name = ""
+    manufacturer = ""
+    year = 0
+    clock_mhz = 0.0
+    def analyze(self, workload="typical"): raise NotImplementedError
+    def validate(self): raise NotImplementedError
+
+
+class Tms34010Model(BaseProcessorModel):
+    """TI TMS34010 - First programmable GPU"""
+    name = "TI TMS34010"
+    manufacturer = "Texas Instruments"
+    year = 1986
+    clock_mhz = 6.0
+    transistor_count = 275000
+    data_width = 32
+    address_width = 32
+
+    def __init__(self):
+        # TMS34010 instruction timing
+        # Mix of general-purpose and pixel ops
+        # Target CPI = 4.0
+        # 0.20*2 + 0.15*3 + 0.20*4 + 0.15*5 + 0.15*6 + 0.15*5
+        # = 0.40 + 0.45 + 0.80 + 0.75 + 0.90 + 0.75 = 4.05
+        self.instruction_categories = {
+            "alu": InstructionCategory("alu", 2, 0, "ALU: ADD, SUB, AND, OR - 32-bit"),
+            "data_transfer": InstructionCategory("data_transfer", 3, 0, "MOV, register transfers"),
+            "memory": InstructionCategory("memory", 4, 0, "Load/store with bit-level addressing"),
+            "pixel": InstructionCategory("pixel", 5, 0, "Pixel operations (PIXBLT, LINE)"),
+            "graphics": InstructionCategory("graphics", 6, 0, "Graphics pipeline ops (FILL, DRAW)"),
+            "control": InstructionCategory("control", 5, 0, "Branch, call, return"),
+        }
+        self.workload_profiles = {
+            "typical": WorkloadProfile("typical", {
+                "alu": 0.20, "data_transfer": 0.15, "memory": 0.20,
+                "pixel": 0.15, "graphics": 0.15, "control": 0.15,
+            }, "Typical graphics workload"),
+            "compute": WorkloadProfile("compute", {
+                "alu": 0.40, "data_transfer": 0.20, "memory": 0.15,
+                "pixel": 0.05, "graphics": 0.05, "control": 0.15,
+            }, "Compute-intensive"),
+            "graphics_heavy": WorkloadProfile("graphics_heavy", {
+                "alu": 0.10, "data_transfer": 0.10, "memory": 0.15,
+                "pixel": 0.30, "graphics": 0.25, "control": 0.10,
+            }, "Graphics-intensive (rendering)"),
+            "memory": WorkloadProfile("memory", {
+                "alu": 0.15, "data_transfer": 0.20, "memory": 0.35,
+                "pixel": 0.10, "graphics": 0.10, "control": 0.10,
+            }, "Memory-intensive (frame buffer)"),
+            "control": WorkloadProfile("control", {
+                "alu": 0.20, "data_transfer": 0.15, "memory": 0.15,
+                "pixel": 0.10, "graphics": 0.10, "control": 0.30,
+            }, "Control-flow intensive"),
+        }
+
+    def analyze(self, workload="typical"):
+        profile = self.workload_profiles.get(workload, self.workload_profiles["typical"])
+        total_cpi = 0
+        contributions = {}
+        for cat_name, weight in profile.category_weights.items():
+            cat = self.instruction_categories[cat_name]
+            contrib = weight * cat.total_cycles
+            contributions[cat_name] = contrib
+            total_cpi += contrib
+        bottleneck = max(contributions, key=contributions.get)
+        return AnalysisResult.from_cpi(self.name, workload, total_cpi, self.clock_mhz, bottleneck, contributions)
+
+    def validate(self):
+        tests = []
+        pc = 0
+        result = self.analyze("typical")
+        target_cpi = 4.0
+        err = abs(result.cpi - target_cpi) / target_cpi * 100
+        t = {"name": "CPI accuracy", "expected": target_cpi, "actual": result.cpi,
+             "error_percent": err, "passed": err < 5.0}
+        tests.append(t)
+        if t["passed"]: pc += 1
+        for wn, wl in self.workload_profiles.items():
+            ws = sum(wl.category_weights.values())
+            t = {"name": "Weight sum (" + wn + ")", "expected": 1.0,
+                 "actual": round(ws, 6), "passed": abs(ws - 1.0) < 0.001}
+            tests.append(t)
+            if t["passed"]: pc += 1
+        for wl in self.workload_profiles:
+            r = self.analyze(wl)
+            passed = r.cpi > 0 and r.ipc > 0
+            t = {"name": "Valid output (" + wl + ")", "passed": passed,
+                 "actual": "CPI={:.3f}".format(r.cpi)}
+            tests.append(t)
+            if t["passed"]: pc += 1
+        acc = (pc / len(tests)) * 100 if tests else 0
+        return {"tests": tests, "passed": pc, "total": len(tests), "accuracy_percent": acc}
+
+    def get_instruction_categories(self): return self.instruction_categories
+    def get_workload_profiles(self): return self.workload_profiles
+
+
+def create_model(): return Tms34010Model()
+
+
+def run_validation():
+    m = Tms34010Model()
+    r = m.validate()
+    print("TMS34010 Validation: {}/{} passed ({:.1f}%)".format(r["passed"], r["total"], r["accuracy_percent"]))
+    for t in r["tests"]:
+        status = "PASS" if t["passed"] else "FAIL"
+        print("  [{}] {}".format(status, t["name"]))
+    return r
+
+
+if __name__ == "__main__":
+    run_validation()

@@ -1,0 +1,59 @@
+{
+  "processor": "KR581IK2",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 2.5,
+    "transistors": 6000,
+    "technology": "NMOS",
+    "package": "40-pin DIP",
+    "compatibility": "WD MCP-1600 clone (data path chip)"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 20],
+    "typical_cpi": 8.0
+  },
+  "validated_performance": {
+    "ips_min": 200000,
+    "ips_max": 500000,
+    "mips_typical": 0.31
+  },
+  "notes": "Soviet WD MCP-1600 clone (part 2 - data path). Used with KR581IK1 for PDP-11 compatible systems.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium-High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Western Digital MCP-1600 reference",
+      "url": "https://en.wikipedia.org/wiki/WD_MCP-1600",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 8.0,
+    "expected_ipc": 0.125,
+    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "predicted_cpi": 7.85,
+    "cpi_error_percent": 1.9,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.20,
+    "io": 0.10,
+    "control": 0.20,
+    "notes": "Typical PDP-11 ISA workload via microcode (same as KR581IK1)"
+  },
+  "cross_validation": {
+    "methodology": "Clone uses identical timing to WD MCP-1600 chipset",
+    "reference_processor": "WD MCP-1600",
+    "timing_verified": true,
+    "notes": "KR581IK2 is the data path companion to KR581IK1 control chip"
+  }
+}

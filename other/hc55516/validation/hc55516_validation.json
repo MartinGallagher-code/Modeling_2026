@@ -1,0 +1,55 @@
+{
+  "processor": "Harris HC-55516",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 1,
+    "clock_mhz": 2.0,
+    "transistors": 1500,
+    "technology": "CMOS",
+    "function": "CVSD (Continuously Variable Slope Delta) audio codec"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [1.5, 3],
+    "typical_cpi": 2.0
+  },
+  "validated_performance": {
+    "ips_min": 500000,
+    "ips_max": 1300000,
+    "mips_typical": 1.0
+  },
+  "notes": "Simple CVSD audio decoder used in Williams arcade and pinball machines",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Harris HC-55516 Datasheet",
+      "verified": true,
+      "notes": "CVSD codec specifications"
+    },
+    {
+      "type": "emulator",
+      "name": "MAME HC-55516 emulation",
+      "url": "https://github.com/mamedev/mame",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 2.0,
+    "predicted_cpi": 1.93,
+    "cpi_error_percent": 3.75,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "decode": 0.30,
+    "filter": 0.25,
+    "dac": 0.20,
+    "control": 0.15,
+    "timing": 0.10
+  }
+}

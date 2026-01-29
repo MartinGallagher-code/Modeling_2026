@@ -1,0 +1,277 @@
+#!/usr/bin/env python3
+"""
+WISC CPU/32 Grey-Box Queueing Model
+=====================================
+
+Architecture: 32-bit Writable Instruction Set Computer (1988)
+Queueing Model: Sequential execution, stack-based
+
+Features:
+  - 32-bit evolution of the WISC CPU/16
+  - 8 MHz clock (2x the CPU/16)
+  - Writable microcode store (RAM-based)
+  - Stack-oriented architecture with wider data path
+  - Improved microcode engine over CPU/16
+  - Lower CPI than CPU/16 due to optimizations
+
+Calibrated: 2026-01-29
+Target CPI: ~2.0 (improved over CPU/16's 2.5)
+"""
+
+from dataclasses import dataclass
+from typing import Dict, List, Any, Optional
+
+try:
+    from common.base_model import BaseProcessorModel, InstructionCategory, WorkloadProfile, AnalysisResult
+except ImportError:
+    from dataclasses import dataclass
+
+    @dataclass
+    class InstructionCategory:
+        name: str
+        base_cycles: float
+        memory_cycles: float = 0
+        description: str = ""
+        @property
+        def total_cycles(self): return self.base_cycles + self.memory_cycles
+
+    @dataclass
+    class WorkloadProfile:
+        name: str
+        category_weights: Dict[str, float]
+        description: str = ""
+
+    @dataclass
+    class AnalysisResult:
+        processor: str
+        workload: str
+        ipc: float
+        cpi: float
+        ips: float
+        bottleneck: str
+        utilizations: Dict[str, float]
+
+        @classmethod
+        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+            ipc = 1.0 / cpi
+            ips = clock_mhz * 1e6 * ipc
+            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+
+    class BaseProcessorModel:
+        pass
+
+
+class WISC32Model(BaseProcessorModel):
+    """
+    WISC CPU/32 Grey-Box Queueing Model
+
+    Architecture: 32-bit Writable Instruction Set Computer (1988)
+    - 32-bit stack-oriented architecture
+    - Improved microcode engine vs CPU/16
+    - 8 MHz clock
+    - Writable control store
+    - CPI ~2.0 (faster than CPU/16)
+    """
+
+    name = "WISC CPU/32"
+    manufacturer = "Phil Koopman (Carnegie Mellon)"
+    year = 1988
+    clock_mhz = 8.0
+    transistor_count = 0  # TTL discrete
+    data_width = 32
+    address_width = 32
+
+    def __init__(self):
+        # WISC CPU/32 instruction timing
+        # Improved over CPU/16 with wider data path and faster microcode
+        #
+        # Operations:
+        #   Stack ops (push, pop, dup, swap): ~1.5 cycles
+        #   ALU (add, sub, and, or, 32-bit): ~1.5 cycles
+        #   Memory (load, store, 32-bit): ~2.5 cycles
+        #   Control (branch, call, return): ~2.5 cycles
+        #   Microcode (custom microcode execution): ~2 cycles
+
+        self.instruction_categories = {
+            'stack_ops': InstructionCategory('stack_ops', 1.5, 0,
+                "Stack operations: push/pop/dup/swap @1.5 cycles"),
+            'alu': InstructionCategory('alu', 1.5, 0,
+                "32-bit ALU operations @1.5 cycles"),
+            'memory': InstructionCategory('memory', 2.5, 0,
+                "32-bit memory load/store @2.5 cycles"),
+            'control': InstructionCategory('control', 2.5, 0,
+                "Branch/call/return @2.5 cycles"),
+            'microcode': InstructionCategory('microcode', 2.0, 0,
+                "Custom microcode instruction execution @2 cycles"),
+        }
+
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
+                'stack_ops': 0.30,
+                'alu': 0.25,
+                'memory': 0.20,
+                'control': 0.15,
+                'microcode': 0.10,
+            }, "Typical Forth-like stack machine workload"),
+            'compute': WorkloadProfile('compute', {
+                'stack_ops': 0.25,
+                'alu': 0.40,
+                'memory': 0.15,
+                'control': 0.10,
+                'microcode': 0.10,
+            }, "Compute-intensive (32-bit arithmetic)"),
+            'stack_heavy': WorkloadProfile('stack_heavy', {
+                'stack_ops': 0.45,
+                'alu': 0.15,
+                'memory': 0.15,
+                'control': 0.15,
+                'microcode': 0.10,
+            }, "Stack-intensive workload"),
+            'custom_isa': WorkloadProfile('custom_isa', {
+                'stack_ops': 0.20,
+                'alu': 0.15,
+                'memory': 0.15,
+                'control': 0.10,
+                'microcode': 0.40,
+            }, "Heavy use of custom microcode instructions"),
+        }
+
+    def analyze(self, workload: str = 'typical') -> AnalysisResult:
+        """Analyze using sequential stack machine execution model"""
+        profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
+
+        total_cpi = 0
+        for cat_name, weight in profile.category_weights.items():
+            cat = self.instruction_categories[cat_name]
+            total_cpi += weight * cat.total_cycles
+
+        ipc = 1.0 / total_cpi
+        ips = self.clock_mhz * 1e6 * ipc
+
+        contributions = {}
+        for cat_name, weight in profile.category_weights.items():
+            cat = self.instruction_categories[cat_name]
+            contributions[cat_name] = weight * cat.total_cycles
+        bottleneck = max(contributions, key=contributions.get)
+
+        return AnalysisResult.from_cpi(
+            processor=self.name,
+            workload=workload,
+            cpi=total_cpi,
+            clock_mhz=self.clock_mhz,
+            bottleneck=bottleneck,
+            utilizations=contributions
+        )
+
+    def validate(self) -> Dict[str, Any]:
+        """Run validation tests against known WISC CPU/32 characteristics"""
+        tests = []
+
+        result = self.analyze('typical')
+        expected_cpi = 2.0
+        cpi_error = abs(result.cpi - expected_cpi) / expected_cpi * 100
+        tests.append({
+            'name': 'CPI accuracy',
+            'passed': cpi_error < 5.0,
+            'expected': f'{expected_cpi} +/- 5%',
+            'actual': f'{result.cpi:.2f} ({cpi_error:.1f}% error)'
+        })
+
+        for profile_name, profile in self.workload_profiles.items():
+            weight_sum = sum(profile.category_weights.values())
+            tests.append({
+                'name': f'Weights sum ({profile_name})',
+                'passed': 0.99 <= weight_sum <= 1.01,
+                'expected': '1.0',
+                'actual': f'{weight_sum:.2f}'
+            })
+
+        for cat_name, cat in self.instruction_categories.items():
+            cycles = cat.total_cycles
+            tests.append({
+                'name': f'Cycle count ({cat_name})',
+                'passed': 1.0 <= cycles <= 10.0,
+                'expected': '1-10 cycles',
+                'actual': f'{cycles:.1f}'
+            })
+
+        tests.append({
+            'name': 'IPC range',
+            'passed': 0.2 <= result.ipc <= 1.0,
+            'expected': '0.2-1.0',
+            'actual': f'{result.ipc:.3f}'
+        })
+
+        for workload in self.workload_profiles.keys():
+            try:
+                r = self.analyze(workload)
+                valid = r.cpi > 0 and r.ipc > 0 and r.ips > 0
+                tests.append({
+                    'name': f'Workload analysis ({workload})',
+                    'passed': valid,
+                    'expected': 'Valid CPI/IPC/IPS',
+                    'actual': f'CPI={r.cpi:.2f}' if valid else 'Invalid'
+                })
+            except Exception as e:
+                tests.append({
+                    'name': f'Workload analysis ({workload})',
+                    'passed': False,
+                    'expected': 'No error',
+                    'actual': str(e)
+                })
+
+        # CPU/32 should be faster than CPU/16
+        tests.append({
+            'name': 'Faster than CPU/16',
+            'passed': result.cpi < 2.5,
+            'expected': 'CPI < 2.5 (CPU/16 baseline)',
+            'actual': f'{result.cpi:.2f}'
+        })
+
+        tests.append({
+            'name': 'Clock speed',
+            'passed': abs(self.clock_mhz - 8.0) < 0.1,
+            'expected': '8.0 MHz',
+            'actual': f'{self.clock_mhz} MHz'
+        })
+
+        passed = sum(1 for t in tests if t['passed'])
+        return {
+            'tests': tests,
+            'passed': passed,
+            'total': len(tests),
+            'accuracy_percent': 100.0 - cpi_error
+        }
+
+    def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
+        return self.instruction_categories
+
+    def get_workload_profiles(self) -> Dict[str, WorkloadProfile]:
+        return self.workload_profiles
+
+
+if __name__ == '__main__':
+    model = WISC32Model()
+
+    print(f"=== {model.name} Performance Model ===")
+    print(f"Manufacturer: {model.manufacturer}")
+    print(f"Year: {model.year}")
+    print(f"Clock: {model.clock_mhz} MHz")
+    print()
+
+    for workload in model.workload_profiles:
+        result = model.analyze(workload)
+        print(f"{workload:16} - CPI: {result.cpi:.2f}, IPC: {result.ipc:.3f}, "
+              f"IPS: {result.ips/1e6:.3f}M, Bottleneck: {result.bottleneck}")
+
+    print()
+
+    validation = model.validate()
+    print(f"=== Validation Results ===")
+    print(f"Passed: {validation['passed']}/{validation['total']}")
+    print(f"Accuracy: {validation['accuracy_percent']:.1f}%")
+    print()
+
+    for test in validation['tests']:
+        status = "PASS" if test['passed'] else "FAIL"
+        print(f"  [{status}] {test['name']}: {test['actual']} (expected: {test['expected']})")

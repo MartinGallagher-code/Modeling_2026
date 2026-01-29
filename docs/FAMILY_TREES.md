@@ -2,7 +2,7 @@
 
 ## Processor Lineages and Relationships (1971-1994)
 
-This document traces the evolutionary relationships between all **117 processors** in the collection, showing how architectures developed and influenced each other.
+This document traces the evolutionary relationships between all **196 processors** in the collection, showing how architectures developed and influenced each other.
 
 ---
 

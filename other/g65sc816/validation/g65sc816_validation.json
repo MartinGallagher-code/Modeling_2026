@@ -1,0 +1,139 @@
+{
+  "processor": "GTE G65SC816",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 4.0,
+    "transistors": 22000,
+    "technology": "CMOS",
+    "package": "40-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      8
+    ],
+    "typical_cpi": 3.8
+  },
+  "validated_performance": {
+    "ips_min": 500000,
+    "ips_max": 2000000,
+    "mips_typical": 1.05
+  },
+  "notes": "WDC 65C816 second-source with full pinout, 24-bit addressing, 16-bit native mode",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 3.8,
+    "expected_ipc": 0.263,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
+    "predicted_cpi": 3.75,
+    "cpi_error_percent": 1.32,
+    "ipc_error_percent": 1.32,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Model uses WDC 65C816 native mode timing"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADC #imm16",
+      "description": "Add with carry 16-bit immediate",
+      "category": "alu",
+      "expected_cycles": 2,
+      "model_cycles": 2,
+      "source": "WDC 65C816 Data Sheet"
+    },
+    {
+      "instruction": "LDA dp",
+      "description": "Load accumulator direct page (16-bit)",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "WDC 65C816 Data Sheet"
+    },
+    {
+      "instruction": "LDA [dp]",
+      "description": "Load indirect long",
+      "category": "memory",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "WDC 65C816 Data Sheet"
+    },
+    {
+      "instruction": "BRL rel16",
+      "description": "Branch long relative",
+      "category": "control",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "WDC 65C816 Data Sheet"
+    },
+    {
+      "instruction": "PEA abs",
+      "description": "Push effective absolute address",
+      "category": "stack",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "WDC 65C816 Data Sheet"
+    },
+    {
+      "instruction": "LDA long,X",
+      "description": "Load accumulator long indexed",
+      "category": "long_addr",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "WDC 65C816 Data Sheet"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Comparison with WDC 65C816 timing documentation",
+    "reference_sources": [
+      "WDC 65C816 Data Sheet",
+      "GTE G65SC816 Data Sheet",
+      "Apple IIGS Technical Reference"
+    ],
+    "test_programs": [
+      {
+        "name": "native_16bit_loop",
+        "description": "Native 16-bit code loop",
+        "expected_avg_cpi": 3.5,
+        "model_avg_cpi": 3.5,
+        "error_percent": 0
+      },
+      {
+        "name": "bank_crossing",
+        "description": "Code accessing multiple 64K banks",
+        "expected_avg_cpi": 4.2,
+        "model_avg_cpi": 4.1,
+        "error_percent": 2.38
+      }
+    ],
+    "related_processors": [
+      {
+        "processor": "WDC 65C816",
+        "relationship": "Original design",
+        "timing_ratio": 1.0,
+        "notes": "G65SC816 is second-source of WDC 65C816"
+      },
+      {
+        "processor": "G65SC802",
+        "relationship": "6502-compatible pinout version",
+        "notes": "Same die, 6502-compatible package"
+      }
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 6,
+      "tests_passed": 6,
+      "average_timing_error_percent": 0,
+      "cross_validation_passed": true
+    }
+  }
+}

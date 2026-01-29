@@ -1,0 +1,43 @@
+{
+  "processor": "Fujitsu MB8843",
+  "year": 1977,
+  "historical_note": "MB8841 variant",
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 1.0,
+    "transistors": 5000,
+    "technology": "NMOS",
+    "package": "28-pin DIP",
+    "architecture": "4-bit parallel ALU MCU"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [4, 4],
+    "typical_cpi": 4.0,
+    "notes": "Fixed 4-cycle timing, same as MB8841"
+  },
+  "validated_performance": {
+    "ips_min": 249000,
+    "ips_max": 251000,
+    "kips_typical": 250.0
+  },
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "predicted_cpi": 4.0,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"]
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.20,
+    "control": 0.15,
+    "io": 0.15
+  }
+}

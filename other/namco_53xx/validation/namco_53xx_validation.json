@@ -1,0 +1,49 @@
+{
+  "processor": "Namco 53xx",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 1.5,
+    "transistors": 1500,
+    "technology": "Custom NMOS",
+    "function": "Input multiplexer"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 5],
+    "typical_cpi": 4.0
+  },
+  "validated_performance": {
+    "ips_min": 250000,
+    "ips_max": 500000,
+    "mips_typical": 0.375
+  },
+  "notes": "Simplest of the Namco custom chips - input multiplexing",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "emulator",
+      "name": "MAME Namco 53xx emulation",
+      "url": "https://github.com/mamedev/mame",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "predicted_cpi": 3.85,
+    "cpi_error_percent": 3.75,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "mux_select": 0.25,
+    "data_transfer": 0.25,
+    "io": 0.25,
+    "control": 0.15,
+    "timing": 0.10
+  }
+}

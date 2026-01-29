@@ -1,0 +1,74 @@
+{
+  "processor": "VEB U808",
+  "year": 1978,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 0.5,
+    "transistors": 3500,
+    "technology": "PMOS",
+    "package": "18-pin DIP",
+    "compatibility": "Intel 8008 clone"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      5,
+      16
+    ],
+    "typical_cpi": 10.0
+  },
+  "validated_performance": {
+    "ips_min": 30000,
+    "ips_max": 70000,
+    "mips_typical": 0.05
+  },
+  "notes": "First East German microprocessor, Intel 8008 clone by VEB Mikroelektronik Erfurt",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Intel 8008 Datasheet (timing reference)",
+      "url": "https://en.wikipedia.org/wiki/Intel_8008",
+      "verified": true
+    },
+    {
+      "type": "reference",
+      "name": "VEB Mikroelektronik Erfurt product catalog",
+      "url": "https://de.wikipedia.org/wiki/U808",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 10.0,
+    "expected_ipc": 0.1,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "io_heavy",
+      "control"
+    ],
+    "predicted_cpi": 10.0,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "ipc_error_percent": 0.0,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.25,
+    "memory": 0.20,
+    "io": 0.10,
+    "control": 0.20,
+    "notes": "Typical 8008-class workload for industrial control applications"
+  },
+  "cross_validation": {
+    "methodology": "Clone uses identical timing to original Intel 8008",
+    "reference_processor": "Intel 8008",
+    "timing_verified": true,
+    "notes": "VEB Mikroelektronik Erfurt maintained full timing compatibility with Intel 8008"
+  }
+}

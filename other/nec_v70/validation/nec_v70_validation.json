@@ -1,0 +1,32 @@
+{
+  "processor": "NEC V70",
+  "year": 1987,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 20.0,
+    "transistors": 400000,
+    "technology": "CMOS"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      20
+    ],
+    "typical_cpi": 2.8
+  },
+  "accuracy": {
+    "expected_cpi": 2.8,
+    "predicted_cpi": 2.825,
+    "cpi_error_percent": 0.89,
+    "validation_passed": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "NEC V60/V70 User Manual",
+      "publisher": "NEC",
+      "verified": true
+    }
+  ]
+}

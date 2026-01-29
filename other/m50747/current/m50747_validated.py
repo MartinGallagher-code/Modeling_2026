@@ -1,0 +1,232 @@
+#!/usr/bin/env python3
+"""
+Mitsubishi M50747 Grey-Box Queueing Model
+==========================================
+
+Architecture: Sequential Execution (1984)
+Queueing Model: Serial M/M/1 chain
+
+Features:
+  - 8-bit MCU based on MELPS 740 core (enhanced 6502)
+  - M50740 variant with expanded I/O ports
+  - Single instruction at a time
+  - On-chip ROM/RAM/IO
+  - 2 MHz clock
+
+Generated: 2026-01-29
+"""
+
+from dataclasses import dataclass
+from typing import Dict, List, Any, Optional
+
+# Import from common (adjust path as needed)
+try:
+    from common.base_model import BaseProcessorModel, InstructionCategory, WorkloadProfile, AnalysisResult
+except ImportError:
+    # Fallback definitions if common not available
+    from dataclasses import dataclass
+
+    @dataclass
+    class InstructionCategory:
+        name: str
+        base_cycles: float
+        memory_cycles: float = 0
+        description: str = ""
+        @property
+        def total_cycles(self): return self.base_cycles + self.memory_cycles
+
+    @dataclass
+    class WorkloadProfile:
+        name: str
+        category_weights: Dict[str, float]
+        description: str = ""
+
+    @dataclass
+    class AnalysisResult:
+        processor: str
+        workload: str
+        ipc: float
+        cpi: float
+        ips: float
+        bottleneck: str
+        utilizations: Dict[str, float]
+
+        @classmethod
+        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+            ipc = 1.0 / cpi
+            ips = clock_mhz * 1e6 * ipc
+            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+
+    class BaseProcessorModel:
+        pass
+
+
+class M50747Model(BaseProcessorModel):
+    """
+    Mitsubishi M50747 Grey-Box Queueing Model
+
+    Architecture: Sequential Execution (Era: 1984)
+    - MELPS 740 core - same as M50740
+    - Variant with expanded I/O port configuration
+    - Same instruction timing as M50740
+    - CPI = sum of stage times
+
+    The M50747 is a variant of the M50740 with more I/O ports, targeting
+    applications requiring more peripheral connections. Same MELPS 740
+    core and instruction timing.
+    """
+
+    # Processor specifications
+    name = "Mitsubishi M50747"
+    manufacturer = "Mitsubishi"
+    year = 1984
+    clock_mhz = 2.0
+    transistor_count = 13000  # Slightly more than M50740 due to extra I/O
+    data_width = 8
+    address_width = 16
+
+    def __init__(self):
+        # Stage timing (cycles)
+        self.stage_timing = {
+            'fetch': 1,      # Instruction fetch
+            'decode': 1,     # Decode
+            'execute': 1,    # Execute (weighted average)
+            'memory': 1,     # Memory access
+            'writeback': 0,  # Register writeback
+        }
+
+        # Instruction categories - same MELPS 740 core as M50740
+        # Calibrated for CPI = 3.2 (same as M50740)
+        self.instruction_categories = {
+            'alu': InstructionCategory('alu', 2, 0, "ALU operations (ADD, SUB, AND, OR)"),
+            'data_transfer': InstructionCategory('data_transfer', 3, 0, "Data transfer (LDA, STA, TAX)"),
+            'memory': InstructionCategory('memory', 4, 0, "Memory operations (indirect, indexed)"),
+            'control': InstructionCategory('control', 3, 0, "Control flow (BCC, BNE, JMP)"),
+            'io': InstructionCategory('io', 5, 0, "I/O port operations"),
+            'bit_ops': InstructionCategory('bit_ops', 2, 0, "Bit manipulation (SET, CLR, TST)"),
+        }
+
+        # Workload profiles - more I/O heavy due to expanded ports
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
+                'alu': 0.20,
+                'data_transfer': 0.15,
+                'memory': 0.15,
+                'control': 0.15,
+                'io': 0.20,
+                'bit_ops': 0.15,
+            }, "Typical embedded control workload with expanded I/O"),
+            'compute': WorkloadProfile('compute', {
+                'alu': 0.40,
+                'data_transfer': 0.20,
+                'memory': 0.15,
+                'control': 0.10,
+                'io': 0.05,
+                'bit_ops': 0.10,
+            }, "Compute-intensive workload"),
+            'io_heavy': WorkloadProfile('io_heavy', {
+                'alu': 0.10,
+                'data_transfer': 0.10,
+                'memory': 0.10,
+                'control': 0.10,
+                'io': 0.45,
+                'bit_ops': 0.15,
+            }, "I/O-intensive workload"),
+            'control': WorkloadProfile('control', {
+                'alu': 0.15,
+                'data_transfer': 0.10,
+                'memory': 0.15,
+                'control': 0.35,
+                'io': 0.10,
+                'bit_ops': 0.15,
+            }, "Control-flow intensive workload"),
+        }
+
+    def analyze(self, workload: str = 'typical') -> AnalysisResult:
+        """Analyze using sequential execution model"""
+        profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
+
+        # Calculate weighted average CPI
+        total_cpi = 0
+        for cat_name, weight in profile.category_weights.items():
+            cat = self.instruction_categories[cat_name]
+            total_cpi += weight * cat.total_cycles
+
+        ipc = 1.0 / total_cpi
+        ips = self.clock_mhz * 1e6 * ipc
+
+        # Identify bottleneck (highest contribution)
+        contributions = {}
+        for cat_name, weight in profile.category_weights.items():
+            cat = self.instruction_categories[cat_name]
+            contributions[cat_name] = weight * cat.total_cycles
+        bottleneck = max(contributions, key=contributions.get)
+
+        return AnalysisResult.from_cpi(
+            processor=self.name,
+            workload=workload,
+            cpi=total_cpi,
+            clock_mhz=self.clock_mhz,
+            bottleneck=bottleneck,
+            utilizations=contributions
+        )
+
+    def validate(self) -> Dict[str, Any]:
+        """Run validation tests"""
+        results = {
+            "processor": self.name,
+            "target_cpi": 3.2,
+            "tests": [],
+            "passed": 0,
+            "total": 0,
+            "accuracy_percent": None
+        }
+
+        # Test typical workload CPI
+        analysis = self.analyze('typical')
+        expected_cpi = 3.2
+        error_pct = abs(analysis.cpi - expected_cpi) / expected_cpi * 100
+
+        test_result = {
+            "name": "typical_workload_cpi",
+            "expected": expected_cpi,
+            "actual": analysis.cpi,
+            "error_percent": error_pct,
+            "passed": error_pct < 5.0
+        }
+        results["tests"].append(test_result)
+        results["total"] += 1
+        if test_result["passed"]:
+            results["passed"] += 1
+
+        # Test instruction category timing
+        timing_tests = [
+            ("alu", 2),
+            ("data_transfer", 3),
+            ("memory", 4),
+            ("control", 3),
+            ("io", 5),
+            ("bit_ops", 2),
+        ]
+
+        for cat_name, expected_cycles in timing_tests:
+            cat = self.instruction_categories[cat_name]
+            test_result = {
+                "name": f"{cat_name}_timing",
+                "expected": expected_cycles,
+                "actual": cat.total_cycles,
+                "passed": cat.total_cycles == expected_cycles
+            }
+            results["tests"].append(test_result)
+            results["total"] += 1
+            if test_result["passed"]:
+                results["passed"] += 1
+
+        results["accuracy_percent"] = (results["passed"] / results["total"]) * 100
+        return results
+
+    def get_instruction_categories(self) -> Dict[str, InstructionCategory]:
+        return self.instruction_categories
+
+    def get_workload_profiles(self) -> Dict[str, WorkloadProfile]:
+        return self.workload_profiles

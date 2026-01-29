@@ -1,0 +1,50 @@
+{
+  "processor": "Namco 54xx",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 1.5,
+    "transistors": 3000,
+    "technology": "Custom NMOS",
+    "function": "Sound generator (noise, waveform, mixing)"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [4, 8],
+    "typical_cpi": 6.0
+  },
+  "validated_performance": {
+    "ips_min": 150000,
+    "ips_max": 375000,
+    "mips_typical": 0.25
+  },
+  "notes": "Custom Namco sound generator chip for arcade sound effects",
+  "model_accuracy": {
+    "target_error_pct": 10,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "emulator",
+      "name": "MAME Namco 54xx emulation",
+      "url": "https://github.com/mamedev/mame",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 6.0,
+    "predicted_cpi": 5.5,
+    "cpi_error_percent": 8.3,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "noise_gen": 0.20,
+    "waveform": 0.20,
+    "mix": 0.15,
+    "io": 0.15,
+    "control": 0.15,
+    "dac": 0.15
+  }
+}

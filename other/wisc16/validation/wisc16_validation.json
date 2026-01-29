@@ -1,0 +1,49 @@
+{
+  "processor": "WISC CPU/16",
+  "year": 1986,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 4.0,
+    "transistors": null,
+    "technology": "TTL discrete logic",
+    "architecture": "Stack machine with writable microcode"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [2, 3],
+    "typical_cpi": 2.5
+  },
+  "validated_performance": {
+    "ips_min": 1000000,
+    "ips_max": 2000000,
+    "mips_typical": 1.6
+  },
+  "notes": "Phil Koopman's Writable Instruction Set Computer - 16-bit stack machine with RAM-based microcode",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "paper",
+      "name": "Koopman, Stack Computers: the New Wave (1989)",
+      "verified": true,
+      "notes": "Primary reference for WISC architecture"
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 2.5,
+    "predicted_cpi": 2.40,
+    "cpi_error_percent": 4.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "stack_ops": 0.30,
+    "alu": 0.25,
+    "memory": 0.20,
+    "control": 0.15,
+    "microcode": 0.10
+  }
+}

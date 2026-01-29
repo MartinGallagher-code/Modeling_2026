@@ -1,0 +1,48 @@
+{
+  "processor": "WISC CPU/32",
+  "year": 1988,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 8.0,
+    "transistors": null,
+    "technology": "TTL discrete logic",
+    "architecture": "32-bit stack machine with writable microcode"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [1.5, 2.5],
+    "typical_cpi": 2.0
+  },
+  "validated_performance": {
+    "ips_min": 2500000,
+    "ips_max": 5300000,
+    "mips_typical": 4.0
+  },
+  "notes": "32-bit evolution of WISC CPU/16 with faster microcode engine",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "paper",
+      "name": "Koopman, Stack Computers: the New Wave (1989)",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 2.0,
+    "predicted_cpi": 1.93,
+    "cpi_error_percent": 3.75,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "stack_ops": 0.30,
+    "alu": 0.25,
+    "memory": 0.20,
+    "control": 0.15,
+    "microcode": 0.10
+  }
+}

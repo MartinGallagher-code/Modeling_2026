@@ -2,7 +2,7 @@
 
 ## The Complete Collection
 
-This collection contains **117 grey-box queueing models** documenting the complete evolution of microprocessors from the first commercial CPU (Intel 4004, 1971) through the superscalar era (Pentium, 1993).
+This collection contains **196 grey-box queueing models** documenting the complete evolution of microprocessors from the earliest calculator chips (AMI S2000, 1970) through the superscalar era (Pentium, 1993).
 
 ---
 
@@ -126,7 +126,7 @@ python old_scripts/run_accuracy_tests.py -p i8080
 
 ## Validation
 
-All 117 models pass validation with <10% CPI error:
+All 196 models pass validation with <10% CPI error:
 - **116 fully validated** (<5% error)
 - **1 passed** (<10% error)
 

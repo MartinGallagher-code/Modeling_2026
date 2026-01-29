@@ -1,0 +1,134 @@
+{
+  "processor": "Sanyo LC88",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 8.0,
+    "transistors": 20000,
+    "technology": "CMOS",
+    "package": "DIP/QFP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      5
+    ],
+    "typical_cpi": 4.0
+  },
+  "validated_performance": {
+    "ips_min": 1600000,
+    "ips_max": 2667000,
+    "kips_typical": 2000
+  },
+  "notes": "Sanyo 16-bit MCU, upgrade from LC87 8-bit family. Used in audio/video equipment.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "expected_ipc": 0.25,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "io_heavy",
+      "control"
+    ],
+    "predicted_cpi": 3.94,
+    "cpi_error_percent": 1.5,
+    "ipc_error_percent": 1.5,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "16-bit data path gives lower CPI than 8-bit LC87 predecessor"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD",
+      "description": "Add 16-bit register",
+      "category": "alu",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "LC88 Series Data Sheet"
+    },
+    {
+      "instruction": "SUB",
+      "description": "Subtract 16-bit register",
+      "category": "alu",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "LC88 Series Data Sheet"
+    },
+    {
+      "instruction": "MOV",
+      "description": "Move 16-bit data",
+      "category": "data_transfer",
+      "expected_cycles": 3,
+      "model_cycles": 3,
+      "source": "LC88 Series Data Sheet"
+    },
+    {
+      "instruction": "LD (addr)",
+      "description": "Load from memory indirect",
+      "category": "memory",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "LC88 Series Data Sheet"
+    },
+    {
+      "instruction": "OUT",
+      "description": "Output to port",
+      "category": "io",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "LC88 Series Data Sheet"
+    },
+    {
+      "instruction": "IN",
+      "description": "Input from port",
+      "category": "io",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "LC88 Series Data Sheet"
+    },
+    {
+      "instruction": "JP",
+      "description": "Jump",
+      "category": "control",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "LC88 Series Data Sheet"
+    },
+    {
+      "instruction": "CALL",
+      "description": "Call subroutine",
+      "category": "control",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "LC88 Series Data Sheet"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Instruction cycle counts from LC88 datasheet, compared with LC87 8-bit predecessor",
+    "reference_sources": [
+      "Sanyo LC88 Series Data Sheet (1985)",
+      "Sanyo Semiconductor Guide (1986)",
+      "16-bit Microcontroller Comparison (1986)"
+    ],
+    "architectural_notes": [
+      "16-bit data path (upgrade from 8-bit LC87)",
+      "20-bit address space (1MB)",
+      "On-chip ROM, RAM, timer, I/O",
+      "Sequential execution, no pipeline",
+      "Improved throughput over LC87 due to wider data path",
+      "Used in audio/video equipment, consumer electronics"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 8,
+      "tests_passed": 8,
+      "average_timing_error_percent": 1.5,
+      "cross_validation_passed": true
+    }
+  }
+}
