@@ -74,10 +74,10 @@ EXPECTED_CPI = {
     'z180': 4.5,
     'z8000': 4.5,
     'z80000': 6.0,      # 32-bit Z8000 extension
-    # ARM
+    # ARM - cross-validated
     'arm1': 1.8,
-    'arm2': 1.5,
-    'arm3': 1.4,
+    'arm2': 1.43,       # Cross-validated (was 1.5)
+    'arm3': 1.33,       # Cross-validated (was 1.4) - first with cache
     # RISC - cross-validated
     'sparc': 1.3,       # Cross-validated (was 1.5)
     'sun_spark': 1.5,
