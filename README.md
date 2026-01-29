@@ -63,6 +63,18 @@ Modeling_2026/
 └── docs/                              # Additional documentation
 ```
 
+## Documentation
+
+Historical context and methodology documentation is available in `docs/historical/`:
+
+| Document | Description |
+|----------|-------------|
+| `METHODOLOGY.md` | Grey-box queueing model methodology and calibration process |
+| `FAMILY_TREES.md` | Processor lineages and architectural relationships |
+| `EVOLUTION_TIMELINE.md` | Visual timeline of microprocessor evolution 1971-1985 |
+| `PERFORMANCE_COMPARISON.md` | Side-by-side performance metrics across all processors |
+| `ARCHITECTURAL_GUIDE.md` | Guide to processor architectural concepts |
+
 ## Methodology
 
 ### Grey-Box Queueing Approach
@@ -164,10 +176,18 @@ All 80 models pass validation (<5% CPI error):
 - **GI PIC1650** (1977): First PIC microcontroller
 - **Intersil 6100** (1975): PDP-8 on a chip
 
+## Future Work
+
+See `TODO_PRE1986_CPUS.md` for a prioritized list of 45 additional processors that could be added to the collection, including:
+- Ricoh 2A03 (NES CPU)
+- MOS 6507 (Atari 2600)
+- Rockwell PPS-4 (third microprocessor)
+- Hitachi 6309 ("best 8-bit ever")
+
 ## Author
 
 Grey-Box Performance Modeling Research Project
-Validated: January 2026
+Validated: January 29, 2026
 
 ## License
 
