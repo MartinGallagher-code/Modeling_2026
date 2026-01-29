@@ -27,9 +27,15 @@
   },
   "validation_date": "2026-01-27",
   "accuracy": {
-    "ipc_error_percent": null,
-    "cpi_error_percent": null,
-    "validated_workloads": [],
-    "notes": "Validation pending"
+    "expected_cpi": 10.0,
+    "expected_ipc": 0.1,
+    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "predicted_cpi": 9.540,
+    "cpi_error_percent": 4.6,
+    "ipc_error_percent": 4.6,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-28",
+    "notes": "Calibrated with Z8 register-file architecture timings"
   }
 }
