@@ -1,1 +1,0 @@
-# Motorola MC14500B package

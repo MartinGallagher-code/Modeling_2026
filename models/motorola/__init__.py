@@ -1,1 +1,0 @@
-"""MOTOROLA processor family models."""

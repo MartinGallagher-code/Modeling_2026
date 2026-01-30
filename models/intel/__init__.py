@@ -1,1 +1,0 @@
-"""INTEL processor family models."""
