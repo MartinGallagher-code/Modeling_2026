@@ -1,0 +1,2791 @@
+{
+  "processor": "Motorola 68HC11",
+  "manufacturer": "Motorola",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "MC68HC11 Reference Manual, Motorola 1991",
+  "instruction_count": 309,
+  "instructions": [
+    {
+      "mnemonic": "ABA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "HNZVC",
+      "notes": "Add B to A"
+    },
+    {
+      "mnemonic": "ABX",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Add B to X unsigned"
+    },
+    {
+      "mnemonic": "ABY",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Add B to Y unsigned"
+    },
+    {
+      "mnemonic": "ADC A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to A"
+    },
+    {
+      "mnemonic": "ADC A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to A"
+    },
+    {
+      "mnemonic": "ADC A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to A"
+    },
+    {
+      "mnemonic": "ADC A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to A, X-indexed"
+    },
+    {
+      "mnemonic": "ADC A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to A, Y-indexed"
+    },
+    {
+      "mnemonic": "ADC B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to B"
+    },
+    {
+      "mnemonic": "ADC B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to B"
+    },
+    {
+      "mnemonic": "ADC B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to B"
+    },
+    {
+      "mnemonic": "ADC B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to B, X-indexed"
+    },
+    {
+      "mnemonic": "ADC B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to B, Y-indexed"
+    },
+    {
+      "mnemonic": "ADD A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "HNZVC",
+      "notes": "Add to A"
+    },
+    {
+      "mnemonic": "ADD A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "HNZVC",
+      "notes": "Add to A"
+    },
+    {
+      "mnemonic": "ADD A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "HNZVC",
+      "notes": "Add to A"
+    },
+    {
+      "mnemonic": "ADD A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "HNZVC",
+      "notes": "Add to A, X-indexed"
+    },
+    {
+      "mnemonic": "ADD A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "HNZVC",
+      "notes": "Add to A, Y-indexed"
+    },
+    {
+      "mnemonic": "ADD B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "HNZVC",
+      "notes": "Add to B"
+    },
+    {
+      "mnemonic": "ADD B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "HNZVC",
+      "notes": "Add to B"
+    },
+    {
+      "mnemonic": "ADD B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "HNZVC",
+      "notes": "Add to B"
+    },
+    {
+      "mnemonic": "ADD B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "HNZVC",
+      "notes": "Add to B, X-indexed"
+    },
+    {
+      "mnemonic": "ADD B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "HNZVC",
+      "notes": "Add to B, Y-indexed"
+    },
+    {
+      "mnemonic": "ADDD imm",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Add 16-bit to D"
+    },
+    {
+      "mnemonic": "ADDD dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Add 16-bit to D"
+    },
+    {
+      "mnemonic": "ADDD ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Add 16-bit to D"
+    },
+    {
+      "mnemonic": "ADDD idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Add 16-bit to D, X-indexed"
+    },
+    {
+      "mnemonic": "ADDD idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Add 16-bit to D, Y-indexed"
+    },
+    {
+      "mnemonic": "AND A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "AND A"
+    },
+    {
+      "mnemonic": "AND A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "AND A"
+    },
+    {
+      "mnemonic": "AND A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "AND A"
+    },
+    {
+      "mnemonic": "AND A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "AND A, X-indexed"
+    },
+    {
+      "mnemonic": "AND A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "AND A, Y-indexed"
+    },
+    {
+      "mnemonic": "AND B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "AND B"
+    },
+    {
+      "mnemonic": "AND B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "AND B"
+    },
+    {
+      "mnemonic": "AND B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "AND B"
+    },
+    {
+      "mnemonic": "AND B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "AND B, X-indexed"
+    },
+    {
+      "mnemonic": "AND B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "AND B, Y-indexed"
+    },
+    {
+      "mnemonic": "ASL A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift left A"
+    },
+    {
+      "mnemonic": "ASL B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift left B"
+    },
+    {
+      "mnemonic": "ASL ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift left memory"
+    },
+    {
+      "mnemonic": "ASL idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift left X-indexed"
+    },
+    {
+      "mnemonic": "ASL idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift left Y-indexed"
+    },
+    {
+      "mnemonic": "ASLD",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift left D"
+    },
+    {
+      "mnemonic": "ASR A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift right A"
+    },
+    {
+      "mnemonic": "ASR B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift right B"
+    },
+    {
+      "mnemonic": "ASR ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "ASR memory"
+    },
+    {
+      "mnemonic": "ASR idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "ASR X-indexed"
+    },
+    {
+      "mnemonic": "ASR idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "ASR Y-indexed"
+    },
+    {
+      "mnemonic": "BCC",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if carry clear"
+    },
+    {
+      "mnemonic": "BCLR dir",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Clear bit(s) in memory"
+    },
+    {
+      "mnemonic": "BCLR idx_x",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Clear bit(s) X-indexed"
+    },
+    {
+      "mnemonic": "BCLR idx_y",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Clear bit(s) Y-indexed"
+    },
+    {
+      "mnemonic": "BCS",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if carry set"
+    },
+    {
+      "mnemonic": "BEQ",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if equal"
+    },
+    {
+      "mnemonic": "BGE",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if >= signed"
+    },
+    {
+      "mnemonic": "BGT",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if > signed"
+    },
+    {
+      "mnemonic": "BHI",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if higher"
+    },
+    {
+      "mnemonic": "BHS",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if higher or same"
+    },
+    {
+      "mnemonic": "BIT A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Bit test A"
+    },
+    {
+      "mnemonic": "BIT A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Bit test A"
+    },
+    {
+      "mnemonic": "BIT A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Bit test A"
+    },
+    {
+      "mnemonic": "BIT A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Bit test A, X-indexed"
+    },
+    {
+      "mnemonic": "BIT A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Bit test A, Y-indexed"
+    },
+    {
+      "mnemonic": "BIT B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Bit test B"
+    },
+    {
+      "mnemonic": "BIT B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Bit test B"
+    },
+    {
+      "mnemonic": "BIT B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Bit test B"
+    },
+    {
+      "mnemonic": "BIT B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Bit test B, X-indexed"
+    },
+    {
+      "mnemonic": "BIT B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Bit test B, Y-indexed"
+    },
+    {
+      "mnemonic": "BLE",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if <= signed"
+    },
+    {
+      "mnemonic": "BLO",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if lower"
+    },
+    {
+      "mnemonic": "BLS",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if lower or same"
+    },
+    {
+      "mnemonic": "BLT",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if < signed"
+    },
+    {
+      "mnemonic": "BMI",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if minus"
+    },
+    {
+      "mnemonic": "BNE",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if not equal"
+    },
+    {
+      "mnemonic": "BPL",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if plus"
+    },
+    {
+      "mnemonic": "BRA",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch always"
+    },
+    {
+      "mnemonic": "BRCLR dir",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "direct_relative",
+      "flags_affected": "none",
+      "notes": "Branch if bit(s) clear in memory"
+    },
+    {
+      "mnemonic": "BRCLR idx_x",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "indexed_x_relative",
+      "flags_affected": "none",
+      "notes": "Branch if bit(s) clear, X-indexed"
+    },
+    {
+      "mnemonic": "BRCLR idx_y",
+      "bytes": 5,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "indexed_y_relative",
+      "flags_affected": "none",
+      "notes": "Branch if bit(s) clear, Y-indexed"
+    },
+    {
+      "mnemonic": "BRN",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch never"
+    },
+    {
+      "mnemonic": "BRSET dir",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "direct_relative",
+      "flags_affected": "none",
+      "notes": "Branch if bit(s) set in memory"
+    },
+    {
+      "mnemonic": "BRSET idx_x",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "indexed_x_relative",
+      "flags_affected": "none",
+      "notes": "Branch if bit(s) set, X-indexed"
+    },
+    {
+      "mnemonic": "BRSET idx_y",
+      "bytes": 5,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "indexed_y_relative",
+      "flags_affected": "none",
+      "notes": "Branch if bit(s) set, Y-indexed"
+    },
+    {
+      "mnemonic": "BSET dir",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Set bit(s) in memory"
+    },
+    {
+      "mnemonic": "BSET idx_x",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Set bit(s), X-indexed"
+    },
+    {
+      "mnemonic": "BSET idx_y",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Set bit(s), Y-indexed"
+    },
+    {
+      "mnemonic": "BSR",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch to subroutine"
+    },
+    {
+      "mnemonic": "BVC",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if overflow clear"
+    },
+    {
+      "mnemonic": "BVS",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if overflow set"
+    },
+    {
+      "mnemonic": "CBA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZVC",
+      "notes": "Compare accumulators"
+    },
+    {
+      "mnemonic": "CLC",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Clear carry"
+    },
+    {
+      "mnemonic": "CLI",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "I",
+      "notes": "Clear interrupt mask"
+    },
+    {
+      "mnemonic": "CLR A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Clear A"
+    },
+    {
+      "mnemonic": "CLR B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Clear B"
+    },
+    {
+      "mnemonic": "CLR ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Clear memory"
+    },
+    {
+      "mnemonic": "CLR idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Clear X-indexed"
+    },
+    {
+      "mnemonic": "CLR idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Clear Y-indexed"
+    },
+    {
+      "mnemonic": "CLV",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "V",
+      "notes": "Clear overflow"
+    },
+    {
+      "mnemonic": "CMP A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Compare A"
+    },
+    {
+      "mnemonic": "CMP A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Compare A"
+    },
+    {
+      "mnemonic": "CMP A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Compare A"
+    },
+    {
+      "mnemonic": "CMP A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Compare A, X-indexed"
+    },
+    {
+      "mnemonic": "CMP A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Compare A, Y-indexed"
+    },
+    {
+      "mnemonic": "CMP B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Compare B"
+    },
+    {
+      "mnemonic": "CMP B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Compare B"
+    },
+    {
+      "mnemonic": "CMP B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Compare B"
+    },
+    {
+      "mnemonic": "CMP B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Compare B, X-indexed"
+    },
+    {
+      "mnemonic": "CMP B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Compare B, Y-indexed"
+    },
+    {
+      "mnemonic": "COM A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Complement A"
+    },
+    {
+      "mnemonic": "COM B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Complement B"
+    },
+    {
+      "mnemonic": "COM ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Complement memory"
+    },
+    {
+      "mnemonic": "COM idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Complement X-indexed"
+    },
+    {
+      "mnemonic": "COM idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Complement Y-indexed"
+    },
+    {
+      "mnemonic": "CPD imm",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Compare D (16-bit)"
+    },
+    {
+      "mnemonic": "CPD dir",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Compare D"
+    },
+    {
+      "mnemonic": "CPD ext",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Compare D"
+    },
+    {
+      "mnemonic": "CPD idx_x",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Compare D, X-indexed"
+    },
+    {
+      "mnemonic": "CPD idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Compare D, Y-indexed"
+    },
+    {
+      "mnemonic": "CPX imm",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Compare X"
+    },
+    {
+      "mnemonic": "CPX dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Compare X"
+    },
+    {
+      "mnemonic": "CPX ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Compare X"
+    },
+    {
+      "mnemonic": "CPX idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Compare X, X-indexed"
+    },
+    {
+      "mnemonic": "CPX idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Compare X, Y-indexed"
+    },
+    {
+      "mnemonic": "CPY imm",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Compare Y"
+    },
+    {
+      "mnemonic": "CPY dir",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Compare Y"
+    },
+    {
+      "mnemonic": "CPY ext",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Compare Y"
+    },
+    {
+      "mnemonic": "CPY idx_x",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Compare Y, X-indexed"
+    },
+    {
+      "mnemonic": "CPY idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Compare Y, Y-indexed"
+    },
+    {
+      "mnemonic": "DAA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZVC",
+      "notes": "Decimal adjust A"
+    },
+    {
+      "mnemonic": "DEC A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZV",
+      "notes": "Decrement A"
+    },
+    {
+      "mnemonic": "DEC B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZV",
+      "notes": "Decrement B"
+    },
+    {
+      "mnemonic": "DEC ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Decrement memory"
+    },
+    {
+      "mnemonic": "DEC idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Decrement X-indexed"
+    },
+    {
+      "mnemonic": "DEC idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Decrement Y-indexed"
+    },
+    {
+      "mnemonic": "DES",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Decrement stack pointer"
+    },
+    {
+      "mnemonic": "DEX",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "Z",
+      "notes": "Decrement X"
+    },
+    {
+      "mnemonic": "DEY",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "Z",
+      "notes": "Decrement Y"
+    },
+    {
+      "mnemonic": "EOR A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Exclusive OR A"
+    },
+    {
+      "mnemonic": "EOR A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Exclusive OR A"
+    },
+    {
+      "mnemonic": "EOR A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Exclusive OR A"
+    },
+    {
+      "mnemonic": "EOR A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "EOR A, X-indexed"
+    },
+    {
+      "mnemonic": "EOR A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "EOR A, Y-indexed"
+    },
+    {
+      "mnemonic": "EOR B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Exclusive OR B"
+    },
+    {
+      "mnemonic": "EOR B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Exclusive OR B"
+    },
+    {
+      "mnemonic": "EOR B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Exclusive OR B"
+    },
+    {
+      "mnemonic": "EOR B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "EOR B, X-indexed"
+    },
+    {
+      "mnemonic": "EOR B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "EOR B, Y-indexed"
+    },
+    {
+      "mnemonic": "FDIV",
+      "bytes": 1,
+      "cycles": 41,
+      "category": "divide",
+      "addressing_mode": "inherent",
+      "flags_affected": "ZVC",
+      "notes": "Fractional divide D/X -> X rem D"
+    },
+    {
+      "mnemonic": "IDIV",
+      "bytes": 1,
+      "cycles": 41,
+      "category": "divide",
+      "addressing_mode": "inherent",
+      "flags_affected": "ZVC",
+      "notes": "Integer divide D/X -> X rem D"
+    },
+    {
+      "mnemonic": "INC A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZV",
+      "notes": "Increment A"
+    },
+    {
+      "mnemonic": "INC B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZV",
+      "notes": "Increment B"
+    },
+    {
+      "mnemonic": "INC ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Increment memory"
+    },
+    {
+      "mnemonic": "INC idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Increment X-indexed"
+    },
+    {
+      "mnemonic": "INC idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Increment Y-indexed"
+    },
+    {
+      "mnemonic": "INS",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Increment stack pointer"
+    },
+    {
+      "mnemonic": "INX",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "Z",
+      "notes": "Increment X"
+    },
+    {
+      "mnemonic": "INY",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "Z",
+      "notes": "Increment Y"
+    },
+    {
+      "mnemonic": "JMP ext",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "extended",
+      "flags_affected": "none",
+      "notes": "Jump extended"
+    },
+    {
+      "mnemonic": "JMP idx_x",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "none",
+      "notes": "Jump X-indexed"
+    },
+    {
+      "mnemonic": "JMP idx_y",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "none",
+      "notes": "Jump Y-indexed"
+    },
+    {
+      "mnemonic": "JSR dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "JSR direct"
+    },
+    {
+      "mnemonic": "JSR ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "extended",
+      "flags_affected": "none",
+      "notes": "JSR extended"
+    },
+    {
+      "mnemonic": "JSR idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "none",
+      "notes": "JSR X-indexed"
+    },
+    {
+      "mnemonic": "JSR idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "none",
+      "notes": "JSR Y-indexed"
+    },
+    {
+      "mnemonic": "LDA A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Load A"
+    },
+    {
+      "mnemonic": "LDA A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Load A"
+    },
+    {
+      "mnemonic": "LDA A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Load A"
+    },
+    {
+      "mnemonic": "LDA A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Load A, X-indexed"
+    },
+    {
+      "mnemonic": "LDA A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Load A, Y-indexed"
+    },
+    {
+      "mnemonic": "LDA B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Load B"
+    },
+    {
+      "mnemonic": "LDA B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Load B"
+    },
+    {
+      "mnemonic": "LDA B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Load B"
+    },
+    {
+      "mnemonic": "LDA B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Load B, X-indexed"
+    },
+    {
+      "mnemonic": "LDA B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Load B, Y-indexed"
+    },
+    {
+      "mnemonic": "LDD imm",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Load D"
+    },
+    {
+      "mnemonic": "LDD dir",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Load D"
+    },
+    {
+      "mnemonic": "LDD ext",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Load D"
+    },
+    {
+      "mnemonic": "LDD idx_x",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Load D, X-indexed"
+    },
+    {
+      "mnemonic": "LDD idx_y",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Load D, Y-indexed"
+    },
+    {
+      "mnemonic": "LDS imm",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Load SP"
+    },
+    {
+      "mnemonic": "LDS dir",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Load SP"
+    },
+    {
+      "mnemonic": "LDS ext",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Load SP"
+    },
+    {
+      "mnemonic": "LDS idx_x",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Load SP, X-indexed"
+    },
+    {
+      "mnemonic": "LDS idx_y",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Load SP, Y-indexed"
+    },
+    {
+      "mnemonic": "LDX imm",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Load X"
+    },
+    {
+      "mnemonic": "LDX dir",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Load X"
+    },
+    {
+      "mnemonic": "LDX ext",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Load X"
+    },
+    {
+      "mnemonic": "LDX idx_x",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Load X, X-indexed"
+    },
+    {
+      "mnemonic": "LDX idx_y",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Load X, Y-indexed"
+    },
+    {
+      "mnemonic": "LDY imm",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Load Y"
+    },
+    {
+      "mnemonic": "LDY dir",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Load Y"
+    },
+    {
+      "mnemonic": "LDY ext",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Load Y"
+    },
+    {
+      "mnemonic": "LDY idx_x",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Load Y, X-indexed"
+    },
+    {
+      "mnemonic": "LDY idx_y",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Load Y, Y-indexed"
+    },
+    {
+      "mnemonic": "LSL A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Logical shift left A"
+    },
+    {
+      "mnemonic": "LSL B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Logical shift left B"
+    },
+    {
+      "mnemonic": "LSLD",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZVC",
+      "notes": "Logical shift left D"
+    },
+    {
+      "mnemonic": "LSR A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Logical shift right A"
+    },
+    {
+      "mnemonic": "LSR B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Logical shift right B"
+    },
+    {
+      "mnemonic": "LSRD",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZVC",
+      "notes": "Logical shift right D"
+    },
+    {
+      "mnemonic": "MUL",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "multiply",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Multiply A*B -> D unsigned"
+    },
+    {
+      "mnemonic": "NEG A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Negate A"
+    },
+    {
+      "mnemonic": "NEG B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Negate B"
+    },
+    {
+      "mnemonic": "NEG ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Negate memory"
+    },
+    {
+      "mnemonic": "NEG idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Negate X-indexed"
+    },
+    {
+      "mnemonic": "NEG idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Negate Y-indexed"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "ORA A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "OR A"
+    },
+    {
+      "mnemonic": "ORA A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "OR A"
+    },
+    {
+      "mnemonic": "ORA A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "OR A"
+    },
+    {
+      "mnemonic": "ORA A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "OR A, X-indexed"
+    },
+    {
+      "mnemonic": "ORA A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "OR A, Y-indexed"
+    },
+    {
+      "mnemonic": "ORA B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "OR B"
+    },
+    {
+      "mnemonic": "ORA B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "OR B"
+    },
+    {
+      "mnemonic": "ORA B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "OR B"
+    },
+    {
+      "mnemonic": "ORA B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "OR B, X-indexed"
+    },
+    {
+      "mnemonic": "ORA B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "OR B, Y-indexed"
+    },
+    {
+      "mnemonic": "PSH A",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Push A"
+    },
+    {
+      "mnemonic": "PSH B",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Push B"
+    },
+    {
+      "mnemonic": "PSHX",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Push X"
+    },
+    {
+      "mnemonic": "PSHY",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Push Y"
+    },
+    {
+      "mnemonic": "PUL A",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Pull A"
+    },
+    {
+      "mnemonic": "PUL B",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Pull B"
+    },
+    {
+      "mnemonic": "PULX",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Pull X"
+    },
+    {
+      "mnemonic": "PULY",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Pull Y"
+    },
+    {
+      "mnemonic": "ROL A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Rotate left A"
+    },
+    {
+      "mnemonic": "ROL B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Rotate left B"
+    },
+    {
+      "mnemonic": "ROL ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Rotate left memory"
+    },
+    {
+      "mnemonic": "ROL idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Rotate left X-indexed"
+    },
+    {
+      "mnemonic": "ROL idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Rotate left Y-indexed"
+    },
+    {
+      "mnemonic": "ROR A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Rotate right A"
+    },
+    {
+      "mnemonic": "ROR B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Rotate right B"
+    },
+    {
+      "mnemonic": "ROR ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Rotate right memory"
+    },
+    {
+      "mnemonic": "ROR idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Rotate right X-indexed"
+    },
+    {
+      "mnemonic": "ROR idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Rotate right Y-indexed"
+    },
+    {
+      "mnemonic": "RTI",
+      "bytes": 1,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "all",
+      "notes": "Return from interrupt"
+    },
+    {
+      "mnemonic": "RTS",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "SBA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZVC",
+      "notes": "Subtract B from A"
+    },
+    {
+      "mnemonic": "SBC A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry A"
+    },
+    {
+      "mnemonic": "SBC A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry A"
+    },
+    {
+      "mnemonic": "SBC A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry A"
+    },
+    {
+      "mnemonic": "SBC A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry A, X-indexed"
+    },
+    {
+      "mnemonic": "SBC A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry A, Y-indexed"
+    },
+    {
+      "mnemonic": "SBC B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry B"
+    },
+    {
+      "mnemonic": "SBC B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry B"
+    },
+    {
+      "mnemonic": "SBC B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry B"
+    },
+    {
+      "mnemonic": "SBC B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry B, X-indexed"
+    },
+    {
+      "mnemonic": "SBC B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Subtract with carry B, Y-indexed"
+    },
+    {
+      "mnemonic": "SEC",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Set carry"
+    },
+    {
+      "mnemonic": "SEI",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "I",
+      "notes": "Set interrupt mask"
+    },
+    {
+      "mnemonic": "SEV",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "V",
+      "notes": "Set overflow"
+    },
+    {
+      "mnemonic": "STA A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Store A"
+    },
+    {
+      "mnemonic": "STA A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Store A"
+    },
+    {
+      "mnemonic": "STA A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Store A, X-indexed"
+    },
+    {
+      "mnemonic": "STA A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Store A, Y-indexed"
+    },
+    {
+      "mnemonic": "STA B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Store B"
+    },
+    {
+      "mnemonic": "STA B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Store B"
+    },
+    {
+      "mnemonic": "STA B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Store B, X-indexed"
+    },
+    {
+      "mnemonic": "STA B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Store B, Y-indexed"
+    },
+    {
+      "mnemonic": "STD dir",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Store D"
+    },
+    {
+      "mnemonic": "STD ext",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Store D"
+    },
+    {
+      "mnemonic": "STD idx_x",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Store D, X-indexed"
+    },
+    {
+      "mnemonic": "STD idx_y",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Store D, Y-indexed"
+    },
+    {
+      "mnemonic": "STOP",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Stop clocks"
+    },
+    {
+      "mnemonic": "STS dir",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Store SP"
+    },
+    {
+      "mnemonic": "STS ext",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Store SP"
+    },
+    {
+      "mnemonic": "STS idx_x",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Store SP, X-indexed"
+    },
+    {
+      "mnemonic": "STS idx_y",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Store SP, Y-indexed"
+    },
+    {
+      "mnemonic": "STX dir",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Store X"
+    },
+    {
+      "mnemonic": "STX ext",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Store X"
+    },
+    {
+      "mnemonic": "STX idx_x",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Store X, X-indexed"
+    },
+    {
+      "mnemonic": "STX idx_y",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Store X, Y-indexed"
+    },
+    {
+      "mnemonic": "STY dir",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Store Y"
+    },
+    {
+      "mnemonic": "STY ext",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Store Y"
+    },
+    {
+      "mnemonic": "STY idx_x",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZV",
+      "notes": "Store Y, X-indexed"
+    },
+    {
+      "mnemonic": "STY idx_y",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZV",
+      "notes": "Store Y, Y-indexed"
+    },
+    {
+      "mnemonic": "SUB A imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from A"
+    },
+    {
+      "mnemonic": "SUB A dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from A"
+    },
+    {
+      "mnemonic": "SUB A ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from A"
+    },
+    {
+      "mnemonic": "SUB A idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from A, X-indexed"
+    },
+    {
+      "mnemonic": "SUB A idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from A, Y-indexed"
+    },
+    {
+      "mnemonic": "SUB B imm",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from B"
+    },
+    {
+      "mnemonic": "SUB B dir",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from B"
+    },
+    {
+      "mnemonic": "SUB B ext",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from B"
+    },
+    {
+      "mnemonic": "SUB B idx_x",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from B, X-indexed"
+    },
+    {
+      "mnemonic": "SUB B idx_y",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from B, Y-indexed"
+    },
+    {
+      "mnemonic": "SUBD imm",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Subtract 16-bit from D"
+    },
+    {
+      "mnemonic": "SUBD dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from D"
+    },
+    {
+      "mnemonic": "SUBD ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from D"
+    },
+    {
+      "mnemonic": "SUBD idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from D, X-indexed"
+    },
+    {
+      "mnemonic": "SUBD idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Subtract from D, Y-indexed"
+    },
+    {
+      "mnemonic": "SWI",
+      "bytes": 1,
+      "cycles": 14,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "I",
+      "notes": "Software interrupt"
+    },
+    {
+      "mnemonic": "TAB",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZV",
+      "notes": "Transfer A to B"
+    },
+    {
+      "mnemonic": "TAP",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "all",
+      "notes": "Transfer A to CCR"
+    },
+    {
+      "mnemonic": "TBA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZV",
+      "notes": "Transfer B to A"
+    },
+    {
+      "mnemonic": "TPA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer CCR to A"
+    },
+    {
+      "mnemonic": "TST A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Test A"
+    },
+    {
+      "mnemonic": "TST B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZVC",
+      "notes": "Test B"
+    },
+    {
+      "mnemonic": "TST ext",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "extended",
+      "flags_affected": "NZVC",
+      "notes": "Test memory"
+    },
+    {
+      "mnemonic": "TST idx_x",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "indexed_x",
+      "flags_affected": "NZVC",
+      "notes": "Test X-indexed"
+    },
+    {
+      "mnemonic": "TST idx_y",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indexed_y",
+      "flags_affected": "NZVC",
+      "notes": "Test Y-indexed"
+    },
+    {
+      "mnemonic": "TSX",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer SP to X"
+    },
+    {
+      "mnemonic": "TSY",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer SP to Y"
+    },
+    {
+      "mnemonic": "TXS",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer X to SP"
+    },
+    {
+      "mnemonic": "TYS",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer Y to SP"
+    },
+    {
+      "mnemonic": "WAI",
+      "bytes": 1,
+      "cycles": 14,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Wait for interrupt (min 14 E-cycles)"
+    },
+    {
+      "mnemonic": "XGDX",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Exchange D and X"
+    },
+    {
+      "mnemonic": "XGDY",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Exchange D and Y"
+    }
+  ]
+}

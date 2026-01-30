@@ -1,0 +1,460 @@
+{
+  "processor": "Rockwell PPS-4",
+  "manufacturer": "Rockwell International",
+  "year": 1972,
+  "schema_version": "1.0",
+  "source": "Rockwell PPS-4 Microcomputer datasheet, 1972",
+  "instruction_count": 50,
+  "instructions": [
+    {
+      "mnemonic": "AD",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add memory to accumulator (A <- A + M)"
+    },
+    {
+      "mnemonic": "ADC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add memory and carry to accumulator (A <- A + M + C)"
+    },
+    {
+      "mnemonic": "ADSK",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add and skip on carry (A <- A + M, skip next if carry)"
+    },
+    {
+      "mnemonic": "ADCSK",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add with carry and skip (A <- A + M + C, skip next if carry)"
+    },
+    {
+      "mnemonic": "DC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Decimal complement; A <- 10's complement if C=0, 9's complement if C=1"
+    },
+    {
+      "mnemonic": "AND",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "AND accumulator with memory"
+    },
+    {
+      "mnemonic": "OR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "OR accumulator with memory"
+    },
+    {
+      "mnemonic": "EOR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "XOR accumulator with memory"
+    },
+    {
+      "mnemonic": "COMP",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Complement accumulator (1's complement)"
+    },
+    {
+      "mnemonic": "SC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Set carry flag"
+    },
+    {
+      "mnemonic": "RC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Reset carry flag"
+    },
+    {
+      "mnemonic": "SF1",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "FF1",
+      "notes": "Set flip-flop 1"
+    },
+    {
+      "mnemonic": "RF1",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "FF1",
+      "notes": "Reset flip-flop 1"
+    },
+    {
+      "mnemonic": "SF2",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "FF2",
+      "notes": "Set flip-flop 2"
+    },
+    {
+      "mnemonic": "RF2",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "FF2",
+      "notes": "Reset flip-flop 2"
+    },
+    {
+      "mnemonic": "LD",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load accumulator with immediate 4-bit value (from opcode)"
+    },
+    {
+      "mnemonic": "EX",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Exchange accumulator and memory"
+    },
+    {
+      "mnemonic": "EXD",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Exchange accumulator and memory, decrement BL"
+    },
+    {
+      "mnemonic": "LDI",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load accumulator immediate (4-bit literal in opcode)"
+    },
+    {
+      "mnemonic": "LAX",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Load accumulator from X register"
+    },
+    {
+      "mnemonic": "LXA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Load X register from accumulator"
+    },
+    {
+      "mnemonic": "LABL",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Load accumulator from BL (lower B register)"
+    },
+    {
+      "mnemonic": "LBUA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Load BU (upper B register) from accumulator"
+    },
+    {
+      "mnemonic": "XABL",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Exchange accumulator and BL"
+    },
+    {
+      "mnemonic": "XBLA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Exchange BL and accumulator"
+    },
+    {
+      "mnemonic": "SAG",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Special address generation; BL <- 0 for next instruction"
+    },
+    {
+      "mnemonic": "INCB",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Increment BL, skip on carry (BL wraps 0xF -> 0x0)"
+    },
+    {
+      "mnemonic": "DECB",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Decrement BL, skip on borrow (BL wraps 0x0 -> 0xF)"
+    },
+    {
+      "mnemonic": "T",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Transfer (branch within page); 6-bit address"
+    },
+    {
+      "mnemonic": "TM",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Transfer and mark (call within page); pushes return address"
+    },
+    {
+      "mnemonic": "SKC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Skip if carry is set"
+    },
+    {
+      "mnemonic": "SKBI",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Skip if BL equals immediate"
+    },
+    {
+      "mnemonic": "SKF1",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Skip if flip-flop 1 is set"
+    },
+    {
+      "mnemonic": "SKF2",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Skip if flip-flop 2 is set"
+    },
+    {
+      "mnemonic": "SKZ",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Skip if accumulator is zero"
+    },
+    {
+      "mnemonic": "RTN",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "RTNSK",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine and skip"
+    },
+    {
+      "mnemonic": "IOL",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "I/O long instruction; 2 bytes, 2 machine cycles; device address in byte 2"
+    },
+    {
+      "mnemonic": "DIA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Discrete input group A to accumulator"
+    },
+    {
+      "mnemonic": "DIB",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Discrete input group B to accumulator"
+    },
+    {
+      "mnemonic": "DOA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Discrete output group A from accumulator"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "LB",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load B register (8-bit); 2 bytes, 2 machine cycles"
+    },
+    {
+      "mnemonic": "LBL",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load BL (lower B) with immediate; 2 bytes, 2 machine cycles"
+    },
+    {
+      "mnemonic": "TL",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Transfer long (branch to any page); 2 bytes, 2 machine cycles"
+    },
+    {
+      "mnemonic": "TML",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Transfer and mark long (call any page); 2 bytes, 2 machine cycles"
+    },
+    {
+      "mnemonic": "SKMBZ",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Skip if memory bit is zero (bit position encoded in opcode)"
+    },
+    {
+      "mnemonic": "SKMEA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Skip if memory equals accumulator"
+    },
+    {
+      "mnemonic": "LBUA2",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Load BU from accumulator (alternate encoding)"
+    },
+    {
+      "mnemonic": "XABU",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Exchange accumulator and BU (upper B register)"
+    }
+  ]
+}

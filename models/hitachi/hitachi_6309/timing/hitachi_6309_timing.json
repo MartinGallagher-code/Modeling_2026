@@ -1,0 +1,541 @@
+{
+  "processor": "Hitachi 6309",
+  "manufacturer": "Hitachi",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Community documentation (original Hitachi docs lost), CoCo3 community",
+  "instruction_count": 59,
+  "instructions": [
+    {
+      "mnemonic": "TFM_plus_plus",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "string",
+      "addressing_mode": "register_pair",
+      "flags_affected": "none",
+      "notes": "Block transfer R0+,R1+; 3 + 3n cycles (example: n=1 gives 6 cycles)"
+    },
+    {
+      "mnemonic": "TFM_minus_minus",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "string",
+      "addressing_mode": "register_pair",
+      "flags_affected": "none",
+      "notes": "Block transfer R0-,R1-; 3 + 3n cycles (backward copy)"
+    },
+    {
+      "mnemonic": "TFM_plus_zero",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "string",
+      "addressing_mode": "register_pair",
+      "flags_affected": "none",
+      "notes": "Block transfer R0+,R1; 3 + 3n cycles (fill)"
+    },
+    {
+      "mnemonic": "TFM_zero_plus",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "string",
+      "addressing_mode": "register_pair",
+      "flags_affected": "none",
+      "notes": "Block transfer R0,R1+; 3 + 3n cycles (read single)"
+    },
+    {
+      "mnemonic": "ADDR",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_pair",
+      "flags_affected": "HNZVC",
+      "notes": "Add register to register; inter-register"
+    },
+    {
+      "mnemonic": "ADCR",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_pair",
+      "flags_affected": "HNZVC",
+      "notes": "Add register to register with carry"
+    },
+    {
+      "mnemonic": "SUBR",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_pair",
+      "flags_affected": "HNZVC",
+      "notes": "Subtract register from register"
+    },
+    {
+      "mnemonic": "SBCR",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_pair",
+      "flags_affected": "HNZVC",
+      "notes": "Subtract register with borrow"
+    },
+    {
+      "mnemonic": "ANDR",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_pair",
+      "flags_affected": "NZ",
+      "notes": "AND register with register"
+    },
+    {
+      "mnemonic": "ORR",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_pair",
+      "flags_affected": "NZ",
+      "notes": "OR register with register"
+    },
+    {
+      "mnemonic": "EORR",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_pair",
+      "flags_affected": "NZ",
+      "notes": "XOR register with register"
+    },
+    {
+      "mnemonic": "CMPR",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_pair",
+      "flags_affected": "NZVC",
+      "notes": "Compare register with register"
+    },
+    {
+      "mnemonic": "DIVD",
+      "bytes": 3,
+      "cycles": 25,
+      "category": "divide",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Signed 16-bit / 8-bit divide; 25 cycles"
+    },
+    {
+      "mnemonic": "DIVQ",
+      "bytes": 3,
+      "cycles": 34,
+      "category": "divide",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Signed 32-bit / 16-bit divide; 34 cycles"
+    },
+    {
+      "mnemonic": "MULD",
+      "bytes": 3,
+      "cycles": 28,
+      "category": "multiply",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZC",
+      "notes": "16-bit x 16-bit signed multiply -> 32-bit result; 28 cycles"
+    },
+    {
+      "mnemonic": "AIM",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "AND immediate to memory; 6 cycles direct"
+    },
+    {
+      "mnemonic": "OIM",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "OR immediate to memory; 6 cycles direct"
+    },
+    {
+      "mnemonic": "EIM",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "XOR immediate to memory; 6 cycles direct"
+    },
+    {
+      "mnemonic": "TIM",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Test immediate with memory (AND, result discarded); 6 cycles direct"
+    },
+    {
+      "mnemonic": "AIM_indexed",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "indexed",
+      "flags_affected": "NZV",
+      "notes": "AND immediate to memory; 7 cycles indexed"
+    },
+    {
+      "mnemonic": "OIM_indexed",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "indexed",
+      "flags_affected": "NZV",
+      "notes": "OR immediate to memory; 7 cycles indexed"
+    },
+    {
+      "mnemonic": "EIM_indexed",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "indexed",
+      "flags_affected": "NZV",
+      "notes": "XOR immediate to memory; 7 cycles indexed"
+    },
+    {
+      "mnemonic": "TIM_indexed",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "indexed",
+      "flags_affected": "NZV",
+      "notes": "Test immediate with memory; 7 cycles indexed"
+    },
+    {
+      "mnemonic": "BITMD",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZ",
+      "notes": "Bit test MD register with immediate"
+    },
+    {
+      "mnemonic": "LDMD",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load MD (mode/division) register; 5 cycles; enables native mode"
+    },
+    {
+      "mnemonic": "SEXW",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZ",
+      "notes": "Sign extend W (16-bit) to Q (32-bit); D:W -> Q"
+    },
+    {
+      "mnemonic": "PSHSW",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Push W register to S stack; 6 cycles"
+    },
+    {
+      "mnemonic": "PULSW",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Pull W register from S stack; 6 cycles"
+    },
+    {
+      "mnemonic": "PSHUW",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Push W register to U stack; 6 cycles"
+    },
+    {
+      "mnemonic": "PULUW",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Pull W register from U stack; 6 cycles"
+    },
+    {
+      "mnemonic": "BAND",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct_bit",
+      "flags_affected": "CC_bit",
+      "notes": "AND memory bit with CC register bit; 7 cycles"
+    },
+    {
+      "mnemonic": "BIAND",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct_bit",
+      "flags_affected": "CC_bit",
+      "notes": "AND inverted memory bit with CC bit; 7 cycles"
+    },
+    {
+      "mnemonic": "BOR",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct_bit",
+      "flags_affected": "CC_bit",
+      "notes": "OR memory bit with CC register bit; 7 cycles"
+    },
+    {
+      "mnemonic": "BIOR",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct_bit",
+      "flags_affected": "CC_bit",
+      "notes": "OR inverted memory bit with CC bit; 7 cycles"
+    },
+    {
+      "mnemonic": "BEOR",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct_bit",
+      "flags_affected": "CC_bit",
+      "notes": "XOR memory bit with CC register bit; 7 cycles"
+    },
+    {
+      "mnemonic": "BIEOR",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct_bit",
+      "flags_affected": "CC_bit",
+      "notes": "XOR inverted memory bit with CC bit; 7 cycles"
+    },
+    {
+      "mnemonic": "LDBT",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct_bit",
+      "flags_affected": "CC_bit",
+      "notes": "Load memory bit into CC register bit; 7 cycles"
+    },
+    {
+      "mnemonic": "STBT",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "direct_bit",
+      "flags_affected": "none",
+      "notes": "Store CC register bit to memory bit; 8 cycles"
+    },
+    {
+      "mnemonic": "LDQ_imm",
+      "bytes": 5,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Load Q register (32-bit) immediate"
+    },
+    {
+      "mnemonic": "LDQ_direct",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Load Q register (32-bit) from direct page"
+    },
+    {
+      "mnemonic": "LDQ_indexed",
+      "bytes": 3,
+      "cycles": 9,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "NZV",
+      "notes": "Load Q register (32-bit) indexed"
+    },
+    {
+      "mnemonic": "LDQ_extended",
+      "bytes": 4,
+      "cycles": 9,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Load Q register (32-bit) extended address"
+    },
+    {
+      "mnemonic": "STQ_direct",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Store Q register (32-bit) to direct page"
+    },
+    {
+      "mnemonic": "STQ_indexed",
+      "bytes": 3,
+      "cycles": 9,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "NZV",
+      "notes": "Store Q register (32-bit) indexed"
+    },
+    {
+      "mnemonic": "STQ_extended",
+      "bytes": 4,
+      "cycles": 9,
+      "category": "data_transfer",
+      "addressing_mode": "extended",
+      "flags_affected": "NZV",
+      "notes": "Store Q register (32-bit) extended address"
+    },
+    {
+      "mnemonic": "ADCD_imm",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to D register; immediate"
+    },
+    {
+      "mnemonic": "ADCD_direct",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to D register; direct page"
+    },
+    {
+      "mnemonic": "ADCD_indexed",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "indexed",
+      "flags_affected": "HNZVC",
+      "notes": "Add with carry to D register; indexed"
+    },
+    {
+      "mnemonic": "SBCD_imm",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "HNZVC",
+      "notes": "Subtract with borrow from D register; immediate"
+    },
+    {
+      "mnemonic": "SBCD_direct",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "HNZVC",
+      "notes": "Subtract with borrow from D register; direct page"
+    },
+    {
+      "mnemonic": "SBCD_indexed",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "indexed",
+      "flags_affected": "HNZVC",
+      "notes": "Subtract with borrow from D register; indexed"
+    },
+    {
+      "mnemonic": "LDW_imm",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZV",
+      "notes": "Load W register (16-bit) immediate"
+    },
+    {
+      "mnemonic": "LDW_direct",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Load W register (16-bit) from direct page"
+    },
+    {
+      "mnemonic": "STW_direct",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "NZV",
+      "notes": "Store W register (16-bit) to direct page"
+    },
+    {
+      "mnemonic": "NEGD",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "HNZVC",
+      "notes": "Negate D register (two's complement)"
+    },
+    {
+      "mnemonic": "COMD",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZC",
+      "notes": "Complement D register (one's complement)"
+    },
+    {
+      "mnemonic": "ASRD",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZVC",
+      "notes": "Arithmetic shift right D register"
+    },
+    {
+      "mnemonic": "LSRD",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZC",
+      "notes": "Logical shift right D register"
+    },
+    {
+      "mnemonic": "LSLD",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "NZVC",
+      "notes": "Logical shift left D register"
+    }
+  ]
+}

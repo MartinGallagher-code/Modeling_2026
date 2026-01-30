@@ -1,0 +1,992 @@
+{
+  "processor": "Intel 8048",
+  "manufacturer": "Intel",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "MCS-48 Family User's Manual, Intel 1978",
+  "clock_mhz": 6,
+  "notes": "Clock divided by 15 internally. 1 machine cycle = 15 clocks = 2.5us at 6MHz. Most instructions are 1 cycle (1-byte) or 2 cycles (2-byte). Cycle counts here are machine cycles, not oscillator clocks.",
+  "instruction_count": 98,
+  "instructions": [
+    {
+      "mnemonic": "MOV",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register to accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move indirect RAM to accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "Rn, A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move accumulator to register (n=0-7)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "@Ri, A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move accumulator to indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to accumulator"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "Rn, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to register (n=0-7)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "@Ri, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "A, PSW",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move PSW to accumulator"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "PSW, A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "all",
+      "notes": "Move accumulator to PSW"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "A, T",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move timer/counter to accumulator"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "T, A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move accumulator to timer/counter"
+    },
+    {
+      "mnemonic": "XCH",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Exchange accumulator with register (n=0-7)"
+    },
+    {
+      "mnemonic": "XCH",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Exchange accumulator with indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "XCHD",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Exchange lower nibble of A with indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "MOVX",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move external data memory to accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "MOVX",
+      "operands": "@Ri, A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move accumulator to external data memory (i=0,1)"
+    },
+    {
+      "mnemonic": "MOVP",
+      "operands": "A, @A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move program memory to accumulator (current page)"
+    },
+    {
+      "mnemonic": "MOVP3",
+      "operands": "A, @A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move program memory page 3 to accumulator"
+    },
+    {
+      "mnemonic": "ADD",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C AC",
+      "notes": "Add register to accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "ADD",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "C AC",
+      "notes": "Add indirect RAM to accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "ADD",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C AC",
+      "notes": "Add immediate to accumulator"
+    },
+    {
+      "mnemonic": "ADDC",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C AC",
+      "notes": "Add with carry register to accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "ADDC",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "C AC",
+      "notes": "Add with carry indirect RAM to accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "ADDC",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C AC",
+      "notes": "Add with carry immediate to accumulator"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "AND register with accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "AND indirect RAM with accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND immediate with accumulator"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "OR register with accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "OR indirect RAM with accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "OR immediate with accumulator"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "XOR register with accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "XOR indirect RAM with accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "XOR immediate with accumulator"
+    },
+    {
+      "mnemonic": "INC",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Increment accumulator"
+    },
+    {
+      "mnemonic": "INC",
+      "operands": "Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Increment register (n=0-7)"
+    },
+    {
+      "mnemonic": "INC",
+      "operands": "@Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Increment indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "DEC",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Decrement accumulator"
+    },
+    {
+      "mnemonic": "DA",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Decimal adjust accumulator"
+    },
+    {
+      "mnemonic": "CLR",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Clear accumulator"
+    },
+    {
+      "mnemonic": "CPL",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Complement accumulator"
+    },
+    {
+      "mnemonic": "RL",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Rotate accumulator left"
+    },
+    {
+      "mnemonic": "RLC",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Rotate accumulator left through carry"
+    },
+    {
+      "mnemonic": "RR",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Rotate accumulator right"
+    },
+    {
+      "mnemonic": "RRC",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Rotate accumulator right through carry"
+    },
+    {
+      "mnemonic": "SWAP",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Swap nibbles of accumulator"
+    },
+    {
+      "mnemonic": "JMP",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Unconditional jump within 2K page"
+    },
+    {
+      "mnemonic": "JMPP",
+      "operands": "@A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Jump indirect (within current page via A lookup)"
+    },
+    {
+      "mnemonic": "DJNZ",
+      "operands": "Rn, addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Decrement register and jump if not zero (n=0-7)"
+    },
+    {
+      "mnemonic": "JC",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if carry set"
+    },
+    {
+      "mnemonic": "JNC",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if carry not set"
+    },
+    {
+      "mnemonic": "JZ",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if accumulator zero"
+    },
+    {
+      "mnemonic": "JNZ",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if accumulator not zero"
+    },
+    {
+      "mnemonic": "JT0",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if T0 pin is high"
+    },
+    {
+      "mnemonic": "JNT0",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if T0 pin is low"
+    },
+    {
+      "mnemonic": "JT1",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if T1 pin is high"
+    },
+    {
+      "mnemonic": "JNT1",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if T1 pin is low"
+    },
+    {
+      "mnemonic": "JF0",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if flag F0 is set"
+    },
+    {
+      "mnemonic": "JF1",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if flag F1 is set"
+    },
+    {
+      "mnemonic": "JTF",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if timer flag is set (clears flag)"
+    },
+    {
+      "mnemonic": "JNI",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if INT pin is low"
+    },
+    {
+      "mnemonic": "JB0",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit 0 of accumulator is set"
+    },
+    {
+      "mnemonic": "JB1",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit 1 of accumulator is set"
+    },
+    {
+      "mnemonic": "JB2",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit 2 of accumulator is set"
+    },
+    {
+      "mnemonic": "JB3",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit 3 of accumulator is set"
+    },
+    {
+      "mnemonic": "JB4",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit 4 of accumulator is set"
+    },
+    {
+      "mnemonic": "JB5",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit 5 of accumulator is set"
+    },
+    {
+      "mnemonic": "JB6",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit 6 of accumulator is set"
+    },
+    {
+      "mnemonic": "JB7",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit 7 of accumulator is set"
+    },
+    {
+      "mnemonic": "CALL",
+      "operands": "addr",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Call subroutine within 2K page"
+    },
+    {
+      "mnemonic": "RET",
+      "operands": "",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "RETR",
+      "operands": "",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "all",
+      "notes": "Return from subroutine and restore status"
+    },
+    {
+      "mnemonic": "IN",
+      "operands": "A, Pp",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Input from port (p=1,2)"
+    },
+    {
+      "mnemonic": "OUTL",
+      "operands": "Pp, A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Output to port (p=1,2)"
+    },
+    {
+      "mnemonic": "INS",
+      "operands": "A, BUS",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Input from BUS"
+    },
+    {
+      "mnemonic": "OUTL",
+      "operands": "BUS, A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Output to BUS"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "Pp, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND immediate to port (p=1,2)"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "Pp, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "OR immediate to port (p=1,2)"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "BUS, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND immediate to BUS"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "BUS, #data",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "OR immediate to BUS"
+    },
+    {
+      "mnemonic": "STRT",
+      "operands": "T",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Start timer"
+    },
+    {
+      "mnemonic": "STRT",
+      "operands": "CNT",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Start counter (event counting on T1)"
+    },
+    {
+      "mnemonic": "STOP",
+      "operands": "TCNT",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Stop timer/counter"
+    },
+    {
+      "mnemonic": "EN",
+      "operands": "I",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Enable external interrupt"
+    },
+    {
+      "mnemonic": "DIS",
+      "operands": "I",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Disable external interrupt"
+    },
+    {
+      "mnemonic": "EN",
+      "operands": "TCNTI",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Enable timer/counter interrupt"
+    },
+    {
+      "mnemonic": "DIS",
+      "operands": "TCNTI",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Disable timer/counter interrupt"
+    },
+    {
+      "mnemonic": "SEL",
+      "operands": "RB0",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Select register bank 0"
+    },
+    {
+      "mnemonic": "SEL",
+      "operands": "RB1",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Select register bank 1"
+    },
+    {
+      "mnemonic": "SEL",
+      "operands": "MB0",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Select memory bank 0"
+    },
+    {
+      "mnemonic": "SEL",
+      "operands": "MB1",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Select memory bank 1"
+    },
+    {
+      "mnemonic": "ENT0",
+      "operands": "CLK",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Enable clock output on T0"
+    },
+    {
+      "mnemonic": "CLR",
+      "operands": "F0",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "F0",
+      "notes": "Clear flag F0"
+    },
+    {
+      "mnemonic": "CPL",
+      "operands": "F0",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "F0",
+      "notes": "Complement flag F0"
+    },
+    {
+      "mnemonic": "CLR",
+      "operands": "F1",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "F1",
+      "notes": "Clear flag F1"
+    },
+    {
+      "mnemonic": "CPL",
+      "operands": "F1",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "F1",
+      "notes": "Complement flag F1"
+    },
+    {
+      "mnemonic": "CLR",
+      "operands": "C",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Clear carry flag"
+    },
+    {
+      "mnemonic": "CPL",
+      "operands": "C",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Complement carry flag"
+    },
+    {
+      "mnemonic": "NOP",
+      "operands": "",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ]
+}

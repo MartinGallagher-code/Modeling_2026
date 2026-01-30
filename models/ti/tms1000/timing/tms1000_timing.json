@@ -1,0 +1,397 @@
+{
+  "processor": "TI TMS1000",
+  "manufacturer": "Texas Instruments",
+  "year": 1974,
+  "schema_version": "1.0",
+  "source": "TI TMS1000 Programming Reference Manual, 1974",
+  "instruction_count": 43,
+  "instructions": [
+    {
+      "mnemonic": "TAY",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer accumulator to Y register"
+    },
+    {
+      "mnemonic": "TYA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer Y register to accumulator"
+    },
+    {
+      "mnemonic": "CLA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Clear accumulator"
+    },
+    {
+      "mnemonic": "TAM",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer accumulator to memory"
+    },
+    {
+      "mnemonic": "TAMIY",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer accumulator to memory, increment Y"
+    },
+    {
+      "mnemonic": "TMY",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer memory to Y register"
+    },
+    {
+      "mnemonic": "TMA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer memory to accumulator"
+    },
+    {
+      "mnemonic": "XMA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Exchange memory and accumulator"
+    },
+    {
+      "mnemonic": "AMAAC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add memory to accumulator with carry"
+    },
+    {
+      "mnemonic": "SAMAN",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Subtract accumulator from memory with borrow (A <- M - A)"
+    },
+    {
+      "mnemonic": "IMAC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Increment memory and add with carry to accumulator"
+    },
+    {
+      "mnemonic": "DMAN",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Decrement memory and add with borrow to accumulator"
+    },
+    {
+      "mnemonic": "A6AAC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add 6 to accumulator with carry"
+    },
+    {
+      "mnemonic": "A8AAC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add 8 to accumulator with carry"
+    },
+    {
+      "mnemonic": "A10AAC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add 10 to accumulator with carry"
+    },
+    {
+      "mnemonic": "A2AAC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add 2 to accumulator with carry"
+    },
+    {
+      "mnemonic": "DAN",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Decrement accumulator with borrow"
+    },
+    {
+      "mnemonic": "IAC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Increment accumulator"
+    },
+    {
+      "mnemonic": "IYEC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "S",
+      "notes": "Increment Y, skip if equal to constant"
+    },
+    {
+      "mnemonic": "MNEA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "S",
+      "notes": "Compare memory not equal to accumulator (set status)"
+    },
+    {
+      "mnemonic": "MNEZ",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "S",
+      "notes": "Test memory not equal to zero (set status)"
+    },
+    {
+      "mnemonic": "YNEA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "S",
+      "notes": "Compare Y not equal to accumulator (set status)"
+    },
+    {
+      "mnemonic": "ALEM",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "S",
+      "notes": "Accumulator less than or equal to memory (set status)"
+    },
+    {
+      "mnemonic": "ALEC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "S",
+      "notes": "Accumulator less than or equal to constant"
+    },
+    {
+      "mnemonic": "CKP",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Copy K inputs to P output latches"
+    },
+    {
+      "mnemonic": "CKM",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Copy K inputs to memory"
+    },
+    {
+      "mnemonic": "COMX",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Complement X register bit"
+    },
+    {
+      "mnemonic": "COMX8",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Complement X register bit 8 (chapter select)"
+    },
+    {
+      "mnemonic": "KNEZ",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "S",
+      "notes": "K inputs not equal to zero (set status for conditional)"
+    },
+    {
+      "mnemonic": "TKA",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer K inputs to accumulator"
+    },
+    {
+      "mnemonic": "SETR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Set R output latch (addressed by Y)"
+    },
+    {
+      "mnemonic": "RSTR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Reset R output latch (addressed by Y)"
+    },
+    {
+      "mnemonic": "TDO",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer accumulator data to output"
+    },
+    {
+      "mnemonic": "CLO",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Clear output"
+    },
+    {
+      "mnemonic": "RETN",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "LDP",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load page buffer (4-bit page address)"
+    },
+    {
+      "mnemonic": "LDX",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load X register (RAM column select)"
+    },
+    {
+      "mnemonic": "SBIT",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Set bit in memory (bit position from opcode)"
+    },
+    {
+      "mnemonic": "RBIT",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Reset bit in memory (bit position from opcode)"
+    },
+    {
+      "mnemonic": "TBIST",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "immediate",
+      "flags_affected": "S",
+      "notes": "Test bit and skip if set (bit position from opcode)"
+    },
+    {
+      "mnemonic": "BR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch (6-bit address within page); conditional on status"
+    },
+    {
+      "mnemonic": "CALL",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Call subroutine (6-bit address); conditional on status"
+    },
+    {
+      "mnemonic": "COMC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Complement carry flag"
+    }
+  ]
+}

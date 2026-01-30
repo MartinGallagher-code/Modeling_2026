@@ -1,0 +1,586 @@
+{
+  "processor": "TI TMS320C10",
+  "manufacturer": "Texas Instruments",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "TMS320C1x User's Guide, TI 1983",
+  "instruction_count": 60,
+  "instructions": [
+    {
+      "mnemonic": "ABS",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "OV",
+      "notes": "Absolute value of accumulator"
+    },
+    {
+      "mnemonic": "ADD",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Add data memory to accumulator with shift"
+    },
+    {
+      "mnemonic": "ADDH",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Add data memory to high accumulator"
+    },
+    {
+      "mnemonic": "ADDS",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Add data memory to accumulator (no sign extension)"
+    },
+    {
+      "mnemonic": "SUB",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Subtract data memory from accumulator with shift"
+    },
+    {
+      "mnemonic": "SUBH",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Subtract data memory from high accumulator"
+    },
+    {
+      "mnemonic": "SUBS",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Subtract data memory from accumulator (no sign extension)"
+    },
+    {
+      "mnemonic": "SUBC",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Conditional subtract (for division); shift and subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "AND data memory with accumulator"
+    },
+    {
+      "mnemonic": "OR",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "OR data memory with accumulator"
+    },
+    {
+      "mnemonic": "XOR",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "XOR data memory with accumulator"
+    },
+    {
+      "mnemonic": "ZAL",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Zero accumulator and load low half from memory"
+    },
+    {
+      "mnemonic": "ZALH",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Zero accumulator and load high half from memory"
+    },
+    {
+      "mnemonic": "LAC",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load accumulator from data memory with shift"
+    },
+    {
+      "mnemonic": "LACK",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load accumulator with 8-bit constant"
+    },
+    {
+      "mnemonic": "LALK",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load accumulator with 16-bit long constant; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "LAR",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load auxiliary register from data memory"
+    },
+    {
+      "mnemonic": "LARK",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load auxiliary register with 8-bit constant"
+    },
+    {
+      "mnemonic": "LARP",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load auxiliary register pointer"
+    },
+    {
+      "mnemonic": "LDP",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load data page pointer from data memory"
+    },
+    {
+      "mnemonic": "LDPK",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load data page pointer with constant"
+    },
+    {
+      "mnemonic": "LT",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load T register from data memory"
+    },
+    {
+      "mnemonic": "LTA",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Load T and accumulate previous product"
+    },
+    {
+      "mnemonic": "LTD",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Load T, accumulate previous product, move data"
+    },
+    {
+      "mnemonic": "LTP",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load T and store P in accumulator"
+    },
+    {
+      "mnemonic": "MAC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Multiply and accumulate; single cycle with hardware multiplier"
+    },
+    {
+      "mnemonic": "MACD",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Multiply and accumulate with data move; single cycle"
+    },
+    {
+      "mnemonic": "MPY",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Multiply T register with data memory; result in P register; single cycle"
+    },
+    {
+      "mnemonic": "MPYK",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Multiply T register with 13-bit constant; result in P register; single cycle"
+    },
+    {
+      "mnemonic": "PAC",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Load accumulator from P register (product)"
+    },
+    {
+      "mnemonic": "APAC",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "OV",
+      "notes": "Add P register to accumulator"
+    },
+    {
+      "mnemonic": "SPAC",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "OV",
+      "notes": "Subtract P register from accumulator"
+    },
+    {
+      "mnemonic": "SAC",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store accumulator (obsolete alias; see SACL/SACH)"
+    },
+    {
+      "mnemonic": "SACH",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store high accumulator to data memory with shift"
+    },
+    {
+      "mnemonic": "SACL",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store low accumulator to data memory"
+    },
+    {
+      "mnemonic": "SAR",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store auxiliary register to data memory"
+    },
+    {
+      "mnemonic": "B",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch unconditionally; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BANZ",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if auxiliary register not zero; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BGEZ",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if accumulator >= 0; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BGZ",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if accumulator > 0; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BIOZ",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if BIO pin is zero; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BLEZ",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if accumulator <= 0; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BLZ",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if accumulator < 0; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BNZ",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if accumulator != 0; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BV",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if overflow; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "BZ",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch if accumulator = 0; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "CALL",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Call subroutine; push PC, branch; 2 words, 2 cycles"
+    },
+    {
+      "mnemonic": "RET",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine; pop PC; 2 cycles"
+    },
+    {
+      "mnemonic": "CALA",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Call subroutine at address in accumulator; 2 cycles"
+    },
+    {
+      "mnemonic": "BACC",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Branch to address in accumulator; 2 cycles"
+    },
+    {
+      "mnemonic": "IN",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Input data from port to data memory"
+    },
+    {
+      "mnemonic": "OUT",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Output data from data memory to port"
+    },
+    {
+      "mnemonic": "LST",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "all",
+      "notes": "Load status register from data memory"
+    },
+    {
+      "mnemonic": "SST",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store status register to data memory"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "DINT",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "INTM",
+      "notes": "Disable interrupts"
+    },
+    {
+      "mnemonic": "EINT",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "INTM",
+      "notes": "Enable interrupts"
+    },
+    {
+      "mnemonic": "POP",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Pop top of hardware stack to accumulator low"
+    },
+    {
+      "mnemonic": "PUSH",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "stack",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Push accumulator low to hardware stack"
+    },
+    {
+      "mnemonic": "ROVM",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "OVM",
+      "notes": "Reset overflow mode (disable saturation)"
+    },
+    {
+      "mnemonic": "SOVM",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "OVM",
+      "notes": "Set overflow mode (enable saturation)"
+    },
+    {
+      "mnemonic": "DMOV",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Data move in data memory; 3 cycles"
+    },
+    {
+      "mnemonic": "TBLR",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Table read; copy program memory to data memory; 3 cycles"
+    },
+    {
+      "mnemonic": "TBLW",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Table write; copy data memory to program memory; 3 cycles"
+    }
+  ]
+}

@@ -1,0 +1,460 @@
+{
+  "processor": "ARM2",
+  "manufacturer": "VLSI Technology",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "ARM2 Datasheet, VLSI Technology 1987",
+  "instruction_count": 50,
+  "instructions": [
+    {
+      "mnemonic": "AND",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Rn AND Op2; 1 S-cycle"
+    },
+    {
+      "mnemonic": "EOR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Rn XOR Op2; 1 S-cycle"
+    },
+    {
+      "mnemonic": "SUB",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Rn - Op2; 1 S-cycle"
+    },
+    {
+      "mnemonic": "RSB",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Op2 - Rn; 1 S-cycle"
+    },
+    {
+      "mnemonic": "ADD",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Rn + Op2; 1 S-cycle"
+    },
+    {
+      "mnemonic": "ADC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Rn + Op2 + C; 1 S-cycle"
+    },
+    {
+      "mnemonic": "SBC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Rn - Op2 + C - 1; 1 S-cycle"
+    },
+    {
+      "mnemonic": "RSC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Op2 - Rn + C - 1; 1 S-cycle"
+    },
+    {
+      "mnemonic": "TST",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV",
+      "notes": "Flags <- Rn AND Op2; result discarded"
+    },
+    {
+      "mnemonic": "TEQ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV",
+      "notes": "Flags <- Rn XOR Op2; result discarded"
+    },
+    {
+      "mnemonic": "CMP",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV",
+      "notes": "Flags <- Rn - Op2; result discarded"
+    },
+    {
+      "mnemonic": "CMN",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV",
+      "notes": "Flags <- Rn + Op2; result discarded"
+    },
+    {
+      "mnemonic": "ORR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Rn OR Op2"
+    },
+    {
+      "mnemonic": "MOV",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Op2"
+    },
+    {
+      "mnemonic": "BIC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- Rn AND NOT Op2; bit clear"
+    },
+    {
+      "mnemonic": "MVN",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Rd <- NOT Op2"
+    },
+    {
+      "mnemonic": "DP_shift_reg",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register_shifted",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Any data processing with register-specified shift; +1I cycle"
+    },
+    {
+      "mnemonic": "DP_to_PC",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV (if S bit set)",
+      "notes": "Data processing with Rd=PC; +1S for pipeline refill"
+    },
+    {
+      "mnemonic": "MUL",
+      "bytes": 4,
+      "cycles": 17,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "NZ (if S bit set)",
+      "notes": "Rd <- Rm * Rs; 1S + 16I worst case; 2-17 cycles with early termination"
+    },
+    {
+      "mnemonic": "MLA",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "NZ (if S bit set)",
+      "notes": "Rd <- Rm * Rs + Rn; multiply-accumulate; 1S + 17I worst case"
+    },
+    {
+      "mnemonic": "LDR",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load word; 1S + 1N + 1I"
+    },
+    {
+      "mnemonic": "LDRB",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load byte (zero-extended); 1S + 1N + 1I"
+    },
+    {
+      "mnemonic": "STR",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Store word; 2N"
+    },
+    {
+      "mnemonic": "STRB",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Store byte; 2N"
+    },
+    {
+      "mnemonic": "LDR_pre",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "pre_indexed",
+      "flags_affected": "none",
+      "notes": "Load with pre-indexed addressing; 1S + 1N + 1I"
+    },
+    {
+      "mnemonic": "LDR_post",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "post_indexed",
+      "flags_affected": "none",
+      "notes": "Load with post-indexed addressing; 1S + 1N + 1I"
+    },
+    {
+      "mnemonic": "STR_pre",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "pre_indexed",
+      "flags_affected": "none",
+      "notes": "Store with pre-indexed addressing; 2N"
+    },
+    {
+      "mnemonic": "STR_post",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "post_indexed",
+      "flags_affected": "none",
+      "notes": "Store with post-indexed addressing; 2N"
+    },
+    {
+      "mnemonic": "LDM",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "register_list",
+      "flags_affected": "none",
+      "notes": "Load multiple; nS + 1N + 1I (n=register count, example: n=2 gives 4 cycles)"
+    },
+    {
+      "mnemonic": "LDM_1reg",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "register_list",
+      "flags_affected": "none",
+      "notes": "Load multiple (1 register); 1S + 1N + 1I"
+    },
+    {
+      "mnemonic": "LDM_8reg",
+      "bytes": 4,
+      "cycles": 10,
+      "category": "memory",
+      "addressing_mode": "register_list",
+      "flags_affected": "none",
+      "notes": "Load multiple (8 registers); 8S + 1N + 1I"
+    },
+    {
+      "mnemonic": "LDM_16reg",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "memory",
+      "addressing_mode": "register_list",
+      "flags_affected": "none",
+      "notes": "Load multiple (16 registers); 16S + 1N + 1I"
+    },
+    {
+      "mnemonic": "STM",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "register_list",
+      "flags_affected": "none",
+      "notes": "Store multiple; (n-1)S + 2N (n=register count, example: n=2 gives 3 cycles)"
+    },
+    {
+      "mnemonic": "STM_1reg",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_list",
+      "flags_affected": "none",
+      "notes": "Store multiple (1 register); 2N"
+    },
+    {
+      "mnemonic": "STM_8reg",
+      "bytes": 4,
+      "cycles": 9,
+      "category": "memory",
+      "addressing_mode": "register_list",
+      "flags_affected": "none",
+      "notes": "Store multiple (8 registers); 7S + 2N"
+    },
+    {
+      "mnemonic": "STM_16reg",
+      "bytes": 4,
+      "cycles": 17,
+      "category": "memory",
+      "addressing_mode": "register_list",
+      "flags_affected": "none",
+      "notes": "Store multiple (16 registers); 15S + 2N"
+    },
+    {
+      "mnemonic": "SWP",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Swap register with memory (atomic); 1S + 2N + 1I"
+    },
+    {
+      "mnemonic": "SWPB",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Swap byte with memory (atomic); 1S + 2N + 1I"
+    },
+    {
+      "mnemonic": "B",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "pc_relative",
+      "flags_affected": "none",
+      "notes": "Branch; 2S + 1N"
+    },
+    {
+      "mnemonic": "BL",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "pc_relative",
+      "flags_affected": "none",
+      "notes": "Branch with link; R14 <- return address; 2S + 1N"
+    },
+    {
+      "mnemonic": "SWI",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "mode_bits",
+      "notes": "Software interrupt; 2S + 1N"
+    },
+    {
+      "mnemonic": "MRS",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move PSR to general register; 1S"
+    },
+    {
+      "mnemonic": "MSR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "NZCV",
+      "notes": "Move general register to PSR; 1S"
+    },
+    {
+      "mnemonic": "CDP",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "coprocessor",
+      "addressing_mode": "coprocessor",
+      "flags_affected": "none",
+      "notes": "Coprocessor data processing; 1S + bI (b=busy-wait cycles)"
+    },
+    {
+      "mnemonic": "LDC",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "coprocessor",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load coprocessor register from memory; (n-1)S + 2N + bI"
+    },
+    {
+      "mnemonic": "STC",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "coprocessor",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Store coprocessor register to memory; (n-1)S + 2N + bI"
+    },
+    {
+      "mnemonic": "MRC",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "coprocessor",
+      "addressing_mode": "coprocessor",
+      "flags_affected": "none",
+      "notes": "Move from coprocessor to ARM register; 1S + 1N + 1I + bI"
+    },
+    {
+      "mnemonic": "MCR",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "coprocessor",
+      "addressing_mode": "coprocessor",
+      "flags_affected": "none",
+      "notes": "Move from ARM register to coprocessor; 1S + bI + 1N"
+    },
+    {
+      "mnemonic": "LDR_to_PC",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load to PC; 1S + 1N + 1I + 1S for pipeline refill"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation (MOV R0,R0); 1S"
+    }
+  ]
+}

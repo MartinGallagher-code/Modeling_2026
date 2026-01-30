@@ -1,0 +1,472 @@
+{
+  "processor": "Intel 4004",
+  "manufacturer": "Intel",
+  "year": 1971,
+  "schema_version": "1.0",
+  "source": "Intel MCS-4 Micro Computer Set Users Manual, Feb 1972",
+  "clock_khz": 740,
+  "machine_cycle_clocks": 8,
+  "instruction_count": 46,
+  "instructions": [
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "nop",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "No operation. 1 machine cycle (10.8us)"
+    },
+    {
+      "mnemonic": "JCN",
+      "opcode": "0x1_",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Jump conditional. Condition encoded in low nibble of first byte. 2 machine cycles"
+    },
+    {
+      "mnemonic": "FIM",
+      "opcode": "0x2_",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Fetch immediate data to register pair. Even register pair select. 2 machine cycles"
+    },
+    {
+      "mnemonic": "SRC",
+      "opcode": "0x21",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "none",
+      "notes": "Send register control. Sends register pair content to ROM/RAM address register. 1 machine cycle"
+    },
+    {
+      "mnemonic": "FIN",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "none",
+      "notes": "Fetch indirect from ROM. Uses register pair 0 as pointer. 1 machine cycle"
+    },
+    {
+      "mnemonic": "JIN",
+      "opcode": "0x31",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "none",
+      "notes": "Jump indirect. Transfers register pair content to low 8 bits of PC. 1 machine cycle"
+    },
+    {
+      "mnemonic": "JUN",
+      "opcode": "0x4_",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Jump unconditional. Full 12-bit address. 2 machine cycles"
+    },
+    {
+      "mnemonic": "JMS",
+      "opcode": "0x5_",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Jump to subroutine. Saves return address on stack (3-level). 2 machine cycles"
+    },
+    {
+      "mnemonic": "INC",
+      "opcode": "0x6_",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Increment register. No carry flag affected. 1 machine cycle"
+    },
+    {
+      "mnemonic": "ISZ",
+      "opcode": "0x7_",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "register_immediate",
+      "flags_affected": "none",
+      "notes": "Increment register and skip/jump if not zero. 2 machine cycles"
+    },
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x8_",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Add register to accumulator with carry. 1 machine cycle"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x9_",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Subtract register from accumulator with borrow. 1 machine cycle"
+    },
+    {
+      "mnemonic": "LD",
+      "opcode": "0xA_",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Load register to accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "XCH",
+      "opcode": "0xB_",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Exchange register and accumulator contents. 1 machine cycle"
+    },
+    {
+      "mnemonic": "BBL",
+      "opcode": "0xC_",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Branch back and load data to accumulator. Returns from subroutine. 1 machine cycle"
+    },
+    {
+      "mnemonic": "LDM",
+      "opcode": "0xD_",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load immediate 4-bit data to accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "WRM",
+      "opcode": "0xE0",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Write accumulator to RAM main memory character. 1 machine cycle"
+    },
+    {
+      "mnemonic": "WMP",
+      "opcode": "0xE1",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Write accumulator to RAM output port. 1 machine cycle"
+    },
+    {
+      "mnemonic": "WRR",
+      "opcode": "0xE2",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Write accumulator to ROM I/O port. 1 machine cycle"
+    },
+    {
+      "mnemonic": "WPM",
+      "opcode": "0xE3",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Write accumulator to program RAM (4002 half-byte). 1 machine cycle"
+    },
+    {
+      "mnemonic": "WR0",
+      "opcode": "0xE4",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Write accumulator to RAM status character 0. 1 machine cycle"
+    },
+    {
+      "mnemonic": "WR1",
+      "opcode": "0xE5",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Write accumulator to RAM status character 1. 1 machine cycle"
+    },
+    {
+      "mnemonic": "WR2",
+      "opcode": "0xE6",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Write accumulator to RAM status character 2. 1 machine cycle"
+    },
+    {
+      "mnemonic": "WR3",
+      "opcode": "0xE7",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Write accumulator to RAM status character 3. 1 machine cycle"
+    },
+    {
+      "mnemonic": "SBM",
+      "opcode": "0xE8",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Subtract RAM main memory character from accumulator with borrow. 1 machine cycle"
+    },
+    {
+      "mnemonic": "RDM",
+      "opcode": "0xE9",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Read RAM main memory character to accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "RDR",
+      "opcode": "0xEA",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Read ROM I/O port to accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "ADM",
+      "opcode": "0xEB",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Add RAM main memory character to accumulator with carry. 1 machine cycle"
+    },
+    {
+      "mnemonic": "RD0",
+      "opcode": "0xEC",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Read RAM status character 0 to accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "RD1",
+      "opcode": "0xED",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Read RAM status character 1 to accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "RD2",
+      "opcode": "0xEE",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Read RAM status character 2 to accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "RD3",
+      "opcode": "0xEF",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Read RAM status character 3 to accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "CLB",
+      "opcode": "0xF0",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Clear both accumulator and carry. 1 machine cycle"
+    },
+    {
+      "mnemonic": "CLC",
+      "opcode": "0xF1",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Clear carry flag. 1 machine cycle"
+    },
+    {
+      "mnemonic": "IAC",
+      "opcode": "0xF2",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Increment accumulator. 1 machine cycle"
+    },
+    {
+      "mnemonic": "CMC",
+      "opcode": "0xF3",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Complement carry flag. 1 machine cycle"
+    },
+    {
+      "mnemonic": "CMA",
+      "opcode": "0xF4",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Complement accumulator (ones complement). 1 machine cycle"
+    },
+    {
+      "mnemonic": "RAL",
+      "opcode": "0xF5",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Rotate accumulator left through carry. 1 machine cycle"
+    },
+    {
+      "mnemonic": "RAR",
+      "opcode": "0xF6",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Rotate accumulator right through carry. 1 machine cycle"
+    },
+    {
+      "mnemonic": "TCC",
+      "opcode": "0xF7",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Transfer carry to accumulator and clear carry. Sets ACC=1 if carry was set, else ACC=0. 1 machine cycle"
+    },
+    {
+      "mnemonic": "DAC",
+      "opcode": "0xF8",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Decrement accumulator. Carry set if no borrow (result >= 0). 1 machine cycle"
+    },
+    {
+      "mnemonic": "TCS",
+      "opcode": "0xF9",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Transfer carry subtract. ACC=9+carry (9 or 10), clear carry. Used for BCD. 1 machine cycle"
+    },
+    {
+      "mnemonic": "STC",
+      "opcode": "0xFA",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Set carry flag. 1 machine cycle"
+    },
+    {
+      "mnemonic": "DAA",
+      "opcode": "0xFB",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implicit",
+      "flags_affected": "C",
+      "notes": "Decimal adjust accumulator. If ACC>9 or carry set, add 6. 1 machine cycle"
+    },
+    {
+      "mnemonic": "KBP",
+      "opcode": "0xFC",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Keyboard process. Converts 1-of-4 code to binary (bit position). 1 machine cycle"
+    },
+    {
+      "mnemonic": "DCL",
+      "opcode": "0xFD",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "implicit",
+      "flags_affected": "none",
+      "notes": "Designate command line. Selects RAM bank from accumulator low 3 bits. 1 machine cycle"
+    }
+  ]
+}

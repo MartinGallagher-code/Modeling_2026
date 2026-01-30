@@ -1,0 +1,1081 @@
+{
+  "processor": "AMD Am29000",
+  "manufacturer": "AMD",
+  "year": 1987,
+  "schema_version": "1.0",
+  "source": "Am29000 User's Manual, AMD 1987",
+  "instruction_count": 119,
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Rc <- Ra + Rb; trap on overflow if enabled"
+    },
+    {
+      "mnemonic": "ADDC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Rc <- Ra + Rb + carry"
+    },
+    {
+      "mnemonic": "ADDCS",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Add with carry, set carry"
+    },
+    {
+      "mnemonic": "ADDCU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Add with carry, unsigned (no overflow trap)"
+    },
+    {
+      "mnemonic": "SUB",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Rc <- Ra - Rb"
+    },
+    {
+      "mnemonic": "SUBC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Subtract with carry (borrow)"
+    },
+    {
+      "mnemonic": "SUBCS",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Subtract with carry, set carry"
+    },
+    {
+      "mnemonic": "SUBCU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Subtract with carry, unsigned"
+    },
+    {
+      "mnemonic": "SUBR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Reverse subtract: Rc <- Rb - Ra"
+    },
+    {
+      "mnemonic": "SUBRC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Reverse subtract with carry"
+    },
+    {
+      "mnemonic": "SUBRCS",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Reverse subtract with carry, set carry"
+    },
+    {
+      "mnemonic": "SUBRCU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Reverse subtract with carry, unsigned"
+    },
+    {
+      "mnemonic": "AND",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rc <- Ra AND Rb"
+    },
+    {
+      "mnemonic": "ANDN",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rc <- Ra AND NOT Rb"
+    },
+    {
+      "mnemonic": "NAND",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rc <- NOT(Ra AND Rb)"
+    },
+    {
+      "mnemonic": "NOR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rc <- NOT(Ra OR Rb)"
+    },
+    {
+      "mnemonic": "OR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rc <- Ra OR Rb"
+    },
+    {
+      "mnemonic": "ORN",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rc <- Ra OR NOT Rb"
+    },
+    {
+      "mnemonic": "XOR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rc <- Ra XOR Rb"
+    },
+    {
+      "mnemonic": "XNOR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rc <- NOT(Ra XOR Rb)"
+    },
+    {
+      "mnemonic": "SLL",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Shift left logical"
+    },
+    {
+      "mnemonic": "SRA",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Shift right arithmetic"
+    },
+    {
+      "mnemonic": "SRL",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Shift right logical"
+    },
+    {
+      "mnemonic": "CPBYTE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare bytes; set flags for byte equality"
+    },
+    {
+      "mnemonic": "CPGT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare greater than (signed)"
+    },
+    {
+      "mnemonic": "CPEQ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare equal"
+    },
+    {
+      "mnemonic": "CPGE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare greater or equal (signed)"
+    },
+    {
+      "mnemonic": "CPLT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare less than (signed)"
+    },
+    {
+      "mnemonic": "CPLE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare less or equal (signed)"
+    },
+    {
+      "mnemonic": "CPNEQ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare not equal"
+    },
+    {
+      "mnemonic": "CPGTU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare greater than unsigned"
+    },
+    {
+      "mnemonic": "CPLTU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare less than unsigned"
+    },
+    {
+      "mnemonic": "CPLEU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare less or equal unsigned"
+    },
+    {
+      "mnemonic": "CPGEU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Compare greater or equal unsigned"
+    },
+    {
+      "mnemonic": "EXTRACT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract field using funnel shifter"
+    },
+    {
+      "mnemonic": "EXHW",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract halfword"
+    },
+    {
+      "mnemonic": "EXHWS",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract halfword signed"
+    },
+    {
+      "mnemonic": "EXBYTE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract byte"
+    },
+    {
+      "mnemonic": "INBYTE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Insert byte"
+    },
+    {
+      "mnemonic": "INHW",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Insert halfword"
+    },
+    {
+      "mnemonic": "CLZ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Count leading zeros"
+    },
+    {
+      "mnemonic": "MULTIPLY",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Unsigned multiply; 2-cycle latency; result in Q register"
+    },
+    {
+      "mnemonic": "MULTM",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply upper (high 32 bits of 64-bit result); 2-cycle latency"
+    },
+    {
+      "mnemonic": "MULTMU",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply upper unsigned; 2-cycle latency"
+    },
+    {
+      "mnemonic": "MULU",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply unsigned; 2-cycle latency"
+    },
+    {
+      "mnemonic": "DIVIDE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Divide step; one iteration of non-restoring division"
+    },
+    {
+      "mnemonic": "DIVL",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Divide step last; final iteration with correction"
+    },
+    {
+      "mnemonic": "DIVREM",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Divide remainder correction step"
+    },
+    {
+      "mnemonic": "DIV0",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Divide initialization step"
+    },
+    {
+      "mnemonic": "DIVQ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Divide quotient correction"
+    },
+    {
+      "mnemonic": "DIVU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Divide step unsigned"
+    },
+    {
+      "mnemonic": "LOAD",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load word; 1 cycle on cache hit; variable on miss"
+    },
+    {
+      "mnemonic": "LOADL",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load word locked (for atomic operations)"
+    },
+    {
+      "mnemonic": "LOADM",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load multiple words (up to 4); 1 cycle per word on cache hit"
+    },
+    {
+      "mnemonic": "LOADSET",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load and set (atomic read-modify-write)"
+    },
+    {
+      "mnemonic": "STORE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Store word; 1 cycle on cache hit"
+    },
+    {
+      "mnemonic": "STOREL",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Store word locked (for atomic operations)"
+    },
+    {
+      "mnemonic": "STOREM",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Store multiple words (up to 4); 1 cycle per word"
+    },
+    {
+      "mnemonic": "CONST",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load 16-bit constant into register (zero-extended)"
+    },
+    {
+      "mnemonic": "CONSTH",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load 16-bit constant into high half of register"
+    },
+    {
+      "mnemonic": "CONSTN",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load 16-bit constant sign-extended (negative)"
+    },
+    {
+      "mnemonic": "JMPI",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Jump indirect; 1 cycle + pipeline flush"
+    },
+    {
+      "mnemonic": "JMPFI",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Jump indirect on false (conditional)"
+    },
+    {
+      "mnemonic": "JMPTI",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Jump indirect on true (conditional)"
+    },
+    {
+      "mnemonic": "JMPFDEC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Jump on false and decrement; for loop control"
+    },
+    {
+      "mnemonic": "JMPT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "pc_relative",
+      "flags_affected": "none",
+      "notes": "Jump on true (PC-relative)"
+    },
+    {
+      "mnemonic": "JMPF",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "pc_relative",
+      "flags_affected": "none",
+      "notes": "Jump on false (PC-relative)"
+    },
+    {
+      "mnemonic": "CALL",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "pc_relative",
+      "flags_affected": "none",
+      "notes": "Call subroutine; saves return address"
+    },
+    {
+      "mnemonic": "CALLI",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Call indirect"
+    },
+    {
+      "mnemonic": "MFSR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move from special register to general register"
+    },
+    {
+      "mnemonic": "MTSR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move to special register from general register"
+    },
+    {
+      "mnemonic": "MTSRIM",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move to special register immediate"
+    },
+    {
+      "mnemonic": "INV",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Invalidate cache entries"
+    },
+    {
+      "mnemonic": "IRET",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "all",
+      "notes": "Return from interrupt; restores state"
+    },
+    {
+      "mnemonic": "IRETINV",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "all",
+      "notes": "Return from interrupt and invalidate"
+    },
+    {
+      "mnemonic": "HALT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Halt processor until interrupt"
+    },
+    {
+      "mnemonic": "SETIP",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set interrupt priority"
+    },
+    {
+      "mnemonic": "ASGE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert signed greater or equal; trap if false"
+    },
+    {
+      "mnemonic": "ASGT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert signed greater than; trap if false"
+    },
+    {
+      "mnemonic": "ASGEU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert unsigned greater or equal; trap if false"
+    },
+    {
+      "mnemonic": "ASGTU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert unsigned greater than; trap if false"
+    },
+    {
+      "mnemonic": "ASNEQ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert not equal; trap if false"
+    },
+    {
+      "mnemonic": "ASEQ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert equal; trap if false"
+    },
+    {
+      "mnemonic": "ASLE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert signed less or equal; trap if false"
+    },
+    {
+      "mnemonic": "ASLT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert signed less than; trap if false"
+    },
+    {
+      "mnemonic": "ASLEU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert unsigned less or equal; trap if false"
+    },
+    {
+      "mnemonic": "ASLTU",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Assert unsigned less than; trap if false"
+    },
+    {
+      "mnemonic": "CONVERT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Convert integer to floating point or vice versa"
+    },
+    {
+      "mnemonic": "FADD",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Floating-point add; 2-cycle latency"
+    },
+    {
+      "mnemonic": "FSUB",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Floating-point subtract; 2-cycle latency"
+    },
+    {
+      "mnemonic": "FMUL",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Floating-point multiply; 2-cycle latency"
+    },
+    {
+      "mnemonic": "FDIV",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Floating-point divide (single); 6-cycle latency"
+    },
+    {
+      "mnemonic": "FDIVS",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Floating-point divide single-precision; 6-cycle latency"
+    },
+    {
+      "mnemonic": "FDMUL",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Floating-point double multiply; 3-cycle latency"
+    },
+    {
+      "mnemonic": "FEQ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Floating-point compare equal"
+    },
+    {
+      "mnemonic": "FGE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Floating-point compare greater or equal"
+    },
+    {
+      "mnemonic": "FGT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Floating-point compare greater than"
+    },
+    {
+      "mnemonic": "DADD",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Double-precision add; 2-cycle latency"
+    },
+    {
+      "mnemonic": "DSUB",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Double-precision subtract; 2-cycle latency"
+    },
+    {
+      "mnemonic": "DMUL",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Double-precision multiply; 4-cycle latency"
+    },
+    {
+      "mnemonic": "DDIV",
+      "bytes": 4,
+      "cycles": 11,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Double-precision divide; 11-cycle latency"
+    },
+    {
+      "mnemonic": "DEQ",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Double-precision compare equal"
+    },
+    {
+      "mnemonic": "DGE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Double-precision compare greater or equal"
+    },
+    {
+      "mnemonic": "DGT",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Double-precision compare greater than"
+    },
+    {
+      "mnemonic": "SQRT",
+      "bytes": 4,
+      "cycles": 15,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Floating-point square root (single); 15-cycle latency"
+    },
+    {
+      "mnemonic": "DSQRT",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "FP_status",
+      "notes": "Double-precision square root; 24-cycle latency"
+    },
+    {
+      "mnemonic": "CLASS",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "ALU_status",
+      "notes": "Classify floating-point number (NaN, infinity, zero, etc.)"
+    },
+    {
+      "mnemonic": "EMULATE",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Generate emulation trap for unimplemented instructions"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "EXHWSR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract halfword and swap with register shift"
+    },
+    {
+      "mnemonic": "EXBYTESR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract byte and swap with register shift"
+    },
+    {
+      "mnemonic": "LOADB",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load byte"
+    },
+    {
+      "mnemonic": "LOADH",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Load halfword"
+    },
+    {
+      "mnemonic": "STOREB",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Store byte"
+    },
+    {
+      "mnemonic": "STOREH",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "none",
+      "notes": "Store halfword"
+    },
+    {
+      "mnemonic": "MFTLB",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move from TLB entry"
+    },
+    {
+      "mnemonic": "MTTLB",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move to TLB entry"
+    },
+    {
+      "mnemonic": "INVDA",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Invalidate data cache entry at address"
+    },
+    {
+      "mnemonic": "INVEA",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Invalidate instruction cache entry"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ Processors from the pre-1986 era that could be added to the collection.
 **Phase 2 Status: ALL COMPLETE ✓** (77 models validated as of 2026-01-29)
 **Phase 3 Status: ALL COMPLETE ✓** (55 models validated as of 2026-01-29)
 **Phase 4 Status: ALL COMPLETE ✓** (73 models validated as of 2026-01-29)
+**Phase 5 Status: ALL COMPLETE ✓** (48 instruction timing tables collected as of 2026-01-30)
 
 ---
 
@@ -647,9 +648,9 @@ Store as YAML or JSON in a new `timing/` directory per processor.
 | Phase 2 | 77 | ✓ All complete |
 | Phase 3 | 55 | ✓ All complete |
 | Phase 4 | 73 | ✓ All complete |
-| Phase 5 | 48 | Pending (timing collection) |
+| Phase 5 | 48 | ✓ All complete |
 | Phase 6 | 101 | ✓ All complete |
-| **Grand Total** | **396** | **424 complete, 48 pending (timing)** |
+| **Grand Total** | **396** | **All complete** |
 
 **Last Updated:** 2026-01-30
 **Current Model Count:** 323 total validated models (across 19 families)

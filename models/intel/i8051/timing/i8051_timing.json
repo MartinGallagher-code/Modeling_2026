@@ -1,0 +1,1122 @@
+{
+  "processor": "Intel 8051",
+  "manufacturer": "Intel",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "MCS-51 Family User's Manual, Intel 1981",
+  "clock_mhz": 12,
+  "notes": "1 machine cycle = 12 oscillator periods = 1us at 12MHz. Most instructions are 1 or 2 machine cycles. MUL and DIV take 4 machine cycles. Cycle counts are machine cycles.",
+  "instruction_count": 111,
+  "instructions": [
+    {
+      "mnemonic": "MOV",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register to accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "A, direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move direct byte to accumulator"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move indirect RAM to accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to accumulator"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "Rn, A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move accumulator to register (n=0-7)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "Rn, direct",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move direct byte to register (n=0-7)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "Rn, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to register (n=0-7)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "direct, A",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move accumulator to direct byte"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "direct, Rn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move register to direct byte (n=0-7)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "direct, direct",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move direct byte to direct byte"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "direct, @Ri",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move indirect RAM to direct byte (i=0,1)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "direct, #data",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to direct byte"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "@Ri, A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move accumulator to indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "@Ri, direct",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move direct byte to indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "@Ri, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "DPTR, #data16",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move 16-bit immediate to data pointer"
+    },
+    {
+      "mnemonic": "MOVC",
+      "operands": "A, @A+DPTR",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move code byte relative to DPTR to accumulator"
+    },
+    {
+      "mnemonic": "MOVC",
+      "operands": "A, @A+PC",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move code byte relative to PC to accumulator"
+    },
+    {
+      "mnemonic": "MOVX",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move external RAM (8-bit addr) to accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "MOVX",
+      "operands": "A, @DPTR",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move external RAM (16-bit addr) to accumulator"
+    },
+    {
+      "mnemonic": "MOVX",
+      "operands": "@Ri, A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move accumulator to external RAM (8-bit addr) (i=0,1)"
+    },
+    {
+      "mnemonic": "MOVX",
+      "operands": "@DPTR, A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move accumulator to external RAM (16-bit addr)"
+    },
+    {
+      "mnemonic": "XCH",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Exchange accumulator with register (n=0-7)"
+    },
+    {
+      "mnemonic": "XCH",
+      "operands": "A, direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Exchange accumulator with direct byte"
+    },
+    {
+      "mnemonic": "XCH",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Exchange accumulator with indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "XCHD",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Exchange low nibble of A with indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "PUSH",
+      "operands": "direct",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "stack",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Push direct byte onto stack"
+    },
+    {
+      "mnemonic": "POP",
+      "operands": "direct",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "stack",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Pop direct byte from stack"
+    },
+    {
+      "mnemonic": "ADD",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C AC OV",
+      "notes": "Add register to accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "ADD",
+      "operands": "A, direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "C AC OV",
+      "notes": "Add direct byte to accumulator"
+    },
+    {
+      "mnemonic": "ADD",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "C AC OV",
+      "notes": "Add indirect RAM to accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "ADD",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C AC OV",
+      "notes": "Add immediate to accumulator"
+    },
+    {
+      "mnemonic": "ADDC",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C AC OV",
+      "notes": "Add with carry register to accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "ADDC",
+      "operands": "A, direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "C AC OV",
+      "notes": "Add with carry direct byte to accumulator"
+    },
+    {
+      "mnemonic": "ADDC",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "C AC OV",
+      "notes": "Add with carry indirect RAM to accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "ADDC",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C AC OV",
+      "notes": "Add with carry immediate to accumulator"
+    },
+    {
+      "mnemonic": "SUBB",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C AC OV",
+      "notes": "Subtract with borrow register from accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "SUBB",
+      "operands": "A, direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "C AC OV",
+      "notes": "Subtract with borrow direct byte from accumulator"
+    },
+    {
+      "mnemonic": "SUBB",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "C AC OV",
+      "notes": "Subtract with borrow indirect RAM from accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "SUBB",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C AC OV",
+      "notes": "Subtract with borrow immediate from accumulator"
+    },
+    {
+      "mnemonic": "INC",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Increment accumulator"
+    },
+    {
+      "mnemonic": "INC",
+      "operands": "Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Increment register (n=0-7)"
+    },
+    {
+      "mnemonic": "INC",
+      "operands": "direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Increment direct byte"
+    },
+    {
+      "mnemonic": "INC",
+      "operands": "@Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Increment indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "INC",
+      "operands": "DPTR",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Increment data pointer (16-bit)"
+    },
+    {
+      "mnemonic": "DEC",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Decrement accumulator"
+    },
+    {
+      "mnemonic": "DEC",
+      "operands": "Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Decrement register (n=0-7)"
+    },
+    {
+      "mnemonic": "DEC",
+      "operands": "direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Decrement direct byte"
+    },
+    {
+      "mnemonic": "DEC",
+      "operands": "@Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Decrement indirect RAM (i=0,1)"
+    },
+    {
+      "mnemonic": "MUL",
+      "operands": "AB",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "multiply",
+      "addressing_mode": "implied",
+      "flags_affected": "C OV",
+      "notes": "Multiply A by B; result in A (low) and B (high). C cleared, OV set if result >255"
+    },
+    {
+      "mnemonic": "DIV",
+      "operands": "AB",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "divide",
+      "addressing_mode": "implied",
+      "flags_affected": "C OV",
+      "notes": "Divide A by B; quotient in A, remainder in B. C and OV cleared"
+    },
+    {
+      "mnemonic": "DA",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Decimal adjust accumulator after BCD addition"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "AND register with accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "A, direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "AND direct byte with accumulator"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "AND indirect RAM with accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND immediate with accumulator"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "direct, A",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "AND accumulator with direct byte"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "direct, #data",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND immediate with direct byte"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "OR register with accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "A, direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "OR direct byte with accumulator"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "OR indirect RAM with accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "OR immediate with accumulator"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "direct, A",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "OR accumulator with direct byte"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "direct, #data",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "OR immediate with direct byte"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "A, Rn",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "XOR register with accumulator (n=0-7)"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "A, direct",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "XOR direct byte with accumulator"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "A, @Ri",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "XOR indirect RAM with accumulator (i=0,1)"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "A, #data",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "XOR immediate with accumulator"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "direct, A",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "XOR accumulator with direct byte"
+    },
+    {
+      "mnemonic": "XRL",
+      "operands": "direct, #data",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "XOR immediate with direct byte"
+    },
+    {
+      "mnemonic": "CLR",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Clear accumulator"
+    },
+    {
+      "mnemonic": "CPL",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Complement accumulator"
+    },
+    {
+      "mnemonic": "RL",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Rotate accumulator left"
+    },
+    {
+      "mnemonic": "RLC",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Rotate accumulator left through carry"
+    },
+    {
+      "mnemonic": "RR",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Rotate accumulator right"
+    },
+    {
+      "mnemonic": "RRC",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Rotate accumulator right through carry"
+    },
+    {
+      "mnemonic": "SWAP",
+      "operands": "A",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Swap nibbles of accumulator"
+    },
+    {
+      "mnemonic": "CLR",
+      "operands": "C",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Clear carry flag"
+    },
+    {
+      "mnemonic": "CLR",
+      "operands": "bit",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Clear direct bit"
+    },
+    {
+      "mnemonic": "SETB",
+      "operands": "C",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Set carry flag"
+    },
+    {
+      "mnemonic": "SETB",
+      "operands": "bit",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Set direct bit"
+    },
+    {
+      "mnemonic": "CPL",
+      "operands": "C",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Complement carry flag"
+    },
+    {
+      "mnemonic": "CPL",
+      "operands": "bit",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Complement direct bit"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "C, bit",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "AND carry with direct bit"
+    },
+    {
+      "mnemonic": "ANL",
+      "operands": "C, /bit",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "AND carry with complement of direct bit"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "C, bit",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "OR carry with direct bit"
+    },
+    {
+      "mnemonic": "ORL",
+      "operands": "C, /bit",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "OR carry with complement of direct bit"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "C, bit",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Move direct bit to carry"
+    },
+    {
+      "mnemonic": "MOV",
+      "operands": "bit, C",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move carry to direct bit"
+    },
+    {
+      "mnemonic": "JC",
+      "operands": "rel",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if carry is set"
+    },
+    {
+      "mnemonic": "JNC",
+      "operands": "rel",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if carry is not set"
+    },
+    {
+      "mnemonic": "JB",
+      "operands": "bit, rel",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump if direct bit is set"
+    },
+    {
+      "mnemonic": "JNB",
+      "operands": "bit, rel",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump if direct bit is not set"
+    },
+    {
+      "mnemonic": "JBC",
+      "operands": "bit, rel",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump if direct bit is set and clear bit"
+    },
+    {
+      "mnemonic": "AJMP",
+      "operands": "addr11",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Absolute jump within 2K page"
+    },
+    {
+      "mnemonic": "LJMP",
+      "operands": "addr16",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Long jump (16-bit address)"
+    },
+    {
+      "mnemonic": "SJMP",
+      "operands": "rel",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Short jump (relative)"
+    },
+    {
+      "mnemonic": "JMP",
+      "operands": "@A+DPTR",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Jump indirect (A + DPTR)"
+    },
+    {
+      "mnemonic": "JZ",
+      "operands": "rel",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if accumulator is zero"
+    },
+    {
+      "mnemonic": "JNZ",
+      "operands": "rel",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if accumulator is not zero"
+    },
+    {
+      "mnemonic": "CJNE",
+      "operands": "A, direct, rel",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Compare A with direct byte and jump if not equal"
+    },
+    {
+      "mnemonic": "CJNE",
+      "operands": "A, #data, rel",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "C",
+      "notes": "Compare A with immediate and jump if not equal"
+    },
+    {
+      "mnemonic": "CJNE",
+      "operands": "Rn, #data, rel",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "C",
+      "notes": "Compare register with immediate and jump if not equal (n=0-7)"
+    },
+    {
+      "mnemonic": "CJNE",
+      "operands": "@Ri, #data, rel",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "C",
+      "notes": "Compare indirect RAM with immediate and jump if not equal (i=0,1)"
+    },
+    {
+      "mnemonic": "DJNZ",
+      "operands": "Rn, rel",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Decrement register and jump if not zero (n=0-7)"
+    },
+    {
+      "mnemonic": "DJNZ",
+      "operands": "direct, rel",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Decrement direct byte and jump if not zero"
+    },
+    {
+      "mnemonic": "ACALL",
+      "operands": "addr11",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Absolute call within 2K page"
+    },
+    {
+      "mnemonic": "LCALL",
+      "operands": "addr16",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Long call (16-bit address)"
+    },
+    {
+      "mnemonic": "RET",
+      "operands": "",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "RETI",
+      "operands": "",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from interrupt"
+    },
+    {
+      "mnemonic": "NOP",
+      "operands": "",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ]
+}

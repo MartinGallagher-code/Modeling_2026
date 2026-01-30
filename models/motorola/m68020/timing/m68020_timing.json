@@ -1,0 +1,1684 @@
+{
+  "processor": "Motorola 68020",
+  "manufacturer": "Motorola",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "MC68020 User's Manual, 1985",
+  "instruction_count": 186,
+  "instructions": [
+    {
+      "mnemonic": "ABCD Dn,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XC",
+      "notes": "Add BCD register"
+    },
+    {
+      "mnemonic": "ADD.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Add byte register (pipelined)"
+    },
+    {
+      "mnemonic": "ADD.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Add word register"
+    },
+    {
+      "mnemonic": "ADD.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Add long register"
+    },
+    {
+      "mnemonic": "ADD.W (An),Dn",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "XNZVC",
+      "notes": "Add word from memory"
+    },
+    {
+      "mnemonic": "ADD.L (An),Dn",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "XNZVC",
+      "notes": "Add long from memory"
+    },
+    {
+      "mnemonic": "ADD.W Dn,(An)",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "XNZVC",
+      "notes": "Add word to memory"
+    },
+    {
+      "mnemonic": "ADDA.W ea,An",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Add to address register"
+    },
+    {
+      "mnemonic": "ADDA.L ea,An",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Add long to address register"
+    },
+    {
+      "mnemonic": "ADDI.B #imm,Dn",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "XNZVC",
+      "notes": "Add immediate byte"
+    },
+    {
+      "mnemonic": "ADDI.W #imm,Dn",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "XNZVC",
+      "notes": "Add immediate word"
+    },
+    {
+      "mnemonic": "ADDI.L #imm,Dn",
+      "bytes": 6,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "XNZVC",
+      "notes": "Add immediate long"
+    },
+    {
+      "mnemonic": "ADDQ.B #q,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "Add quick byte"
+    },
+    {
+      "mnemonic": "ADDQ.W #q,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "Add quick word"
+    },
+    {
+      "mnemonic": "ADDQ.L #q,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "Add quick long"
+    },
+    {
+      "mnemonic": "ADDX.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Add extended byte"
+    },
+    {
+      "mnemonic": "ADDX.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Add extended word"
+    },
+    {
+      "mnemonic": "ADDX.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Add extended long"
+    },
+    {
+      "mnemonic": "AND.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "AND byte register"
+    },
+    {
+      "mnemonic": "AND.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "AND word register"
+    },
+    {
+      "mnemonic": "AND.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "AND long register"
+    },
+    {
+      "mnemonic": "ANDI.L #imm,Dn",
+      "bytes": 6,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "AND immediate long"
+    },
+    {
+      "mnemonic": "ANDI #imm,CCR",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "XNZVC",
+      "notes": "AND immediate to CCR"
+    },
+    {
+      "mnemonic": "ANDI #imm,SR",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "XNZVC",
+      "notes": "AND immediate to SR"
+    },
+    {
+      "mnemonic": "ASL.B #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "ASL byte by immediate count (4+2n)"
+    },
+    {
+      "mnemonic": "ASL.W #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "ASL word by immediate count (4+2n)"
+    },
+    {
+      "mnemonic": "ASL.L #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "ASL long by immediate count (4+2n)"
+    },
+    {
+      "mnemonic": "ASR.B #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "ASR byte (4+2n)"
+    },
+    {
+      "mnemonic": "ASR.W #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "ASR word (4+2n)"
+    },
+    {
+      "mnemonic": "ASR.L #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "ASR long (4+2n)"
+    },
+    {
+      "mnemonic": "Bcc.B",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch conditionally byte (6 taken, 4 not taken)"
+    },
+    {
+      "mnemonic": "Bcc.W",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch conditionally word"
+    },
+    {
+      "mnemonic": "Bcc.L",
+      "bytes": 6,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch conditionally long (new in 68020)"
+    },
+    {
+      "mnemonic": "BCHG Dn,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "Z",
+      "notes": "Test and change bit register"
+    },
+    {
+      "mnemonic": "BCHG Dn,(An)",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "Z",
+      "notes": "Test and change bit memory"
+    },
+    {
+      "mnemonic": "BCLR Dn,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "Z",
+      "notes": "Test and clear bit register"
+    },
+    {
+      "mnemonic": "BCLR Dn,(An)",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "Z",
+      "notes": "Test and clear bit memory"
+    },
+    {
+      "mnemonic": "BFCHG Dn{o:w}",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Bit field change register (new in 68020)"
+    },
+    {
+      "mnemonic": "BFCHG (An){o:w}",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Bit field change memory (new in 68020)"
+    },
+    {
+      "mnemonic": "BFCLR Dn{o:w}",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Bit field clear register (new in 68020)"
+    },
+    {
+      "mnemonic": "BFCLR (An){o:w}",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Bit field clear memory (new in 68020)"
+    },
+    {
+      "mnemonic": "BFEXTS Dn{o:w},Dn",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Bit field extract signed register (new in 68020)"
+    },
+    {
+      "mnemonic": "BFEXTS (An){o:w},Dn",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Bit field extract signed memory (new in 68020)"
+    },
+    {
+      "mnemonic": "BFEXTU Dn{o:w},Dn",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Bit field extract unsigned register (new in 68020)"
+    },
+    {
+      "mnemonic": "BFEXTU (An){o:w},Dn",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Bit field extract unsigned memory (new in 68020)"
+    },
+    {
+      "mnemonic": "BFFFO Dn{o:w},Dn",
+      "bytes": 4,
+      "cycles": 14,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Bit field find first one register (new in 68020)"
+    },
+    {
+      "mnemonic": "BFFFO (An){o:w},Dn",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Bit field find first one memory (new in 68020)"
+    },
+    {
+      "mnemonic": "BFINS Dn,Dn{o:w}",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Bit field insert register (new in 68020)"
+    },
+    {
+      "mnemonic": "BFINS Dn,(An){o:w}",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Bit field insert memory (new in 68020)"
+    },
+    {
+      "mnemonic": "BFSET Dn{o:w}",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Bit field set register (new in 68020)"
+    },
+    {
+      "mnemonic": "BFSET (An){o:w}",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Bit field set memory (new in 68020)"
+    },
+    {
+      "mnemonic": "BFTST Dn{o:w}",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Bit field test register (new in 68020)"
+    },
+    {
+      "mnemonic": "BFTST (An){o:w}",
+      "bytes": 4,
+      "cycles": 10,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Bit field test memory (new in 68020)"
+    },
+    {
+      "mnemonic": "BKPT #vector",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Breakpoint"
+    },
+    {
+      "mnemonic": "BRA.B",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch always byte"
+    },
+    {
+      "mnemonic": "BRA.W",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch always word"
+    },
+    {
+      "mnemonic": "BRA.L",
+      "bytes": 6,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch always long (new in 68020)"
+    },
+    {
+      "mnemonic": "BSET Dn,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "Z",
+      "notes": "Test and set bit"
+    },
+    {
+      "mnemonic": "BSR.B",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch to subroutine byte"
+    },
+    {
+      "mnemonic": "BSR.W",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch to subroutine word"
+    },
+    {
+      "mnemonic": "BSR.L",
+      "bytes": 6,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch to subroutine long (new in 68020)"
+    },
+    {
+      "mnemonic": "BTST Dn,Dn",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "data_register",
+      "flags_affected": "Z",
+      "notes": "Test bit register"
+    },
+    {
+      "mnemonic": "BTST Dn,(An)",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "bit",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "Z",
+      "notes": "Test bit memory"
+    },
+    {
+      "mnemonic": "CALLM #args,(An)",
+      "bytes": 4,
+      "cycles": 60,
+      "category": "control",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Call module (new in 68020, rarely used)"
+    },
+    {
+      "mnemonic": "CAS.B Dc,Du,(An)",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "special",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Compare and swap byte (new in 68020)"
+    },
+    {
+      "mnemonic": "CAS.W Dc,Du,(An)",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "special",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Compare and swap word (new in 68020)"
+    },
+    {
+      "mnemonic": "CAS.L Dc,Du,(An)",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "special",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Compare and swap long (new in 68020)"
+    },
+    {
+      "mnemonic": "CAS2.W",
+      "bytes": 6,
+      "cycles": 28,
+      "category": "special",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Compare and swap 2 word (new in 68020)"
+    },
+    {
+      "mnemonic": "CAS2.L",
+      "bytes": 6,
+      "cycles": 28,
+      "category": "special",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Compare and swap 2 long (new in 68020)"
+    },
+    {
+      "mnemonic": "CHK.W ea,Dn",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZ",
+      "notes": "Check register word"
+    },
+    {
+      "mnemonic": "CHK.L ea,Dn",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZ",
+      "notes": "Check register long (new in 68020)"
+    },
+    {
+      "mnemonic": "CHK2.B (An),Rn",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "control",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "ZC",
+      "notes": "Check register against bounds byte (new in 68020)"
+    },
+    {
+      "mnemonic": "CHK2.W (An),Rn",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "control",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "ZC",
+      "notes": "Check register against bounds word (new in 68020)"
+    },
+    {
+      "mnemonic": "CHK2.L (An),Rn",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "control",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "ZC",
+      "notes": "Check register against bounds long (new in 68020)"
+    },
+    {
+      "mnemonic": "CLR.B Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Clear byte"
+    },
+    {
+      "mnemonic": "CLR.W Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Clear word"
+    },
+    {
+      "mnemonic": "CLR.L Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Clear long"
+    },
+    {
+      "mnemonic": "CMP.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Compare byte"
+    },
+    {
+      "mnemonic": "CMP.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Compare word"
+    },
+    {
+      "mnemonic": "CMP.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Compare long"
+    },
+    {
+      "mnemonic": "CMP2.B (An),Rn",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "alu",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "ZC",
+      "notes": "Compare register against bounds byte (new in 68020)"
+    },
+    {
+      "mnemonic": "CMP2.W (An),Rn",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "alu",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "ZC",
+      "notes": "Compare register against bounds word (new in 68020)"
+    },
+    {
+      "mnemonic": "CMP2.L (An),Rn",
+      "bytes": 4,
+      "cycles": 18,
+      "category": "alu",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "ZC",
+      "notes": "Compare register against bounds long (new in 68020)"
+    },
+    {
+      "mnemonic": "CMPA.W ea,An",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Compare address word"
+    },
+    {
+      "mnemonic": "CMPA.L ea,An",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Compare address long"
+    },
+    {
+      "mnemonic": "CMPI.L #imm,Dn",
+      "bytes": 6,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Compare immediate long"
+    },
+    {
+      "mnemonic": "DBcc Dn,disp",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Decrement and branch"
+    },
+    {
+      "mnemonic": "DIVS.W ea,Dn",
+      "bytes": 2,
+      "cycles": 90,
+      "category": "divide",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Signed divide 32/16 (best case 56, worst 90)"
+    },
+    {
+      "mnemonic": "DIVS.L ea,Dn",
+      "bytes": 4,
+      "cycles": 90,
+      "category": "divide",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Signed divide 32/32 (new in 68020)"
+    },
+    {
+      "mnemonic": "DIVS.L ea,Dr:Dq",
+      "bytes": 4,
+      "cycles": 78,
+      "category": "divide",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Signed divide 64/32 (new in 68020)"
+    },
+    {
+      "mnemonic": "DIVU.W ea,Dn",
+      "bytes": 2,
+      "cycles": 76,
+      "category": "divide",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Unsigned divide 32/16 (best 44, worst 76)"
+    },
+    {
+      "mnemonic": "DIVU.L ea,Dn",
+      "bytes": 4,
+      "cycles": 76,
+      "category": "divide",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Unsigned divide 32/32 (new in 68020)"
+    },
+    {
+      "mnemonic": "DIVU.L ea,Dr:Dq",
+      "bytes": 4,
+      "cycles": 78,
+      "category": "divide",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Unsigned divide 64/32 (new in 68020)"
+    },
+    {
+      "mnemonic": "EOR.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "EOR byte"
+    },
+    {
+      "mnemonic": "EOR.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "EOR word"
+    },
+    {
+      "mnemonic": "EOR.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "EOR long"
+    },
+    {
+      "mnemonic": "EORI #imm,CCR",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "XNZVC",
+      "notes": "EOR immediate to CCR"
+    },
+    {
+      "mnemonic": "EXG Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Exchange registers"
+    },
+    {
+      "mnemonic": "EXT.W Dn",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Sign extend byte to word"
+    },
+    {
+      "mnemonic": "EXT.L Dn",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Sign extend word to long"
+    },
+    {
+      "mnemonic": "EXTB.L Dn",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Sign extend byte to long (new in 68020)"
+    },
+    {
+      "mnemonic": "JMP (An)",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Jump indirect"
+    },
+    {
+      "mnemonic": "JMP (d16,An)",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "address_disp",
+      "flags_affected": "none",
+      "notes": "Jump displacement"
+    },
+    {
+      "mnemonic": "JMP abs.L",
+      "bytes": 6,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute_long",
+      "flags_affected": "none",
+      "notes": "Jump absolute long"
+    },
+    {
+      "mnemonic": "JSR (An)",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "JSR indirect"
+    },
+    {
+      "mnemonic": "JSR (d16,An)",
+      "bytes": 4,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "address_disp",
+      "flags_affected": "none",
+      "notes": "JSR displacement"
+    },
+    {
+      "mnemonic": "JSR abs.L",
+      "bytes": 6,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute_long",
+      "flags_affected": "none",
+      "notes": "JSR absolute long"
+    },
+    {
+      "mnemonic": "LEA (An),An",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Load effective address"
+    },
+    {
+      "mnemonic": "LEA (d16,An),An",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "address_disp",
+      "flags_affected": "none",
+      "notes": "LEA displacement"
+    },
+    {
+      "mnemonic": "LINK.W An,#disp",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "stack",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Link word displacement"
+    },
+    {
+      "mnemonic": "LINK.L An,#disp",
+      "bytes": 6,
+      "cycles": 8,
+      "category": "stack",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Link long displacement (new in 68020)"
+    },
+    {
+      "mnemonic": "LSL.B #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "LSL byte (4+2n)"
+    },
+    {
+      "mnemonic": "LSL.W #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "LSL word (4+2n)"
+    },
+    {
+      "mnemonic": "LSL.L #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "LSL long (4+2n)"
+    },
+    {
+      "mnemonic": "LSR.B #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "LSR byte (4+2n)"
+    },
+    {
+      "mnemonic": "LSR.W #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "LSR word (4+2n)"
+    },
+    {
+      "mnemonic": "LSR.L #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "LSR long (4+2n)"
+    },
+    {
+      "mnemonic": "MOVE.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Move byte register"
+    },
+    {
+      "mnemonic": "MOVE.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Move word register"
+    },
+    {
+      "mnemonic": "MOVE.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Move long register"
+    },
+    {
+      "mnemonic": "MOVE.W (An),Dn",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Move word from memory"
+    },
+    {
+      "mnemonic": "MOVE.L (An),Dn",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "NZVC",
+      "notes": "Move long from memory"
+    },
+    {
+      "mnemonic": "MOVE.W #imm,Dn",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Move immediate word"
+    },
+    {
+      "mnemonic": "MOVE.L #imm,Dn",
+      "bytes": 6,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZVC",
+      "notes": "Move immediate long"
+    },
+    {
+      "mnemonic": "MOVEA.L ea,An",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Move to address register"
+    },
+    {
+      "mnemonic": "MOVEC Rc,Rn",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Move control register (supervisor)"
+    },
+    {
+      "mnemonic": "MOVEM.L regs,(An)",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move multiple to memory"
+    },
+    {
+      "mnemonic": "MOVEM.L (An),regs",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move multiple from memory"
+    },
+    {
+      "mnemonic": "MOVEQ #imm,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "quick",
+      "flags_affected": "NZVC",
+      "notes": "Move quick"
+    },
+    {
+      "mnemonic": "MULS.W ea,Dn",
+      "bytes": 2,
+      "cycles": 28,
+      "category": "multiply",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Signed multiply 16x16->32"
+    },
+    {
+      "mnemonic": "MULS.L ea,Dn",
+      "bytes": 4,
+      "cycles": 44,
+      "category": "multiply",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Signed multiply 32x32->32 (new in 68020)"
+    },
+    {
+      "mnemonic": "MULS.L ea,Dh:Dl",
+      "bytes": 4,
+      "cycles": 44,
+      "category": "multiply",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Signed multiply 32x32->64 (new in 68020)"
+    },
+    {
+      "mnemonic": "MULU.W ea,Dn",
+      "bytes": 2,
+      "cycles": 28,
+      "category": "multiply",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Unsigned multiply 16x16->32"
+    },
+    {
+      "mnemonic": "MULU.L ea,Dn",
+      "bytes": 4,
+      "cycles": 44,
+      "category": "multiply",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Unsigned multiply 32x32->32 (new in 68020)"
+    },
+    {
+      "mnemonic": "MULU.L ea,Dh:Dl",
+      "bytes": 4,
+      "cycles": 44,
+      "category": "multiply",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Unsigned multiply 32x32->64 (new in 68020)"
+    },
+    {
+      "mnemonic": "NEG.B Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Negate byte"
+    },
+    {
+      "mnemonic": "NEG.W Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Negate word"
+    },
+    {
+      "mnemonic": "NEG.L Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Negate long"
+    },
+    {
+      "mnemonic": "NEGX.B Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Negate extended byte"
+    },
+    {
+      "mnemonic": "NEGX.W Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Negate extended word"
+    },
+    {
+      "mnemonic": "NEGX.L Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Negate extended long"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "NOT.B Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "NOT byte"
+    },
+    {
+      "mnemonic": "NOT.W Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "NOT word"
+    },
+    {
+      "mnemonic": "NOT.L Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "NOT long"
+    },
+    {
+      "mnemonic": "OR.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "OR byte"
+    },
+    {
+      "mnemonic": "OR.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "OR word"
+    },
+    {
+      "mnemonic": "OR.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "OR long"
+    },
+    {
+      "mnemonic": "ORI #imm,CCR",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "XNZVC",
+      "notes": "OR immediate to CCR"
+    },
+    {
+      "mnemonic": "PACK Dn,Dn,#adj",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Pack BCD (new in 68020)"
+    },
+    {
+      "mnemonic": "PACK -(An),-(An),#adj",
+      "bytes": 4,
+      "cycles": 13,
+      "category": "special",
+      "addressing_mode": "address_predec",
+      "flags_affected": "none",
+      "notes": "Pack BCD memory (new in 68020)"
+    },
+    {
+      "mnemonic": "PEA (An)",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Push effective address"
+    },
+    {
+      "mnemonic": "ROL.B #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "NZVC",
+      "notes": "Rotate left (4+2n)"
+    },
+    {
+      "mnemonic": "ROR.B #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "NZVC",
+      "notes": "Rotate right (4+2n)"
+    },
+    {
+      "mnemonic": "ROXL.B #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "Rotate left with extend (4+2n)"
+    },
+    {
+      "mnemonic": "ROXR.B #q,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "Rotate right with extend (4+2n)"
+    },
+    {
+      "mnemonic": "RTD #disp",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Return and deallocate (new in 68020)"
+    },
+    {
+      "mnemonic": "RTE",
+      "bytes": 2,
+      "cycles": 20,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "all",
+      "notes": "Return from exception"
+    },
+    {
+      "mnemonic": "RTM Rn",
+      "bytes": 2,
+      "cycles": 19,
+      "category": "control",
+      "addressing_mode": "data_register",
+      "flags_affected": "all",
+      "notes": "Return from module (new in 68020)"
+    },
+    {
+      "mnemonic": "RTR",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "XNZVC",
+      "notes": "Return and restore CCR"
+    },
+    {
+      "mnemonic": "RTS",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "SBCD Dn,Dn",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XC",
+      "notes": "Subtract BCD"
+    },
+    {
+      "mnemonic": "Scc Dn",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Set conditionally"
+    },
+    {
+      "mnemonic": "SUB.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Subtract byte"
+    },
+    {
+      "mnemonic": "SUB.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Subtract word"
+    },
+    {
+      "mnemonic": "SUB.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Subtract long"
+    },
+    {
+      "mnemonic": "SUBA.W ea,An",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Subtract from An word"
+    },
+    {
+      "mnemonic": "SUBA.L ea,An",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Subtract from An long"
+    },
+    {
+      "mnemonic": "SUBQ.B #q,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "Subtract quick byte"
+    },
+    {
+      "mnemonic": "SUBQ.L #q,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "quick",
+      "flags_affected": "XNZVC",
+      "notes": "Subtract quick long"
+    },
+    {
+      "mnemonic": "SUBX.B Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Subtract extended byte"
+    },
+    {
+      "mnemonic": "SUBX.W Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Subtract extended word"
+    },
+    {
+      "mnemonic": "SUBX.L Dn,Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "XNZVC",
+      "notes": "Subtract extended long"
+    },
+    {
+      "mnemonic": "SWAP Dn",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Swap register halves"
+    },
+    {
+      "mnemonic": "TAS Dn",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Test and set"
+    },
+    {
+      "mnemonic": "TRAP #vector",
+      "bytes": 2,
+      "cycles": 20,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Trap"
+    },
+    {
+      "mnemonic": "TRAPcc",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Trap conditionally (new in 68020, 4 if no trap)"
+    },
+    {
+      "mnemonic": "TRAPcc.W #imm",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Trap conditionally word (new in 68020)"
+    },
+    {
+      "mnemonic": "TRAPcc.L #imm",
+      "bytes": 6,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Trap conditionally long (new in 68020)"
+    },
+    {
+      "mnemonic": "TRAPV",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Trap on overflow"
+    },
+    {
+      "mnemonic": "TST.B Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Test byte"
+    },
+    {
+      "mnemonic": "TST.W Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Test word"
+    },
+    {
+      "mnemonic": "TST.L Dn",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "data_register",
+      "flags_affected": "NZVC",
+      "notes": "Test long"
+    },
+    {
+      "mnemonic": "UNLK An",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "address_register",
+      "flags_affected": "none",
+      "notes": "Unlink stack frame"
+    },
+    {
+      "mnemonic": "UNPK Dn,Dn,#adj",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Unpack BCD (new in 68020)"
+    },
+    {
+      "mnemonic": "UNPK -(An),-(An),#adj",
+      "bytes": 4,
+      "cycles": 13,
+      "category": "special",
+      "addressing_mode": "address_predec",
+      "flags_affected": "none",
+      "notes": "Unpack BCD memory (new in 68020)"
+    }
+  ]
+}

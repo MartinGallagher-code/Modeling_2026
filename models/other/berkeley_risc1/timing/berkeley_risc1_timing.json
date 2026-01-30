@@ -1,0 +1,316 @@
+{
+  "processor": "Berkeley RISC I",
+  "manufacturer": "UC Berkeley",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Patterson & Sequin, ISCA 1981; 'RISC I: A Reduced Instruction Set VLSI Computer'",
+  "instruction_count": 31,
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 + Rs2"
+    },
+    {
+      "mnemonic": "ADDC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 + Rs2 + carry"
+    },
+    {
+      "mnemonic": "SUB",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 - Rs2"
+    },
+    {
+      "mnemonic": "SUBC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 - Rs2 - carry"
+    },
+    {
+      "mnemonic": "SUBR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs2 - Rs1 (reverse subtract)"
+    },
+    {
+      "mnemonic": "SUBCR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs2 - Rs1 - carry (reverse subtract with carry)"
+    },
+    {
+      "mnemonic": "AND",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 AND Rs2"
+    },
+    {
+      "mnemonic": "OR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 OR Rs2"
+    },
+    {
+      "mnemonic": "XOR",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 XOR Rs2"
+    },
+    {
+      "mnemonic": "SLL",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Shift left logical"
+    },
+    {
+      "mnemonic": "SRL",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Shift right logical"
+    },
+    {
+      "mnemonic": "SRA",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CC",
+      "notes": "Shift right arithmetic"
+    },
+    {
+      "mnemonic": "ADDi",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 + imm13"
+    },
+    {
+      "mnemonic": "ADDCi",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 + imm13 + carry"
+    },
+    {
+      "mnemonic": "SUBi",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 - imm13"
+    },
+    {
+      "mnemonic": "SUBCi",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 - imm13 - carry"
+    },
+    {
+      "mnemonic": "ANDi",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 AND imm13"
+    },
+    {
+      "mnemonic": "ORi",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 OR imm13"
+    },
+    {
+      "mnemonic": "XORi",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CC",
+      "notes": "Rd <- Rs1 XOR imm13"
+    },
+    {
+      "mnemonic": "LDL",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Load long (32-bit) from memory"
+    },
+    {
+      "mnemonic": "LDSU",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Load short unsigned (16-bit, zero-extended)"
+    },
+    {
+      "mnemonic": "LDSS",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Load short signed (16-bit, sign-extended)"
+    },
+    {
+      "mnemonic": "LDBU",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Load byte unsigned (8-bit, zero-extended)"
+    },
+    {
+      "mnemonic": "LDBS",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Load byte signed (8-bit, sign-extended)"
+    },
+    {
+      "mnemonic": "STL",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Store long (32-bit) to memory"
+    },
+    {
+      "mnemonic": "STS",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Store short (16-bit) to memory"
+    },
+    {
+      "mnemonic": "STB",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Store byte (8-bit) to memory"
+    },
+    {
+      "mnemonic": "JMP",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register_offset",
+      "flags_affected": "none",
+      "notes": "Unconditional jump; 1 cycle + 1 delay slot"
+    },
+    {
+      "mnemonic": "JMPR",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "pc_relative",
+      "flags_affected": "none",
+      "notes": "Conditional/relative jump; 1 cycle + 1 delay slot"
+    },
+    {
+      "mnemonic": "CALL",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register_offset",
+      "flags_affected": "CWP",
+      "notes": "Call subroutine with register window switch; 1 cycle + 1 delay slot"
+    },
+    {
+      "mnemonic": "CALLR",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "pc_relative",
+      "flags_affected": "CWP",
+      "notes": "Call relative with register window switch; 1 cycle + 1 delay slot"
+    },
+    {
+      "mnemonic": "RET",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "CWP",
+      "notes": "Return from subroutine with register window restore; 1 cycle + 1 delay slot"
+    },
+    {
+      "mnemonic": "LDHI",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load high immediate (upper 19 bits)"
+    },
+    {
+      "mnemonic": "GETLPC",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Get last PC (return address of previous CALL)"
+    }
+  ]
+}
