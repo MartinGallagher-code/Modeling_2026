@@ -39,3 +39,38 @@
 - Validation: PASSED
 
 ---
+
+## 2026-01-30 - Tune instruction timings to achieve <5% CPI error
+
+**Session goal:** Tune instruction timings to achieve <5% CPI error
+
+**Starting state:**
+- CPI: 7.55 (5.6% error vs target 8.0)
+- Key issues: Instruction timings slightly too low, CPI below target (same as KR581IK1)
+
+**Changes attempted:**
+
+1. Adjusted ALU timing
+   - Parameter: `alu` changed from 5.0 to 5.5 cycles
+   - Reasoning: Weighted average including memory-operand ALU ops was underestimated
+   - Result: CPI increase toward target
+
+2. Adjusted data_transfer timing
+   - Parameter: `data_transfer` changed from 6.0 to 6.5 cycles
+   - Reasoning: MOV with various addressing modes averages higher
+   - Result: Further CPI increase
+
+3. Adjusted control timing
+   - Parameter: `control` changed from 8.0 to 9.0 cycles
+   - Reasoning: JSR/RTS/SOB weighted average was underestimated
+   - Result: CPI reached target
+
+**What we learned:**
+- KR581IK2 uses identical timing to KR581IK1 (they form one CPU together)
+- Same timing adjustments apply to both chips
+
+**Final state:**
+- CPI: 8.0 (0.0% error vs target 8.0)
+- Validation: PASSED
+
+---

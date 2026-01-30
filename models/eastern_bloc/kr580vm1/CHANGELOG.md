@@ -42,3 +42,46 @@
 - Validation: PASSED
 
 ---
+
+## 2026-01-30 - Tune instruction timings to achieve <5% CPI error
+
+**Session goal:** Tune instruction timings to achieve <5% CPI error
+
+**Starting state:**
+- CPI: 7.2 (10.0% error vs target 8.0)
+- Key issues: Instruction timings were too low, producing CPI below target
+
+**Changes attempted:**
+
+1. Adjusted ALU timing
+   - Parameter: `alu` changed from 5.0 to 5.5 cycles
+   - Reasoning: Increase to account for memory-operand variants in weighted mix
+   - Result: CPI increase toward target
+
+2. Adjusted data_transfer timing
+   - Parameter: `data_transfer` changed from 5.0 to 5.5 cycles
+   - Reasoning: MOV operations with memory operands raise weighted average
+   - Result: Further CPI increase
+
+3. Adjusted memory timing
+   - Parameter: `memory` changed from 9.0 to 10.0 cycles
+   - Reasoning: LDA and indirect memory accesses take more cycles than estimated
+   - Result: Significant CPI increase
+
+4. Adjusted control timing
+   - Parameter: `control` changed from 8.0 to 9.0 cycles
+   - Reasoning: CALL/RET overhead higher in weighted average
+   - Result: Further CPI increase
+
+5. Adjusted bank_switch timing
+   - Parameter: `bank_switch` changed from 12.0 to 14.0 cycles
+   - Reasoning: Bank-switch overhead was underestimated
+   - Result: Final CPI push to target
+
+6. IO timing unchanged at 10.0 cycles
+
+**Final state:**
+- CPI: 8.0 (0.0% error vs target 8.0)
+- Validation: PASSED
+
+---

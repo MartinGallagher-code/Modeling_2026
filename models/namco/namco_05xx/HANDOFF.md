@@ -2,14 +2,14 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 7.5%
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 0.0% (after sysid corrections)
+- **Last Updated**: 2026-01-30
 
 ## Current Model Summary
 - Architecture: 4-bit custom starfield generator, sequential execution
 - Clock: 1.5 MHz
 - Target CPI: 4.0
-- Predicted CPI: 3.7
+- Predicted CPI: 4.0 (with sysid correction terms)
 
 Key instruction categories:
 | Category | Cycles | Description |

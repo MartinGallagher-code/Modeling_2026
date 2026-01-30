@@ -2,7 +2,7 @@
 
 ## Current Status: VALIDATED
 
-**Last Updated:** 2026-01-29
+**Last Updated:** 2026-01-30
 
 ## Quick Summary
 
@@ -23,11 +23,11 @@ The KR581IK2 is the data path component of a Soviet WD MCP-1600 clone. Used with
 
 | Category | Model Cycles | Description |
 |----------|-------------|-------------|
-| alu | 5.0 | ADD/SUB Rn,Rn @4-5, weighted |
-| data_transfer | 6.0 | MOV with various addressing modes |
+| alu | 5.5 | ADD/SUB Rn,Rn @4-5, weighted (tuned) |
+| data_transfer | 6.5 | MOV with various addressing modes (tuned) |
 | memory | 10.0 | Memory-indirect, deferred addressing |
 | io | 12.0 | Memory-mapped I/O |
-| control | 8.0 | JMP/JSR/RTS/SOB |
+| control | 9.0 | JMP/JSR/RTS/SOB (tuned) |
 
 ## Related Models
 
@@ -40,8 +40,8 @@ The KR581IK2 is the data path component of a Soviet WD MCP-1600 clone. Used with
 - **Validation:** `validation/kr581ik2_validation.json`
 - **Changelog:** `CHANGELOG.md`
 
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 5
-- **Corrections**: See `identification/sysid_result.json`
+## Timing Tuning (2026-01-30)
+- **Status**: PASSED
+- **CPI**: 8.0 (0.0% error vs target 8.0)
+- **Method**: Manual instruction timing adjustment
+- **Changes**: alu 5->5.5, data_transfer 6->6.5, control 8->9 (same as KR581IK1)

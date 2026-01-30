@@ -40,7 +40,7 @@
       "verified": true
     }
   ],
-  "validation_date": "2026-01-29",
+  "validation_date": "2026-01-30",
   "accuracy": {
     "expected_cpi": 5.5,
     "expected_ipc": 0.1818,
@@ -52,6 +52,7 @@
     ],
     "predicted_cpi": 5.5,
     "cpi_error_percent": 0.0,
+    "tuning_note": "Timings adjusted 2026-01-30: alu 4->4.5, data_transfer 4->4.5, memory 6->6.5",
     "validation_passed": true,
     "ipc_error_percent": 0.0,
     "fully_validated": true,

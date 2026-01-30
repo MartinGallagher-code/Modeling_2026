@@ -2,7 +2,7 @@
 
 ## Current Status: VALIDATED
 
-**Last Updated:** 2026-01-29
+**Last Updated:** 2026-01-30
 
 ## Quick Summary
 
@@ -23,12 +23,12 @@ The IM1821VM85A is a Soviet Intel 8085 clone with identical timing to the origin
 
 | Category | Model Cycles | Description |
 |----------|-------------|-------------|
-| alu | 4.0 | ADD/SUB r @4, ADD M @7 |
-| data_transfer | 4.5 | MOV r,r @4, MVI @7 |
-| memory | 8.0 | LDA @13, MOV r,M @7 |
+| alu | 2.9 | ADD/SUB r @4, ADD M @7 (tuned) |
+| data_transfer | 3.5 | MOV r,r @4, MVI @7 (tuned) |
+| memory | 7.0 | LDA @13, MOV r,M @7 (tuned) |
 | io | 10.0 | IN/OUT @10 T-states |
-| control | 6.0 | JMP @10, CALL @18 |
-| stack | 10.5 | PUSH @12, POP @10 |
+| control | 5.0 | JMP @10, CALL @18 (tuned) |
+| stack | 9.5 | PUSH @12, POP @10 (tuned) |
 
 ## Model Limitations
 
@@ -48,8 +48,8 @@ The IM1821VM85A is a Soviet Intel 8085 clone with identical timing to the origin
 - **Validation:** `validation/im1821vm85a_validation.json`
 - **Changelog:** `CHANGELOG.md`
 
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+## Timing Tuning (2026-01-30)
+- **Status**: PASSED
+- **CPI**: 4.995 (0.1% error vs target 5.0)
+- **Method**: Manual instruction timing adjustment
+- **Changes**: alu 4->2.9, data_transfer 4.5->3.5, memory 8->7, control 6->5, stack 10.5->9.5

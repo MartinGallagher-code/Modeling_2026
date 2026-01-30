@@ -103,12 +103,12 @@ class U8001Model(BaseProcessorModel):
         #   IN/OUT: 10-12 cycles
 
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 4.0, 0,
-                "ALU ops - ADD/SUB R,R @4, R,IM @7, INC @4, weighted ~4"),
-            'data_transfer': InstructionCategory('data_transfer', 4.0, 0,
-                "LD R,R @3, LD R,IM @7 - weighted for register-heavy code ~4"),
-            'memory': InstructionCategory('memory', 6.0, 0,
-                "LD R,@R @7, LD R,addr @9, LDM multi-reg ~6"),
+            'alu': InstructionCategory('alu', 4.5, 0,
+                "ALU ops - ADD/SUB R,R @4, R,IM @7, INC @4, weighted ~4.5"),
+            'data_transfer': InstructionCategory('data_transfer', 4.5, 0,
+                "LD R,R @3, LD R,IM @7 - weighted ~4.5"),
+            'memory': InstructionCategory('memory', 6.5, 0,
+                "LD R,@R @7, LD R,addr @9, LDM multi-reg ~6.5"),
             'io': InstructionCategory('io', 7.0, 0,
                 "IN/OUT @10-12, with port addressing ~7"),
             'control': InstructionCategory('control', 6.0, 0,

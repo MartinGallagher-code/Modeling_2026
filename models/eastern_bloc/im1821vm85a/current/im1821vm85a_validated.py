@@ -105,18 +105,18 @@ class IM1821VM85AModel(BaseProcessorModel):
         #   IN/OUT: 10 T-states
 
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 4.0, 0,
-                "ALU ops - ADD/SUB r @4, ADD M @7, INC @4, weighted ~4"),
-            'data_transfer': InstructionCategory('data_transfer', 4.5, 0,
-                "MOV r,r @4, MVI @7, LXI @10 - weighted ~4.5"),
-            'memory': InstructionCategory('memory', 8.0, 0,
-                "LDA @13, STA @13, MOV r,M @7, LHLD @16, weighted ~8"),
+            'alu': InstructionCategory('alu', 2.9, 0,
+                "ALU ops - ADD/SUB r @4, INC @4, most ALU reg-reg @4, weighted ~2.9"),
+            'data_transfer': InstructionCategory('data_transfer', 3.5, 0,
+                "MOV r,r @4, MVI @7, LXI @10 - weighted ~3.5"),
+            'memory': InstructionCategory('memory', 7.0, 0,
+                "LDA @13, STA @13, MOV r,M @7, LHLD @16, weighted ~7"),
             'io': InstructionCategory('io', 10.0, 0,
                 "IN/OUT @10 T-states"),
-            'control': InstructionCategory('control', 6.0, 0,
-                "JMP @10, CALL @18, RET @10, conditional branch ~6"),
-            'stack': InstructionCategory('stack', 10.5, 0,
-                "PUSH @12, POP @10, XTHL @16, weighted ~10.5"),
+            'control': InstructionCategory('control', 5.0, 0,
+                "JMP @10, CALL @18, RET @10, conditional branch ~5"),
+            'stack': InstructionCategory('stack', 9.5, 0,
+                "PUSH @12, POP @10, XTHL @16, weighted ~9.5"),
         }
 
         self.workload_profiles = {

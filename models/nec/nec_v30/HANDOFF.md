@@ -2,8 +2,8 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: ~5.5%
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-30
 
 ## Current Model Summary
 
@@ -13,17 +13,17 @@ Pin-compatible drop-in replacement, ~30% faster overall.
 
 | Category | Cycles | Description |
 |----------|--------|-------------|
-| alu | 2 | ADD/SUB reg,reg @2 (was 3 on 8086) |
-| data_transfer | 2.5 | MOV reg,reg @2, MOV reg,mem @3-5 |
+| alu | 2.2 | ADD/SUB reg,reg @2-3 avg (was 3 on 8086) |
+| data_transfer | 2.8 | MOV reg,reg @2, MOV reg,mem @3-5 |
 | memory | 4 | Memory ops - 16-bit bus faster than V20 |
-| control | 2.5 | JMP @2-3, Jcc @4-14 avg |
+| control | 2.8 | JMP @2-3, Jcc @4-14 avg, CALL @4 |
 | multiply | 4 | MUL @27-28 (was 118-128 on 8086) |
-| divide | 7 | DIV improved ~3x over 8086 |
+| divide | 7.2 | DIV improved ~3x over 8086 |
 
 **Performance:**
 - Target CPI: 3.2 (~30% faster than 8086)
-- Model CPI: 3.025
-- At 10 MHz: ~3.31 MIPS
+- Model CPI: 3.200
+- At 10 MHz: ~3.13 MIPS
 
 ## Relationship to V20
 

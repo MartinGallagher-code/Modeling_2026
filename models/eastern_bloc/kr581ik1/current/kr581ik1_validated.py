@@ -98,16 +98,16 @@ class KR581IK1Model(BaseProcessorModel):
         #   SOB: 5-6 cycles (loop)
 
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 5.0, 0,
-                "ALU ops - ADD/SUB Rn,Rn @4-5, with memory @8-10, weighted ~5"),
-            'data_transfer': InstructionCategory('data_transfer', 6.0, 0,
-                "MOV Rn,Rn @3-4, MOV (Rn),Rn @8-10, weighted ~6"),
+            'alu': InstructionCategory('alu', 5.5, 0,
+                "ALU ops - ADD/SUB Rn,Rn @4-5, with memory @8-10, weighted ~5.5"),
+            'data_transfer': InstructionCategory('data_transfer', 6.5, 0,
+                "MOV Rn,Rn @3-4, MOV (Rn),Rn @8-10, weighted ~6.5"),
             'memory': InstructionCategory('memory', 10.0, 0,
                 "Memory-indirect modes, deferred addressing ~10"),
             'io': InstructionCategory('io', 12.0, 0,
                 "I/O via memory-mapped registers ~12"),
-            'control': InstructionCategory('control', 8.0, 0,
-                "JMP @6-8, JSR @10-12, RTS @6-8, SOB @5-6, weighted ~8"),
+            'control': InstructionCategory('control', 9.0, 0,
+                "JMP @6-8, JSR @10-12, RTS @6-8, SOB @5-6, weighted ~9"),
         }
 
         self.workload_profiles = {

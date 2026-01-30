@@ -1,0 +1,56 @@
+{
+  "processor": "WD16",
+  "year": 1977,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 3.3,
+    "transistors": null,
+    "technology": "LSI-11 compatible"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 8],
+    "typical_cpi": 5.0
+  },
+  "validated_performance": {
+    "ips_min": 412500,
+    "ips_max": 1100000,
+    "mips_typical": 0.66
+  },
+  "notes": "Western Digital's LSI-11 compatible 16-bit processor offering PDP-11 instruction set compatibility in a single chip. Used in DEC LSI-11 systems.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "reference",
+      "name": "Western Digital WD16 documentation",
+      "url": "https://en.wikipedia.org/wiki/WD16",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 5.0,
+    "predicted_cpi": 5.0,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  },
+  "instruction_mix": {
+    "register_ops": 0.25,
+    "immediate": 0.18,
+    "memory_read": 0.15,
+    "memory_write": 0.12,
+    "branch": 0.10,
+    "jsr": 0.08,
+    "byte": 0.07,
+    "trap": 0.05
+  }
+}

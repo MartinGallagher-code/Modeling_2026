@@ -2,14 +2,14 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 8.3%
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 0.0% (after sysid corrections)
+- **Last Updated**: 2026-01-30
 
 ## Current Model Summary
 - Architecture: 4-bit custom sound generator, sequential execution
 - Clock: 1.5 MHz
 - Target CPI: 6.0
-- Predicted CPI: 5.5
+- Predicted CPI: 6.0 (with sysid correction terms)
 
 Key instruction categories:
 | Category | Cycles | Description |

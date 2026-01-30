@@ -155,11 +155,11 @@ class Mos6502Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -3.195545,
-            'control': 3.528911,
-            'data_transfer': 3.003981,
-            'memory': 1.286635,
-            'stack': -3.084836
+            'alu': -0.065,
+            'control': -0.065,
+            'data_transfer': -0.065,
+            'memory': -0.065,
+            'stack': -0.065
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

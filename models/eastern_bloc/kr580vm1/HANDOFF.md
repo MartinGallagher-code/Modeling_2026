@@ -2,7 +2,7 @@
 
 ## Current Status: VALIDATED
 
-**Last Updated:** 2026-01-29
+**Last Updated:** 2026-01-30
 
 ## Quick Summary
 
@@ -23,12 +23,12 @@ The KR580VM1 is a Soviet 8080 extension (NOT a direct clone) that adds 128KB ban
 
 | Category | Model Cycles | Description |
 |----------|-------------|-------------|
-| alu | 5.0 | ADD/SUB r @4, ADD M @7, weighted |
-| data_transfer | 5.0 | MOV r,r @5, MVI @7 |
-| memory | 9.0 | LDA @13, MOV r,M @7, weighted |
+| alu | 5.5 | ADD/SUB r @4, ADD M @7, weighted (tuned) |
+| data_transfer | 5.5 | MOV r,r @5, MVI @7 (tuned) |
+| memory | 10.0 | LDA @13, MOV r,M @7, weighted (tuned) |
 | io | 10.0 | IN/OUT @10 states |
-| control | 8.0 | JMP @10, CALL @17, weighted |
-| bank_switch | 12.0 | Bank select with overhead |
+| control | 9.0 | JMP @10, CALL @17, weighted (tuned) |
+| bank_switch | 14.0 | Bank select with overhead (tuned) |
 
 ## Historical Context
 
@@ -52,8 +52,8 @@ The KR580VM1 represents a unique Soviet approach to extending Western processor 
 - **Validation:** `validation/kr580vm1_validation.json`
 - **Changelog:** `CHANGELOG.md`
 
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+## Timing Tuning (2026-01-30)
+- **Status**: PASSED
+- **CPI**: 8.0 (0.0% error vs target 8.0)
+- **Method**: Manual instruction timing adjustment
+- **Changes**: alu 5->5.5, data_transfer 5->5.5, memory 9->10, control 8->9, bank_switch 12->14

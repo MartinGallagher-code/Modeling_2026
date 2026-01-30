@@ -107,18 +107,18 @@ class KR580VM1Model(BaseProcessorModel):
         #   Cross-bank transfer adds overhead
 
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 5.0, 0,
-                "ALU ops - ADD/SUB r @4, ADD M @7, INC @5, weighted ~5"),
-            'data_transfer': InstructionCategory('data_transfer', 5.0, 0,
-                "MOV r,r @5, MVI @7, LXI @10 - weighted ~5"),
-            'memory': InstructionCategory('memory', 9.0, 0,
-                "LDA @13, STA @13, MOV r,M @7, LHLD @16, weighted ~9"),
+            'alu': InstructionCategory('alu', 5.5, 0,
+                "ALU ops - ADD/SUB r @4, ADD M @7, INC @5, weighted ~5.5"),
+            'data_transfer': InstructionCategory('data_transfer', 5.5, 0,
+                "MOV r,r @5, MVI @7, LXI @10 - weighted ~5.5"),
+            'memory': InstructionCategory('memory', 10.0, 0,
+                "LDA @13, STA @13, MOV r,M @7, LHLD @16, weighted ~10"),
             'io': InstructionCategory('io', 10.0, 0,
                 "IN/OUT @10 states"),
-            'control': InstructionCategory('control', 8.0, 0,
-                "JMP @10, CALL @17, RET @10, conditional ~8"),
-            'bank_switch': InstructionCategory('bank_switch', 12.0, 0,
-                "Bank select ~12, cross-bank operations with overhead"),
+            'control': InstructionCategory('control', 9.0, 0,
+                "JMP @10, CALL @17, RET @10, conditional ~9"),
+            'bank_switch': InstructionCategory('bank_switch', 14.0, 0,
+                "Bank select ~14, cross-bank operations with overhead"),
         }
 
         self.workload_profiles = {

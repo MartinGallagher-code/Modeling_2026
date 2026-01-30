@@ -42,3 +42,34 @@
 - Validation: PASSED
 
 ---
+
+## 2026-01-30 - Tune instruction timings to achieve <5% CPI error
+
+**Session goal:** Tune instruction timings to achieve <5% CPI error
+
+**Starting state:**
+- CPI: 5.15 (6.4% error vs target 5.5)
+- Key issues: Instruction timings slightly too low, CPI below target
+
+**Changes attempted:**
+
+1. Adjusted ALU timing
+   - Parameter: `alu` changed from 4.0 to 4.5 cycles
+   - Reasoning: Weighted average for ADD/SUB with immediate operands raises average
+   - Result: CPI increase toward target
+
+2. Adjusted data_transfer timing
+   - Parameter: `data_transfer` changed from 4.0 to 4.5 cycles
+   - Reasoning: LD operations with immediate and indexed modes average higher
+   - Result: Further CPI increase
+
+3. Adjusted memory timing
+   - Parameter: `memory` changed from 6.0 to 6.5 cycles
+   - Reasoning: Indirect and deferred addressing modes raise weighted average
+   - Result: CPI reached target
+
+**Final state:**
+- CPI: 5.5 (0.0% error vs target 5.5)
+- Validation: PASSED
+
+---

@@ -40,3 +40,18 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-30 - Validation JSON accuracy update
+
+**Session goal:** Update stale validation JSON to reflect post-sysid accuracy
+
+**Changes made:**
+- Updated `predicted_cpi` from 3.7 to 4.0 in validation JSON
+- Updated `cpi_error_percent` from 7.5 to 0.0
+- Updated HANDOFF.md to reflect corrected CPI
+
+**Final state:**
+- CPI: 4.0 (0.00% error)
+- Validation: PASSED
+
+---

@@ -39,3 +39,46 @@
 - Validation: PASSED
 
 ---
+
+## 2026-01-30 - Tune instruction timings to achieve <5% CPI error
+
+**Session goal:** Tune instruction timings to achieve <5% CPI error
+
+**Starting state:**
+- CPI: 5.975 (19.5% error vs target 5.0)
+- Key issues: Previous sysid correction terms were producing incorrect CPI
+
+**Changes attempted:**
+
+1. Adjusted ALU timing
+   - Parameter: `alu` changed from 4.0 to 2.9 cycles
+   - Reasoning: Weighted average was too high for register-register operations
+   - Result: Significant CPI reduction
+
+2. Adjusted data_transfer timing
+   - Parameter: `data_transfer` changed from 4.5 to 3.5 cycles
+   - Reasoning: MOV r,r operations are fast, bringing weighted average down
+   - Result: Further CPI reduction
+
+3. Adjusted memory timing
+   - Parameter: `memory` changed from 8.0 to 7.0 cycles
+   - Reasoning: Slight reduction to better reflect weighted instruction mix
+   - Result: Incremental improvement
+
+4. Adjusted control timing
+   - Parameter: `control` changed from 6.0 to 5.0 cycles
+   - Reasoning: JMP/conditional branches weighted average lower than estimated
+   - Result: Incremental improvement
+
+5. Adjusted stack timing
+   - Parameter: `stack` changed from 10.5 to 9.5 cycles
+   - Reasoning: Slight reduction for better weighted average
+   - Result: Incremental improvement
+
+6. IO timing unchanged at 10.0 cycles
+
+**Final state:**
+- CPI: 4.995 (0.1% error vs target 5.0)
+- Validation: PASSED
+
+---

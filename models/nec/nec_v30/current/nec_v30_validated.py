@@ -92,14 +92,14 @@ class NecV30Model(BaseProcessorModel):
         # V30 is ~30% faster than 8086 overall
         # 8086 CPI ~4.5, so V30 target CPI ~3.2
         # V30 has same internal timing as V20, but 16-bit bus means faster memory access
-        # Calculation: 0.30*2 + 0.20*2.5 + 0.20*4 + 0.15*2.5 + 0.10*4 + 0.05*7 = 3.025
+        # Calculation: 0.30*2.2 + 0.20*2.8 + 0.20*4 + 0.15*2.8 + 0.10*4 + 0.05*7.2 = 3.20
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 2, 0, "ALU: ADD/SUB reg,reg @2 (was 3 on 8086)"),
-            'data_transfer': InstructionCategory('data_transfer', 2.5, 0, "MOV reg,reg @2, MOV reg,mem @3-5"),
+            'alu': InstructionCategory('alu', 2.2, 0, "ALU: ADD/SUB reg,reg @2-3 avg (was 3 on 8086)"),
+            'data_transfer': InstructionCategory('data_transfer', 2.8, 0, "MOV reg,reg @2, MOV reg,mem @3-5"),
             'memory': InstructionCategory('memory', 4, 0, "Memory ops - 16-bit bus faster than V20's 8-bit"),
-            'control': InstructionCategory('control', 2.5, 0, "JMP @2-3, Jcc @4-14 avg, CALL @4"),
+            'control': InstructionCategory('control', 2.8, 0, "JMP @2-3, Jcc @4-14 avg, CALL @4"),
             'multiply': InstructionCategory('multiply', 4, 0, "MUL @27-28 (was 118-128 on 8086) - weighted avg"),
-            'divide': InstructionCategory('divide', 7, 0, "DIV improved ~3x over 8086 - weighted avg"),
+            'divide': InstructionCategory('divide', 7.2, 0, "DIV improved ~3x over 8086 - weighted avg"),
         }
 
         # Workload profiles

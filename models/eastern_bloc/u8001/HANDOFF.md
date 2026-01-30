@@ -2,7 +2,7 @@
 
 ## Current Status: VALIDATED
 
-**Last Updated:** 2026-01-29
+**Last Updated:** 2026-01-30
 
 ## Quick Summary
 
@@ -23,9 +23,9 @@ The VEB U8001 is a Zilog Z8001 clone manufactured by VEB Mikroelektronik Erfurt.
 
 | Category | Model Cycles | Description |
 |----------|-------------|-------------|
-| alu | 4.0 | ADD/SUB R,R @4, R,IM @7 |
-| data_transfer | 4.0 | LD R,R @3, LD R,IM @7 |
-| memory | 6.0 | LD R,@R @7, LD R,addr @9 |
+| alu | 4.5 | ADD/SUB R,R @4, R,IM @7 (tuned) |
+| data_transfer | 4.5 | LD R,R @3, LD R,IM @7 (tuned) |
+| memory | 6.5 | LD R,@R @7, LD R,addr @9 (tuned) |
 | io | 7.0 | IN/OUT @10-12 |
 | control | 6.0 | JP @7, CALL @12, RET @9 |
 | string | 8.0 | Block transfer/search |
@@ -52,8 +52,8 @@ The U8001 was a significant achievement for East German semiconductor industry, 
 - **Validation:** `validation/u8001_validation.json`
 - **Changelog:** `CHANGELOG.md`
 
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+## Timing Tuning (2026-01-30)
+- **Status**: PASSED
+- **CPI**: 5.5 (0.0% error vs target 5.5)
+- **Method**: Manual instruction timing adjustment
+- **Changes**: alu 4->4.5, data_transfer 4->4.5, memory 6->6.5
