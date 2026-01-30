@@ -652,3 +652,260 @@ Store as YAML or JSON in a new `timing/` directory per processor.
 **Last Updated:** 2026-01-29
 **Current Model Count:** 250 total validated models (across 19 families)
 **Pass Rate:** 100% (250/250 models validated with <5% CPI error)
+
+---
+
+# TASK: Add Architecture Documentation to All Models
+
+**Status:** Pending
+**Scope:** 157 models are missing or have empty `docs/` directories
+
+Each model should have architecture documentation in its `docs/` subdirectory covering:
+- Processor overview (manufacturer, year, architecture type, word size, clock speed)
+- Instruction set summary (categories, addressing modes, notable instructions)
+- Pipeline/execution model details
+- Memory architecture (bus width, cache, address space)
+- Key datasheet references and sources
+
+---
+
+## Models Needing Architecture Docs by Manufacturer
+
+### AMD (5 models)
+- [ ] am2910
+- [ ] am29116
+- [ ] am29c101
+- [ ] am9511
+- [ ] am9512
+
+### AMI (6 models)
+- [ ] ami_s2000
+- [ ] ami_s2150
+- [ ] ami_s2200
+- [ ] ami_s2400
+- [ ] ami_s2811
+- [ ] ami_s28211
+
+### Eastern Bloc (11 models)
+- [ ] cm630
+- [ ] im1821vm85a
+- [ ] k1810vm86
+- [ ] kr1858vm1
+- [ ] kr580vm1
+- [ ] kr581ik1
+- [ ] kr581ik2
+- [ ] tesla_mhb8080a
+- [ ] u8001
+- [ ] u808
+- [ ] u880
+
+### Fujitsu (6 models)
+- [ ] mb8841
+- [ ] mb8842
+- [ ] mb8843
+- [ ] mb8844
+- [ ] mb8845
+- [ ] mb8861
+
+### Hitachi (7 models)
+- [ ] fd1089
+- [ ] fd1094
+- [ ] hd6301
+- [ ] hd63484
+- [ ] hd64180
+- [ ] hitachi_6309
+- [ ] hmcs40
+
+### Intel (5 models)
+- [ ] i3002
+- [ ] i8039
+- [ ] i8096
+- [ ] i80c186
+- [ ] i8231
+
+### Mitsubishi (6 models)
+- [ ] m50740
+- [ ] m50747
+- [ ] melps4
+- [ ] melps41
+- [ ] melps42
+- [ ] melps740
+
+### MOS/WDC (2 models)
+- [ ] mos8501
+- [ ] mos8502
+
+### Motorola (5 models)
+- [ ] m6803
+- [ ] m6804
+- [ ] m6854
+- [ ] m68hc05
+- [ ] m68hc11a1
+
+### Namco (6 models)
+- [ ] namco_05xx
+- [ ] namco_50xx
+- [ ] namco_51xx
+- [ ] namco_52xx
+- [ ] namco_53xx
+- [ ] namco_54xx
+
+### National (8 models)
+- [ ] cop400
+- [ ] cop420
+- [ ] cop444
+- [ ] imp16
+- [ ] ns32081
+- [ ] ns32381
+- [ ] nsc800
+- [ ] pace
+
+### NEC (12 models)
+- [ ] nec_v20
+- [ ] nec_v30
+- [ ] nec_v60
+- [ ] nec_v70
+- [ ] ucom4
+- [ ] upd546
+- [ ] upd612x
+- [ ] upd7220
+- [ ] upd751
+- [ ] upd7720
+- [ ] upd780
+- [ ] upd7801
+- [ ] upd7810
+
+### Other (68 models)
+- [ ] antic
+- [ ] att_dsp1
+- [ ] att_dsp20
+- [ ] ay3_8500
+- [ ] ay3_8900
+- [ ] berkeley_risc1
+- [ ] berkeley_risc2
+- [ ] cp1600
+- [ ] dec_j11
+- [ ] dec_t11
+- [ ] dsp56000
+- [ ] f100l
+- [ ] fairchild9440
+- [ ] ferranti_ula
+- [ ] g65sc802
+- [ ] g65sc816
+- [ ] hc55516
+- [ ] hm6100
+- [ ] hp_nano
+- [ ] icl_dap
+- [ ] intel2920
+- [ ] intersil6100
+- [ ] iwarp
+- [ ] ks57
+- [ ] lc87
+- [ ] lc88
+- [ ] lh5801
+- [ ] mac4
+- [ ] mas281
+- [ ] mc10800
+- [ ] miproc
+- [ ] mm6701
+- [ ] mn1400
+- [ ] mn1610
+- [ ] mn1613
+- [ ] mn1800
+- [ ] mn10200
+- [ ] mn601
+- [ ] mn602
+- [ ] mos6507
+- [ ] mos6509
+- [ ] mostek_3870
+- [ ] msm5205
+- [ ] msm5840
+- [ ] msm80c85
+- [ ] pic1650
+- [ ] pokey
+- [ ] ricoh_2a03
+- [ ] rp16
+- [ ] s2636_pvi
+- [ ] signetics_8x300
+- [ ] sm4
+- [ ] sm5
+- [ ] sm83
+- [ ] sp0256
+- [ ] stanford_mips
+- [ ] staran
+- [ ] sy6502a
+- [ ] t212
+- [ ] t424
+- [ ] t800
+- [ ] thomson_90435
+- [ ] vic_6560
+- [ ] wd16
+- [ ] wd9000
+- [ ] weitek1064
+- [ ] wisc16
+- [ ] wisc32
+- [ ] williams_sc1
+
+### RCA (4 models)
+- [ ] cdp1804
+- [ ] cdp1806
+- [ ] cdp1861
+- [ ] rca1802
+
+### Rockwell (5 models)
+- [ ] pps4
+- [ ] pps4_1
+- [ ] r6500_1
+- [ ] r6511
+- [ ] r65c02
+
+### TI (10 models)
+- [ ] sbp0400
+- [ ] sbp0401
+- [ ] sn74181
+- [ ] sn74s481
+- [ ] tms1000
+- [ ] tms34010
+- [ ] tms5100
+- [ ] tms7000
+- [ ] tms9980
+- [ ] tms9985
+
+### Toshiba (5 models)
+- [ ] tlcs12
+- [ ] tlcs12a
+- [ ] tlcs47
+- [ ] tlcs870
+- [ ] tlcs90
+
+### Zilog (4 models)
+- [ ] super8
+- [ ] z280
+- [ ] z8000
+- [ ] z80000
+
+---
+
+## Architecture Docs Summary
+
+| Manufacturer | Missing Docs | Total Models |
+|-------------|-------------|-------------|
+| AMD | 5 | 9 |
+| AMI | 6 | 6 |
+| Eastern Bloc | 11 | 11 |
+| Fujitsu | 6 | 6 |
+| Hitachi | 7 | 7 |
+| Intel | 5 | 26 |
+| Mitsubishi | 6 | 6 |
+| MOS/WDC | 2 | 6 |
+| Motorola | 5 | 18 |
+| Namco | 6 | 6 |
+| National | 8 | 8 |
+| NEC | 12 | 13 |
+| Other | 68 | 73 |
+| RCA | 4 | 5 |
+| Rockwell | 5 | 5 |
+| TI | 10 | 12 |
+| Toshiba | 5 | 5 |
+| Zilog | 4 | 7 |
+| **TOTAL** | **169** | **229** |
