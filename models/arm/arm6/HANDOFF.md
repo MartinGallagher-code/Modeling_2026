@@ -60,3 +60,9 @@
 - Designed for licensing (ARM3 was Acorn-specific)
 - Optimized for low power mobile use
 - Variants: ARM60 (no cache), ARM610 (4KB), ARM6100 (8KB)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 2.46%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

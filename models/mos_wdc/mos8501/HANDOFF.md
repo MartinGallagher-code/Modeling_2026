@@ -26,3 +26,9 @@
 - Used exclusively in Commodore C16 and Plus/4 computers
 - PAL version runs at 1.76 MHz (vs NTSC 6502 at 1.0 MHz)
 - All memory accesses are single-cycle (no cache, no wait states for on-chip resources)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

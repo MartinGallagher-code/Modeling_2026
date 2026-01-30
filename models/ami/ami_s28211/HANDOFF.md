@@ -33,3 +33,9 @@
 - ~5000 transistors, relatively simple for a DSP
 - Higher CPI than standalone DSPs due to bus interface
 - Designed to add DSP capability to existing 6800 systems
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

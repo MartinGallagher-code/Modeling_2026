@@ -28,3 +28,9 @@
 - 2.5 MHz clock is slightly faster than TMS9980's 2.0 MHz
 - Same ISA as TMS9900 family: memory-to-memory, workspace pointer based
 - BLWP/RTWP context switch is faster than TMS9980 since workspace is on-chip
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

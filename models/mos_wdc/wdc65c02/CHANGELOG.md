@@ -110,3 +110,18 @@ The cross-validated 6502 has CPI ~3.0. The 65C02 should be *faster* than 6502 du
 - Apple IIc/IIe Enhanced documentation
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 20 evaluations
+- Corrections: alu: -0.68, control: +0.37, data_transfer: +0.21, memory: +0.14, stack: +0.22
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

@@ -26,3 +26,9 @@
 - Shares bus with Motorola 6809 CPU via bus arbitration
 - Used in Williams arcade games: Defender, Joust, Robotron 2084, etc.
 - ~4000 transistors, TTL technology
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.72%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

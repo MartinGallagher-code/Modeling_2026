@@ -34,3 +34,9 @@
 - Used in PDP-11/03 and military systems
 - Microcoded design: 3-12 cycles for simple operations
 - Much simpler than J-11 (18K vs 175K transistors, 2.5 vs 15 MHz)
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.01%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

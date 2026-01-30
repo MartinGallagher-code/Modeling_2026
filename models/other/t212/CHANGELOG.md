@@ -112,3 +112,18 @@ This file contains the complete history of all work on this model.
 - Direct model execution and manual calculation verification
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 13 evaluations
+- Corrections: alu: +0.02, control: -0.48, data_transfer: +2.62, memory: -1.70, stack: -1.36
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

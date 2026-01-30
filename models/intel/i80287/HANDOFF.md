@@ -49,3 +49,9 @@ The ~2x slowdown vs 80387 is consistent with NMOS vs CMOS technology and algorit
 - 80387 successor achieved ~2x speedup with CMOS and improved algorithms
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.09%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

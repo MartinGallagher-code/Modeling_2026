@@ -49,3 +49,9 @@ The ~50% improvement over 80287 is consistent with CMOS technology and improved 
 - 80486 successor integrated FPU on-die for further improvement
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

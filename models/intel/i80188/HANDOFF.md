@@ -39,3 +39,9 @@
 - Prefetch queue can be starved more easily than 80186
 - Popular in cost-sensitive embedded systems
 - Register operations identical to 80186 in timing
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.81%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

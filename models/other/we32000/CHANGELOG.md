@@ -74,3 +74,18 @@ This file contains the complete history of all work on this model.
 - UNIX System V documentation
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 10 evaluations
+- Corrections: branch: +3.44, call_return: -5.00, immediate: -5.00, memory_read: +1.93, memory_write: -4.98, register_ops: +3.17
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

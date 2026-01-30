@@ -42,3 +42,9 @@ Key instruction categories:
 - Used in Fairchild Channel F - first cartridge-based game console
 - 64-byte scratchpad RAM was innovative for the era
 - External memory access slower than internal scratchpad
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 1.69%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

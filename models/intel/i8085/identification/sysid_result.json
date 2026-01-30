@@ -1,0 +1,36 @@
+{
+  "processor": "i8085",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 3,
+  "loss_before": 0.000367,
+  "loss_after": 0.000367,
+  "cpi_error_percent": 0.34,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -1.567857,
+    "cor.control": -1.559078,
+    "cor.data_transfer": 2.304152,
+    "cor.memory": -0.603326
+  },
+  "residuals_before": {
+    "typical": -0.0184,
+    "compute": -0.0043,
+    "memory": -0.0127,
+    "control": -0.0017,
+    "mixed": 0.0362
+  },
+  "residuals_after": {
+    "typical": -0.0184,
+    "compute": -0.0043,
+    "memory": -0.0127,
+    "control": -0.0017,
+    "mixed": 0.0362
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.memory"
+  ]
+}

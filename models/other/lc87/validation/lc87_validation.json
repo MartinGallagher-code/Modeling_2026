@@ -41,7 +41,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Simple 8-bit MCU with straightforward timing model"
+    "notes": "Simple 8-bit MCU with straightforward timing model",
+    "sysid_loss_before": 0.0008,
+    "sysid_loss_after": 0.0008,
+    "sysid_cpi_error_percent": 0.8,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

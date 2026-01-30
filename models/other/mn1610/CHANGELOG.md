@@ -40,3 +40,18 @@ This file contains the complete history of all work on this model.
 - Computer History Museum records
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer did not converge in 200 evaluations
+- Corrections: branch: -1.55, call_return: -7.00, immediate: -3.25, memory_read: +0.41, memory_write: -5.00, register_ops: +5.00
+
+**Final state:**
+- CPI error: 1.69%
+- Validation: PASSED
+
+---

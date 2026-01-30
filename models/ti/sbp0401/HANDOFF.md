@@ -30,3 +30,9 @@
 - Same fundamental ALU architecture and cycle counts
 - Improved microcode sequencing for more complex control flows
 - Part of TI's I2L bit-slice family (SBP0400/SBP0401)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

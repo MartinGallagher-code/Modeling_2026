@@ -69,3 +69,18 @@ This file contains the complete history of all work on this model.
 - Model source: mn10200_validated.py
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 16 evaluations
+- Corrections: alu: +1.67, control: -1.33, data_transfer: +1.67, memory: -1.27, stack: -0.65
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

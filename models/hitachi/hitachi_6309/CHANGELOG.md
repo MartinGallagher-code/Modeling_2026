@@ -65,3 +65,18 @@ This file contains the complete history of all work on this model.
 - Speedup over 6809: ~18% (native), ~10% (emulation)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 11 free correction parameters
+- Optimizer converged in 33 evaluations
+- Corrections: alu: -1.51, alu_16bit: -2.16, bit_manipulation: -4.84, block_transfer: -4.29, control: -0.57, data_transfer: +3.57, divide: -0.29, memory: -0.55, multiply_16x16: -12.86, multiply_8x8: -4.26, stack: +5.00
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

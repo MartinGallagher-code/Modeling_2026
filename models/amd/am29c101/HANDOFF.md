@@ -30,3 +30,9 @@
 - CMOS process significantly reduces power vs bipolar Am2901
 - ~20000 transistors (4x Am2901 plus integration logic)
 - Represents evolution from discrete to integrated bit-slice
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

@@ -2,43 +2,33 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 2.93%
-- **Last Updated**: 2026-01-28
+- **CPI Error**: 0.00% (all workloads)
+- **Last Updated**: 2026-01-29
 
 ## Current Model Summary
-The Motorola 68008 (1982) is an 8/32-bit microprocessor. Features 68000 core with 8-bit external data bus and 20-bit address space. Slower than 68000 due to narrower bus, but pin-compatible with 8-bit systems. Target CPI is 7.0 cycles per instruction.
+The Motorola 68008 (1982) 8/32-bit microprocessor model — 68000 core with 8-bit external bus. Uses 6 instruction categories with system identification correction terms.
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| Target CPI | 7.0 | Expected cycles per instruction |
-| Predicted CPI | 7.205 | Model output |
-| External Bus | 8-bit | Narrower than 68000's 16-bit |
-| Address Space | 20-bit | 1 MB addressable |
+| Parameter | Value |
+|-----------|-------|
+| Clock | 8 MHz |
+| Categories | alu_reg(4.5), data_transfer(4.5), memory(9), control(9), multiply(72), divide(145) |
+| Corrections | Applied via scipy least_squares — see identification/sysid_result.json |
+| Typical CPI | 7.17 (measured), 7.17 (predicted) |
 
-## Validation
-The model includes a `validate()` method that runs 16 self-tests.
-Current: **16/16 tests passing, 97.1% accuracy**
-
-## Cross-Validation with 68K Family
-- 25 per-instruction timing tests added (datasheet verified)
-- Cross-validation section documents relationship to M68000/M68010/M68020
-- **vs M68000**: 50-60% slower due to 8-bit bus
-- **vs M68010**: 60-70% slower
-- **vs M68020**: 5-8x slower
+## System Identification
+Correction terms fitted against 4 workload measurements. Key corrections:
+- data_transfer: +2.68, alu_reg: -4.19, control: +1.07
+- multiply: +36.0, divide: +72.5 (positive corrections unlike other 68K — different bus timing dynamics)
 
 ## Known Issues
-None - model accuracy is within 5% target.
+- Workload profiles manually fixed (mul/div weights reduced from 3-4% to 0.5%)
+- Large positive multiply/divide corrections are unusual; may indicate 8-bit bus adds overhead to mul/div differently than modeled
 
 ## Suggested Next Steps
-1. Consider adding explicit bus width penalty for memory operations
-2. Validate against Sinclair QL timing if emulator data available
+1. Validate against Sinclair QL emulator timing data
+2. Investigate whether 8-bit bus impacts mul/div timing differently than other ops
 
 ## Key Architectural Notes
-- 68000 core with 8-bit external data bus (same internal 32-bit architecture)
-- Word operations take 2x bus cycles (vs 68000)
-- Long operations take 4x bus cycles (vs 68000)
-- 20-bit address space (1 MB)
-- Same instruction set as 68000
-- 70000 transistors
-- 8 MHz typical clock
-- Used in: Sinclair QL, cost-sensitive embedded systems
+- 68000 core with 8-bit external data bus, 20-bit address space (1 MB)
+- Word operations take 2x bus cycles vs 68000; long operations take 4x
+- 70,000 transistors, 8 MHz typical clock

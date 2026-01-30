@@ -58,3 +58,18 @@ This file contains the history of all work on this model.
 - Tighten cycles and weights using Motorola handbook + app notes
 - Add real instruction-level examples (e.g., RRL, I/O sense sequences)
 - Expand validation targets with documented performance envelopes
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 4 free correction parameters
+- Optimizer converged in 1 evaluations
+- Corrections: all near zero (model already matched measurements)
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

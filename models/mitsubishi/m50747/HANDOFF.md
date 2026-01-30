@@ -38,3 +38,9 @@ Key instruction categories:
 - Same core as M50740 with expanded I/O ports
 - 64-pin QFP package for additional port pins
 - Used in consumer electronics requiring many I/O connections
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

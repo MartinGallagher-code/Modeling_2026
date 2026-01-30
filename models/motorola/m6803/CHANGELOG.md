@@ -36,3 +36,18 @@ This file contains the complete history of all work on this model.
 - M6800 family programming reference
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 13 evaluations
+- Corrections: alu: -0.65, control: +0.21, data_transfer: +2.47, memory: -1.74, stack: -0.28
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

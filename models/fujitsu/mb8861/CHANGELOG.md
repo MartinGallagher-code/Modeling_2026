@@ -26,3 +26,18 @@
 ### References
 - Motorola M6800 Datasheet (timing reference)
 - Fujitsu MB8861 Datasheet
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 16 evaluations
+- Corrections: alu: -1.51, call_return: +4.88, control: +0.62, data_transfer: +0.86, memory: +0.08, stack: -3.91
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

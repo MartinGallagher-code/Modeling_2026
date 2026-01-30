@@ -9,7 +9,10 @@
     "function": "Starfield visual effect generator"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 5],
+    "cycles_per_instruction_range": [
+      3,
+      5
+    ],
     "typical_cpi": 4.0
   },
   "validated_performance": {
@@ -37,10 +40,15 @@
     "cpi_error_percent": 7.5,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "star_calc": 0.30,
+    "star_calc": 0.3,
     "pixel_out": 0.25,
     "scroll": 0.15,
     "control": 0.15,

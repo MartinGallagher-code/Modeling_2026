@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - Early Japanese 4-bit MCU, used in Panasonic consumer products
 - Features: Early Japanese 4-bit MCU, PMOS technology, Consumer electronics use
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

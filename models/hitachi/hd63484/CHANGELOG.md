@@ -57,3 +57,18 @@ This file contains the complete history of all work on this model.
 - HD63484 Application Notes
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 7 free correction parameters
+- Optimizer converged in 20 evaluations
+- Corrections: area_fill: +1.89, bitblt: +0.18, char_display: +0.73, control: -2.90, dma: -3.83, draw_circle: +1.06, draw_line: -0.37
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

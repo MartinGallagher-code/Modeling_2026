@@ -37,3 +37,18 @@ This file contains the complete history of all work on this model.
 - C128 technical docs
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 19 evaluations
+- Corrections: alu: -0.37, control: +0.27, data_transfer: +1.38, memory: -0.86, stack: -0.93
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

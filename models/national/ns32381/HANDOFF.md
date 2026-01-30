@@ -28,3 +28,9 @@
 - All instruction categories include 1.5 memory_cycles for slave bus communication overhead
 - Pipeline benefit reduces effective CPI by 7% from base weighted average
 - FP divide (25 cycles) and sqrt (35 cycles) dominate compute-heavy workloads
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

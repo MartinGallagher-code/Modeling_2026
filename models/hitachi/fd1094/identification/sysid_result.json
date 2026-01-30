@@ -1,0 +1,38 @@
+{
+  "processor": "fd1094",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 4,
+  "loss_before": 0.003671,
+  "loss_after": 0.003671,
+  "cpi_error_percent": 1.6,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.address": -5.0,
+    "cor.alu": -2.935516,
+    "cor.control": -0.963074,
+    "cor.data_transfer": 5.0,
+    "cor.decrypt": 5.0,
+    "cor.memory": 1.346358
+  },
+  "residuals_before": {
+    "typical": -0.1091,
+    "compute": 0.0314,
+    "memory_heavy": 0.0346,
+    "control_heavy": 0.0245
+  },
+  "residuals_after": {
+    "typical": -0.1091,
+    "compute": 0.0314,
+    "memory_heavy": 0.0346,
+    "control_heavy": 0.0246
+  },
+  "free_parameters": [
+    "cor.address",
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.decrypt",
+    "cor.memory"
+  ]
+}

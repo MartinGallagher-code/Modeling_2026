@@ -42,3 +42,9 @@ Key instruction categories:
 - On-chip peripherals: timer, serial I/O, A/D converter
 - Faster than original NMOS 6502 due to CMOS process
 - Widely used in consumer electronics and appliance control
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

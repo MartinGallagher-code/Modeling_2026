@@ -47,7 +47,12 @@
     "validation_passed": true,
     "fully_validated": false,
     "validation_date": "2026-01-29",
-    "notes": "Cross-validated against 8086 with documented speedup factors and V20 sibling model"
+    "notes": "Cross-validated against 8086 with documented speedup factors and V20 sibling model",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

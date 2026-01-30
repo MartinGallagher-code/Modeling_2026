@@ -40,3 +40,9 @@
 - No on-chip cache - required external cache for good performance
 - Required external 80387 coprocessor for floating-point
 - Full 32-bit address space (4GB)
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.32%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

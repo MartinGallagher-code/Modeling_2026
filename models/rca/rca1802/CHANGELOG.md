@@ -67,3 +67,18 @@ This file contains the complete history of all work on this model.
 - Per-instruction tests: 13/14 passed
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 8 evaluations
+- Corrections: branch: -1.98, call_return: -8.33, immediate: -0.51, memory_read: -4.04, memory_write: +1.33, register_ops: +4.34
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

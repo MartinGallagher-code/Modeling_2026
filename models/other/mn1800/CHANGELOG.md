@@ -35,3 +35,18 @@ This file contains the complete history of all work on this model.
 - Matsushita MN1800 datasheet (1980)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 22 evaluations
+- Corrections: alu: +1.16, control: -2.34, data_transfer: +1.16, memory: +1.97, stack: -4.98
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

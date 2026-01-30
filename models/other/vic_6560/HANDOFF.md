@@ -26,3 +26,9 @@
 - 4 movable objects (simple sprites)
 - 3 tone channels + 1 noise channel for sound
 - ~5000 transistors, shares memory bus with 6502 CPU
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

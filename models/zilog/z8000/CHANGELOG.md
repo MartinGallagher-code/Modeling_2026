@@ -84,3 +84,18 @@ This file contains the complete history of all work on this model.
 - Z8002 has non-segmented 16-bit address space
 - Used in Olivetti M20, some Unix workstations
 - Not popular due to competition from 68000 and market timing
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 17 evaluations
+- Corrections: alu: +0.53, block: +0.65, control: +0.18, data_transfer: -1.30, memory: +0.30, stack: +1.04
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

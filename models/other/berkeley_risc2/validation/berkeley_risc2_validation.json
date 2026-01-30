@@ -46,7 +46,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model validated against RISC II design papers and comparison to RISC I. 13/13 tests passed."
+    "notes": "Model validated against RISC II design papers and comparison to RISC I. 13/13 tests passed.",
+    "sysid_loss_before": 0.007525,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

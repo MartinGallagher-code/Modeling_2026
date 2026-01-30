@@ -111,3 +111,18 @@ This file contains the complete history of all work on this model.
 - control: CPI=5.197, IPC=0.1924, IPS=769,601
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 16 evaluations
+- Corrections: alu: +1.72, control: -1.78, data_transfer: +1.72, memory: -5.00, stack: +2.31
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

@@ -35,13 +35,18 @@
       "io_heavy",
       "control"
     ],
-    "predicted_cpi": 3.10,
+    "predicted_cpi": 3.1,
     "cpi_error_percent": 3.12,
     "ipc_error_percent": 3.12,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model calibrated for embedded MCU control applications"
+    "notes": "Model calibrated for embedded MCU control applications",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

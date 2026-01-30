@@ -9,7 +9,10 @@
     "function": "Input multiplexer"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 5],
+    "cycles_per_instruction_range": [
+      3,
+      5
+    ],
     "typical_cpi": 4.0
   },
   "validated_performance": {
@@ -37,13 +40,18 @@
     "cpi_error_percent": 3.75,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
     "mux_select": 0.25,
     "data_transfer": 0.25,
     "io": 0.25,
     "control": 0.15,
-    "timing": 0.10
+    "timing": 0.1
   }
 }

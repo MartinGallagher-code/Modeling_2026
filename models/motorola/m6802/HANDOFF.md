@@ -50,3 +50,9 @@ None - model is well-calibrated.
 - Sequential execution (no pipeline)
 - 8-bit data bus, 16-bit address bus
 - 5000 transistors, 1 MHz typical clock
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

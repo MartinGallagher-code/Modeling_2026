@@ -26,3 +26,9 @@
 - Single-channel tone generation
 - Used in Arcadia 2001 and VC4000 consoles
 - ~4000 transistors
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

@@ -10,7 +10,10 @@
     "qualification": "MIL-STD"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 6],
+    "cycles_per_instruction_range": [
+      3,
+      6
+    ],
     "typical_cpi": 4.0
   },
   "validated_performance": {
@@ -27,20 +30,56 @@
   "accuracy": {
     "expected_cpi": 4.0,
     "expected_ipc": 0.25,
-    "validated_workloads": ["typical", "compute", "control", "memory_heavy", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "control",
+      "memory_heavy",
+      "mixed"
+    ],
     "predicted_cpi": 3.95,
     "cpi_error_percent": 1.25,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Multi-chip military system with higher overhead"
+    "notes": "Multi-chip military system with higher overhead",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_timing_tests": [
-    {"instruction": "ADD", "category": "alu", "expected_cycles": 3, "source": "RP-16 documentation"},
-    {"instruction": "SHL", "category": "shift", "expected_cycles": 3, "source": "RP-16 documentation"},
-    {"instruction": "AND", "category": "logic", "expected_cycles": 3, "source": "RP-16 documentation"},
-    {"instruction": "JMP", "category": "control", "expected_cycles": 5, "source": "RP-16 documentation"},
-    {"instruction": "LD", "category": "memory", "expected_cycles": 6, "source": "RP-16 documentation"}
+    {
+      "instruction": "ADD",
+      "category": "alu",
+      "expected_cycles": 3,
+      "source": "RP-16 documentation"
+    },
+    {
+      "instruction": "SHL",
+      "category": "shift",
+      "expected_cycles": 3,
+      "source": "RP-16 documentation"
+    },
+    {
+      "instruction": "AND",
+      "category": "logic",
+      "expected_cycles": 3,
+      "source": "RP-16 documentation"
+    },
+    {
+      "instruction": "JMP",
+      "category": "control",
+      "expected_cycles": 5,
+      "source": "RP-16 documentation"
+    },
+    {
+      "instruction": "LD",
+      "category": "memory",
+      "expected_cycles": 6,
+      "source": "RP-16 documentation"
+    }
   ],
   "cross_validation": {
     "era_comparison": {
@@ -58,7 +97,10 @@
       ]
     },
     "validation_methodology": {
-      "sources": ["Raytheon RP-16 documentation", "Military processor references"],
+      "sources": [
+        "Raytheon RP-16 documentation",
+        "Military processor references"
+      ],
       "confidence_level": "Medium",
       "cross_validated_date": "2026-01-29"
     }

@@ -56,3 +56,9 @@ None - model is well-calibrated.
 - 1 MHz typical clock
 - 2-21 cycles per instruction
 - Used in TRS-80 Color Computer, Dragon 32, arcade games
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

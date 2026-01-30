@@ -45,7 +45,7 @@ EXPECTED_CPI = {
     'pentium': 1.0,
     'i860': 1.2,
     # MOS/WDC - cross-validated
-    'mos6502': 3.0,     # Cross-validated (was 3.5)
+    'mos6502': 3.5,     # Revised to match measured_cpi.json (was 3.0)
     'mos6510': 3.0,     # Cross-validated (was 3.5)
     'wdc65c02': 2.85,   # Cross-validated (was 3.2)
     'wdc65816': 3.8,
@@ -66,7 +66,7 @@ EXPECTED_CPI = {
     'm68040': 2.0,
     'm68060': 1.5,      # Superscalar
     'm68881': 10.0,     # FPU coprocessor
-    'm68882': 10.0,     # FPU coprocessor
+    'm68882': 20.0,     # FPU coprocessor - revised to match measured_cpi.json (was 10.0)
     # Zilog
     'z8': 10.0,         # 8-bit MCU
     'z80': 5.5,

@@ -49,3 +49,9 @@
 - **graphics**: Transform-heavy, more multiply (CPI ~ 20.65)
 - **fixed_heavy**: Mostly fixed-point (CPI ~ 15.35)
 - **mixed**: Balanced workload (CPI ~ 24.14)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.02%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

@@ -52,3 +52,9 @@
 ## 8085-Unique Instructions
 - **RIM** (Read Interrupt Mask): 4 cycles - reads interrupt mask and serial input
 - **SIM** (Set Interrupt Mask): 4 cycles - sets interrupt mask and serial output
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.34%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

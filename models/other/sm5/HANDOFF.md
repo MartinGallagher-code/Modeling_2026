@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - Enhanced SM4, massively produced for LCD games
 - Features: Enhanced SM4, Larger ROM/RAM, LCD driver, Massive production for LCD games
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

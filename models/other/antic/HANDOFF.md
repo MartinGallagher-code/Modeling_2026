@@ -33,3 +33,9 @@
 - NOT a general-purpose CPU - Atari 400/800 display list coprocessor
 - Processes display list instructions to generate video output
 - Display list includes character modes, map/bitmap modes, jumps, scrolling
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.66%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

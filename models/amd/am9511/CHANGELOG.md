@@ -89,3 +89,18 @@ This file contains the complete history of all work on this model.
 - AMD Application Notes
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 2 evaluations
+- Corrections: fixed_point: +5.00, fp_add: +8.00, fp_div: -16.00, fp_mul: +12.00, fp_sqrt: -10.56
+
+**Final state:**
+- CPI error: 0.02%
+- Validation: PASSED
+
+---

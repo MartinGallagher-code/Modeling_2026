@@ -51,3 +51,9 @@
 - New MLA (multiply-accumulate) instruction
 - SWP for atomic operations (semaphores)
 - Coprocessor interface for FPA10
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 2.12%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

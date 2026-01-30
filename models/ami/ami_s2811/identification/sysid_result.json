@@ -1,0 +1,36 @@
+{
+  "processor": "ami_s2811",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 2,
+  "loss_before": 0.022701,
+  "loss_after": 0.022701,
+  "cpi_error_percent": 3.83,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 4.111916,
+    "cor.control": -1.296823,
+    "cor.memory": 0.309178,
+    "cor.multiply": -3.507364
+  },
+  "residuals_before": {
+    "typical": -0.3063,
+    "compute": 0.072,
+    "memory": 0.0655,
+    "control": 0.064,
+    "mixed": 0.0782
+  },
+  "residuals_after": {
+    "typical": -0.3063,
+    "compute": 0.072,
+    "memory": 0.0655,
+    "control": 0.064,
+    "mixed": 0.0782
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.memory",
+    "cor.multiply"
+  ]
+}

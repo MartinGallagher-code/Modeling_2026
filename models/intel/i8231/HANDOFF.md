@@ -32,3 +32,9 @@
 - Designed to pair with 8080/8085 CPUs for floating-point acceleration
 - All 32-bit data must traverse an 8-bit bus, adding significant transfer overhead
 - Predecessor to the more capable Intel 8087 FPU
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

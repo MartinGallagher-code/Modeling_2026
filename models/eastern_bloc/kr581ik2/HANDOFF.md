@@ -39,3 +39,9 @@ The KR581IK2 is the data path component of a Soviet WD MCP-1600 clone. Used with
 - **Model:** `current/kr581ik2_validated.py`
 - **Validation:** `validation/kr581ik2_validation.json`
 - **Changelog:** `CHANGELOG.md`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

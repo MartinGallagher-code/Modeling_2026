@@ -49,3 +49,9 @@ None - model matches expected CPI within tolerance.
 - Used in Sanyo audio/video equipment, consumer electronics
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.75%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

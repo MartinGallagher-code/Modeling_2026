@@ -42,3 +42,9 @@ Key instruction categories:
 - DMA to display memory, video timing generation
 - Used in NEC PC-9801 and IBM Professional Graphics Controller
 - 20-bit address bus for up to 1MB display memory
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

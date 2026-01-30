@@ -9,7 +9,10 @@
     "architecture": "Stack machine with writable microcode"
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 3],
+    "cycles_per_instruction_range": [
+      2,
+      3
+    ],
     "typical_cpi": 2.5
   },
   "validated_performance": {
@@ -33,17 +36,22 @@
   "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 2.5,
-    "predicted_cpi": 2.40,
+    "predicted_cpi": 2.4,
     "cpi_error_percent": 4.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.005125,
+    "sysid_loss_after": 0.005125,
+    "sysid_cpi_error_percent": 4.12,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "stack_ops": 0.30,
+    "stack_ops": 0.3,
     "alu": 0.25,
-    "memory": 0.20,
+    "memory": 0.2,
     "control": 0.15,
-    "microcode": 0.10
+    "microcode": 0.1
   }
 }

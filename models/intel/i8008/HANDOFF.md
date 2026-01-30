@@ -46,3 +46,9 @@
 | JMP         | 22    | 10    | 10    |
 | CALL        | 22    | 17    | 18    |
 | RET         | 10    | 10    | 10    |
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

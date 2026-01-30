@@ -1,0 +1,40 @@
+{
+  "processor": "dsp56000",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 46,
+  "loss_before": 0.148125,
+  "loss_after": 0.148125,
+  "cpi_error_percent": 0.0,
+  "message": "Rolled back: optimization worsened typical-workload error",
+  "corrections": {
+    "cor.mac": 0.0,
+    "cor.alu": 0.0,
+    "cor.data_move": 0.0,
+    "cor.control": 0.0,
+    "cor.io": 0.0,
+    "cor.loop": 0.0
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.8,
+    "control": -0.1,
+    "io_heavy": -0.3,
+    "mixed": -0.025
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.8,
+    "control": -0.1,
+    "io_heavy": -0.3,
+    "mixed": -0.025
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_move",
+    "cor.io",
+    "cor.loop",
+    "cor.mac"
+  ]
+}

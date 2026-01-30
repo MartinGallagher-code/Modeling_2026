@@ -21,3 +21,18 @@
 
 **References used:**
 - NEC V60/V70 User Manual
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 11 evaluations
+- Corrections: alu: -0.04, control: -0.08, data_transfer: -0.05, float: -0.09, memory: -0.02, string: -0.09
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

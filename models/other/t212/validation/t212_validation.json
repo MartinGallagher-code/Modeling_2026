@@ -18,7 +18,7 @@
   "workload_results": {
     "typical": {
       "cpi": 2.499,
-      "ipc": 0.400,
+      "ipc": 0.4,
       "error_pct": 0.04,
       "status": "PASS"
     },
@@ -47,7 +47,12 @@
     "cpi_error_percent": 0.04,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "sources": [
     "Inmos T212 datasheet"

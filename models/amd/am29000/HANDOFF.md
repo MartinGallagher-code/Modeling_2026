@@ -30,3 +30,9 @@
 - 4-stage pipeline designed for embedded and graphics applications
 - Register stack similar to SPARC windows for fast procedure calls
 - Competed with Intel i960 in embedded market
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

@@ -88,3 +88,18 @@
 - Zilog Z80 Datasheet (z80.pdf)
 - MAME Z80 emulator source (z80.cpp)
 - Z80 Heaven instruction set reference
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 14 evaluations
+- Corrections: alu: -1.29, block: -0.17, control: +0.30, data_transfer: -2.78, memory: +4.86, stack: -0.75
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

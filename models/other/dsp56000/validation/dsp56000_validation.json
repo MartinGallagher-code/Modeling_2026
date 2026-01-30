@@ -10,7 +10,10 @@
     "multiplier": "24x24 single-cycle hardware MAC"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 3],
+    "cycles_per_instruction_range": [
+      1,
+      3
+    ],
     "typical_cpi": 2.0
   },
   "validated_performance": {
@@ -27,23 +30,77 @@
   "accuracy": {
     "expected_cpi": 2.0,
     "expected_ipc": 0.5,
-    "validated_workloads": ["typical", "audio_filter", "control_heavy", "io_heavy", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "audio_filter",
+      "control_heavy",
+      "io_heavy",
+      "mixed"
+    ],
     "predicted_cpi": 2.0,
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Pipelined DSP with single-cycle MAC, Harvard architecture"
+    "notes": "Pipelined DSP with single-cycle MAC, Harvard architecture",
+    "sysid_loss_before": 0.148125,
+    "sysid_loss_after": 0.148125,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-29"
   },
   "instruction_timing_tests": [
-    {"instruction": "MAC", "category": "mac", "expected_cycles": 1, "source": "DSP56000 User's Manual", "notes": "Single-cycle multiply-accumulate"},
-    {"instruction": "MPY", "category": "mac", "expected_cycles": 1, "source": "DSP56000 User's Manual", "notes": "Single-cycle multiply"},
-    {"instruction": "ADD", "category": "alu", "expected_cycles": 1, "source": "DSP56000 User's Manual"},
-    {"instruction": "MOVE", "category": "data_move", "expected_cycles": 1, "source": "DSP56000 User's Manual"},
-    {"instruction": "JMP", "category": "control", "expected_cycles": 2, "source": "DSP56000 User's Manual"},
-    {"instruction": "JSR", "category": "control", "expected_cycles": 2, "source": "DSP56000 User's Manual"},
-    {"instruction": "MOVEP", "category": "io", "expected_cycles": 3, "source": "DSP56000 User's Manual"},
-    {"instruction": "DO", "category": "loop", "expected_cycles": 1.5, "source": "DSP56000 User's Manual", "notes": "Hardware loop setup"}
+    {
+      "instruction": "MAC",
+      "category": "mac",
+      "expected_cycles": 1,
+      "source": "DSP56000 User's Manual",
+      "notes": "Single-cycle multiply-accumulate"
+    },
+    {
+      "instruction": "MPY",
+      "category": "mac",
+      "expected_cycles": 1,
+      "source": "DSP56000 User's Manual",
+      "notes": "Single-cycle multiply"
+    },
+    {
+      "instruction": "ADD",
+      "category": "alu",
+      "expected_cycles": 1,
+      "source": "DSP56000 User's Manual"
+    },
+    {
+      "instruction": "MOVE",
+      "category": "data_move",
+      "expected_cycles": 1,
+      "source": "DSP56000 User's Manual"
+    },
+    {
+      "instruction": "JMP",
+      "category": "control",
+      "expected_cycles": 2,
+      "source": "DSP56000 User's Manual"
+    },
+    {
+      "instruction": "JSR",
+      "category": "control",
+      "expected_cycles": 2,
+      "source": "DSP56000 User's Manual"
+    },
+    {
+      "instruction": "MOVEP",
+      "category": "io",
+      "expected_cycles": 3,
+      "source": "DSP56000 User's Manual"
+    },
+    {
+      "instruction": "DO",
+      "category": "loop",
+      "expected_cycles": 1.5,
+      "source": "DSP56000 User's Manual",
+      "notes": "Hardware loop setup"
+    }
   ],
   "cross_validation": {
     "era_comparison": {
@@ -67,7 +124,10 @@
       ]
     },
     "validation_methodology": {
-      "sources": ["Motorola DSP56000 User's Manual", "DSP56000 datasheet"],
+      "sources": [
+        "Motorola DSP56000 User's Manual",
+        "DSP56000 datasheet"
+      ],
       "confidence_level": "High",
       "cross_validated_date": "2026-01-29"
     }

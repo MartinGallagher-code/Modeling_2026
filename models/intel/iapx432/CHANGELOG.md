@@ -70,3 +70,18 @@ This file contains the complete history of all work on this model.
 - Validation: PASSED
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 2 evaluations
+- Corrections: alu: -6.58, control: -19.42, data_transfer: +11.67, memory: +3.52, object_ops: +11.96
+
+**Final state:**
+- CPI error: 1.81%
+- Validation: PASSED
+
+---

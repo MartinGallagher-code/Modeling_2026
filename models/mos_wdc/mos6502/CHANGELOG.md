@@ -166,3 +166,18 @@ The model was using a generic "Sequential Execution" template with arbitrary cyc
 - Validation JSON timing_tests section
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 21 evaluations
+- Corrections: alu: -3.20, control: +3.53, data_transfer: +3.00, memory: +1.29, stack: -3.08
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

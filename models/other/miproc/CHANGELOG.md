@@ -39,3 +39,18 @@ This file contains the complete history of all work on this model.
 - NATO INFOSEC Equipment Specifications
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 8 evaluations
+- Corrections: alu: +2.13, control: +1.02, data_transfer: +0.94, io: -3.33, memory: -0.04, stack: -2.37
+
+**Final state:**
+- CPI error: 1.50%
+- Validation: PASSED
+
+---

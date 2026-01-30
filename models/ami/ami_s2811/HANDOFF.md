@@ -34,3 +34,9 @@
 - Higher CPI (8.0) compared to later Harvard-architecture DSPs
 - Predates the DSP revolution that TI started with TMS320 series
 - Representative of the transition period before dedicated DSP architectures
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 3.83%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

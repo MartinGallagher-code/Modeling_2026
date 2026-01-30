@@ -34,3 +34,9 @@
 - 8 hardware sprites with collision detection
 - Background tiles from GRAM/GROM
 - Bus handoff with CP1610 CPU during VBLANK
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.16%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

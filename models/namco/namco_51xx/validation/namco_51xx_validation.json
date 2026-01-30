@@ -9,7 +9,10 @@
     "function": "I/O controller for coin/joystick handling"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 8],
+    "cycles_per_instruction_range": [
+      3,
+      8
+    ],
     "typical_cpi": 5.0
   },
   "validated_performance": {
@@ -44,13 +47,18 @@
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.20,
-    "data_transfer": 0.20,
-    "io": 0.30,
-    "control": 0.20,
-    "debounce": 0.10
+    "alu": 0.2,
+    "data_transfer": 0.2,
+    "io": 0.3,
+    "control": 0.2,
+    "debounce": 0.1
   }
 }

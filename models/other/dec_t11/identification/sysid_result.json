@@ -1,0 +1,36 @@
+{
+  "processor": "dec_t11",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.321167,
+  "loss_after": 0.008317,
+  "cpi_error_percent": 0.01,
+  "message": "The maximum number of function evaluations is exceeded.",
+  "corrections": {
+    "cor.alu": -5.0,
+    "cor.data_transfer": 5.0,
+    "cor.memory": 0.482106,
+    "cor.control": 2.954117,
+    "cor.stack": -4.648147
+  },
+  "residuals_before": {
+    "typical": 0.008,
+    "compute": 0.6955,
+    "memory": -0.8045,
+    "control": -0.392
+  },
+  "residuals_after": {
+    "typical": 0.0004,
+    "compute": 0.0932,
+    "memory": -0.1568,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.stack"
+  ]
+}

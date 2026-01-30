@@ -37,3 +37,9 @@ Key instruction categories:
 - On-chip I/O ports and programmable timer
 - Identical instruction timing to MOS 6502
 - Used in consumer electronics, industrial control, point-of-sale
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

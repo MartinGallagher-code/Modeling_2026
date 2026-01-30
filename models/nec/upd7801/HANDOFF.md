@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - NEC proprietary 8-bit MCU with large Japanese market share
 - Features: NEC proprietary ISA, ~100 instructions, Large Japanese market, Printers/terminals
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

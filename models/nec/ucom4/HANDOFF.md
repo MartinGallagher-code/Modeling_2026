@@ -84,3 +84,9 @@ TI TMS1000 (1974):          NEC uCOM-4 (1972):
 The uCOM-4 demonstrated that Japanese semiconductor companies could compete effectively with American giants like TI, setting the stage for Japan's later dominance in consumer electronics.
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

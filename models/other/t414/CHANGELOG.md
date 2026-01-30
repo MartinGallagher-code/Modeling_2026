@@ -75,3 +75,18 @@ This file contains the complete history of all work on this model.
 - The Transputer Databook
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 24 evaluations
+- Corrections: alu: -0.33, branch: -0.10, complex: -0.05, link_ops: -0.14, memory: +0.10, stack_ops: +0.17
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

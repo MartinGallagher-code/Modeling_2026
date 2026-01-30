@@ -39,3 +39,9 @@ Key instruction categories:
 - Used in NATO cryptographic equipment (INFOSEC)
 - PDP-11 instruction set with standard addressing modes
 - Military-grade reliability requirements
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.50%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

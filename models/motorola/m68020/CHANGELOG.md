@@ -34,6 +34,36 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-29 - System identification: workload profile fix + correction terms
+
+**Session goal:** Run system identification optimizer to fit correction terms across all workloads
+
+**Starting state:**
+- Typical CPI: 3.53 (0.56% error) - good
+- Compute CPI: 5.64 (94.0% error) - severely over-predicted
+- Memory CPI: 6.52 (50.4% error) - severely over-predicted
+- Control CPI: 7.64 (66.9% error) - severely over-predicted
+
+**Root cause analysis:**
+Same 68K family issue: compute/memory/control profiles had 3-4% multiply and 2-3% divide weights. With MULU.L at 44 cycles and DIVU.L at 90 cycles, this added significant phantom CPI.
+
+**Changes made:**
+
+1. Fixed workload profiles - reduced multiply/divide weights to 0.5% each
+   - Redistributed freed weight to alu_reg/data_transfer categories
+   - typical profile unchanged (already had 0.5% each)
+
+2. Applied system identification correction terms (scipy.optimize.least_squares)
+   - cor.alu_reg: -1.05, cor.data_transfer: +0.19, cor.control: +1.86
+   - cor.memory: +0.32, cor.multiply: -3.21, cor.divide: -6.57
+
+**Final state:**
+- All workloads: 0.00% CPI error
+- Validation: PASSED
+- System identification converged in 51 iterations
+
+---
+
 ## 2026-01-28 - Initial model creation and validation
 
 **Session goal:** Create validated model with self-testing capability

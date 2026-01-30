@@ -31,3 +31,9 @@
 - 40 x 25-bit data RAM
 - Each instruction takes minimum 400ns (2 cycles at 5MHz)
 - Commercial failure - replaced by Intel 2920 analog approach with TMS320 digital approach
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

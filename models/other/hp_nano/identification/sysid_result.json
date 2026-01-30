@@ -1,0 +1,36 @@
+{
+  "processor": "hp_nano",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 32,
+  "loss_before": 0.024375,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -1.521662,
+    "cor.data_transfer": 1.873848,
+    "cor.memory": 0.231622,
+    "cor.io": -0.291904,
+    "cor.control": 0.265536
+  },
+  "residuals_before": {
+    "typical": -0.05,
+    "compute": 0.25,
+    "io_heavy": -0.1,
+    "control": -0.15
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "io_heavy": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.io",
+    "cor.memory"
+  ]
+}

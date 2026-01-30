@@ -1,0 +1,34 @@
+{
+  "processor": "weitek1064",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 2,
+  "loss_before": 0.001013,
+  "loss_after": 0.001013,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.data_transfer": 2.390271,
+    "cor.fp_add": -0.194185,
+    "cor.fp_div": -2.395959,
+    "cor.fp_mul": 2.435596
+  },
+  "residuals_before": {
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0463,
+    "control": 0.0437
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": -0.0463,
+    "control": 0.0437
+  },
+  "free_parameters": [
+    "cor.data_transfer",
+    "cor.fp_add",
+    "cor.fp_div",
+    "cor.fp_mul"
+  ]
+}

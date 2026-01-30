@@ -39,3 +39,9 @@ The KR581IK1 is the control/microcode component of a Soviet WD MCP-1600 clone. U
 - **Model:** `current/kr581ik1_validated.py`
 - **Validation:** `validation/kr581ik1_validation.json`
 - **Changelog:** `CHANGELOG.md`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

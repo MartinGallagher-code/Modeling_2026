@@ -1,0 +1,42 @@
+{
+  "processor": "sparc",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 28,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -0.167238,
+    "cor.branch": -0.768819,
+    "cor.call_ret": 1.40537,
+    "cor.divide": 0.482427,
+    "cor.load": 0.314444,
+    "cor.multiply": -0.593091,
+    "cor.shift": 0.35964,
+    "cor.store": 0.18606
+  },
+  "residuals_before": {
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.branch",
+    "cor.call_ret",
+    "cor.divide",
+    "cor.load",
+    "cor.multiply",
+    "cor.shift",
+    "cor.store"
+  ]
+}

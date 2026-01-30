@@ -33,3 +33,9 @@
 - Manages Z80 bus contention during screen refresh
 - Generates video signal, handles keyboard scanning
 - Semi-custom Ferranti gate array
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.82%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

@@ -49,12 +49,14 @@ except ImportError:
         ips: float
         bottleneck: str
         utilizations: Dict[str, float]
+        base_cpi: float = 0.0
+        correction_delta: float = 0.0
 
         @classmethod
-        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations, base_cpi=None, correction_delta=0.0):
             ipc = 1.0 / cpi
             ips = clock_mhz * 1e6 * ipc
-            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations, base_cpi if base_cpi is not None else cpi, correction_delta)
 
     class BaseProcessorModel:
         pass
@@ -107,41 +109,58 @@ class M68008Model(BaseProcessorModel):
                 'divide': 0.005,
             }, "Typical M68008 workload"),
             'compute': WorkloadProfile('compute', {
-                'alu_reg': 0.40,
-                'data_transfer': 0.25,
+                'alu_reg': 0.44,
+                'data_transfer': 0.27,
                 'memory': 0.18,
-                'control': 0.12,
-                'multiply': 0.03,
-                'divide': 0.02,
+                'control': 0.10,
+                'multiply': 0.005,
+                'divide': 0.005,
             }, "Compute-intensive"),
             'memory': WorkloadProfile('memory', {
-                'alu_reg': 0.15,
-                'data_transfer': 0.20,
+                'alu_reg': 0.18,
+                'data_transfer': 0.22,
                 'memory': 0.45,
-                'control': 0.15,
-                'multiply': 0.03,
-                'divide': 0.02,
+                'control': 0.14,
+                'multiply': 0.005,
+                'divide': 0.005,
             }, "Memory-intensive"),
             'control': WorkloadProfile('control', {
-                'alu_reg': 0.18,
-                'data_transfer': 0.20,
+                'alu_reg': 0.20,
+                'data_transfer': 0.22,
                 'memory': 0.15,
-                'control': 0.40,
-                'multiply': 0.04,
-                'divide': 0.03,
+                'control': 0.42,
+                'multiply': 0.005,
+                'divide': 0.005,
             }, "Control-flow intensive"),
+        }
+
+        # Correction terms for system identification (initially zero)
+        self.corrections = {
+            'alu_reg': -4.187920,
+            'control': 1.071751,
+            'data_transfer': 2.678558,
+            'divide': 72.500000,
+            'memory': -1.862227,
+            'multiply': 36.000000
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using microcoded execution model"""
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
 
-        total_cpi = 0
+        base_cpi = 0
         for cat_name, weight in profile.category_weights.items():
             cat = self.instruction_categories[cat_name]
-            total_cpi += weight * cat.total_cycles
+            base_cpi += weight * cat.total_cycles
 
-        ipc = 1.0 / total_cpi
+        # Apply correction terms from system identification
+        correction_delta = sum(
+            self.corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = base_cpi + correction_delta
+
+        ipc = 1.0 / corrected_cpi
         ips = self.clock_mhz * 1e6 * ipc
 
         contributions = {}
@@ -153,10 +172,12 @@ class M68008Model(BaseProcessorModel):
         return AnalysisResult.from_cpi(
             processor=self.name,
             workload=workload,
-            cpi=total_cpi,
+            cpi=corrected_cpi,
             clock_mhz=self.clock_mhz,
             bottleneck=bottleneck,
-            utilizations=contributions
+            utilizations=contributions,
+            base_cpi=base_cpi,
+            correction_delta=correction_delta
         )
 
     def validate(self) -> Dict[str, Any]:

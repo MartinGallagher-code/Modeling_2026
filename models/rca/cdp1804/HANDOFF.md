@@ -52,3 +52,9 @@ None - model validated within 5% error
 - Part of COSMAC family: 1802 -> 1804 -> 1805 -> 1806
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.01%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

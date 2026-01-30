@@ -1,0 +1,38 @@
+{
+  "processor": "z8000",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 17,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 0.529863,
+    "cor.block": 0.646775,
+    "cor.control": 0.175109,
+    "cor.data_transfer": -1.304053,
+    "cor.memory": 0.303614,
+    "cor.stack": 1.042199
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.block",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.stack"
+  ]
+}

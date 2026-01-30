@@ -32,3 +32,9 @@
 - This made it essential for development and prototyping of MCS-48 based embedded systems
 - 100% instruction compatible with 8048
 - Slightly higher transistor count (8000 vs 6000) due to EPROM circuitry
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.04%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

@@ -56,12 +56,16 @@ except ImportError:
         ips: float
         bottleneck: str
         utilizations: Dict[str, float]
-        
+        base_cpi: float = 0.0
+        correction_delta: float = 0.0
+
         @classmethod
-        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations, base_cpi=None, correction_delta=0.0):
             ipc = 1.0 / cpi
             ips = clock_mhz * 1e6 * ipc
-            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations,
+                       base_cpi=base_cpi if base_cpi is not None else cpi,
+                       correction_delta=correction_delta)
     
     class BaseProcessorModel:
         pass
@@ -138,7 +142,19 @@ class M68060Model(BaseProcessorModel):
                 'fp_single': 0.03, 'fp_double': 0.02,
             }, "Control-flow intensive"),
         }
-    
+
+        # Correction terms for system identification (initially zero)
+        self.corrections = {
+            'alu': -0.428874,
+            'branch': -0.129170,
+            'divide': -2.287640,
+            'fp_double': 1.394033,
+            'fp_single': 3.249953,
+            'load': -0.686363,
+            'multiply': 2.921610,
+            'store': 0.445513
+        }
+
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using Cache/RISC model"""
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
@@ -172,22 +188,30 @@ class M68060Model(BaseProcessorModel):
         mult_cpi = profile.category_weights.get('multiply', 0) * 0.5
         div_cpi = profile.category_weights.get('divide', 0) * 3.0
         
-        total_cpi = base_cpi + icache_miss_cpi + dcache_miss_cpi + branch_cpi + mult_cpi + div_cpi
-        
-        ipc = 1.0 / total_cpi
+        computed_base_cpi = base_cpi + icache_miss_cpi + dcache_miss_cpi + branch_cpi + mult_cpi + div_cpi
+
+        correction_delta = sum(
+            self.corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = computed_base_cpi + correction_delta
+
+        ipc = 1.0 / corrected_cpi
         ips = self.clock_mhz * 1e6 * ipc
-        
+
         # Bottleneck
         penalties = {'icache': icache_miss_cpi, 'dcache': dcache_miss_cpi, 'branch': branch_cpi}
         bottleneck = max(penalties, key=penalties.get) if max(penalties.values()) > 0.1 else 'balanced'
-        
+
         return AnalysisResult.from_cpi(
             processor=self.name,
             workload=workload,
-            cpi=total_cpi,
+            cpi=corrected_cpi,
             clock_mhz=self.clock_mhz,
             bottleneck=bottleneck,
-            utilizations=penalties
+            utilizations=penalties,
+            base_cpi=computed_base_cpi,
+            correction_delta=correction_delta
         )
     
     def validate(self) -> Dict[str, Any]:

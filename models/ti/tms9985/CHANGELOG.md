@@ -76,3 +76,18 @@ This file contains the complete history of all work on this model.
 - HANDOFF.md tuning suggestions
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 2 evaluations
+- Corrections: alu: +3.76, control: -3.74, data_transfer: +2.26, memory: -4.73, stack: -1.75
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

@@ -39,3 +39,9 @@ Key instruction categories:
 - On-chip ROM (up to 4KB), RAM (128 bytes), I/O ports, timers
 - Used in consumer electronics, appliances, industrial control
 - Part of a large family with variants for different I/O configurations
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

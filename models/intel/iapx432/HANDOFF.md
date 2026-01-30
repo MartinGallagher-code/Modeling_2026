@@ -57,3 +57,9 @@ The 5-10x slowdown vs 8086 is well-documented and explains the commercial failur
 4. Ada focus limited market appeal
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.81%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

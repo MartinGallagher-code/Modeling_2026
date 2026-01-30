@@ -42,7 +42,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model calibrated for early signal processor architecture"
+    "notes": "Model calibrated for early signal processor architecture",
+    "sysid_loss_before": 0.022701,
+    "sysid_loss_after": 0.022701,
+    "sysid_cpi_error_percent": 3.83,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_timing_tests": [
     {

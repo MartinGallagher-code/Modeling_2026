@@ -47,3 +47,9 @@ None - model accuracy is within 5% target.
 - 25-40 MHz clock range
 - Used in: Mac Quadra series, Amiga 4000, NeXTstation Turbo
 - Variants: 68LC040 (no FPU), 68EC040 (no FPU/MMU)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 7
+- **Corrections**: See `identification/sysid_result.json`

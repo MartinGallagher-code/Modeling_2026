@@ -85,3 +85,9 @@ Serial ALU (PPS-4):
 This serial approach reduces transistor count but increases cycle count for arithmetic operations.
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

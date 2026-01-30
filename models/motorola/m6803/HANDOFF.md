@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - Enhanced 6801 with more I/O, widely used in automotive
 - Features: Enhanced 6801, More I/O, Automotive applications, 6800 family
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

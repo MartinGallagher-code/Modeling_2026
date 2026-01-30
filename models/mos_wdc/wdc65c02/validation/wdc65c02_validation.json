@@ -249,7 +249,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Cross-validated - faster than 6502 due to CMOS optimizations"
+    "notes": "Cross-validated - faster than 6502 due to CMOS optimizations",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "cross_validation": {
     "method": "Comparison with cross-validated 6502 plus CMOS optimizations",

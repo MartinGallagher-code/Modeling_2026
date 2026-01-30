@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - French 8-bit for military (Mirage fighter systems)
 - Features: French military CPU, Mirage fighter systems, Radiation hardened
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

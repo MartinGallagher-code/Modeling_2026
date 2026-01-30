@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - 4-bit MCU behind the iconic HD44780 LCD controller
 - Features: CMOS technology, HD44780 LCD MCU, Widely used in LCD modules
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

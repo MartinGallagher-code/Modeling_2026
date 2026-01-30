@@ -49,3 +49,9 @@ Key architectural differences from SPARC:
 - Branch delay slots: instruction after branch always executes
 - 32 general-purpose registers (r0 hardwired to zero)
 - Multiply/divide results stored in HI/LO special registers
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 8
+- **Corrections**: See `identification/sysid_result.json`

@@ -1,0 +1,38 @@
+{
+  "processor": "alpha21064",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.011895,
+  "loss_after": 6e-06,
+  "cpi_error_percent": 0.55,
+  "message": "The maximum number of function evaluations is exceeded.",
+  "corrections": {
+    "cor.alu": -0.087636,
+    "cor.load": 0.65581,
+    "cor.store": -0.446687,
+    "cor.branch": 0.379324,
+    "cor.multiply": -3.641164,
+    "cor.divide": -4.961563
+  },
+  "residuals_before": {
+    "typical": 0.036,
+    "compute": 0.194,
+    "memory": 0.055,
+    "control": 0.075
+  },
+  "residuals_after": {
+    "typical": 0.0042,
+    "compute": -0.0019,
+    "memory": -0.0016,
+    "control": -0.001
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.branch",
+    "cor.divide",
+    "cor.load",
+    "cor.multiply",
+    "cor.store"
+  ]
+}

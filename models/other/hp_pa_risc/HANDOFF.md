@@ -32,3 +32,9 @@
 - 5-stage pipeline with 32 GPRs
 - Powered HP 9000 series and HP-UX servers
 - Eventually transitioned to Itanium (2008)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 2.10%
+- **Free Parameters**: 8
+- **Corrections**: See `identification/sysid_result.json`

@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - 32-bit transputer with 4KB on-chip RAM, T414 variant
 - Features: 32-bit transputer, 4KB on-chip SRAM, T414 variant, Occam/CSP
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

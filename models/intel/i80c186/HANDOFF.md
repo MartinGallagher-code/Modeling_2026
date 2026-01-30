@@ -29,3 +29,9 @@
 - 8086-compatible instruction set with added ENTER/LEAVE, PUSHA/POPA, BOUND, etc.
 - 20-bit address space (1 MB), 16-bit data bus
 - Widely used in embedded/networking applications; billions shipped
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

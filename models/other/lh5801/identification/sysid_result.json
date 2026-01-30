@@ -1,0 +1,38 @@
+{
+  "processor": "lh5801",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 10,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.branch": -2.271541,
+    "cor.call_return": -1.364736,
+    "cor.immediate": -0.98468,
+    "cor.memory_read": 0.385368,
+    "cor.memory_write": -3.322811,
+    "cor.register_ops": 3.045584
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.branch",
+    "cor.call_return",
+    "cor.immediate",
+    "cor.memory_read",
+    "cor.memory_write",
+    "cor.register_ops"
+  ]
+}

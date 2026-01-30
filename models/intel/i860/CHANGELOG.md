@@ -123,3 +123,18 @@ This file contains the complete history of all work on this model.
 - WikiChip i860 specifications
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 8 free correction parameters
+- Optimizer converged in 13 evaluations
+- Corrections: alu: +0.29, branch: -0.76, divide: +1.02, fp_double: -0.45, fp_single: -0.12, load: -0.01, multiply: +0.30, store: -0.17
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

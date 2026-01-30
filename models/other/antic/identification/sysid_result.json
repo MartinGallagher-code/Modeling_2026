@@ -1,0 +1,36 @@
+{
+  "processor": "antic",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 28,
+  "loss_before": 0.035101,
+  "loss_after": 0.032772,
+  "cpi_error_percent": 1.66,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.display_list": -0.053081,
+    "cor.char_mode": -0.073871,
+    "cor.map_mode": -0.073871,
+    "cor.dma": -0.053027,
+    "cor.control": -0.073871
+  },
+  "residuals_before": {
+    "typical": 0.001,
+    "text_heavy": 0.301,
+    "graphics_heavy": -0.199,
+    "mixed": 0.101
+  },
+  "residuals_after": {
+    "typical": -0.0665,
+    "text_heavy": 0.2335,
+    "graphics_heavy": -0.2665,
+    "mixed": 0.0335
+  },
+  "free_parameters": [
+    "cor.char_mode",
+    "cor.control",
+    "cor.display_list",
+    "cor.dma",
+    "cor.map_mode"
+  ]
+}

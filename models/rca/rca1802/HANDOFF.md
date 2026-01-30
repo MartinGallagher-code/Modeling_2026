@@ -42,3 +42,9 @@ Key instruction categories:
 - 16 general-purpose 16-bit registers
 - Unique "subroutine via register" calling convention
 - No stack - uses register pairs for call/return
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

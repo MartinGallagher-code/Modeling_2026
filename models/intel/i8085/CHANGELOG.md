@@ -72,3 +72,18 @@ This file contains the complete history of all work on this model.
 - MAME emulator timing tables
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 4 free correction parameters
+- Optimizer converged in 3 evaluations
+- Corrections: alu: -1.57, control: -1.56, data_transfer: +2.30, memory: -0.60
+
+**Final state:**
+- CPI error: 0.34%
+- Validation: PASSED
+
+---

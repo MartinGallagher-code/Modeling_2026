@@ -44,7 +44,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model calibrated and validated with cross-validation"
+    "notes": "Model calibrated and validated with cross-validation",
+    "sysid_loss_before": 0.000177,
+    "sysid_loss_after": 0.000177,
+    "sysid_cpi_error_percent": 0.02,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "timing_tests": [
     {

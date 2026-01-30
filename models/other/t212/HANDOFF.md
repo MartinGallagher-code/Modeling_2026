@@ -41,3 +41,9 @@
 - 4KB on-chip SRAM for workspace
 - Designed for Occam programming language
 - 16-bit data width, 32-bit address space
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

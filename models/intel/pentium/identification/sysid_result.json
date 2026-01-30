@@ -1,0 +1,40 @@
+{
+  "processor": "pentium",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.000571,
+  "loss_after": 0.000571,
+  "cpi_error_percent": 2.68,
+  "message": "The maximum number of function evaluations is exceeded.",
+  "corrections": {
+    "cor.alu": -0.707058,
+    "cor.control": -0.717866,
+    "cor.data_transfer": 1.222453,
+    "cor.divide": -19.471411,
+    "cor.memory": -0.355998,
+    "cor.multiply": -5.409059
+  },
+  "residuals_before": {
+    "typical": -0.0267,
+    "compute": -0.0053,
+    "memory": -0.0089,
+    "control": -0.0041,
+    "mixed": 0.0449
+  },
+  "residuals_after": {
+    "typical": -0.0268,
+    "compute": -0.0053,
+    "memory": -0.009,
+    "control": -0.0041,
+    "mixed": 0.0449
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
+  ]
+}

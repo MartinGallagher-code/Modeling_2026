@@ -33,3 +33,9 @@
 - NOT a programmable processor - hardwired Pong game logic
 - Generates ball, paddle, border, and scoring display
 - Paddle input via analog potentiometers
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.38%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

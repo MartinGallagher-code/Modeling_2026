@@ -9,7 +9,10 @@
     "function": "Score calculation and coin handling"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 7],
+    "cycles_per_instruction_range": [
+      3,
+      7
+    ],
     "typical_cpi": 5.0
   },
   "validated_performance": {
@@ -45,13 +48,18 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Validated against MAME emulation timing"
+    "notes": "Validated against MAME emulation timing",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
     "alu": 0.25,
-    "data_transfer": 0.20,
+    "data_transfer": 0.2,
     "io": 0.25,
-    "control": 0.20,
-    "timer": 0.10
+    "control": 0.2,
+    "timer": 0.1
   }
 }

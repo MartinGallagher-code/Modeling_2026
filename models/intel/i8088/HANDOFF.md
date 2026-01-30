@@ -41,3 +41,9 @@
 - 4-byte prefetch queue (vs 8086's 6-byte) slightly reduces overlap efficiency
 - 4.77 MHz clock derived from NTSC color burst frequency (14.31818 MHz / 3)
 - Foundation of PC-compatible computing industry
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.24%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

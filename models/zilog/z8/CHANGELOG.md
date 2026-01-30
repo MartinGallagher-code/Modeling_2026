@@ -98,3 +98,18 @@ This file contains the complete history of all work on this model.
 - Comparison with Z80 timings scaled for MCU architecture
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 2 evaluations
+- Corrections: call_return: +10.00, control: -1.49, immediate: -5.00, memory: -1.60, register_ops: +2.37, stack: +7.00
+
+**Final state:**
+- CPI error: 3.46%
+- Validation: PASSED
+
+---

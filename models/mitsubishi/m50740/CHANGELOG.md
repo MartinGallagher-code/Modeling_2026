@@ -39,3 +39,18 @@ This file contains the complete history of all work on this model.
 - Embedded Systems Design Archives
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 22 evaluations
+- Corrections: alu: +0.18, bit_ops: +2.24, control: -1.28, data_transfer: -2.68, io: -0.30, memory: +2.21
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

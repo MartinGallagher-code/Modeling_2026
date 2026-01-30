@@ -56,3 +56,9 @@ None - model is cross-validated and correctly faster than 6502.
 - Can run at much higher clock speeds than NMOS (up to 14 MHz)
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

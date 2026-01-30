@@ -54,3 +54,18 @@ This file contains the complete history of all work on this model.
 - Sanyo Semiconductor Guide (1986)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 8 evaluations
+- Corrections: alu: +0.69, control: +0.23, data_transfer: +0.73, io: -2.88, memory: +0.85
+
+**Final state:**
+- CPI error: 0.75%
+- Validation: PASSED
+
+---

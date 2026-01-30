@@ -48,3 +48,9 @@
 | CALL        | 22    | 17    | 18    |
 | RET         | 10    | 10    | 10    |
 | NOP         | 8     | 4     | 4     |
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.30%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

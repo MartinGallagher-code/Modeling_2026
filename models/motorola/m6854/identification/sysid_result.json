@@ -1,0 +1,34 @@
+{
+  "processor": "m6854",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 2,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.crc": -0.421366,
+    "cor.data_transfer": -1.915524,
+    "cor.flag_detect": 2.590317,
+    "cor.frame_process": 1.084476
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.crc",
+    "cor.data_transfer",
+    "cor.flag_detect",
+    "cor.frame_process"
+  ]
+}

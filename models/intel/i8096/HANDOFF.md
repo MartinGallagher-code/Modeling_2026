@@ -61,3 +61,9 @@
 - Transmission control
 - Climate control
 - Body electronics
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.07%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

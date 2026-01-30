@@ -32,3 +32,9 @@
 - More efficient microcode reduces cycle counts
 - Still primarily internal/captive use
 - Predecessor to commercial WE DSP32 family
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.44%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

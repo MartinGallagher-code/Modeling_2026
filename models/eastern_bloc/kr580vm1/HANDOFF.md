@@ -51,3 +51,9 @@ The KR580VM1 represents a unique Soviet approach to extending Western processor 
 - **Model:** `current/kr580vm1_validated.py`
 - **Validation:** `validation/kr580vm1_validation.json`
 - **Changelog:** `CHANGELOG.md`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

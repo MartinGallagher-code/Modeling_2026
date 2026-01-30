@@ -52,11 +52,15 @@ except ImportError:
         ips: float
         bottleneck: str
         utilizations: Dict[str, float]
+        base_cpi: float = 0.0
+        correction_delta: float = 0.0
         @classmethod
-        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations, base_cpi=None, correction_delta=0.0):
             ipc = 1.0 / cpi if cpi > 0 else 0.0
             ips = clock_mhz * 1e6 * ipc
-            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations,
+                       base_cpi=base_cpi if base_cpi is not None else cpi,
+                       correction_delta=correction_delta)
 
     class BaseProcessorModel:  # minimal fallback
         pass
@@ -145,12 +149,15 @@ class Mc14500bModel(BaseProcessorModel):
             }, 'I/O sense/actuation heavy'),
         }
 
+        # Correction terms for system identification (initially zero)
+        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using fixed-cycle execution model."""
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
 
         # MC14500B always has CPI = 1.0 (fixed timing, all instructions 1 cycle)
-        total_cpi = float(self.fixed_cycles)
+        base_cpi = float(self.fixed_cycles)
 
         # Calculate category contributions for analysis
         contributions: Dict[str, float] = {}
@@ -159,13 +166,21 @@ class Mc14500bModel(BaseProcessorModel):
             contributions[cat_name] = weight * cat.total_cycles
         bottleneck = max(contributions, key=contributions.get)
 
+        correction_delta = sum(
+            self.corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = base_cpi + correction_delta
+
         return AnalysisResult.from_cpi(
             processor=self.name,
             workload=workload,
-            cpi=total_cpi,
+            cpi=corrected_cpi,
             clock_mhz=self.clock_mhz,
             bottleneck=bottleneck,
             utilizations=contributions,
+            base_cpi=base_cpi,
+            correction_delta=correction_delta,
         )
 
     def validate(self) -> Dict[str, Any]:

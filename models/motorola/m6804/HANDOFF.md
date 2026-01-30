@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - Minimal 8-bit MCU (1KB ROM, 64B RAM), ultra-low-cost applications
 - Features: Minimal 8-bit, ~30 instructions, 1KB ROM, 64B RAM, Ultra-low-cost
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

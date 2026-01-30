@@ -48,12 +48,14 @@ except ImportError:
         ips: float
         bottleneck: str
         utilizations: Dict[str, float]
+        base_cpi: float = 0.0
+        correction_delta: float = 0.0
 
         @classmethod
-        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations, base_cpi=None, correction_delta=0.0):
             ipc = 1.0 / cpi
             ips = clock_mhz * 1e6 * ipc
-            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations, base_cpi=base_cpi if base_cpi is not None else cpi, correction_delta=correction_delta)
 
     class BaseProcessorModel:
         pass
@@ -131,21 +133,37 @@ class Hm6100Model(BaseProcessorModel):
             }, "Control-flow intensive"),
         }
 
+        # Correction terms for system identification (initially zero)
+        self.corrections = {
+            'arithmetic': -1.072161,
+            'io': 3.172831,
+            'jump': -1.444937,
+            'logic': -1.227951,
+            'memory': -0.165635,
+            'operate': 4.993307
+        }
+
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using multi-state execution model"""
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
 
         # Calculate weighted average CPI (in states)
-        total_cpi = 0
+        base_cpi = 0
         for cat_name, weight in profile.category_weights.items():
             cat = self.instruction_categories[cat_name]
-            total_cpi += weight * cat.total_cycles
+            base_cpi += weight * cat.total_cycles
+
+        correction_delta = sum(
+            self.corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = base_cpi + correction_delta
 
         # Convert states to effective IPS
         # Each state = 400ns at 4 MHz (faster than IM6100's 500ns)
         state_time_us = 0.4  # microseconds
-        ips = 1e6 / (total_cpi * state_time_us)
-        ipc = 1.0 / total_cpi  # States per instruction
+        ips = 1e6 / (corrected_cpi * state_time_us)
+        ipc = 1.0 / corrected_cpi  # States per instruction
 
         # Identify bottleneck
         contributions = {}
@@ -158,10 +176,12 @@ class Hm6100Model(BaseProcessorModel):
             processor=self.name,
             workload=workload,
             ipc=ipc,
-            cpi=total_cpi,
+            cpi=corrected_cpi,
             ips=ips,
             bottleneck=bottleneck,
-            utilizations=contributions
+            utilizations=contributions,
+            base_cpi=base_cpi,
+            correction_delta=correction_delta
         )
 
     def validate(self) -> Dict[str, Any]:

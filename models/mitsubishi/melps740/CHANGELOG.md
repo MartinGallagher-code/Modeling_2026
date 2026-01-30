@@ -40,3 +40,18 @@ This file contains the complete history of all work on this model.
 - MOS 6502 Programming Manual
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 20 evaluations
+- Corrections: alu: -1.39, bit_ops: +2.99, control: +0.99, data_transfer: -0.49, io: -2.62, memory: +0.91
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

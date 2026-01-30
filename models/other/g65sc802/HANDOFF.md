@@ -39,3 +39,9 @@ Key instruction categories:
 - Internal 16-bit registers, 24-bit addressing via bank register
 - CMOS, 4 MHz operation
 - Can run both 6502 emulation and 65816 native mode code
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

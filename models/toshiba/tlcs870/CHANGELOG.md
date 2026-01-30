@@ -55,3 +55,18 @@ This file contains the complete history of all work on this model.
 - Toshiba 8-bit MCU Family Guide
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 20 evaluations
+- Corrections: alu: +1.16, bit_ops: -1.16, control: +0.82, data_transfer: +0.84, io: -2.22, memory: +1.04
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

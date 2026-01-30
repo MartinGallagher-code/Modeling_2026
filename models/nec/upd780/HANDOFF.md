@@ -54,3 +54,9 @@ NEC produced the uPD780 as a second-source for the Zilog Z80. It was widely used
 - **Model:** `current/upd780_validated.py`
 - **Validation:** `validation/upd780_validation.json`
 - **Changelog:** `CHANGELOG.md`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

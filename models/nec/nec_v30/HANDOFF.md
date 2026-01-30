@@ -79,3 +79,9 @@ varies significantly based on instruction mix (multiply-heavy code sees >30% boo
 - Clock range: 8-16 MHz (typical: 10 MHz)
 
 See CHANGELOG.md for full history of all work on this model.
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

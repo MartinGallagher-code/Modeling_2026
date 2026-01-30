@@ -33,3 +33,9 @@
 - I/O operations slowest (6 cycles)
 - Nova ISA uses accumulator-based architecture
 - JSR saves return address in AC3 (no hardware stack)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

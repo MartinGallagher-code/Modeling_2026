@@ -41,7 +41,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "4-bit MCU with timing similar to TMS1000 class devices"
+    "notes": "4-bit MCU with timing similar to TMS1000 class devices",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

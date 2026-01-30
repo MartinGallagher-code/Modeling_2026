@@ -53,12 +53,15 @@ class AnalysisResult:
     ips: float
     bottleneck: str
     utilizations: Dict[str, float]
+    base_cpi: float = 0.0
+    correction_delta: float = 0.0
 
     @classmethod
-    def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
-        ipc = 1.0 / cpi
+    def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations, base_cpi=None, correction_delta=0.0):
+        ipc = 1.0 / cpi if cpi > 0 else 0.0
         ips = clock_mhz * 1e6 * ipc
-        return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+        return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations,
+                   base_cpi=base_cpi if base_cpi is not None else cpi, correction_delta=correction_delta)
 
 
 class BaseProcessorModel:
@@ -156,19 +159,31 @@ class Mb8845Model(BaseProcessorModel):
             }, "Mixed workload"),
         }
 
+        # Correction terms for system identification (initially zero)
+        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
-        total_cpi = 0
+        base_cpi = 0
         contributions = {}
         for cat_name, weight in profile.category_weights.items():
             cat = self.instruction_categories[cat_name]
             contribution = weight * cat.total_cycles
             contributions[cat_name] = contribution
-            total_cpi += contribution
+            base_cpi += contribution
+
+        # Apply correction terms (system identification)
+        correction_delta = sum(
+            self.corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = base_cpi + correction_delta
+
         bottleneck = max(contributions, key=contributions.get)
         return AnalysisResult.from_cpi(
-            processor=self.name, workload=workload, cpi=total_cpi,
-            clock_mhz=self.clock_mhz, bottleneck=bottleneck, utilizations=contributions
+            processor=self.name, workload=workload, cpi=corrected_cpi,
+            clock_mhz=self.clock_mhz, bottleneck=bottleneck, utilizations=contributions,
+            base_cpi=base_cpi, correction_delta=correction_delta
         )
 
     def validate(self) -> Dict[str, Any]:

@@ -9,7 +9,10 @@
     "function": "CVSD (Continuously Variable Slope Delta) audio codec"
   },
   "timing": {
-    "cycles_per_instruction_range": [1.5, 3],
+    "cycles_per_instruction_range": [
+      1.5,
+      3
+    ],
     "typical_cpi": 2.0
   },
   "validated_performance": {
@@ -43,13 +46,18 @@
     "cpi_error_percent": 3.75,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.01125,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "decode": 0.30,
+    "decode": 0.3,
     "filter": 0.25,
-    "dac": 0.20,
+    "dac": 0.2,
     "control": 0.15,
-    "timing": 0.10
+    "timing": 0.1
   }
 }

@@ -38,3 +38,18 @@ This file contains the complete history of all work on this model.
 - Japanese Semiconductor History Archives
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 25 evaluations
+- Corrections: alu: +1.57, control: +0.13, data_transfer: +2.63, io: -4.29, memory: -0.26
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

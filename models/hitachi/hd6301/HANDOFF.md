@@ -65,3 +65,9 @@ The HD6301 was developed by Hitachi as an enhanced 6801:
 - **Model:** `current/hd6301_validated.py`
 - **Validation:** `validation/hd6301_validation.json`
 - **Changelog:** `CHANGELOG.md`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

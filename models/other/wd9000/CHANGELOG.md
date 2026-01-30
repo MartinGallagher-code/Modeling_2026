@@ -40,3 +40,18 @@ This file contains the complete history of all work on this model.
 - Byte Magazine WD9000 Review (1980)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer did not converge in 200 evaluations
+- Corrections: arithmetic: -1.53, comparison: -5.00, control: +5.00, memory: +4.02, procedure: -3.49, stack_ops: +5.00
+
+**Final state:**
+- CPI error: 0.51%
+- Validation: PASSED
+
+---

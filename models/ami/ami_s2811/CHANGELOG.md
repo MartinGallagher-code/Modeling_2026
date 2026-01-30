@@ -40,3 +40,18 @@ This file contains the complete history of all work on this model.
 - Early signal processor architecture references
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 4 free correction parameters
+- Optimizer converged in 2 evaluations
+- Corrections: alu: +4.11, control: -1.30, memory: +0.31, multiply: -3.51
+
+**Final state:**
+- CPI error: 3.83%
+- Validation: PASSED
+
+---

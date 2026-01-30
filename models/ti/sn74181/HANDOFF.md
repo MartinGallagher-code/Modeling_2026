@@ -29,3 +29,9 @@
 - Used in PDP-11/20, Data General Nova, Xerox Alto, many minicomputers
 - Carry lookahead via companion SN74182 chip
 - All operations are combinational and complete in single propagation delay
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 3
+- **Corrections**: See `identification/sysid_result.json`

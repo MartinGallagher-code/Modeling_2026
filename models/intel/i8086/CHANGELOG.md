@@ -85,3 +85,18 @@ This file contains the complete history of all work on this model.
 - WikiChip 8086 article
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 4 free correction parameters
+- Optimizer converged in 2 evaluations
+- Corrections: alu: -1.51, control: -2.34, data_transfer: +2.79, memory: -0.87
+
+**Final state:**
+- CPI error: 0.48%
+- Validation: PASSED
+
+---

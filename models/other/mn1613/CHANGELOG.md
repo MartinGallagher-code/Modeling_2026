@@ -39,3 +39,18 @@ This file contains the complete history of all work on this model.
 - Japanese Microprocessor History Archives
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 8 evaluations
+- Corrections: alu: +2.99, control: -0.65, data_transfer: -1.98, io: -1.74, memory: -0.46, stack: -0.54
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

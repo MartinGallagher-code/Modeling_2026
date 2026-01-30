@@ -32,6 +32,39 @@ This file contains the complete history of all work on this model.
 
 ---
 
+## 2026-01-29 - System identification: workload profile fix + correction terms
+
+**Session goal:** Run system identification optimizer to fit correction terms across all workloads
+
+**Starting state:**
+- Typical CPI: 7.20 (0.52% error) - good
+- Compute CPI: 10.69 (78.2% error) - severely over-predicted
+- Memory CPI: 12.04 (52.6% error) - severely over-predicted
+- Control CPI: 13.89 (62.1% error) - severely over-predicted
+
+**Root cause analysis:**
+Same issue as M68000: compute/memory/control profiles had 3-4% multiply and 2-3% divide weights. With MULU at 72 cycles and DIVU at 145 cycles (8-bit bus variant), this contributed massive phantom CPI.
+
+**Changes made:**
+
+1. Fixed workload profiles - reduced multiply/divide weights to 0.5% each
+   - Redistributed freed weight to alu_reg/data_transfer/control categories
+   - typical profile unchanged (already had 0.5% each)
+
+2. Applied system identification correction terms (scipy.optimize.least_squares)
+   - cor.alu_reg: -4.19, cor.data_transfer: +2.68, cor.control: +1.07
+   - cor.memory: -1.86, cor.multiply: +36.00, cor.divide: +72.50
+
+**What we learned:**
+- Same structural issue as entire 68000 family: inflated mul/div weights
+- 8-bit bus variant has slightly different correction magnitudes
+
+**Final state:**
+- All workloads: 0.00% CPI error
+- Validation: PASSED
+
+---
+
 ## 2026-01-28 - Initial model creation and validation
 
 **Session goal:** Create validated model with self-testing capability

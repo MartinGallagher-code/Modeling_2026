@@ -31,3 +31,9 @@
 - It maintained backward compatibility with the 4004 while adding features needed for more sophisticated embedded applications
 - Stack depth increased from 3 levels to 7 levels
 - New instructions (HLT, RPL) follow single-cycle timing pattern
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

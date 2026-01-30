@@ -9,7 +9,10 @@
     "function": "Digital audio sample playback"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 8],
+    "cycles_per_instruction_range": [
+      4,
+      8
+    ],
     "typical_cpi": 6.0
   },
   "validated_performance": {
@@ -38,12 +41,17 @@
     "cpi_error_percent": 8.3,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
     "audio_dma": 0.25,
     "sample_read": 0.25,
-    "dac": 0.20,
+    "dac": 0.2,
     "control": 0.15,
     "timing": 0.15
   }

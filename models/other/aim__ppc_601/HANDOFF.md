@@ -31,3 +31,9 @@
 - CPI < 1.0 demonstrates superscalar advantage
 - Replaced 68040 in Macs, delivering 3x performance improvement
 - 32KB unified cache, 4-stage pipeline
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 4.02%
+- **Free Parameters**: 8
+- **Corrections**: See `identification/sysid_result.json`

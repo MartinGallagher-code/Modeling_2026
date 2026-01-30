@@ -31,3 +31,9 @@ Key instruction categories:
 
 ## Suggested Next Steps
 - Model is complete
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.60%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

@@ -73,3 +73,18 @@ This file contains the complete history of all work on this model.
 ### Technical Notes
 - Z80B is the highest speed standard Z80 at 6 MHz
 - Same die as Z80/Z80A, just binned for higher speed
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 20 evaluations
+- Corrections: alu: +0.18, block: -0.37, control: +0.95, data_transfer: -0.32, memory: +0.05, stack: -1.84
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

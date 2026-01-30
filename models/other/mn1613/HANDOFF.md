@@ -39,3 +39,9 @@ Key instruction categories:
 - ~3.5x throughput improvement over MN1610
 - Panafacom joint venture (Matsushita, Fujitsu, NEC)
 - Used in Panafacom minicomputer systems
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

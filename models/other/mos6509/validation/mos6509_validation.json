@@ -189,7 +189,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Timing identical to 6502 - cross-validated from MOS datasheet"
+    "notes": "Timing identical to 6502 - cross-validated from MOS datasheet",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "cross_validation": {
     "method": "Cross-reference with validated MOS 6502 model",

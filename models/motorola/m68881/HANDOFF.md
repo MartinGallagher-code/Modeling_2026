@@ -55,3 +55,9 @@ None - model is well-calibrated and cross-validated with M68882.
 - MC68881/MC68882 User's Manual (Motorola, 1987)
 - NXP Reference Manual: https://www.nxp.com/docs/en/reference-manual/MC68881UM.pdf
 - Dr. Dobb's: Optimizing MC68882 Code
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.83%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

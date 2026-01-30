@@ -26,3 +26,9 @@
 - Register operations: 6 cycles
 - Memory operations: 10-11 cycles depending on addressing mode
 - Call/return: 10-14 cycles
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

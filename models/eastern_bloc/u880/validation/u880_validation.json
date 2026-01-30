@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 23],
+    "cycles_per_instruction_range": [
+      4,
+      23
+    ],
     "typical_cpi": 5.5
   },
   "validated_performance": {
@@ -47,13 +50,23 @@
   "accuracy": {
     "expected_cpi": 5.5,
     "expected_ipc": 0.182,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
     "predicted_cpi": 5.5,
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Z80 clone - identical timing. Model uses same categories and weights as Z80."
+    "notes": "Z80 clone - identical timing. Model uses same categories and weights as Z80.",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "timing_tests": [
     {

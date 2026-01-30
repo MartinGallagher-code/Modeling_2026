@@ -41,3 +41,9 @@
 - 64-bit external data bus improves memory bandwidth
 - Famous FDIV bug in early versions led to $475M recall
 - 3.1 million transistors (0.8um BiCMOS)
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 2.68%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

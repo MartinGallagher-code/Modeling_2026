@@ -27,3 +27,18 @@
 ### References
 - Motorola M6801 Datasheet (baseline timing)
 - Hitachi HD6301 Technical Manual
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 16 evaluations
+- Corrections: alu: -1.20, call_return: +0.77, control: -0.32, data_transfer: +1.43, memory: -0.11, stack: +2.15
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

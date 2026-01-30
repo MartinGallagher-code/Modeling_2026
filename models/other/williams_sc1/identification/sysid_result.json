@@ -1,0 +1,34 @@
+{
+  "processor": "williams_sc1",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 5,
+  "loss_before": 0.00112,
+  "loss_after": 0.00112,
+  "cpi_error_percent": 0.72,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.blit": -5.0,
+    "cor.control": 4.55475,
+    "cor.setup": 0.585738,
+    "cor.transform": 0.370432
+  },
+  "residuals_before": {
+    "typical": 0.0577,
+    "compute": -0.0159,
+    "memory": -0.0205,
+    "control": -0.022
+  },
+  "residuals_after": {
+    "typical": 0.0577,
+    "compute": -0.0159,
+    "memory": -0.0205,
+    "control": -0.022
+  },
+  "free_parameters": [
+    "cor.blit",
+    "cor.control",
+    "cor.setup",
+    "cor.transform"
+  ]
+}

@@ -259,7 +259,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model calibrated and validated with per-instruction timing tests"
+    "notes": "Model calibrated and validated with per-instruction timing tests",
+    "sysid_loss_before": 6.1e-05,
+    "sysid_loss_after": 6.1e-05,
+    "sysid_cpi_error_percent": 0.99,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "cross_validation": {
     "family": "ARM",

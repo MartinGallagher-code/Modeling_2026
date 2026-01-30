@@ -11,7 +11,10 @@
     "architecture": "4-bit MCU with LCD driver"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 8],
+    "cycles_per_instruction_range": [
+      4,
+      8
+    ],
     "typical_cpi": 6.0,
     "notes": "Variable timing, LCD operations slowest"
   },
@@ -31,7 +34,18 @@
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validated_workloads": ["typical", "compute", "display", "control", "mixed"]
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "display",
+      "control",
+      "mixed"
+    ],
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
     "alu": 0.167,

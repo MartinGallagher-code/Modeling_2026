@@ -1,0 +1,32 @@
+{
+  "processor": "upd7220",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 1,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.draw_line": 0.0,
+    "cor.draw_arc": 0.0,
+    "cor.area_fill": 0.0,
+    "cor.char_display": 0.0,
+    "cor.dma_transfer": 0.0,
+    "cor.control": 0.0
+  },
+  "residuals_before": {
+    "typical": 0.0
+  },
+  "residuals_after": {
+    "typical": 0.0
+  },
+  "free_parameters": [
+    "cor.area_fill",
+    "cor.char_display",
+    "cor.control",
+    "cor.dma_transfer",
+    "cor.draw_arc",
+    "cor.draw_line"
+  ]
+}

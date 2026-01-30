@@ -40,3 +40,9 @@
 - On-chip FPU is 8-10x faster than external 80387
 - Introduced clock multiplying with DX2 (2x) and DX4 (3x)
 - 1.2 million transistors (1um process)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.13%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

@@ -50,3 +50,9 @@ None - model accuracy is excellent (1.40% error).
 - **Historical tragedy**: Released 1994, same year PowerPC Mac shipped
 - Used in: Amiga 4000T/4060, Atari Falcon accelerators, embedded systems
 - Some FPU instructions emulated in software (transcendentals)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 8
+- **Corrections**: See `identification/sysid_result.json`

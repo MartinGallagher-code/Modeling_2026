@@ -407,7 +407,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Cross-validated against MOS 6502 - identical instruction timing"
+    "notes": "Cross-validated against MOS 6502 - identical instruction timing",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "cross_validation": {
     "method": "Direct comparison with MOS 6502 model",

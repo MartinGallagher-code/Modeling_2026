@@ -1,0 +1,36 @@
+{
+  "processor": "i8231",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 2,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.data_transfer": 1.773538,
+    "cor.fixed_point": 12.493538,
+    "cor.fp_add": 8.733538,
+    "cor.fp_div": -30.651804,
+    "cor.fp_mul": 1.478889
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.data_transfer",
+    "cor.fixed_point",
+    "cor.fp_add",
+    "cor.fp_div",
+    "cor.fp_mul"
+  ]
+}

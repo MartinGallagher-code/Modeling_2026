@@ -57,3 +57,9 @@ Key instruction categories (identical to Z80):
 ## Files
 - Model: `current/z80b_validated.py`
 - Validation: `validation/z80b_validation.json`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

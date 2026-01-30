@@ -35,3 +35,9 @@ None - model is fully validated and cross-validated.
 - 1 MHz typical clock
 - 2-12 cycles per instruction
 - Forms the baseline for entire 6800 family timing
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

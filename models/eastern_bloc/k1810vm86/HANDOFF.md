@@ -51,3 +51,9 @@ The K1810VM86 enabled the Soviet Union to produce IBM PC-compatible computers, m
 - **Model:** `current/k1810vm86_validated.py`
 - **Validation:** `validation/k1810vm86_validation.json`
 - **Changelog:** `CHANGELOG.md`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 7
+- **Corrections**: See `identification/sysid_result.json`

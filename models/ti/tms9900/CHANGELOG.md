@@ -65,3 +65,18 @@ This file contains the complete history of all work on this model.
 - TI Application Reports
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 4 evaluations
+- Corrections: branch: -6.91, call_return: -6.31, immediate: +5.02, memory_read: -9.36, memory_write: +6.67, register_ops: +6.04
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

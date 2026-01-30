@@ -1,0 +1,34 @@
+{
+  "processor": "hc55516",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 27,
+  "loss_before": 0.01125,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.decode": -1.648181,
+    "cor.filter": 1.183966,
+    "cor.dac": 0.527239,
+    "cor.control": 2.76575,
+    "cor.timing": -1.968477
+  },
+  "residuals_before": {
+    "typical": -0.125,
+    "continuous": 0.05,
+    "idle": 0.125
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "continuous": 0.0,
+    "idle": 0.0
+  },
+  "free_parameters": [
+    "cor.control",
+    "cor.dac",
+    "cor.decode",
+    "cor.filter",
+    "cor.timing"
+  ]
+}

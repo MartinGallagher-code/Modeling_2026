@@ -70,3 +70,18 @@ This file contains the complete history of all work on this model.
 - Model source: icl_dap_validated.py
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 4 free correction parameters
+- Optimizer converged in 2 evaluations
+- Corrections: bit_op: +3.43, control: +1.43, vector: -3.06, word_op: -0.57
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

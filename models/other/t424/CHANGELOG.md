@@ -35,3 +35,18 @@ This file contains the complete history of all work on this model.
 - Inmos T424 transputer datasheet (1985)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 15 evaluations
+- Corrections: alu: -0.38, channel: -1.66, control: -0.28, data_transfer: +1.70, memory: -1.78
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

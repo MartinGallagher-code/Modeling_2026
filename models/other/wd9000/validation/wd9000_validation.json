@@ -41,7 +41,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model calibrated for UCSD Pascal p-code execution workloads"
+    "notes": "Model calibrated for UCSD Pascal p-code execution workloads",
+    "sysid_loss_before": 0.00064,
+    "sysid_loss_after": 0.00064,
+    "sysid_cpi_error_percent": 0.51,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

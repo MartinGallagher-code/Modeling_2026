@@ -1,0 +1,40 @@
+{
+  "processor": "i80387",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 5.17563,
+  "loss_after": 5.175629,
+  "cpi_error_percent": 0.0,
+  "message": "The maximum number of function evaluations is exceeded.",
+  "corrections": {
+    "cor.fp_add": 17.5,
+    "cor.fp_div": -47.242018,
+    "cor.fp_mul": -24.096811,
+    "cor.fp_sqrt": 70.0,
+    "cor.fp_transfer": 8.0,
+    "cor.fp_trig": 87.5
+  },
+  "residuals_before": {
+    "typical": 0.0017,
+    "compute": 2.2716,
+    "memory": -4.5517,
+    "control": 0.0017,
+    "mixed": 0.0017
+  },
+  "residuals_after": {
+    "typical": 0.0016,
+    "compute": 2.2718,
+    "memory": -4.5516,
+    "control": 0.0016,
+    "mixed": 0.0016
+  },
+  "free_parameters": [
+    "cor.fp_add",
+    "cor.fp_div",
+    "cor.fp_mul",
+    "cor.fp_sqrt",
+    "cor.fp_transfer",
+    "cor.fp_trig"
+  ]
+}

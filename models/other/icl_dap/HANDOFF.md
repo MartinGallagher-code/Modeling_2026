@@ -35,3 +35,9 @@
 - Bit-serial operations: 1 cycle per bit
 - Attached processor to ICL 2900 mainframe via host interface
 - Nearest-neighbor communication network
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

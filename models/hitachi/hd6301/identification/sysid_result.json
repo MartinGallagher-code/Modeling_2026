@@ -1,0 +1,38 @@
+{
+  "processor": "hd6301",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 16,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -1.200654,
+    "cor.call_return": 0.773106,
+    "cor.control": -0.31685,
+    "cor.data_transfer": 1.434445,
+    "cor.memory": -0.107626,
+    "cor.stack": 2.146624
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.call_return",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.stack"
+  ]
+}

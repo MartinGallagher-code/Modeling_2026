@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - Enhanced COP400 with 1KB ROM and 64 nibbles RAM
 - Features: Enhanced COP400, 1KB ROM, 64 nibbles RAM, Same instruction timing
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

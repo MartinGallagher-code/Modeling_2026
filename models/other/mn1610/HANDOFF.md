@@ -41,3 +41,9 @@ Key instruction categories:
 - Predecessor to MN1613 and later Panafacom designs
 - Important historical milestone in Japanese semiconductor industry
 - Used in industrial control and business computing applications
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 1.69%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

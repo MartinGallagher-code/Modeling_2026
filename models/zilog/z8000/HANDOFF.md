@@ -68,3 +68,9 @@ Key instruction categories:
 ## Files
 - Model: `current/z8000_validated.py`
 - Validation: `validation/z8000_validation.json`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

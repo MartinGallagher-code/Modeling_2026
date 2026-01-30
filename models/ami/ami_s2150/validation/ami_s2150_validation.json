@@ -11,7 +11,10 @@
     "architecture": "4-bit PMOS calculator chip"
   },
   "timing": {
-    "cycles_per_instruction_range": [6, 10],
+    "cycles_per_instruction_range": [
+      6,
+      10
+    ],
     "typical_cpi": 8.0,
     "notes": "Same timing as S2000"
   },
@@ -27,6 +30,17 @@
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"]
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   }
 }

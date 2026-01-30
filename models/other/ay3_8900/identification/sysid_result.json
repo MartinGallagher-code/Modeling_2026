@@ -1,0 +1,32 @@
+{
+  "processor": "ay3_8900",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 14,
+  "loss_before": 0.296468,
+  "loss_after": 0.294882,
+  "cpi_error_percent": 0.16,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.sprite_engine": 0.011494,
+    "cor.background": 0.011494,
+    "cor.collision": 0.006886,
+    "cor.sync": -7.7e-05
+  },
+  "residuals_before": {
+    "typical": 0.001,
+    "sprite_heavy": 0.501,
+    "collision_heavy": -0.799
+  },
+  "residuals_after": {
+    "typical": 0.0094,
+    "sprite_heavy": 0.5094,
+    "collision_heavy": -0.7906
+  },
+  "free_parameters": [
+    "cor.background",
+    "cor.collision",
+    "cor.sprite_engine",
+    "cor.sync"
+  ]
+}

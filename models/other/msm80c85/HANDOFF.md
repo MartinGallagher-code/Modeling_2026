@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - CMOS 8085 second-source, notable for low-power portable use
 - Features: CMOS 8085 clone, Low-power portable, Intel 8085 compatible
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

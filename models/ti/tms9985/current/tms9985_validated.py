@@ -45,12 +45,15 @@ except ImportError:
         ips: float
         bottleneck: str
         utilizations: Dict[str, float]
+        base_cpi: float = 0.0
+        correction_delta: float = 0.0
+
 
         @classmethod
-        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations, base_cpi=None, correction_delta=0.0):
             ipc = 1.0 / cpi
             ips = clock_mhz * 1e6 * ipc
-            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations, base_cpi if base_cpi is not None else cpi, correction_delta)
 
     class BaseProcessorModel:
         pass
@@ -106,6 +109,15 @@ class Tms9985Model(BaseProcessorModel):
             }, "Control-flow intensive"),
         }
 
+        # Correction terms for system identification (initially zero)
+        self.corrections = {
+            'alu': 3.760129,
+            'control': -3.739871,
+            'data_transfer': 2.260129,
+            'memory': -4.729860,
+            'stack': -1.749881
+        }
+
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
         total_cpi = sum(
@@ -115,8 +127,17 @@ class Tms9985Model(BaseProcessorModel):
         contributions = {c: profile.category_weights[c] * self.instruction_categories[c].total_cycles
                          for c in profile.category_weights}
         bottleneck = max(contributions, key=contributions.get)
+        # System identification: apply correction terms
+        base_cpi = total_cpi
+        correction_delta = sum(
+            self.corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = base_cpi + correction_delta
+
         return AnalysisResult.from_cpi(
-            self.name, workload, total_cpi, self.clock_mhz, bottleneck, contributions
+            self.name, workload, corrected_cpi, self.clock_mhz, bottleneck, contributions,
+            base_cpi=base_cpi, correction_delta=correction_delta
         )
 
     def validate(self):

@@ -291,6 +291,11 @@
     "ipc_error_percent": 2.5,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 6e-06,
+    "sysid_loss_after": 6e-06,
+    "sysid_cpi_error_percent": 0.13,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   }
 }

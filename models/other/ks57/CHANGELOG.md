@@ -24,3 +24,18 @@ This file contains the complete history of all work on this model.
 
 **References:**
 - Samsung KS57 Series Datasheet
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 23 evaluations
+- Corrections: alu: +2.46, control: +1.62, data_transfer: -2.37, io: -4.38, memory: +0.96
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

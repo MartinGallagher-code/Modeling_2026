@@ -1,0 +1,36 @@
+{
+  "processor": "berkeley_risc2",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 22,
+  "loss_before": 0.007525,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -0.426009,
+    "cor.load": 0.422325,
+    "cor.store": 0.922956,
+    "cor.branch": -1.027552,
+    "cor.call": 1.976306
+  },
+  "residuals_before": {
+    "typical": 0.005,
+    "compute": 0.115,
+    "memory": -0.125,
+    "control": -0.035
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.branch",
+    "cor.call",
+    "cor.load",
+    "cor.store"
+  ]
+}

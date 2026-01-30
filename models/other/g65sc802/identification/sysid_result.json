@@ -1,0 +1,38 @@
+{
+  "processor": "g65sc802",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 27,
+  "loss_before": 0.02875,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -1.29219,
+    "cor.data_transfer": 1.023013,
+    "cor.memory": 1.499721,
+    "cor.control": 1.446164,
+    "cor.stack": -2.794349,
+    "cor.long_addr": -0.557323
+  },
+  "residuals_before": {
+    "typical": -0.1,
+    "compute": 0.25,
+    "memory": -0.2,
+    "control": 0.05
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.long_addr",
+    "cor.memory",
+    "cor.stack"
+  ]
+}

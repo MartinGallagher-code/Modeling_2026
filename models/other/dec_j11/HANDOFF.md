@@ -33,3 +33,9 @@
 - Used in PDP-11/73 and PDP-11/84 systems
 - Features instruction prefetch and pipelining (unlike microcoded T-11)
 - 175K transistors - significantly more complex than T-11 (18K)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.09%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

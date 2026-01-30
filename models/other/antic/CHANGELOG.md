@@ -72,3 +72,18 @@ This file contains the complete history of all work on this model.
 - Atari ANTIC display list architecture
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 28 evaluations
+- Corrections: char_mode: -0.07, control: -0.07, display_list: -0.05, dma: -0.05, map_mode: -0.07
+
+**Final state:**
+- CPI error: 1.66%
+- Validation: PASSED
+
+---

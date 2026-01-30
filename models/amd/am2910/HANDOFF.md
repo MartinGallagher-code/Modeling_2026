@@ -24,3 +24,9 @@
 - It generates the next microinstruction address for a microcode-controlled system
 - 12-bit address output, 5-level LIFO stack for subroutine nesting
 - All instructions are inherently single-cycle by hardware design
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 1
+- **Corrections**: See `identification/sysid_result.json`

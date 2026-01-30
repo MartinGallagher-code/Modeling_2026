@@ -32,3 +32,9 @@
 - 8KB I-cache + 8KB D-cache, up to 16MB external cache
 - Fastest microprocessor at launch, influenced AMD64 design
 - Many Alpha engineers later worked on AMD's K7/K8
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.55%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

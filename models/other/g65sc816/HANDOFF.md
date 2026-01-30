@@ -39,3 +39,9 @@ Key instruction categories:
 - 16-bit native mode with switchable 8/16-bit registers
 - CMOS, 4 MHz operation
 - Used in Apple IIGS and embedded systems
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

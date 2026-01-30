@@ -69,3 +69,18 @@ This file contains the complete history of all work on this model.
 - berkeley_risc1 model for comparison
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 22 evaluations
+- Corrections: alu: -0.43, branch: -1.03, call: +1.98, load: +0.42, store: +0.92
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

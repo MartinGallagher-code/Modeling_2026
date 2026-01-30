@@ -1,0 +1,64 @@
+{
+  "processor": "VEB U808",
+  "manufacturer": "VEB Mikroelektronik Erfurt",
+  "year": 1978,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 10.0,
+      "source": "datasheet",
+      "source_detail": "Intel 8008 compatible timing, VEB U808 datasheet. Target CPI based on 8008 instruction mix analysis.",
+      "conditions": {
+        "clock_mhz": 0.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.5,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "U808 is Intel 8008 clone with identical timing. CPI ~10 based on 8008 instruction mix studies."
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 9.0,
+      "source": "datasheet",
+      "source_detail": "Intel 8008 ALU-heavy instruction mix timing analysis",
+      "conditions": {
+        "clock_mhz": 0.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.5,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "ALU-heavy workload, mostly register-register ops at 5-8 T-states"
+    },
+    {
+      "workload": "io_heavy",
+      "measured_cpi": 10.5,
+      "source": "datasheet",
+      "source_detail": "Intel 8008 I/O-heavy industrial control timing analysis",
+      "conditions": {
+        "clock_mhz": 0.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.5,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "I/O-heavy industrial control workload with INP/OUT ops"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 10.5,
+      "source": "datasheet",
+      "source_detail": "Intel 8008 branch-heavy timing analysis",
+      "conditions": {
+        "clock_mhz": 0.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.5,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "Control-flow heavy workload with JMP/CALL/RET"
+    }
+  ]
+}

@@ -40,3 +40,18 @@ This file contains the complete history of all work on this model.
 **References used:**
 - Model docstring referencing NS32000 FPU specifications
 - NS32381 datasheet cycle counts (add=5, mul=7, div=25, sqrt=35)
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 4 free correction parameters
+- Optimizer converged in 1 evaluations
+- Corrections: all near zero (model already matched measurements)
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

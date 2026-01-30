@@ -26,3 +26,9 @@
 - 16-bit ALU available for some operations despite 8-bit data bus
 - Memory-mapped I/O means peripheral access uses memory instruction timing
 - Used in TI-CC40 portable computer and speech/modem products
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

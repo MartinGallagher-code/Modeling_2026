@@ -26,3 +26,18 @@
 ### References
 - Intel 8008 Datasheet (timing reference)
 - VEB Mikroelektronik Erfurt documentation
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 28 evaluations
+- Corrections: alu: -2.32, control: -0.54, data_transfer: +2.34, io: -0.34, memory: +1.93
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

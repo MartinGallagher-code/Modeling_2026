@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - Top-end COP4xx with 2KB ROM and 160 nibbles RAM
 - Features: Top-end COP4xx, 2KB ROM, 160 nibbles RAM, Extended I/O
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

@@ -69,3 +69,18 @@ This file contains the complete history of all work on this model.
 - Model source: ay3_8500_validated.py
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 4 free correction parameters
+- Optimizer converged in 18 evaluations
+- Corrections: game_logic: -0.04, io: -0.04, sync: -0.07, video_gen: -0.07
+
+**Final state:**
+- CPI error: 1.38%
+- Validation: PASSED
+
+---

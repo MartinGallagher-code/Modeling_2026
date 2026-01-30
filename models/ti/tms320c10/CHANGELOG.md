@@ -65,3 +65,18 @@ This file contains the complete history of all work on this model.
 - TI Digital Signal Processing Applications
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 20 evaluations
+- Corrections: alu: -0.50, branch: -0.53, control: -0.43, mac: +0.50, memory: -0.50
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

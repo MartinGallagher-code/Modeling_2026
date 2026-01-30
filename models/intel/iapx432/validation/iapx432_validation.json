@@ -42,7 +42,12 @@
     "predicted_cpi": 48.25,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.306638,
+    "sysid_loss_after": 0.306638,
+    "sysid_cpi_error_percent": 1.81,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_timing_tests": [
     {

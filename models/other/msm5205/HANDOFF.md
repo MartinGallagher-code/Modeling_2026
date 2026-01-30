@@ -23,3 +23,9 @@
 - Used in hundreds of arcade games for voice/sound effects
 - 4-bit ADPCM nibbles decoded to 12-bit DAC output
 - Sample rate determined by external clock divider
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

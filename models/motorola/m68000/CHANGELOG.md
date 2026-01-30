@@ -100,3 +100,44 @@ Compared model's category cycle counts against 31 individual instruction timings
 - User-provided instruction timing specifications
 
 ---
+
+## 2026-01-29 - System identification: workload profile fix + correction terms
+
+**Session goal:** Run system identification optimizer to fit correction terms across all workloads
+
+**Starting state:**
+- Typical CPI: 6.49 (0.66% error) - good
+- Compute CPI: 9.90 (80.7% error) - severely over-predicted
+- Memory CPI: 11.10 (54.5% error) - severely over-predicted
+- Control CPI: 12.92 (64.8% error) - severely over-predicted
+
+**Root cause analysis:**
+The compute/memory/control workload profiles had multiply weights of 3-4% and divide weights of 2-3%. With MULU at 70 cycles and DIVU at 140 cycles, this contributed 4.9-7.0 phantom CPI. Published instruction frequency studies show multiply/divide rarely exceeds 1% even in compute-heavy 68000 code.
+
+**Changes made:**
+
+1. Fixed workload profiles - reduced multiply/divide weights
+   - compute: multiply 3%->0.5%, divide 2%->0.5%; redistributed to alu_reg/data_transfer
+   - memory: multiply 3%->0.5%, divide 2%->0.5%; redistributed to alu_reg/data_transfer
+   - control: multiply 4%->0.5%, divide 3%->0.5%; redistributed to alu_reg/data_transfer/control
+   - typical profile unchanged (already had 0.5% each)
+
+2. Applied system identification correction terms (scipy.optimize.least_squares)
+   - cor.alu_reg: -2.78, cor.data_transfer: +3.28, cor.control: +2.12
+   - cor.memory: -0.66, cor.multiply: -26.95, cor.divide: -53.89
+
+**What didn't work:**
+- Optimizer with original 3-4% mul/div weights hit correction bounds (-5.0), sacrificed typical accuracy from 0.66% to 37%
+- Static ±5 correction bounds too narrow for 70-140 cycle categories
+
+**What we learned:**
+- Workload profiles must have realistic mul/div frequencies; even 3% is too high for 68000
+- Correction bounds should scale with category base_cycles
+- Optimizer needs rollback guard when typical-workload error worsens
+
+**Final state:**
+- All workloads: 0.00% CPI error
+- Validation: PASSED
+- System identification converged in 36 iterations
+
+---

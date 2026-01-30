@@ -38,3 +38,9 @@
 - Famous limitation: cannot exit protected mode without reset
 - Powered the IBM PC/AT that defined the "AT" standard
 - 24-bit addressing allows 16MB memory (vs 1MB for 8086)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

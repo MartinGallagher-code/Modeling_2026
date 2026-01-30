@@ -29,3 +29,9 @@
 - Normalization support for floating-point operations
 - Part of the Am2900 bit-slice family
 - Approximately 400 transistors
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

@@ -31,3 +31,9 @@
 - With only 2300 transistors and a 4-bit data width, it established the foundation for all modern microprocessors
 - Simple timing model: single-cycle instructions (8 clocks) vs two-cycle instructions (16 clocks)
 - Two-cycle instructions need extra cycle for operand/address fetch
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

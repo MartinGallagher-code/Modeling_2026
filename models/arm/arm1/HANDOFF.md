@@ -43,3 +43,9 @@
 | ARM2 | 1986 | 1.43 | 4.5 | Hardware multiplier |
 | ARM3 | 1989 | 1.33 | 18.0 | First with 4KB cache |
 | ARM6 | 1991 | 1.43 | 14.0 | 32-bit address space |
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 1.28%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

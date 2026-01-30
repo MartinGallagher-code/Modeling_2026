@@ -40,3 +40,9 @@ Key instruction categories:
 - Same instruction set and timing as ROM versions
 - Used for prototyping and systems needing larger/changeable code
 - Harvard architecture with separate program and data memory
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

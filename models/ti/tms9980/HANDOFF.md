@@ -27,3 +27,9 @@
 - Every 16-bit operation requires 2 bus cycles (byte-at-a-time access)
 - BLWP (Branch and Load Workspace Pointer) is the context switch mechanism - very expensive
 - No on-chip RAM: all workspace accesses go through the 8-bit external bus
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

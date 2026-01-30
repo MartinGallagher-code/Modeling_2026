@@ -35,3 +35,9 @@
 - Demand-paged virtual memory support
 - Still heavily microcoded, causing higher CPI than Intel/Motorola contemporaries
 - Better memory bandwidth significantly improves performance over NS32016
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 7
+- **Corrections**: See `identification/sysid_result.json`

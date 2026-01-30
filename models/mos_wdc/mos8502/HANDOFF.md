@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - Commodore C128 CPU, 2MHz 6502 variant
 - Features: 2MHz 6502 variant, C128 CPU, Dual-speed (1/2 MHz), HMOS process
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

@@ -21,7 +21,12 @@
     "cpi_error_percent": 0.13,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.321167,
+    "sysid_loss_after": 0.008317,
+    "sysid_cpi_error_percent": 0.01,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-29"
   },
   "sources": [
     "DEC T-11 datasheet"

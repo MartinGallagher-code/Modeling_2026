@@ -1,0 +1,38 @@
+{
+  "processor": "iapx432",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 2,
+  "loss_before": 0.306638,
+  "loss_after": 0.306638,
+  "cpi_error_percent": 1.81,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -6.575237,
+    "cor.control": -19.421544,
+    "cor.data_transfer": 11.670329,
+    "cor.memory": 3.517065,
+    "cor.object_ops": 11.963684
+  },
+  "residuals_before": {
+    "typical": -0.9062,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.8438
+  },
+  "residuals_after": {
+    "typical": -0.9062,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.8438
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.object_ops"
+  ]
+}

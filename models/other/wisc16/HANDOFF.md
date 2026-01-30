@@ -25,3 +25,9 @@ Key instruction categories:
 
 ## Suggested Next Steps
 - Model is complete; could add custom microcode timing profiles
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 4.12%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

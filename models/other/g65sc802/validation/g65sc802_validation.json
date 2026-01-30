@@ -35,13 +35,18 @@
       "memory",
       "control"
     ],
-    "predicted_cpi": 3.40,
+    "predicted_cpi": 3.4,
     "cpi_error_percent": 2.86,
     "ipc_error_percent": 2.86,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model uses 65C816 emulation mode timing"
+    "notes": "Model uses 65C816 emulation mode timing",
+    "sysid_loss_before": 0.02875,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

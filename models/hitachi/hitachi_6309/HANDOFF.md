@@ -137,3 +137,9 @@ None - model is validated.
 - Original 6809/6309 comparison documents
 - CoCo community timing measurements
 - NitrOS-9 operating system (6309 native mode optimized)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 11
+- **Corrections**: See `identification/sysid_result.json`

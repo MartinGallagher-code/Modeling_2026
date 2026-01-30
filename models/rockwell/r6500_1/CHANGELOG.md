@@ -37,3 +37,18 @@ This file contains the complete history of all work on this model.
 - 6502.org timing reference
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 18 evaluations
+- Corrections: alu: +0.89, control: +0.10, data_transfer: +0.45, memory: -1.07, stack: -0.37
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

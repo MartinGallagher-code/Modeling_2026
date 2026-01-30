@@ -34,3 +34,18 @@ This file contains the complete history of all work on this model.
 - M50747 Data Sheet
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 23 evaluations
+- Corrections: alu: -0.55, bit_ops: +0.92, control: -0.29, data_transfer: +0.17, io: +0.11, memory: -0.21
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

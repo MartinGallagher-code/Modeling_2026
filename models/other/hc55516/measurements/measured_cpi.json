@@ -15,12 +15,12 @@
       "notes": "typical workload profile"
     },
     {
-      "workload": "decode_heavy",
+      "workload": "continuous",
       "measured_cpi": 1.8,
       "measured_ipc": 0.5556,
       "measured_ips": 1111111.1,
       "measurement_method": "model_prediction",
-      "notes": "decode_heavy workload profile"
+      "notes": "continuous decode stream workload profile (was decode_heavy)"
     },
     {
       "workload": "idle",

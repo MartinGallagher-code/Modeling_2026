@@ -1,0 +1,38 @@
+{
+  "processor": "att_dsp20",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 11,
+  "loss_before": 0.02998,
+  "loss_after": 0.006077,
+  "cpi_error_percent": 1.44,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.mac": 1.534401,
+    "cor.alu": -5.0,
+    "cor.data_move": 2.525523,
+    "cor.control": 0.7995,
+    "cor.io": -0.033878
+  },
+  "residuals_before": {
+    "typical": -0.05,
+    "compute": 0.05,
+    "control": -0.15,
+    "io_heavy": -0.3,
+    "mixed": 0.18
+  },
+  "residuals_after": {
+    "typical": -0.0432,
+    "compute": -0.0396,
+    "control": -0.013,
+    "io_heavy": -0.0814,
+    "mixed": 0.142
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_move",
+    "cor.io",
+    "cor.mac"
+  ]
+}

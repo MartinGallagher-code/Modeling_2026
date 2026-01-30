@@ -38,3 +38,18 @@ This file contains the complete history of all work on this model.
 - Intel 80186/80C186 datasheet instruction timing tables
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 6 evaluations
+- Corrections: alu: -3.07, control: -0.70, data_transfer: -0.86, memory: +3.29, stack: +3.15
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

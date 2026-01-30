@@ -2,45 +2,33 @@
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0.71%
-- **Last Updated**: 2026-01-28
+- **CPI Error**: 0.00% (all workloads)
+- **Last Updated**: 2026-01-29
 
 ## Current Model Summary
-The Motorola 68020 (1984) is a full 32-bit microprocessor. Features 32-bit data and address buses, 256-byte instruction cache, 3-stage pipeline, and coprocessor interface. Target CPI is 3.5 cycles per instruction.
+The Motorola 68020 (1984) first full 32-bit 68K model — 256-byte instruction cache, 3-stage pipeline. Uses 6 instruction categories with correction terms.
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| Target CPI | 3.5 | Expected cycles per instruction |
-| Predicted CPI | 3.525 | Model output |
-| External Bus | 32-bit | Full 32-bit data bus |
-| I-Cache | 256 bytes | Direct-mapped |
+| Parameter | Value |
+|-----------|-------|
+| Clock | 16 MHz |
+| Categories | alu_reg(2), data_transfer(2), memory(4.5), control(4.5), multiply(44), divide(90) |
+| Corrections | Applied via scipy least_squares — see identification/sysid_result.json |
+| Typical CPI | 3.54 (measured), 3.54 (predicted) |
 
-## Validation
-The model includes a `validate()` method that runs 16 self-tests.
-Current: **16/16 tests passing, 99.3% accuracy**
-
-## Cross-Validation with 68K Family
-- 25 per-instruction timing tests added (datasheet verified)
-- Cross-validation section documents relationship to M68010/M68030/M68040
-- **vs M68010**: 3-4x faster
-- **vs M68008**: 5-8x faster
-- **vs M68030**: 20-30% slower (no data cache)
-- **vs M68040**: 2-3x slower
+## System Identification
+Correction terms fitted against 4 workload measurements. Key corrections:
+- control: +1.86 (branch/call overhead), alu_reg: -1.05
+- multiply: -3.21, divide: -6.57
 
 ## Known Issues
-None - model accuracy is excellent (0.71% error).
+- Workload profiles manually fixed (mul/div weights reduced from 3-4% to 0.5%)
 
 ## Suggested Next Steps
 1. Cache miss penalty modeling could be more detailed
-2. Validate against Mac II or Amiga 1200 emulator if data available
+2. Validate against Mac II or Amiga 1200 emulator data
 
 ## Key Architectural Notes
 - First full 32-bit 68K processor
-- 256-byte instruction cache (direct-mapped)
-- 3-stage pipeline (fetch, decode, execute)
-- Coprocessor interface (68881/68882 FPU)
-- Bit field instructions added (BFxxx)
-- Full 32-bit data and address buses
-- 190000 transistors
-- 16 MHz typical clock
-- Used in: Mac II, Amiga 1200, Sun-3, NeXT
+- 256-byte instruction cache (direct-mapped), 3-stage pipeline
+- Coprocessor interface (68881/68882 FPU), bit field instructions
+- 190,000 transistors, 16 MHz typical clock

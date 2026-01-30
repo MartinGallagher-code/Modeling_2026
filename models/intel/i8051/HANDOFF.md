@@ -33,3 +33,9 @@
 - Four banks of 8 registers (R0-R7)
 - 128 special function registers (SFRs)
 - MUL and DIV instructions take 4 machine cycles (48 clocks)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

@@ -1,0 +1,42 @@
+{
+  "processor": "f100l",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 23,
+  "loss_before": 0.03985,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu_ops": -1.221984,
+    "cor.memory_read": 1.411078,
+    "cor.memory_write": -0.067779,
+    "cor.branch": -0.91445,
+    "cor.jump": 1.702995,
+    "cor.shift": 0.868325,
+    "cor.io": 2.166987,
+    "cor.control": -0.46476
+  },
+  "residuals_before": {
+    "typical": -0.08,
+    "compute": 0.2,
+    "memory": -0.31,
+    "control": -0.13
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.alu_ops",
+    "cor.branch",
+    "cor.control",
+    "cor.io",
+    "cor.jump",
+    "cor.memory_read",
+    "cor.memory_write",
+    "cor.shift"
+  ]
+}

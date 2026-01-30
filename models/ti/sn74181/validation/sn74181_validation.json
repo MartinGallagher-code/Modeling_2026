@@ -9,7 +9,10 @@
     "package": "24-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 1],
+    "cycles_per_instruction_range": [
+      1,
+      1
+    ],
     "typical_cpi": 1.0
   },
   "validated_performance": {
@@ -47,14 +50,25 @@
   "accuracy": {
     "expected_cpi": 1.0,
     "expected_ipc": 1.0,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.0,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Combinational ALU - all operations single cycle. Model calibrated and validated."
+    "notes": "Combinational ALU - all operations single cycle. Model calibrated and validated.",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "timing_tests": [
     {

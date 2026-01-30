@@ -9,7 +9,10 @@
     "package": "40-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 4],
+    "cycles_per_instruction_range": [
+      2,
+      4
+    ],
     "typical_cpi": 5.0
   },
   "validated_performance": {
@@ -47,13 +50,23 @@
   "accuracy": {
     "expected_cpi": 5.0,
     "expected_ipc": 0.2,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
     "predicted_cpi": 5.0,
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "CPI of 5.0 reflects typical DSP workload where lack of hardware multiply requires many shift-add sequences for MAC operations."
+    "notes": "CPI of 5.0 reflects typical DSP workload where lack of hardware multiply requires many shift-add sequences for MAC operations.",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "timing_tests": [
     {

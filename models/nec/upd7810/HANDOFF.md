@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - Enhanced uPD7801 with 16-bit operations
 - Features: Enhanced 7801, 16-bit operations, Some pipelining, 6MHz clock
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

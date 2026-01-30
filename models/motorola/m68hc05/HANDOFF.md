@@ -42,3 +42,9 @@ Key instruction categories:
 - 13-bit address space in basic variants (8KB addressable)
 - Many variants with different on-chip peripheral configurations
 - Backbone of Motorola's automotive MCU business in the 1980s-90s
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

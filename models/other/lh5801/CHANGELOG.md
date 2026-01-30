@@ -39,3 +39,18 @@ This file contains the complete history of all work on this model.
 - PockEmul Emulator
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 10 evaluations
+- Corrections: branch: -2.27, call_return: -1.36, immediate: -0.98, memory_read: +0.39, memory_write: -3.32, register_ops: +3.05
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

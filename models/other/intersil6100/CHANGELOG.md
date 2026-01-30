@@ -59,3 +59,18 @@ This file contains the complete history of all work on this model.
 - PDP-8/E Technical Manual
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 17 evaluations
+- Corrections: arithmetic: +0.52, io: -0.21, jump: -1.96, logic: +0.74, memory: -0.95, operate: +1.42
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

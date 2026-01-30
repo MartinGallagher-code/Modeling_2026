@@ -52,3 +52,18 @@ This file contains the complete history of all work on this model.
 - CPU-World CDP1804
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer did not converge in 200 evaluations
+- Corrections: branch: -4.30, call_return: -1.06, immediate: -1.24, memory_read: +1.35, memory_write: -5.50, register_ops: +3.85
+
+**Final state:**
+- CPI error: 0.01%
+- Validation: PASSED
+
+---

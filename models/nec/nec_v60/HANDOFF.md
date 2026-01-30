@@ -43,3 +43,9 @@ Key instruction categories:
 - 32-bit address space (4GB)
 - Used in NEC workstations and embedded systems
 - Followed by V70 and V80 successors
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

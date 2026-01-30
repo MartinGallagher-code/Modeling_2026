@@ -41,3 +41,9 @@ Key instruction categories:
 - Register-to-R0 operations minimize instruction bytes
 - Used in arcade machines and early game consoles
 - Relative addressing modes efficient for position-independent code
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

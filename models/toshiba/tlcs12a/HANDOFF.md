@@ -38,3 +38,9 @@ Key instruction categories:
 - ~25% faster than original PMOS TLCS-12
 - 12-bit address space (4096 words)
 - Used in industrial control and data processing
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

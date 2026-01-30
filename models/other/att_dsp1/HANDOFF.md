@@ -32,3 +32,9 @@
 - Microcoded architecture with multi-cycle instruction execution
 - Designed for telecommunications signal processing
 - Predecessor to AT&T DSP-20 and later WE DSP series
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.85%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

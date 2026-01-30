@@ -10,13 +10,16 @@
     "compatibility": "Intel 8085 clone"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 18],
+    "cycles_per_instruction_range": [
+      4,
+      18
+    ],
     "typical_cpi": 5.0
   },
   "validated_performance": {
     "ips_min": 400000,
     "ips_max": 700000,
-    "mips_typical": 0.60
+    "mips_typical": 0.6
   },
   "notes": "Soviet Intel 8085 clone, used in military and industrial applications",
   "model_accuracy": {
@@ -35,20 +38,30 @@
   "accuracy": {
     "expected_cpi": 5.0,
     "expected_ipc": 0.2,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
     "predicted_cpi": 5.025,
     "cpi_error_percent": 0.5,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.30,
+    "alu": 0.3,
     "data_transfer": 0.25,
     "memory": 0.15,
     "io": 0.05,
     "control": 0.15,
-    "stack": 0.10,
+    "stack": 0.1,
     "notes": "Typical 8085-class workload"
   },
   "cross_validation": {

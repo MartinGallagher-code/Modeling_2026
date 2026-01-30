@@ -70,3 +70,18 @@ This file contains the complete history of all work on this model.
 - Model source: ferranti_ula_validated.py
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 4 free correction parameters
+- Optimizer converged in 21 evaluations
+- Corrections: contention: +0.02, io_decode: -0.08, memory_ctrl: +0.02, video_gen: -0.08
+
+**Final state:**
+- CPI error: 0.82%
+- Validation: PASSED
+
+---

@@ -46,12 +46,16 @@ except ImportError:
         ips: float
         bottleneck: str
         utilizations: Dict[str, float]
+        base_cpi: float = 0.0
+        correction_delta: float = 0.0
 
         @classmethod
-        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+        def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations, base_cpi=None, correction_delta=0.0):
             ipc = 1.0 / cpi
             ips = clock_mhz * 1e6 * ipc
-            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+            return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations,
+                       base_cpi=base_cpi if base_cpi is not None else cpi,
+                       correction_delta=correction_delta)
 
     class BaseProcessorModel:
         pass
@@ -102,17 +106,31 @@ class StaranModel(BaseProcessorModel):
             }, "Control-flow intensive"),
         }
 
+        # Correction terms for system identification (initially zero)
+        self.corrections = {
+            'bit_op': 1.036424,
+            'control': 5.000000,
+            'search': -4.942926,
+            'word_op': 5.000000
+        }
+
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
-        total_cpi = sum(
+        base_cpi = sum(
             profile.category_weights[c] * self.instruction_categories[c].total_cycles
             for c in profile.category_weights
         )
         contributions = {c: profile.category_weights[c] * self.instruction_categories[c].total_cycles
                          for c in profile.category_weights}
+        correction_delta = sum(
+            self.corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = base_cpi + correction_delta
         bottleneck = max(contributions, key=contributions.get)
         return AnalysisResult.from_cpi(
-            self.name, workload, total_cpi, self.clock_mhz, bottleneck, contributions
+            self.name, workload, corrected_cpi, self.clock_mhz, bottleneck, contributions,
+            base_cpi=base_cpi, correction_delta=correction_delta
         )
 
     def validate(self):

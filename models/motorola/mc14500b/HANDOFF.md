@@ -37,3 +37,9 @@
 - External memory and program counter required
 
 See CHANGELOG.md for work history.
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

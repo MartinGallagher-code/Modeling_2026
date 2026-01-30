@@ -23,3 +23,9 @@
 ## Key Architectural Notes
 - The Speak & Spell chip, LPC speech synthesis pioneer
 - Features: Speak & Spell, LPC synthesis, 12-bit coefficients, 10 reflection parameters
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

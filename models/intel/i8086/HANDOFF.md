@@ -40,3 +40,9 @@
 - Its 16-bit segmented memory model and instruction set became the foundation for all subsequent x86 processors
 - The 6-byte prefetch queue enables BIU/EU parallelism, significantly reducing effective CPI below raw instruction timing
 - Raw instruction timings range 2-200+ cycles; effective CPI of 4.5 accounts for overlap
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.48%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

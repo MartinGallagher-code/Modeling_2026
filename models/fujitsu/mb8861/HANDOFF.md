@@ -55,3 +55,9 @@ Fujitsu produced the MB8861 as a second-source for the Motorola 6800. It was wid
 - **Model:** `current/mb8861_validated.py`
 - **Validation:** `validation/mb8861_validation.json`
 - **Changelog:** `CHANGELOG.md`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

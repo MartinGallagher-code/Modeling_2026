@@ -56,3 +56,9 @@
 - Higher clock: 25-36 MHz vs 8-12 MHz
 - 10x transistor count for cache logic
 - CPI improved from 1.43 to 1.33 (7% improvement)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.99%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

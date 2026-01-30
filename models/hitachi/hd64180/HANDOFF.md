@@ -65,3 +65,9 @@ The HD64180 was produced by Hitachi as part of the Z180 family. It was widely us
 - **Model:** `current/hd64180_validated.py`
 - **Validation:** `validation/hd64180_validation.json`
 - **Changelog:** `CHANGELOG.md`
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

@@ -29,3 +29,9 @@
 - NTSC: 262 lines/frame, 128 active display lines, 8 bytes/line via DMA
 - During vertical blank, no DMA occurs and the 1802 CPU runs freely
 - End-of-frame interrupt signals the 1802 via EFx flag line
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

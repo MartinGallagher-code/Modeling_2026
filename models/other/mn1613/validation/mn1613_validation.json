@@ -35,13 +35,18 @@
       "memory",
       "control"
     ],
-    "predicted_cpi": 4.40,
+    "predicted_cpi": 4.4,
     "cpi_error_percent": 2.22,
     "ipc_error_percent": 2.22,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model calibrated as improved MN1610 successor"
+    "notes": "Model calibrated as improved MN1610 successor",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

@@ -39,3 +39,18 @@ This file contains the complete history of all work on this model.
 - Intel 8231/8232 APU datasheet (1977)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 2 evaluations
+- Corrections: data_transfer: +1.77, fixed_point: +12.49, fp_add: +8.73, fp_div: -30.65, fp_mul: +1.48
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

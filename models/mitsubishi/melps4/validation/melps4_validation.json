@@ -11,7 +11,10 @@
     "architecture": "4-bit PMOS MCU"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 8],
+    "cycles_per_instruction_range": [
+      4,
+      8
+    ],
     "typical_cpi": 6.0,
     "notes": "Variable timing, slow PMOS technology"
   },
@@ -31,13 +34,24 @@
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"]
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.20,
-    "data_transfer": 0.20,
-    "memory": 0.20,
-    "io": 0.20,
-    "control": 0.20
+    "alu": 0.2,
+    "data_transfer": 0.2,
+    "memory": 0.2,
+    "io": 0.2,
+    "control": 0.2
   }
 }

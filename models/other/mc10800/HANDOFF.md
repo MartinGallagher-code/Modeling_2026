@@ -31,3 +31,9 @@
 - 50 MHz clock was exceptional for 1979
 - Used in UNIVAC 1100/60 mainframe computer
 - High power consumption trade-off for maximum speed
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.62%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`
