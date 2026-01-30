@@ -31,6 +31,14 @@
         "ami_s28211"
       ]
     },
+    "analog_devices": {
+      "count": 3,
+      "processors": [
+        "adsp2100",
+        "adsp21020",
+        "adsp2105"
+      ]
+    },
     "arm": {
       "count": 7,
       "processors": [
@@ -50,6 +58,14 @@
         "att_dsp16",
         "att_dsp20",
         "att_dsp32c"
+      ]
+    },
+    "cyrix": {
+      "count": 3,
+      "processors": [
+        "cx486dlc",
+        "cx486slc",
+        "cx5x86"
       ]
     },
     "dec": {
@@ -88,6 +104,14 @@
         "u80701",
         "u808",
         "u880"
+      ]
+    },
+    "fairchild": {
+      "count": 3,
+      "processors": [
+        "clipper_c100",
+        "f8",
+        "fairchild9440"
       ]
     },
     "fujitsu": {
@@ -215,6 +239,18 @@
         "pentium"
       ]
     },
+    "matsushita": {
+      "count": 7,
+      "processors": [
+        "mn10200",
+        "mn1400",
+        "mn1610",
+        "mn1613",
+        "mn1800",
+        "mn601",
+        "mn602"
+      ]
+    },
     "mips": {
       "count": 9,
       "processors": [
@@ -241,7 +277,7 @@
       ]
     },
     "mos_wdc": {
-      "count": 10,
+      "count": 13,
       "processors": [
         "mos6502",
         "mos6507",
@@ -251,6 +287,9 @@
         "mos8501",
         "mos8502",
         "mos8580_sid",
+        "ted",
+        "vic_6560",
+        "vic_ii",
         "wdc65816",
         "wdc65c02"
       ]
@@ -356,12 +395,8 @@
       ]
     },
     "other": {
-      "count": 94,
+      "count": 65,
       "processors": [
-        "adsp2100",
-        "adsp21020",
-        "adsp2105",
-        "aim_ppc_601",
         "antic",
         "apollo_dn300",
         "ati_mach32",
@@ -370,20 +405,14 @@
         "berkeley_risc2",
         "bt101",
         "chinese_863",
-        "clipper_c100",
         "ct65545",
         "cx1",
-        "cx486dlc",
-        "cx486slc",
-        "cx5x86",
         "cy7c601",
         "dsp1600",
         "ensoniq_otto",
         "es5503",
         "et4000",
         "f100l",
-        "f8",
-        "fairchild9440",
         "ferranti_ula",
         "g65sc802",
         "g65sc816",
@@ -406,43 +435,24 @@
         "mk5005",
         "mm6701",
         "mmi_67110",
-        "mn10200",
-        "mn1400",
-        "mn1610",
-        "mn1613",
-        "mn1800",
-        "mn601",
-        "mn602",
         "mostek_3870",
         "mup21",
         "nc4000",
         "nc4016",
         "nx586",
         "pokey",
-        "ppc603",
-        "ppc604",
-        "ppc620",
         "ridge_32",
         "rp16",
         "rp32",
         "s3_86c911",
-        "sega_315_5124",
-        "sega_315_5313",
-        "sega_svp",
         "sequoia_s16",
         "sgs_d950",
         "snk_lspc2",
         "staran",
         "sy6502a",
         "symbolics_cadr",
-        "ted",
         "thomson_90435",
         "umc_u5s",
-        "vic_6560",
-        "vic_ii",
-        "wd16",
-        "wd2010",
-        "wd9000",
         "we32000",
         "weitek1064",
         "weitek_p9000",
@@ -452,6 +462,15 @@
         "xerox_alto",
         "z8400",
         "zoran_zr34161"
+      ]
+    },
+    "powerpc": {
+      "count": 4,
+      "processors": [
+        "aim_ppc_601",
+        "ppc603",
+        "ppc604",
+        "ppc620"
       ]
     },
     "rca": {
@@ -481,6 +500,14 @@
         "r6500_1",
         "r6511",
         "r65c02"
+      ]
+    },
+    "sega": {
+      "count": 3,
+      "processors": [
+        "sega_315_5124",
+        "sega_315_5313",
+        "sega_svp"
       ]
     },
     "sharp": {
@@ -561,6 +588,14 @@
         "tlcs870",
         "tlcs90",
         "tx39"
+      ]
+    },
+    "western_digital": {
+      "count": 3,
+      "processors": [
+        "wd16",
+        "wd2010",
+        "wd9000"
       ]
     },
     "yamaha": {
