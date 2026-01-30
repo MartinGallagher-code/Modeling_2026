@@ -1,0 +1,29 @@
+{
+  "processor": "GI SP0256",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 3.12,
+    "transistors": 10000,
+    "technology": "NMOS",
+    "package": "DIP-28"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      6,
+      18
+    ],
+    "typical_cpi": 10.0
+  },
+  "accuracy": {
+    "expected_cpi": 10.0,
+    "predicted_cpi": 10.05,
+    "cpi_error_percent": 0.5,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "GI SP0256 datasheet"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "processor": "TI TMS7000",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.0,
+    "transistors": 20000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      14
+    ],
+    "typical_cpi": 7.0
+  },
+  "accuracy": {
+    "expected_cpi": 7.0,
+    "predicted_cpi": 6.992,
+    "cpi_error_percent": 0.11,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "TI TMS7000 datasheet"
+  ]
+}

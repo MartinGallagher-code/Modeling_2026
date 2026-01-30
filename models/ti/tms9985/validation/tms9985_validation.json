@@ -1,0 +1,29 @@
+{
+  "processor": "TI TMS9985",
+  "year": 1978,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 2.5,
+    "transistors": 10000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      5,
+      20
+    ],
+    "typical_cpi": 10.0
+  },
+  "accuracy": {
+    "expected_cpi": 10.0,
+    "predicted_cpi": 10.089,
+    "cpi_error_percent": 0.89,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "TI TMS9985 datasheet"
+  ]
+}

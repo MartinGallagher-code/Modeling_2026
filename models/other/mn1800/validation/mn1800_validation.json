@@ -1,0 +1,29 @@
+{
+  "processor": "Matsushita MN1800",
+  "year": 1980,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.0,
+    "transistors": 10000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      12
+    ],
+    "typical_cpi": 5.0
+  },
+  "accuracy": {
+    "expected_cpi": 5.0,
+    "predicted_cpi": 5.029,
+    "cpi_error_percent": 0.57,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Matsushita MN1800 datasheet"
+  ]
+}

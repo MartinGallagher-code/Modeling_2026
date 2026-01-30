@@ -1,0 +1,29 @@
+{
+  "processor": "AMD Am29116",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 10.0,
+    "transistors": 20000,
+    "technology": "Bipolar",
+    "package": "DIP-48"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      2
+    ],
+    "typical_cpi": 1.5
+  },
+  "accuracy": {
+    "expected_cpi": 1.5,
+    "predicted_cpi": 1.5,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "AMD Am29116 datasheet"
+  ]
+}

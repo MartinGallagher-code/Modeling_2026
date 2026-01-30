@@ -1,0 +1,29 @@
+{
+  "processor": "Motorola 6803",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 1.0,
+    "transistors": 9000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      12
+    ],
+    "typical_cpi": 4.5
+  },
+  "accuracy": {
+    "expected_cpi": 4.5,
+    "predicted_cpi": 4.52,
+    "cpi_error_percent": 0.44,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Motorola 6803 datasheet"
+  ]
+}

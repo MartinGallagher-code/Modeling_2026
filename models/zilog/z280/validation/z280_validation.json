@@ -1,0 +1,29 @@
+{
+  "processor": "Zilog Z280",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 10.0,
+    "transistors": 68000,
+    "technology": "CMOS",
+    "package": "PGA-68"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      20
+    ],
+    "typical_cpi": 4.5
+  },
+  "accuracy": {
+    "expected_cpi": 4.5,
+    "predicted_cpi": 4.499,
+    "cpi_error_percent": 0.02,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Zilog Z280 datasheet"
+  ]
+}

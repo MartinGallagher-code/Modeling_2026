@@ -1,0 +1,29 @@
+{
+  "processor": "Atari ANTIC",
+  "year": 1979,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 1.79,
+    "transistors": 7000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      8
+    ],
+    "typical_cpi": 4.0
+  },
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "predicted_cpi": 4.001,
+    "cpi_error_percent": 0.03,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Atari ANTIC datasheet"
+  ]
+}

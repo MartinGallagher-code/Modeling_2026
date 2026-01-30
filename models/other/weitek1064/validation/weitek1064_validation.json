@@ -1,0 +1,29 @@
+{
+  "processor": "Weitek 1064/1065",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 15.0,
+    "transistors": 40000,
+    "technology": "ECL/CMOS",
+    "package": "PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      5
+    ],
+    "typical_cpi": 3.0
+  },
+  "accuracy": {
+    "expected_cpi": 3.0,
+    "predicted_cpi": 2.989,
+    "cpi_error_percent": 0.38,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Weitek 1064/1065 datasheet"
+  ]
+}

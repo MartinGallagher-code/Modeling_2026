@@ -1,0 +1,29 @@
+{
+  "processor": "DEC T-11",
+  "year": 1981,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 2.5,
+    "transistors": 18000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      12
+    ],
+    "typical_cpi": 6.0
+  },
+  "accuracy": {
+    "expected_cpi": 6.0,
+    "predicted_cpi": 6.008,
+    "cpi_error_percent": 0.13,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "DEC T-11 datasheet"
+  ]
+}

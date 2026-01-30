@@ -1,13 +1,15 @@
 {
-  "generated": "2026-01-29T15:02:47.105166",
-  "total_processors": 196,
+  "generated": "2026-01-29T18:00:00.000000",
+  "total_processors": 250,
   "families": {
     "amd": {
-      "count": 7,
+      "count": 9,
       "processors": [
         "am29000",
         "am2901",
         "am2903",
+        "am2910",
+        "am29116",
         "am29c101",
         "am9511",
         "am9512",
@@ -62,18 +64,19 @@
       ]
     },
     "hitachi": {
-      "count": 6,
+      "count": 7,
       "processors": [
         "fd1089",
         "fd1094",
         "hd6301",
         "hd63484",
         "hd64180",
-        "hitachi_6309"
+        "hitachi_6309",
+        "hmcs40"
       ]
     },
     "intel": {
-      "count": 24,
+      "count": 26,
       "processors": [
         "i3002",
         "i4004",
@@ -94,6 +97,8 @@
         "i8086",
         "i8088",
         "i8096",
+        "i80c186",
+        "i8231",
         "i860",
         "i8748",
         "i8751",
@@ -113,16 +118,18 @@
       ]
     },
     "mos_wdc": {
-      "count": 4,
+      "count": 6,
       "processors": [
         "mos6502",
         "mos6510",
+        "mos8501",
+        "mos8502",
         "wdc65816",
         "wdc65c02"
       ]
     },
     "motorola": {
-      "count": 17,
+      "count": 21,
       "processors": [
         "m6800",
         "m68000",
@@ -131,15 +138,19 @@
         "m68010",
         "m6802",
         "m68020",
+        "m6803",
         "m68030",
+        "m6804",
         "m68040",
         "m6805",
         "m68060",
         "m6809",
+        "m6854",
         "m68881",
         "m68882",
         "m68hc05",
         "m68hc11",
+        "m68hc11a1",
         "mc14500b"
       ]
     },
@@ -155,94 +166,131 @@
       ]
     },
     "national": {
-      "count": 6,
+      "count": 11,
       "processors": [
+        "cop400",
+        "cop420",
+        "cop444",
         "imp16",
         "ns32016",
         "ns32032",
         "ns32081",
+        "ns32381",
+        "nsc800",
         "pace",
         "scmp"
       ]
     },
     "nec": {
-      "count": 10,
+      "count": 13,
       "processors": [
         "nec_v20",
         "nec_v30",
         "nec_v60",
         "nec_v70",
         "ucom4",
+        "upd546",
         "upd612x",
         "upd7220",
         "upd751",
         "upd7720",
-        "upd780"
+        "upd780",
+        "upd7801",
+        "upd7810"
       ]
     },
     "other": {
-      "count": 53,
+      "count": 81,
       "processors": [
         "aim__ppc_601",
         "alpha21064",
+        "antic",
         "att_dsp1",
         "att_dsp20",
+        "ay3_8500",
+        "ay3_8900",
         "berkeley_risc1",
         "berkeley_risc2",
         "cp1600",
+        "dec_j11",
+        "dec_t11",
         "dsp56000",
         "f100l",
         "f8",
         "fairchild9440",
+        "ferranti_ula",
         "g65sc802",
         "g65sc816",
         "hc55516",
         "hm6100",
         "hp_nano",
         "hp_pa_risc",
+        "icl_dap",
         "intel2920",
         "intersil6100",
+        "iwarp",
         "ks57",
         "lc87",
         "lc88",
         "lh5801",
         "mac4",
+        "mas281",
         "mc10800",
         "miproc",
         "mm6701",
+        "mn10200",
+        "mn1400",
         "mn1610",
         "mn1613",
+        "mn1800",
         "mn601",
+        "mn602",
         "mos6507",
         "mos6509",
         "mostek_3870",
+        "msm5205",
         "msm5840",
+        "msm80c85",
         "nc4016",
         "pic1650",
+        "pokey",
         "r2000",
         "ricoh_2a03",
         "rp16",
         "rtx2000",
+        "s2636_pvi",
         "signetics2650",
         "signetics_8x300",
+        "sm4",
+        "sm5",
         "sm83",
+        "sp0256",
         "sparc",
         "stanford_mips",
+        "staran",
         "sun_spark",
         "sy6502a",
+        "t212",
         "t414",
+        "t424",
+        "t800",
+        "thomson_90435",
+        "vic_6560",
         "wd16",
         "wd9000",
         "we32000",
+        "weitek1064",
+        "williams_sc1",
         "wisc16",
         "wisc32"
       ]
     },
     "rca": {
-      "count": 4,
+      "count": 5,
       "processors": [
         "cdp1804",
         "cdp1806",
+        "cdp1861",
         "rca1802",
         "rca1805"
       ]
@@ -258,7 +306,7 @@
       ]
     },
     "ti": {
-      "count": 9,
+      "count": 13,
       "processors": [
         "sbp0400",
         "sbp0401",
@@ -267,7 +315,11 @@
         "tms1000",
         "tms320c10",
         "tms34010",
+        "tms5100",
+        "tms7000",
         "tms9900",
+        "tms9980",
+        "tms9985",
         "tms9995"
       ]
     },
@@ -282,9 +334,11 @@
       ]
     },
     "zilog": {
-      "count": 7,
+      "count": 9,
       "processors": [
+        "super8",
         "z180",
+        "z280",
         "z8",
         "z80",
         "z8000",

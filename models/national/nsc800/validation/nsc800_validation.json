@@ -1,0 +1,29 @@
+{
+  "processor": "National NSC800",
+  "year": 1979,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.5,
+    "transistors": 9000,
+    "technology": "CMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      4,
+      23
+    ],
+    "typical_cpi": 5.5
+  },
+  "accuracy": {
+    "expected_cpi": 5.5,
+    "predicted_cpi": 5.474,
+    "cpi_error_percent": 0.47,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "National NSC800 datasheet"
+  ]
+}

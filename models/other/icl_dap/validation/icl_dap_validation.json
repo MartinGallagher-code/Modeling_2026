@@ -1,0 +1,29 @@
+{
+  "processor": "ICL DAP",
+  "year": 1980,
+  "specifications": {
+    "data_width_bits": 1,
+    "clock_mhz": 5.0,
+    "transistors": 0,
+    "technology": "TTL/MSI",
+    "package": "Board-level"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      6,
+      16
+    ],
+    "typical_cpi": 10.0
+  },
+  "accuracy": {
+    "expected_cpi": 10.0,
+    "predicted_cpi": 10.05,
+    "cpi_error_percent": 0.5,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "ICL DAP datasheet"
+  ]
+}

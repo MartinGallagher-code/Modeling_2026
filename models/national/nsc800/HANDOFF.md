@@ -1,0 +1,25 @@
+# National NSC800 Model Handoff
+
+## Current Status
+- **Validation**: MARGINAL
+- **CPI Error**: 6.55%
+- **Last Updated**: 2026-01-29
+
+## Current Model Summary
+- Architecture: 8-bit (1979)
+- Clock: 2.5 MHz, CMOS technology
+- Categories: alu (4.0c), data_transfer (4.0c), memory (5.8c), control (5.5c), stack (10.0c)
+- Predicted typical CPI: 5.860 (target: 5.5)
+
+## Known Issues
+- Model uses simplified category-based timing
+- Fixed workload profiles may not match all real-world use cases
+
+## Suggested Next Steps
+- Validate against datasheet instruction timing tables
+- Cross-reference with related processor models
+- Add per-instruction timing tests
+
+## Key Architectural Notes
+- Z80-compatible CMOS, used in Epson HX-20 (first laptop) and military
+- Features: Z80-compatible, CMOS low-power, Epson HX-20, Military systems

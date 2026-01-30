@@ -1,0 +1,29 @@
+{
+  "processor": "iWarp",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 20.0,
+    "transistors": 200000,
+    "technology": "CMOS",
+    "package": "PGA"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      4
+    ],
+    "typical_cpi": 1.5
+  },
+  "accuracy": {
+    "expected_cpi": 1.5,
+    "predicted_cpi": 1.512,
+    "cpi_error_percent": 0.8,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "iWarp datasheet"
+  ]
+}

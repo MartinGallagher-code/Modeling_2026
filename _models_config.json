@@ -1,0 +1,82 @@
+{
+  "iwarp": {
+    "dir": "models/other/iwarp",
+    "slug": "iwarp",
+    "display": "Intel iWarp",
+    "year": 1985,
+    "clock": 20.0,
+    "word": 32,
+    "target_cpi": 1.5,
+    "arch": "VLIW/systolic array processor (Intel/CMU). Precursor to modern GPU thinking. Dual-issue: computation + communication agents."
+  },
+  "t800": {
+    "dir": "models/other/t800",
+    "slug": "t800",
+    "display": "Inmos T800",
+    "year": 1987,
+    "clock": 20.0,
+    "word": 32,
+    "target_cpi": 2.0,
+    "arch": "32-bit transputer with on-chip FPU. 4KB SRAM, IEEE 754 FPU. Occam/CSP concurrency model."
+  },
+  "staran": {
+    "dir": "models/other/staran",
+    "slug": "staran",
+    "display": "Goodyear STARAN",
+    "year": 1972,
+    "clock": 5.0,
+    "word": 1,
+    "target_cpi": 8.0,
+    "arch": "Associative/bit-serial massively parallel processor. 256 PEs, each 1-bit. NASA satellite image processing."
+  },
+  "icl_dap": {
+    "dir": "models/other/icl_dap",
+    "slug": "icl_dap",
+    "display": "ICL DAP",
+    "year": 1980,
+    "clock": 5.0,
+    "word": 1,
+    "target_cpi": 10.0,
+    "arch": "4096-element SIMD array processor. 1-bit PEs. Attached to ICL 2900 mainframe."
+  },
+  "msm5205": {
+    "dir": "models/other/msm5205",
+    "slug": "msm5205",
+    "display": "OKI MSM5205",
+    "year": 1983,
+    "clock": 0.384,
+    "word": 4,
+    "target_cpi": 4.0,
+    "arch": "ADPCM speech synthesis chip. 4-bit ADPCM decoder, ~384kHz sample rate. Used in hundreds of arcade games."
+  },
+  "sp0256": {
+    "dir": "models/other/sp0256",
+    "slug": "sp0256",
+    "display": "GI SP0256",
+    "year": 1981,
+    "clock": 3.12,
+    "word": 8,
+    "target_cpi": 10.0,
+    "arch": "Allophone speech processor. 64 allophones in internal ROM. Microsequencer-based. Used in Intellivoice."
+  },
+  "tms5100": {
+    "dir": "models/ti/tms5100",
+    "slug": "tms5100",
+    "display": "TI TMS5100",
+    "year": 1978,
+    "clock": 0.16,
+    "word": 12,
+    "target_cpi": 8.0,
+    "arch": "LPC speech synthesis (Speak and Spell). 12-bit LPC coefficients, 10 reflection parameters. Internal microsequencer."
+  },
+  "m6854": {
+    "dir": "models/motorola/m6854",
+    "slug": "m6854",
+    "display": "Motorola MC6854",
+    "year": 1980,
+    "clock": 1.0,
+    "word": 8,
+    "target_cpi": 6.0,
+    "arch": "ADLC (Advanced Data Link Controller). HDLC/SDLC protocol processor. State machine with frame processing."
+  }
+}

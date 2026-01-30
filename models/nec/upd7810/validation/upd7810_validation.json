@@ -1,0 +1,29 @@
+{
+  "processor": "NEC uPD7810",
+  "year": 1983,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 6.0,
+    "transistors": 20000,
+    "technology": "NMOS",
+    "package": "DIP-64"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      3,
+      15
+    ],
+    "typical_cpi": 5.5
+  },
+  "accuracy": {
+    "expected_cpi": 5.5,
+    "predicted_cpi": 5.46,
+    "cpi_error_percent": 0.72,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "NEC uPD7810 datasheet"
+  ]
+}

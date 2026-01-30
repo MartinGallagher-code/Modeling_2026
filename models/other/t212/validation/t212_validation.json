@@ -1,0 +1,55 @@
+{
+  "processor": "Inmos T212",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 15.0,
+    "transistors": 75000,
+    "technology": "CMOS",
+    "package": "PLCC-68"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1,
+      8
+    ],
+    "typical_cpi": 2.5
+  },
+  "workload_results": {
+    "typical": {
+      "cpi": 2.499,
+      "ipc": 0.400,
+      "error_pct": 0.04,
+      "status": "PASS"
+    },
+    "compute": {
+      "cpi": 2.349,
+      "ipc": 0.426,
+      "error_pct": 6.0,
+      "status": "MARGINAL"
+    },
+    "memory": {
+      "cpi": 2.349,
+      "ipc": 0.426,
+      "error_pct": 6.0,
+      "status": "MARGINAL"
+    },
+    "control": {
+      "cpi": 2.662,
+      "ipc": 0.376,
+      "error_pct": 6.5,
+      "status": "MARGINAL"
+    }
+  },
+  "accuracy": {
+    "expected_cpi": 2.5,
+    "predicted_cpi": 2.499,
+    "cpi_error_percent": 0.04,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Inmos T212 datasheet"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "processor": "Intel 80C186",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 8.0,
+    "transistors": 55000,
+    "technology": "CMOS",
+    "package": "PLCC-68"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2,
+      14
+    ],
+    "typical_cpi": 6.0
+  },
+  "accuracy": {
+    "expected_cpi": 6.0,
+    "predicted_cpi": 5.914,
+    "cpi_error_percent": 1.43,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Intel 80C186 datasheet"
+  ]
+}
