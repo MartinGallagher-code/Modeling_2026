@@ -3,7 +3,7 @@
   "total_processors": 422,
   "families": {
     "amd": {
-      "count": 12,
+      "count": 13,
       "processors": [
         "am29000",
         "am2901",
@@ -15,6 +15,7 @@
         "am486",
         "am5x86",
         "am79c970",
+        "am8085a",
         "am9511",
         "am9512"
       ]
@@ -40,6 +41,26 @@
         "arm6",
         "arm610",
         "arm7tdmi"
+      ]
+    },
+    "att": {
+      "count": 4,
+      "processors": [
+        "att_dsp1",
+        "att_dsp16",
+        "att_dsp20",
+        "att_dsp32c"
+      ]
+    },
+    "dec": {
+      "count": 6,
+      "processors": [
+        "alpha21064",
+        "alpha_21064a",
+        "alpha_21066",
+        "dec_j11",
+        "dec_t11",
+        "microvax_78032"
       ]
     },
     "eastern_bloc": {
@@ -82,6 +103,26 @@
         "sparclite"
       ]
     },
+    "general_instrument": {
+      "count": 6,
+      "processors": [
+        "ay3_8500",
+        "ay3_8900",
+        "ay3_8910",
+        "cp1600",
+        "pic1650",
+        "sp0256"
+      ]
+    },
+    "harris": {
+      "count": 4,
+      "processors": [
+        "hc55516",
+        "hm6100",
+        "rtx2000",
+        "rtx32p"
+      ]
+    },
     "hitachi": {
       "count": 13,
       "processors": [
@@ -100,8 +141,37 @@
         "sh2"
       ]
     },
+    "hp": {
+      "count": 6,
+      "processors": [
+        "hp_nano",
+        "hp_pa_risc",
+        "hp_saturn",
+        "pa7100",
+        "pa7100lc",
+        "pa7200"
+      ]
+    },
+    "ibm": {
+      "count": 4,
+      "processors": [
+        "ibm_486slc2",
+        "ibm_power1",
+        "ibm_power2",
+        "ibm_rs64"
+      ]
+    },
+    "inmos": {
+      "count": 4,
+      "processors": [
+        "t212",
+        "t414",
+        "t424",
+        "t800"
+      ]
+    },
     "intel": {
-      "count": 39,
+      "count": 40,
       "processors": [
         "i3002",
         "i3003",
@@ -141,7 +211,22 @@
         "i960ca",
         "i960cf",
         "iapx432",
+        "intel2920",
         "pentium"
+      ]
+    },
+    "mips": {
+      "count": 9,
+      "processors": [
+        "mips_r10000",
+        "mips_r3000",
+        "mips_r4000",
+        "mips_r4400",
+        "mips_r4600",
+        "mips_r8000",
+        "r2000",
+        "sony_r3000a",
+        "stanford_mips"
       ]
     },
     "mitsubishi": {
@@ -156,21 +241,26 @@
       ]
     },
     "mos_wdc": {
-      "count": 6,
+      "count": 10,
       "processors": [
         "mos6502",
+        "mos6507",
+        "mos6509",
         "mos6510",
+        "mos6581_sid",
         "mos8501",
         "mos8502",
+        "mos8580_sid",
         "wdc65816",
         "wdc65c02"
       ]
     },
     "motorola": {
-      "count": 32,
+      "count": 34,
       "processors": [
         "coldfire",
         "cpu32",
+        "dsp56000",
         "dsp56001",
         "dsp96002",
         "m6800",
@@ -200,6 +290,7 @@
         "m68hc16",
         "m88100",
         "m88110",
+        "mc10800",
         "mc14500b"
       ]
     },
@@ -232,7 +323,7 @@
       ]
     },
     "nec": {
-      "count": 18,
+      "count": 19,
       "processors": [
         "nec_v20",
         "nec_v30",
@@ -250,48 +341,43 @@
         "upd780",
         "upd7801",
         "upd7810",
+        "upd8080af",
         "v810",
         "v850"
       ]
     },
+    "oki": {
+      "count": 4,
+      "processors": [
+        "msm5205",
+        "msm5840",
+        "msm80c85",
+        "msm80c85ah"
+      ]
+    },
     "other": {
-      "count": 184,
+      "count": 94,
       "processors": [
         "adsp2100",
         "adsp21020",
         "adsp2105",
         "aim_ppc_601",
-        "alpha21064",
-        "alpha_21064a",
-        "alpha_21066",
-        "am8085a",
         "antic",
         "apollo_dn300",
         "ati_mach32",
         "ati_mach64",
-        "att_dsp1",
-        "att_dsp16",
-        "att_dsp20",
-        "att_dsp32c",
-        "ay3_8500",
-        "ay3_8900",
-        "ay3_8910",
         "berkeley_risc1",
         "berkeley_risc2",
         "bt101",
         "chinese_863",
         "clipper_c100",
-        "cp1600",
         "ct65545",
         "cx1",
         "cx486dlc",
         "cx486slc",
         "cx5x86",
         "cy7c601",
-        "dec_j11",
-        "dec_t11",
         "dsp1600",
-        "dsp56000",
         "ensoniq_otto",
         "es5503",
         "et4000",
@@ -301,44 +387,22 @@
         "ferranti_ula",
         "g65sc802",
         "g65sc816",
-        "hc55516",
-        "hm6100",
-        "hp_nano",
-        "hp_pa_risc",
-        "hp_saturn",
         "huc6280",
         "hypersparc",
         "hyundai_486",
-        "ibm_486slc2",
-        "ibm_power1",
-        "ibm_power2",
-        "ibm_rs64",
         "icl_dap",
         "iit_agx",
-        "intel2920",
         "intersil6100",
         "iwarp",
         "ks57",
         "ks86c4004",
         "lc87",
         "lc88",
-        "lh0080",
-        "lh5801",
         "lmi_lambda",
         "lsi_l64801",
         "mac4",
         "mas281",
-        "mc10800",
-        "microsparc",
-        "microsparc_ii",
-        "microvax_78032",
         "miproc",
-        "mips_r10000",
-        "mips_r3000",
-        "mips_r4000",
-        "mips_r4400",
-        "mips_r4600",
-        "mips_r8000",
         "mk5005",
         "mm6701",
         "mmi_67110",
@@ -349,78 +413,31 @@
         "mn1800",
         "mn601",
         "mn602",
-        "mos6507",
-        "mos6509",
-        "mos6581_sid",
-        "mos8580_sid",
         "mostek_3870",
-        "msm5205",
-        "msm5840",
-        "msm80c85",
-        "msm80c85ah",
         "mup21",
         "nc4000",
         "nc4016",
         "nx586",
-        "pa7100",
-        "pa7100lc",
-        "pa7200",
-        "pic1650",
         "pokey",
         "ppc603",
         "ppc604",
         "ppc620",
-        "r2000",
-        "ricoh_2a03",
-        "ricoh_5a22",
         "ridge_32",
         "rp16",
-        "rp2c02",
-        "rp2c07",
         "rp32",
-        "rtx2000",
-        "rtx32p",
-        "s2636_pvi",
         "s3_86c911",
-        "sab80515",
-        "sab8080a",
-        "sab8085",
-        "sab80c166",
-        "sc61860",
         "sega_315_5124",
         "sega_315_5313",
         "sega_svp",
         "sequoia_s16",
         "sgs_d950",
-        "signetics2650",
-        "signetics_8x300",
-        "signetics_8x305",
-        "sm4",
-        "sm5",
-        "sm83",
-        "sn76489",
         "snk_lspc2",
-        "sony_r3000a",
-        "sp0256",
-        "sparc",
-        "sparc64_hal",
-        "stanford_mips",
         "staran",
-        "supersparc",
         "sy6502a",
         "symbolics_cadr",
-        "t212",
-        "t414",
-        "t424",
-        "t800",
         "ted",
         "thomson_90435",
-        "ti_explorer",
-        "tms9918a",
-        "ultrasparc_i",
         "umc_u5s",
-        "upd8080af",
-        "v9938",
         "vic_6560",
         "vic_ii",
         "wd16",
@@ -433,12 +450,6 @@
         "wisc16",
         "wisc32",
         "xerox_alto",
-        "ym2151",
-        "ym2610",
-        "ym2612",
-        "ym3526",
-        "ym3812",
-        "ymf262",
         "z8400",
         "zoran_zr34161"
       ]
@@ -453,6 +464,15 @@
         "rca1805"
       ]
     },
+    "ricoh": {
+      "count": 4,
+      "processors": [
+        "ricoh_2a03",
+        "ricoh_5a22",
+        "rp2c02",
+        "rp2c07"
+      ]
+    },
     "rockwell": {
       "count": 5,
       "processors": [
@@ -463,13 +483,55 @@
         "r65c02"
       ]
     },
+    "sharp": {
+      "count": 6,
+      "processors": [
+        "lh0080",
+        "lh5801",
+        "sc61860",
+        "sm4",
+        "sm5",
+        "sm83"
+      ]
+    },
+    "siemens": {
+      "count": 4,
+      "processors": [
+        "sab80515",
+        "sab8080a",
+        "sab8085",
+        "sab80c166"
+      ]
+    },
+    "signetics": {
+      "count": 4,
+      "processors": [
+        "s2636_pvi",
+        "signetics2650",
+        "signetics_8x300",
+        "signetics_8x305"
+      ]
+    },
+    "sun": {
+      "count": 6,
+      "processors": [
+        "microsparc",
+        "microsparc_ii",
+        "sparc",
+        "sparc64_hal",
+        "supersparc",
+        "ultrasparc_i"
+      ]
+    },
     "ti": {
-      "count": 21,
+      "count": 24,
       "processors": [
         "sbp0400",
         "sbp0401",
         "sn74181",
         "sn74s481",
+        "sn76489",
+        "ti_explorer",
         "tms0800",
         "tms1000",
         "tms320c10",
@@ -484,6 +546,7 @@
         "tms5100",
         "tms7000",
         "tms9900",
+        "tms9918a",
         "tms9980",
         "tms9985",
         "tms9995"
@@ -498,6 +561,18 @@
         "tlcs870",
         "tlcs90",
         "tx39"
+      ]
+    },
+    "yamaha": {
+      "count": 7,
+      "processors": [
+        "v9938",
+        "ym2151",
+        "ym2610",
+        "ym2612",
+        "ym3526",
+        "ym3812",
+        "ymf262"
       ]
     },
     "zilog": {
