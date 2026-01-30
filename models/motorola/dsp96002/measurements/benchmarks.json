@@ -1,0 +1,20 @@
+{
+  "processor": "Motorola DSP96002",
+  "manufacturer": "Motorola",
+  "year": 1989,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "estimated_mips",
+      "score": 36.364,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Estimated from instruction mix and clock speed",
+      "conditions": {
+        "clock_mhz": 40.0,
+        "memory_config": "typical"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

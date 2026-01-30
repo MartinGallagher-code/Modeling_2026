@@ -1,0 +1,20 @@
+{
+  "processor": "Ricoh 5A22",
+  "manufacturer": "Ricoh",
+  "year": 1990,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "estimated_mips",
+      "score": 1.119,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Estimated from instruction mix and clock speed",
+      "conditions": {
+        "clock_mhz": 3.58,
+        "memory_config": "typical"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

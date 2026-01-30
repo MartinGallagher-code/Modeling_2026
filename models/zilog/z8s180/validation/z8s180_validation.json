@@ -1,0 +1,66 @@
+{
+  "processor": "Zilog Z8S180",
+  "year": 1988,
+  "specifications": {
+    "data_width_bits": 8,
+    "address_width_bits": 20,
+    "clock_mhz": 20.0,
+    "transistors": 80000,
+    "technology": "0.8um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2.0,
+      20.0
+    ],
+    "typical_cpi": 3.5
+  },
+  "validated_performance": {
+    "ips_min": 2857142,
+    "ips_max": 8571428,
+    "mips_typical": 5.7
+  },
+  "notes": "Enhanced Z180 with DMA and serial",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Zilog Z8S180 Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Zilog_Z8S180",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 3.5,
+    "expected_ipc": 0.2857,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 3.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

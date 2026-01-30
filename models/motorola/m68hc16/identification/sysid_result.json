@@ -1,0 +1,40 @@
+{
+  "processor": "m68hc16",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.0022,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.55,
+    "cor.data_transfer": -0.55,
+    "cor.memory": -0.55,
+    "cor.control": -0.55,
+    "cor.multiply": -0.55,
+    "cor.divide": -0.55
+  },
+  "residuals_before": {
+    "typical": 0.22,
+    "compute": 0.28,
+    "memory": 0.38,
+    "control": 0.42,
+    "mixed": 0.26
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.06,
+    "memory": 0.16,
+    "control": 0.2,
+    "mixed": 0.04
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.control",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

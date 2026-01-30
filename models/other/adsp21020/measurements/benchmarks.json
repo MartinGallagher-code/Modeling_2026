@@ -1,0 +1,20 @@
+{
+  "processor": "Analog Devices ADSP-21020",
+  "manufacturer": "Analog Devices",
+  "year": 1990,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "estimated_mips",
+      "score": 27.5,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Estimated from instruction mix and clock speed",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

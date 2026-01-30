@@ -1,0 +1,40 @@
+{
+  "processor": "k1839vm1",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.0016,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.64,
+    "cor.data_transfer": -0.64,
+    "cor.memory": -0.64,
+    "cor.control": -0.64,
+    "cor.multiply": -0.64,
+    "cor.divide": -0.64
+  },
+  "residuals_before": {
+    "typical": 0.16,
+    "compute": 0.2875,
+    "memory": 0.26,
+    "control": 0.385,
+    "mixed": 0.185
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.1275,
+    "memory": 0.1,
+    "control": 0.225,
+    "mixed": 0.025
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.control",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

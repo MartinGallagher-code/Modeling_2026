@@ -1,0 +1,40 @@
+{
+  "processor": "ultrasparc_i",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.007714,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.54,
+    "cor.load": -0.54,
+    "cor.store": -0.54,
+    "cor.branch": -0.54,
+    "cor.multiply": -0.54,
+    "cor.divide": -0.54
+  },
+  "residuals_before": {
+    "typical": 0.7714,
+    "compute": 1.3571,
+    "memory": 0.7714,
+    "control": 0.7714,
+    "mixed": 1.2143
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.5857,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.4429
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

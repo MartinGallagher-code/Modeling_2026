@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+"""
+SGS-Thomson D950 Grey-Box Queueing Model
+========================================
+
+Architecture: European DSP for GSM baseband processing
+Year: 1991, Clock: 20.0 MHz
+
+Target CPI: 1.4
+"""
+
+from dataclasses import dataclass
+from typing import Dict, Any
+
+@dataclass
+class InstructionCategory:
+    name: str
+    base_cycles: float
+    memory_cycles: float = 0
+    description: str = ""
+    @property
+    def total_cycles(self): return self.base_cycles + self.memory_cycles
+
+@dataclass
+class WorkloadProfile:
+    name: str
+    category_weights: Dict[str, float]
+    description: str = ""
+
+@dataclass
+class AnalysisResult:
+    processor: str
+    workload: str
+    ipc: float
+    cpi: float
+    ips: float
+    bottleneck: str
+    utilizations: Dict[str, float]
+    base_cpi: float = 0.0
+    correction_delta: float = 0.0
+
+    @classmethod
+    def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations, base_cpi=None, correction_delta=0.0):
+        ipc = 1.0 / cpi if cpi > 0 else 0.0
+        ips = clock_mhz * 1e6 * ipc
+        return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations,
+                   base_cpi=base_cpi if base_cpi is not None else cpi, correction_delta=correction_delta)
+
+
+class SgsD950Model:
+    """
+    SGS-Thomson D950 Grey-Box Queueing Model
+
+    European DSP for GSM baseband processing (1991)
+    - GSM baseband
+    - European design
+    - Viterbi support
+    """
+
+    name = "SGS-Thomson D950"
+    manufacturer = "SGS-Thomson"
+    year = 1991
+    clock_mhz = 20.0
+    transistor_count = 250000
+    data_width = 16
+    address_width = 16
+
+    def __init__(self):
+        self.instruction_categories = {
+            'mac': InstructionCategory('mac', 1.0, 0, "Multiply-accumulate"),
+            'alu': InstructionCategory('alu', 1.0, 0, "ALU/logic"),
+            'load': InstructionCategory('load', 1.0, 0, "Data load"),
+            'store': InstructionCategory('store', 1.0, 0, "Data store"),
+            'branch': InstructionCategory('branch', 2.0, 0, "Branch/loop"),
+            'special': InstructionCategory('special', 3.0, 0, "Special function"),
+        }
+
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
+                'mac': 0.4,
+                'alu': 0.2,
+                'load': 0.15,
+                'store': 0.1,
+                'branch': 0.1,
+                'special': 0.05,
+            }, "Typical workload"),
+            'compute': WorkloadProfile('compute', {
+                'mac': 0.55,
+                'alu': 0.2,
+                'load': 0.1,
+                'store': 0.05,
+                'branch': 0.05,
+                'special': 0.05,
+            }, "Compute workload"),
+            'memory': WorkloadProfile('memory', {
+                'mac': 0.25,
+                'alu': 0.15,
+                'load': 0.25,
+                'store': 0.2,
+                'branch': 0.1,
+                'special': 0.05,
+            }, "Memory workload"),
+            'control': WorkloadProfile('control', {
+                'mac': 0.25,
+                'alu': 0.15,
+                'load': 0.15,
+                'store': 0.1,
+                'branch': 0.25,
+                'special': 0.1,
+            }, "Control workload"),
+            'mixed': WorkloadProfile('mixed', {
+                'mac': 0.35,
+                'alu': 0.2,
+                'load': 0.15,
+                'store': 0.1,
+                'branch': 0.1,
+                'special': 0.1,
+            }, "Mixed workload"),
+        }
+
+        self.corrections = {
+            'mac': 0.200000,
+            'alu': 0.200000,
+            'load': 0.200000,
+            'store': 0.200000,
+            'branch': 0.200000,
+            'special': 0.200000,
+        }
+
+    def analyze(self, workload: str = 'typical') -> AnalysisResult:
+        profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
+
+        base_cpi = 0
+        for cat_name, weight in profile.category_weights.items():
+            cat = self.instruction_categories[cat_name]
+            base_cpi += weight * cat.total_cycles
+
+        correction_delta = sum(
+            self.corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = base_cpi + correction_delta
+
+        return AnalysisResult.from_cpi(
+            processor=self.name,
+            workload=workload,
+            cpi=corrected_cpi,
+            clock_mhz=self.clock_mhz,
+            bottleneck="mac_throughput",
+            utilizations={cat: profile.category_weights[cat] for cat in self.instruction_categories},
+            base_cpi=base_cpi, correction_delta=correction_delta
+        )

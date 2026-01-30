@@ -1,0 +1,20 @@
+{
+  "processor": "Yamaha YMF262 OPL3",
+  "manufacturer": "Yamaha",
+  "year": 1990,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "estimated_mips",
+      "score": 7.16,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Estimated from instruction mix and clock speed",
+      "conditions": {
+        "clock_mhz": 14.32,
+        "memory_config": "typical"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

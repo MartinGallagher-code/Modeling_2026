@@ -1,0 +1,20 @@
+{
+  "processor": "AMD Am79C970 PCnet",
+  "manufacturer": "AMD",
+  "year": 1993,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "estimated_mips",
+      "score": 8.0,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Estimated from instruction mix and clock speed",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "typical"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

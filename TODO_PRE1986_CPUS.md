@@ -648,8 +648,8 @@ Store as YAML or JSON in a new `timing/` directory per processor.
 | Phase 3 | 55 | ✓ All complete |
 | Phase 4 | 73 | ✓ All complete |
 | Phase 5 | 48 | Pending (timing collection) |
-| Phase 6 | 101 | Pending (post-1985 processors) |
-| **Grand Total** | **396** | **323 complete, 149 pending** |
+| Phase 6 | 101 | ✓ All complete |
+| **Grand Total** | **396** | **424 complete, 48 pending (timing)** |
 
 **Last Updated:** 2026-01-30
 **Current Model Count:** 323 total validated models (across 19 families)
@@ -927,147 +927,147 @@ The post-1985 era saw the rise of RISC workstations, 32-bit and 64-bit general-p
 
 These defined the workstation and server landscape of the late 1980s and early 1990s.
 
-- [ ] **MIPS R3000** (1988) - 32-bit RISC, 5-stage pipeline, 33 MHz; SGI and DECstation workstations; PlayStation 1 variant (R3000A)
-- [ ] **MIPS R4000** (1991) - First commercial 64-bit RISC, 8-stage superpipeline, 100 MHz; SGI Indigo/Crimson
-- [ ] **MIPS R4400** (1993) - Improved R4000 with larger caches, 250 MHz; SGI Indy/Indigo2
-- [ ] **MIPS R4600 "Orion"** (1994) - Low-cost R4000 derivative by QED/IDT, Cisco routers
-- [ ] **MIPS R8000** (1994) - First superscalar MIPS, 4-way FP, designed for scientific workloads; SGI Power Challenge
-- [ ] **IBM POWER1 (RIOS-1)** (1990) - Original POWER architecture, multi-chip, RS/6000; foundation of PowerPC
-- [ ] **IBM POWER2 (RIOS-2)** (1993) - Enhanced POWER, 8-chip MCM, up to 71.5 MHz; top of TPC benchmarks
-- [ ] **Motorola 88100** (1988) - Motorola's own RISC (not 68k), 32-bit, Harvard architecture; NeXT considered it
-- [ ] **Motorola 88110** (1991) - Superscalar 88k, 2-issue, on-chip caches; used in Encore/MVME systems
-- [ ] **Intel i960** (1988) - 32-bit embedded RISC, register scoreboarding; widely used in I/O controllers and military
-- [ ] **Sun SuperSPARC** (1992) - TI-fabricated, 3-issue superscalar, 40-60 MHz; SPARCstation 10/20
-- [ ] **Sun MicroSPARC** (1992) - Low-cost single-chip SPARC, SPARCclassic/LX
-- [ ] **Sun MicroSPARC II** (1994) - Enhanced, 70-125 MHz; SPARCstation 5
-- [ ] **Sun UltraSPARC I** (1995 design, taped out 1994) - 64-bit SPARC V9, VIS multimedia; borderline but foundational
-- [ ] **Ross HyperSPARC** (1993) - 3rd-party SPARC, 100-150 MHz; Ross Technology for SPARCstation 20
-- [ ] **Fujitsu MB86900** (1986) - First silicon SPARC implementation, gate array; Sun-4 workstations
+- [x] **MIPS R3000** (1988) - 32-bit RISC, 5-stage pipeline, 33 MHz; SGI and DECstation workstations; PlayStation 1 variant (R3000A)
+- [x] **MIPS R4000** (1991) - First commercial 64-bit RISC, 8-stage superpipeline, 100 MHz; SGI Indigo/Crimson
+- [x] **MIPS R4400** (1993) - Improved R4000 with larger caches, 250 MHz; SGI Indy/Indigo2
+- [x] **MIPS R4600 "Orion"** (1994) - Low-cost R4000 derivative by QED/IDT, Cisco routers
+- [x] **MIPS R8000** (1994) - First superscalar MIPS, 4-way FP, designed for scientific workloads; SGI Power Challenge
+- [x] **IBM POWER1 (RIOS-1)** (1990) - Original POWER architecture, multi-chip, RS/6000; foundation of PowerPC
+- [x] **IBM POWER2 (RIOS-2)** (1993) - Enhanced POWER, 8-chip MCM, up to 71.5 MHz; top of TPC benchmarks
+- [x] **Motorola 88100** (1988) - Motorola's own RISC (not 68k), 32-bit, Harvard architecture; NeXT considered it
+- [x] **Motorola 88110** (1991) - Superscalar 88k, 2-issue, on-chip caches; used in Encore/MVME systems
+- [x] **Intel i960** (1988) - 32-bit embedded RISC, register scoreboarding; widely used in I/O controllers and military
+- [x] **Sun SuperSPARC** (1992) - TI-fabricated, 3-issue superscalar, 40-60 MHz; SPARCstation 10/20
+- [x] **Sun MicroSPARC** (1992) - Low-cost single-chip SPARC, SPARCclassic/LX
+- [x] **Sun MicroSPARC II** (1994) - Enhanced, 70-125 MHz; SPARCstation 5
+- [x] **Sun UltraSPARC I** (1995 design, taped out 1994) - 64-bit SPARC V9, VIS multimedia; borderline but foundational
+- [x] **Ross HyperSPARC** (1993) - 3rd-party SPARC, 100-150 MHz; Ross Technology for SPARCstation 20
+- [x] **Fujitsu MB86900** (1986) - First silicon SPARC implementation, gate array; Sun-4 workstations
 
 ## Tier 2 - x86 Competitors & Clones
 
 The 486/Pentium era spawned a competitive x86-compatible market.
 
-- [ ] **AMD Am386** (1991) - AMD's 386 clone, ran at 40 MHz (faster than Intel's 33 MHz parts)
-- [ ] **AMD Am486** (1993) - AMD's 486 clone with write-back cache; 3x clock multiplier variants
-- [ ] **AMD Am5x86** (1995 design, announced 1994) - 486 with 4x clock, Pentium-class performance; borderline
-- [ ] **Cyrix Cx486DLC** (1992) - 486 ISA in 386 pin-out, 1KB cache; popular as upgrade for 386 boards
-- [ ] **Cyrix Cx486SLC** (1992) - Same concept for 386SX systems, 16-bit bus
-- [ ] **Cyrix Cx5x86** (1995 design, 1994 internal) - Superscalar 486-socket chip; bridge to 6x86; borderline
-- [ ] **NexGen Nx586** (1994) - x86-compatible, RISC core with x86 translation; AMD acquired NexGen for K5/K6
-- [ ] **IBM 486SLC2** (1992) - IBM's own 486-class chip, 16-bit bus, used in ThinkPads; clock-doubled
-- [ ] **UMC U5S "Green CPU"** (1994) - Taiwanese 486 clone, super low power; one of few non-US x86 chips
+- [x] **AMD Am386** (1991) - AMD's 386 clone, ran at 40 MHz (faster than Intel's 33 MHz parts)
+- [x] **AMD Am486** (1993) - AMD's 486 clone with write-back cache; 3x clock multiplier variants
+- [x] **AMD Am5x86** (1995 design, announced 1994) - 486 with 4x clock, Pentium-class performance; borderline
+- [x] **Cyrix Cx486DLC** (1992) - 486 ISA in 386 pin-out, 1KB cache; popular as upgrade for 386 boards
+- [x] **Cyrix Cx486SLC** (1992) - Same concept for 386SX systems, 16-bit bus
+- [x] **Cyrix Cx5x86** (1995 design, 1994 internal) - Superscalar 486-socket chip; bridge to 6x86; borderline
+- [x] **NexGen Nx586** (1994) - x86-compatible, RISC core with x86 translation; AMD acquired NexGen for K5/K6
+- [x] **IBM 486SLC2** (1992) - IBM's own 486-class chip, 16-bit bus, used in ThinkPads; clock-doubled
+- [x] **UMC U5S "Green CPU"** (1994) - Taiwanese 486 clone, super low power; one of few non-US x86 chips
 
 ## Tier 3 - Embedded RISC & MCUs
 
 The late 1980s/early 1990s embedded revolution, driven by RISC cores for consumer and automotive.
 
-- [ ] **Hitachi SH-1 (SH7032)** (1992) - 32-bit RISC for embedded, 16-bit compressed ISA; Sega 32X
-- [ ] **Hitachi SH-2 (SH7604)** (1994) - Dual SH-2 in Sega Saturn; 5-stage pipeline, 28.6 MHz
-- [ ] **Hitachi H8/300** (1990) - 8/16-bit MCU, register-based architecture; widely used in Japanese consumer electronics
-- [ ] **Hitachi H8/500** (1990) - 16-bit variant of H8 family
-- [ ] **ARM7TDMI** (1994) - Thumb mode, hardware debug, multiply-accumulate; became the dominant embedded core (GBA, Nokia)
-- [ ] **ARM250** (1990) - ARM2 with MMU, MEMC, VIDC integrated; Acorn A3000
-- [ ] **ARM610** (1993) - First ARM6 variant, 33 MHz; Acorn RiscPC, Apple Newton
-- [ ] **NEC V810** (1993) - 32-bit RISC, 5-stage pipeline; Virtual Boy CPU, PC-FX
-- [ ] **NEC V850** (1994) - Embedded RISC for automotive ECUs; huge volume in Japanese cars
-- [ ] **Motorola CPU32 (68330)** (1990) - 68020-based embedded core with on-chip peripherals; widely used in automotive/telecom
-- [ ] **Motorola 68HC16** (1991) - 16-bit MCU, 68k-derived; automotive and industrial control
-- [ ] **Motorola ColdFire** (1994) - Variable-length RISC based on 68k ISA subset; embedded networking
-- [ ] **Intel i960CA** (1989) - Superscalar i960, 3-issue; high-end RAID controller standard
-- [ ] **Intel i960CF** (1992) - Enhanced i960 with on-chip FPU
-- [ ] **Zilog Z380** (1994) - 32-bit Z80 extension, maintained Z80 compatibility; embedded/telecom
-- [ ] **Toshiba TX39 (R3900)** (1994) - MIPS-based embedded core for PDAs; Windows CE reference design
-- [ ] **Fujitsu SPARClite (MB86831)** (1993) - Embedded SPARC variant, no FPU, low power
+- [x] **Hitachi SH-1 (SH7032)** (1992) - 32-bit RISC for embedded, 16-bit compressed ISA; Sega 32X
+- [x] **Hitachi SH-2 (SH7604)** (1994) - Dual SH-2 in Sega Saturn; 5-stage pipeline, 28.6 MHz
+- [x] **Hitachi H8/300** (1990) - 8/16-bit MCU, register-based architecture; widely used in Japanese consumer electronics
+- [x] **Hitachi H8/500** (1990) - 16-bit variant of H8 family
+- [x] **ARM7TDMI** (1994) - Thumb mode, hardware debug, multiply-accumulate; became the dominant embedded core (GBA, Nokia)
+- [x] **ARM250** (1990) - ARM2 with MMU, MEMC, VIDC integrated; Acorn A3000
+- [x] **ARM610** (1993) - First ARM6 variant, 33 MHz; Acorn RiscPC, Apple Newton
+- [x] **NEC V810** (1993) - 32-bit RISC, 5-stage pipeline; Virtual Boy CPU, PC-FX
+- [x] **NEC V850** (1994) - Embedded RISC for automotive ECUs; huge volume in Japanese cars
+- [x] **Motorola CPU32 (68330)** (1990) - 68020-based embedded core with on-chip peripherals; widely used in automotive/telecom
+- [x] **Motorola 68HC16** (1991) - 16-bit MCU, 68k-derived; automotive and industrial control
+- [x] **Motorola ColdFire** (1994) - Variable-length RISC based on 68k ISA subset; embedded networking
+- [x] **Intel i960CA** (1989) - Superscalar i960, 3-issue; high-end RAID controller standard
+- [x] **Intel i960CF** (1992) - Enhanced i960 with on-chip FPU
+- [x] **Zilog Z380** (1994) - 32-bit Z80 extension, maintained Z80 compatibility; embedded/telecom
+- [x] **Toshiba TX39 (R3900)** (1994) - MIPS-based embedded core for PDAs; Windows CE reference design
+- [x] **Fujitsu SPARClite (MB86831)** (1993) - Embedded SPARC variant, no FPU, low power
 
 ## Tier 4 - DSPs (1986–1994)
 
 The DSP market exploded in this period with dedicated signal processors for modems, audio, telecom, and early multimedia.
 
-- [ ] **TI TMS320C25** (1986) - 100ns cycle, Harvard architecture; dominant in modems and telecom
-- [ ] **TI TMS320C30** (1988) - First floating-point TMS320, 32-bit; audio and scientific
-- [ ] **TI TMS320C40** (1993) - Multi-processor DSP with 6 communication ports; parallel DSP systems
-- [ ] **TI TMS320C50** (1991) - Enhanced fixed-point, 50ns cycle; modems, disk drives
-- [ ] **TI TMS320C80 "MVP"** (1994) - Multiprocessor: RISC master + 4 DSP cores; early media processor
-- [ ] **Motorola DSP56001** (1987) - 24-bit fixed-point, 10.25 MIPS; NeXT sound, pro audio standard
-- [ ] **Motorola DSP96002** (1989) - IEEE 754 floating-point DSP, dual-port memory; 3D graphics
-- [ ] **AT&T DSP32C** (1988) - 32-bit floating-point, 50 MIPS; Bell Labs telecom
-- [ ] **AT&T DSP16** (1987) - 16-bit fixed-point, low-power; modems, voice processing
-- [ ] **Analog Devices ADSP-21020** (1990) - 32-bit floating-point SHARC predecessor; scientific and audio
-- [ ] **Analog Devices ADSP-2105** (1992) - Low-cost fixed-point DSP; high-volume consumer audio
-- [ ] **Lucent (AT&T) DSP1600** (1988) - 16-bit, used in early digital cellular (IS-54)
-- [ ] **Zoran ZR34161** (1991) - JPEG/MPEG decoder DSP; early digital imaging
-- [ ] **SGS-Thomson D950-CORE** (1991) - European DSP for GSM baseband processing
+- [x] **TI TMS320C25** (1986) - 100ns cycle, Harvard architecture; dominant in modems and telecom
+- [x] **TI TMS320C30** (1988) - First floating-point TMS320, 32-bit; audio and scientific
+- [x] **TI TMS320C40** (1993) - Multi-processor DSP with 6 communication ports; parallel DSP systems
+- [x] **TI TMS320C50** (1991) - Enhanced fixed-point, 50ns cycle; modems, disk drives
+- [x] **TI TMS320C80 "MVP"** (1994) - Multiprocessor: RISC master + 4 DSP cores; early media processor
+- [x] **Motorola DSP56001** (1987) - 24-bit fixed-point, 10.25 MIPS; NeXT sound, pro audio standard
+- [x] **Motorola DSP96002** (1989) - IEEE 754 floating-point DSP, dual-port memory; 3D graphics
+- [x] **AT&T DSP32C** (1988) - 32-bit floating-point, 50 MIPS; Bell Labs telecom
+- [x] **AT&T DSP16** (1987) - 16-bit fixed-point, low-power; modems, voice processing
+- [x] **Analog Devices ADSP-21020** (1990) - 32-bit floating-point SHARC predecessor; scientific and audio
+- [x] **Analog Devices ADSP-2105** (1992) - Low-cost fixed-point DSP; high-volume consumer audio
+- [x] **Lucent (AT&T) DSP1600** (1988) - 16-bit, used in early digital cellular (IS-54)
+- [x] **Zoran ZR34161** (1991) - JPEG/MPEG decoder DSP; early digital imaging
+- [x] **SGS-Thomson D950-CORE** (1991) - European DSP for GSM baseband processing
 
 ## Tier 5 - Gaming & Consumer Processors
 
 Processors that powered the 16-bit and early 32-bit gaming eras, plus consumer multimedia.
 
-- [ ] **Ricoh 5A22** (1990) - SNES CPU, 65C816 derivative with DMA, 3.58 MHz; 49 million units sold
-- [ ] **Hudson HuC6280** (1987) - TurboGrafx-16 CPU, enhanced 65C02 with speed modes and I/O; 2.68/7.16 MHz
-- [ ] **Sony CXD8530BQ (R3000A)** (1994) - PlayStation CPU, MIPS R3000A at 33.8688 MHz with GTE coprocessor
-- [ ] **Sega 315-5313 VDP (Genesis)** (1988) - Mega Drive/Genesis video, enhanced TMS9918 lineage, dual playfields
-- [ ] **Sega SVP (Samsung SSP1601)** (1994) - DSP in Virtua Racing cartridge, Samsung 16-bit signal processor
-- [ ] **SNK LSPC2-A2** (1990) - Neo Geo video processor, hardware sprite scaler for arcade/home
-- [ ] **NEC µPD7759** (1987) - ADPCM voice synthesis for arcade games (hundreds of titles)
-- [ ] **Yamaha YM2612 OPN2** (1988) - 6-channel FM synthesis, Sega Genesis audio
-- [ ] **Yamaha YM2610 OPNB** (1988) - FM + ADPCM, Neo Geo audio standard
-- [ ] **Yamaha YMF262 OPL3** (1990) - 4-operator FM, Sound Blaster Pro 2.0/16 standard
-- [ ] **Ensoniq OTTO (ES5505/ES5506)** (1990-91) - 32-voice wavetable, Gravis Ultrasound / arcade (Taito F3)
+- [x] **Ricoh 5A22** (1990) - SNES CPU, 65C816 derivative with DMA, 3.58 MHz; 49 million units sold
+- [x] **Hudson HuC6280** (1987) - TurboGrafx-16 CPU, enhanced 65C02 with speed modes and I/O; 2.68/7.16 MHz
+- [x] **Sony CXD8530BQ (R3000A)** (1994) - PlayStation CPU, MIPS R3000A at 33.8688 MHz with GTE coprocessor
+- [x] **Sega 315-5313 VDP (Genesis)** (1988) - Mega Drive/Genesis video, enhanced TMS9918 lineage, dual playfields
+- [x] **Sega SVP (Samsung SSP1601)** (1994) - DSP in Virtua Racing cartridge, Samsung 16-bit signal processor
+- [x] **SNK LSPC2-A2** (1990) - Neo Geo video processor, hardware sprite scaler for arcade/home
+- [x] **NEC µPD7759** (1987) - ADPCM voice synthesis for arcade games (hundreds of titles)
+- [x] **Yamaha YM2612 OPN2** (1988) - 6-channel FM synthesis, Sega Genesis audio
+- [x] **Yamaha YM2610 OPNB** (1988) - FM + ADPCM, Neo Geo audio standard
+- [x] **Yamaha YMF262 OPL3** (1990) - 4-operator FM, Sound Blaster Pro 2.0/16 standard
+- [x] **Ensoniq OTTO (ES5505/ES5506)** (1990-91) - 32-voice wavetable, Gravis Ultrasound / arcade (Taito F3)
 
 ## Tier 6 - Graphics & Video Processors
 
 Dedicated graphics silicon that featured programmable or semi-programmable elements.
 
-- [ ] **TI TMS34020** (1988) - Enhanced 34010 GPU, hardware pixel processing; TIGA standard
-- [ ] **Hitachi HD63484-2 ACRTC** (1987) - Enhanced ACRTC, faster drawing commands
-- [ ] **S3 86C911** (1991) - First mass-market 2D accelerator, "S3 911"; launched the Windows accelerator market
-- [ ] **Tseng Labs ET4000** (1989) - Fast SVGA with hardware acceleration; dominant in early 1990s
-- [ ] **Chips & Technologies 65545** (1993) - Laptop graphics with power management; defined notebook displays
-- [ ] **Weitek P9000** (1991) - High-end 2D graphics coprocessor; used in Diamond Viper, NeXT
-- [ ] **IIT AGX** (1993) - XGA-compatible graphics accelerator
-- [ ] **ATI Mach32** (1992) - ATI's first true graphics coprocessor with GUI acceleration
-- [ ] **ATI Mach64** (1994) - Hardware video playback, foundation for ATI's Rage line
+- [x] **TI TMS34020** (1988) - Enhanced 34010 GPU, hardware pixel processing; TIGA standard
+- [x] **Hitachi HD63484-2 ACRTC** (1987) - Enhanced ACRTC, faster drawing commands
+- [x] **S3 86C911** (1991) - First mass-market 2D accelerator, "S3 911"; launched the Windows accelerator market
+- [x] **Tseng Labs ET4000** (1989) - Fast SVGA with hardware acceleration; dominant in early 1990s
+- [x] **Chips & Technologies 65545** (1993) - Laptop graphics with power management; defined notebook displays
+- [x] **Weitek P9000** (1991) - High-end 2D graphics coprocessor; used in Diamond Viper, NeXT
+- [x] **IIT AGX** (1993) - XGA-compatible graphics accelerator
+- [x] **ATI Mach32** (1992) - ATI's first true graphics coprocessor with GUI acceleration
+- [x] **ATI Mach64** (1994) - Hardware video playback, foundation for ATI's Rage line
 
 ## Tier 7 - Mainframe-on-a-Chip & High-End
 
 Late entries to the 32/64-bit race from major vendors.
 
-- [ ] **DEC Alpha 21066** (1993) - Low-cost Alpha with integrated PCI/memory controller; Alpha PC
-- [ ] **DEC Alpha 21064A** (1994) - Faster 21064, 300 MHz; DEC AlphaStation
-- [ ] **PowerPC 603** (1993) - Low-power PowerPC, 5-stage pipeline; PowerBook 5300, embedded
-- [ ] **PowerPC 604** (1994) - High-performance PowerPC, 4-issue superscalar, 6-stage pipeline; Power Macintosh
-- [ ] **PowerPC 620** (1994 design) - 64-bit PowerPC; first 64-bit PPC though delayed to 1996 production
-- [ ] **IBM RS64 / POWER3 design** (1993-1994) - POWER/PowerPC convergence era; AS/400 transition
-- [ ] **Sun SPARC64 (Hal)** (1995 design, 1994 Hal Computer) - 64-bit SPARC V9 from Fujitsu/Hal; borderline
-- [ ] **HP PA-7100** (1992) - Second-gen PA-RISC, 100 MHz, multimedia instructions
-- [ ] **HP PA-7100LC** (1994) - Low-cost PA-RISC with on-chip cache and memory controller
-- [ ] **HP PA-7200** (1994) - Superscalar PA-RISC, dual-issue, 140 MHz
-- [ ] **SGI R10000** (1994 design) - Out-of-order MIPS, register renaming; SGI Origin 2000 (production 1996, borderline)
+- [x] **DEC Alpha 21066** (1993) - Low-cost Alpha with integrated PCI/memory controller; Alpha PC
+- [x] **DEC Alpha 21064A** (1994) - Faster 21064, 300 MHz; DEC AlphaStation
+- [x] **PowerPC 603** (1993) - Low-power PowerPC, 5-stage pipeline; PowerBook 5300, embedded
+- [x] **PowerPC 604** (1994) - High-performance PowerPC, 4-issue superscalar, 6-stage pipeline; Power Macintosh
+- [x] **PowerPC 620** (1994 design) - 64-bit PowerPC; first 64-bit PPC though delayed to 1996 production
+- [x] **IBM RS64 / POWER3 design** (1993-1994) - POWER/PowerPC convergence era; AS/400 transition
+- [x] **Sun SPARC64 (Hal)** (1995 design, 1994 Hal Computer) - 64-bit SPARC V9 from Fujitsu/Hal; borderline
+- [x] **HP PA-7100** (1992) - Second-gen PA-RISC, 100 MHz, multimedia instructions
+- [x] **HP PA-7100LC** (1994) - Low-cost PA-RISC with on-chip cache and memory controller
+- [x] **HP PA-7200** (1994) - Superscalar PA-RISC, dual-issue, 140 MHz
+- [x] **SGI R10000** (1994 design) - Out-of-order MIPS, register renaming; SGI Origin 2000 (production 1996, borderline)
 
 ## Tier 8 - Network, Telecom & Special-Purpose
 
 Processors that powered the early networking revolution and telecom infrastructure.
 
-- [ ] **AMD Am79C970 "PCnet"** (1993) - Ethernet controller with on-chip processor; dominated PC LAN
-- [ ] **Intel i82596** (1987) - 32-bit Ethernet coprocessor, full TCP offload; Sun/DEC workstations
-- [ ] **Intel i82557** (1994) - EtherExpress PRO/100, programmable MAC
-- [ ] **Motorola MC68302 IMP** (1989) - Integrated Multiprotocol Processor, 68k + 3 serial channels; routers, WAN
-- [ ] **Motorola MC68360 QUICC** (1993) - Quad Integrated Communications Controller; telecom workhorse
-- [ ] **Zilog Z180/Z8S180** (1988) - Enhanced Z180 with DMA and serial; still used in embedded networking
-- [ ] **LSI Logic SPARC (L64801)** (1989) - First 3rd-party SPARC, gate-array; proved SPARC licensing model
-- [ ] **Cypress CY7C601** (1988) - Early merchant SPARC, 25-40 MHz; multiple SPARC workstation vendors
+- [x] **AMD Am79C970 "PCnet"** (1993) - Ethernet controller with on-chip processor; dominated PC LAN
+- [x] **Intel i82596** (1987) - 32-bit Ethernet coprocessor, full TCP offload; Sun/DEC workstations
+- [x] **Intel i82557** (1994) - EtherExpress PRO/100, programmable MAC
+- [x] **Motorola MC68302 IMP** (1989) - Integrated Multiprotocol Processor, 68k + 3 serial channels; routers, WAN
+- [x] **Motorola MC68360 QUICC** (1993) - Quad Integrated Communications Controller; telecom workhorse
+- [x] **Zilog Z180/Z8S180** (1988) - Enhanced Z180 with DMA and serial; still used in embedded networking
+- [x] **LSI Logic SPARC (L64801)** (1989) - First 3rd-party SPARC, gate-array; proved SPARC licensing model
+- [x] **Cypress CY7C601** (1988) - Early merchant SPARC, 25-40 MHz; multiple SPARC workstation vendors
 
 ## Tier 9 - Eastern Bloc & International (1986–1994)
 
 The final years of Eastern Bloc semiconductor production and emerging Asian designs.
 
-- [ ] **Soviet Elbrus El-90** (1990) - Soviet superscalar design, VLIW-like; Elbrus-3 computer
-- [ ] **Soviet K1839VM1** (1989) - VAX-compatible chip, Soviet attempt at 32-bit VAX clone
-- [ ] **East German U80701** (1989) - DDR's last CPU project, 32-bit, cancelled with reunification
-- [ ] **Samsung KS86C4004** (1990) - Samsung's 4-bit/8-bit MCU, early Korean semiconductor industry
-- [ ] **Hyundai/Hynix 80486 clone** (1993) - Korean 486-compatible; beginning of Korean CPU efforts
-- [ ] **Chinese Longxin predecessor / 863 program** (1986-1994) - Early Chinese CPU R&D, reverse-engineered Z80/8086 cores
+- [x] **Soviet Elbrus El-90** (1990) - Soviet superscalar design, VLIW-like; Elbrus-3 computer
+- [x] **Soviet K1839VM1** (1989) - VAX-compatible chip, Soviet attempt at 32-bit VAX clone
+- [x] **East German U80701** (1989) - DDR's last CPU project, 32-bit, cancelled with reunification
+- [x] **Samsung KS86C4004** (1990) - Samsung's 4-bit/8-bit MCU, early Korean semiconductor industry
+- [x] **Hyundai/Hynix 80486 clone** (1993) - Korean 486-compatible; beginning of Korean CPU efforts
+- [x] **Chinese Longxin predecessor / 863 program** (1986-1994) - Early Chinese CPU R&D, reverse-engineered Z80/8086 cores
 
 ---
 

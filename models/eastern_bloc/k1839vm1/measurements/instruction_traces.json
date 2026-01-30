@@ -1,0 +1,57 @@
+{
+  "processor": "Soviet K1839VM1",
+  "manufacturer": "Angstrem",
+  "year": 1989,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU/logic - 3.0 cycles"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Register transfer - 3.0 cycles"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 5.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory access - 5.0 cycles"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 8.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch/call - 8.0 cycles"
+    },
+    {
+      "mnemonic": "MULTIPLY",
+      "category": "multiply",
+      "measured_cycles": 20.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Multiply - 20.0 cycles"
+    },
+    {
+      "mnemonic": "DIVIDE",
+      "category": "divide",
+      "measured_cycles": 45.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Divide - 45.0 cycles"
+    }
+  ]
+}

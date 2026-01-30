@@ -1,0 +1,66 @@
+{
+  "processor": "IBM POWER2",
+  "year": 1993,
+  "specifications": {
+    "data_width_bits": 32,
+    "address_width_bits": 32,
+    "clock_mhz": 71.5,
+    "transistors": 23000000,
+    "technology": "0.45um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1.0,
+      10.0
+    ],
+    "typical_cpi": 1.1
+  },
+  "validated_performance": {
+    "ips_min": 32499999,
+    "ips_max": 97499999,
+    "mips_typical": 65.0
+  },
+  "notes": "Enhanced POWER, 8-chip MCM, top TPC benchmarks",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "IBM POWER2 Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/IBM_POWER2",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 1.1,
+    "expected_ipc": 0.9091,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 1.1,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

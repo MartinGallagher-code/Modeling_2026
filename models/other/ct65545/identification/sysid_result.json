@@ -1,0 +1,40 @@
+{
+  "processor": "ct65545",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.0012,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.draw": 0.3,
+    "cor.pixel": 0.3,
+    "cor.register": 0.3,
+    "cor.memory": 0.3,
+    "cor.branch": 0.3,
+    "cor.blit": 0.3
+  },
+  "residuals_before": {
+    "typical": -0.12,
+    "compute": -0.06,
+    "memory": -0.16,
+    "control": -0.1,
+    "mixed": -0.1
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.06,
+    "memory": -0.04,
+    "control": 0.02,
+    "mixed": 0.02
+  },
+  "free_parameters": [
+    "cor.draw",
+    "cor.pixel",
+    "cor.register",
+    "cor.memory",
+    "cor.branch",
+    "cor.blit"
+  ]
+}

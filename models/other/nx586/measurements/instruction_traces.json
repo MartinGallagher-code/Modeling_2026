@@ -1,0 +1,57 @@
+{
+  "processor": "NexGen Nx586",
+  "manufacturer": "NexGen",
+  "year": 1994,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU/logic - 1.0 cycles"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Register transfer - 1.0 cycles"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory access - 2.0 cycles"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch/call - 3.0 cycles"
+    },
+    {
+      "mnemonic": "MULTIPLY",
+      "category": "multiply",
+      "measured_cycles": 5.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Multiply - 5.0 cycles"
+    },
+    {
+      "mnemonic": "DIVIDE",
+      "category": "divide",
+      "measured_cycles": 15.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Divide - 15.0 cycles"
+    }
+  ]
+}

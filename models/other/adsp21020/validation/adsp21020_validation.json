@@ -1,0 +1,66 @@
+{
+  "processor": "Analog Devices ADSP-21020",
+  "year": 1990,
+  "specifications": {
+    "data_width_bits": 32,
+    "address_width_bits": 32,
+    "clock_mhz": 33.0,
+    "transistors": 450000,
+    "technology": "0.8um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1.0,
+      2.0
+    ],
+    "typical_cpi": 1.2
+  },
+  "validated_performance": {
+    "ips_min": 13750000,
+    "ips_max": 41250000,
+    "mips_typical": 27.5
+  },
+  "notes": "32-bit floating-point SHARC predecessor",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Analog Devices ADSP-21020 Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Analog_Devices_ADSP-21020",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 1.2,
+    "expected_ipc": 0.8333,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 1.2,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

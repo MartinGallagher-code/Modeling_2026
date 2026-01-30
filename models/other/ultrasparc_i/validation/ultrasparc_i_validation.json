@@ -1,0 +1,66 @@
+{
+  "processor": "Sun UltraSPARC I",
+  "year": 1995,
+  "specifications": {
+    "data_width_bits": 64,
+    "address_width_bits": 64,
+    "clock_mhz": 167.0,
+    "transistors": 5200000,
+    "technology": "0.47um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1.0,
+      10.0
+    ],
+    "typical_cpi": 0.7
+  },
+  "validated_performance": {
+    "ips_min": 119285714,
+    "ips_max": 357857142,
+    "mips_typical": 238.6
+  },
+  "notes": "64-bit SPARC V9, VIS multimedia instructions",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Sun UltraSPARC I Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sun_UltraSPARC_I",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 0.7,
+    "expected_ipc": 1.4286,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 0.7,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "processor": "Motorola CPU32",
+  "year": 1990,
+  "specifications": {
+    "data_width_bits": 32,
+    "address_width_bits": 32,
+    "clock_mhz": 16.0,
+    "transistors": 340000,
+    "technology": "0.8um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2.0,
+      40.0
+    ],
+    "typical_cpi": 2.5
+  },
+  "validated_performance": {
+    "ips_min": 3200000,
+    "ips_max": 9600000,
+    "mips_typical": 6.4
+  },
+  "notes": "68020-based embedded core with on-chip peripherals",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Motorola CPU32 Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Motorola_CPU32",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 2.5,
+    "expected_ipc": 0.4,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 2.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

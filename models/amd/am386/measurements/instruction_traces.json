@@ -1,0 +1,57 @@
+{
+  "processor": "AMD Am386",
+  "manufacturer": "AMD",
+  "year": 1991,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU/logic - 2.0 cycles"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Register transfer - 2.0 cycles"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 4.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory access - 4.0 cycles"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 8.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch/call - 8.0 cycles"
+    },
+    {
+      "mnemonic": "MULTIPLY",
+      "category": "multiply",
+      "measured_cycles": 12.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Multiply - 12.0 cycles"
+    },
+    {
+      "mnemonic": "DIVIDE",
+      "category": "divide",
+      "measured_cycles": 38.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Divide - 38.0 cycles"
+    }
+  ]
+}

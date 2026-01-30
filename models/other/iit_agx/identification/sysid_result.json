@@ -1,0 +1,40 @@
+{
+  "processor": "iit_agx",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.001136,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.draw": 0.25,
+    "cor.pixel": 0.25,
+    "cor.register": 0.25,
+    "cor.memory": 0.25,
+    "cor.branch": 0.25,
+    "cor.blit": 0.25
+  },
+  "residuals_before": {
+    "typical": -0.1136,
+    "compute": -0.0909,
+    "memory": -0.1136,
+    "control": -0.0682,
+    "mixed": -0.0909
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0227,
+    "memory": 0.0,
+    "control": 0.0455,
+    "mixed": 0.0227
+  },
+  "free_parameters": [
+    "cor.draw",
+    "cor.pixel",
+    "cor.register",
+    "cor.memory",
+    "cor.branch",
+    "cor.blit"
+  ]
+}

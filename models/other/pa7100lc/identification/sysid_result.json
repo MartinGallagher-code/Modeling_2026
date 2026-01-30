@@ -1,0 +1,40 @@
+{
+  "processor": "pa7100lc",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.003714,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.52,
+    "cor.load": -0.52,
+    "cor.store": -0.52,
+    "cor.branch": -0.52,
+    "cor.multiply": -0.52,
+    "cor.divide": -0.52
+  },
+  "residuals_before": {
+    "typical": 0.3714,
+    "compute": 0.6071,
+    "memory": 0.4786,
+    "control": 0.4429,
+    "mixed": 0.6786
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.2357,
+    "memory": 0.1071,
+    "control": 0.0714,
+    "mixed": 0.3071
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

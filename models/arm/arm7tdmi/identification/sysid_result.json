@@ -1,0 +1,40 @@
+{
+  "processor": "arm7tdmi",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.004067,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.61,
+    "cor.load": -0.61,
+    "cor.store": -0.61,
+    "cor.branch": -0.61,
+    "cor.multiply": -0.61,
+    "cor.divide": -0.61
+  },
+  "residuals_before": {
+    "typical": 0.4067,
+    "compute": 0.6,
+    "memory": 0.4733,
+    "control": 0.64,
+    "mixed": 0.6667
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.1933,
+    "memory": 0.0667,
+    "control": 0.2333,
+    "mixed": 0.26
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

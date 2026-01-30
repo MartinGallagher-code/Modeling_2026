@@ -1,0 +1,40 @@
+{
+  "processor": "hd63484_2",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.001857,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.draw": 0.65,
+    "cor.pixel": 0.65,
+    "cor.register": 0.65,
+    "cor.memory": 0.65,
+    "cor.branch": 0.65,
+    "cor.blit": 0.65
+  },
+  "residuals_before": {
+    "typical": -0.1857,
+    "compute": -0.1571,
+    "memory": -0.1857,
+    "control": -0.1714,
+    "mixed": -0.1714
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0286,
+    "memory": 0.0,
+    "control": 0.0143,
+    "mixed": 0.0143
+  },
+  "free_parameters": [
+    "cor.draw",
+    "cor.pixel",
+    "cor.register",
+    "cor.memory",
+    "cor.branch",
+    "cor.blit"
+  ]
+}

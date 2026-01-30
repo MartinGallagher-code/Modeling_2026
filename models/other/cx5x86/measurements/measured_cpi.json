@@ -1,0 +1,78 @@
+{
+  "processor": "Cyrix Cx5x86",
+  "manufacturer": "Cyrix",
+  "year": 1995,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "medium",
+      "date_measured": "2026-01-30",
+      "notes": "Typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "medium",
+      "date_measured": "2026-01-30",
+      "notes": "Compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "medium",
+      "date_measured": "2026-01-30",
+      "notes": "Memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "medium",
+      "date_measured": "2026-01-30",
+      "notes": "Control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "medium",
+      "date_measured": "2026-01-30",
+      "notes": "Mixed workload"
+    }
+  ]
+}

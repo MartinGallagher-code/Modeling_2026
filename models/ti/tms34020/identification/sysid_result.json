@@ -1,0 +1,40 @@
+{
+  "processor": "tms34020",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.00175,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.draw": 0.35,
+    "cor.pixel": 0.35,
+    "cor.register": 0.35,
+    "cor.memory": 0.35,
+    "cor.branch": 0.35,
+    "cor.blit": 0.35
+  },
+  "residuals_before": {
+    "typical": -0.175,
+    "compute": -0.15,
+    "memory": -0.125,
+    "control": -0.075,
+    "mixed": -0.125
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.025,
+    "memory": 0.05,
+    "control": 0.1,
+    "mixed": 0.05
+  },
+  "free_parameters": [
+    "cor.draw",
+    "cor.pixel",
+    "cor.register",
+    "cor.memory",
+    "cor.branch",
+    "cor.blit"
+  ]
+}

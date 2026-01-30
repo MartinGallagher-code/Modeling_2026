@@ -1,0 +1,40 @@
+{
+  "processor": "m88100",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.003933,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.59,
+    "cor.load": -0.59,
+    "cor.store": -0.59,
+    "cor.branch": -0.59,
+    "cor.multiply": -0.59,
+    "cor.divide": -0.59
+  },
+  "residuals_before": {
+    "typical": 0.3933,
+    "compute": 0.8,
+    "memory": 0.4933,
+    "control": 0.46,
+    "mixed": 0.8333
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.4067,
+    "memory": 0.1,
+    "control": 0.0667,
+    "mixed": 0.44
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

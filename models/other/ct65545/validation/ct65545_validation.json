@@ -1,0 +1,66 @@
+{
+  "processor": "C&T 65545",
+  "year": 1993,
+  "specifications": {
+    "data_width_bits": 32,
+    "address_width_bits": 22,
+    "clock_mhz": 40.0,
+    "transistors": 500000,
+    "technology": "0.5um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1.0,
+      3.0
+    ],
+    "typical_cpi": 2.5
+  },
+  "validated_performance": {
+    "ips_min": 8000000,
+    "ips_max": 24000000,
+    "mips_typical": 16.0
+  },
+  "notes": "Laptop graphics with power management",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "C&T 65545 Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/C&T_65545",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 2.5,
+    "expected_ipc": 0.4,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 2.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

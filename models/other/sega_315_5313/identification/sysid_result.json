@@ -1,0 +1,40 @@
+{
+  "processor": "sega_315_5313",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.001833,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.draw": 0.55,
+    "cor.pixel": 0.55,
+    "cor.register": 0.55,
+    "cor.memory": 0.55,
+    "cor.branch": 0.55,
+    "cor.blit": 0.55
+  },
+  "residuals_before": {
+    "typical": -0.1833,
+    "compute": -0.15,
+    "memory": -0.1667,
+    "control": -0.1333,
+    "mixed": -0.15
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0333,
+    "memory": 0.0167,
+    "control": 0.05,
+    "mixed": 0.0333
+  },
+  "free_parameters": [
+    "cor.draw",
+    "cor.pixel",
+    "cor.register",
+    "cor.memory",
+    "cor.branch",
+    "cor.blit"
+  ]
+}

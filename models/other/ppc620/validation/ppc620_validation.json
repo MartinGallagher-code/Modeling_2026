@@ -1,0 +1,66 @@
+{
+  "processor": "PowerPC 620",
+  "year": 1994,
+  "specifications": {
+    "data_width_bits": 64,
+    "address_width_bits": 64,
+    "clock_mhz": 133.0,
+    "transistors": 7000000,
+    "technology": "0.5um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1.0,
+      12.0
+    ],
+    "typical_cpi": 0.8
+  },
+  "validated_performance": {
+    "ips_min": 83125000,
+    "ips_max": 249375000,
+    "mips_typical": 166.2
+  },
+  "notes": "64-bit PowerPC, first 64-bit PPC",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "PowerPC 620 Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/PowerPC_620",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 0.8,
+    "expected_ipc": 1.25,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 0.8,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

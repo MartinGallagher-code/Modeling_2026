@@ -1,0 +1,40 @@
+{
+  "processor": "arm250",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.005235,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.89,
+    "cor.load": -0.89,
+    "cor.store": -0.89,
+    "cor.branch": -0.89,
+    "cor.multiply": -0.89,
+    "cor.divide": -0.89
+  },
+  "residuals_before": {
+    "typical": 0.5235,
+    "compute": 1.1765,
+    "memory": 0.5824,
+    "control": 0.7294,
+    "mixed": 1.1176
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.6529,
+    "memory": 0.0588,
+    "control": 0.2059,
+    "mixed": 0.5941
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

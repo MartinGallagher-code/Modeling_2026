@@ -1,0 +1,57 @@
+{
+  "processor": "NEC uPD7759",
+  "manufacturer": "NEC",
+  "year": 1987,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "OSCILLATOR",
+      "category": "oscillator",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Waveform generation - 3.0 cycles"
+    },
+    {
+      "mnemonic": "ENVELOPE",
+      "category": "envelope",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Envelope/modulation - 2.0 cycles"
+    },
+    {
+      "mnemonic": "REGISTER",
+      "category": "register",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Register write - 1.0 cycles"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Sample memory access - 2.0 cycles"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Sequencing/control - 3.0 cycles"
+    },
+    {
+      "mnemonic": "MIXING",
+      "category": "mixing",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Channel mixing - 2.0 cycles"
+    }
+  ]
+}

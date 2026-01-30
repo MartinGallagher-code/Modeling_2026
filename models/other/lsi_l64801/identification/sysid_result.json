@@ -1,0 +1,40 @@
+{
+  "processor": "lsi_l64801",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.001444,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.26,
+    "cor.load": -0.26,
+    "cor.store": -0.26,
+    "cor.branch": -0.26,
+    "cor.multiply": -0.26,
+    "cor.divide": -0.26
+  },
+  "residuals_before": {
+    "typical": 0.1444,
+    "compute": 0.4722,
+    "memory": 0.2278,
+    "control": 0.2,
+    "mixed": 0.4722
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.3278,
+    "memory": 0.0833,
+    "control": 0.0556,
+    "mixed": 0.3278
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

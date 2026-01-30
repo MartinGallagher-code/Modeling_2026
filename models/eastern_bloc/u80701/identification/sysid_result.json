@@ -1,0 +1,40 @@
+{
+  "processor": "u80701",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 2.9e-05,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.01,
+    "cor.data_transfer": -0.01,
+    "cor.memory": -0.01,
+    "cor.control": -0.01,
+    "cor.multiply": -0.01,
+    "cor.divide": -0.01
+  },
+  "residuals_before": {
+    "typical": 0.0029,
+    "compute": 0.1,
+    "memory": 0.1171,
+    "control": 0.26,
+    "mixed": 0.0314
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0971,
+    "memory": 0.1143,
+    "control": 0.2571,
+    "mixed": 0.0286
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.control",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

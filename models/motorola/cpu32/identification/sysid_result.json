@@ -1,0 +1,40 @@
+{
+  "processor": "cpu32",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.0026,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.65,
+    "cor.data_transfer": -0.65,
+    "cor.memory": -0.65,
+    "cor.control": -0.65,
+    "cor.multiply": -0.65,
+    "cor.divide": -0.65
+  },
+  "residuals_before": {
+    "typical": 0.26,
+    "compute": 0.5,
+    "memory": 0.34,
+    "control": 0.48,
+    "mixed": 0.28
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.24,
+    "memory": 0.08,
+    "control": 0.22,
+    "mixed": 0.02
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.control",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

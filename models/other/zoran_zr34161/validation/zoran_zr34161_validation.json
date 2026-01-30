@@ -1,0 +1,66 @@
+{
+  "processor": "Zoran ZR34161",
+  "year": 1991,
+  "specifications": {
+    "data_width_bits": 16,
+    "address_width_bits": 16,
+    "clock_mhz": 25.0,
+    "transistors": 300000,
+    "technology": "0.8um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1.0,
+      2.0
+    ],
+    "typical_cpi": 1.5
+  },
+  "validated_performance": {
+    "ips_min": 8333333,
+    "ips_max": 25000000,
+    "mips_typical": 16.7
+  },
+  "notes": "JPEG/MPEG decoder DSP, early digital imaging",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Zoran ZR34161 Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Zoran_ZR34161",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 1.5,
+    "expected_ipc": 0.6667,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 1.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

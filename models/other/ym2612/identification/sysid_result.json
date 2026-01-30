@@ -1,0 +1,40 @@
+{
+  "processor": "ym2612",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.002,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.oscillator": 0.5,
+    "cor.envelope": 0.5,
+    "cor.register": 0.5,
+    "cor.memory": 0.5,
+    "cor.control": 0.5,
+    "cor.mixing": 0.5
+  },
+  "residuals_before": {
+    "typical": -0.2,
+    "compute": -0.2,
+    "memory": -0.2,
+    "control": -0.16,
+    "mixed": -0.2
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.04,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.oscillator",
+    "cor.envelope",
+    "cor.register",
+    "cor.memory",
+    "cor.control",
+    "cor.mixing"
+  ]
+}

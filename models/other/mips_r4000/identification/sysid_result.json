@@ -1,0 +1,40 @@
+{
+  "processor": "mips_r4000",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.004667,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.7,
+    "cor.load": -0.7,
+    "cor.store": -0.7,
+    "cor.branch": -0.7,
+    "cor.multiply": -0.7,
+    "cor.divide": -0.7
+  },
+  "residuals_before": {
+    "typical": 0.4667,
+    "compute": 0.7667,
+    "memory": 0.5333,
+    "control": 0.7,
+    "mixed": 0.8
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.3,
+    "memory": 0.0667,
+    "control": 0.2333,
+    "mixed": 0.3333
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

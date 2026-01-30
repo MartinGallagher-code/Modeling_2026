@@ -1,0 +1,40 @@
+{
+  "processor": "mb86900",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.001667,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.3,
+    "cor.load": -0.3,
+    "cor.store": -0.3,
+    "cor.branch": -0.3,
+    "cor.multiply": -0.3,
+    "cor.divide": -0.3
+  },
+  "residuals_before": {
+    "typical": 0.1667,
+    "compute": 0.5278,
+    "memory": 0.25,
+    "control": 0.2222,
+    "mixed": 0.5278
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.3611,
+    "memory": 0.0833,
+    "control": 0.0556,
+    "mixed": 0.3611
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

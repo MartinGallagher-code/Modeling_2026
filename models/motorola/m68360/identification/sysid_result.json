@@ -1,0 +1,40 @@
+{
+  "processor": "m68360",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.000909,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.packet": -0.2,
+    "cor.dma": -0.2,
+    "cor.register": -0.2,
+    "cor.memory": -0.2,
+    "cor.control": -0.2,
+    "cor.protocol": -0.2
+  },
+  "residuals_before": {
+    "typical": 0.0909,
+    "compute": 0.1818,
+    "memory": 0.0227,
+    "control": 0.1364,
+    "mixed": 0.0909
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0909,
+    "memory": -0.0682,
+    "control": 0.0455,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.packet",
+    "cor.dma",
+    "cor.register",
+    "cor.memory",
+    "cor.control",
+    "cor.protocol"
+  ]
+}

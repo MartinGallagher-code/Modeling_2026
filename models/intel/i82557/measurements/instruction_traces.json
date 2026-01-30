@@ -1,0 +1,57 @@
+{
+  "processor": "Intel i82557",
+  "manufacturer": "Intel",
+  "year": 1994,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "PACKET",
+      "category": "packet",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Packet processing - 3.0 cycles"
+    },
+    {
+      "mnemonic": "DMA",
+      "category": "dma",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "DMA transfer - 2.0 cycles"
+    },
+    {
+      "mnemonic": "REGISTER",
+      "category": "register",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Register access - 1.0 cycles"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Buffer memory - 2.0 cycles"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Flow control - 3.0 cycles"
+    },
+    {
+      "mnemonic": "PROTOCOL",
+      "category": "protocol",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Protocol engine - 3.0 cycles"
+    }
+  ]
+}

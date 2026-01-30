@@ -1,0 +1,57 @@
+{
+  "processor": "IBM POWER1",
+  "manufacturer": "IBM",
+  "year": 1990,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU/logic ops - 1.0 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "load",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Load from memory - 1.0 cycles"
+    },
+    {
+      "mnemonic": "STORE",
+      "category": "store",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Store to memory - 1.0 cycles"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "branch",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch/jump - 1.0 cycles"
+    },
+    {
+      "mnemonic": "MULTIPLY",
+      "category": "multiply",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Multiply - 2.0 cycles"
+    },
+    {
+      "mnemonic": "DIVIDE",
+      "category": "divide",
+      "measured_cycles": 13.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Divide - 13.0 cycles"
+    }
+  ]
+}

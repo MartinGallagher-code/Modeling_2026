@@ -1,0 +1,66 @@
+{
+  "processor": "Ricoh 5A22",
+  "year": 1990,
+  "specifications": {
+    "data_width_bits": 16,
+    "address_width_bits": 24,
+    "clock_mhz": 3.58,
+    "transistors": 50000,
+    "technology": "0.8um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      2.0,
+      20.0
+    ],
+    "typical_cpi": 3.2
+  },
+  "validated_performance": {
+    "ips_min": 559375,
+    "ips_max": 1678125,
+    "mips_typical": 1.1
+  },
+  "notes": "SNES CPU, 65C816 derivative with DMA",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Ricoh 5A22 Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ricoh_5A22",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 3.2,
+    "expected_ipc": 0.3125,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 3.2,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

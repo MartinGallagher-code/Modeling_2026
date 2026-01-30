@@ -1,0 +1,40 @@
+{
+  "processor": "cy7c601",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.002625,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.42,
+    "cor.load": -0.42,
+    "cor.store": -0.42,
+    "cor.branch": -0.42,
+    "cor.multiply": -0.42,
+    "cor.divide": -0.42
+  },
+  "residuals_before": {
+    "typical": 0.2625,
+    "compute": 0.5937,
+    "memory": 0.3562,
+    "control": 0.325,
+    "mixed": 0.5937
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.3313,
+    "memory": 0.0938,
+    "control": 0.0625,
+    "mixed": 0.3313
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

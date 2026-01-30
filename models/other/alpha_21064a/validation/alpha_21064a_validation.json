@@ -1,0 +1,66 @@
+{
+  "processor": "DEC Alpha 21064A",
+  "year": 1994,
+  "specifications": {
+    "data_width_bits": 64,
+    "address_width_bits": 64,
+    "clock_mhz": 300.0,
+    "transistors": 2850000,
+    "technology": "0.5um CMOS",
+    "package": "N/A"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [
+      1.0,
+      12.0
+    ],
+    "typical_cpi": 1.2
+  },
+  "validated_performance": {
+    "ips_min": 125000000,
+    "ips_max": 375000000,
+    "mips_typical": 250.0
+  },
+  "notes": "Faster 21064, 300 MHz",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "DEC Alpha 21064A Datasheet",
+      "url": "N/A",
+      "verified": false
+    },
+    {
+      "type": "wikipedia",
+      "name": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/DEC_Alpha_21064A",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 1.2,
+    "expected_ipc": 0.8333,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "predicted_cpi": 1.2,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

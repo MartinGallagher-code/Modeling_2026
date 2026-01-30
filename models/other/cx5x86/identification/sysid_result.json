@@ -1,0 +1,40 @@
+{
+  "processor": "cx5x86",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.0012,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.18,
+    "cor.data_transfer": -0.18,
+    "cor.memory": -0.18,
+    "cor.control": -0.18,
+    "cor.multiply": -0.18,
+    "cor.divide": -0.18
+  },
+  "residuals_before": {
+    "typical": 0.12,
+    "compute": 0.2267,
+    "memory": 0.2533,
+    "control": 0.3533,
+    "mixed": 0.1533
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.1067,
+    "memory": 0.1333,
+    "control": 0.2333,
+    "mixed": 0.0333
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.control",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "processor": "AT&T DSP32C",
+  "manufacturer": "AT&T",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "MAC",
+      "category": "mac",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Multiply-accumulate - 1.0 cycles"
+    },
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU/logic - 1.0 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "load",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Data load - 1.0 cycles"
+    },
+    {
+      "mnemonic": "STORE",
+      "category": "store",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Data store - 1.0 cycles"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "branch",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch/loop - 1.0 cycles"
+    },
+    {
+      "mnemonic": "SPECIAL",
+      "category": "special",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Special function - 2.0 cycles"
+    }
+  ]
+}

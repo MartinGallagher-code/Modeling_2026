@@ -1,0 +1,57 @@
+{
+  "processor": "Cyrix Cx486DLC",
+  "manufacturer": "Cyrix",
+  "year": 1992,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU/logic - 1.5 cycles"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 1.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Register transfer - 1.5 cycles"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory access - 3.0 cycles"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 5.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch/call - 5.0 cycles"
+    },
+    {
+      "mnemonic": "MULTIPLY",
+      "category": "multiply",
+      "measured_cycles": 12.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Multiply - 12.0 cycles"
+    },
+    {
+      "mnemonic": "DIVIDE",
+      "category": "divide",
+      "measured_cycles": 30.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Divide - 30.0 cycles"
+    }
+  ]
+}

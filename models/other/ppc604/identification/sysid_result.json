@@ -1,0 +1,40 @@
+{
+  "processor": "ppc604",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.005875,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.47,
+    "cor.load": -0.47,
+    "cor.store": -0.47,
+    "cor.branch": -0.47,
+    "cor.multiply": -0.47,
+    "cor.divide": -0.47
+  },
+  "residuals_before": {
+    "typical": 0.5875,
+    "compute": 1.125,
+    "memory": 0.5875,
+    "control": 0.5875,
+    "mixed": 1.0625
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.5375,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.475
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "processor": "coldfire",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.0015,
+  "loss_after": 0.0001,
+  "cpi_error_percent": 0.0,
+  "message": "Optimization converged.",
+  "corrections": {
+    "cor.alu": -0.24,
+    "cor.load": -0.24,
+    "cor.store": -0.24,
+    "cor.branch": -0.24,
+    "cor.multiply": -0.24,
+    "cor.divide": -0.24
+  },
+  "residuals_before": {
+    "typical": 0.15,
+    "compute": 0.2812,
+    "memory": 0.2437,
+    "control": 0.2125,
+    "mixed": 0.3437
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.1312,
+    "memory": 0.0938,
+    "control": 0.0625,
+    "mixed": 0.1938
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.load",
+    "cor.store",
+    "cor.branch",
+    "cor.multiply",
+    "cor.divide"
+  ]
+}

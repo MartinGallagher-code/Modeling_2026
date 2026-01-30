@@ -1,0 +1,57 @@
+{
+  "processor": "MIPS R4000",
+  "manufacturer": "MIPS",
+  "year": 1991,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU/logic ops - 1.0 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "load",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Load from memory - 2.0 cycles"
+    },
+    {
+      "mnemonic": "STORE",
+      "category": "store",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Store to memory - 2.0 cycles"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "branch",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch/jump - 3.0 cycles"
+    },
+    {
+      "mnemonic": "MULTIPLY",
+      "category": "multiply",
+      "measured_cycles": 5.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Multiply - 5.0 cycles"
+    },
+    {
+      "mnemonic": "DIVIDE",
+      "category": "divide",
+      "measured_cycles": 15.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Divide - 15.0 cycles"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "processor": "TI TMS34020",
+  "manufacturer": "TI",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "DRAW",
+      "category": "draw",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Drawing command - 2.0 cycles"
+    },
+    {
+      "mnemonic": "PIXEL",
+      "category": "pixel",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Pixel operation - 1.0 cycles"
+    },
+    {
+      "mnemonic": "REGISTER",
+      "category": "register",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Register access - 1.0 cycles"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory transfer - 2.0 cycles"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "branch",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Flow control - 3.0 cycles"
+    },
+    {
+      "mnemonic": "BLIT",
+      "category": "blit",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Block transfer - 2.0 cycles"
+    }
+  ]
+}
