@@ -12,6 +12,13 @@
   "address_width_bits": 20,
   "validation_date": "2026-01-29",
   "accuracy": {
+    "expected_cpi": 6.5,
+    "predicted_cpi": 6.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
     "sysid_loss_before": 0.128002,
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,

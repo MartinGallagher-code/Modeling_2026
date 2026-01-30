@@ -1,14 +1,14 @@
 # Project Status and Roadmap
 
-**Last Updated:** January 29, 2026
+**Last Updated:** January 30, 2026
 
 ---
 
 ## Current Status: Pre-1986 Extended Coverage Complete ✅
 
-The Modeling_2026 project has successfully completed comprehensive coverage of the foundational microprocessor era (1970-1994), with **196 processor models** implemented and validated.
+The Modeling_2026 project has successfully completed comprehensive coverage of the foundational microprocessor era (1970-1994), with **323 processor models** implemented and validated.
 
-**All 196 models pass validation with <10% CPI error (195 with <5% error).**
+**All 323 models pass validation with <5% CPI error.**
 
 ---
 
@@ -222,15 +222,15 @@ The Modeling_2026 project has successfully completed comprehensive coverage of t
 | 1986-1990 | 24 | 1.8% | 0.0% | 4.1% |
 | 1991-1994 | 10 | 2.1% | 0.0% | 4.8% |
 
-**195 of 196 models achieve <5% error. All 196 achieve <10% error.**
+**All 323 models achieve <5% CPI error.**
 
 ### Documentation Coverage
 
-- 196/196 models have validated Python implementation (100%)
-- 196/196 models have validation JSON with timing tests (100%)
-- 196/196 models have CHANGELOG.md (100%)
-- 196/196 models have HANDOFF.md (100%)
-- 196/196 models have README.md (100%)
+- 323/323 models have validated Python implementation (100%)
+- 323/323 models have validation JSON with accuracy metrics (100%)
+- 323/323 models have CHANGELOG.md (100%)
+- 323/323 models have HANDOFF.md (100%)
+- 323/323 models have README.md (100%)
 
 ### Cross-Validation
 
@@ -295,14 +295,15 @@ The Modeling_2026 project has successfully completed comprehensive coverage of t
 | 3.0 | Jan 28, 2026 | **80 models**, all validated <5% error |
 | 3.5 | Jan 29, 2026 | 117 models with Phase 1 pre-1986 additions |
 | 4.0 | Jan 29, 2026 | **196 models**, Phase 2 pre-1986 complete |
+| 4.1 | Jan 30, 2026 | **323 models**, all passing <5% CPI error, full documentation |
 
 ---
 
 **Project Status:** Pre-1986 Extended Coverage Complete ✅
-**Total Models:** 196
-**Validation Status:** All passing (<10% CPI error, 195 at <5%)
+**Total Models:** 323
+**Validation Status:** All 323 passing (<5% CPI error)
 **Next Milestone:** Phase 5 (Modern x86)
 
 ---
 
-*"From the AMI S2000 to the DEC Alpha - 24 years of microprocessor evolution, 196 models validated."*
+*"From the AMI S2000 to the DEC Alpha - 24 years of microprocessor evolution, 323 models validated."*
