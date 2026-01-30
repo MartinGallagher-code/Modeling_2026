@@ -2,9 +2,9 @@
 
 ## Project Purpose
 
-This repository contains grey-box queueing models for 196 historical microprocessors (1970-1994) organized into 19 manufacturer/family directories. Each model predicts processor performance (CPI, IPC, IPS) using category-based instruction timing and M/M/1 queueing theory.
+This repository contains grey-box queueing models for 321 historical microprocessors (1970-1994) organized into 19 manufacturer/family directories. Each model predicts processor performance (CPI, IPC, IPS) using category-based instruction timing and M/M/1 queueing theory.
 
-**Goal**: Achieve <5% CPI prediction error for each model compared to documented/expected values.
+**Goal**: Achieve <5% CPI prediction error for each model compared to documented/expected values. All 321 models currently pass.
 
 ---
 
@@ -73,10 +73,21 @@ Each processor has:
 │   └── [processor]_validated.py        # Active model (edit this)
 ├── validation/
 │   └── [processor]_validation.json     # Validation data and accuracy metrics
+├── measurements/                       # Calibration input data (DO NOT DELETE)
+│   ├── measured_cpi.json               #   Per-workload CPI measurements models are calibrated against
+│   ├── benchmarks.json                 #   Benchmark scores (e.g. Gibson mix MIPS)
+│   └── instruction_traces.json         #   Instruction mix data
+├── identification/                     # System identification results (DO NOT DELETE)
+│   └── sysid_result.json              #   Fitted correction terms, convergence status, residuals
 ├── docs/                               # Architecture documentation
 ├── CHANGELOG.md                        # Cumulative history (append-only)
 └── HANDOFF.md                          # Current state + next steps
 ```
+
+> **Note:** The `measurements/` and `identification/` directories contain essential pipeline data.
+> `measurements/` holds the CPI measurements that models are validated against.
+> `identification/` holds the system identification output (correction terms fitted via least-squares).
+> These are NOT generated artifacts — they are inputs to and outputs from the calibration process.
 
 ## Working on Models
 
