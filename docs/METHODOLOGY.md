@@ -422,6 +422,6 @@ This approach has successfully modeled **422 processors** from 1970-1995 with **
 
 ---
 
-**Document Version:** 1.0
-**Last Updated:** January 29, 2026
-**Models Using This Methodology:** 80
+**Document Version:** 2.0
+**Last Updated:** January 30, 2026
+**Models Using This Methodology:** 422
