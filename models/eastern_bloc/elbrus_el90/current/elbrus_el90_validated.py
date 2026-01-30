@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Any, Optional
 
 try:
-    from common.base_model import BaseProcessorModel, InstructionCategory, WorkloadProfile, AnalysisResult
+    from common.base_model import BaseProcessorModel, InstructionCategory, WorkloadProfile, AnalysisResult, CacheConfig
 except ImportError:
     from dataclasses import dataclass
 
@@ -25,6 +25,25 @@ except ImportError:
         description: str = ""
         @property
         def total_cycles(self): return self.base_cycles + self.memory_cycles
+
+
+    @dataclass
+    class CacheConfig:
+        has_cache: bool = False
+        l1_latency: float = 1.0
+        l1_hit_rate: float = 0.95
+        l2_latency: float = 10.0
+        l2_hit_rate: float = 0.90
+        has_l2: bool = False
+        dram_latency: float = 50.0
+        def effective_memory_penalty(self):
+            if not self.has_cache: return 0.0
+            l1_miss = 1.0 - self.l1_hit_rate
+            if self.has_l2:
+                l2_miss = 1.0 - self.l2_hit_rate
+                return l1_miss * (self.l2_hit_rate * (self.l2_latency - self.l1_latency) + l2_miss * (self.dram_latency - self.l1_latency))
+            return l1_miss * (self.dram_latency - self.l1_latency)
+
 
     @dataclass
     class WorkloadProfile:
@@ -169,13 +188,17 @@ class ElbrusEl90Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': -0.470000,
-            'load': -0.470000,
-            'store': -0.470000,
-            'branch': -0.470000,
-            'multiply': -0.470000,
-            'divide': -0.470000,
+            'alu': 0.898541,
+            'branch': -0.584540,
+            'divide': -11.169044,
+            'load': -2.275334,
+            'multiply': -4.999983,
+            'store': 1.830879
         }
+
+        # No cache on this processor
+        self.cache_config = None
+        self.memory_categories = []
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

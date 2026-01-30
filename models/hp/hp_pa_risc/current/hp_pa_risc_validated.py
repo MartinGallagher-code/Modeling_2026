@@ -24,6 +24,24 @@ class InstructionCategory:
     def total_cycles(self): return self.base_cycles + self.memory_cycles
 
 @dataclass
+class CacheConfig:
+    has_cache: bool = False
+    l1_latency: float = 1.0
+    l1_hit_rate: float = 0.95
+    l2_latency: float = 10.0
+    l2_hit_rate: float = 0.90
+    has_l2: bool = False
+    dram_latency: float = 50.0
+    def effective_memory_penalty(self):
+        if not self.has_cache: return 0.0
+        l1_miss = 1.0 - self.l1_hit_rate
+        if self.has_l2:
+            l2_miss = 1.0 - self.l2_hit_rate
+            return l1_miss * (self.l2_hit_rate * (self.l2_latency - self.l1_latency) + l2_miss * (self.dram_latency - self.l1_latency))
+        return l1_miss * (self.dram_latency - self.l1_latency)
+
+
+@dataclass
 class WorkloadProfile:
     name: str
     category_weights: Dict[str, float]
@@ -177,18 +195,38 @@ class HpPaRiscModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.247886,
-            'branch': -0.129657,
-            'divide': -1.114731,
-            'fp_complex': -0.988606,
-            'fp_ops': -0.716392,
-            'load': 3.404856,
-            'multiply': -0.242947,
-            'store': -4.831778
+            'alu': -0.435809,
+            'branch': -0.203149,
+            'divide': 4.999998,
+            'fp_complex': -1.371495,
+            'fp_ops': -1.315724,
+            'load': 3.033245,
+            'multiply': -0.778701,
+            'store': -5.000000
         }
+
+        # Cache configuration for memory hierarchy modeling
+        self.cache_config = CacheConfig(
+            has_cache=True,
+            l1_latency=1.0,
+            l1_hit_rate=0.9514,
+            has_l2=True,
+            l2_latency=8.0,
+            l2_hit_rate=0.9138,
+            dram_latency=12.0,
+        )
+        self.memory_categories = ['load', 'store']
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
+
+        # Apply cache miss penalty to memory-accessing categories
+        if hasattr(self, 'cache_config') and self.cache_config and self.cache_config.has_cache:
+            penalty = self.cache_config.effective_memory_penalty()
+            for cat_name in getattr(self, 'memory_categories', []):
+                if cat_name in self.instruction_categories:
+                    self.instruction_categories[cat_name].memory_cycles = penalty
+
         base_cpi = 0
         contributions = {}
         for cat_name, weight in profile.category_weights.items():

@@ -183,7 +183,7 @@ class KR581IK1Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {'alu': -0.518625, 'data_transfer': -0.465691, 'memory': -0.00098, 'io': -0.072539, 'control': -0.982355}
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""

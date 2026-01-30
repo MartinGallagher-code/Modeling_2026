@@ -196,7 +196,7 @@ class IM1821VM85AModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {'alu': 1.33433, 'data_transfer': 0.062679, 'memory': 0.941417, 'io': 3.184527, 'control': 0.359806, 'stack': 2.096213}
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""

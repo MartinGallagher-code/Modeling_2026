@@ -12,12 +12,14 @@
 
 ## Validation Status
 
-| Metric | Value |
-|--------|-------|
-| **Target CPI** | 6.0 |
-| **Predicted CPI** | 6.0 |
-| **Error** | 0.00% |
-| **Status** | PASSED |
+| Workload | Target CPI | Predicted CPI | Error | Status |
+|----------|-----------|---------------|-------|--------|
+| typical  | 6.0 | 6.0000 | 0.00% | PASSED |
+| compute  | 6.0 | 5.9991 | 0.02% | PASSED |
+| memory   | 6.0 | 6.0003 | 0.00% | PASSED |
+| control  | 6.0 | 5.9994 | 0.01% | PASSED |
+
+**Max error: 0.02% -- All workloads PASS (<5%)**
 
 ## Overview
 

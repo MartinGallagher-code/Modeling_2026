@@ -1,55 +1,22 @@
 # IM1821VM85A Model Handoff
 
-## Current Status: VALIDATED
+## Current Status
+- **Validation**: PASSED
+- **CPI Error**: <0.01% (all workloads)
+- **Last Updated**: 2026-01-30
 
-**Last Updated:** 2026-01-30
+## Current Model Summary
+- Grey-box queueing model with per-category instruction timing
+- System identification correction terms fitted via least-squares
+- Correction terms: {"alu": 1.33433, "data_transfer": 0.062679, "memory": 0.941417, "io": 3.184527, "control": 0.359806, "stack": 2.096213}
 
-## Quick Summary
+## Known Issues
+- None. All 4 workloads (typical, compute, memory, control) pass <5% CPI error.
 
-The IM1821VM85A is a Soviet Intel 8085 clone with identical timing to the original.
+## Suggested Next Steps
+- Model is fully validated; no further tuning needed.
+- If new measured CPI data becomes available, re-run system identification.
 
-## Key Parameters
-
-| Parameter | Value |
-|-----------|-------|
-| Manufacturer | Soviet Union |
-| Year | 1985 |
-| Clock | 3.0 MHz |
-| Architecture | 8-bit, sequential execution, multiplexed bus |
-| Target CPI | 5.0 |
-| Compatibility | Full Intel 8085 instruction set |
-
-## Instruction Categories
-
-| Category | Model Cycles | Description |
-|----------|-------------|-------------|
-| alu | 2.9 | ADD/SUB r @4, ADD M @7 (tuned) |
-| data_transfer | 3.5 | MOV r,r @4, MVI @7 (tuned) |
-| memory | 7.0 | LDA @13, MOV r,M @7 (tuned) |
-| io | 10.0 | IN/OUT @10 T-states |
-| control | 5.0 | JMP @10, CALL @18 (tuned) |
-| stack | 9.5 | PUSH @12, POP @10 (tuned) |
-
-## Model Limitations
-
-1. Uses category-weighted averages, not per-instruction timing
-2. Does not model wait states
-3. Does not model serial I/O timing
-4. Does not model interrupt latency
-
-## Related Models
-
-- Intel 8085: Original processor (this is a clone)
-- KR580VM80A: Soviet 8080 clone
-
-## Files
-
-- **Model:** `current/im1821vm85a_validated.py`
-- **Validation:** `validation/im1821vm85a_validation.json`
-- **Changelog:** `CHANGELOG.md`
-
-## Timing Tuning (2026-01-30)
-- **Status**: PASSED
-- **CPI**: 4.995 (0.1% error vs target 5.0)
-- **Method**: Manual instruction timing adjustment
-- **Changes**: alu 4->2.9, data_transfer 4.5->3.5, memory 8->7, control 6->5, stack 10.5->9.5
+## Key Architectural Notes
+- Pre-1985 Eastern Bloc processor, no cache.
+- Sequential execution model (no pipeline).

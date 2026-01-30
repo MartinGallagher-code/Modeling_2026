@@ -19,6 +19,42 @@ import math
 
 
 @dataclass
+class CacheConfig:
+    """Memory hierarchy configuration for cache miss modeling.
+
+    Used by post-1985 processors with on-chip or external caches.
+    Pre-1985 processors leave cache_config as None.
+    """
+    has_cache: bool = False
+    l1_latency: float = 1.0        # cycles for L1 hit
+    l1_hit_rate: float = 0.95      # L1 hit probability
+    l2_latency: float = 10.0       # cycles for L2 hit
+    l2_hit_rate: float = 0.90      # L2 hit probability (given L1 miss)
+    has_l2: bool = False            # whether L2 cache exists
+    dram_latency: float = 50.0     # cycles for main memory access
+
+    def effective_memory_penalty(self) -> float:
+        """Compute average additional cycles beyond L1 hit for memory ops."""
+        if not self.has_cache:
+            return 0.0
+
+        l1_miss_rate = 1.0 - self.l1_hit_rate
+
+        if self.has_l2:
+            # L1 miss -> check L2
+            l2_miss_rate = 1.0 - self.l2_hit_rate
+            penalty = l1_miss_rate * (
+                self.l2_hit_rate * (self.l2_latency - self.l1_latency) +
+                l2_miss_rate * (self.dram_latency - self.l1_latency)
+            )
+        else:
+            # L1 miss -> go to DRAM
+            penalty = l1_miss_rate * (self.dram_latency - self.l1_latency)
+
+        return penalty
+
+
+@dataclass
 class InstructionCategory:
     """Represents an instruction category with timing information"""
     name: str
@@ -275,6 +311,11 @@ def _get_corrections(model) -> Dict[str, float]:
     return getattr(model, 'corrections', {})
 
 
+def _get_cache_config(model) -> Optional['CacheConfig']:
+    """Get cache configuration from any model object."""
+    return getattr(model, 'cache_config', None)
+
+
 def get_model_parameters(model) -> Dict[str, float]:
     """Extract all tunable parameters from any model as a flat dict.
 
@@ -302,6 +343,15 @@ def get_model_parameters(model) -> Dict[str, float]:
     for name, value in corrections.items():
         params[f'cor.{name}'] = value
 
+    cache = _get_cache_config(model)
+    if cache is not None and cache.has_cache:
+        params['cache.l1_hit_rate'] = cache.l1_hit_rate
+        params['cache.l1_latency'] = cache.l1_latency
+        params['cache.dram_latency'] = cache.dram_latency
+        if cache.has_l2:
+            params['cache.l2_hit_rate'] = cache.l2_hit_rate
+            params['cache.l2_latency'] = cache.l2_latency
+
     return params
 
 
@@ -325,6 +375,12 @@ def set_model_parameters(model, params: Dict[str, float]):
         elif key.startswith('cor.'):
             cor_name = key[4:]
             corrections[cor_name] = value
+        elif key.startswith('cache.'):
+            cache = _get_cache_config(model)
+            if cache is not None:
+                field_name = key[6:]  # strip 'cache.'
+                if hasattr(cache, field_name):
+                    setattr(cache, field_name, value)
 
 
 def get_model_parameter_bounds(model) -> Dict[str, tuple]:
@@ -333,7 +389,7 @@ def get_model_parameter_bounds(model) -> Dict[str, tuple]:
     Default bounds:
       base_cycles:   (max(1, 0.5x), 3x current)
       memory_cycles: (0, max(3x current, 10))
-      corrections:   scaled to ±50% of the category's base_cycles
+      corrections:   scaled to ±100% of the category's base_cycles
                      (min ±5.0 for low-cycle instructions)
 
     Correction bounds scale with base_cycles so that high-cycle categories
@@ -360,11 +416,22 @@ def get_model_parameter_bounds(model) -> Dict[str, tuple]:
             cat_name = key[4:]  # strip 'cor.' prefix
             cat = categories.get(cat_name)
             if cat is not None:
-                half_base = cat.base_cycles * 0.5
-                limit = max(5.0, half_base)
+                limit = max(5.0, cat.base_cycles)
             else:
                 limit = 5.0
             bounds[key] = (-limit, limit)
+        elif key.startswith('cache.'):
+            field_name = key[6:]
+            if field_name == 'l1_hit_rate':
+                bounds[key] = (0.80, 0.999)
+            elif field_name == 'l2_hit_rate':
+                bounds[key] = (0.70, 0.999)
+            elif field_name == 'l1_latency':
+                bounds[key] = (1.0, 5.0)
+            elif field_name == 'l2_latency':
+                bounds[key] = (5.0, 30.0)
+            elif field_name == 'dram_latency':
+                bounds[key] = (20.0, 200.0)
 
     return bounds
 
@@ -405,6 +472,15 @@ def get_model_parameter_metadata(model) -> Dict[str, dict]:
                 'fixed': False,
                 'source': 'identification',
                 'description': f'Correction term for {cat_name}',
+            }
+        elif key.startswith('cache.'):
+            field_name = key[6:]
+            # Hit rates are free for identification; latencies are fixed from datasheets
+            is_hit_rate = field_name.endswith('_hit_rate')
+            metadata[key] = {
+                'fixed': not is_hit_rate,
+                'source': 'identification' if is_hit_rate else 'datasheet',
+                'description': f'Cache parameter: {field_name}',
             }
 
     return metadata

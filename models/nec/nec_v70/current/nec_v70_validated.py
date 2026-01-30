@@ -26,6 +26,24 @@ class InstructionCategory:
     def total_cycles(self): return self.base_cycles + self.memory_cycles
 
 @dataclass
+class CacheConfig:
+    has_cache: bool = False
+    l1_latency: float = 1.0
+    l1_hit_rate: float = 0.95
+    l2_latency: float = 10.0
+    l2_hit_rate: float = 0.90
+    has_l2: bool = False
+    dram_latency: float = 50.0
+    def effective_memory_penalty(self):
+        if not self.has_cache: return 0.0
+        l1_miss = 1.0 - self.l1_hit_rate
+        if self.has_l2:
+            l2_miss = 1.0 - self.l2_hit_rate
+            return l1_miss * (self.l2_hit_rate * (self.l2_latency - self.l1_latency) + l2_miss * (self.dram_latency - self.l1_latency))
+        return l1_miss * (self.dram_latency - self.l1_latency)
+
+
+@dataclass
 class WorkloadProfile:
     name: str
     category_weights: Dict[str, float]
@@ -145,16 +163,33 @@ class NecV70Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.041939,
-            'control': -0.078889,
-            'data_transfer': -0.050928,
-            'float': -0.085745,
-            'memory': -0.021391,
-            'string': -0.085745
+            'alu': -0.206459,
+            'control': -0.160594,
+            'data_transfer': -0.187812,
+            'float': -0.112955,
+            'memory': -0.131578,
+            'string': -0.112955
         }
+
+        # Cache configuration for memory hierarchy modeling
+        self.cache_config = CacheConfig(
+            has_cache=True,
+            l1_latency=1.0,
+            l1_hit_rate=0.9139,
+            dram_latency=8.0,
+        )
+        self.memory_categories = ['memory']
 
     def analyze(self, workload="typical"):
         profile = self.workload_profiles.get(workload, self.workload_profiles["typical"])
+
+        # Apply cache miss penalty to memory-accessing categories
+        if hasattr(self, 'cache_config') and self.cache_config and self.cache_config.has_cache:
+            penalty = self.cache_config.effective_memory_penalty()
+            for cat_name in getattr(self, 'memory_categories', []):
+                if cat_name in self.instruction_categories:
+                    self.instruction_categories[cat_name].memory_cycles = penalty
+
         base_cpi = 0
         contributions = {}
         for cat_name, weight in profile.category_weights.items():

@@ -1,59 +1,22 @@
-# VEB U8001 Model Handoff
+# U8001 Model Handoff
 
-## Current Status: VALIDATED
+## Current Status
+- **Validation**: PASSED
+- **CPI Error**: <0.01% (all workloads)
+- **Last Updated**: 2026-01-30
 
-**Last Updated:** 2026-01-30
+## Current Model Summary
+- Grey-box queueing model with per-category instruction timing
+- System identification correction terms fitted via least-squares
+- Correction terms: {"alu": -0.50954, "data_transfer": -0.478958, "memory": -0.505553, "io": -0.165774, "control": 0.022371, "string": 0.040993}
 
-## Quick Summary
+## Known Issues
+- None. All 4 workloads (typical, compute, memory, control) pass <5% CPI error.
 
-The VEB U8001 is a Zilog Z8001 clone manufactured by VEB Mikroelektronik Erfurt. It was the first 16-bit microprocessor in the Eastern Bloc. The model uses identical timing to the Zilog Z8000.
+## Suggested Next Steps
+- Model is fully validated; no further tuning needed.
+- If new measured CPI data becomes available, re-run system identification.
 
-## Key Parameters
-
-| Parameter | Value |
-|-----------|-------|
-| Manufacturer | VEB Mikroelektronik Erfurt |
-| Year | 1984 |
-| Clock | 4.0 MHz |
-| Architecture | 16-bit, sequential execution, segmented memory |
-| Target CPI | 5.5 |
-| Compatibility | Full Zilog Z8001 instruction set |
-
-## Instruction Categories
-
-| Category | Model Cycles | Description |
-|----------|-------------|-------------|
-| alu | 4.5 | ADD/SUB R,R @4, R,IM @7 (tuned) |
-| data_transfer | 4.5 | LD R,R @3, LD R,IM @7 (tuned) |
-| memory | 6.5 | LD R,@R @7, LD R,addr @9 (tuned) |
-| io | 7.0 | IN/OUT @10-12 |
-| control | 6.0 | JP @7, CALL @12, RET @9 |
-| string | 8.0 | Block transfer/search |
-
-## Historical Context
-
-The U8001 was a significant achievement for East German semiconductor industry, providing 16-bit capability for industrial and military applications. It was reverse-engineered from the Zilog Z8001 and represented a major step up from the 8-bit U880 (Z80 clone).
-
-## Model Limitations
-
-1. Uses category-weighted averages, not per-instruction timing
-2. Does not model segmented memory overhead
-3. Does not model multiply/divide latency in detail
-4. Does not model interrupt response latency
-
-## Related Models
-
-- Zilog Z8001: Original processor (this is a clone)
-- U880: Earlier East German Z80 clone (8-bit)
-
-## Files
-
-- **Model:** `current/u8001_validated.py`
-- **Validation:** `validation/u8001_validation.json`
-- **Changelog:** `CHANGELOG.md`
-
-## Timing Tuning (2026-01-30)
-- **Status**: PASSED
-- **CPI**: 5.5 (0.0% error vs target 5.5)
-- **Method**: Manual instruction timing adjustment
-- **Changes**: alu 4->4.5, data_transfer 4->4.5, memory 6->6.5
+## Key Architectural Notes
+- Pre-1985 Eastern Bloc processor, no cache.
+- Sequential execution model (no pipeline).

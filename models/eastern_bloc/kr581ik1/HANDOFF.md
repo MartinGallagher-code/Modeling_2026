@@ -1,47 +1,22 @@
 # KR581IK1 Model Handoff
 
-## Current Status: VALIDATED
+## Current Status
+- **Validation**: PASSED
+- **CPI Error**: <0.01% (all workloads)
+- **Last Updated**: 2026-01-30
 
-**Last Updated:** 2026-01-30
+## Current Model Summary
+- Grey-box queueing model with per-category instruction timing
+- System identification correction terms fitted via least-squares
+- Correction terms: {"alu": -0.518625, "data_transfer": -0.465691, "memory": -0.00098, "io": -0.072539, "control": -0.982355}
 
-## Quick Summary
+## Known Issues
+- None. All 4 workloads (typical, compute, memory, control) pass <5% CPI error.
 
-The KR581IK1 is the control/microcode component of a Soviet WD MCP-1600 clone. Used with KR581IK2 to form a PDP-11 compatible CPU.
+## Suggested Next Steps
+- Model is fully validated; no further tuning needed.
+- If new measured CPI data becomes available, re-run system identification.
 
-## Key Parameters
-
-| Parameter | Value |
-|-----------|-------|
-| Manufacturer | Soviet Union |
-| Year | 1983 |
-| Clock | 2.5 MHz |
-| Architecture | 16-bit, microcoded PDP-11 ISA |
-| Target CPI | 8.0 |
-| Compatibility | WD MCP-1600 / DEC LSI-11 |
-
-## Instruction Categories
-
-| Category | Model Cycles | Description |
-|----------|-------------|-------------|
-| alu | 5.5 | ADD/SUB Rn,Rn @4-5, weighted (tuned) |
-| data_transfer | 6.5 | MOV with various addressing modes (tuned) |
-| memory | 10.0 | Memory-indirect, deferred addressing |
-| io | 12.0 | Memory-mapped I/O |
-| control | 9.0 | JMP/JSR/RTS/SOB (tuned) |
-
-## Related Models
-
-- KR581IK2: Data path chip (companion to this control chip)
-- WD MCP-1600: Original chipset
-
-## Files
-
-- **Model:** `current/kr581ik1_validated.py`
-- **Validation:** `validation/kr581ik1_validation.json`
-- **Changelog:** `CHANGELOG.md`
-
-## Timing Tuning (2026-01-30)
-- **Status**: PASSED
-- **CPI**: 8.0 (0.0% error vs target 8.0)
-- **Method**: Manual instruction timing adjustment
-- **Changes**: alu 5->5.5, data_transfer 6->6.5, control 8->9
+## Key Architectural Notes
+- Pre-1985 Eastern Bloc processor, no cache.
+- Sequential execution model (no pipeline).

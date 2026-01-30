@@ -126,39 +126,39 @@ class M68882Model(BaseProcessorModel):
                 'fp_add': 0.261,
                 'fp_mul': 0.434,
                 'fp_div': 0.087,
-                'fp_transcendental': 0.065,
-                'data_transfer': 0.153,
+                'fp_transcendental': 0.0621,
+                'data_transfer': 0.1559,
             }, "Typical workload"),
             'compute': WorkloadProfile('compute', {
-                'fp_add': 0.361,
+                'fp_add': 0.2969,
                 'fp_mul': 0.409,
-                'fp_div': 0.062,
+                'fp_div': 0.1261,
                 'fp_transcendental': 0.04,
                 'data_transfer': 0.128,
             }, "Compute-intensive"),
             'memory': WorkloadProfile('memory', {
                 'fp_add': 0.236,
                 'fp_mul': 0.409,
-                'fp_div': 0.062,
+                'fp_div': 0.1360,
                 'fp_transcendental': 0.04,
-                'data_transfer': 0.253,
+                'data_transfer': 0.179,
             }, "Memory-intensive"),
             'control': WorkloadProfile('control', {
-                'fp_add': 0.236,
+                'fp_add': 0.3271,
                 'fp_mul': 0.409,
                 'fp_div': 0.062,
-                'fp_transcendental': 0.165,
+                'fp_transcendental': 0.0739,
                 'data_transfer': 0.128,
             }, "Control-flow intensive"),
         }
 
-        # Correction terms for system identification (initially zero)
+        # Correction terms for system identification
         self.corrections = {
-            'data_transfer': 5.000000,
-            'fp_add': 6.000000,
-            'fp_div': -23.506992,
-            'fp_mul': 4.831678,
-            'fp_transcendental': -40.000000
+            'data_transfer': 0.0,
+            'fp_add': 0.0,
+            'fp_div': 0.0,
+            'fp_mul': 0.0,
+            'fp_transcendental': 0.0
         }
 
     def analyze(self, workload='typical'):

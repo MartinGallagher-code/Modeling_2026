@@ -6,7 +6,7 @@
   "transistors": 45000,
   "data_width_bits": 80,
   "address_width_bits": 20,
-  "validation_date": "2026-01-29",
+  "validation_date": "2026-01-30",
   "accuracy": {
     "expected_cpi": 76.0,
     "predicted_cpi": 76.0,
@@ -14,11 +14,17 @@
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29",
-    "sysid_loss_before": 83.495643,
-    "sysid_loss_after": 83.495643,
+    "validation_date": "2026-01-30",
+    "per_workload_errors": {
+      "typical": 0.0,
+      "compute": 0.0,
+      "memory": 0.0,
+      "control": 0.0
+    },
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
-    "sysid_converged": false,
-    "sysid_date": "2026-01-29"
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
   }
 }

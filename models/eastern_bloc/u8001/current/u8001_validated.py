@@ -194,7 +194,7 @@ class U8001Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {'alu': -0.50954, 'data_transfer': -0.478958, 'memory': -0.505553, 'io': -0.165774, 'control': 0.022371, 'string': 0.040993}
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""

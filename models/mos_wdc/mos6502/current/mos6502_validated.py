@@ -194,13 +194,14 @@ class Mos6502Model(BaseProcessorModel):
             }, "Control-flow intensive (game logic)"),
         }
 
-        # Correction terms for system identification (initially zero)
+        # Correction terms from system identification (2026-01-30)
+        # Fitted via least-squares against perfect6502 emulator measurements
         self.corrections = {
-            'alu': -0.065,
-            'control': -0.065,
-            'data_transfer': -0.065,
-            'memory': -0.065,
-            'stack': -0.065
+            'alu': -3.1036,
+            'control': 2.8693,
+            'data_transfer': 3.1759,
+            'memory': 1.0108,
+            'stack': -1.4258
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

@@ -18,7 +18,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Any, Optional
 
 try:
-    from common.base_model import BaseProcessorModel, InstructionCategory, WorkloadProfile, AnalysisResult
+    from common.base_model import BaseProcessorModel, InstructionCategory, WorkloadProfile, AnalysisResult, CacheConfig
 except ImportError:
     from dataclasses import dataclass
 
@@ -30,6 +30,25 @@ except ImportError:
         description: str = ""
         @property
         def total_cycles(self): return self.base_cycles + self.memory_cycles
+
+
+    @dataclass
+    class CacheConfig:
+        has_cache: bool = False
+        l1_latency: float = 1.0
+        l1_hit_rate: float = 0.95
+        l2_latency: float = 10.0
+        l2_hit_rate: float = 0.90
+        has_l2: bool = False
+        dram_latency: float = 50.0
+        def effective_memory_penalty(self):
+            if not self.has_cache: return 0.0
+            l1_miss = 1.0 - self.l1_hit_rate
+            if self.has_l2:
+                l2_miss = 1.0 - self.l2_hit_rate
+                return l1_miss * (self.l2_hit_rate * (self.l2_latency - self.l1_latency) + l2_miss * (self.dram_latency - self.l1_latency))
+            return l1_miss * (self.dram_latency - self.l1_latency)
+
 
     @dataclass
     class WorkloadProfile:
@@ -175,16 +194,33 @@ class I80387Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'fp_add': 17.500000,
-            'fp_div': -47.256682,
-            'fp_mul': -24.091197,
-            'fp_sqrt': 70.000000,
-            'fp_transfer': 8.000000,
-            'fp_trig': 87.500000
+            'fp_add': 28.620111,
+            'fp_div': -36.379883,
+            'fp_mul': -64.664945,
+            'fp_sqrt': 122.533640,
+            'fp_transfer': 15.977584,
+            'fp_trig': 174.945334
         }
+
+        # Cache configuration for memory hierarchy modeling
+        self.cache_config = CacheConfig(
+            has_cache=True,
+            l1_latency=1.0,
+            l1_hit_rate=0.9000,
+            dram_latency=8.0,
+        )
+        self.memory_categories = ['memory']
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
+
+        # Apply cache miss penalty to memory-accessing categories
+        if hasattr(self, 'cache_config') and self.cache_config and self.cache_config.has_cache:
+            penalty = self.cache_config.effective_memory_penalty()
+            for cat_name in getattr(self, 'memory_categories', []):
+                if cat_name in self.instruction_categories:
+                    self.instruction_categories[cat_name].memory_cycles = penalty
+
 
         base_cpi = 0
         for cat_name, weight in profile.category_weights.items():

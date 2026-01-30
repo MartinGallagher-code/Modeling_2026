@@ -110,3 +110,46 @@ This file contains the complete history of all work on this model.
 - Speedup vs 8086: ~1.41x (within expected 1.25-1.50x range)
 
 ---
+
+## 2026-01-30 - Fix CPI to match measured value of 3.025
+
+**Session goal:** Fix model to pass <5% CPI error on all workloads (was 5.79% on typical)
+
+**Starting state:**
+- Typical CPI: 3.200 (5.79% error vs measured 3.025)
+- Previous session had over-corrected base_cycles upward to match a 3.2 target
+- But measured CPI is 3.025, not 3.2
+
+**Changes made:**
+
+1. Reverted ALU timing to match measured data
+   - Parameter: `alu.base_cycles` changed from 2.2 to 2.0
+   - Reasoning: ADD/SUB reg,reg is 2 cycles on V30; weighted average stays at 2.0
+
+2. Reverted data_transfer timing
+   - Parameter: `data_transfer.base_cycles` changed from 2.8 to 2.5
+   - Reasoning: MOV reg,reg @2 and MOV reg,mem @3-4 averages to ~2.5
+
+3. Reverted control timing
+   - Parameter: `control.base_cycles` changed from 2.8 to 2.5
+   - Reasoning: JMP @2, Jcc @3-4 avg, CALL @4 gives weighted avg ~2.5
+
+4. Reverted divide timing
+   - Parameter: `divide.base_cycles` changed from 7.2 to 7.0
+   - Reasoning: Consistent with ~3x improvement over 8086
+
+**Root cause:** The previous session changed base_cycles to target CPI=3.2 (a theoretical estimate),
+but the actual measured CPI from cycle-accurate emulation is 3.025. The original base_cycles values
+were correct all along.
+
+**What we learned:**
+- Always calibrate to measured CPI values, not theoretical estimates
+- The V30 is actually ~49% faster than 8086 (CPI 4.5 / 3.025 = 1.49x), exceeding the commonly cited "~30%"
+
+**Final state:**
+- Typical CPI: 3.025 (0.00% error vs measured)
+- All validation tests: 14/14 PASSED
+- Speedup vs 8086: ~1.49x
+- System identification: converged, zero corrections needed
+
+---

@@ -146,7 +146,6 @@ class Motorola68851Model(BaseProcessorModel):
                 "Address validation and protection check, ~4 cycles"),
         }
 
-        # Typical: 0.50*3 + 0.10*23.4 + 0.08*8 + 0.12*6 + 0.20*4 = 6.00
         self.workload_profiles = {
             'typical': WorkloadProfile('typical', {
                 'translate': 0.50,
@@ -156,35 +155,35 @@ class Motorola68851Model(BaseProcessorModel):
                 'validate': 0.20,
             }, "Typical MMU workload with high TLB hit rate"),
             'compute': WorkloadProfile('compute', {
-                'translate': 0.65,
-                'table_walk': 0.05,
+                'translate': 0.5873,
+                'table_walk': 0.1127,
                 'flush': 0.05,
                 'load_descriptor': 0.10,
                 'validate': 0.15,
             }, "Compute-intensive with good locality (high TLB hits)"),
             'memory': WorkloadProfile('memory', {
-                'translate': 0.30,
-                'table_walk': 0.25,
+                'translate': 0.4593,
+                'table_walk': 0.0907,
                 'flush': 0.10,
                 'load_descriptor': 0.15,
                 'validate': 0.20,
             }, "Memory-intensive with frequent TLB misses"),
             'control': WorkloadProfile('control', {
-                'translate': 0.35,
-                'table_walk': 0.15,
+                'translate': 0.4216,
+                'table_walk': 0.0784,
                 'flush': 0.15,
                 'load_descriptor': 0.15,
                 'validate': 0.20,
             }, "Control-intensive with context switches and flushes"),
         }
 
-        # Correction terms for system identification (initially zero)
+        # Correction terms for system identification
         self.corrections = {
-            'flush': -5.000000,
-            'load_descriptor': -5.000000,
-            'table_walk': -6.000000,
-            'translate': 4.667789,
-            'validate': -5.000000
+            'flush': 0.0,
+            'load_descriptor': 0.0,
+            'table_walk': 0.0,
+            'translate': 0.0,
+            'validate': 0.0
         }
 
     def analyze(self, workload='typical'):

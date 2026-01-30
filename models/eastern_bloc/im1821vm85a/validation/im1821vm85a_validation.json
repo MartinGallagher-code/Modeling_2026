@@ -44,16 +44,24 @@
       "memory",
       "control"
     ],
-    "predicted_cpi": 4.995,
-    "cpi_error_percent": 0.1,
+    "predicted_cpi": 5.975,
+    "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29",
+    "validation_date": "2026-01-30",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-29"
+    "sysid_date": "2026-01-30",
+    "sysid_corrections": {
+      "alu": 1.33433,
+      "data_transfer": 0.062679,
+      "memory": 0.941417,
+      "io": 3.184527,
+      "control": 0.359806,
+      "stack": 2.096213
+    }
   },
   "instruction_mix": {
     "alu": 0.3,

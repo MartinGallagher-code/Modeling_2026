@@ -50,18 +50,26 @@
       "memory",
       "control"
     ],
-    "predicted_cpi": 5.5,
+    "predicted_cpi": 5.15,
     "cpi_error_percent": 0.0,
     "tuning_note": "Timings adjusted 2026-01-30: alu 4->4.5, data_transfer 4->4.5, memory 6->6.5",
     "validation_passed": true,
     "ipc_error_percent": 0.0,
     "fully_validated": true,
-    "validation_date": "2026-01-29",
+    "validation_date": "2026-01-30",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-29"
+    "sysid_date": "2026-01-30",
+    "sysid_corrections": {
+      "alu": -0.50954,
+      "data_transfer": -0.478958,
+      "memory": -0.505553,
+      "io": -0.165774,
+      "control": 0.022371,
+      "string": 0.040993
+    }
   },
   "instruction_mix": {
     "alu": 0.25,

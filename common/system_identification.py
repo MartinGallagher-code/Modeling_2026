@@ -28,6 +28,7 @@ from .base_model import (
     get_model_parameters,
     set_model_parameters,
     get_model_parameter_bounds,
+    get_model_parameter_metadata,
     compute_model_residual_vector,
     compute_model_residuals,
 )
@@ -133,14 +134,24 @@ def identify_model(
     original_params = dict(all_params)
     all_bounds = get_model_parameter_bounds(model)
 
-    # --- identify free parameters (cor.* only) ---
-    free_names = sorted(k for k in all_params if k.startswith("cor."))
+    # --- identify free parameters (cor.* and free cache.*) ---
+    all_metadata = get_model_parameter_metadata(model)
+    free_names = sorted(
+        k for k in all_params
+        if k.startswith("cor.")
+        or (k.startswith("cache.") and not all_metadata.get(k, {}).get('fixed', True))
+    )
     if not free_names:
         # No correction terms — initialize them from categories
         _ensure_corrections_exist(model)
         all_params = get_model_parameters(model)
         all_bounds = get_model_parameter_bounds(model)
-        free_names = sorted(k for k in all_params if k.startswith("cor."))
+        all_metadata = get_model_parameter_metadata(model)
+        free_names = sorted(
+            k for k in all_params
+            if k.startswith("cor.")
+            or (k.startswith("cache.") and not all_metadata.get(k, {}).get('fixed', True))
+        )
 
     if not free_names:
         # Still nothing — can't optimize

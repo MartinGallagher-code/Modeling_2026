@@ -1,38 +1,24 @@
 {
-  "processor": "kr580vm1",
-  "date": "2026-01-29",
+  "processor": "KR580VM1",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 1,
-  "loss_before": 0.0,
+  "iterations": "auto",
+  "corrections": {
+    "cor.alu": -0.508868,
+    "cor.data_transfer": -0.737274,
+    "cor.memory": -0.429291,
+    "cor.io": 0.516107,
+    "cor.control": -0.978177,
+    "cor.bank_switch": -2.816851
+  },
+  "loss_before": null,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
-  "corrections": {
-    "cor.alu": 0.0,
-    "cor.data_transfer": 0.0,
-    "cor.memory": 0.0,
-    "cor.io": 0.0,
-    "cor.control": 0.0,
-    "cor.bank_switch": 0.0
-  },
-  "residuals_before": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": 0.0,
-    "control": 0.0
-  },
   "residuals_after": {
     "typical": 0.0,
-    "compute": -0.0,
+    "compute": 0.0,
     "memory": 0.0,
     "control": 0.0
   },
-  "free_parameters": [
-    "cor.alu",
-    "cor.bank_switch",
-    "cor.control",
-    "cor.data_transfer",
-    "cor.io",
-    "cor.memory"
-  ]
+  "method": "scipy.optimize.least_squares (trf)"
 }

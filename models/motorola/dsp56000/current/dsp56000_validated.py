@@ -38,6 +38,24 @@ class InstructionCategory:
 
 
 @dataclass
+class CacheConfig:
+    has_cache: bool = False
+    l1_latency: float = 1.0
+    l1_hit_rate: float = 0.95
+    l2_latency: float = 10.0
+    l2_hit_rate: float = 0.90
+    has_l2: bool = False
+    dram_latency: float = 50.0
+    def effective_memory_penalty(self):
+        if not self.has_cache: return 0.0
+        l1_miss = 1.0 - self.l1_hit_rate
+        if self.has_l2:
+            l2_miss = 1.0 - self.l2_hit_rate
+            return l1_miss * (self.l2_hit_rate * (self.l2_latency - self.l1_latency) + l2_miss * (self.dram_latency - self.l1_latency))
+        return l1_miss * (self.dram_latency - self.l1_latency)
+
+
+@dataclass
 class WorkloadProfile:
     name: str
     category_weights: Dict[str, float]
@@ -210,15 +228,15 @@ class Dsp56000Model(BaseProcessorModel):
                 'io': 0.35,
                 'loop': 0.10,
             }, "Typical audio DSP workload"),
-            'audio_filter': WorkloadProfile('audio_filter', {
+            'compute': WorkloadProfile('compute', {
                 'mac': 0.35,
                 'alu': 0.15,
                 'data_move': 0.20,
                 'control': 0.10,
                 'io': 0.05,
                 'loop': 0.15,
-            }, "Audio FIR/IIR filter workload"),
-            'control_heavy': WorkloadProfile('control_heavy', {
+            }, "Compute-intensive (MAC-heavy) workload"),
+            'control': WorkloadProfile('control', {
                 'mac': 0.05,
                 'alu': 0.10,
                 'data_move': 0.10,
@@ -245,7 +263,18 @@ class Dsp56000Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -1.479540,
+            'control': 0.144421,
+            'data_move': 3.917152,
+            'io': -0.421694,
+            'loop': 0.834498,
+            'mac': -2.157233
+        }
+
+        # No cache on this processor
+        self.cache_config = None
+        self.memory_categories = []
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

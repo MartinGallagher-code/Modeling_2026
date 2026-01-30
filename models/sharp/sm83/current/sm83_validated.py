@@ -28,6 +28,24 @@ class InstructionCategory:
     def total_cycles(self): return self.base_cycles + self.memory_cycles
 
 @dataclass
+class CacheConfig:
+    has_cache: bool = False
+    l1_latency: float = 1.0
+    l1_hit_rate: float = 0.95
+    l2_latency: float = 10.0
+    l2_hit_rate: float = 0.90
+    has_l2: bool = False
+    dram_latency: float = 50.0
+    def effective_memory_penalty(self):
+        if not self.has_cache: return 0.0
+        l1_miss = 1.0 - self.l1_hit_rate
+        if self.has_l2:
+            l2_miss = 1.0 - self.l2_hit_rate
+            return l1_miss * (self.l2_hit_rate * (self.l2_latency - self.l1_latency) + l2_miss * (self.dram_latency - self.l1_latency))
+        return l1_miss * (self.dram_latency - self.l1_latency)
+
+
+@dataclass
 class WorkloadProfile:
     name: str
     category_weights: Dict[str, float]
@@ -159,6 +177,10 @@ class Sm83Model(BaseProcessorModel):
             'memory': -0.555510,
             'stack': -0.277959
         }
+
+        # No cache on this processor
+        self.cache_config = None
+        self.memory_categories = []
 
     def analyze(self, workload="typical"):
         profile = self.workload_profiles.get(workload, self.workload_profiles["typical"])

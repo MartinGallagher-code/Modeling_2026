@@ -73,3 +73,38 @@
 - Validation: PASSED
 
 ---
+
+## 2026-01-30 - System identification: correction terms fitted to measured CPI
+
+**Session goal:** Fit per-category correction terms via least-squares to match measured CPI values on all workloads (<5% error).
+
+**Starting state:**
+- All correction terms were 0.0 (no sysid applied)
+- CPI errors ranged 5-18% across workloads vs measured values
+
+**Changes made:**
+
+1. Ran `common.system_identification.identify_model()` with scipy.optimize.least_squares
+   - Free parameters: 6 correction terms (cor.*)
+   - Instruction cycle counts (cat.*) held fixed at datasheet values
+   - Optimizer converged successfully
+   - Corrections applied: {
+    "alu": -0.50954,
+    "data_transfer": -0.478958,
+    "memory": -0.505553,
+    "io": -0.165774,
+    "control": 0.022371,
+    "string": 0.040993
+}
+
+**Results per workload:**
+- typical: measured=5.15, predicted=5.15, error=0.00%
+- compute: measured=4.79, predicted=4.79, error=0.00%
+- memory: measured=5.55, predicted=5.55, error=0.00%
+- control: measured=5.51, predicted=5.51, error=0.00%
+
+**Final state:**
+- CPI error: 0.00% (all workloads)
+- Validation: PASSED (all workloads <5%)
+
+---

@@ -7,6 +7,11 @@ Processors from the pre-1986 era that could be added to the collection.
 **Phase 3 Status: ALL COMPLETE ✓** (55 models validated as of 2026-01-29)
 **Phase 4 Status: ALL COMPLETE ✓** (73 models validated as of 2026-01-29)
 **Phase 5 Status: ALL COMPLETE ✓** (48 instruction timing tables collected as of 2026-01-30)
+**Phase 6 Status: ALL COMPLETE ✓** (101 post-1985 processors modeled as of 2026-01-30)
+**Phase 7 Status: ALL COMPLETE ✓** (422 instruction timing JSON files created as of 2026-01-30)
+**Phase 8 Status: PENDING** (integrate timing data into models — see Phase 8 section)
+**Phase 9 Status: PENDING** (~45 additional 1986–1994 processors — see Phase 9 section)
+**Phase 10 Status: PENDING** (advanced queueing & microarchitectural modeling — see Phase 10 section)
 
 ---
 
@@ -650,8 +655,11 @@ Store as YAML or JSON in a new `timing/` directory per processor.
 | Phase 4 | 73 | ✓ All complete |
 | Phase 5 | 48 | ✓ All complete |
 | Phase 6 | 101 | ✓ All complete |
-| Phase 7 | ~374 | Pending (timing for remaining models) |
-| **Grand Total** | **~770** | **396 models + 48 timings complete, ~374 timings pending** |
+| Phase 7 | ~374 | ✓ All complete |
+| Phase 8 | 422 | Pending (integrate timing data into models) |
+| Phase 9 | ~45 | Pending (additional 1986–1994 processors) |
+| Phase 10 | ~200 | Pending (advanced queueing models for post-1985 CPUs) |
+| **Grand Total** | **~815+** | **Phases 1–7 complete, Phases 8–10 pending** |
 
 **Last Updated:** 2026-01-30
 **Current Model Count:** 323 total validated models (across 19 families)
@@ -1654,3 +1662,351 @@ State-machine / custom logic timing. Document command/operation cycles.
 **Priority order:** A (distinct CPUs) → D (DSPs) → I (4-bit MCUs) → C (FPUs) → B (clones, quick references) → remainder.
 
 **Note:** Exact count may vary slightly due to models appearing in multiple categories or edge-case classification. Some models in Group B will need their own full timing tables if they have significant ISA extensions beyond the base architecture.
+
+---
+
+# PHASE 8: Integrate Instruction Timing Data into Models
+
+**Status:** Pending
+**Scope:** All 422 models — leverage per-instruction timing JSON files to improve CPI prediction accuracy
+**Prerequisites:** Phase 7 complete (all timing JSON files created)
+
+## Background
+
+All 422 models currently use **category-based averaging**: 4–6 broad instruction categories (e.g., "alu", "memory", "control") each with a single representative cycle count. CPI is computed as a weighted sum of these category averages, refined by system identification correction terms.
+
+Phase 7 created per-instruction timing JSON files for every model, containing exact cycle counts for 20–235 individual instructions per processor, broken down by addressing mode. **These files are currently unused by any model.**
+
+The gap is significant. For example, the Intel 8085 model assigns all ALU ops = 4.0 cycles, but actual ALU instructions range from 4 to 10 cycles. Similar variance exists across all processors and categories.
+
+## Integration Strategies
+
+**When asked to implement this phase, present these three options:**
+
+### Strategy A: Refined Category Averages (Low Complexity)
+
+Compute proper weighted averages per category from the timing JSON instead of hand-picked representative values.
+
+- **How:** For each model, load its timing JSON, group instructions by category, compute the mean cycle count per category, and update the `instruction_categories` dictionary.
+- **Example:** i8085 `alu` changes from 4.0 → ~5.8 (weighted average of 48 ALU instructions ranging 4–10 cycles).
+- **Impact:** Eliminates systematic under/over-estimation within categories. May reduce reliance on system identification correction terms.
+- **Scope:** All 422 models. Can be automated with a script.
+- **Risk:** Low. Models already pass validation; refined averages should improve or maintain accuracy. System identification can be re-run to adjust correction terms.
+
+### Strategy B: Addressing-Mode Subcategories (Medium Complexity)
+
+Split broad categories into addressing-mode subcategories with distinct cycle counts.
+
+- **How:** For each model, create subcategories like `data_transfer_register` (4 cycles), `data_transfer_memory` (7 cycles), `data_transfer_direct` (13 cycles). Update workload profiles to weight subcategories. Re-run system identification.
+- **Example:** i8085 `data_transfer` (4.0 cycles) splits into register (4), memory (7), immediate (7), direct (13), indirect (16).
+- **Impact:** Better models workload-specific memory access patterns. Estimated 5–10% accuracy improvement for memory-heavy workloads.
+- **Scope:** Requires changes to the base model class, workload profiles, and all 422 model files. Significant refactoring.
+- **Risk:** Medium. Changes workload profile format. May require re-calibrating all models.
+
+### Strategy C: Per-Instruction CPI Calculation (High Complexity)
+
+Load timing JSON at runtime and compute CPI directly from instruction frequencies × per-instruction cycle counts.
+
+- **How:** Each model loads its timing JSON at initialization, building a mnemonic→cycles lookup table. Workload profiles specify instruction frequency distributions (not just category weights). CPI = Σ(freq[i] × cycles[i]).
+- **Example:** Instead of "30% ALU at 4.0 cycles", the model uses "5% ADD r at 4 cycles, 3% ADD M at 7 cycles, 2% INR M at 10 cycles, ..."
+- **Impact:** Most accurate CPI prediction possible. Enables per-instruction bottleneck analysis. Estimated 5–20% accuracy improvement.
+- **Scope:** Requires enriching `measurements/instruction_traces.json` with per-instruction frequency data for each workload, rewriting the CPI calculation engine, and updating all 422 models.
+- **Risk:** High. Requires instruction frequency data that may not exist for all processors. Major architectural change to the modeling pipeline.
+
+## Recommended Approach
+
+Start with **Strategy A** (automated, low-risk, immediate benefit), then evaluate whether Strategy B or C is warranted based on the accuracy improvements achieved.
+
+## Dependencies
+
+- All timing JSON files must exist (Phase 7 ✓)
+- Base model class in `common/` defines the CPI calculation pipeline
+- System identification pipeline may need re-running after category average changes
+
+---
+
+# PHASE 9: Additional 1986–1994 Era Processors
+
+**Status:** Pending
+**Scope:** ~35 additional processors from the post-1985 era that are architecturally significant, commercially important, or historically notable omissions from the current collection.
+**Prerequisites:** None (can run in parallel with Phase 8)
+
+---
+
+## Tier 1 — x86 Variants (Easy — base i386/i486 models exist)
+
+These are commercially critical variants that differ in clock ratios, bus widths, or FPU presence from the base models already in the repository.
+
+- [ ] **Intel i386SX** (1988) — 16-bit bus 386 that democratized 32-bit computing; massively popular in entry-level PCs
+- [ ] **Intel i486SX** (1991) — Cost-reduced 486 without FPU; outsold the DX variant, defined the early '90s PC market
+- [ ] **Intel i486DX2** (1992) — First mainstream clock-doubled CPU; introduced internal clock multiplication to consumers
+- [ ] **Intel i486DX4** (1994) — Clock-tripled 486; last of the 486 line, bridge to Pentium era
+
+## Tier 2 — Embedded MCUs (Easy–Medium)
+
+High-volume microcontrollers that defined the embedded landscape of the late '80s and early '90s.
+
+- [ ] **Microchip PIC16C5x** (1989) — First commercially significant PIC family; defined the modern PIC architecture, billions shipped
+- [ ] **Microchip PIC16C7x** (1993) — PIC with integrated ADC; started the era of mixed-signal MCUs
+- [ ] **Motorola 68HC08** (1993) — Successor to HC05; became one of the highest-volume MCU families in history
+- [ ] **Hitachi H8/300H** (1993) — 32-bit extension of H8/300 (already modeled); widely used in embedded
+- [ ] **Hitachi H8S** (1994) — High-performance H8 with hardware MAC
+- [ ] **Philips 80C552** (1988) — Enhanced 8051 with ADC, PWM, I2C; defined industrial control MCU standard
+- [ ] **NEC V25/V35** (1987) — 8086-compatible with on-chip peripherals; widely used in embedded PC-compatible designs
+- [ ] **Atmel AT89C51** (1993) — Flash-based 8051; pioneered in-system programmable microcontrollers
+- [ ] **Dallas DS80C320** (1992) — High-speed 8051 at 33 MHz; showed 8051 architecture could scale
+- [ ] **Intel 80C196KB** (1990) — Enhanced 8096 with more peripherals; dominated automotive ECU market
+
+## Tier 3 — High-End CPUs (Medium)
+
+Major workstation and server processors that defined the high-performance landscape.
+
+- [ ] **DEC Alpha 21164** (1994) — Fastest CPU of its era at 300 MHz; quad-issue superscalar
+- [ ] **AMD Am29050** (1990) — Enhanced Am29000 with hardware multiply and on-chip cache
+- [ ] **Intergraph Clipper C300** (1988) — Successor to C100 (already modeled); used in Intergraph workstations
+- [ ] **Intergraph Clipper C400** (1990) — Final Clipper with improved pipelining
+- [ ] **INMOS Transputer T9000** (1994) — Ambitious successor to T800 (already modeled) with virtual channel routing
+- [ ] **Intel i860XP** (1991) — Second-gen i860 with improved pipelining
+
+## Tier 4 — Gaming & Console Processors (Medium–Hard)
+
+Processors that powered the 16-bit and early 32-bit gaming eras. High community interest.
+
+- [ ] **Nintendo Super FX (GSU-1)** (1993) — RISC coprocessor in SNES cartridges; enabled polygon 3D graphics (Star Fox)
+- [ ] **Nintendo Super FX 2 (GSU-2)** (1995) — Enhanced Super FX; used in Doom, Yoshi's Island
+- [ ] **Sony SPC700** (1990) — SNES audio CPU; custom 8-bit processor running the S-DSP subsystem
+- [ ] **Atari Jaguar Tom** (1993) — GPU and object processor; 64-bit RISC-like architecture
+- [ ] **Atari Jaguar Jerry** (1993) — DSP and audio processor; Motorola DSP56001-derived
+- [ ] **Sega VDP1** (1994) — Sprite/polygon processor in Sega Saturn; early console 3D graphics
+- [ ] **Sega VDP2** (1994) — Background/scroll processor in Sega Saturn; complex multi-layer video
+
+## Tier 5 — Sound & Audio Chips (Easy–Medium)
+
+Audio processors that defined the sound of an era.
+
+- [ ] **Yamaha YM2608 OPNA** (1987) — FM + ADPCM used in NEC PC-88/98; standard Japanese computing audio
+- [ ] **Yamaha YM2413 OPLL** (1987) — Cost-reduced FM synth; Sega Master System (Japan), MSX-Music
+- [ ] **Yamaha YMF278 OPL4** (1993) — Combined FM + wavetable synthesis; bridged FM to wavetable era
+- [ ] **Konami SCC (051649)** (1987) — Custom wavetable sound chip used in MSX games and arcade boards
+- [ ] **Ricoh RF5C68** (1988) — PCM sound chip in Sega CD (Mega-CD)
+- [ ] **Philips SAA1099** (1986) — Stereo sound chip; SAM Coupé, Creative Game Blaster
+- [ ] **Roland LA32** (1987) — Linear arithmetic synthesis engine in MT-32/D-50; defined electronic music
+
+## Tier 6 — DSP Processors (Medium)
+
+Signal processors that powered telecom, audio, and early multimedia.
+
+- [ ] **Analog Devices ADSP-21060 SHARC** (1994) — First SHARC processor; defined high-performance DSP for audio and scientific
+- [ ] **Motorola DSP56002** (1991) — Enhanced DSP56001; used in Atari Falcon, pro audio
+- [ ] **NEC µPD77C25** (1987) — Enhanced µPD7725; SNES cartridge coprocessor (DSP-1 through DSP-4)
+- [ ] **TI TMS320C54x** (1993) — Low-power DSP that defined GSM mobile phone baseband processing
+
+## Tier 7 — Graphics / Video Processors (Medium)
+
+The chips that launched the PC graphics acceleration era.
+
+- [ ] **Cirrus Logic GD5426/GD5428** (1992–93) — Dominated OEM laptop/desktop graphics; ubiquitous in early '90s PCs
+- [ ] **S3 Trio64** (1994) — Integrated RAMDAC + accelerator; most common SVGA chip in PCs
+- [ ] **S3 Vision864** (1994) — First widely affordable SVGA with VRAM support
+- [ ] **Weitek P9100** (1992) — Successor to P9000 (already modeled); UNIX workstation graphics
+
+## Tier 8 — Network & Special-Purpose (Medium–Hard)
+
+- [ ] **AMD Am7990 LANCE** (1986) — First widely adopted single-chip Ethernet controller; standard for '80s/'90s workstations
+- [ ] **Intel i750 (DVI)** (1989) — First dedicated video compression/decompression processor
+- [ ] **C-Cube CL450** (1991) — First single-chip MPEG-1 decoder; enabled Video CD and multimedia PCs
+
+---
+
+## Phase 9 Summary
+
+| Tier | Description | Count | Difficulty |
+|------|-------------|-------|------------|
+| 1 | x86 Variants | 4 | Easy |
+| 2 | Embedded MCUs | 10 | Easy–Medium |
+| 3 | High-End CPUs | 6 | Medium |
+| 4 | Gaming & Console | 7 | Medium–Hard |
+| 5 | Sound & Audio | 7 | Easy–Medium |
+| 6 | DSPs | 4 | Medium |
+| 7 | Graphics / Video | 4 | Medium |
+| 8 | Network & Special | 3 | Medium–Hard |
+| **TOTAL** | | **~45** | |
+
+**Priority order:** Tier 1 (x86 variants, easy clones) → Tier 2 (embedded MCUs) → Tier 5 (audio chips) → Tier 4 (gaming) → Tier 3 (high-end) → remainder.
+
+**Note:** Tier 1 processors are trivial to model since base i386/i486 already exist — they primarily differ in bus width, clock multiplier, and FPU presence. Tier 4 gaming chips will attract the most community interest. Tier 2 MCU omissions (PIC16C5x, 68HC08) are the most surprising gaps given their enormous real-world production volumes.
+
+---
+
+# PHASE 10: Advanced Queueing & Microarchitectural Modeling for Post-1985 Processors
+
+**Status:** Pending
+**Scope:** Upgrade the modeling framework to better capture pipelined, superscalar, and out-of-order processors (1986–1994 era)
+**Prerequisites:** Phase 8 (timing integration) recommended first; Phase 9 (additional processors) can run in parallel
+
+## Background
+
+All 422 models currently use the same **M/M/1 single-server queueing model** with category-based weighted averaging. This works well for pre-1985 sequential processors (<1% error) but has fundamental limitations for post-1985 architectures:
+
+- **Superscalar issue width** is modeled as reduced cycle counts (e.g., 0.5 cycles for dual-issue ALU) rather than as parallel servers
+- **Cache hierarchy** is invisible — all memory accesses assume 100% L1 hit
+- **Branch prediction** is a fixed penalty, not accuracy-dependent
+- **Pipeline depth** affects misprediction cost but isn't explicitly modeled
+- **Out-of-order execution** is treated identically to in-order
+- **Data dependencies** between instructions are not modeled at all
+
+These effects are currently absorbed by system identification correction terms, which achieve <5% error but are architecturally opaque. Explicit modeling would make the models more explanatory and potentially more accurate.
+
+## Upgrade Options
+
+**When asked to implement this phase, present these seven options:**
+
+### Option 1: M/G/1 Queueing — General Service Time Distributions
+
+Replace fixed cycle counts with probability distributions to model bimodal latencies (e.g., cache hit vs. miss).
+
+- **What changes:** Memory access cycles become a distribution: `P(L1_hit) × L1_latency + P(L2_hit) × L2_latency + P(miss) × DRAM_latency`. The M/G/1 model also accounts for variance in service time affecting queueing delay (Pollaczek-Khinchine formula).
+- **New parameters:** None beyond what cache model (#4) adds. M/G/1 uses the first two moments (mean and variance) of service time.
+- **Example:** i486 memory category changes from fixed 2.0 cycles to: 95% × 1 cycle (L1 hit) + 4% × 12 cycles (DRAM) + 1% × 4 cycles (write buffer) = 1.43 cycles mean, with variance driving queueing effects.
+- **Applicable to:** Any processor with cache (i486 and later). ~200 models.
+- **Complexity:** Low–Medium. Requires adding variance parameters to instruction categories. The Pollaczek-Khinchine formula is a closed-form expression.
+- **Expected improvement:** 1–3% CPI accuracy on memory-heavy workloads.
+
+### Option 2: M/M/c Multi-Server Queueing — Superscalar Issue Modeling
+
+Model superscalar processors as multi-server queues where `c` = issue width, replacing the current hack of halved cycle counts.
+
+- **What changes:** A 2-issue superscalar becomes an M/M/2 queue. Instructions arrive at fetch rate λ. Each execution unit serves at rate μ. Utilization ρ = λ/(cμ). Queueing delay computed via Erlang-C formula. Functional unit contention emerges naturally.
+- **New parameters:** `issue_width` (1–4), `num_alu_units`, `num_mem_units`, `num_fp_units`. Per-FU service rates derived from existing cycle counts.
+- **Example:** Pentium (2-issue) becomes M/M/2: U-pipe and V-pipe are two servers with pairing constraints modeled as reduced effective service rate. PowerPC 604 (4-issue) becomes M/M/4 with heterogeneous servers (integer, FP, load/store, branch).
+- **Applicable to:** Superscalar processors: Pentium, Alpha 21064, PowerPC 601/603/604, R8000, R10000, SuperSPARC, MC88110, MC68060. ~30 models.
+- **Complexity:** Medium. Erlang-C is closed-form but heterogeneous servers (different FU types) require approximation or decomposition.
+- **Expected improvement:** 3–8% CPI accuracy on superscalar models. Eliminates the 0.5-cycle hack.
+
+### Option 3: Fork-Join Pipeline Queueing — Pipeline Stage Modeling
+
+Model the processor pipeline as a series of queues (fetch → decode → execute → memory → writeback) where stalls at one stage back-pressure earlier stages.
+
+- **What changes:** Each pipeline stage becomes a queue with its own service rate. Hazards increase service time at the execute stage. Branch mispredictions flush downstream stages. Pipeline depth directly determines misprediction recovery cost.
+- **New parameters:** `pipeline_depth` (3–8), per-stage service rates (usually 1 cycle each), `hazard_stall_probability` (0.05–0.30 per instruction).
+- **Example:** MIPS R4000 (8-stage superpipeline) vs. R2000 (5-stage): misprediction costs 8 vs. 5 cycles. The model currently cannot distinguish these — both use fixed branch penalty values. With fork-join, the pipeline depth parameter automatically scales the penalty.
+- **Applicable to:** All pipelined processors (i386 and later). ~250 models. Most impactful for deep pipelines (R4000, Alpha, Pentium).
+- **Complexity:** Medium–High. Fork-join networks don't have simple closed-form solutions; requires approximation (e.g., Nelson-Tantawi bounds) or iterative solving.
+- **Expected improvement:** 2–5% CPI accuracy. Makes pipeline depth a first-class parameter.
+
+### Option 4: Explicit Cache Miss Model
+
+Add parameterized cache hit rates and multi-level latencies instead of assuming 100% L1 hit.
+
+- **What changes:** Every memory-accessing instruction category gets an effective latency based on cache hierarchy:
+  ```
+  effective_memory_cycles =
+      L1_hit_rate × L1_latency +
+      (1 - L1_hit_rate) × L2_hit_rate × L2_latency +
+      (1 - L1_hit_rate) × (1 - L2_hit_rate) × DRAM_latency
+  ```
+- **New parameters per model:** `L1_hit_rate` (0.90–0.98), `L2_hit_rate` (0.85–0.95), `L1_latency` (1–3 cycles), `L2_latency` (8–20 cycles), `DRAM_latency` (50–150 cycles). Can be set from datasheet specs or fitted.
+- **Example:** Alpha 21064: L1 = 8KB (hit rate ~0.92), L2 = 256KB external (hit rate ~0.95), DRAM = 100ns. Current model: `load: 1.0 cycle`. New model: 0.92×2 + 0.08×0.95×12 + 0.08×0.05×100 = 1.84 + 0.91 + 0.40 = 3.15 cycles effective. The correction term `cor.load: +0.66` was partially compensating for this.
+- **Applicable to:** All processors with cache (i486+, most RISC). ~150 models.
+- **Complexity:** Low. Closed-form formula. Parameters available from datasheets. Can be added to existing model framework without restructuring.
+- **Expected improvement:** 2–5% on memory-heavy workloads. This is the single highest-impact upgrade.
+
+### Option 5: Branch Prediction Model
+
+Replace fixed branch penalties with prediction-accuracy-dependent costs that scale with pipeline depth.
+
+- **What changes:** Branch cost becomes:
+  ```
+  effective_branch_cycles =
+      predict_accuracy × predicted_taken_cycles +
+      (1 - predict_accuracy) × (predicted_taken_cycles + flush_penalty)
+  flush_penalty ≈ pipeline_depth (cycles to refill pipeline)
+  ```
+- **New parameters:** `branch_predict_accuracy` (0.70–0.95), `pipeline_depth` (for flush cost), `btb_hit_rate` (0.80–0.95).
+- **Predictor types by era:**
+  - No prediction (pre-1985): accuracy = 0%, always pay branch penalty → current model is correct
+  - Static prediction (i486): accuracy ~60–70% (predict not-taken)
+  - BTB (Pentium): accuracy ~80–85%
+  - 2-level adaptive (PowerPC 604, R10000): accuracy ~90–93%
+  - Per-address history (Alpha 21264): accuracy ~95%+
+- **Example:** Pentium (5-stage, 80% BTB accuracy): 0.80×1 + 0.20×(1+5) = 0.80 + 1.20 = 2.0 cycles. Current model: `control: 2.0` — happens to match, but for the wrong reason (fixed value, not derived from accuracy × depth). R4000 (8-stage, ~75% accuracy): 0.75×1 + 0.25×(1+8) = 0.75 + 2.25 = 3.0 cycles — significantly different from a fixed penalty.
+- **Applicable to:** All pipelined processors with branch prediction (i486+). ~200 models.
+- **Complexity:** Low. Simple formula. Prediction accuracy can be estimated from predictor type or fitted.
+- **Expected improvement:** 1–3% on control-heavy workloads. Makes pipeline depth meaningful for branches.
+
+### Option 6: Dependency-Aware Issue Rate Model
+
+Model how data dependencies between instructions reduce the effective issue rate below the theoretical superscalar maximum.
+
+- **What changes:** Instead of assuming full issue width is always achievable, compute:
+  ```
+  effective_IPC = issue_width × (1 - dependency_stall_rate) × FU_availability
+  dependency_stall_rate = f(instruction_mix, forwarding_capability, register_count)
+  ```
+  For OOO processors, the reorder buffer (ROB) size and rename register count determine how far ahead the processor can look to find independent instructions:
+  ```
+  effective_IPC = min(issue_width, ILP_available)
+  ILP_available = f(ROB_size, rename_registers, instruction_window)
+  ```
+- **New parameters:** `dependency_stall_rate` (0.05–0.30), `forwarding_paths` (full/partial/none), `rob_size` (16–64 for this era), `rename_registers` (32–80).
+- **Example:** PowerPC 604 (4-issue, 16-entry ROB): theoretical IPC = 4.0, but dependency stalls + limited ROB → effective IPC ~1.2–1.5. Current model achieves this via correction terms but cannot explain why.
+- **Applicable to:** Superscalar and OOO processors. ~30 models. Most impactful for wide-issue OOO (R10000, Alpha 21164, PowerPC 604).
+- **Complexity:** Medium–High. Dependency analysis requires instruction mix modeling. ROB/rename effects can be approximated with Little's law.
+- **Expected improvement:** 3–8% on superscalar models. Makes IPC prediction physically meaningful.
+
+### Option 7: Jackson Network — Full Pipeline + Memory System Model
+
+Combine all the above into a network of interconnected queues modeling the complete processor pipeline and memory system.
+
+- **What changes:** The processor is modeled as an open Jackson network:
+  ```
+  Fetch Queue → Decode Queue → Issue Queue → Execute Queues (per-FU) → Memory Queue → Commit Queue
+                                                                            ↕
+                                                                     L1 Cache Queue
+                                                                            ↕
+                                                                     L2 Cache Queue
+                                                                            ↕
+                                                                     DRAM Queue
+  ```
+  Each queue has arrival rate, service rate, and capacity. Instructions flow through the network. Bottlenecks emerge from utilization at each stage.
+- **New parameters:** All parameters from Options 1–6, plus queue capacities (issue queue depth, load/store queue depth, reorder buffer size).
+- **Solution method:** Open Jackson networks with exponential service have a product-form solution (each queue analyzed independently). For non-exponential service, use decomposition or MVA (Mean Value Analysis).
+- **Applicable to:** The most complex processors: Pentium, Alpha 21064/21164, PowerPC 604, MIPS R10000. ~15–20 models.
+- **Complexity:** High. Requires significant framework changes. Each model needs ~20 architectural parameters. Solution is iterative (MVA) rather than closed-form.
+- **Expected improvement:** 5–15% accuracy improvement. Produces detailed bottleneck analysis (which pipeline stage or memory level is the constraint).
+
+## Recommended Implementation Order
+
+**When asked to implement, present the options and recommend this order:**
+
+1. **Option 4 (Cache miss model)** — Highest impact, lowest complexity. Add to all cached processors first.
+2. **Option 5 (Branch prediction)** — Low complexity, complements cache model. Add prediction accuracy as a parameter.
+3. **Option 2 (M/M/c superscalar)** — Medium complexity, replaces the 0.5-cycle hack with principled multi-server queueing.
+4. **Option 1 (M/G/1 distributions)** — Enhances cache model with variance-driven queueing effects.
+5. **Option 6 (Dependency-aware issue)** — For OOO processors, models the ROB/rename bottleneck.
+6. **Option 3 (Fork-join pipeline)** — For deep pipelines, makes pipeline depth a first-class parameter.
+7. **Option 7 (Jackson network)** — Full integration for the most complex processors. Only needed if earlier options don't reach accuracy targets.
+
+Options 4 + 5 alone would likely improve most post-1985 models by 3–5%. Adding Option 2 would cover superscalar processors. Options 6–7 are only needed for the ~15–20 most complex OOO processors.
+
+## Processor Applicability Matrix
+
+| Option | Pre-1985 (sequential) | Simple pipeline (i386, R2000) | Pipelined + cache (i486) | Superscalar in-order (Pentium) | Superscalar OOO (Alpha, PPC604) | Superpipeline (R4000) |
+|---|---|---|---|---|---|---|
+| 1. M/G/1 distributions | — | — | ✓ | ✓ | ✓ | ✓ |
+| 2. M/M/c superscalar | — | — | — | ✓✓ | ✓✓ | — |
+| 3. Fork-join pipeline | — | ✓ | ✓ | ✓ | ✓ | ✓✓ |
+| 4. Cache miss model | — | ✓ | ✓✓ | ✓✓ | ✓✓ | ✓✓ |
+| 5. Branch prediction | — | ✓ | ✓ | ✓✓ | ✓✓ | ✓✓ |
+| 6. Dependency-aware issue | — | — | — | ✓ | ✓✓ | — |
+| 7. Jackson network | — | — | — | ✓ | ✓✓ | ✓ |
+
+✓✓ = high impact, ✓ = moderate impact, — = not applicable
+
+## Dependencies
+
+- Phase 8 (timing integration) provides refined category cycle counts — recommended first
+- Base model class in `common/base_model.py` needs extension to support new queueing models
+- System identification pipeline needs new parameter types (hit rates, prediction accuracy, issue width)
+- Each option can be implemented incrementally — models can opt in to advanced features while others remain on M/M/1
+- Backward compatibility: pre-1985 models should continue using simple M/M/1 unchanged

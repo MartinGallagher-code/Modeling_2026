@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Any, Optional
 
 try:
-    from common.base_model import BaseProcessorModel, InstructionCategory, WorkloadProfile, AnalysisResult
+    from common.base_model import BaseProcessorModel, InstructionCategory, WorkloadProfile, AnalysisResult, CacheConfig
 except ImportError:
     from dataclasses import dataclass
 
@@ -31,6 +31,25 @@ except ImportError:
         description: str = ""
         @property
         def total_cycles(self): return self.base_cycles + self.memory_cycles
+
+
+    @dataclass
+    class CacheConfig:
+        has_cache: bool = False
+        l1_latency: float = 1.0
+        l1_hit_rate: float = 0.95
+        l2_latency: float = 10.0
+        l2_hit_rate: float = 0.90
+        has_l2: bool = False
+        dram_latency: float = 50.0
+        def effective_memory_penalty(self):
+            if not self.has_cache: return 0.0
+            l1_miss = 1.0 - self.l1_hit_rate
+            if self.has_l2:
+                l2_miss = 1.0 - self.l2_hit_rate
+                return l1_miss * (self.l2_hit_rate * (self.l2_latency - self.l1_latency) + l2_miss * (self.dram_latency - self.l1_latency))
+            return l1_miss * (self.dram_latency - self.l1_latency)
+
 
     @dataclass
     class WorkloadProfile:
@@ -177,16 +196,36 @@ class PentiumModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.706667,
-            'control': -0.717748,
-            'data_transfer': 1.222322,
-            'divide': -19.474229,
-            'memory': -0.355847,
-            'multiply': -5.413220
+            'alu': -0.701809,
+            'control': -0.714888,
+            'data_transfer': 1.217780,
+            'divide': -19.500000,
+            'memory': -0.659391,
+            'multiply': -5.500000
         }
+
+        # Cache configuration for memory hierarchy modeling
+        self.cache_config = CacheConfig(
+            has_cache=True,
+            l1_latency=1.0,
+            l1_hit_rate=0.9605,
+            has_l2=True,
+            l2_latency=8.0,
+            l2_hit_rate=0.9235,
+            dram_latency=18.0,
+        )
+        self.memory_categories = ['memory']
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
+
+        # Apply cache miss penalty to memory-accessing categories
+        if hasattr(self, 'cache_config') and self.cache_config and self.cache_config.has_cache:
+            penalty = self.cache_config.effective_memory_penalty()
+            for cat_name in getattr(self, 'memory_categories', []):
+                if cat_name in self.instruction_categories:
+                    self.instruction_categories[cat_name].memory_cycles = penalty
+
 
         base_cpi = 0
         for cat_name, weight in profile.category_weights.items():
