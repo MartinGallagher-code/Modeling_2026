@@ -1,6 +1,6 @@
 # Architectural Guide
 
-## Understanding Microprocessor Design Evolution (1971-1985)
+## Understanding Microprocessor Design Evolution (1970-1995)
 
 This guide explains the key architectural concepts and how they evolved across the processors in this collection.
 
@@ -16,6 +16,11 @@ This guide explains the key architectural concepts and how they evolved across t
 6. [Pipeline Evolution](#pipeline-evolution)
 7. [Memory Hierarchy](#memory-hierarchy)
 8. [Peripheral Integration](#peripheral-integration)
+9. [Superscalar Architecture](#superscalar-architecture)
+10. [Out-of-Order Execution](#out-of-order-execution)
+11. [RISC vs CISC Convergence](#risc-vs-cisc-convergence)
+12. [DSP Architecture](#dsp-architecture)
+13. [Graphics Processor Architecture](#graphics-processor-architecture)
 
 ---
 
@@ -95,7 +100,7 @@ Perfect for: Memory addresses, larger calculations
 Examples: 8086, 68000, Z8000
 ```
 
-### 32-Bit Era (1984-1985)
+### 32-Bit Era (1984-1995)
 
 Thirty-two bits enabled modern computing.
 
@@ -106,6 +111,16 @@ Thirty-two bits enabled modern computing.
 
 Perfect for: Large memory, complex calculations
 Examples: 80386, 68020, ARM1, MIPS R2000
+```
+
+### 64-Bit Era (1992-1995)
+
+```
+64-bit data path:
+= 0 to 18,446,744,073,709,551,615
+= Massive address space
+
+Examples: DEC Alpha 21064, MIPS R4000, i860
 ```
 
 ### Hybrid Architectures
@@ -137,7 +152,7 @@ $0200 ├─────────────────────┤
       │   RAM/ROM           │
       │                     │
 $FFFF └─────────────────────┘
-      
+
 Total: 64 KB addressable
 ```
 
@@ -271,7 +286,7 @@ Workspace Pointer ─────►  ┌─────────┐
                           │   ...   │
                           │   R15   │
                           └─────────┘
-                          
+
 Context switch = change pointer (FAST!)
 ```
 
@@ -301,6 +316,35 @@ $31: Return address
 
 **RISC philosophy:** More registers = fewer memory accesses = faster.
 
+### Register Windows (SPARC)
+
+SPARC introduced overlapping register windows for fast function calls:
+
+```
+SPARC Register Windows:
+
+Window N-1 (caller):
+┌────────────┬────────────┬────────────┬────────────┐
+│  Global    │   Outs     │   Locals   │    Ins     │
+│  r0-r7    │  r8-r15    │  r16-r23   │  r24-r31   │
+└────────────┴─────┬──────┴────────────┴────────────┘
+                   │
+              (overlap)
+                   │
+Window N (callee): ▼
+┌────────────┬────────────┬────────────┬────────────┐
+│  Global    │   Outs     │   Locals   │    Ins     │
+│  r0-r7    │  r8-r15    │  r16-r23   │  r24-r31   │
+└────────────┴────────────┴────────────┴────────────┘
+
+Caller's "Outs" become Callee's "Ins" automatically!
+No memory access needed for parameter passing.
+
+Typical SPARC: 8 windows × 24 unique registers = 192 physical registers
+```
+
+**Advantage:** Function calls and returns avoid stack memory accesses entirely.
+
 ---
 
 ## Instruction Set Design
@@ -313,7 +357,7 @@ Many specialized instructions:
 8086 CISC Example:
 REP MOVSB    ; Repeat move string byte
              ; One instruction does entire block copy!
-             
+
 Microcode implements complex operation.
 ```
 
@@ -329,7 +373,7 @@ loop:
     ADDI $a0, $a0, 1   ; Increment source
     ADDI $a1, $a1, 1   ; Increment dest
     BNE  $t0, $zero, loop  ; Loop if not zero
-    
+
 Five simple instructions instead of one complex one.
 But each completes in one cycle!
 ```
@@ -407,6 +451,69 @@ WB  = Write Back
 One instruction completes per cycle (ideally)!
 ```
 
+### Superpipelined (Alpha 21064)
+
+Deeper pipelines allow higher clock speeds by breaking stages into smaller pieces:
+
+```
+Alpha 21064 - 7+ Stage Pipeline:
+
+Cycle:    1     2     3     4     5     6     7     8     9
+          ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────
+Inst 1:   IF0   IF1   ID    ISS   EX0   EX1   MEM   WB
+Inst 2:         IF0   IF1   ID    ISS   EX0   EX1   MEM   WB
+Inst 3:               IF0   IF1   ID    ISS   EX0   EX1   MEM
+
+IF0/IF1 = Two-stage instruction fetch
+ID      = Decode
+ISS     = Issue
+EX0/EX1 = Two-stage execute
+MEM     = Memory access
+WB      = Write back
+
+More stages = shorter critical path = higher clock speed.
+Alpha 21064 ran at 150-200 MHz when others ran at 50-66 MHz.
+Trade-off: Deeper pipeline means larger branch misprediction penalty.
+```
+
+### Superscalar (Pentium, 68060, PPC 604)
+
+```
+Pentium Dual Pipeline:
+
+Cycle:    1     2     3     4     5
+U-pipe:   IF    ID    EX    MEM   WB
+V-pipe:   IF    ID    EX    MEM   WB
+
+Two instructions per cycle (when compatible)!
+
+U-pipe handles all instructions.
+V-pipe handles "simple" instructions only (no microcode).
+
+Pairing rules determine which instructions can execute together.
+Best case: 2 IPC. Typical: ~1.5 IPC on real workloads.
+```
+
+### Out-of-Order (MIPS R10000, Alpha 21264)
+
+```
+In-Order:  Fetch -> Decode -> Execute -> Writeback
+                                 ^ stall if dependency
+
+Out-of-Order: Fetch -> Decode -> Reorder Buffer -> Execute (any order) -> Commit (in order)
+
+Example:
+  ADD R1, R2, R3     ; R1 = R2 + R3
+  MUL R4, R1, R5     ; R4 = R1 * R5  (depends on ADD)
+  SUB R6, R7, R8     ; R6 = R7 - R8  (independent!)
+
+In-Order:   ADD ... MUL stalls waiting for R1 ... SUB waits too
+Out-of-Order: ADD issued ... SUB issued immediately ... MUL issued when R1 ready
+
+The reorder buffer tracks dependencies and ensures results
+commit in program order even though execution is out of order.
+```
+
 ---
 
 ## Memory Hierarchy
@@ -415,7 +522,7 @@ One instruction completes per cycle (ideally)!
 
 ```
 8080 Memory:
-CPU ◄────────► RAM/ROM (same speed)
+CPU <---------> RAM/ROM (same speed)
 
 All memory accesses take the same time.
 ```
@@ -427,7 +534,7 @@ All memory accesses take the same time.
 ┌─────────────────────────────────────┐
 │              8051                    │
 │  ┌─────────┐     ┌─────────────┐    │
-│  │  CPU    │◄───►│  128B RAM   │    │ Fast
+│  │  CPU    │<--->│  128B RAM   │    │ Fast
 │  └────┬────┘     └─────────────┘    │
 │       │                              │
 └───────┼──────────────────────────────┘
@@ -443,7 +550,7 @@ All memory accesses take the same time.
 ┌─────────────────────────────────────┐
 │              68020                   │
 │  ┌─────────┐     ┌─────────────┐    │
-│  │  CPU    │◄───►│  256B Cache │    │ Very fast
+│  │  CPU    │<--->│  256B Cache │    │ Very fast
 │  └────┬────┘     └─────────────┘    │
 │       │                              │
 └───────┼──────────────────────────────┘
@@ -454,6 +561,60 @@ All memory accesses take the same time.
 └─────────────────────────────────────┘
 
 Cache holds recently-used instructions.
+```
+
+### Split Cache (80486, Pentium)
+
+Separate instruction and data caches eliminate structural hazards:
+
+```
+80486 Unified Cache:
+┌─────────────────────────────────────────┐
+│               80486                      │
+│  ┌─────────┐     ┌─────────────────┐    │
+│  │  CPU    │<--->│  8 KB Unified   │    │
+│  └─────────┘     │  Cache          │    │
+│                   └─────────────────┘    │
+└─────────────────────────────────────────┘
+
+Pentium Split Cache:
+┌───────────────────────────────────────────────┐
+│                  Pentium                       │
+│  ┌─────────┐     ┌──────────┐  ┌──────────┐   │
+│  │  CPU    │<--->│  8 KB    │  │  8 KB    │   │
+│  │         │     │  I-Cache │  │  D-Cache │   │
+│  └─────────┘     └──────────┘  └──────────┘   │
+└───────────────────────────────────────────────┘
+
+Split cache allows simultaneous instruction fetch
+and data read/write -- no contention!
+```
+
+### Multi-Level Cache
+
+```
+Pentium with External L2 Cache:
+
+┌───────────────────────────────────────────────┐
+│                  Pentium                       │
+│  ┌─────────┐  ┌──────────┐  ┌──────────┐      │
+│  │  CPU    │  │ 8KB I-L1 │  │ 8KB D-L1 │      │ ~1 cycle
+│  └─────────┘  └──────────┘  └──────────┘      │
+└──────────────────────┬────────────────────────┘
+                       │
+              ┌────────▼────────┐
+              │  256 KB - 1 MB  │
+              │   L2 Cache      │                  ~5-10 cycles
+              │  (on board)     │
+              └────────┬────────┘
+                       │
+              ┌────────▼────────┐
+              │   Main Memory   │                  ~50-70 cycles
+              │   (16-64 MB)    │
+              └─────────────────┘
+
+As CPU speed outpaced memory speed, more cache levels
+became essential to hide memory latency.
 ```
 
 ---
@@ -471,7 +632,7 @@ Cache holds recently-used instructions.
     │          │          │          │
     └──────────┴──────────┴──────────┘
               System Bus
-              
+
 Multiple chips needed for basic system.
 ```
 
@@ -513,6 +674,417 @@ Peripherals specifically designed for engine control!
 
 ---
 
+## Superscalar Architecture
+
+Superscalar processors issue multiple instructions per clock cycle using multiple execution units:
+
+### Dual-Issue (Pentium, Alpha 21064)
+
+```
+Pentium Dual-Issue:
+┌──────────────────────────────────────────────────┐
+│                    Pentium                        │
+│                                                  │
+│  ┌───────────────┐        ┌───────────────┐      │
+│  │   U Pipeline  │        │   V Pipeline  │      │
+│  │  (full)       │        │  (simple)     │      │
+│  │               │        │               │      │
+│  │  ALU          │        │  ALU          │      │
+│  │  FPU          │        │               │      │
+│  │  Mem          │        │  Mem          │      │
+│  └───────────────┘        └───────────────┘      │
+│                                                  │
+│  Pairing rules:                                  │
+│  - Both must be "simple" or U can be complex     │
+│  - No data dependency between paired insts       │
+│  - No read-after-write on same register          │
+└──────────────────────────────────────────────────┘
+
+Alpha 21064 Dual-Issue:
+- One integer + one floating-point per cycle
+- Or: one integer + one load/store per cycle
+- 150-200 MHz clock (fastest of its era)
+```
+
+### Four-Issue (PPC 604)
+
+```
+PPC 604 Dispatch:
+
+Each cycle can dispatch up to 4 instructions to:
+┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐
+│  Integer   │ │  Integer   │ │  FP Unit   │ │  Branch    │
+│  Unit 1    │ │  Unit 2    │ │            │ │  Unit      │
+└────────────┘ └────────────┘ └────────────┘ └────────────┘
+       │              │              │              │
+       └──────────────┴──────────────┴──────────────┘
+                    Completion Unit
+                (retires in order)
+
+With two integer units, FP, and branch prediction,
+the PPC 604 achieved high throughput on mixed workloads.
+```
+
+### 68060 Superscalar
+
+```
+68060 Dual-Issue CISC Superscalar:
+┌──────────────────────────────────────────────┐
+│                  68060                        │
+│                                              │
+│  Instruction Fetch -> Decode -> Dispatch     │
+│                                    │         │
+│                         ┌──────────┴───┐     │
+│                         ▼              ▼     │
+│                   ┌──────────┐  ┌──────────┐ │
+│                   │  pOEP    │  │  sOEP    │ │
+│                   │ Primary  │  │Secondary │ │
+│                   │Exec Pipe │  │Exec Pipe │ │
+│                   └──────────┘  └──────────┘ │
+│                                              │
+│  Remarkable: CISC superscalar without        │
+│  micro-op translation (unlike Pentium Pro)   │
+└──────────────────────────────────────────────┘
+```
+
+### Concept of Issue Width
+
+```
+Issue Width Over Time:
+
+Processor     Year    Issue Width    Peak IPC
+─────────────────────────────────────────────
+8080          1974    1 (multi-cyc)  ~0.2
+68000         1979    1              ~0.3
+ARM1          1985    1              ~0.5
+i486          1989    1 (pipelined)  ~1.0
+Pentium       1993    2              ~2.0
+PPC 604       1994    4              ~4.0
+Alpha 21164   1995    4              ~4.0
+
+Wider issue = more ILP (instruction-level parallelism) exploited.
+Diminishing returns above 4-6 due to dependency limits.
+```
+
+---
+
+## Out-of-Order Execution
+
+Out-of-order (OoO) execution allows the processor to execute instructions in whatever order their operands become available, rather than strictly in program order.
+
+### The Problem: In-Order Stalls
+
+```
+In-Order Execution:
+
+  LOAD  R1, [mem]      ; Cache miss! 50 cycle wait
+  ADD   R2, R1, R3     ; Depends on R1 -- must stall
+  SUB   R4, R5, R6     ; Independent, but stalled too!
+  MUL   R7, R8, R9     ; Independent, but stalled too!
+
+  50 cycles wasted while three independent instructions wait.
+```
+
+### The Solution: Reorder Buffer
+
+```
+Out-of-Order Execution:
+
+  LOAD  R1, [mem]      ; Cache miss -- issued to memory
+  ADD   R2, R1, R3     ; Queued in reorder buffer, waiting for R1
+  SUB   R4, R5, R6     ; Independent -- execute immediately!
+  MUL   R7, R8, R9     ; Independent -- execute immediately!
+
+  ┌─────────────────────────────────────────────────────────┐
+  │                   Reorder Buffer                        │
+  │  ┌─────┬───────────┬────────┬─────────┐                │
+  │  │ Seq │ Instruction│ Status │ Result  │                │
+  │  ├─────┼───────────┼────────┼─────────┤                │
+  │  │  1  │ LOAD R1   │ waiting│   --    │                │
+  │  │  2  │ ADD R2    │ waiting│   --    │ depends on #1  │
+  │  │  3  │ SUB R4    │  done  │  R4=val │ commit after 1,2│
+  │  │  4  │ MUL R7    │  done  │  R7=val │ commit after 3  │
+  │  └─────┴───────────┴────────┴─────────┘                │
+  │                                                         │
+  │  Results commit in original program order (1,2,3,4)     │
+  │  even though execution order was (3,4,1,2)              │
+  └─────────────────────────────────────────────────────────┘
+```
+
+### Key OoO Processors (1990-1995)
+
+```
+Processor         Year    OoO Window    Notes
+──────────────────────────────────────────────────────
+MIPS R10000       1996    32 entries    First MIPS OoO
+Alpha 21264       1998    80 entries    Deep OoO
+Pentium Pro       1995    40 entries    x86 with RISC micro-ops
+PPC 604           1994    Limited       Partial OoO (dispatch)
+NexGen Nx586      1994    x86 -> RISC   Pioneered micro-op approach
+
+OoO execution was the defining innovation of mid-1990s CPUs.
+It extracts parallelism the programmer never explicitly expressed.
+```
+
+---
+
+## RISC vs CISC Convergence
+
+### Phase 1: The RISC Revolution (1985-1990)
+
+```
+RISC clearly faster per clock:
+
+                CPI (lower is better)
+CISC (68020):   ████████████████████  ~4.0 CPI
+CISC (80386):   ██████████████████    ~3.5 CPI
+RISC (SPARC):   █████                 ~1.2 CPI
+RISC (MIPS):    ████                  ~1.0 CPI
+RISC (ARM):     █████                 ~1.1 CPI
+
+RISC advantages:
+- Fixed-length instructions: easy to pipeline
+- Load/store architecture: simple execution units
+- Large register files: fewer memory accesses
+- Single-cycle execution: predictable timing
+```
+
+### Phase 2: CISC Fights Back (1990-1995)
+
+x86 adopted RISC techniques internally while keeping the CISC ISA:
+
+```
+Evolution of x86 Internal Architecture:
+
+8086 (1978):    Microcode → Execute
+                Pure CISC, no pipeline
+
+80486 (1989):   IF → ID → EX → MEM → WB
+                RISC-style 5-stage pipeline!
+                Many simple instructions: 1 CPI
+
+Pentium (1993): Dual Pipeline (U + V)
+                Superscalar CISC
+                Simple instructions: 0.5 CPI
+
+NexGen Nx586 (1994):
+  x86 instruction → translate → RISC micro-ops → execute
+  ┌─────────┐    ┌──────────┐    ┌──────────────┐
+  │  CISC   │ -> │Translate │ -> │ RISC Engine  │
+  │  Fetch  │    │ to RISC  │    │ (OoO, super- │
+  │         │    │ micro-ops│    │  scalar)     │
+  └─────────┘    └──────────┘    └──────────────┘
+  Pioneered the approach later used by AMD K6 and Intel P6.
+
+Pentium Pro (1995):
+  Full out-of-order execution with micro-op translation.
+  x86 ISA decoded into RISC-like micro-ops internally.
+  40-entry reorder buffer, 3-wide dispatch.
+  The CISC/RISC distinction became an ISA detail, not a
+  microarchitecture distinction.
+```
+
+### The Convergence
+
+```
+By 1995:
+                        RISC                    CISC (x86)
+ISA:                    Simple, fixed           Complex, variable
+Internal execution:     Pipelined, OoO          Pipelined, OoO
+Micro-ops:              N/A (already simple)    Translated from CISC
+Performance:            High                    Comparable
+Volume/Cost:            Low volume, expensive   Massive volume, cheap
+
+Winner: x86 won on economics (PC volume), while RISC won on
+elegance (servers, embedded). Both used the same internal techniques.
+```
+
+---
+
+## DSP Architecture
+
+Digital Signal Processors (DSPs) diverged from general-purpose CPUs with architectures optimized for repetitive math on data streams.
+
+### Harvard Architecture
+
+```
+Von Neumann (general-purpose CPU):
+┌─────────┐     ┌──────────────────┐
+│   CPU   │<--->│  Single Memory   │
+│         │     │  (code + data)   │
+└─────────┘     └──────────────────┘
+One bus = fetch instruction OR read data (not both)
+
+Harvard Architecture (DSP):
+┌─────────┐     ┌──────────────────┐
+│         │<--->│ Program Memory   │  Fetch instruction
+│   CPU   │     └──────────────────┘
+│         │<--->┌──────────────────┐
+│         │     │  Data Memory A   │  Read operand A
+│         │<--->┌──────────────────┐
+│         │     │  Data Memory B   │  Read operand B
+└─────────┘     └──────────────────┘
+Multiple buses = fetch + 2 data reads simultaneously!
+```
+
+### MAC (Multiply-Accumulate) in Single Cycle
+
+```
+The core DSP operation:
+
+Accumulator += Data[i] * Coefficient[i]
+
+General-purpose CPU:
+  LOAD  R1, [data+i]      ; 1 cycle
+  LOAD  R2, [coeff+i]     ; 1 cycle
+  MUL   R3, R1, R2        ; 3-10 cycles
+  ADD   ACC, ACC, R3      ; 1 cycle
+  Total: 6-13 cycles
+
+DSP (e.g., TMS320C25):
+  MAC   *AR0+, *AR1+      ; 1 cycle!
+  - Fetches two operands via dual data buses
+  - Multiplies in hardware multiplier
+  - Adds to 40-bit accumulator
+  - Auto-increments two address pointers
+  All in a single cycle.
+```
+
+### Hardware Loop Counters
+
+```
+DSP Hardware Loops:
+
+General-purpose CPU loop:
+  loop: ...              ; loop body
+        DEC  counter     ; decrement
+        BNZ  loop        ; branch (pipeline flush!)
+
+DSP hardware loop:
+  RPT  #255              ; Set hardware repeat counter
+  MAC  *AR0+, *AR1+      ; Executes 256 times
+                         ; Zero overhead: no branch,
+                         ; no counter decrement instruction
+```
+
+### Key DSPs
+
+```
+Processor      Year   Clock    MAC/cycle   Application
+──────────────────────────────────────────────────────────
+TMS320C10      1983   5 MHz    1           Telecom
+TMS320C25      1986   40 MHz   1           Modems, audio
+ADSP-2100      1986   12 MHz   1           Audio, control
+DSP56001       1987   20 MHz   1           Audio, music
+TMS320C30      1988   33 MHz   1 (float)   Scientific
+TMS320C50      1991   50 MHz   1           Telecom
+DSP56002       1993   66 MHz   1           Multimedia
+
+DSPs dominated real-time signal processing where
+general-purpose CPUs could not keep up.
+```
+
+---
+
+## Graphics Processor Architecture
+
+As graphical user interfaces (GUIs) became standard in the late 1980s and early 1990s, specialized graphics processors emerged to offload the CPU.
+
+### BitBLT Acceleration (TMS34010)
+
+```
+BitBLT = Bit Block Transfer
+The fundamental GUI operation: copying rectangular pixel blocks.
+
+Without acceleration (CPU does everything):
+  CPU reads source pixels from VRAM
+  CPU applies raster operation (AND, OR, XOR)
+  CPU writes destination pixels to VRAM
+  ... one pixel at a time, through the system bus
+
+With TMS34010 (1986):
+┌─────────────────────────────────────────────┐
+│              TMS34010                        │
+│  ┌──────────────┐    ┌──────────────────┐   │
+│  │ Programmable │    │   PIXBLT         │   │
+│  │ 32-bit CPU   │    │   Hardware       │   │
+│  │ (general     │    │   (BitBLT in     │   │
+│  │  purpose)    │    │    hardware)     │   │
+│  └──────────────┘    └──────────────────┘   │
+│         │                    │               │
+│         └────────┬───────────┘               │
+│                  ▼                           │
+│         ┌──────────────────┐                │
+│         │  Video RAM       │                │
+│         │  (local, fast)   │                │
+│         └──────────────────┘                │
+└─────────────────────────────────────────────┘
+
+The TMS34010 was unique: a fully programmable GPU.
+It ran its own programs, not just fixed-function operations.
+Used in: arcade games, Windows accelerator cards, printers.
+```
+
+### Windows GDI Acceleration (S3 86C911)
+
+```
+S3 86C911 (1991) - Named after the Porsche 911:
+
+Instead of a programmable CPU, fixed-function hardware
+accelerates specific Windows GDI operations:
+
+┌─────────────────────────────────────────────┐
+│               S3 86C911                      │
+│                                             │
+│  ┌───────────────┐  ┌───────────────────┐   │
+│  │  Hardware      │  │  Hardware         │   │
+│  │  Line Draw     │  │  BitBLT Engine   │   │
+│  └───────────────┘  └───────────────────┘   │
+│  ┌───────────────┐  ┌───────────────────┐   │
+│  │  Hardware      │  │  Hardware         │   │
+│  │  Rectangle    │  │  Color Expand    │   │
+│  │  Fill          │  │  (text render)   │   │
+│  └───────────────┘  └───────────────────┘   │
+│                  │                           │
+│         ┌────────▼────────┐                 │
+│         │   1 MB VRAM     │                 │
+│         │   (local bus)   │                 │
+│         └─────────────────┘                 │
+└─────────────────────────────────────────────┘
+
+Windows 3.1 sent GDI commands directly to the card.
+10-100x faster than CPU software rendering.
+Launched the "Windows accelerator" market.
+```
+
+### Programmable vs Fixed-Function
+
+```
+Spectrum of GPU Architecture (1986-1995):
+
+Fully Programmable              Fixed-Function
+◄──────────────────────────────────────────────►
+│                                              │
+TMS34010     TMS34020      S3 86C911      VGA chip
+(1986)       (1988)        (1991)         (1987)
+
+- Runs its   - Faster      - HW GDI      - Dumb
+  own code     programmable   accel only    framebuffer
+- Flexible   - PIXBLT      - Very fast   - CPU does
+- Slower for   hardware      for Windows   all work
+  fixed ops  - Used in     - Cheap       - Cheapest
+- Expensive    CAD, print  - Volume
+
+The market chose fixed-function acceleration for PCs
+(cost/performance), while programmable GPUs found
+niches in arcade games and professional graphics.
+
+The fully programmable GPU would return years later
+with modern shader architectures (late 1990s+).
+```
+
+---
+
 ## Key Architectural Lessons
 
 ### 1. Simplicity Can Win
@@ -535,7 +1107,19 @@ The 8096's specialized HSI/HSO peripherals made it dominant in automotive, while
 
 Linear addressing (68000) vs. segmentation (8086) created decades of software differences.
 
+### 6. RISC Principles Eventually Won Everywhere
+
+Even x86 processors use RISC-style execution internally since the Pentium Pro (1995). The RISC philosophy of simple, fast micro-operations proved universally effective regardless of the external instruction set.
+
+### 7. Specialization Matters
+
+DSPs and GPUs diverged from general-purpose CPUs because certain workloads demand dedicated hardware. A DSP's single-cycle MAC is 10x faster than a general-purpose CPU for signal processing. This pattern of specialization continues to this day.
+
+### 8. Memory Wall: Cache Hierarchy Becomes Critical
+
+As clock speeds rose from 5 MHz to 200 MHz (40x), DRAM speed improved only ~2x. The growing gap -- the "memory wall" -- made cache hierarchy the most important architectural feature by 1995. Processors without effective caching were bottlenecked regardless of execution speed.
+
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** January 25, 2026
+**Document Version:** 2.0
+**Last Updated:** January 30, 2026
