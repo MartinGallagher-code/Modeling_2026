@@ -142,11 +142,11 @@ class WISC32Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.189010,
-            'control': 0.445050,
-            'memory': 0.244998,
-            'microcode': -0.035502,
-            'stack_ops': 0.391597
+            'alu': -0.184078,
+            'control': 0.457462,
+            'memory': 0.274101,
+            'microcode': -0.044495,
+            'stack_ops': 0.364877
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

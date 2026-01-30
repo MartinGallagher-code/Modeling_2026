@@ -125,7 +125,13 @@ class I82730Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'char_render': -0.764063,
+            'cursor': 3.579687,
+            'dma': -0.451563,
+            'row_process': -0.670312,
+            'scroll': -2.670312
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

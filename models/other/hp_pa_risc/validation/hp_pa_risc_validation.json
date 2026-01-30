@@ -62,7 +62,7 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests",
-    "sysid_loss_before": 0.007889,
+    "sysid_loss_before": 0.00016,
     "sysid_loss_after": 0.00016,
     "sysid_cpi_error_percent": 2.1,
     "sysid_converged": true,

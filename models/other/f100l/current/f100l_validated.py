@@ -135,12 +135,12 @@ class F100lModel(BaseProcessorModel):
         # Correction terms for system identification (initially zero)
         self.corrections = {
             'alu_ops': -1.221984,
-            'branch': -0.914450,
+            'branch': -0.914448,
             'control': -0.464760,
-            'io': 2.166987,
-            'jump': 1.702995,
-            'memory_read': 1.411078,
-            'memory_write': -0.067779,
+            'io': 2.166986,
+            'jump': 1.702993,
+            'memory_read': 1.411077,
+            'memory_write': -0.067778,
             'shift': 0.868325
         }
 

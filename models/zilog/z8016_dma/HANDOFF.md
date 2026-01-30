@@ -25,3 +25,9 @@
 - Hardware search-and-match capability
 - Chained transfers for scatter-gather operations
 - Simplest coprocessor in Phase 4 (10,000 transistors)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

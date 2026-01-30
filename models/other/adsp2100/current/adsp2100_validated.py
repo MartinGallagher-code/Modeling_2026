@@ -159,7 +159,14 @@ class Adsp2100Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -0.296728,
+            'control': 0.133177,
+            'io': 0.927571,
+            'mac': -0.334115,
+            'memory': -0.764020,
+            'shift': 0.964959
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

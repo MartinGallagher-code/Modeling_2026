@@ -44,3 +44,18 @@ This file contains the complete history of all work on this model.
 - Commodore C16/Plus4 technical reference
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 20 evaluations
+- Corrections: char_gen: -0.24, color: -0.42, control: +0.02, dma: -1.12, sound: +1.28, timer: +1.06
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

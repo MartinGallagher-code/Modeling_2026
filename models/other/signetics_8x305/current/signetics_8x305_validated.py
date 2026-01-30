@@ -148,7 +148,13 @@ class Signetics8x305Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.000000,
+            'control': 0.000000,
+            'io': -1.000000,
+            'memory': -1.000000,
+            'transfer': -0.000000
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

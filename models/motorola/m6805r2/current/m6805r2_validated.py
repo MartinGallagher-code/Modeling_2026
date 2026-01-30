@@ -126,7 +126,13 @@ class M6805R2Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 0.675000,
+            'bit_ops': 0.675000,
+            'control': -0.075000,
+            'data_transfer': -1.575000,
+            'memory': 0.175000
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

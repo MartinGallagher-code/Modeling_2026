@@ -122,7 +122,14 @@ class MicroVAX78032Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 2.936848,
+            'control': 0.161701,
+            'decimal': -7.499802,
+            'float': -6.000000,
+            'memory': -3.716697,
+            'string': 4.997354
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

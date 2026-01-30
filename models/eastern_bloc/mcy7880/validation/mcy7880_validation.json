@@ -10,7 +10,10 @@
     "compatibility": "Intel 8080A clone"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 18],
+    "cycles_per_instruction_range": [
+      4,
+      18
+    ],
     "typical_cpi": 5.5
   },
   "validated_performance": {
@@ -35,19 +38,29 @@
   "accuracy": {
     "expected_cpi": 5.5,
     "expected_ipc": 0.1818,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
     "predicted_cpi": 5.5,
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.30,
+    "alu": 0.3,
     "data_transfer": 0.25,
     "memory": 0.15,
-    "control": 0.20,
-    "stack": 0.10,
+    "control": 0.2,
+    "stack": 0.1,
     "notes": "Typical 8080A-class workload"
   },
   "cross_validation": {

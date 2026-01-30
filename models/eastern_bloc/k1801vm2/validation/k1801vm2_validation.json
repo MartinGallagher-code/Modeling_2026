@@ -10,7 +10,10 @@
     "compatibility": "Enhanced PDP-11 compatible"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 14],
+    "cycles_per_instruction_range": [
+      1,
+      14
+    ],
     "typical_cpi": 4.0
   },
   "validated_performance": {
@@ -35,19 +38,29 @@
   "accuracy": {
     "expected_cpi": 4.0,
     "expected_ipc": 0.25,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
     "predicted_cpi": 4.0,
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.30,
+    "alu": 0.3,
     "data_transfer": 0.25,
     "memory": 0.125,
     "control": 0.225,
-    "float": 0.10,
+    "float": 0.1,
     "notes": "Enhanced PDP-11 workload with floating point"
   },
   "cross_validation": {

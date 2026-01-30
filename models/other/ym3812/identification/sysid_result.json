@@ -1,0 +1,38 @@
+{
+  "processor": "ym3812",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.16025,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "The maximum number of function evaluations is exceeded.",
+  "corrections": {
+    "cor.operator": -3.871614,
+    "cor.envelope": 4.999979,
+    "cor.rhythm": -3.862481,
+    "cor.waveform": 1.018061,
+    "cor.output": 2.528115,
+    "cor.register": 1.4082
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.36,
+    "memory": -0.67,
+    "control": -0.25
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.envelope",
+    "cor.operator",
+    "cor.output",
+    "cor.register",
+    "cor.rhythm",
+    "cor.waveform"
+  ]
+}

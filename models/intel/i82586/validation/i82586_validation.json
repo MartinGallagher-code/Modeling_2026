@@ -11,14 +11,17 @@
     "application": "Ethernet LAN coprocessor"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 8],
+    "cycles_per_instruction_range": [
+      3,
+      8
+    ],
     "typical_cpi": 5.0,
     "notes": "IEEE 802.3 Ethernet with command block architecture and DMA"
   },
   "validated_performance": {
     "ips_min": 1000000,
     "ips_max": 2670000,
-    "mips_typical": 1.60
+    "mips_typical": 1.6
   },
   "notes": "First-generation Intel Ethernet coprocessor, used with 80186/80286 hosts",
   "model_accuracy": {
@@ -35,18 +38,29 @@
   "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 5.0,
-    "expected_ipc": 0.2000,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "expected_ipc": 0.2,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 5.0,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.044,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
     "frame_process": 0.15,
-    "dma": 0.20,
+    "dma": 0.2,
     "command": 0.15,
     "status": 0.25,
     "buffer": 0.25

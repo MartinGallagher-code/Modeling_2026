@@ -9,16 +9,24 @@
     "package": "DIP-68/PLCC-68"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 6],
+    "cycles_per_instruction_range": [
+      1,
+      6
+    ],
     "typical_cpi": 2.2
   },
   "accuracy": {
     "expected_cpi": 2.2,
-    "predicted_cpi": 2.200,
+    "predicted_cpi": 2.2,
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.005325,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "sources": [
     "Siemens SAB80515 datasheet (1983)",

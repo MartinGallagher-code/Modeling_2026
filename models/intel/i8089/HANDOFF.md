@@ -24,3 +24,9 @@
 - Two independent DMA channels can operate concurrently
 - Channel programs execute autonomously from host CPU
 - 20-bit address bus provides 1 MB address space
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

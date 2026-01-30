@@ -2,27 +2,27 @@
   "processor": "wisc32",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 19,
+  "iterations": 6,
   "loss_before": 0.00328,
   "loss_after": 0.00328,
   "cpi_error_percent": 4.12,
-  "message": "`xtol` termination condition is satisfied.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.18901,
-    "cor.control": 0.44505,
-    "cor.memory": 0.244998,
-    "cor.microcode": -0.035502,
-    "cor.stack_ops": 0.391597
+    "cor.alu": -0.184078,
+    "cor.control": 0.457462,
+    "cor.memory": 0.274101,
+    "cor.microcode": -0.044495,
+    "cor.stack_ops": 0.364877
   },
   "residuals_before": {
     "typical": 0.0824,
-    "compute": 0.0,
+    "compute": -0.0,
     "memory": -0.0776,
     "control": -0.0176
   },
   "residuals_after": {
     "typical": 0.0824,
-    "compute": 0.0,
+    "compute": -0.0,
     "memory": -0.0776,
     "control": -0.0176
   },

@@ -150,7 +150,13 @@ class Mmi67110Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'branch': -0.704046,
+            'control': -0.105205,
+            'counter': -0.519064,
+            'sequence': 1.493636,
+            'subroutine': -0.123699
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

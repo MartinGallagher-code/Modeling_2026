@@ -31,3 +31,9 @@
 - Microcoded instruction set results in high CPI
 - Derived from MIT CONS machine architecture
 - Commercialized by Symbolics Inc.
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 3.69%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

@@ -26,3 +26,9 @@
 - Graphics operations (bitblt, etc.) are significant instruction category
 - Floating-point operations are expensive (10 cycles)
 - 10 MHz clock, ~100,000 transistors
+
+## System Identification (2026-01-29)
+- **Status**: Rolled back
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

@@ -2,21 +2,21 @@
   "processor": "ay3_8500",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 18,
-  "loss_before": 0.043333,
+  "iterations": 2,
+  "loss_before": 0.042692,
   "loss_after": 0.042692,
   "cpi_error_percent": 1.38,
-  "message": "`ftol` termination condition is satisfied.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.game_logic": -0.038722,
-    "cor.video_gen": -0.065878,
-    "cor.sync": -0.065878,
-    "cor.io": -0.038722
+    "cor.game_logic": 0.024785,
+    "cor.io": 0.024785,
+    "cor.sync": -0.108216,
+    "cor.video_gen": -0.108216
   },
   "residuals_before": {
-    "typical": 0.0,
-    "game_active": 0.3,
-    "idle": -0.2
+    "typical": -0.055,
+    "game_active": 0.245,
+    "idle": -0.255
   },
   "residuals_after": {
     "typical": -0.055,

@@ -125,7 +125,14 @@ class VicIiModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'char_gen': 0.316739,
+            'color': 1.097961,
+            'dma': -1.164866,
+            'raster': 2.189551,
+            'scroll': 1.117507,
+            'sprite': -2.746855
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

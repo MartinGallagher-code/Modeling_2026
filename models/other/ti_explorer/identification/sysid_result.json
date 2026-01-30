@@ -1,0 +1,38 @@
+{
+  "processor": "ti_explorer",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 15,
+  "loss_before": 0.07185,
+  "loss_after": 0.012876,
+  "cpi_error_percent": 3.69,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.car_cdr": -0.479599,
+    "cor.cons": -1.614048,
+    "cor.eval": -0.519192,
+    "cor.gc": -0.20792,
+    "cor.memory": 1.107823,
+    "cor.type_check": 1.139669
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.25,
+    "memory": -0.32,
+    "control": -0.35
+  },
+  "residuals_after": {
+    "typical": 0.1477,
+    "compute": 0.0,
+    "memory": -0.1723,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.car_cdr",
+    "cor.cons",
+    "cor.eval",
+    "cor.gc",
+    "cor.memory",
+    "cor.type_check"
+  ]
+}

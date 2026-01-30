@@ -9,7 +9,7 @@
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": 0.658687,
-    "cor.bit_ops": 1.905882,
+    "cor.bit_ops": 3.87472,
     "cor.control": 0.28768,
     "cor.data_transfer": 0.266241,
     "cor.memory": -0.776061,

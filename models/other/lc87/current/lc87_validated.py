@@ -135,11 +135,11 @@ class Lc87Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.510108,
-            'control': 0.350792,
-            'data_transfer': 1.396191,
-            'io': -2.530088,
-            'memory': 0.085526
+            'alu': 1.519412,
+            'control': 0.349323,
+            'data_transfer': 1.377312,
+            'io': -2.529339,
+            'memory': 0.089808
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

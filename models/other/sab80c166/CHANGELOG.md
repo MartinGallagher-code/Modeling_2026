@@ -45,3 +45,18 @@ This file contains the complete history of all work on this model.
 - Siemens C166 family architecture reference
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 28 evaluations
+- Corrections: alu: +1.04, bit_ops: -0.04, control: -0.38, memory: -0.86, multiply: -0.49, peripheral: +0.26
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

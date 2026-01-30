@@ -126,7 +126,13 @@ class I8061Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'adc': -3.499980,
+            'alu': 1.500002,
+            'control': -0.499999,
+            'lookup': -1.500002,
+            'timer': 0.499983
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

@@ -110,7 +110,13 @@ class Sab8080aModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.173343,
+            'control': -1.459894,
+            'data_transfer': 0.173411,
+            'memory': -1.826725,
+            'stack': 1.706326
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

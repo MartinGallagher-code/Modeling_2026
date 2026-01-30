@@ -26,3 +26,9 @@
 - Three 16-bit timers (vs two in standard 8051)
 - 256 bytes internal RAM, 8K ROM
 - Widely used in European automotive ECUs (engine control, ABS)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

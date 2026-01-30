@@ -8,10 +8,10 @@
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.data_transfer": 2.390271,
-    "cor.fp_add": -0.194185,
-    "cor.fp_div": -2.395959,
-    "cor.fp_mul": 2.435596
+    "cor.data_transfer": 2.390274,
+    "cor.fp_add": -0.194182,
+    "cor.fp_div": -2.395957,
+    "cor.fp_mul": 2.43549
   },
   "residuals_before": {
     "typical": -0.0,
@@ -20,7 +20,7 @@
     "control": 0.0437
   },
   "residuals_after": {
-    "typical": 0.0,
+    "typical": -0.0,
     "compute": 0.0,
     "memory": -0.0463,
     "control": 0.0437

@@ -2,7 +2,7 @@
   "processor": "mn601",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 22,
+  "iterations": 25,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
@@ -10,7 +10,7 @@
   "corrections": {
     "cor.alu_ops": 0.872034,
     "cor.io": -1.205959,
-    "cor.jump": 0.896514,
+    "cor.jump": 0.896513,
     "cor.memory_read": -0.372233,
     "cor.memory_write": -0.875174,
     "cor.shift": 0.666506,
@@ -24,10 +24,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
+    "typical": -0.0,
+    "compute": 0.0,
     "memory": -0.0,
-    "control": -0.0
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu_ops",

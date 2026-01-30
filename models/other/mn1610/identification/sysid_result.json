@@ -8,11 +8,11 @@
   "cpi_error_percent": 1.69,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.branch": -1.553095,
-    "cor.call_return": -6.999905,
-    "cor.immediate": -3.247889,
-    "cor.memory_read": 0.412527,
-    "cor.memory_write": -4.999657,
+    "cor.branch": -1.553086,
+    "cor.call_return": -6.999967,
+    "cor.immediate": -3.24785,
+    "cor.memory_read": 0.412589,
+    "cor.memory_write": -4.999814,
     "cor.register_ops": 5.0
   },
   "residuals_before": {
@@ -24,7 +24,7 @@
   "residuals_after": {
     "typical": -0.1393,
     "compute": 0.0451,
-    "memory": 0.0627,
+    "memory": 0.0626,
     "control": 0.0212
   },
   "free_parameters": [

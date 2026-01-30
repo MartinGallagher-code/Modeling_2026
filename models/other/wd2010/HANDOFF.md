@@ -26,3 +26,9 @@
 - ST-506/ST-412 Winchester disk interface
 - Hardware ECC for error detection and correction
 - Used in IBM PC/XT and compatible systems
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

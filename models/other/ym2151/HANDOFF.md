@@ -24,3 +24,9 @@
 - Hardware LFO with 4 waveforms (sine, square, sawtooth, noise)
 - Stereo output with per-channel L/R panning
 - ~20,000 transistors, widely used in arcade games
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

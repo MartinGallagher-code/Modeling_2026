@@ -1,0 +1,36 @@
+{
+  "processor": "m68851",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 43,
+  "loss_before": 3.583125,
+  "loss_after": 0.244333,
+  "cpi_error_percent": 4.44,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.translate": 4.667789,
+    "cor.table_walk": -6.0,
+    "cor.flush": -5.0,
+    "cor.load_descriptor": -5.0,
+    "cor.validate": -5.0
+  },
+  "residuals_before": {
+    "typical": -0.0,
+    "compute": -1.28,
+    "memory": 3.25,
+    "control": 1.46
+  },
+  "residuals_after": {
+    "typical": -0.2661,
+    "compute": -0.0459,
+    "memory": 0.9003,
+    "control": -0.3063
+  },
+  "free_parameters": [
+    "cor.flush",
+    "cor.load_descriptor",
+    "cor.table_walk",
+    "cor.translate",
+    "cor.validate"
+  ]
+}

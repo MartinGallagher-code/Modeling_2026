@@ -42,3 +42,18 @@ This file contains the complete history of all work on this model.
 - Ridge 32 Technical Reference Manual (Ridge Computers, 1983)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 50 evaluations
+- Corrections: alu: +1.38, control: +1.39, float: -4.19, io: -5.00, memory: -0.94
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

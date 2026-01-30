@@ -26,3 +26,9 @@
 - Predates NEC's own V-series (V20, V30) which added extensions
 - Widely used in Japanese personal computers and industrial systems
 - "AF" suffix indicates improved electrical specifications
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.57%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

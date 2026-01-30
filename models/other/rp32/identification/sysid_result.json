@@ -1,0 +1,38 @@
+{
+  "processor": "rp32",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 7,
+  "loss_before": 0.067,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 0.8,
+    "cor.shift": 0.8,
+    "cor.memory": -1.2,
+    "cor.control": -0.2,
+    "cor.cascade": -0.2
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": -0.3,
+    "control": 0.2,
+    "io_heavy": 0.45,
+    "mixed": 0.05
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": -0.0,
+    "control": 0.0,
+    "io_heavy": -0.0,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.cascade",
+    "cor.control",
+    "cor.memory",
+    "cor.shift"
+  ]
+}

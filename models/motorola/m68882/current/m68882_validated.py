@@ -115,8 +115,8 @@ class M68882Model(BaseProcessorModel):
         self.corrections = {
             'data_transfer': 5.000000,
             'fp_add': 6.000000,
-            'fp_div': -23.507813,
-            'fp_mul': 4.831846,
+            'fp_div': -23.506992,
+            'fp_mul': 4.831678,
             'fp_transcendental': -40.000000
         }
 

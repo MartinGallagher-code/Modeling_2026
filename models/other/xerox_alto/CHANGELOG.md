@@ -47,3 +47,18 @@ This file contains the complete history of all work on this model.
 - Bitsavers archives
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 17 evaluations
+- Corrections: alu: -0.63, control: -1.14, disk: -0.41, display: +0.91, ethernet: +1.51, memory: +2.55
+
+**Final state:**
+- CPI error: 3.69%
+- Validation: PASSED
+
+---

@@ -24,3 +24,9 @@
 - Higher clock rate (8 MHz vs 5 MHz) plus reduced cycle counts
 - Combined effect: ~2.5x throughput improvement over 8087
 - Designed for use with 80286 systems
+
+## System Identification (2026-01-29)
+- **Status**: Rolled back
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

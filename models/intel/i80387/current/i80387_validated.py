@@ -126,8 +126,8 @@ class I80387Model:
         # Correction terms for system identification (initially zero)
         self.corrections = {
             'fp_add': 17.500000,
-            'fp_div': -47.242018,
-            'fp_mul': -24.096811,
+            'fp_div': -47.256682,
+            'fp_mul': -24.091197,
             'fp_sqrt': 70.000000,
             'fp_transfer': 8.000000,
             'fp_trig': 87.500000

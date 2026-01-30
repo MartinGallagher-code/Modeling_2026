@@ -1,0 +1,36 @@
+{
+  "processor": "z80_sio",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.030625,
+  "loss_after": 7e-06,
+  "cpi_error_percent": 0.13,
+  "message": "The maximum number of function evaluations is exceeded.",
+  "corrections": {
+    "cor.register_io": -3.738368,
+    "cor.char_process": -1.299719,
+    "cor.sync": 2.622081,
+    "cor.control": -0.921619,
+    "cor.interrupt": 4.999376
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": -0.1,
+    "memory": 0.15,
+    "control": 0.3
+  },
+  "residuals_after": {
+    "typical": -0.0046,
+    "compute": 0.0015,
+    "memory": 0.0015,
+    "control": 0.0008
+  },
+  "free_parameters": [
+    "cor.char_process",
+    "cor.control",
+    "cor.interrupt",
+    "cor.register_io",
+    "cor.sync"
+  ]
+}

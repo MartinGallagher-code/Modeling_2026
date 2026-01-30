@@ -111,11 +111,11 @@ class AnticModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'char_mode': -0.073871,
-            'control': -0.073871,
-            'display_list': -0.053081,
-            'dma': -0.053027,
-            'map_mode': -0.073871
+            'char_mode': -0.056172,
+            'control': -0.056172,
+            'display_list': 0.032185,
+            'dma': -0.217381,
+            'map_mode': -0.056172
         }
 
     def analyze(self, workload='typical'):

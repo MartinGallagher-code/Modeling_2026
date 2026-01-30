@@ -9,7 +9,10 @@
     "usage": "Personal workstation with GUI"
   },
   "timing": {
-    "cycles_per_instruction_range": [5, 12],
+    "cycles_per_instruction_range": [
+      5,
+      12
+    ],
     "typical_cpi": 7.0
   },
   "validated_performance": {
@@ -26,21 +29,62 @@
   "accuracy": {
     "expected_cpi": 7.0,
     "expected_ipc": 0.143,
-    "validated_workloads": ["typical", "compute", "control", "io_heavy", "mixed"],
-    "predicted_cpi": 7.00,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "control",
+      "io_heavy",
+      "mixed"
+    ],
+    "predicted_cpi": 7.0,
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "TTL custom with bit-serial ALU and microcode-driven execution"
+    "notes": "TTL custom with bit-serial ALU and microcode-driven execution",
+    "sysid_loss_before": 0.0834,
+    "sysid_loss_after": 0.039431,
+    "sysid_cpi_error_percent": 3.69,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_timing_tests": [
-    {"instruction": "ALU", "category": "alu", "expected_cycles": 5, "source": "Alto Hardware Manual"},
-    {"instruction": "MEMORY", "category": "memory", "expected_cycles": 8, "source": "Alto Hardware Manual"},
-    {"instruction": "CONTROL", "category": "control", "expected_cycles": 6, "source": "Alto Hardware Manual"},
-    {"instruction": "DISPLAY", "category": "display", "expected_cycles": 10, "source": "Alto Hardware Manual"},
-    {"instruction": "DISK", "category": "disk", "expected_cycles": 12, "source": "Alto Hardware Manual"},
-    {"instruction": "ETHERNET", "category": "ethernet", "expected_cycles": 8, "source": "Alto Hardware Manual"}
+    {
+      "instruction": "ALU",
+      "category": "alu",
+      "expected_cycles": 5,
+      "source": "Alto Hardware Manual"
+    },
+    {
+      "instruction": "MEMORY",
+      "category": "memory",
+      "expected_cycles": 8,
+      "source": "Alto Hardware Manual"
+    },
+    {
+      "instruction": "CONTROL",
+      "category": "control",
+      "expected_cycles": 6,
+      "source": "Alto Hardware Manual"
+    },
+    {
+      "instruction": "DISPLAY",
+      "category": "display",
+      "expected_cycles": 10,
+      "source": "Alto Hardware Manual"
+    },
+    {
+      "instruction": "DISK",
+      "category": "disk",
+      "expected_cycles": 12,
+      "source": "Alto Hardware Manual"
+    },
+    {
+      "instruction": "ETHERNET",
+      "category": "ethernet",
+      "expected_cycles": 8,
+      "source": "Alto Hardware Manual"
+    }
   ],
   "cross_validation": {
     "family_comparison": {
@@ -60,7 +104,11 @@
       ]
     },
     "validation_methodology": {
-      "sources": ["Alto Hardware Manual", "Xerox PARC technical reports", "Bitsavers archives"],
+      "sources": [
+        "Alto Hardware Manual",
+        "Xerox PARC technical reports",
+        "Bitsavers archives"
+      ],
       "confidence_level": "Medium",
       "cross_validated_date": "2026-01-29"
     }

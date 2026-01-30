@@ -9,7 +9,10 @@
     "package": "DIP-64"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 8],
+    "cycles_per_instruction_range": [
+      3,
+      8
+    ],
     "typical_cpi": 4.0
   },
   "accuracy": {
@@ -18,7 +21,12 @@
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.327225,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-29"
   },
   "sources": [
     "Yamaha V9938 MSX-VIDEO technical data book",

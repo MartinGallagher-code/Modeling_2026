@@ -136,10 +136,10 @@ class R2000Model(BaseProcessorModel):
         self.corrections = {
             'alu': 0.385535,
             'branch': -0.430264,
-            'divide': -1.004471,
-            'jump': -0.892888,
+            'divide': -1.004472,
+            'jump': -0.892887,
             'load': 0.364216,
-            'multiply': -1.102745,
+            'multiply': -1.102744,
             'shift': -0.738764,
             'store': -0.871568
         }

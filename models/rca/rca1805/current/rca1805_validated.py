@@ -126,7 +126,7 @@ class Rca1805Model(BaseProcessorModel):
             'call_return': -2.114987,
             'immediate': 0.694733,
             'memory_read': -1.669058,
-            'memory_write': -2.677446,
+            'memory_write': -2.677445,
             'register_ops': 1.681232
         }
 

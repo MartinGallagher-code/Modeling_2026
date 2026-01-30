@@ -108,7 +108,7 @@ class Amd29000Model(BaseProcessorModel):
             'call_return': -1.665057,
             'load': -0.168942,
             'multiply': -0.673776,
-            'store': 0.128452
+            'store': 0.128451
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

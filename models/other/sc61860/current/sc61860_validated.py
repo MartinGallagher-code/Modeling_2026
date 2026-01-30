@@ -141,7 +141,13 @@ class Sc61860Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 2.028711,
+            'control': -0.240075,
+            'data_transfer': 0.417834,
+            'display': -2.238236,
+            'memory': -0.733047
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using weighted instruction mix model"""

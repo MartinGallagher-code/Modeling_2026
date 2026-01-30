@@ -136,12 +136,12 @@ class Cdp1804Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': -4.295946,
-            'call_return': -1.064863,
-            'immediate': -1.244033,
-            'memory_read': 1.350017,
-            'memory_write': -5.499931,
-            'register_ops': 3.852747
+            'branch': -4.238180,
+            'call_return': -1.185715,
+            'immediate': -1.334648,
+            'memory_read': 1.365479,
+            'memory_write': -5.499987,
+            'register_ops': 3.889764
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

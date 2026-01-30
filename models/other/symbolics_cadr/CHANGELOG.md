@@ -46,3 +46,18 @@ This file contains the complete history of all work on this model.
 - LISP machine literature
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 62 evaluations
+- Corrections: car_cdr: -0.59, cons: -0.78, eval: -1.91, gc: -4.63, memory: +2.80, type_check: +1.89
+
+**Final state:**
+- CPI error: 3.69%
+- Validation: PASSED
+
+---

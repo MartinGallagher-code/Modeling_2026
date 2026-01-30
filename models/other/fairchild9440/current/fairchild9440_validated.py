@@ -161,7 +161,7 @@ class Fairchild9440Model(BaseProcessorModel):
             'alu': -1.292350,
             'control': -1.958542,
             'data_transfer': 0.547641,
-            'io': -0.568478,
+            'io': -0.568479,
             'memory': 2.320981,
             'stack': -0.444808
         }

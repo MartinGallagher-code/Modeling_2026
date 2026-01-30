@@ -125,12 +125,12 @@ class I80386Model:
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.916312,
-            'control': -4.970663,
-            'data_transfer': 2.742023,
-            'divide': -19.999912,
-            'memory': -0.694724,
-            'multiply': -6.991336
+            'alu': 0.915081,
+            'control': -4.973779,
+            'data_transfer': 2.745545,
+            'divide': -19.999920,
+            'memory': -0.695363,
+            'multiply': -6.992779
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

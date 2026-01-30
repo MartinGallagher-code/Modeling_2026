@@ -1,0 +1,38 @@
+{
+  "processor": "sab80515",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 32,
+  "loss_before": 0.005325,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 0.419239,
+    "cor.data_transfer": 0.148384,
+    "cor.memory": -0.306229,
+    "cor.control": -0.809537,
+    "cor.multiply": -0.496168,
+    "cor.adc": 0.412019
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.01,
+    "memory": 0.04,
+    "control": 0.14
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.adc",
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.multiply"
+  ]
+}

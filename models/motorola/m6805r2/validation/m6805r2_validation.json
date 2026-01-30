@@ -11,7 +11,10 @@
     "application": "Appliance MCU"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 5],
+    "cycles_per_instruction_range": [
+      3,
+      5
+    ],
     "typical_cpi": 3.5,
     "notes": "Low-cost 6805 variant for household appliance control"
   },
@@ -36,19 +39,30 @@
   "accuracy": {
     "expected_cpi": 3.5,
     "expected_ipc": 0.2857,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 3.5,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.001125,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
     "alu": 0.25,
-    "data_transfer": 0.20,
+    "data_transfer": 0.2,
     "memory": 0.15,
-    "control": 0.20,
-    "bit_ops": 0.20
+    "control": 0.2,
+    "bit_ops": 0.2
   }
 }

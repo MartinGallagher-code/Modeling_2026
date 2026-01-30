@@ -134,7 +134,13 @@ class NS32082Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'cache_op': -0.000045,
+            'control': -0.000054,
+            'page_fault': -0.000109,
+            'table_walk': -0.000082,
+            'translate': -0.000033
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

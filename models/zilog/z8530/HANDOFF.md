@@ -26,3 +26,9 @@
 - Hardware CRC generation and checking
 - DMA support for high-throughput transfers
 - Used widely in 1980s-90s workstations and networking
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

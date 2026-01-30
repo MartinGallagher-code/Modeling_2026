@@ -43,3 +43,18 @@ This file contains the complete history of all work on this model.
 - C64/C128 hardware reference manual
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 32 evaluations
+- Corrections: envelope: +0.20, filter: -1.02, oscillator: +1.34, register_io: +1.06, voice_mix: -1.58
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

@@ -2,29 +2,29 @@
   "processor": "mos6510",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 19,
+  "iterations": 22,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.6796,
+    "cor.alu": -0.679601,
     "cor.control": 0.445395,
     "cor.data_transfer": 0.629443,
-    "cor.memory": -0.081199,
+    "cor.memory": -0.081198,
     "cor.stack": 0.107643
   },
   "residuals_before": {
-    "typical": -0.0,
-    "compute": -0.0,
+    "typical": 0.0,
+    "compute": 0.0,
     "memory": -0.0,
-    "control": -0.0
+    "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": -0.0
   },
   "free_parameters": [
     "cor.alu",

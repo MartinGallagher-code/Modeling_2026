@@ -25,3 +25,9 @@
 - Per-channel tone/noise enable in mixer
 - 2 general-purpose 8-bit I/O ports
 - ~5,000 transistors, one of the most widely used sound chips ever
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.90%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

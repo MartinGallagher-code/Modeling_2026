@@ -161,7 +161,14 @@ class SymbolicsCadrModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'car_cdr': -0.592365,
+            'cons': -0.778561,
+            'eval': -1.906034,
+            'gc': -4.633551,
+            'memory': 2.801913,
+            'type_check': 1.887585
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

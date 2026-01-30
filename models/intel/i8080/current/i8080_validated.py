@@ -120,10 +120,10 @@ class I8080Model:
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -1.366202,
-            'control': -1.154786,
-            'data_transfer': 1.824154,
-            'memory': -2.149629,
+            'alu': -1.366201,
+            'control': -1.154785,
+            'data_transfer': 1.824151,
+            'memory': -2.149627,
             'stack': 5.500000
         }
 

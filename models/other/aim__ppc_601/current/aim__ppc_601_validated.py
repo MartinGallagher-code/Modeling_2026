@@ -135,14 +135,14 @@ class AimPpc601Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.215889,
-            'branch': 0.071855,
-            'divide': 0.212160,
-            'fp_div': 0.141611,
-            'fp_ops': 0.178323,
-            'load': -0.188916,
-            'multiply': -0.476174,
-            'store': 0.921571
+            'alu': -0.217227,
+            'branch': 0.073235,
+            'divide': 0.236167,
+            'fp_div': 0.061211,
+            'fp_ops': 0.207528,
+            'load': -0.187716,
+            'multiply': -0.470596,
+            'store': 0.919661
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

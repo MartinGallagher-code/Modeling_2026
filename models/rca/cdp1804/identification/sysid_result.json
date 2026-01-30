@@ -1,31 +1,31 @@
 {
   "processor": "cdp1804",
   "date": "2026-01-29",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 2e-06,
+  "converged": true,
+  "iterations": 132,
+  "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.01,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.branch": -4.295946,
-    "cor.call_return": -1.064863,
-    "cor.immediate": -1.244033,
-    "cor.memory_read": 1.350017,
-    "cor.memory_write": -5.499931,
-    "cor.register_ops": 3.852747
+    "cor.branch": -4.23818,
+    "cor.call_return": -1.185715,
+    "cor.immediate": -1.334648,
+    "cor.memory_read": 1.365479,
+    "cor.memory_write": -5.499987,
+    "cor.register_ops": 3.889764
   },
   "residuals_before": {
-    "typical": -0.0025,
-    "compute": 0.001,
-    "memory": 0.0012,
-    "control": 0.0004
-  },
-  "residuals_after": {
     "typical": -0.0011,
     "compute": 0.0004,
     "memory": 0.0005,
     "control": 0.0001
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
   },
   "free_parameters": [
     "cor.branch",

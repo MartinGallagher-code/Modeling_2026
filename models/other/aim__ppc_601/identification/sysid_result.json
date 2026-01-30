@@ -3,32 +3,32 @@
   "date": "2026-01-29",
   "converged": true,
   "iterations": 19,
-  "loss_before": 0.003603,
+  "loss_before": 0.000251,
   "loss_after": 0.000251,
   "cpi_error_percent": 4.02,
-  "message": "`gtol` termination condition is satisfied.",
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.215889,
-    "cor.load": -0.188916,
-    "cor.store": 0.921571,
-    "cor.branch": 0.071855,
-    "cor.multiply": -0.476174,
-    "cor.divide": 0.21216,
-    "cor.fp_ops": 0.178323,
-    "cor.fp_div": 0.141611
+    "cor.alu": -0.217227,
+    "cor.branch": 0.073235,
+    "cor.divide": 0.236167,
+    "cor.fp_div": 0.061211,
+    "cor.fp_ops": 0.207528,
+    "cor.load": -0.187716,
+    "cor.multiply": -0.470596,
+    "cor.store": 0.919661
   },
   "residuals_before": {
-    "typical": 0.004,
-    "compute": 0.116,
-    "memory": -0.035,
-    "control": 0.02,
-    "fp_heavy": 0.054
+    "typical": -0.0269,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": 0.0,
+    "fp_heavy": 0.0231
   },
   "residuals_after": {
     "typical": -0.0269,
     "compute": 0.0,
     "memory": 0.0,
-    "control": -0.0,
+    "control": 0.0,
     "fp_heavy": 0.0231
   },
   "free_parameters": [

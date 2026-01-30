@@ -142,7 +142,13 @@ class Mk5005Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -4.080337,
+            'bcd': 2.854929,
+            'control': 2.025529,
+            'display': -1.698004,
+            'shift': 3.280823
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using weighted instruction mix model"""

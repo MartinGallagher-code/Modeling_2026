@@ -42,3 +42,18 @@ This file contains the complete history of all work on this model.
 - Sequoia S-16 Technical Reference Manual (Sequoia Systems, 1984)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer did not converge in 200 evaluations
+- Corrections: alu: +2.10, checkpoint: -4.94, compare_swap: -5.00, control: +0.76, memory: -0.71
+
+**Final state:**
+- CPI error: 0.25%
+- Validation: PASSED
+
+---

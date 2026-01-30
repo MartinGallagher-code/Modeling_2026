@@ -1,0 +1,38 @@
+{
+  "processor": "xerox_alto",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 17,
+  "loss_before": 0.0834,
+  "loss_after": 0.039431,
+  "cpi_error_percent": 3.69,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -0.627786,
+    "cor.memory": 2.54859,
+    "cor.control": -1.13876,
+    "cor.display": 0.911645,
+    "cor.disk": -0.41451,
+    "cor.ethernet": 1.513624
+  },
+  "residuals_before": {
+    "typical": -0.0,
+    "compute": -0.1,
+    "memory": -0.56,
+    "control": -0.1
+  },
+  "residuals_after": {
+    "typical": 0.2585,
+    "compute": -0.0,
+    "memory": -0.3015,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.disk",
+    "cor.display",
+    "cor.ethernet",
+    "cor.memory"
+  ]
+}

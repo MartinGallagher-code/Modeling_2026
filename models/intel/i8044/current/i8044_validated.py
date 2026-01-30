@@ -125,7 +125,13 @@ class I8044Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.500000,
+            'control': 0.500000,
+            'data_transfer': 0.500000,
+            'protocol': -1.500000,
+            'serial_io': -2.500000
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

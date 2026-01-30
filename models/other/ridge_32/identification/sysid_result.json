@@ -1,0 +1,36 @@
+{
+  "processor": "ridge_32",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 50,
+  "loss_before": 0.5041,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 1.37643,
+    "cor.memory": -0.944612,
+    "cor.control": 1.394867,
+    "cor.float": -4.189037,
+    "cor.io": -4.999924
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 1.08,
+    "memory": 0.9,
+    "control": 0.2
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.float",
+    "cor.io",
+    "cor.memory"
+  ]
+}

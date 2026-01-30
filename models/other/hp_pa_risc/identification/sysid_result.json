@@ -2,32 +2,32 @@
   "processor": "hp_pa_risc",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 29,
-  "loss_before": 0.007889,
+  "iterations": 2,
+  "loss_before": 0.00016,
   "loss_after": 0.00016,
   "cpi_error_percent": 2.1,
-  "message": "`xtol` termination condition is satisfied.",
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": -0.247886,
-    "cor.load": 3.404856,
-    "cor.store": -4.831778,
     "cor.branch": -0.129657,
-    "cor.multiply": -0.242947,
     "cor.divide": -1.114731,
+    "cor.fp_complex": -0.988606,
     "cor.fp_ops": -0.716392,
-    "cor.fp_complex": -0.988606
+    "cor.load": 3.404856,
+    "cor.multiply": -0.242947,
+    "cor.store": -4.831778
   },
   "residuals_before": {
-    "typical": 0.011,
-    "compute": 0.152,
-    "memory": -0.098,
-    "control": 0.076,
-    "fp_heavy": -0.029
+    "typical": 0.0191,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "fp_heavy": -0.0209
   },
   "residuals_after": {
     "typical": 0.0191,
     "compute": -0.0,
-    "memory": -0.0,
+    "memory": 0.0,
     "control": 0.0,
     "fp_heavy": -0.0209
   },

@@ -46,3 +46,18 @@ This file contains the complete history of all work on this model.
 - AY-3-8910/8912 Programmable Sound Generator data manual
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 27 evaluations
+- Corrections: envelope: -0.06, mixer: +0.06, tone_gen: +0.06
+
+**Final state:**
+- CPI error: 0.90%
+- Validation: PASSED
+
+---

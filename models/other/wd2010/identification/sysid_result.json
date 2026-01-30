@@ -1,0 +1,36 @@
+{
+  "processor": "wd2010",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 34,
+  "loss_before": 0.308125,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.command": 0.876274,
+    "cor.data_transfer": 3.246762,
+    "cor.seek": -3.077017,
+    "cor.format": -1.10568,
+    "cor.error_check": -1.317994
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.25,
+    "memory": -0.9,
+    "control": 0.6
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.command",
+    "cor.data_transfer",
+    "cor.error_check",
+    "cor.format",
+    "cor.seek"
+  ]
+}

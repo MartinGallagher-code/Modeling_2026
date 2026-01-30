@@ -117,7 +117,13 @@ class Ym2151Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'envelope': 3.530644,
+            'lfo': -1.102631,
+            'operator': -2.882666,
+            'output': -0.329339,
+            'register': 4.064006
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

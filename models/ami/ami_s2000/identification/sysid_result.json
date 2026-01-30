@@ -16,16 +16,16 @@
   },
   "residuals_before": {
     "typical": 0.0,
-    "compute": -0.0,
+    "compute": 0.0,
     "memory": 0.0,
     "control": -0.0,
     "mixed": 0.0
   },
   "residuals_after": {
     "typical": 0.0,
-    "compute": -0.0,
-    "memory": 0.0,
-    "control": 0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": -0.0,
     "mixed": 0.0
   },
   "free_parameters": [

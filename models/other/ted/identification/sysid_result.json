@@ -1,0 +1,38 @@
+{
+  "processor": "ted",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 20,
+  "loss_before": 0.02935,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.char_gen": -0.238994,
+    "cor.color": -0.418239,
+    "cor.sound": 1.283523,
+    "cor.timer": 1.059245,
+    "cor.dma": -1.12,
+    "cor.control": 0.016227
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.15,
+    "memory": 0.18,
+    "control": -0.25
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.char_gen",
+    "cor.color",
+    "cor.control",
+    "cor.dma",
+    "cor.sound",
+    "cor.timer"
+  ]
+}

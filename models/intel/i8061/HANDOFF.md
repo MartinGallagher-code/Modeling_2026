@@ -25,3 +25,9 @@
 - Custom Intel MCU designed exclusively for Ford Electronic Engine Control
 - Integrated ADC for sensor reading, timers for ignition timing
 - Lookup tables used for fuel maps and spark advance curves
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

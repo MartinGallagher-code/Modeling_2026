@@ -137,12 +137,12 @@ class Mostek3870Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': -3.530372,
-            'call_return': -1.818754,
-            'immediate': -1.191234,
-            'memory_read': 0.104792,
-            'memory_write': -3.039053,
-            'register_ops': 2.196174
+            'branch': -3.530373,
+            'call_return': -1.818753,
+            'immediate': -1.191236,
+            'memory_read': 0.104789,
+            'memory_write': -3.039048,
+            'register_ops': 2.196175
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

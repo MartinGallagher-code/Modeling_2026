@@ -30,3 +30,9 @@
 - Harvard architecture with separate program/data buses
 - Single-cycle MAC, ALU, and barrel shifter
 - 3-stage pipeline (fetch, decode, execute)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

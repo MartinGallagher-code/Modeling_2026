@@ -151,7 +151,13 @@ class Rp32Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 0.800000,
+            'cascade': -0.200000,
+            'control': -0.200000,
+            'memory': -1.200000,
+            'shift': 0.800000
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

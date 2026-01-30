@@ -127,7 +127,14 @@ class Sega3155124Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'control': 0.165927,
+            'line_buffer': -0.108305,
+            'scroll': 1.977913,
+            'sprite': -0.626083,
+            'tile_render': -0.559842,
+            'vram': 0.011033
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

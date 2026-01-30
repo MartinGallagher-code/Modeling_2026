@@ -1,0 +1,36 @@
+{
+  "processor": "bt101",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 20,
+  "loss_before": 0.0725,
+  "loss_after": 0.0725,
+  "cpi_error_percent": 0.0,
+  "message": "Rolled back: optimization worsened typical-workload error",
+  "corrections": {
+    "cor.palette_read": 0.0,
+    "cor.dac_convert": 0.0,
+    "cor.control": 0.0,
+    "cor.pixel_clock": 0.0,
+    "cor.lookup": 0.0
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "video_active": 0.2,
+    "palette_heavy": -0.3,
+    "idle": 0.4
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "video_active": 0.2,
+    "palette_heavy": -0.3,
+    "idle": 0.4
+  },
+  "free_parameters": [
+    "cor.control",
+    "cor.dac_convert",
+    "cor.lookup",
+    "cor.palette_read",
+    "cor.pixel_clock"
+  ]
+}

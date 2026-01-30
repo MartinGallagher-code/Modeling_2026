@@ -11,7 +11,10 @@
     "application": "Ford EEC engine controller"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 8],
+    "cycles_per_instruction_range": [
+      3,
+      8
+    ],
     "typical_cpi": 4.5,
     "notes": "Custom MCU with integrated ADC, timers, and lookup table hardware"
   },
@@ -36,19 +39,30 @@
   "accuracy": {
     "expected_cpi": 4.5,
     "expected_ipc": 0.2222,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 4.5,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.1555,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
-    "alu": 0.40,
-    "adc": 0.10,
+    "alu": 0.4,
+    "adc": 0.1,
     "timer": 0.15,
-    "control": 0.20,
+    "control": 0.2,
     "lookup": 0.15
   }
 }

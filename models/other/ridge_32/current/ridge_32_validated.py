@@ -117,7 +117,13 @@ class Ridge32Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.376430,
+            'control': 1.394867,
+            'float': -4.189037,
+            'io': -4.999924,
+            'memory': -0.944612
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

@@ -11,7 +11,10 @@
     "application": "Forth stack processor"
   },
   "timing": {
-    "cycles_per_instruction_range": [1, 3],
+    "cycles_per_instruction_range": [
+      1,
+      3
+    ],
     "typical_cpi": 1.5,
     "notes": "Pipelined Forth engine with hardware dual stacks, most primitives in 1 cycle"
   },
@@ -36,18 +39,29 @@
   "accuracy": {
     "expected_cpi": 1.5,
     "expected_ipc": 0.6667,
-    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
     "predicted_cpi": 1.5,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.069,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "instruction_mix": {
     "stack_op": 0.35,
     "alu": 0.25,
-    "memory": 0.10,
+    "memory": 0.1,
     "control": 0.15,
     "call_return": 0.15
   }

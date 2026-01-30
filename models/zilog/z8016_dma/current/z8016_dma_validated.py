@@ -135,7 +135,13 @@ class ZilogZ8016DMAModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'chain': -2.939689,
+            'control': -0.123735,
+            'search': 2.202335,
+            'setup': -2.983658,
+            'transfer': 0.732296
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

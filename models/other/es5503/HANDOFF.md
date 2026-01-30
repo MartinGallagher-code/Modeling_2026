@@ -27,3 +27,9 @@
 - External wavetable RAM (up to 64KB per bank)
 - ~40,000 transistors (CMOS), most complex in this audio batch
 - Used in Apple IIGS, Ensoniq Mirage, ESQ-1, SQ-80
+
+## System Identification (2026-01-29)
+- **Status**: Rolled back
+- **CPI Error**: 0.02%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

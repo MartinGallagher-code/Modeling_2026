@@ -101,12 +101,12 @@ class Alpha21064Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.087636,
-            'branch': 0.379324,
-            'divide': -4.961563,
-            'load': 0.655810,
-            'multiply': -3.641164,
-            'store': -0.446687
+            'alu': -0.102734,
+            'branch': 0.374239,
+            'divide': -4.792678,
+            'load': 0.659811,
+            'multiply': -3.396953,
+            'store': -0.473877
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

@@ -1,0 +1,36 @@
+{
+  "processor": "mmi_67110",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 33,
+  "loss_before": 0.025625,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.sequence": 1.493636,
+    "cor.branch": -0.704046,
+    "cor.subroutine": -0.123699,
+    "cor.control": -0.105205,
+    "cor.counter": -0.519064
+  },
+  "residuals_before": {
+    "typical": -0.0,
+    "compute": -0.25,
+    "memory": -0.0,
+    "control": 0.2
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": 0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.branch",
+    "cor.control",
+    "cor.counter",
+    "cor.sequence",
+    "cor.subroutine"
+  ]
+}

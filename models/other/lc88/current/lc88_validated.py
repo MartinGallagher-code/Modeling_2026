@@ -138,11 +138,11 @@ class Lc88Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.694812,
-            'control': 0.230089,
-            'data_transfer': 0.725878,
-            'io': -2.883617,
-            'memory': 0.846913
+            'alu': 0.975443,
+            'control': 0.078544,
+            'data_transfer': 0.180671,
+            'io': -2.644338,
+            'memory': 0.934969
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

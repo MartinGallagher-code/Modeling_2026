@@ -114,7 +114,13 @@ class Mos8580SidModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'envelope': 0.200001,
+            'filter': -1.016769,
+            'oscillator': 1.344511,
+            'register_io': 1.055485,
+            'voice_mix': -1.583228
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

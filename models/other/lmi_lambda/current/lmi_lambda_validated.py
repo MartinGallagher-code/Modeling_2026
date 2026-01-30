@@ -158,7 +158,14 @@ class LmiLambdaModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'car_cdr': 0.550108,
+            'cons': -2.051844,
+            'eval': 0.097846,
+            'gc': 1.247537,
+            'memory': 0.213264,
+            'type_check': 0.191423
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

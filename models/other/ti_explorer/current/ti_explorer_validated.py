@@ -160,7 +160,14 @@ class TiExplorerModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'car_cdr': -0.479599,
+            'cons': -1.614048,
+            'eval': -0.519192,
+            'gc': -0.207920,
+            'memory': 1.107823,
+            'type_check': 1.139669
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

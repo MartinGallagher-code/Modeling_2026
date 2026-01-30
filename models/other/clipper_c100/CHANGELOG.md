@@ -42,3 +42,18 @@ This file contains the complete history of all work on this model.
 - Clipper C100 Technical Reference Manual (Fairchild, 1986)
 
 ---
+
+## 2026-01-29 - System identification (rolled back)
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Result:** Optimization was rolled back because it worsened typical-workload error.
+- 5 free correction parameters
+- Structural mismatch between workload profiles and measurements
+- Model left unchanged
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

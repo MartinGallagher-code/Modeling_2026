@@ -144,7 +144,7 @@ class Namco52xxModel(BaseProcessorModel):
         self.corrections = {
             'audio_dma': 1.947472,
             'control': 2.071067,
-            'dac': 0.885675,
+            'dac': 0.885674,
             'sample_read': 0.132865,
             'timing': -2.052528
         }

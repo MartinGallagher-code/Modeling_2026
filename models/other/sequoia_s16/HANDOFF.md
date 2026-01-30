@@ -27,3 +27,9 @@
 - Sequential execution era with no pipeline
 - 8 MHz clock, ~60,000 transistors
 - Checkpoint operations most expensive (12 cycles)
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.25%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

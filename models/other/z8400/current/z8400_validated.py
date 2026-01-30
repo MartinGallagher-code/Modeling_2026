@@ -112,7 +112,13 @@ class Z8400Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 0.230708,
+            'block': -1.981149,
+            'control': 0.268743,
+            'data_transfer': 1.344430,
+            'memory': -1.714319
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

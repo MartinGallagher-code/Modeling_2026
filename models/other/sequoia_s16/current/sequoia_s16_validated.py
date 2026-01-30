@@ -117,7 +117,13 @@ class SequoiaS16Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 2.095285,
+            'checkpoint': -4.940763,
+            'compare_swap': -4.995317,
+            'control': 0.755717,
+            'memory': -0.714327
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

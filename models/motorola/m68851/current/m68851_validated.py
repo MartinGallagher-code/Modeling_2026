@@ -137,7 +137,13 @@ class Motorola68851Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'flush': -5.000000,
+            'load_descriptor': -5.000000,
+            'table_walk': -6.000000,
+            'translate': 4.667789,
+            'validate': -5.000000
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

@@ -127,9 +127,9 @@ class M68881Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'fp_add': -0.454592,
+            'fp_add': -0.454596,
             'fp_div': -12.500000,
-            'fp_move': 4.255258,
+            'fp_move': 4.255259,
             'fp_mul': 5.000000,
             'fp_sqrt': -17.500000,
             'fp_trig': -27.500000

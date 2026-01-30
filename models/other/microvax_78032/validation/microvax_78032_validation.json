@@ -9,7 +9,10 @@
     "package": "68-pin CERDIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [2, 15],
+    "cycles_per_instruction_range": [
+      2,
+      15
+    ],
     "typical_cpi": 5.5
   },
   "validated_performance": {
@@ -26,14 +29,24 @@
   "accuracy": {
     "expected_cpi": 5.5,
     "expected_ipc": 0.182,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
     "predicted_cpi": 5.5,
     "cpi_error_percent": 0.0,
     "ipc_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model calibrated for exact CPI target on typical workload"
+    "notes": "Model calibrated for exact CPI target on typical workload",
+    "sysid_loss_before": 0.57425,
+    "sysid_loss_after": 0.000224,
+    "sysid_cpi_error_percent": 0.44,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-29"
   },
   "timing_tests": [
     {

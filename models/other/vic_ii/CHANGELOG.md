@@ -44,3 +44,18 @@ This file contains the complete history of all work on this model.
 - Commodore 64 Programmer's Reference Guide
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 26 evaluations
+- Corrections: char_gen: +0.32, color: +1.10, dma: -1.16, raster: +2.19, scroll: +1.12, sprite: -2.75
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

@@ -116,7 +116,13 @@ class Sn76489Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'attenuation': 0.214259,
+            'noise_gen': -1.004854,
+            'output': 0.189722,
+            'register': 0.055199,
+            'tone_gen': 0.951131
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

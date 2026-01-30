@@ -24,3 +24,9 @@
 - Filter response is more "correct" but less characterful than 6581
 - Register-compatible with 6581 for software compatibility
 - ~13,000 transistors
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

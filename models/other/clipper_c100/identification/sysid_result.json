@@ -1,0 +1,38 @@
+{
+  "processor": "clipper_c100",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 21,
+  "loss_before": 0.10746,
+  "loss_after": 0.10746,
+  "cpi_error_percent": 0.0,
+  "message": "Rolled back: optimization worsened typical-workload error",
+  "corrections": {
+    "cor.alu": 0.0,
+    "cor.load": 0.0,
+    "cor.store": 0.0,
+    "cor.branch": 0.0,
+    "cor.float": 0.0
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.52,
+    "memory": -0.05,
+    "control": 0.12,
+    "fp_heavy": -0.5
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.52,
+    "memory": -0.05,
+    "control": 0.12,
+    "fp_heavy": -0.5
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.branch",
+    "cor.float",
+    "cor.load",
+    "cor.store"
+  ]
+}

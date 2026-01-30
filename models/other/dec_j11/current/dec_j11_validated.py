@@ -111,10 +111,10 @@ class DecJ11Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -4.761348,
-            'control': 2.806741,
+            'alu': -4.761346,
+            'control': 2.806755,
             'data_transfer': 5.000000,
-            'memory': 1.239707,
+            'memory': 1.239684,
             'stack': -5.000000
         }
 

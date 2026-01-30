@@ -8,9 +8,9 @@
   "cpi_error_percent": 1.83,
   "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.fp_add": -0.454592,
+    "cor.fp_add": -0.454596,
     "cor.fp_div": -12.5,
-    "cor.fp_move": 4.255258,
+    "cor.fp_move": 4.255259,
     "cor.fp_mul": 5.0,
     "cor.fp_sqrt": -17.5,
     "cor.fp_trig": -27.5

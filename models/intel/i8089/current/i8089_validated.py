@@ -134,7 +134,13 @@ class Intel8089Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'channel_op': -0.523343,
+            'control': 0.514479,
+            'dma': 1.504955,
+            'memory': -4.839738,
+            'transfer': 1.508221
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

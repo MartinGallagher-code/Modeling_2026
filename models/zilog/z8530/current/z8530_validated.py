@@ -126,7 +126,13 @@ class Z8530Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'control': -2.437039,
+            'crc': 2.167891,
+            'dma': -0.239507,
+            'frame_process': -1.646904,
+            'register_io': 2.155559
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

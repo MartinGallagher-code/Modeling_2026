@@ -124,7 +124,13 @@ class HD6305Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -0.895954,
+            'control': -0.289017,
+            'data_transfer': 1.560694,
+            'memory': 0.190751,
+            'timer': -1.167630
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

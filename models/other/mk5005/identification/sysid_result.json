@@ -1,0 +1,36 @@
+{
+  "processor": "mk5005",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 34,
+  "loss_before": 0.29875,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -4.080337,
+    "cor.bcd": 2.854929,
+    "cor.shift": 3.280823,
+    "cor.control": 2.025529,
+    "cor.display": -1.698004
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": -0.3,
+    "memory": -0.95,
+    "control": -0.45
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.bcd",
+    "cor.control",
+    "cor.display",
+    "cor.shift"
+  ]
+}

@@ -124,7 +124,13 @@ class TMS370Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.000000,
+            'control': -0.000000,
+            'data_transfer': -0.000000,
+            'memory': -1.000000,
+            'peripheral': -2.000000
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

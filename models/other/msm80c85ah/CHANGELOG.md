@@ -43,3 +43,18 @@ This file contains the complete history of all work on this model.
 - Intel 8085 timing reference documentation
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 143 evaluations
+- Corrections: alu: +0.56, control: -1.28, data_transfer: +4.12, memory: -5.00, stack: -3.14
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

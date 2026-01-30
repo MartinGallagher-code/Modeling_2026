@@ -9,7 +9,10 @@
     "package": "PGA"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 12],
+    "cycles_per_instruction_range": [
+      3,
+      12
+    ],
     "typical_cpi": 5.0
   },
   "validated_performance": {
@@ -25,15 +28,25 @@
   "validation_date": "2026-01-29",
   "accuracy": {
     "expected_cpi": 5.0,
-    "expected_ipc": 0.200,
-    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "expected_ipc": 0.2,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
     "predicted_cpi": 5.002,
     "cpi_error_percent": 0.04,
     "ipc_error_percent": 0.04,
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Model calibrated for CPI target on typical workload (0.04% error)"
+    "notes": "Model calibrated for CPI target on typical workload (0.04% error)",
+    "sysid_loss_before": 0.438726,
+    "sysid_loss_after": 5.8e-05,
+    "sysid_cpi_error_percent": 0.25,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-29"
   },
   "timing_tests": [
     {

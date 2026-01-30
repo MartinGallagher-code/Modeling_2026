@@ -1,0 +1,38 @@
+{
+  "processor": "i8044",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 8,
+  "loss_before": 0.1855,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 1.5,
+    "cor.data_transfer": 0.5,
+    "cor.serial_io": -2.5,
+    "cor.control": 0.5,
+    "cor.protocol": -1.5
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": -0.55,
+    "memory": 0.75,
+    "control": -0.2,
+    "mixed": 0.15
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.protocol",
+    "cor.serial_io"
+  ]
+}

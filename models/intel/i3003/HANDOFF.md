@@ -25,3 +25,9 @@
 - All operations complete in single cycle
 - Companion to Intel 3002 bit-slice ALU
 - ~100 transistors in Schottky bipolar
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 4
+- **Corrections**: See `identification/sysid_result.json`

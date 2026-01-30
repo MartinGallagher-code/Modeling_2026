@@ -120,11 +120,11 @@ class IAPX432Model:
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -6.575237,
-            'control': -19.421544,
-            'data_transfer': 11.670329,
-            'memory': 3.517065,
-            'object_ops': 11.963684
+            'alu': -6.577419,
+            'control': -19.420681,
+            'data_transfer': 11.676266,
+            'memory': 3.515898,
+            'object_ops': 11.952367
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

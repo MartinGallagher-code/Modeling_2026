@@ -28,3 +28,9 @@
 - DMA cycle stealing ("badlines") halts CPU for character pointer fetches
 - 16 fixed colors, no palette programming
 - ~16,000 transistors in NMOS process
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

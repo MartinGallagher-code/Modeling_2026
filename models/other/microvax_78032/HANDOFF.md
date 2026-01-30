@@ -26,3 +26,9 @@
 - Complex instruction set includes string manipulation and packed decimal
 - 68-pin CERDIP package, ~125,000 transistors
 - Floating-point operations are particularly expensive (12 cycles)
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.44%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

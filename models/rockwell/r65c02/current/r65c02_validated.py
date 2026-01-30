@@ -177,7 +177,7 @@ class R65c02Model(BaseProcessorModel):
         # Correction terms for system identification (initially zero)
         self.corrections = {
             'alu': 0.658687,
-            'bit_ops': 1.905882,
+            'bit_ops': 3.874720,
             'control': 0.287680,
             'data_transfer': 0.266241,
             'memory': -0.776061,

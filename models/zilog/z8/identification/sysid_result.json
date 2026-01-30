@@ -9,10 +9,10 @@
   "message": "`ftol` termination condition is satisfied.",
   "corrections": {
     "cor.call_return": 10.0,
-    "cor.control": -1.485122,
+    "cor.control": -1.485123,
     "cor.immediate": -4.999827,
-    "cor.memory": -1.603572,
-    "cor.register_ops": 2.372064,
+    "cor.memory": -1.603573,
+    "cor.register_ops": 2.37206,
     "cor.stack": 6.999913
   },
   "residuals_before": {

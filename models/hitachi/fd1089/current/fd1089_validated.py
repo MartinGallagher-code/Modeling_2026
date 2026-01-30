@@ -155,11 +155,11 @@ class FD1089Model(BaseProcessorModel):
         # Correction terms for system identification (initially zero)
         self.corrections = {
             'address': -4.999999,
-            'alu': -2.636702,
+            'alu': -2.636701,
             'control': -1.054807,
             'data_transfer': 5.000000,
             'decrypt': 5.000000,
-            'memory': 1.213243
+            'memory': 1.213242
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

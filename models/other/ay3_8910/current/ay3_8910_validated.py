@@ -117,7 +117,13 @@ class Ay38910Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'envelope': -0.059401,
+            'io_port': 0.007225,
+            'mixer': 0.060062,
+            'noise_gen': 0.006889,
+            'tone_gen': 0.060062
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

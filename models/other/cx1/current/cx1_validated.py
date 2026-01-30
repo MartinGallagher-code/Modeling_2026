@@ -149,7 +149,13 @@ class Cx1Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'control': 0.270000,
+            'filter': -1.930000,
+            'mac': 0.070000,
+            'memory': -1.330000,
+            'output': 2.070000
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

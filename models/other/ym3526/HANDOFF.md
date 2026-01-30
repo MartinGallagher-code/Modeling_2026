@@ -24,3 +24,9 @@
 - Rhythm mode: bass drum, snare, tom-tom, cymbal, hi-hat
 - Cost-reduced alternative to YM2151 (fewer operators, no stereo)
 - ~15,000 transistors
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.84%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

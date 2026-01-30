@@ -164,10 +164,10 @@ class Z8Model(BaseProcessorModel):
         # Correction terms for system identification (initially zero)
         self.corrections = {
             'call_return': 10.000000,
-            'control': -1.485122,
+            'control': -1.485123,
             'immediate': -4.999827,
-            'memory': -1.603572,
-            'register_ops': 2.372064,
+            'memory': -1.603573,
+            'register_ops': 2.372060,
             'stack': 6.999913
         }
 

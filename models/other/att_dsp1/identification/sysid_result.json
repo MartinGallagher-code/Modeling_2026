@@ -2,24 +2,24 @@
   "processor": "att_dsp1",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 8,
-  "loss_before": 0.03398,
+  "iterations": 9,
+  "loss_before": 0.003801,
   "loss_after": 0.003801,
   "cpi_error_percent": 0.85,
-  "message": "`ftol` termination condition is satisfied.",
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.mac": 0.710743,
     "cor.alu": -5.0,
-    "cor.data_move": 3.632505,
     "cor.control": 0.636167,
-    "cor.io": -0.078594
+    "cor.data_move": 3.632505,
+    "cor.io": -0.078594,
+    "cor.mac": 0.710743
   },
   "residuals_before": {
-    "typical": -0.05,
-    "compute": 0.15,
-    "control": -0.15,
-    "io_heavy": -0.3,
-    "mixed": 0.18
+    "typical": -0.0341,
+    "compute": -0.0332,
+    "control": -0.0096,
+    "io_heavy": -0.0564,
+    "mixed": 0.116
   },
   "residuals_after": {
     "typical": -0.0341,

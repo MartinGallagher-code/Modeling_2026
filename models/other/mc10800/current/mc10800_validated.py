@@ -153,11 +153,11 @@ class Mc10800Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.037783,
-            'cascade': 0.231583,
-            'control': -1.014266,
-            'logic': 0.135690,
-            'shift': -1.021464
+            'alu': 1.035370,
+            'cascade': 0.231045,
+            'control': -1.014102,
+            'logic': 0.134916,
+            'shift': -1.015208
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

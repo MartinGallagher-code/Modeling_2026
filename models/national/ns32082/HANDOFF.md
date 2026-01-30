@@ -25,3 +25,9 @@
 - Higher CPI than 68851 (8.0 vs 6.0) reflects simpler hardware with fewer transistors
 - 60,000 transistors vs 190,000 for 68851
 - Works with NS32016 and NS32032 CPUs
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

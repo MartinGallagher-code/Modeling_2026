@@ -1,0 +1,36 @@
+{
+  "processor": "apollo_dn300",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 32,
+  "loss_before": 0.88885,
+  "loss_after": 0.88885,
+  "cpi_error_percent": 0.0,
+  "message": "Rolled back: optimization worsened typical-workload error",
+  "corrections": {
+    "cor.alu": 0.0,
+    "cor.memory": 0.0,
+    "cor.control": 0.0,
+    "cor.float": 0.0,
+    "cor.graphics": 0.0
+  },
+  "residuals_before": {
+    "typical": 0.0001,
+    "compute": 1.73,
+    "memory": 0.0,
+    "control": 0.75
+  },
+  "residuals_after": {
+    "typical": 0.0001,
+    "compute": 1.73,
+    "memory": 0.0,
+    "control": 0.75
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.float",
+    "cor.graphics",
+    "cor.memory"
+  ]
+}

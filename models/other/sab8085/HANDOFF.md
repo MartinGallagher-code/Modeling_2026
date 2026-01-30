@@ -25,3 +25,9 @@
 - 8085 improvements over 8080: multiplexed address/data bus, on-chip clock, serial I/O
 - Part of Siemens' second-source agreement with Intel
 - Used in European industrial and telecommunications equipment
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

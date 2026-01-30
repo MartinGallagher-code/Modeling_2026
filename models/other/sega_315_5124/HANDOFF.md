@@ -27,3 +27,9 @@
 - Enhanced scrolling: per-column vertical scroll, horizontal scroll inhibit
 - Also used in Sega Game Gear (with extended palette capability)
 - ~25,000 transistors in NMOS process
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

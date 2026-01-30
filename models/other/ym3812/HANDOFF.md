@@ -24,3 +24,9 @@
 - Backward compatible with YM3526 register layout
 - The chip that defined PC audio (AdLib, Sound Blaster)
 - ~18,000 transistors
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

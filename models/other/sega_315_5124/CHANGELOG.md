@@ -44,3 +44,18 @@ This file contains the complete history of all work on this model.
 - Sega Master System technical manual
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 40 evaluations
+- Corrections: control: +0.17, line_buffer: -0.11, scroll: +1.98, sprite: -0.63, tile_render: -0.56, vram: +0.01
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

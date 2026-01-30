@@ -110,7 +110,13 @@ class Lh0080Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.217584,
+            'block': -4.888099,
+            'control': -0.498504,
+            'data_transfer': 2.960527,
+            'memory': -3.972410
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

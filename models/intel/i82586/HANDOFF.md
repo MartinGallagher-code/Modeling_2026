@@ -26,3 +26,9 @@
 - Command block architecture for host CPU communication
 - DMA-based frame buffer management
 - Supports full IEEE 802.3 CSMA/CD protocol
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

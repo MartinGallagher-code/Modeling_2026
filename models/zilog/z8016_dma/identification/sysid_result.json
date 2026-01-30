@@ -1,0 +1,36 @@
+{
+  "processor": "z8016_dma",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 38,
+  "loss_before": 0.087506,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.transfer": 0.732296,
+    "cor.setup": -2.983658,
+    "cor.chain": -2.939689,
+    "cor.control": -0.123735,
+    "cor.search": 2.202335
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.245,
+    "memory": 0.2,
+    "control": 0.5
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.chain",
+    "cor.control",
+    "cor.search",
+    "cor.setup",
+    "cor.transfer"
+  ]
+}

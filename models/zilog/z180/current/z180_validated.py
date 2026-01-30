@@ -138,7 +138,7 @@ class Z180Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.181909,
+            'alu': -0.181908,
             'block': 1.152944,
             'control': 1.080503,
             'data_transfer': -0.151170,

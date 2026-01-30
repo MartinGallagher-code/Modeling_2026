@@ -8,9 +8,9 @@
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 2.000023,
-    "cor.control": -4.999938,
-    "cor.data_transfer": 1.999934,
+    "cor.alu": 2.000012,
+    "cor.control": -4.999969,
+    "cor.data_transfer": 1.999966,
     "cor.memory": -2.0
   },
   "residuals_before": {

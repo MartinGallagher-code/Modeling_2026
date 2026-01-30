@@ -9,16 +9,24 @@
     "package": "DIP-40"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 18],
+    "cycles_per_instruction_range": [
+      4,
+      18
+    ],
     "typical_cpi": 5.0
   },
   "accuracy": {
     "expected_cpi": 5.0,
-    "predicted_cpi": 5.000,
+    "predicted_cpi": 5.0,
     "cpi_error_percent": 0.0,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.0433,
+    "sysid_loss_after": 8.7e-05,
+    "sysid_cpi_error_percent": 0.32,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-29"
   },
   "sources": [
     "AMD Am8085A datasheet (1978)",

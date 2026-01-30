@@ -22,7 +22,7 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "sysid_loss_before": 0.321167,
+    "sysid_loss_before": 0.008317,
     "sysid_loss_after": 0.008317,
     "sysid_cpi_error_percent": 0.01,
     "sysid_converged": false,

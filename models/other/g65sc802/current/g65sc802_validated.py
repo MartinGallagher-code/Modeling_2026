@@ -152,8 +152,8 @@ class G65sc802Model(BaseProcessorModel):
         # Correction terms for system identification (initially zero)
         self.corrections = {
             'alu': -1.292190,
-            'control': 1.446164,
-            'data_transfer': 1.023013,
+            'control': 1.446163,
+            'data_transfer': 1.023014,
             'long_addr': -0.557323,
             'memory': 1.499721,
             'stack': -2.794349

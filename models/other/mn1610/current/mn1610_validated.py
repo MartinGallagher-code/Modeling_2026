@@ -147,11 +147,11 @@ class Mn1610Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': -1.553095,
-            'call_return': -6.999905,
-            'immediate': -3.247889,
-            'memory_read': 0.412527,
-            'memory_write': -4.999657,
+            'branch': -1.553086,
+            'call_return': -6.999967,
+            'immediate': -3.247850,
+            'memory_read': 0.412589,
+            'memory_write': -4.999814,
             'register_ops': 5.000000
         }
 

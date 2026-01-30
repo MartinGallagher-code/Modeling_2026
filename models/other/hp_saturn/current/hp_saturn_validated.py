@@ -144,7 +144,13 @@ class HpSaturnModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -1.174622,
+            'bcd': 1.316415,
+            'control': -2.560000,
+            'memory': 1.101793,
+            'register_op': 0.916415
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using weighted instruction mix model"""

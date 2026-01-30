@@ -26,3 +26,9 @@
 - Pin-compatible with Intel 8085, same instruction timing
 - Used in portable/battery-powered equipment where CMOS power savings are critical
 - Distinguished from base MSM80C85 by tighter speed specifications
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

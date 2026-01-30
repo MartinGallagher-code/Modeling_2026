@@ -133,10 +133,10 @@ class Mos6510Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.679600,
+            'alu': -0.679601,
             'control': 0.445395,
             'data_transfer': 0.629443,
-            'memory': -0.081199,
+            'memory': -0.081198,
             'stack': 0.107643
         }
 

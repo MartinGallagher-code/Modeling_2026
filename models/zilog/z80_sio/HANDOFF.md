@@ -26,3 +26,9 @@
 - Z80 bus and daisy-chain interrupt compatible
 - Supports async and sync (bisync, HDLC) protocols
 - Predecessor to the Z8530 SCC
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.13%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

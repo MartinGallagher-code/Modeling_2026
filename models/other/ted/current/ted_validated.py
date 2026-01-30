@@ -137,7 +137,14 @@ class TedModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'char_gen': -0.238994,
+            'color': -0.418239,
+            'control': 0.016227,
+            'dma': -1.120000,
+            'sound': 1.283523,
+            'timer': 1.059245
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

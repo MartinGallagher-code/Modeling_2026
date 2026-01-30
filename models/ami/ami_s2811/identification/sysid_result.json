@@ -2,13 +2,13 @@
   "processor": "ami_s2811",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 2,
+  "iterations": 8,
   "loss_before": 0.022701,
   "loss_after": 0.022701,
   "cpi_error_percent": 3.83,
-  "message": "`ftol` termination condition is satisfied.",
+  "message": "Both `ftol` and `xtol` termination conditions are satisfied.",
   "corrections": {
-    "cor.alu": 4.111916,
+    "cor.alu": 4.111915,
     "cor.control": -1.296823,
     "cor.memory": 0.309178,
     "cor.multiply": -3.507364

@@ -113,10 +113,10 @@ class I80286Model:
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.500013,
-            'control': -4.999940,
-            'data_transfer': 1.499956,
-            'memory': -2.000004
+            'alu': 1.500006,
+            'control': -4.999971,
+            'data_transfer': 1.499979,
+            'memory': -2.000002
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

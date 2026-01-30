@@ -126,12 +126,12 @@ class PentiumModel:
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.707058,
-            'control': -0.717866,
-            'data_transfer': 1.222453,
-            'divide': -19.471411,
-            'memory': -0.355998,
-            'multiply': -5.409059
+            'alu': -0.706667,
+            'control': -0.717748,
+            'data_transfer': 1.222322,
+            'divide': -19.474229,
+            'memory': -0.355847,
+            'multiply': -5.413220
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

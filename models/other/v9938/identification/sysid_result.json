@@ -1,0 +1,38 @@
+{
+  "processor": "v9938",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.327225,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "The maximum number of function evaluations is exceeded.",
+  "corrections": {
+    "cor.bitmap": 1.506341,
+    "cor.sprite": -3.877422,
+    "cor.scroll": 3.025802,
+    "cor.command": -4.212571,
+    "cor.vram": 0.471215,
+    "cor.palette": 0.07988
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 1.0,
+    "memory": 0.08,
+    "control": -0.55
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.bitmap",
+    "cor.command",
+    "cor.palette",
+    "cor.scroll",
+    "cor.sprite",
+    "cor.vram"
+  ]
+}

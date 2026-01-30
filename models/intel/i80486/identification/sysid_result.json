@@ -8,7 +8,7 @@
   "cpi_error_percent": 0.13,
   "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.616988,
+    "cor.alu": 0.616987,
     "cor.control": -2.219677,
     "cor.data_transfer": 0.896555,
     "cor.divide": -19.999973,

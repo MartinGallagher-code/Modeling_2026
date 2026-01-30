@@ -8,11 +8,11 @@
   "cpi_error_percent": 0.62,
   "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.037783,
-    "cor.cascade": 0.231583,
-    "cor.control": -1.014266,
-    "cor.logic": 0.13569,
-    "cor.shift": -1.021464
+    "cor.alu": 1.03537,
+    "cor.cascade": 0.231045,
+    "cor.control": -1.014102,
+    "cor.logic": 0.134916,
+    "cor.shift": -1.015208
   },
   "residuals_before": {
     "typical": 0.0123,
@@ -22,9 +22,9 @@
   },
   "residuals_after": {
     "typical": 0.0123,
-    "compute": 0.0,
+    "compute": -0.0,
     "memory": -0.0127,
-    "control": 0.0
+    "control": -0.0
   },
   "free_parameters": [
     "cor.alu",

@@ -1,0 +1,36 @@
+{
+  "processor": "upd8080af",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 18,
+  "loss_before": 0.018063,
+  "loss_after": 0.000344,
+  "cpi_error_percent": 0.57,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": -0.689809,
+    "cor.data_transfer": -3.215367,
+    "cor.memory": 4.999998,
+    "cor.control": -1.323471,
+    "cor.stack": 4.999985
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.075,
+    "memory": -0.24,
+    "control": -0.095
+  },
+  "residuals_after": {
+    "typical": 0.0316,
+    "compute": -0.0136,
+    "memory": -0.0122,
+    "control": -0.0069
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.memory",
+    "cor.stack"
+  ]
+}

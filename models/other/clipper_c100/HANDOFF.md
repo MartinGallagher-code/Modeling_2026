@@ -26,3 +26,9 @@
 - Load/store architecture with pipelined execution
 - Single-cycle ALU and store operations
 - 33 MHz clock, ~132,000 transistors, PGA package
+
+## System Identification (2026-01-29)
+- **Status**: Rolled back
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

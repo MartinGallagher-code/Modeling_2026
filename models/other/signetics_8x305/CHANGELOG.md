@@ -43,3 +43,18 @@ This file contains the complete history of all work on this model.
 - Signetics 8X305 datasheet
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 6 evaluations
+- Corrections: alu: +1.00, io: -1.00, memory: -1.00
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

@@ -106,10 +106,10 @@ class FerrantiUlaModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'contention': 0.018653,
-            'io_decode': -0.080505,
-            'memory_ctrl': 0.018653,
-            'video_gen': -0.080505
+            'contention': 0.022613,
+            'io_decode': -0.083145,
+            'memory_ctrl': 0.022613,
+            'video_gen': -0.083145
         }
 
     def analyze(self, workload='typical'):

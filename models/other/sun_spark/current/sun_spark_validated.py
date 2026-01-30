@@ -137,13 +137,13 @@ class SunSparkModel(BaseProcessorModel):
         # Correction terms for system identification (initially zero)
         self.corrections = {
             'alu': 0.015428,
-            'branch': -0.083327,
-            'call_ret': -0.032611,
+            'branch': -0.083325,
+            'call_ret': -0.032615,
             'divide': -0.233214,
-            'load': 0.333976,
-            'multiply': -0.492720,
+            'load': 0.333977,
+            'multiply': -0.492719,
             'shift': 0.198179,
-            'store': 0.312188
+            'store': 0.312186
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

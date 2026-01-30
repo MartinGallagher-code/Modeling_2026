@@ -138,9 +138,9 @@ class HC55516Model(BaseProcessorModel):
         self.corrections = {
             'control': 2.765750,
             'dac': 0.527239,
-            'decode': -1.648181,
+            'decode': -1.648180,
             'filter': 1.183966,
-            'timing': -1.968477
+            'timing': -1.968476
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

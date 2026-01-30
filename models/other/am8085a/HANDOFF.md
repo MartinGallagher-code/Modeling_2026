@@ -26,3 +26,9 @@
 - Part of AMD's extensive Intel second-source portfolio (8080, 8085, 8086, 8088)
 - This second-source agreement was the foundation of AMD's x86 business
 - AMD later produced Am286, Am386, and eventually independent x86 designs
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.32%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

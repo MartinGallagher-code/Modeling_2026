@@ -110,7 +110,13 @@ class Am8085aModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -2.078288,
+            'control': 1.942445,
+            'data_transfer': 4.999998,
+            'memory': -4.170577,
+            'stack': -5.000000
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

@@ -26,3 +26,9 @@
 - Same internal architecture as RP2C02, different frame timing
 - Extended VBlank gives CPU significantly more processing time per frame
 - PAL color encoding differs from NTSC but internal pixel pipeline is identical
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

@@ -44,3 +44,18 @@ This file contains the complete history of all work on this model.
 - Intel 8051 family architecture reference
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer converged in 32 evaluations
+- Corrections: adc: +0.41, alu: +0.42, control: -0.81, data_transfer: +0.15, memory: -0.31, multiply: -0.50
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

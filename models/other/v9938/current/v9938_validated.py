@@ -151,7 +151,14 @@ class V9938Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'bitmap': 1.506341,
+            'command': -4.212571,
+            'palette': 0.079880,
+            'scroll': 3.025802,
+            'sprite': -3.877422,
+            'vram': 0.471215
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

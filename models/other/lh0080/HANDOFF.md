@@ -25,3 +25,9 @@
 - Used in Sharp MZ-80K, MZ-700, MZ-800, X1 personal computers
 - 2.5 MHz initial version, later versions at 4 MHz
 - Sharp had a close relationship with Zilog for second-sourcing
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.01%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

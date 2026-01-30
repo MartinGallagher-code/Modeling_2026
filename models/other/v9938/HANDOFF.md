@@ -28,3 +28,9 @@
 - 32 sprites with 8 per line, 16x16 support
 - Horizontal and vertical hardware scrolling
 - ~60,000 transistors - significantly more complex than TMS9918A
+
+## System Identification (2026-01-29)
+- **Status**: Did not converge
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

@@ -43,10 +43,10 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Model calibrated based on 1802 timing with ~17% improvement",
-    "sysid_loss_before": 2e-06,
+    "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.01,
-    "sysid_converged": false,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
     "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [

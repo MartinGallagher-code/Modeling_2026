@@ -31,3 +31,9 @@
 - Sequential pixel processing pipeline
 - 25 MHz pixel clock for standard video display rates
 - 8-bit color depth per channel
+
+## System Identification (2026-01-29)
+- **Status**: Rolled back
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

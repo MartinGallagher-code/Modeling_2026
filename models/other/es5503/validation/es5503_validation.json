@@ -9,7 +9,10 @@
     "package": "DIP-40"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 8],
+    "cycles_per_instruction_range": [
+      3,
+      8
+    ],
     "typical_cpi": 5.5
   },
   "accuracy": {
@@ -18,7 +21,12 @@
     "cpi_error_percent": 0.02,
     "validation_passed": true,
     "fully_validated": true,
-    "validation_date": "2026-01-29"
+    "validation_date": "2026-01-29",
+    "sysid_loss_before": 0.395301,
+    "sysid_loss_after": 0.395301,
+    "sysid_cpi_error_percent": 0.02,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-29"
   },
   "sources": [
     "Ensoniq ES5503 DOC datasheet",

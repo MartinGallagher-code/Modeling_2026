@@ -8,10 +8,10 @@
   "cpi_error_percent": 0.3,
   "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -1.366202,
-    "cor.control": -1.154786,
-    "cor.data_transfer": 1.824154,
-    "cor.memory": -2.149629,
+    "cor.alu": -1.366201,
+    "cor.control": -1.154785,
+    "cor.data_transfer": 1.824151,
+    "cor.memory": -2.149627,
     "cor.stack": 5.5
   },
   "residuals_before": {

@@ -27,3 +27,9 @@
 - Microcode tasks handle display, disk, and Ethernet
 - TTL custom construction (not single-chip)
 - First computer with GUI, mouse, Ethernet
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 3.69%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

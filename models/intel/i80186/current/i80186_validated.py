@@ -113,9 +113,9 @@ class I80186Model:
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 2.000023,
-            'control': -4.999938,
-            'data_transfer': 1.999934,
+            'alu': 2.000012,
+            'control': -4.999969,
+            'data_transfer': 1.999966,
             'memory': -2.000000
         }
 

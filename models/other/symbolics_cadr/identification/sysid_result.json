@@ -1,0 +1,38 @@
+{
+  "processor": "symbolics_cadr",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 62,
+  "loss_before": 0.129962,
+  "loss_after": 0.024343,
+  "cpi_error_percent": 3.69,
+  "message": "`ftol` termination condition is satisfied.",
+  "corrections": {
+    "cor.car_cdr": -0.592365,
+    "cor.cons": -0.778561,
+    "cor.eval": -1.906034,
+    "cor.gc": -4.633551,
+    "cor.memory": 2.801913,
+    "cor.type_check": 1.887585
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.525,
+    "memory": -0.44,
+    "control": -0.225
+  },
+  "residuals_after": {
+    "typical": 0.2031,
+    "compute": -0.0,
+    "memory": -0.2369,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.car_cdr",
+    "cor.cons",
+    "cor.eval",
+    "cor.gc",
+    "cor.memory",
+    "cor.type_check"
+  ]
+}

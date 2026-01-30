@@ -123,12 +123,12 @@ class F8Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': -1.729651,
-            'call_return': 5.999740,
-            'immediate': -4.999987,
-            'memory_read': 3.411254,
-            'memory_write': -4.998902,
-            'register_ops': 1.565638
+            'branch': -1.729574,
+            'call_return': 5.999918,
+            'immediate': -4.999995,
+            'memory_read': 3.411500,
+            'memory_write': -4.999383,
+            'register_ops': 1.565512
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

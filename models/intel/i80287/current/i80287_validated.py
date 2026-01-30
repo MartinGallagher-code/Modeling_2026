@@ -126,11 +126,11 @@ class I80287Model:
         # Correction terms for system identification (initially zero)
         self.corrections = {
             'fp_add': 42.500000,
-            'fp_div': -58.484048,
-            'fp_mul': -47.650936,
-            'fp_sqrt': 89.999993,
+            'fp_div': -61.625938,
+            'fp_mul': -46.486435,
+            'fp_sqrt': 90.000000,
             'fp_transfer': 10.000000,
-            'fp_trig': 124.999960
+            'fp_trig': 124.999999
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

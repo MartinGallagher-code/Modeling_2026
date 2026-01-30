@@ -43,3 +43,18 @@ This file contains the complete history of all work on this model.
 - MicroVAX 78032 Technical Manual (DEC, 1985)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 6 free correction parameters
+- Optimizer did not converge in 200 evaluations
+- Corrections: alu: +2.94, control: +0.16, decimal: -7.50, float: -6.00, memory: -3.72, string: +5.00
+
+**Final state:**
+- CPI error: 0.44%
+- Validation: PASSED
+
+---

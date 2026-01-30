@@ -174,7 +174,7 @@ class Am9512Model(BaseProcessorModel):
             'fixed_point': 2.348996,
             'fp_add': 3.906037,
             'fp_div': -12.217726,
-            'fp_mul': 9.000000,
+            'fp_mul': 8.999999,
             'fp_sqrt': -13.485099
         }
 

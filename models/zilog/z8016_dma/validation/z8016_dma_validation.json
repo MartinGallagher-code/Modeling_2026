@@ -10,5 +10,12 @@
   "transistors": 10000,
   "data_width_bits": 16,
   "address_width_bits": 16,
-  "validation_date": "2026-01-29"
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "sysid_loss_before": 0.087506,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
+  }
 }

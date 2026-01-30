@@ -2,29 +2,29 @@
   "processor": "lc88",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 8,
+  "iterations": 7,
   "loss_before": 0.00045,
   "loss_after": 0.00045,
   "cpi_error_percent": 0.75,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.694812,
-    "cor.control": 0.230089,
-    "cor.data_transfer": 0.725878,
-    "cor.io": -2.883617,
-    "cor.memory": 0.846913
+    "cor.alu": 0.975443,
+    "cor.control": 0.078544,
+    "cor.data_transfer": 0.180671,
+    "cor.io": -2.644338,
+    "cor.memory": 0.934969
   },
   "residuals_before": {
-    "typical": 0.0295,
-    "compute": 0.0,
-    "memory": -0.0305,
-    "control": 0.0
-  },
-  "residuals_after": {
     "typical": 0.0295,
     "compute": -0.0,
     "memory": -0.0305,
     "control": -0.0
+  },
+  "residuals_after": {
+    "typical": 0.0295,
+    "compute": 0.0,
+    "memory": -0.0305,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

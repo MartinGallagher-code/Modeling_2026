@@ -141,8 +141,8 @@ class M6801Model(BaseProcessorModel):
             'call_return': -0.326917,
             'control': 1.178052,
             'data_transfer': -0.572148,
-            'memory': 0.236868,
-            'stack': -0.177275
+            'memory': 0.236869,
+            'stack': -0.177276
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

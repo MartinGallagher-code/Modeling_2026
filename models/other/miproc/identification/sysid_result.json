@@ -2,11 +2,11 @@
   "processor": "miproc",
   "date": "2026-01-29",
   "converged": true,
-  "iterations": 8,
+  "iterations": 2,
   "loss_before": 0.002815,
   "loss_after": 0.002815,
   "cpi_error_percent": 1.5,
-  "message": "`gtol` termination condition is satisfied.",
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": 2.126798,
     "cor.control": 1.023128,

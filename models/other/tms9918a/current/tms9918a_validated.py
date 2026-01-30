@@ -122,7 +122,13 @@ class Tms9918aModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'collision': -2.975449,
+            'control': 3.584068,
+            'sprite_engine': -1.221343,
+            'tile_render': -0.110522,
+            'vram_access': 2.667836
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

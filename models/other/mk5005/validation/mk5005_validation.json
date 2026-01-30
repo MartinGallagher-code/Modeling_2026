@@ -9,7 +9,10 @@
     "package": "28-pin DIP"
   },
   "timing": {
-    "cycles_per_instruction_range": [6, 12],
+    "cycles_per_instruction_range": [
+      6,
+      12
+    ],
     "typical_cpi": 9.0
   },
   "validated_performance": {
@@ -38,7 +41,12 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "notes": "Weighted instruction mix calibrated for basic calculator workload"
+    "notes": "Weighted instruction mix calibrated for basic calculator workload",
+    "sysid_loss_before": 0.29875,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-29"
   },
   "per_instruction_timing_tests": [
     {

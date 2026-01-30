@@ -143,7 +143,13 @@ class Tms0800Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.794319,
+            'bcd': -1.613335,
+            'control': 1.989945,
+            'display': -3.211148,
+            'shift': 2.989945
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using weighted instruction mix model"""

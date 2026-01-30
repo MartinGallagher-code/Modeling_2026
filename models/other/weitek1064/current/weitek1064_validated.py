@@ -108,10 +108,10 @@ class Weitek1064Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'data_transfer': 2.390271,
-            'fp_add': -0.194185,
-            'fp_div': -2.395959,
-            'fp_mul': 2.435596
+            'data_transfer': 2.390274,
+            'fp_add': -0.194182,
+            'fp_div': -2.395957,
+            'fp_mul': 2.435490
         }
 
     def analyze(self, workload='typical'):

@@ -139,9 +139,9 @@ class M68010Model(BaseProcessorModel):
             'alu_reg': -2.671276,
             'control': 1.723333,
             'data_transfer': 2.543238,
-            'divide': -4.804074,
+            'divide': -4.804072,
             'memory': -0.986308,
-            'multiply': -2.418082
+            'multiply': -2.418081
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

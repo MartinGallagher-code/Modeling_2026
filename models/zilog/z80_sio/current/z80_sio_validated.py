@@ -126,7 +126,13 @@ class Z80SIOModel:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'char_process': -1.299719,
+            'control': -0.921619,
+            'interrupt': 4.999376,
+            'register_io': -3.738368,
+            'sync': 2.622081
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

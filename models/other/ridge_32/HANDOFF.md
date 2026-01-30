@@ -26,3 +26,9 @@
 - Floating-point operations are expensive (8 cycles)
 - I/O operations modeled at 6 cycles
 - 10 MHz clock, ~50,000 transistors
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

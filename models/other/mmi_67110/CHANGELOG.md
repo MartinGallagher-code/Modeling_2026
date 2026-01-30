@@ -44,3 +44,18 @@ This file contains the complete history of all work on this model.
 - Bit-slice processor design references
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 33 evaluations
+- Corrections: branch: -0.70, control: -0.11, counter: -0.52, sequence: +1.49, subroutine: -0.12
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

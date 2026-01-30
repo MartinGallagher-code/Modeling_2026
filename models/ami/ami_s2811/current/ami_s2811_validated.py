@@ -147,7 +147,7 @@ class AmiS2811Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 4.111916,
+            'alu': 4.111915,
             'control': -1.296823,
             'memory': 0.309178,
             'multiply': -3.507364

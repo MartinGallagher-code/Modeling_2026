@@ -24,3 +24,9 @@
 - 80-bit extended precision adds cycles vs 32/64-bit operations
 - Stack-based architecture (ST(0)-ST(7) register file)
 - Coprocessor protocol adds synchronization overhead with host CPU
+
+## System Identification (2026-01-29)
+- **Status**: Rolled back
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

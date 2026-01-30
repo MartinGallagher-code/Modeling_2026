@@ -44,3 +44,18 @@ This file contains the complete history of all work on this model.
 - MAME emulator source code references
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 7 evaluations
+- Corrections: control: +0.27, filter: -1.93, mac: +0.07, memory: -1.33, output: +2.07
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

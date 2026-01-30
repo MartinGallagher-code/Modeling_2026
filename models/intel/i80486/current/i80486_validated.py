@@ -127,7 +127,7 @@ class I80486Model:
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.616988,
+            'alu': 0.616987,
             'control': -2.219677,
             'data_transfer': 0.896555,
             'divide': -19.999973,

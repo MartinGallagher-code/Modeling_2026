@@ -127,7 +127,13 @@ class MuP21Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 0.300000,
+            'control': 0.300000,
+            'io': -1.700000,
+            'memory': -0.700000,
+            'stack_op': 0.300000
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

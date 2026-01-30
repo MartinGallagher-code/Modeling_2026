@@ -43,3 +43,18 @@ This file contains the complete history of all work on this model.
 - NES hardware reference (nesdev.org)
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 34 evaluations
+- Corrections: background: +2.28, oam: -1.19, pixel_output: -0.52, sprite_eval: -1.62, vram_fetch: -1.09
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

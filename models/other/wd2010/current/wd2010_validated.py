@@ -127,7 +127,13 @@ class WD2010Model:
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'command': 0.876274,
+            'data_transfer': 3.246762,
+            'error_check': -1.317994,
+            'format': -1.105680,
+            'seek': -3.077017
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

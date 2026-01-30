@@ -116,7 +116,13 @@ class Rp2c07Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'background': 2.280622,
+            'oam': -1.194211,
+            'pixel_output': -0.518038,
+            'sprite_eval': -1.618708,
+            'vram_fetch': -1.093541
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

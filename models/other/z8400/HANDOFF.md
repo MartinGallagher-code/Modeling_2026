@@ -26,3 +26,9 @@
 - Two register banks for fast context switching
 - SGS-Thomson later became STMicroelectronics
 - Widely used in European consumer electronics and computing
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

@@ -27,3 +27,9 @@
 - 2KB internal RAM, on-chip ROM options
 - Became the basis for Infineon C166/C167 family
 - Widely deployed in European automotive ECUs (engine management, ABS, transmission)
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 0.00%
+- **Free Parameters**: 6
+- **Corrections**: See `identification/sysid_result.json`

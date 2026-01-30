@@ -1,0 +1,38 @@
+{
+  "processor": "i8087_2",
+  "date": "2026-01-29",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 83.495643,
+  "loss_after": 83.495643,
+  "cpi_error_percent": 0.0,
+  "message": "Rolled back: optimization worsened typical-workload error",
+  "corrections": {
+    "cor.fp_add": 0.0,
+    "cor.fp_mul": 0.0,
+    "cor.fp_div": 0.0,
+    "cor.fp_sqrt": 0.0,
+    "cor.fld_fst": 0.0,
+    "cor.fxch": 0.0
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": -0.16,
+    "memory": 14.4403,
+    "control": 11.1997
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.16,
+    "memory": 14.4403,
+    "control": 11.1997
+  },
+  "free_parameters": [
+    "cor.fld_fst",
+    "cor.fp_add",
+    "cor.fp_div",
+    "cor.fp_mul",
+    "cor.fp_sqrt",
+    "cor.fxch"
+  ]
+}

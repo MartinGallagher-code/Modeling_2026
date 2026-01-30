@@ -106,10 +106,10 @@ class Ay38900Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'background': 0.011494,
-            'collision': 0.006886,
-            'sprite_engine': 0.011494,
-            'sync': -0.000077
+            'background': 0.015592,
+            'collision': -0.008400,
+            'sprite_engine': 0.015592,
+            'sync': 0.006606
         }
 
     def analyze(self, workload='typical'):

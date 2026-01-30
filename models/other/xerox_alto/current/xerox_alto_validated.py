@@ -162,7 +162,14 @@ class XeroxAltoModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -0.627786,
+            'control': -1.138760,
+            'disk': -0.414510,
+            'display': 0.911645,
+            'ethernet': 1.513624,
+            'memory': 2.548590
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

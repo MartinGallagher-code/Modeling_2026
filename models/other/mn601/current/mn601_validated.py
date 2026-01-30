@@ -136,7 +136,7 @@ class Mn601Model(BaseProcessorModel):
         self.corrections = {
             'alu_ops': 0.872034,
             'io': -1.205959,
-            'jump': 0.896514,
+            'jump': 0.896513,
             'memory_read': -0.372233,
             'memory_write': -0.875174,
             'shift': 0.666506,

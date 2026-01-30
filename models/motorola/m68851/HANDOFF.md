@@ -25,3 +25,9 @@
 - 190,000 transistors - one of the most complex MMUs of its era
 - Supports multiple page sizes
 - Designed specifically for MC68020 coprocessor interface
+
+## System Identification (2026-01-29)
+- **Status**: Converged
+- **CPI Error**: 4.44%
+- **Free Parameters**: 5
+- **Corrections**: See `identification/sysid_result.json`

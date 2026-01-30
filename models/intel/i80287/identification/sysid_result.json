@@ -3,31 +3,31 @@
   "date": "2026-01-29",
   "converged": false,
   "iterations": 200,
-  "loss_before": 68.166414,
-  "loss_after": 68.157308,
-  "cpi_error_percent": 0.09,
+  "loss_before": 68.157308,
+  "loss_after": 68.15242,
+  "cpi_error_percent": 0.07,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
     "cor.fp_add": 42.5,
-    "cor.fp_div": -58.484048,
-    "cor.fp_mul": -47.650936,
-    "cor.fp_sqrt": 89.999993,
+    "cor.fp_div": -61.625938,
+    "cor.fp_mul": -46.486435,
+    "cor.fp_sqrt": 90.0,
     "cor.fp_transfer": 10.0,
-    "cor.fp_trig": 124.99996
+    "cor.fp_trig": 124.999999
   },
   "residuals_before": {
-    "typical": 0.111,
-    "compute": 8.0197,
-    "memory": -16.6277,
-    "control": 0.111,
-    "mixed": 0.111
-  },
-  "residuals_after": {
     "typical": 0.0889,
     "compute": 8.0813,
     "memory": -16.5968,
     "control": 0.0889,
     "mixed": 0.0889
+  },
+  "residuals_after": {
+    "typical": 0.0658,
+    "compute": 8.1165,
+    "memory": -16.5793,
+    "control": 0.0658,
+    "mixed": 0.0658
   },
   "free_parameters": [
     "cor.fp_add",

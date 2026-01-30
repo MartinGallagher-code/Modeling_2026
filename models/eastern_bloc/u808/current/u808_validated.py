@@ -151,7 +151,7 @@ class U808Model(BaseProcessorModel):
             'control': -0.536578,
             'data_transfer': 2.341477,
             'io': -0.341466,
-            'memory': 1.926813
+            'memory': 1.926812
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

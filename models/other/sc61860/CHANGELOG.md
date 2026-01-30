@@ -58,3 +58,18 @@ This file contains the complete history of all work on this model.
 - Pocket Computer Museum archives
 
 ---
+
+## 2026-01-29 - System identification: correction terms applied
+
+**Session goal:** Fit correction terms via scipy.optimize.least_squares
+
+**Changes made:**
+- Ran system identification with 5 free correction parameters
+- Optimizer converged in 33 evaluations
+- Corrections: alu: +2.03, control: -0.24, data_transfer: +0.42, display: -2.24, memory: -0.73
+
+**Final state:**
+- CPI error: 0.00%
+- Validation: PASSED
+
+---

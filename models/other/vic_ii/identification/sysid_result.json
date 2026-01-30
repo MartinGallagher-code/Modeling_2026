@@ -1,0 +1,38 @@
+{
+  "processor": "vic_ii",
+  "date": "2026-01-29",
+  "converged": true,
+  "iterations": 26,
+  "loss_before": 0.080225,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.char_gen": 0.316739,
+    "cor.sprite": -2.746855,
+    "cor.scroll": 1.117507,
+    "cor.raster": 2.189551,
+    "cor.dma": -1.164866,
+    "cor.color": 1.097961
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.4,
+    "memory": 0.03,
+    "control": -0.4
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "free_parameters": [
+    "cor.char_gen",
+    "cor.color",
+    "cor.dma",
+    "cor.raster",
+    "cor.scroll",
+    "cor.sprite"
+  ]
+}
