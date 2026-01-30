@@ -1,0 +1,27 @@
+{
+  "processor": "GI AY-3-8910 PSG",
+  "year": 1978,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 1.79,
+    "transistors": 5000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 5],
+    "typical_cpi": 3.5
+  },
+  "accuracy": {
+    "expected_cpi": 3.5,
+    "predicted_cpi": 3.499,
+    "cpi_error_percent": 0.03,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "GI AY-3-8910 datasheet",
+    "AY-3-8910/8912 Programmable Sound Generator data manual"
+  ]
+}

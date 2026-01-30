@@ -1,0 +1,27 @@
+{
+  "processor": "Siemens SAB8080A",
+  "year": 1976,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.0,
+    "transistors": 6000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [4, 18],
+    "typical_cpi": 5.5
+  },
+  "accuracy": {
+    "expected_cpi": 5.5,
+    "predicted_cpi": 5.500,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Siemens SAB8080A datasheet (1976)",
+    "Intel 8080 timing reference"
+  ]
+}

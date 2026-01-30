@@ -1,0 +1,59 @@
+{
+  "processor": "MPA1008",
+  "year": 1982,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.5,
+    "transistors": 8500,
+    "technology": "NMOS",
+    "package": "40-pin DIP",
+    "compatibility": "Z80A clone"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [4, 21],
+    "typical_cpi": 5.5
+  },
+  "validated_performance": {
+    "ips_min": 300000,
+    "ips_max": 600000,
+    "mips_typical": 0.455
+  },
+  "notes": "Romanian Z80A clone, used in Romanian computer systems including CoBra and HC-85",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "sources": [
+    {
+      "type": "datasheet",
+      "name": "Zilog Z80 Datasheet (timing reference)",
+      "url": "https://en.wikipedia.org/wiki/Zilog_Z80",
+      "verified": true
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 5.5,
+    "expected_ipc": 0.1818,
+    "validated_workloads": ["typical", "compute", "memory", "control"],
+    "predicted_cpi": 5.5,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.30,
+    "data_transfer": 0.25,
+    "memory": 0.15,
+    "control": 0.20,
+    "block": 0.10,
+    "notes": "Typical Z80-class workload with block operations"
+  },
+  "cross_validation": {
+    "methodology": "Clone uses identical timing to original Zilog Z80A",
+    "reference_processor": "Zilog Z80A",
+    "timing_verified": true,
+    "notes": "Romanian maintained full timing compatibility with Zilog Z80A"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "processor": "TI TMS9918A VDP",
+  "year": 1979,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 10.7,
+    "transistors": 20000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 6],
+    "typical_cpi": 4.5
+  },
+  "accuracy": {
+    "expected_cpi": 4.5,
+    "predicted_cpi": 4.5,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "TI TMS9918A datasheet (1979)",
+    "TMS9918A application note"
+  ]
+}

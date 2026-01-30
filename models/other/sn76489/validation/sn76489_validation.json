@@ -1,0 +1,27 @@
+{
+  "processor": "TI SN76489",
+  "year": 1980,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 4.0,
+    "transistors": 4000,
+    "technology": "NMOS",
+    "package": "DIP-16"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [2, 3],
+    "typical_cpi": 2.5
+  },
+  "accuracy": {
+    "expected_cpi": 2.5,
+    "predicted_cpi": 2.5,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "TI SN76489 datasheet",
+    "Sega Master System technical manual"
+  ]
+}

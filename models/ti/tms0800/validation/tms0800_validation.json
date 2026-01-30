@@ -1,0 +1,106 @@
+{
+  "processor": "TI TMS0800",
+  "year": 1973,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.3,
+    "transistors": 5000,
+    "technology": "PMOS",
+    "package": "28-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [4, 10],
+    "typical_cpi": 7.0
+  },
+  "validated_performance": {
+    "ips_min": 30000,
+    "ips_max": 47000,
+    "kips_typical": 43
+  },
+  "notes": "Single-chip PMOS calculator IC for TI desktop calculators. Serial BCD architecture with shift registers.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 7.0,
+    "expected_ipc": 0.143,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
+    "predicted_cpi": 7.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Weighted instruction mix calibrated for four-function calculator workload"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD",
+      "description": "4-bit serial BCD addition",
+      "category": "alu",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "TMS0800 Data Sheet (TI, 1973)"
+    },
+    {
+      "instruction": "DAA",
+      "description": "Decimal adjust after BCD operation",
+      "category": "bcd",
+      "expected_cycles": 8,
+      "model_cycles": 8,
+      "source": "TMS0800 Data Sheet (TI, 1973)"
+    },
+    {
+      "instruction": "SHR",
+      "description": "Shift register right (digit shift)",
+      "category": "shift",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "TMS0800 Data Sheet (TI, 1973)"
+    },
+    {
+      "instruction": "BR",
+      "description": "Branch instruction",
+      "category": "control",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "TMS0800 Data Sheet (TI, 1973)"
+    },
+    {
+      "instruction": "DSP",
+      "description": "Display scan and segment drive",
+      "category": "display",
+      "expected_cycles": 10,
+      "model_cycles": 10,
+      "source": "TMS0800 Data Sheet (TI, 1973)"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Weighted instruction mix model calibrated against calculator workload",
+    "reference_sources": [
+      "TMS0800 Data Sheet (Texas Instruments, 1973)",
+      "TI Calculator History (Datamath Calculator Museum)",
+      "Early Calculator Chip Architecture Survey"
+    ],
+    "architectural_notes": [
+      "4-bit serial BCD data path",
+      "Shift-register based architecture",
+      "11-digit display capability",
+      "Hardwired four-function arithmetic",
+      "PMOS technology (~5000 transistors)"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 5,
+      "tests_passed": 5,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  }
+}

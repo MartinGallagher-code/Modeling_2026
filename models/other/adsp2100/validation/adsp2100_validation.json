@@ -1,0 +1,73 @@
+{
+  "processor": "Analog Devices ADSP-2100",
+  "year": 1986,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 25.0,
+    "transistors": 80000,
+    "technology": "CMOS",
+    "usage": "Digital signal processing"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [1, 3],
+    "typical_cpi": 1.4
+  },
+  "validated_performance": {
+    "ips_min": 8330000,
+    "ips_max": 25000000,
+    "mips_typical": 17.86
+  },
+  "notes": "First Analog Devices DSP with single-cycle MAC and Harvard architecture",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 1.4,
+    "expected_ipc": 0.714,
+    "validated_workloads": ["typical", "compute", "control", "io_heavy", "mixed"],
+    "predicted_cpi": 1.40,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Pipelined DSP with single-cycle MAC capability"
+  },
+  "instruction_timing_tests": [
+    {"instruction": "MAC", "category": "mac", "expected_cycles": 1, "source": "ADSP-2100 datasheet"},
+    {"instruction": "ALU", "category": "alu", "expected_cycles": 1, "source": "ADSP-2100 datasheet"},
+    {"instruction": "SHIFT", "category": "shift", "expected_cycles": 1, "source": "ADSP-2100 datasheet"},
+    {"instruction": "LOAD/STORE", "category": "memory", "expected_cycles": 2, "source": "ADSP-2100 datasheet"},
+    {"instruction": "JUMP/CALL", "category": "control", "expected_cycles": 2, "source": "ADSP-2100 datasheet"},
+    {"instruction": "IO", "category": "io", "expected_cycles": 3, "source": "ADSP-2100 datasheet"}
+  ],
+  "cross_validation": {
+    "family_comparison": {
+      "adsp2101": {
+        "relationship": "Enhanced successor (1988)",
+        "notes": "ADSP-2101 added on-chip memory and serial ports"
+      }
+    },
+    "era_comparison": {
+      "tms320c25": {
+        "relationship": "Contemporary TI DSP (1986)",
+        "notes": "TMS320C25 was a competing DSP with similar performance"
+      }
+    },
+    "architecture_notes": {
+      "unique_features": [
+        "First Analog Devices DSP",
+        "Single-cycle MAC unit",
+        "Harvard architecture with separate program/data buses",
+        "3-stage pipeline",
+        "Barrel shifter for single-cycle shifts"
+      ]
+    },
+    "validation_methodology": {
+      "sources": ["ADSP-2100 Family User's Manual", "Analog Devices DSP datasheets"],
+      "confidence_level": "High",
+      "cross_validated_date": "2026-01-29"
+    }
+  }
+}

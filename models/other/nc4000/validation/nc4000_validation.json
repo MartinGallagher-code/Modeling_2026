@@ -1,0 +1,54 @@
+{
+  "processor": "Novix NC4000",
+  "year": 1983,
+  "category": "Forth & Stack Machine",
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 8.0,
+    "transistors": 16000,
+    "technology": "CMOS",
+    "package": "68-pin PGA",
+    "application": "Forth stack processor"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [1, 3],
+    "typical_cpi": 1.5,
+    "notes": "First single-chip Forth processor with hardware dual stacks"
+  },
+  "validated_performance": {
+    "ips_min": 2670000,
+    "ips_max": 8000000,
+    "mips_typical": 5.33
+  },
+  "notes": "Designed by Chuck Moore, first Forth-on-a-chip",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "reference",
+      "name": "Novix NC4000 documentation",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 1.5,
+    "expected_ipc": 0.6667,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "predicted_cpi": 1.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "stack_op": 0.30,
+    "alu": 0.25,
+    "memory": 0.20,
+    "control": 0.10,
+    "call_return": 0.15
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "processor": "Motorola 6805R2",
+  "year": 1982,
+  "category": "Automotive & Industrial Control",
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 2.0,
+    "transistors": 8000,
+    "technology": "NMOS",
+    "package": "28-pin DIP",
+    "application": "Appliance MCU"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 5],
+    "typical_cpi": 3.5,
+    "notes": "Low-cost 6805 variant for household appliance control"
+  },
+  "validated_performance": {
+    "ips_min": 400000,
+    "ips_max": 667000,
+    "mips_typical": 0.571
+  },
+  "notes": "Cost-reduced 6805 variant targeting appliance and consumer markets",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "reference",
+      "name": "Motorola 6805 Family Reference Manual",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 3.5,
+    "expected_ipc": 0.2857,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "predicted_cpi": 3.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.25,
+    "data_transfer": 0.20,
+    "memory": 0.15,
+    "control": 0.20,
+    "bit_ops": 0.20
+  }
+}

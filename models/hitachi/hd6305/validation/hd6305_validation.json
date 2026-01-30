@@ -1,0 +1,54 @@
+{
+  "processor": "Hitachi HD6305",
+  "year": 1983,
+  "category": "Automotive & Industrial Control",
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 4.0,
+    "transistors": 10000,
+    "technology": "CMOS",
+    "package": "40-pin DIP",
+    "application": "6805-compatible embedded MCU"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 5],
+    "typical_cpi": 3.5,
+    "notes": "Hitachi second-source of Motorola 6805 with enhanced timers"
+  },
+  "validated_performance": {
+    "ips_min": 800000,
+    "ips_max": 1333000,
+    "mips_typical": 1.14
+  },
+  "notes": "Hitachi's 6805-compatible MCU with enhanced timer/counter peripherals",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "reference",
+      "name": "Hitachi HD6305 datasheet",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 3.5,
+    "expected_ipc": 0.2857,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "predicted_cpi": 3.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.30,
+    "data_transfer": 0.30,
+    "memory": 0.10,
+    "control": 0.15,
+    "timer": 0.15
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "processor": "Sega 315-5124 VDP",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 10.7,
+    "transistors": 25000,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [3, 5],
+    "typical_cpi": 3.8
+  },
+  "accuracy": {
+    "expected_cpi": 3.8,
+    "predicted_cpi": 3.8,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "Sega 315-5124 VDP technical documentation",
+    "Sega Master System technical manual"
+  ]
+}

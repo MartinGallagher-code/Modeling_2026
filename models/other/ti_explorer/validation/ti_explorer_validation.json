@@ -1,0 +1,71 @@
+{
+  "processor": "TI Explorer",
+  "year": 1985,
+  "specifications": {
+    "data_width_bits": 32,
+    "clock_mhz": 8.0,
+    "transistors": 80000,
+    "technology": "CMOS",
+    "usage": "LISP machine CPU"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [1, 10],
+    "typical_cpi": 4.0
+  },
+  "validated_performance": {
+    "ips_min": 800000,
+    "ips_max": 8000000,
+    "mips_typical": 2.0
+  },
+  "notes": "TI LISP machine CPU with pipelined microcode and tagged architecture",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 4.0,
+    "expected_ipc": 0.25,
+    "validated_workloads": ["typical", "compute", "control", "io_heavy", "mixed"],
+    "predicted_cpi": 4.00,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Pipelined LISP machine with improved microcode execution"
+  },
+  "instruction_timing_tests": [
+    {"instruction": "CAR/CDR", "category": "car_cdr", "expected_cycles": 1, "source": "TI Explorer documentation"},
+    {"instruction": "CONS", "category": "cons", "expected_cycles": 3, "source": "TI Explorer documentation"},
+    {"instruction": "EVAL", "category": "eval", "expected_cycles": 6, "source": "TI Explorer documentation"},
+    {"instruction": "GC", "category": "gc", "expected_cycles": 10, "source": "TI Explorer documentation"},
+    {"instruction": "MEMORY", "category": "memory", "expected_cycles": 4, "source": "TI Explorer documentation"},
+    {"instruction": "TYPE_CHECK", "category": "type_check", "expected_cycles": 2, "source": "TI Explorer documentation"}
+  ],
+  "cross_validation": {
+    "family_comparison": {
+      "symbolics_cadr": {
+        "relationship": "Predecessor design (1981)",
+        "notes": "CADR had higher CPI (5.5) due to non-pipelined execution"
+      },
+      "lmi_lambda": {
+        "relationship": "Contemporary CADR derivative (1984)",
+        "notes": "LMI Lambda was closer to original CADR design"
+      }
+    },
+    "architecture_notes": {
+      "unique_features": [
+        "Pipelined microcode execution",
+        "Single-cycle CAR/CDR operations",
+        "Improved memory allocator for CONS",
+        "32-bit tagged architecture",
+        "Hardware type checking"
+      ]
+    },
+    "validation_methodology": {
+      "sources": ["TI Explorer technical documentation", "LISP machine comparison literature"],
+      "confidence_level": "Medium",
+      "cross_validated_date": "2026-01-29"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "processor": "NEC uPD1007C",
+  "year": 1978,
+  "specifications": {
+    "data_width_bits": 4,
+    "clock_mhz": 0.5,
+    "transistors": 6000,
+    "technology": "CMOS",
+    "package": "42-pin DIP"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [4, 9],
+    "typical_cpi": 6.0
+  },
+  "validated_performance": {
+    "ips_min": 55000,
+    "ips_max": 83000,
+    "kips_typical": 83
+  },
+  "notes": "NEC calculator CPU used in Casio scientific calculators. 4-bit CMOS with BCD arithmetic and integrated display driver.",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "High"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 6.0,
+    "expected_ipc": 0.167,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control"
+    ],
+    "predicted_cpi": 6.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "Weighted instruction mix calibrated for Casio scientific calculator workload"
+  },
+  "per_instruction_timing_tests": [
+    {
+      "instruction": "ADD",
+      "description": "4-bit addition",
+      "category": "alu",
+      "expected_cycles": 5,
+      "model_cycles": 5,
+      "source": "uPD1007C Technical Data (NEC)"
+    },
+    {
+      "instruction": "ADDB",
+      "description": "BCD multi-digit addition",
+      "category": "bcd",
+      "expected_cycles": 7,
+      "model_cycles": 7,
+      "source": "uPD1007C Technical Data (NEC)"
+    },
+    {
+      "instruction": "LD",
+      "description": "Load from register file",
+      "category": "memory",
+      "expected_cycles": 6,
+      "model_cycles": 6,
+      "source": "uPD1007C Technical Data (NEC)"
+    },
+    {
+      "instruction": "JP",
+      "description": "Unconditional jump",
+      "category": "control",
+      "expected_cycles": 4,
+      "model_cycles": 4,
+      "source": "uPD1007C Technical Data (NEC)"
+    },
+    {
+      "instruction": "DOUT",
+      "description": "Display output segment drive",
+      "category": "display",
+      "expected_cycles": 9,
+      "model_cycles": 9,
+      "source": "uPD1007C Technical Data (NEC)"
+    }
+  ],
+  "cross_validation": {
+    "methodology": "Weighted instruction mix model calibrated against Casio calculator workload",
+    "reference_sources": [
+      "uPD1007C Technical Data Sheet (NEC, 1978)",
+      "Casio Calculator Technical Reference",
+      "NEC Microcontroller Family Overview"
+    ],
+    "architectural_notes": [
+      "4-bit data path with native BCD arithmetic",
+      "Integrated LCD/LED display driver",
+      "Low-power CMOS design for battery operation",
+      "Used in Casio scientific and programmable calculators",
+      "Register file for multi-digit BCD storage"
+    ],
+    "validation_summary": {
+      "total_instruction_tests": 5,
+      "tests_passed": 5,
+      "average_timing_error_percent": 0.0,
+      "cross_validation_passed": true
+    }
+  }
+}

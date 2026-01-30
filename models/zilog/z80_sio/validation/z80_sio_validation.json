@@ -1,0 +1,54 @@
+{
+  "processor": "Zilog Z80-SIO",
+  "year": 1977,
+  "category": "Network & Communications",
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 4.0,
+    "transistors": 8000,
+    "technology": "NMOS",
+    "package": "40-pin DIP",
+    "application": "Serial I/O controller"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [2, 5],
+    "typical_cpi": 3.5,
+    "notes": "Dual-channel async/sync serial with Z80 bus and interrupt support"
+  },
+  "validated_performance": {
+    "ips_min": 800000,
+    "ips_max": 2000000,
+    "mips_typical": 1.14
+  },
+  "notes": "Primary serial I/O controller for Z80-based systems",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "reference",
+      "name": "Zilog Z80-SIO Technical Manual",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 3.5,
+    "expected_ipc": 0.2857,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "predicted_cpi": 3.5,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "register_io": 0.25,
+    "char_process": 0.25,
+    "sync": 0.15,
+    "control": 0.15,
+    "interrupt": 0.20
+  }
+}

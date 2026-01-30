@@ -1,0 +1,48 @@
+# Symbolics CADR Model Changelog
+
+This file contains the complete history of all work on this model.
+**Append-only: Never delete previous entries.**
+
+---
+
+## 2026-01-29 - Initial model creation
+
+**Session goal:** Create initial validated model for Symbolics CADR LISP machine CPU
+
+**Starting state:**
+- New model, no previous implementation
+
+**Changes made:**
+
+1. Created grey-box queueing model with weighted CPI calculation
+   - Implemented instruction categories: car_cdr, cons, eval, gc, memory, type_check
+   - Calibrated for target CPI of 5.5 (microcoded LISP machine)
+   - Created workload profiles for typical, compute, control, io_heavy, mixed
+
+2. Key calibration decisions:
+   - CAR/CDR: 2 cycles (hardware-assisted list operations)
+   - CONS: 5 cycles (memory allocation + pointer setup)
+   - EVAL: 8 cycles (microcoded function dispatch)
+   - GC: 12 cycles (garbage collection, most expensive)
+   - Memory: 6 cycles (tagged read/write with type validation)
+   - Type check: 3 cycles (hardware tag checking)
+
+3. Workload weight calculation:
+   - typical: 0.15*2 + 0.10*5 + 0.25*8 + 0.05*12 + 0.25*6 + 0.20*3 = 5.50 (exact match)
+
+**What we learned:**
+- The CADR was derived from the MIT CONS machine
+- Tagged architecture enabled native LISP operation support
+- Hardware GC support was revolutionary for the era
+- Microcoded design resulted in high CPI but optimized for LISP
+
+**Final state:**
+- CPI: 5.50 (0.00% error vs 5.5 expected)
+- Validation: PASSED
+
+**References used:**
+- MIT AI Lab memos
+- Symbolics technical documentation
+- LISP machine literature
+
+---

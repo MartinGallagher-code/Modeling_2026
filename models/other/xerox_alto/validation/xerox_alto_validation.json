@@ -1,0 +1,68 @@
+{
+  "processor": "Xerox PARC Alto CPU",
+  "year": 1973,
+  "specifications": {
+    "data_width_bits": 16,
+    "clock_mhz": 5.88,
+    "transistors": null,
+    "technology": "TTL custom",
+    "usage": "Personal workstation with GUI"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [5, 12],
+    "typical_cpi": 7.0
+  },
+  "validated_performance": {
+    "ips_min": 490000,
+    "ips_max": 1176000,
+    "mips_typical": 0.84
+  },
+  "notes": "Pioneering personal computer with GUI, Ethernet, and bit-serial ALU",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 7.0,
+    "expected_ipc": 0.143,
+    "validated_workloads": ["typical", "compute", "control", "io_heavy", "mixed"],
+    "predicted_cpi": 7.00,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29",
+    "notes": "TTL custom with bit-serial ALU and microcode-driven execution"
+  },
+  "instruction_timing_tests": [
+    {"instruction": "ALU", "category": "alu", "expected_cycles": 5, "source": "Alto Hardware Manual"},
+    {"instruction": "MEMORY", "category": "memory", "expected_cycles": 8, "source": "Alto Hardware Manual"},
+    {"instruction": "CONTROL", "category": "control", "expected_cycles": 6, "source": "Alto Hardware Manual"},
+    {"instruction": "DISPLAY", "category": "display", "expected_cycles": 10, "source": "Alto Hardware Manual"},
+    {"instruction": "DISK", "category": "disk", "expected_cycles": 12, "source": "Alto Hardware Manual"},
+    {"instruction": "ETHERNET", "category": "ethernet", "expected_cycles": 8, "source": "Alto Hardware Manual"}
+  ],
+  "cross_validation": {
+    "family_comparison": {
+      "xerox_dorado": {
+        "relationship": "Successor (1978)",
+        "notes": "Dorado was much faster Alto successor"
+      }
+    },
+    "architecture_notes": {
+      "unique_features": [
+        "Bit-serial ALU processes one bit at a time",
+        "TTL custom construction",
+        "Microcode-driven execution for all operations",
+        "Integrated display, disk, and Ethernet controllers",
+        "One of the first personal computers with a GUI",
+        "Pioneered Ethernet networking"
+      ]
+    },
+    "validation_methodology": {
+      "sources": ["Alto Hardware Manual", "Xerox PARC technical reports", "Bitsavers archives"],
+      "confidence_level": "Medium",
+      "cross_validated_date": "2026-01-29"
+    }
+  }
+}

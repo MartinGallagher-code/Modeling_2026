@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""
+Harris RTX32P Grey-Box Queueing Model
+=======================================
+
+Architecture: 32-bit Forth Engine (1985)
+Hardware Forth processor with dual stacks.
+
+Features:
+  - 32-bit data bus
+  - 8 MHz clock
+  - ~40,000 transistors (CMOS)
+  - Pipelined architecture
+  - Hardware data and return stacks
+  - Most Forth primitives execute in 1 cycle
+  - Subroutine threading in hardware
+
+Target CPI: 1.5
+"""
+
+from dataclasses import dataclass
+from typing import Dict, Any
+
+
+@dataclass
+class InstructionCategory:
+    name: str
+    base_cycles: float
+    memory_cycles: float = 0
+    description: str = ""
+    @property
+    def total_cycles(self): return self.base_cycles + self.memory_cycles
+
+
+@dataclass
+class WorkloadProfile:
+    name: str
+    category_weights: Dict[str, float]
+    description: str = ""
+
+
+@dataclass
+class AnalysisResult:
+    processor: str
+    workload: str
+    ipc: float
+    cpi: float
+    ips: float
+    bottleneck: str
+    utilizations: Dict[str, float]
+
+    @classmethod
+    def from_cpi(cls, processor, workload, cpi, clock_mhz, bottleneck, utilizations):
+        ipc = 1.0 / cpi
+        ips = clock_mhz * 1e6 * ipc
+        return cls(processor, workload, ipc, cpi, ips, bottleneck, utilizations)
+
+
+class RTX32PModel:
+    """
+    Harris RTX32P Grey-Box Queueing Model
+
+    32-bit Forth engine (1985)
+    - 32-bit pipelined architecture
+    - 8 MHz clock
+    - Hardware data and return stacks
+    - Most primitives in 1 cycle (pipelined)
+    - Subroutine threading in hardware
+    """
+
+    name = "Harris RTX32P"
+    manufacturer = "Harris"
+    year = 1985
+    clock_mhz = 8.0
+    transistor_count = 40000
+    data_width = 32
+    address_width = 32
+
+    def __init__(self):
+        self.instruction_categories = {
+            'stack_op': InstructionCategory('stack_op', 1.0, 0, "Stack push/pop/dup/swap - 1 cycle (pipelined)"),
+            'alu': InstructionCategory('alu', 1.0, 0, "ALU operations on TOS - 1 cycle (pipelined)"),
+            'memory': InstructionCategory('memory', 3.0, 0, "Memory fetch/store - 3 cycles"),
+            'control': InstructionCategory('control', 2.0, 0, "Branch/loop operations - 2 cycles"),
+            'call_return': InstructionCategory('call_return', 2.0, 0, "Subroutine call/return - 2 cycles"),
+        }
+
+        # Typical: 0.35*1 + 0.25*1 + 0.10*3 + 0.15*2 + 0.15*2 = 0.35+0.25+0.30+0.30+0.30 = 1.50
+        self.workload_profiles = {
+            'typical': WorkloadProfile('typical', {
+                'stack_op': 0.35,
+                'alu': 0.25,
+                'memory': 0.10,
+                'control': 0.15,
+                'call_return': 0.15,
+            }, "Typical Forth workload"),
+            'compute': WorkloadProfile('compute', {
+                'stack_op': 0.30,
+                'alu': 0.40,
+                'memory': 0.05,
+                'control': 0.15,
+                'call_return': 0.10,
+            }, "Compute-intensive Forth"),
+            'memory': WorkloadProfile('memory', {
+                'stack_op': 0.20,
+                'alu': 0.15,
+                'memory': 0.35,
+                'control': 0.10,
+                'call_return': 0.20,
+            }, "Memory-intensive"),
+            'control': WorkloadProfile('control', {
+                'stack_op': 0.20,
+                'alu': 0.15,
+                'memory': 0.10,
+                'control': 0.35,
+                'call_return': 0.20,
+            }, "Control-flow intensive"),
+            'mixed': WorkloadProfile('mixed', {
+                'stack_op': 0.30,
+                'alu': 0.25,
+                'memory': 0.15,
+                'control': 0.15,
+                'call_return': 0.15,
+            }, "Mixed Forth workload"),
+        }
+
+    def analyze(self, workload: str = 'typical') -> AnalysisResult:
+        profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
+
+        total_cpi = 0
+        for cat_name, weight in profile.category_weights.items():
+            cat = self.instruction_categories[cat_name]
+            total_cpi += weight * cat.total_cycles
+
+        return AnalysisResult.from_cpi(
+            processor=self.name,
+            workload=workload,
+            cpi=total_cpi,
+            clock_mhz=self.clock_mhz,
+            bottleneck="pipelined",
+            utilizations={cat: profile.category_weights[cat] for cat in self.instruction_categories}
+        )

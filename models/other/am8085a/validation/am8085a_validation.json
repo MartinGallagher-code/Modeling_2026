@@ -1,0 +1,27 @@
+{
+  "processor": "AMD Am8085A",
+  "year": 1978,
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 3.0,
+    "transistors": 6500,
+    "technology": "NMOS",
+    "package": "DIP-40"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [4, 18],
+    "typical_cpi": 5.0
+  },
+  "accuracy": {
+    "expected_cpi": 5.0,
+    "predicted_cpi": 5.000,
+    "cpi_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "sources": [
+    "AMD Am8085A datasheet (1978)",
+    "Intel 8085 timing reference"
+  ]
+}

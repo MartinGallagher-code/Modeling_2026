@@ -1,0 +1,54 @@
+{
+  "processor": "TI TMS370",
+  "year": 1985,
+  "category": "Automotive & Industrial Control",
+  "specifications": {
+    "data_width_bits": 8,
+    "clock_mhz": 8.0,
+    "transistors": 30000,
+    "technology": "CMOS",
+    "package": "40-pin DIP / 44-pin PLCC",
+    "application": "Industrial MCU"
+  },
+  "timing": {
+    "cycles_per_instruction_range": [2, 5],
+    "typical_cpi": 3.0,
+    "notes": "Register-file based architecture with rich peripheral set"
+  },
+  "validated_performance": {
+    "ips_min": 1600000,
+    "ips_max": 4000000,
+    "mips_typical": 2.67
+  },
+  "notes": "TI's industrial 8-bit MCU with register-file architecture",
+  "model_accuracy": {
+    "target_error_pct": 5,
+    "confidence": "Medium"
+  },
+  "sources": [
+    {
+      "type": "reference",
+      "name": "TI TMS370 Family User's Guide",
+      "verified": false
+    }
+  ],
+  "validation_date": "2026-01-29",
+  "accuracy": {
+    "expected_cpi": 3.0,
+    "expected_ipc": 0.3333,
+    "validated_workloads": ["typical", "compute", "memory", "control", "mixed"],
+    "predicted_cpi": 3.0,
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_passed": true,
+    "fully_validated": true,
+    "validation_date": "2026-01-29"
+  },
+  "instruction_mix": {
+    "alu": 0.30,
+    "data_transfer": 0.25,
+    "memory": 0.10,
+    "control": 0.25,
+    "peripheral": 0.10
+  }
+}

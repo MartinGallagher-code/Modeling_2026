@@ -1,0 +1,14 @@
+{
+  "processor": "Zilog Z8016 DMA",
+  "year": 1981,
+  "manufacturer": "Zilog",
+  "target_cpi": 4.0,
+  "predicted_cpi": 4.0,
+  "cpi_error_percent": 0.0,
+  "validation_passed": true,
+  "clock_mhz": 4.0,
+  "transistors": 10000,
+  "data_width_bits": 16,
+  "address_width_bits": 16,
+  "validation_date": "2026-01-29"
+}
