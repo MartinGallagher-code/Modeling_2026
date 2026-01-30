@@ -1,0 +1,49 @@
+{
+  "processor": "Sanyo LC88",
+  "manufacturer": "Sanyo",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "16-bit ADD/SUB/AND/OR/XOR"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "16-bit MOV/LD"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Indirect/indexed"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Port read/write"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JP/CALL/RET"
+    }
+  ]
+}

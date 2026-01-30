@@ -1,0 +1,57 @@
+{
+  "processor": "K1810VM88",
+  "manufacturer": "Soviet Union",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operation"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Data transfer"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 5.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Control flow"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 30.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Multiply"
+    },
+    {
+      "mnemonic": "MOVSW",
+      "category": "string",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "String operation"
+    }
+  ]
+}

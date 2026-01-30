@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "HP Saturn",
+  "manufacturer": "Hewlett-Packard",
+  "year": 1984,
+  "clock_mhz": 0.64,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 8.0,
+      "measured_ipc": 0.125,
+      "measured_ips": 80000.0,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 8.4,
+      "measured_ipc": 0.119,
+      "measured_ips": 76190.5,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 9.2,
+      "measured_ipc": 0.1087,
+      "measured_ips": 69565.2,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 6.8,
+      "measured_ipc": 0.1471,
+      "measured_ips": 94117.6,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    }
+  ]
+}

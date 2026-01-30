@@ -1,0 +1,65 @@
+{
+  "processor": "Intel Pentium",
+  "manufacturer": "Intel",
+  "year": 1993,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 0.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ADD/SUB @0.5 effective (pairable UV)"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 0.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV @0.5 effective (pairable UV)"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV r,m @1 cache hit"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch @2.0 with prediction"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 11.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MUL reg32 @11 cycles, not pairable"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 39.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DIV reg32 @39 cycles, not pairable"
+    },
+    {
+      "mnemonic": "FADD",
+      "category": "float",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "FADD @3 cycles pipelined FPU"
+    }
+  ]
+}

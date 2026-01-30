@@ -1,0 +1,49 @@
+{
+  "processor": "RTX2000",
+  "manufacturer": "Harris",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "DUP",
+      "category": "stack_ops",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Stack ops category representative instruction"
+    },
+    {
+      "mnemonic": "FETCH",
+      "category": "memory",
+      "measured_cycles": 1.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory category representative instruction"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "CALL",
+      "category": "branch",
+      "measured_cycles": 1.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch category representative instruction"
+    },
+    {
+      "mnemonic": "LIT",
+      "category": "literals",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Literals category representative instruction"
+    }
+  ]
+}

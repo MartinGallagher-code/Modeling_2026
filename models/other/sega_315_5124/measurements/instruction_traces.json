@@ -1,0 +1,57 @@
+{
+  "processor": "Sega 315-5124 VDP",
+  "manufacturer": "Sega",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "TILE_RD",
+      "category": "tile_render",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Tile render category representative instruction"
+    },
+    {
+      "mnemonic": "SPR_PROC",
+      "category": "sprite",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sprite category representative instruction"
+    },
+    {
+      "mnemonic": "SCROLL",
+      "category": "scroll",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Scroll category representative instruction"
+    },
+    {
+      "mnemonic": "VRAM_ACC",
+      "category": "vram",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Vram category representative instruction"
+    },
+    {
+      "mnemonic": "LINE_OUT",
+      "category": "line_buffer",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Line buffer category representative instruction"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Control category representative instruction"
+    }
+  ]
+}

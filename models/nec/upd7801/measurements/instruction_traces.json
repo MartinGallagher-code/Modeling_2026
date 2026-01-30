@@ -1,0 +1,49 @@
+{
+  "processor": "NEC uPD7801",
+  "manufacturer": "NEC",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 4.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU @4-5c"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Transfers @3-5c"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "memory",
+      "measured_cycles": 7.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory @6-8c"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 8.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Branch/call @7-12c"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 9.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Stack @8-10c"
+    }
+  ]
+}

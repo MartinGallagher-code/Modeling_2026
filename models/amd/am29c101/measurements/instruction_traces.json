@@ -1,0 +1,49 @@
+{
+  "processor": "AMD Am29C101",
+  "manufacturer": "AMD",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "16-bit ALU operation (ADD, SUB)"
+    },
+    {
+      "mnemonic": "SHL",
+      "category": "shift",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Shift and rotate operations"
+    },
+    {
+      "mnemonic": "AND",
+      "category": "logic",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Logic operations (AND, OR, XOR)"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Microsequencer control operations"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "cascade",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Internal cascade between integrated slices"
+    }
+  ]
+}

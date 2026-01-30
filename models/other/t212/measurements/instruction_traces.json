@@ -1,0 +1,49 @@
+{
+  "processor": "Inmos T212",
+  "manufacturer": "Inmos",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Single-cycle ALU"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 1.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register moves"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/process control"
+    },
+    {
+      "mnemonic": "STACK",
+      "category": "stack",
+      "measured_cycles": 3.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Stack operations"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "Ferranti ULA",
+  "manufacturer": "Ferranti",
+  "year": 1981,
+  "clock_mhz": 3.5,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "memory_ctrl",
+      "instruction_example": "MEMORY CTRL",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "Memory controller ops",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "video_gen",
+      "instruction_example": "VIDEO GEN",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 1,
+      "description": "Video generation",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "io_decode",
+      "instruction_example": "IO DECODE",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 1,
+      "description": "I/O address decoding",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "contention",
+      "instruction_example": "CONTENTION",
+      "measured_cycles": 6.0,
+      "instruction_bytes": 1,
+      "description": "Bus contention handling",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "processor": "Samsung KS57",
+  "manufacturer": "Samsung",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD/SUB/AND/OR"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register/RAM transfers"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 7,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ROM table lookup"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 9,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Port read/write, display"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Branch/jump/call"
+    }
+  ]
+}

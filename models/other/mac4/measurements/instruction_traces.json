@@ -1,0 +1,49 @@
+{
+  "processor": "Bell Labs MAC-4",
+  "manufacturer": "Bell Labs / Western Electric",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD/SUB/logical"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register/memory transfers"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 7.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Telecom I/O line scanning"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/call/interrupt"
+    }
+  ]
+}

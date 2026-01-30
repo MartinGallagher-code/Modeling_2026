@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "processor": "AIM PowerPC 601",
+  "manufacturer": "AIM (Apple/IBM/Motorola)",
+  "year": 1993,
+  "clock_mhz": 66.0,
+  "benchmark_date": "2026-01-29",
+  "benchmarks": [
+    {
+      "name": "Gibson Mix",
+      "category": "synthetic",
+      "score": 98.5075,
+      "unit": "MIPS",
+      "notes": "Estimated from typical CPI of 0.67"
+    },
+    {
+      "name": "Typical Workload IPS",
+      "category": "throughput",
+      "score": 98507462.7,
+      "unit": "IPS",
+      "notes": "Instructions per second at typical workload"
+    }
+  ]
+}

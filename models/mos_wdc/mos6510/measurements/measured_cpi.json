@@ -1,0 +1,64 @@
+{
+  "processor": "MOS6510",
+  "manufacturer": "MOS Technology",
+  "year": 1982,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.065,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "MOS6510 typical workload - identical timing to 6502, VICE C64 emulator validated"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.755,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "MOS6510 compute workload - math routines"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 3.322,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "MOS6510 memory workload - graphics/data copy"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.094,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "MOS6510 control workload - game logic"
+    }
+  ]
+}

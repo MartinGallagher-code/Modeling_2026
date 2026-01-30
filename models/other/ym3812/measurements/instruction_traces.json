@@ -1,0 +1,57 @@
+{
+  "processor": "Yamaha YM3812 OPL2",
+  "manufacturer": "Yamaha",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "OPERATOR",
+      "category": "operator",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "FM operator computation"
+    },
+    {
+      "mnemonic": "ENVELOPE",
+      "category": "envelope",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Envelope generation"
+    },
+    {
+      "mnemonic": "RHYTHM",
+      "category": "rhythm",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Rhythm/percussion mode"
+    },
+    {
+      "mnemonic": "WAVEFORM",
+      "category": "waveform",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Waveform selection and shaping"
+    },
+    {
+      "mnemonic": "OUTPUT",
+      "category": "output",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "DAC output mixing"
+    },
+    {
+      "mnemonic": "REGISTER",
+      "category": "register",
+      "measured_cycles": 2.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register write"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "AT&T DSP-1",
+  "manufacturer": "AT&T Bell Labs",
+  "year": 1980,
+  "clock_mhz": 5.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "mac",
+      "instruction_example": "MAC",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 2,
+      "description": "Multiply-accumulate",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "alu",
+      "instruction_example": "ALU",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 2,
+      "description": "ALU operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "data_move",
+      "instruction_example": "DATA MOVE",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 2,
+      "description": "Data movement",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "Control flow",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "io",
+      "instruction_example": "IO",
+      "measured_cycles": 6.0,
+      "instruction_bytes": 2,
+      "description": "I/O operations",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

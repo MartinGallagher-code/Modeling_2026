@@ -1,0 +1,49 @@
+{
+  "processor": "Fujitsu MB8844",
+  "manufacturer": "Fujitsu",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU: ADD, SUB, logical operations @4 cycles"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Transfer: Register-memory transfers @4 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Memory: Load/store operations @4 cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Control: Branch, call, return @4 cycles"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "I/O: Input/output operations @4 cycles (expanded ports)"
+    }
+  ]
+}

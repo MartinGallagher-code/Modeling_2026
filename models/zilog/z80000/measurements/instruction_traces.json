@@ -1,0 +1,73 @@
+{
+  "processor": "Z80000",
+  "manufacturer": "Zilog",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD R,R",
+      "category": "alu_reg",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "estimated",
+      "notes": "32-bit register add, estimated from Z8000 heritage"
+    },
+    {
+      "mnemonic": "LD R,IM",
+      "category": "alu_imm",
+      "measured_cycles": 5,
+      "bytes": 6,
+      "source": "estimated",
+      "notes": "32-bit immediate to register"
+    },
+    {
+      "mnemonic": "LD R,@R",
+      "category": "load",
+      "measured_cycles": 7,
+      "bytes": 2,
+      "source": "estimated",
+      "notes": "Register indirect load"
+    },
+    {
+      "mnemonic": "LD @R,R",
+      "category": "store",
+      "measured_cycles": 7,
+      "bytes": 2,
+      "source": "estimated",
+      "notes": "Register indirect store"
+    },
+    {
+      "mnemonic": "JP cc",
+      "category": "control",
+      "measured_cycles": 7,
+      "bytes": 4,
+      "source": "estimated",
+      "notes": "Conditional jump"
+    },
+    {
+      "mnemonic": "CALL",
+      "category": "call_return",
+      "measured_cycles": 12,
+      "bytes": 4,
+      "source": "estimated",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 40,
+      "bytes": 2,
+      "source": "estimated",
+      "notes": "32-bit multiply, 35-45 cycles"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 55,
+      "bytes": 2,
+      "source": "estimated",
+      "notes": "32-bit divide, 50-60 cycles"
+    }
+  ]
+}

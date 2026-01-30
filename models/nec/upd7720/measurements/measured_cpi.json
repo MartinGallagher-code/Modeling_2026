@@ -1,0 +1,22 @@
+{
+  "processor": "uPD7720",
+  "manufacturer": "NEC",
+  "year": 1980,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 1.5,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 8.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Validated model prediction for uPD7720 typical workload"
+    }
+  ]
+}

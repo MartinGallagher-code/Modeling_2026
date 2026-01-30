@@ -1,0 +1,65 @@
+{
+  "processor": "NS32032",
+  "manufacturer": "National Semiconductor",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADDD",
+      "category": "register_ops",
+      "measured_cycles": 6.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Register-to-register 32-bit"
+    },
+    {
+      "mnemonic": "MOVQD",
+      "category": "immediate",
+      "measured_cycles": 8.0,
+      "bytes": 7,
+      "source": "datasheet",
+      "notes": "Immediate operand"
+    },
+    {
+      "mnemonic": "MOVD",
+      "category": "memory_read",
+      "measured_cycles": 12.0,
+      "bytes": 5,
+      "source": "datasheet",
+      "notes": "Load from memory (32-bit bus)"
+    },
+    {
+      "mnemonic": "MOVD",
+      "category": "memory_write",
+      "measured_cycles": 14.0,
+      "bytes": 5,
+      "source": "datasheet",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "BR",
+      "category": "branch",
+      "measured_cycles": 10.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Branch/jump"
+    },
+    {
+      "mnemonic": "BSR",
+      "category": "call_return",
+      "measured_cycles": 12.0,
+      "bytes": 5,
+      "source": "datasheet",
+      "notes": "Subroutine call/return"
+    },
+    {
+      "mnemonic": "MOVMD",
+      "category": "complex",
+      "measured_cycles": 16.0,
+      "bytes": 7,
+      "source": "datasheet",
+      "notes": "Complex addressing/string ops"
+    }
+  ]
+}

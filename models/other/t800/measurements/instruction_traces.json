@@ -1,0 +1,49 @@
+{
+  "processor": "Inmos T800",
+  "manufacturer": "Inmos",
+  "year": 1987,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Integer ALU"
+    },
+    {
+      "mnemonic": "FP",
+      "category": "fp",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "On-chip FP"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "On-chip memory"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/process control"
+    },
+    {
+      "mnemonic": "CHANNEL",
+      "category": "channel",
+      "measured_cycles": 3.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Channel communication"
+    }
+  ]
+}

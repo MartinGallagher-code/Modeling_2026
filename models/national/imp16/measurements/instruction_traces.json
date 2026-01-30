@@ -1,0 +1,73 @@
+{
+  "processor": "IMP16",
+  "manufacturer": "National Semiconductor",
+  "year": 1973,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "register_ops",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Register-to-register"
+    },
+    {
+      "mnemonic": "LDI",
+      "category": "immediate",
+      "measured_cycles": 8.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Immediate operand"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "memory_read",
+      "measured_cycles": 10.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "ST",
+      "category": "memory_write",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "branch",
+      "measured_cycles": 9.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/conditional"
+    },
+    {
+      "mnemonic": "CALL",
+      "category": "call_return",
+      "measured_cycles": 9.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Subroutine call/return"
+    },
+    {
+      "mnemonic": "SHL",
+      "category": "shift",
+      "measured_cycles": 12.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Shift operations"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 10.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "I/O operations"
+    }
+  ]
+}

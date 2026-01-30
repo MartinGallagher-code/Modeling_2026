@@ -1,0 +1,64 @@
+{
+  "processor": "Namco 52xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 6.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Target CPI for typical workload from validation data"
+    },
+    {
+      "workload": "playback",
+      "measured_cpi": 6.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Target CPI for playback workload from validation data"
+    },
+    {
+      "workload": "idle",
+      "measured_cpi": 6.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Target CPI for idle workload from validation data"
+    },
+    {
+      "workload": "multi_sample",
+      "measured_cpi": 6.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Target CPI for multi_sample workload from validation data"
+    }
+  ]
+}

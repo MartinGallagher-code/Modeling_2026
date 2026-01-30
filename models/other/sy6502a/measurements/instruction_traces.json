@@ -1,0 +1,49 @@
+{
+  "processor": "SY6502A",
+  "manufacturer": "Synertek",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 2.3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU ops: INX/DEX/ADC"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 2.8,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "LDA/TAX data transfer"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 4.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "STA memory store"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 2.6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/JMP control"
+    },
+    {
+      "mnemonic": "STACK",
+      "category": "stack",
+      "measured_cycles": 3.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "PHA/PLA/JSR/RTS stack ops"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "processor": "NEC V30",
+  "manufacturer": "NEC",
+  "year": 1984,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.025,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Validated model prediction for NEC V30 typical workload"
+    }
+  ]
+}

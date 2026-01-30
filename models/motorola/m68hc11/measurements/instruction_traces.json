@@ -1,0 +1,89 @@
+{
+  "processor": "M68HC11",
+  "manufacturer": "Motorola",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "NOP",
+      "category": "control",
+      "measured_cycles": 2,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "LDAA #imm",
+      "category": "data_transfer",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Load accumulator A immediate"
+    },
+    {
+      "mnemonic": "LDAA dir",
+      "category": "memory",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Load accumulator A direct"
+    },
+    {
+      "mnemonic": "STAA dir",
+      "category": "memory",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Store accumulator A direct"
+    },
+    {
+      "mnemonic": "ADDA #imm",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Add to accumulator A immediate"
+    },
+    {
+      "mnemonic": "ABA",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Add accumulators"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 10,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "8x8 unsigned multiply"
+    },
+    {
+      "mnemonic": "BEQ",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch if equal"
+    },
+    {
+      "mnemonic": "JSR ext",
+      "category": "stack",
+      "measured_cycles": 6,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Jump to subroutine"
+    },
+    {
+      "mnemonic": "RTS",
+      "category": "stack",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Return from subroutine"
+    }
+  ]
+}

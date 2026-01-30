@@ -1,0 +1,57 @@
+{
+  "processor": "Xerox PARC Alto CPU",
+  "manufacturer": "Xerox PARC",
+  "year": 1973,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU (bit-serial)"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control flow"
+    },
+    {
+      "mnemonic": "DISPLAY",
+      "category": "display",
+      "measured_cycles": 10.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Display refresh"
+    },
+    {
+      "mnemonic": "DISK",
+      "category": "disk",
+      "measured_cycles": 12.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Disk controller"
+    },
+    {
+      "mnemonic": "ETHERNET",
+      "category": "ethernet",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Ethernet controller"
+    }
+  ]
+}

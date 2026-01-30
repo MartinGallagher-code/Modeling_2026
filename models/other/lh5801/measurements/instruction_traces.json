@@ -1,0 +1,57 @@
+{
+  "processor": "Sharp LH5801",
+  "manufacturer": "Sharp",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "REGISTER_OPS",
+      "category": "register_ops",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register-to-register"
+    },
+    {
+      "mnemonic": "IMMEDIATE",
+      "category": "immediate",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Immediate operand"
+    },
+    {
+      "mnemonic": "MEMORY_READ",
+      "category": "memory_read",
+      "measured_cycles": 7,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "MEMORY_WRITE",
+      "category": "memory_write",
+      "measured_cycles": 7,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "branch",
+      "measured_cycles": 7,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Branch/jump"
+    },
+    {
+      "mnemonic": "CALL_RETURN",
+      "category": "call_return",
+      "measured_cycles": 10,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Subroutine call/return"
+    }
+  ]
+}

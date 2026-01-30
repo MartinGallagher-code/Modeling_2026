@@ -1,0 +1,64 @@
+{
+  "processor": "CM630",
+  "manufacturer": "Bulgaria (CMOS clone)",
+  "year": 1984,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.925,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Bulgarian CMOS 6502 clone, Pravetz Apple II"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.81,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Bulgarian CMOS 6502 clone, Pravetz Apple II"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 3.2,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Bulgarian CMOS 6502 clone, Pravetz Apple II"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.97,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Bulgarian CMOS 6502 clone, Pravetz Apple II"
+    }
+  ]
+}

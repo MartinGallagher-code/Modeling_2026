@@ -1,0 +1,41 @@
+{
+  "processor": "Intel 8044",
+  "manufacturer": "Intel",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Basic ALU operations - 2 cycles"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Data move operations - 3 cycles"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Serial I/O protocol handling - 6 cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/call operations - 3 cycles"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "processor": "Hitachi FD1089",
+  "manufacturer": "Hitachi",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU ops: ADD/SUB @4+1 decrypt, MUL @70+, DIV @140+ - weighted ~5"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOVE reg-reg @4+1, MOVE imm @8+1 - weighted ~5"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 8.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory access: MOVE.W (An) @8+decrypt, indexed @10-14"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 7.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branches @10+1, JSR @16+2, RTS @16+1 - weighted ~7"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "address",
+      "measured_cycles": 6.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Address calculation: LEA @4-12+decrypt, PEA @12+decrypt"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "decrypt",
+      "measured_cycles": 10.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Decryption overhead for opcode fetch @10 cycles avg"
+    }
+  ]
+}

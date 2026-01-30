@@ -1,0 +1,49 @@
+{
+  "processor": "Stanford MIPS",
+  "manufacturer": "Stanford University",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU ops: ADD/SUB/AND/OR/XOR/SLT"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "load",
+      "measured_cycles": 1.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Load: LW/LH/LB with load delay slot"
+    },
+    {
+      "mnemonic": "STORE",
+      "category": "store",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Store: SW/SH/SB pipelined"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "branch",
+      "measured_cycles": 1.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch: BEQ/BNE with delay slot"
+    },
+    {
+      "mnemonic": "JUMP",
+      "category": "jump",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Jump: J/JAL/JR with delay slot filled"
+    }
+  ]
+}

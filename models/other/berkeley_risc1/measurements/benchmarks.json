@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "processor": "Berkeley RISC I",
+  "manufacturer": "UC Berkeley",
+  "year": 1982,
+  "clock_mhz": 4.0,
+  "benchmark_date": "2026-01-29",
+  "benchmarks": [
+    {
+      "name": "Gibson Mix",
+      "category": "synthetic",
+      "score": 3.0769,
+      "unit": "MIPS",
+      "notes": "Estimated from typical CPI of 1.3"
+    },
+    {
+      "name": "Typical Workload IPS",
+      "category": "throughput",
+      "score": 3076923.1,
+      "unit": "IPS",
+      "notes": "Instructions per second at typical workload"
+    }
+  ]
+}

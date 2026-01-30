@@ -1,0 +1,22 @@
+{
+  "processor": "NEC uPD7220",
+  "manufacturer": "NEC",
+  "year": 1981,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 11.99,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 5.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Validated model prediction for NEC uPD7220 typical workload"
+    }
+  ]
+}

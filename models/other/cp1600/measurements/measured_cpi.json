@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "CP1600",
+  "manufacturer": "General Instrument",
+  "year": 1975,
+  "clock_mhz": 0.894886,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 6.0,
+      "measured_ipc": 0.1667,
+      "measured_ips": 149147.7,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 5.2,
+      "measured_ipc": 0.1923,
+      "measured_ips": 172093.5,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 7.0,
+      "measured_ipc": 0.1429,
+      "measured_ips": 127840.9,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 5.8,
+      "measured_ipc": 0.1724,
+      "measured_ips": 154290.7,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    }
+  ]
+}

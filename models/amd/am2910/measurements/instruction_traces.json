@@ -1,0 +1,17 @@
+{
+  "processor": "AMD Am2910",
+  "manufacturer": "AMD",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "JMP",
+      "category": "sequencing",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Sequencing operation - all 16 instructions execute in single cycle"
+    }
+  ]
+}

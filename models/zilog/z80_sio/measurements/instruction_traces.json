@@ -1,0 +1,49 @@
+{
+  "processor": "Zilog Z80-SIO",
+  "manufacturer": "Zilog",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "RD/WR reg",
+      "category": "register_io",
+      "measured_cycles": 2,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register read/write, 2 cycles"
+    },
+    {
+      "mnemonic": "CHAR_PROC",
+      "category": "char_process",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Character processing, 4 cycles"
+    },
+    {
+      "mnemonic": "SYNC_DET",
+      "category": "sync",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sync pattern detection, 5 cycles"
+    },
+    {
+      "mnemonic": "MODE_CMD",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Mode/command processing, 3 cycles"
+    },
+    {
+      "mnemonic": "INT_HANDLE",
+      "category": "interrupt",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Interrupt handling, 4 cycles"
+    }
+  ]
+}

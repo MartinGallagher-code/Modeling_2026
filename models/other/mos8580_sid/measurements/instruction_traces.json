@@ -1,0 +1,49 @@
+{
+  "processor": "MOS 8580 SID",
+  "manufacturer": "MOS Technology",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "OSCILLATOR",
+      "category": "oscillator",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Waveform oscillator generation"
+    },
+    {
+      "mnemonic": "FILTER",
+      "category": "filter",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Improved resonant filter"
+    },
+    {
+      "mnemonic": "ENVELOPE",
+      "category": "envelope",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ADSR envelope generator"
+    },
+    {
+      "mnemonic": "REGISTER_IO",
+      "category": "register_io",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register read/write"
+    },
+    {
+      "mnemonic": "VOICE_MIX",
+      "category": "voice_mix",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Voice mixing and output"
+    }
+  ]
+}

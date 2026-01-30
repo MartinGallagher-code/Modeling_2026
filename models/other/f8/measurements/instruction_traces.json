@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "processor": "F8",
+  "manufacturer": "Fairchild",
+  "year": 1975,
+  "clock_mhz": 2.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "register_ops",
+      "instruction_example": "REGISTER OPS",
+      "measured_cycles": 5.5,
+      "instruction_bytes": 1,
+      "description": "Register operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "immediate",
+      "instruction_example": "IMMEDIATE",
+      "measured_cycles": 7.0,
+      "instruction_bytes": 2,
+      "description": "Immediate operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory_read",
+      "instruction_example": "MEMORY READ",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "Memory read",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory_write",
+      "instruction_example": "MEMORY WRITE",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "Memory write",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "branch",
+      "instruction_example": "BRANCH",
+      "measured_cycles": 9.0,
+      "instruction_bytes": 2,
+      "description": "Branch operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "call_return",
+      "instruction_example": "CALL RETURN",
+      "measured_cycles": 12.0,
+      "instruction_bytes": 2,
+      "description": "Call/return",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "processor": "68HC05",
+  "manufacturer": "Motorola",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD #imm",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Add immediate"
+    },
+    {
+      "mnemonic": "INCA",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Increment accumulator"
+    },
+    {
+      "mnemonic": "LDA #imm",
+      "category": "data_transfer",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Load accumulator immediate"
+    },
+    {
+      "mnemonic": "LDA dir",
+      "category": "memory",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Load accumulator direct"
+    },
+    {
+      "mnemonic": "STA dir",
+      "category": "memory",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Store accumulator direct"
+    },
+    {
+      "mnemonic": "BEQ",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch if equal"
+    },
+    {
+      "mnemonic": "BSR",
+      "category": "stack",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch to subroutine"
+    },
+    {
+      "mnemonic": "RTS",
+      "category": "stack",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "BSET",
+      "category": "bit_ops",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Bit set"
+    },
+    {
+      "mnemonic": "BRSET",
+      "category": "bit_ops",
+      "measured_cycles": 5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Branch if bit set"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "GI AY-3-8900 STIC",
+  "manufacturer": "General Instrument",
+  "year": 1978,
+  "clock_mhz": 3.58,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "sprite_engine",
+      "instruction_example": "SPRITE ENGINE",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "Sprite processing",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "background",
+      "instruction_example": "BACKGROUND",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "Background rendering",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "collision",
+      "instruction_example": "COLLISION",
+      "measured_cycles": 7.0,
+      "instruction_bytes": 2,
+      "description": "Collision detection",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "sync",
+      "instruction_example": "SYNC",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "Display sync",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "Analog Devices ADSP-2100",
+  "manufacturer": "Analog Devices",
+  "year": 1986,
+  "clock_mhz": 25.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 1.4,
+      "measured_ipc": 0.7143,
+      "measured_ips": 17857142.9,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 1.2,
+      "measured_ipc": 0.8333,
+      "measured_ips": 20833333.3,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 1.8,
+      "measured_ipc": 0.5556,
+      "measured_ips": 13888888.9,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    },
+    {
+      "workload": "io_heavy",
+      "measured_cpi": 2.3,
+      "measured_ipc": 0.4348,
+      "measured_ips": 10869565.2,
+      "measurement_method": "model_prediction",
+      "notes": "io_heavy workload profile"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 1.5,
+      "measured_ipc": 0.6667,
+      "measured_ips": 16666666.7,
+      "measurement_method": "model_prediction",
+      "notes": "mixed workload profile"
+    }
+  ]
+}

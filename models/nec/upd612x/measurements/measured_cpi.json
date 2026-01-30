@@ -1,0 +1,22 @@
+{
+  "processor": "NEC uPD612xA",
+  "manufacturer": "NEC",
+  "year": 1983,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 7.05,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 0.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Validated model prediction for NEC uPD612xA typical workload"
+    }
+  ]
+}

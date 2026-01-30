@@ -1,0 +1,41 @@
+{
+  "processor": "8X300",
+  "manufacturer": "Signetics",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "MOVE",
+      "category": "move",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Move category representative instruction"
+    },
+    {
+      "mnemonic": "XMIT",
+      "category": "io",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Io category representative instruction"
+    },
+    {
+      "mnemonic": "NZT",
+      "category": "branch",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch category representative instruction"
+    }
+  ]
+}

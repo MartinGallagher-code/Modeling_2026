@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "HP PA-RISC 7100",
+  "manufacturer": "HP",
+  "year": 1992,
+  "clock_mhz": 100.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 0.91,
+      "measured_ipc": 1.0989,
+      "measured_ips": 109890109.9,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 0.8,
+      "measured_ipc": 1.25,
+      "measured_ips": 125000000.0,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 1.05,
+      "measured_ipc": 0.9524,
+      "measured_ips": 95238095.2,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 0.88,
+      "measured_ipc": 1.1364,
+      "measured_ips": 113636363.6,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    },
+    {
+      "workload": "fp_heavy",
+      "measured_cpi": 0.95,
+      "measured_ipc": 1.0526,
+      "measured_ips": 105263157.9,
+      "measurement_method": "model_prediction",
+      "notes": "fp_heavy workload profile"
+    }
+  ]
+}

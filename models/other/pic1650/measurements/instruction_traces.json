@@ -1,0 +1,57 @@
+{
+  "processor": "PIC1650",
+  "manufacturer": "General Instrument",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADDWF",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "MOVF",
+      "category": "data_transfer",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfer category representative instruction"
+    },
+    {
+      "mnemonic": "BCF",
+      "category": "bit_ops",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Bit ops category representative instruction"
+    },
+    {
+      "mnemonic": "MOVLW",
+      "category": "literal",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Literal category representative instruction"
+    },
+    {
+      "mnemonic": "GOTO",
+      "category": "branch",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch category representative instruction"
+    },
+    {
+      "mnemonic": "CALL",
+      "category": "call",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Call category representative instruction"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "processor": "MOS 6502",
+  "manufacturer": "MOS Technology",
+  "year": 1975,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "gibson_mix",
+      "score": 0.43,
+      "unit": "MIPS",
+      "source": "published",
+      "source_detail": "Calculated from Gibson instruction mix weights and 6502 datasheet timings",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Gibson mix applied to MCS6500 instruction set"
+    },
+    {
+      "benchmark": "sieve",
+      "score": 0.38,
+      "unit": "MIPS",
+      "source": "emulator",
+      "source_detail": "Sieve of Eratosthenes in 6502 assembly, cycle-counted via VICE emulator",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Memory-intensive benchmark stresses zero-page addressing"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "processor": "R2000",
+  "manufacturer": "MIPS",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "LW",
+      "category": "load",
+      "measured_cycles": 2.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Load category representative instruction"
+    },
+    {
+      "mnemonic": "SW",
+      "category": "store",
+      "measured_cycles": 1.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Store category representative instruction"
+    },
+    {
+      "mnemonic": "BEQ",
+      "category": "branch",
+      "measured_cycles": 2.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch category representative instruction"
+    },
+    {
+      "mnemonic": "J",
+      "category": "jump",
+      "measured_cycles": 2.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Jump category representative instruction"
+    },
+    {
+      "mnemonic": "MULT",
+      "category": "multiply",
+      "measured_cycles": 4.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Multiply category representative instruction"
+    },
+    {
+      "mnemonic": "SLL",
+      "category": "shift",
+      "measured_cycles": 1.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Shift category representative instruction"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 5.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Divide category representative instruction"
+    }
+  ]
+}

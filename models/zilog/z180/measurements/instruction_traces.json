@@ -1,0 +1,57 @@
+{
+  "processor": "Z180",
+  "manufacturer": "Zilog",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD A,r",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register add to A, optimized vs Z80"
+    },
+    {
+      "mnemonic": "LD r,r",
+      "category": "data_transfer",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register-to-register load"
+    },
+    {
+      "mnemonic": "LD r,(HL)",
+      "category": "memory",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Memory to register via HL, optimized vs Z80's 7 cycles"
+    },
+    {
+      "mnemonic": "JP nn",
+      "category": "control",
+      "measured_cycles": 9,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Unconditional jump, vs Z80's 10 cycles"
+    },
+    {
+      "mnemonic": "PUSH qq",
+      "category": "stack",
+      "measured_cycles": 11,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Push register pair"
+    },
+    {
+      "mnemonic": "LDIR",
+      "category": "block",
+      "measured_cycles": 14,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Block load, vs Z80's 21 cycles"
+    }
+  ]
+}

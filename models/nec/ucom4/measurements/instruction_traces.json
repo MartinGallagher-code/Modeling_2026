@@ -1,0 +1,49 @@
+{
+  "processor": "NEC uCOM-4",
+  "manufacturer": "NEC",
+  "year": 1972,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU operations @6 cycles"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register transfers @6 cycles"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Load/store @6 cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Branch/call @6 cycles"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "I/O operations @6 cycles"
+    }
+  ]
+}

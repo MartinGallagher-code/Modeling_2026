@@ -1,0 +1,49 @@
+{
+  "processor": "AMI S28211",
+  "manufacturer": "AMI",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "MUL",
+      "category": "mac",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Multiply-accumulate (multi-cycle, no hardware MAC)"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operations (add, subtract)"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_move",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data move via 6800 bus interface"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control flow operations"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 8,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "I/O through 6800 bus (high overhead)"
+    }
+  ]
+}

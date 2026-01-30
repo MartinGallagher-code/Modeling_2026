@@ -1,0 +1,57 @@
+{
+  "processor": "Mitsubishi M50747",
+  "manufacturer": "Mitsubishi",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operations (ADD, SUB, AND, OR)"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfer (LDA, STA, TAX)"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory operations (indirect, indexed)"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Control flow (BCC, BNE, JMP)"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "I/O port operations"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "bit_ops",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Bit manipulation (SET, CLR, TST)"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "Harris HC-55516",
+  "manufacturer": "Harris",
+  "year": 1982,
+  "clock_mhz": 2.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "decode",
+      "instruction_example": "DECODE",
+      "measured_cycles": 1.5,
+      "instruction_bytes": 1,
+      "description": "CVSD decode",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "filter",
+      "instruction_example": "FILTER",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 1,
+      "description": "Syllabic filter",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "dac",
+      "instruction_example": "DAC",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 1,
+      "description": "DAC conversion",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 1.5,
+      "instruction_bytes": 1,
+      "description": "Control logic",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "timing",
+      "instruction_example": "TIMING",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "Clock timing",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

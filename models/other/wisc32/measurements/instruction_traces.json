@@ -1,0 +1,49 @@
+{
+  "processor": "WISC CPU/32",
+  "manufacturer": "Phil Koopman (Carnegie Mellon)",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "STACK_OPS",
+      "category": "stack_ops",
+      "measured_cycles": 1.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Stack operations: push/pop/dup/swap"
+    },
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "32-bit ALU operations"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 2.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "32-bit memory load/store"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 2.5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch/call/return"
+    },
+    {
+      "mnemonic": "MICROCODE",
+      "category": "microcode",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Custom microcode execution"
+    }
+  ]
+}

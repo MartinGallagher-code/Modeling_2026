@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "AMD Am8085A",
+  "manufacturer": "AMD",
+  "year": 1978,
+  "clock_mhz": 3.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 5.0,
+      "measured_ipc": 0.2,
+      "measured_ips": 600000.0,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 4.52,
+      "measured_ipc": 0.2212,
+      "measured_ips": 663716.8,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 5.22,
+      "measured_ipc": 0.1916,
+      "measured_ips": 574712.6,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 5.44,
+      "measured_ipc": 0.1838,
+      "measured_ips": 551470.6,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    }
+  ]
+}

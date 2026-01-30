@@ -1,0 +1,49 @@
+{
+  "processor": "CM630",
+  "manufacturer": "Bulgaria (CMOS clone)",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operation"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfer"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 4.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control flow"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 3.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Stack operation"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "processor": "Namco 53xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "MUX_SELECT",
+      "category": "mux_select",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Multiplexer channel selection"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Data routing between channels"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Input/output operations"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "State and mode control"
+    },
+    {
+      "mnemonic": "TIMING",
+      "category": "timing",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Synchronization timing"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "processor": "TI TMS7000",
+  "manufacturer": "Texas Instruments",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Register add"},
+    {"mnemonic": "MOV", "category": "data_transfer", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Data move"},
+    {"mnemonic": "LDA", "category": "memory", "measured_cycles": 8, "bytes": 3, "source": "datasheet", "notes": "Load from memory"},
+    {"mnemonic": "BR", "category": "control", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Branch"},
+    {"mnemonic": "PUSH", "category": "stack", "measured_cycles": 9, "bytes": 1, "source": "datasheet", "notes": "Push to stack"}
+  ]
+}

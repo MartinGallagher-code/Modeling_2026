@@ -1,0 +1,65 @@
+{
+  "processor": "Intel 8051",
+  "manufacturer": "Intel",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 12,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD A,Rn - 1 machine cycle = 12 clocks"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 12,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOV A,Rn - 1 machine cycle = 12 clocks"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 24,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOVX external memory - 2 machine cycles = 24 clocks"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 24,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "LJMP - 2 machine cycles = 24 clocks"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 48,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MUL AB - 4 machine cycles = 48 clocks"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 48,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "DIV AB - 4 machine cycles = 48 clocks"
+    },
+    {
+      "mnemonic": "NOP",
+      "category": "nop",
+      "measured_cycles": 12,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "NOP - 1 machine cycle = 12 clocks"
+    }
+  ]
+}

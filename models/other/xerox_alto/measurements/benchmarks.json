@@ -1,0 +1,20 @@
+{
+  "processor": "Xerox PARC Alto CPU",
+  "manufacturer": "Xerox PARC",
+  "year": 1973,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "gibson_mix",
+      "score": 0.84,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Gibson mix applied to instruction timings",
+      "conditions": {
+        "clock_mhz": 5.88,
+        "memory_config": "no wait states"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "Ensoniq ES5503 DOC",
+  "manufacturer": "Ensoniq",
+  "year": 1985,
+  "clock_mhz": 7.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 5.5,
+      "measured_ipc": 0.1818,
+      "measured_ips": 1272727.3,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "full_poly",
+      "measured_cpi": 6.2,
+      "measured_ipc": 0.1613,
+      "measured_ips": 1129032.3,
+      "measurement_method": "model_prediction",
+      "notes": "full_poly workload profile"
+    },
+    {
+      "workload": "simple",
+      "measured_cpi": 4.5,
+      "measured_ipc": 0.2222,
+      "measured_ips": 1555555.6,
+      "measurement_method": "model_prediction",
+      "notes": "simple workload profile"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 5.2,
+      "measured_ipc": 0.1923,
+      "measured_ips": 1346153.8,
+      "measurement_method": "model_prediction",
+      "notes": "mixed workload profile"
+    }
+  ]
+}

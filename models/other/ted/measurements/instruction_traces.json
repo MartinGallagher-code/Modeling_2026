@@ -1,0 +1,57 @@
+{
+  "processor": "Commodore TED (7360)",
+  "manufacturer": "MOS Technology/Commodore",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "CHAR_GEN",
+      "category": "char_gen",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Character generation"
+    },
+    {
+      "mnemonic": "COLOR",
+      "category": "color",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Color processing (121 colors)"
+    },
+    {
+      "mnemonic": "SOUND",
+      "category": "sound",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sound generation (2ch)"
+    },
+    {
+      "mnemonic": "TIMER",
+      "category": "timer",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Timer management"
+    },
+    {
+      "mnemonic": "DMA",
+      "category": "dma",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "DMA cycle stealing"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register/mode control"
+    }
+  ]
+}

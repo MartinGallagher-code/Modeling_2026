@@ -1,0 +1,64 @@
+{
+  "processor": "KR581IK1",
+  "manufacturer": "Soviet Union",
+  "year": 1983,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 7.55,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet WD MCP-1600 clone (control chip)"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 6.8,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet WD MCP-1600 clone (control chip)"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 8.25,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet WD MCP-1600 clone (control chip)"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 7.94,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet WD MCP-1600 clone (control chip)"
+    }
+  ]
+}

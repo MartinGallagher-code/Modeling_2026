@@ -1,0 +1,49 @@
+{
+  "processor": "MB8841",
+  "manufacturer": "Fujitsu",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD/SUB/INC/DEC @3 cycles - 4-bit arithmetic"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOV register @3 cycles - register-to-register"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "LD/ST @4 cycles - 32-nibble RAM access"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "IN/OUT @6 cycles - external port operations"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "JMP/CALL/RET @5 cycles - branch and subroutine"
+    }
+  ]
+}

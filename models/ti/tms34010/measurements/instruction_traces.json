@@ -1,0 +1,15 @@
+{
+  "processor": "TI TMS34010",
+  "manufacturer": "Texas Instruments",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "ALU add"},
+    {"mnemonic": "MOVE", "category": "data_transfer", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Data transfer"},
+    {"mnemonic": "LDW", "category": "memory", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Load word"},
+    {"mnemonic": "PIXBLT", "category": "pixel", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Pixel block transfer"},
+    {"mnemonic": "LINE", "category": "graphics", "measured_cycles": 6, "bytes": 4, "source": "datasheet", "notes": "Line draw"},
+    {"mnemonic": "CALL", "category": "control", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Subroutine call"}
+  ]
+}

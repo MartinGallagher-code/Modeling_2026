@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "Motorola DSP56000",
+  "manufacturer": "Motorola",
+  "year": 1986,
+  "clock_mhz": 20.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.0,
+      "measured_ipc": 0.5,
+      "measured_ips": 10000000.0,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 1.2,
+      "measured_ipc": 0.8333,
+      "measured_ips": 16666666.7,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.1,
+      "measured_ipc": 0.4762,
+      "measured_ips": 9523809.5,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    },
+    {
+      "workload": "io_heavy",
+      "measured_cpi": 2.5,
+      "measured_ipc": 0.4,
+      "measured_ips": 8000000.0,
+      "measurement_method": "model_prediction",
+      "notes": "io_heavy workload profile"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 1.6,
+      "measured_ipc": 0.625,
+      "measured_ips": 12500000.0,
+      "measurement_method": "model_prediction",
+      "notes": "mixed workload profile"
+    }
+  ]
+}

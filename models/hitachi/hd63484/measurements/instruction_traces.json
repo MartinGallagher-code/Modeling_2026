@@ -1,0 +1,65 @@
+{
+  "processor": "Hitachi HD63484",
+  "manufacturer": "Hitachi",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "draw_line",
+      "measured_cycles": 6,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Line drawing command @6 cycles base"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "draw_circle",
+      "measured_cycles": 10,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Circle/arc drawing @10 cycles base"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "area_fill",
+      "measured_cycles": 8,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Area fill/paint @8 cycles base"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "bitblt",
+      "measured_cycles": 12,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Bit block transfer @12 cycles base"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "char_display",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Character display @5 cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control/setup commands @4 cycles"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "dma",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DMA/refresh operations @3 cycles"
+    }
+  ]
+}

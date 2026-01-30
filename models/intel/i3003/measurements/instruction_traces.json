@@ -1,0 +1,41 @@
+{
+  "processor": "Intel 3003",
+  "manufacturer": "Intel",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "carry_gen",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Carry generation - parallel carry compute"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "propagate",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Carry propagation signal generation"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "group_carry",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Group carry for cascaded operation"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Control and mode selection"
+    }
+  ]
+}

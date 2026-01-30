@@ -1,0 +1,49 @@
+{
+  "processor": "Intel 80C186",
+  "manufacturer": "Intel",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU reg @2-4c"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV/imm @2-4c"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory @6-10c"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 10.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Branch/call @8-14c"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 9.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Push/pop @8-10c"
+    }
+  ]
+}

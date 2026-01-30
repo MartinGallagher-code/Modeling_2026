@@ -1,0 +1,64 @@
+{
+  "processor": "Tesla MHB8080A",
+  "manufacturer": "Tesla Piestany",
+  "year": 1982,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 7.275,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Czechoslovak Intel 8080A clone by Tesla Piestany"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 6.755,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Czechoslovak Intel 8080A clone by Tesla Piestany"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 8.25,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Czechoslovak Intel 8080A clone by Tesla Piestany"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 8.05,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Czechoslovak Intel 8080A clone by Tesla Piestany"
+    }
+  ]
+}

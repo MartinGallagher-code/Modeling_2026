@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "CP1600",
+  "manufacturer": "General Instrument",
+  "year": 1975,
+  "clock_mhz": 0.894886,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "alu",
+      "instruction_example": "ALU",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 2,
+      "description": "ALU operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "data_transfer",
+      "instruction_example": "DATA TRANSFER",
+      "measured_cycles": 6.0,
+      "instruction_bytes": 2,
+      "description": "Data transfer",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory",
+      "instruction_example": "MEMORY",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "Memory access",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "branch",
+      "instruction_example": "BRANCH",
+      "measured_cycles": 6.0,
+      "instruction_bytes": 2,
+      "description": "Branch operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "shift",
+      "instruction_example": "SHIFT",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "Shift operations",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

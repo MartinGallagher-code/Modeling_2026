@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "GI AY-3-8910 PSG",
+  "manufacturer": "General Instrument",
+  "year": 1978,
+  "clock_mhz": 1.79,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "tone_gen",
+      "instruction_example": "TONE GEN",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "Tone generation",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "noise_gen",
+      "instruction_example": "NOISE GEN",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "Noise generation",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "envelope",
+      "instruction_example": "ENVELOPE",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 1,
+      "description": "Envelope control",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "mixer",
+      "instruction_example": "MIXER",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "Channel mixing",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "io_port",
+      "instruction_example": "IO PORT",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "I/O port operations",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "Clipper C100",
+  "manufacturer": "Fairchild",
+  "year": 1985,
+  "clock_mhz": 33.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "alu",
+      "instruction_example": "ALU",
+      "measured_cycles": 1.0,
+      "instruction_bytes": 4,
+      "description": "Integer ALU",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "load",
+      "instruction_example": "LOAD",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 4,
+      "description": "Load operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "store",
+      "instruction_example": "STORE",
+      "measured_cycles": 1.0,
+      "instruction_bytes": 4,
+      "description": "Store operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "branch",
+      "instruction_example": "BRANCH",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 4,
+      "description": "Branch operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "float",
+      "instruction_example": "FLOAT",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 4,
+      "description": "Floating-point ops",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

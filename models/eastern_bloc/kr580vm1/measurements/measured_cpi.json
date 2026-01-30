@@ -1,0 +1,64 @@
+{
+  "processor": "KR580VM1",
+  "manufacturer": "Soviet Union (various fabs)",
+  "year": 1980,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 7.2,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet 8080 extension with 128KB bank-switched memory"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 6.46,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet 8080 extension with 128KB bank-switched memory"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 8.3,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet 8080 extension with 128KB bank-switched memory"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 7.6,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 2.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet 8080 extension with 128KB bank-switched memory"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "processor": "GI SP0256",
+  "manufacturer": "General Instrument",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALLO_RD",
+      "category": "allophone_fetch",
+      "measured_cycles": 8.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Allophone fetch category representative instruction"
+    },
+    {
+      "mnemonic": "LPC_UPD",
+      "category": "filter_update",
+      "measured_cycles": 10.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Filter update category representative instruction"
+    },
+    {
+      "mnemonic": "EXCITE",
+      "category": "excitation",
+      "measured_cycles": 8.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Excitation category representative instruction"
+    },
+    {
+      "mnemonic": "DAC_OUT",
+      "category": "output",
+      "measured_cycles": 14.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Output category representative instruction"
+    }
+  ]
+}

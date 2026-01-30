@@ -1,0 +1,13 @@
+{
+  "processor": "TI TMS5100",
+  "manufacturer": "Texas Instruments",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "LPCDEC", "category": "lpc_decode", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "LPC parameter decode"},
+    {"mnemonic": "LATTICE", "category": "lattice_filter", "measured_cycles": 10, "bytes": 1, "source": "datasheet", "notes": "Lattice filter step"},
+    {"mnemonic": "EXCITE", "category": "excitation", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "Excitation generation"},
+    {"mnemonic": "DAC", "category": "dac", "measured_cycles": 10, "bytes": 1, "source": "datasheet", "notes": "DAC output"}
+  ]
+}

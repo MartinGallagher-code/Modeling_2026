@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "processor": "Harris HM6100",
+  "manufacturer": "Harris",
+  "year": 1978,
+  "clock_mhz": 4.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "arithmetic",
+      "instruction_example": "ARITHMETIC",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "Arithmetic operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "logic",
+      "instruction_example": "LOGIC",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "Logic operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory",
+      "instruction_example": "MEMORY",
+      "measured_cycles": 9.0,
+      "instruction_bytes": 2,
+      "description": "Memory reference",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "jump",
+      "instruction_example": "JUMP",
+      "measured_cycles": 9.0,
+      "instruction_bytes": 2,
+      "description": "Jump operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "io",
+      "instruction_example": "IO",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "I/O transfer",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "operate",
+      "instruction_example": "OPERATE",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "Operate instructions",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

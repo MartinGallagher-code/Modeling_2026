@@ -1,0 +1,41 @@
+{
+  "processor": "Intel 4040",
+  "manufacturer": "Intel",
+  "year": 1974,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 9,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD/SUB register operations - slightly faster than 4004"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 9,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "LD/XCH data transfer operations"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 16,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JUN/JCN jump instructions - 2 machine cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "WRM/RDM memory operations - 1 machine cycle"
+    }
+  ]
+}

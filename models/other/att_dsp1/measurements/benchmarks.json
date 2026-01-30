@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "processor": "AT&T DSP-1",
+  "manufacturer": "AT&T Bell Labs",
+  "year": 1980,
+  "clock_mhz": 5.0,
+  "benchmark_date": "2026-01-29",
+  "benchmarks": [
+    {
+      "name": "Gibson Mix",
+      "category": "synthetic",
+      "score": 1.25,
+      "unit": "MIPS",
+      "notes": "Estimated from typical CPI of 4.0"
+    },
+    {
+      "name": "Typical Workload IPS",
+      "category": "throughput",
+      "score": 1250000.0,
+      "unit": "IPS",
+      "notes": "Instructions per second at typical workload"
+    }
+  ]
+}

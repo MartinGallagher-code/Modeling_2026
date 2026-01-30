@@ -1,0 +1,49 @@
+{
+  "processor": "Hitachi HD6305",
+  "manufacturer": "Hitachi",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Basic ALU operations - 3 cycles"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Load/store operations - 3 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 5.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Extended memory access - 5 cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/jump operations - 4 cycles"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "timer",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Timer/counter operations - 4 cycles"
+    }
+  ]
+}

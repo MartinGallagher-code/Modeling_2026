@@ -1,0 +1,57 @@
+{
+  "processor": "NEC V30",
+  "manufacturer": "NEC",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU: ADD/SUB reg,reg @2"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV reg,reg @2, MOV reg,mem @3-5"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "memory",
+      "measured_cycles": 4.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Memory ops - 16-bit bus"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JMP @2-3, Jcc, CALL"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Hardware MUL 3-4x faster"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 7.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DIV improved 3x over 8086"
+    }
+  ]
+}

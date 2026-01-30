@@ -1,0 +1,187 @@
+{
+  "processor": "MOS 6502",
+  "manufacturer": "MOS Technology",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "MOS MCS6500 Family Hardware Manual (1976), Table A",
+  "timings": [
+    {
+      "mnemonic": "ADC #imm",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "addressing_mode": "immediate",
+      "notes": "Add with carry, immediate"
+    },
+    {
+      "mnemonic": "ADC zp",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "addressing_mode": "zeropage",
+      "notes": "Add with carry, zero page"
+    },
+    {
+      "mnemonic": "ADC abs",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 3,
+      "source": "datasheet",
+      "addressing_mode": "absolute",
+      "notes": "Add with carry, absolute"
+    },
+    {
+      "mnemonic": "ADC abs,X",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 3,
+      "source": "datasheet",
+      "addressing_mode": "absolute_x",
+      "notes": "4 cycles + 1 if page boundary crossed"
+    },
+    {
+      "mnemonic": "LDA #imm",
+      "category": "data_transfer",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "addressing_mode": "immediate",
+      "notes": "Load accumulator, immediate"
+    },
+    {
+      "mnemonic": "LDA zp",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "addressing_mode": "zeropage",
+      "notes": "Load accumulator, zero page"
+    },
+    {
+      "mnemonic": "LDA abs",
+      "category": "data_transfer",
+      "measured_cycles": 4,
+      "bytes": 3,
+      "source": "datasheet",
+      "addressing_mode": "absolute",
+      "notes": "Load accumulator, absolute"
+    },
+    {
+      "mnemonic": "STA zp",
+      "category": "memory",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "addressing_mode": "zeropage",
+      "notes": "Store accumulator, zero page"
+    },
+    {
+      "mnemonic": "STA abs",
+      "category": "memory",
+      "measured_cycles": 4,
+      "bytes": 3,
+      "source": "datasheet",
+      "addressing_mode": "absolute",
+      "notes": "Store accumulator, absolute"
+    },
+    {
+      "mnemonic": "STA abs,X",
+      "category": "memory",
+      "measured_cycles": 5,
+      "bytes": 3,
+      "source": "datasheet",
+      "addressing_mode": "absolute_x",
+      "notes": "Store accumulator, absolute indexed (always 5 cycles)"
+    },
+    {
+      "mnemonic": "JMP abs",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 3,
+      "source": "datasheet",
+      "addressing_mode": "absolute",
+      "notes": "Unconditional jump"
+    },
+    {
+      "mnemonic": "BEQ rel",
+      "category": "control",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "addressing_mode": "relative",
+      "condition": "branch not taken",
+      "notes": "2 cycles if not taken"
+    },
+    {
+      "mnemonic": "BEQ rel",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "addressing_mode": "relative",
+      "condition": "branch taken, no page cross",
+      "notes": "3 cycles if taken, same page"
+    },
+    {
+      "mnemonic": "BEQ rel",
+      "category": "control",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "addressing_mode": "relative",
+      "condition": "branch taken, page cross",
+      "notes": "4 cycles if taken with page boundary crossing"
+    },
+    {
+      "mnemonic": "JSR abs",
+      "category": "control",
+      "measured_cycles": 6,
+      "bytes": 3,
+      "source": "datasheet",
+      "addressing_mode": "absolute",
+      "notes": "Jump to subroutine (pushes return address)"
+    },
+    {
+      "mnemonic": "RTS",
+      "category": "control",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "PHA",
+      "category": "stack",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Push accumulator to stack"
+    },
+    {
+      "mnemonic": "PLA",
+      "category": "stack",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Pull accumulator from stack"
+    },
+    {
+      "mnemonic": "NOP",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "INX",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Increment X register"
+    }
+  ]
+}

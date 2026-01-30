@@ -1,0 +1,73 @@
+{
+  "processor": "NS32081",
+  "manufacturer": "National Semiconductor",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADDF",
+      "category": "fp_add",
+      "measured_cycles": 8.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Single-precision add/subtract"
+    },
+    {
+      "mnemonic": "MULF",
+      "category": "fp_mul",
+      "measured_cycles": 12.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Single-precision multiply"
+    },
+    {
+      "mnemonic": "DIVF",
+      "category": "fp_div",
+      "measured_cycles": 20.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Single-precision divide"
+    },
+    {
+      "mnemonic": "SQRTF",
+      "category": "fp_sqrt",
+      "measured_cycles": 30.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Square root"
+    },
+    {
+      "mnemonic": "ADDL",
+      "category": "dp_add",
+      "measured_cycles": 12.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Double-precision add/subtract"
+    },
+    {
+      "mnemonic": "MULL",
+      "category": "dp_mul",
+      "measured_cycles": 18.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Double-precision multiply"
+    },
+    {
+      "mnemonic": "DIVL",
+      "category": "dp_div",
+      "measured_cycles": 32.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Double-precision divide"
+    },
+    {
+      "mnemonic": "MOVFL",
+      "category": "conversion",
+      "measured_cycles": 6.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Format conversion"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "processor": "Motorola MC68882",
+  "manufacturer": "Motorola",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "FP_ADD",
+      "category": "fp_add",
+      "measured_cycles": 12,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP addition"
+    },
+    {
+      "mnemonic": "FP_MUL",
+      "category": "fp_mul",
+      "measured_cycles": 16,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP multiplication"
+    },
+    {
+      "mnemonic": "FP_DIV",
+      "category": "fp_div",
+      "measured_cycles": 48,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP division"
+    },
+    {
+      "mnemonic": "FP_TRANSCENDENTAL",
+      "category": "fp_transcendental",
+      "measured_cycles": 80,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Trig/log transcendental"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 5,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP register/memory transfer"
+    }
+  ]
+}

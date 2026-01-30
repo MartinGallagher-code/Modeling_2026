@@ -1,0 +1,20 @@
+{
+  "processor": "M68010",
+  "manufacturer": "Motorola",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "MOVE.L_Dn_Dn", "category": "data_transfer", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Register-to-register move - optimized"},
+    {"mnemonic": "MOVE.L_mem_Dn", "category": "memory", "measured_cycles": 10, "bytes": 4, "source": "datasheet", "notes": "Memory to register - slightly faster than 68000"},
+    {"mnemonic": "ADD.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 6, "bytes": 2, "source": "datasheet", "notes": "32-bit register add - improved"},
+    {"mnemonic": "ADD.W_Dn_Dn", "category": "alu_reg", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "16-bit register add"},
+    {"mnemonic": "SUB.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 6, "bytes": 2, "source": "datasheet", "notes": "32-bit register subtract"},
+    {"mnemonic": "JMP", "category": "control", "measured_cycles": 8, "bytes": 4, "source": "datasheet", "notes": "Jump absolute"},
+    {"mnemonic": "BRA", "category": "control", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Branch always"},
+    {"mnemonic": "DBcc", "category": "control", "measured_cycles": 10, "bytes": 4, "source": "datasheet", "notes": "Decrement and branch - loop mode optimized"},
+    {"mnemonic": "MULU", "category": "multiply", "measured_cycles": 68, "bytes": 2, "source": "datasheet", "notes": "Unsigned multiply"},
+    {"mnemonic": "DIVU", "category": "divide", "measured_cycles": 135, "bytes": 2, "source": "datasheet", "notes": "Unsigned divide"},
+    {"mnemonic": "NOP", "category": "control", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "No operation"}
+  ]
+}

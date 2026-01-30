@@ -1,0 +1,41 @@
+{
+  "processor": "Intel 4004",
+  "manufacturer": "Intel",
+  "year": 1971,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 10,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD/SUB register to accumulator - 1 machine cycle"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "LD/XCH register operations - 1 machine cycle"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 16,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JUN/JCN jump instructions - 2 machine cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "WRM/RDM memory operations - 1 machine cycle"
+    }
+  ]
+}

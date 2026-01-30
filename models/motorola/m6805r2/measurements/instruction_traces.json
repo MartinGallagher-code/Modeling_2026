@@ -1,0 +1,24 @@
+{
+  "processor": "Motorola 6805R2",
+  "manufacturer": "Motorola",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Basic ALU add - 3 cycles"},
+    {"mnemonic": "INC", "category": "alu", "measured_cycles": 3, "bytes": 1, "source": "datasheet", "notes": "Increment"},
+    {"mnemonic": "CMP", "category": "alu", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Compare"},
+    {"mnemonic": "LDA", "category": "data_transfer", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Load accumulator"},
+    {"mnemonic": "STA", "category": "data_transfer", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Store accumulator"},
+    {"mnemonic": "LDA_ext", "category": "memory", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Extended memory access"},
+    {"mnemonic": "STA_ext", "category": "memory", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Extended memory store"},
+    {"mnemonic": "JMP", "category": "control", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Jump"},
+    {"mnemonic": "BRA", "category": "control", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Branch always"},
+    {"mnemonic": "BEQ", "category": "control", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Branch if equal"},
+    {"mnemonic": "BSR", "category": "control", "measured_cycles": 6, "bytes": 2, "source": "datasheet", "notes": "Branch to subroutine"},
+    {"mnemonic": "BSET", "category": "bit_ops", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Bit set"},
+    {"mnemonic": "BCLR", "category": "bit_ops", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Bit clear"},
+    {"mnemonic": "BRSET", "category": "bit_ops", "measured_cycles": 3, "bytes": 3, "source": "datasheet", "notes": "Branch if bit set"},
+    {"mnemonic": "NOP", "category": "control", "measured_cycles": 3, "bytes": 1, "source": "datasheet", "notes": "No operation"}
+  ]
+}

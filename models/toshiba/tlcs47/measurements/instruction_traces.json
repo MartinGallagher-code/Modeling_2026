@@ -1,0 +1,15 @@
+{
+  "processor": "Toshiba TLCS-47",
+  "manufacturer": "Toshiba",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 4, "bytes": 1, "source": "datasheet", "notes": "ALU add"},
+    {"mnemonic": "MOV", "category": "data_transfer", "measured_cycles": 5, "bytes": 1, "source": "datasheet", "notes": "Data move"},
+    {"mnemonic": "LD", "category": "memory", "measured_cycles": 7, "bytes": 2, "source": "datasheet", "notes": "Load from memory"},
+    {"mnemonic": "IN", "category": "io", "measured_cycles": 8, "bytes": 2, "source": "datasheet", "notes": "Input"},
+    {"mnemonic": "JMP", "category": "control", "measured_cycles": 6, "bytes": 2, "source": "datasheet", "notes": "Jump"},
+    {"mnemonic": "TMR", "category": "timer", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "Timer control"}
+  ]
+}

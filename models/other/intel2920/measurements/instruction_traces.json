@@ -1,0 +1,49 @@
+{
+  "processor": "Intel 2920",
+  "manufacturer": "Intel",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ARITHMETIC",
+      "category": "arithmetic",
+      "measured_cycles": 7.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ADD/SUB with software multiply"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "LDA/STA operations"
+    },
+    {
+      "mnemonic": "ADC_DAC",
+      "category": "adc_dac",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ADC/DAC conversion"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 3.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "JMP/JNZ/NOP"
+    },
+    {
+      "mnemonic": "SHIFT",
+      "category": "shift",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "SHL/SHR operations"
+    }
+  ]
+}

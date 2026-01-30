@@ -1,0 +1,57 @@
+{
+  "processor": "T414",
+  "manufacturer": "INMOS",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "STACK_OPS",
+      "category": "stack_ops",
+      "measured_cycles": 1.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Stack operations"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 2.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU operations"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "branch",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/jump"
+    },
+    {
+      "mnemonic": "LINK_OPS",
+      "category": "link_ops",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Communication link operations"
+    },
+    {
+      "mnemonic": "COMPLEX",
+      "category": "complex",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Complex instructions"
+    }
+  ]
+}

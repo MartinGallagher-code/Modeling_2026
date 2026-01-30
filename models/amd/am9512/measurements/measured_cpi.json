@@ -1,0 +1,63 @@
+{
+  "processor": "Am9512",
+  "manufacturer": "AMD",
+  "year": 1979,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 20.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"},
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Improved floating-point APU, successor to Am9511"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 20.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"},
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Scientific computing with heavy double-precision"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 20.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"},
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Graphics workload with transforms and projections"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 20.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"},
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Fixed-point heavy workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 20.0,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"},
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Mixed FP, fixed-point, and double-precision workload"
+    }
+  ]
+}

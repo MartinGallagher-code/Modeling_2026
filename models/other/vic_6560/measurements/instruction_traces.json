@@ -1,0 +1,41 @@
+{
+  "processor": "Commodore VIC (6560)",
+  "manufacturer": "Commodore/MOS",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "CHAR_RENDER",
+      "category": "char_render",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Character render"
+    },
+    {
+      "mnemonic": "SPRITE",
+      "category": "sprite",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sprite processing"
+    },
+    {
+      "mnemonic": "COLOR",
+      "category": "color",
+      "measured_cycles": 3.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Color processing"
+    },
+    {
+      "mnemonic": "SYNC",
+      "category": "sync",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Display sync"
+    }
+  ]
+}

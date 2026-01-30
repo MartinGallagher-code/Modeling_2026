@@ -1,0 +1,41 @@
+{
+  "processor": "uPD7720",
+  "manufacturer": "NEC",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "MAC",
+      "category": "mac",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Single-cycle pipelined multiply-accumulate"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operations"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "memory",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory load/store"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "branch",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch with pipeline flush"
+    }
+  ]
+}

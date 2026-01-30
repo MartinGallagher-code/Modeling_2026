@@ -1,0 +1,49 @@
+{
+  "processor": "SGS-Thomson Z8400",
+  "manufacturer": "SGS-Thomson",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Z80 ALU ops"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "LD/MOV data transfer"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Memory indirect"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/call control"
+    },
+    {
+      "mnemonic": "BLOCK",
+      "category": "block",
+      "measured_cycles": 12.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Block transfer/search"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "processor": "Intel 3002",
+  "manufacturer": "Intel",
+  "year": 1974,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "2-bit addition microinstruction"
+    },
+    {
+      "mnemonic": "SHL",
+      "category": "shift",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Shift left microinstruction"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "pass",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Pass-through data routing"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "load",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Load register operation"
+    }
+  ]
+}

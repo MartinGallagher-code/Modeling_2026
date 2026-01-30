@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "processor": "CP1600",
+  "manufacturer": "General Instrument",
+  "year": 1975,
+  "clock_mhz": 0.894886,
+  "benchmark_date": "2026-01-29",
+  "benchmarks": [
+    {
+      "name": "Gibson Mix",
+      "category": "synthetic",
+      "score": 0.1491,
+      "unit": "MIPS",
+      "notes": "Estimated from typical CPI of 6.0"
+    },
+    {
+      "name": "Typical Workload IPS",
+      "category": "throughput",
+      "score": 149147.7,
+      "unit": "IPS",
+      "notes": "Instructions per second at typical workload"
+    }
+  ]
+}

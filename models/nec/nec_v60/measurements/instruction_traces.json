@@ -1,0 +1,57 @@
+{
+  "processor": "NEC V60",
+  "manufacturer": "NEC",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operations 32-bit"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfer 32-bit"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "memory",
+      "measured_cycles": 4.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory load/store"
+    },
+    {
+      "mnemonic": "BR",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Control flow"
+    },
+    {
+      "mnemonic": "FADD",
+      "category": "float",
+      "measured_cycles": 8.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Floating point"
+    },
+    {
+      "mnemonic": "MOVS",
+      "category": "string",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "String manipulation"
+    }
+  ]
+}

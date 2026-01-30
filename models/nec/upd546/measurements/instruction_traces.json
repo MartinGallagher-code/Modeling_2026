@@ -1,0 +1,49 @@
+{
+  "processor": "NEC uPD546",
+  "manufacturer": "NEC",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 4.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "BCD ALU @4-5c"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Transfers @4c"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "memory",
+      "measured_cycles": 5.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ROM/RAM @5-6c"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 6.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Jump @6-7c"
+    },
+    {
+      "mnemonic": "OUT",
+      "category": "io",
+      "measured_cycles": 5.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Port I/O @5-6c"
+    }
+  ]
+}

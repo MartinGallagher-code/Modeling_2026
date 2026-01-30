@@ -1,0 +1,64 @@
+{
+  "processor": "KR1858VM1",
+  "manufacturer": "Soviet Union",
+  "year": 1991,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 5.585,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet Z80 clone from East German U880 masks"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 4.99,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet Z80 clone from East German U880 masks"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 6.09,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet Z80 clone from East German U880 masks"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 5.915,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Soviet Z80 clone from East German U880 masks"
+    }
+  ]
+}

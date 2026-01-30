@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "Harris HM6100",
+  "manufacturer": "Harris",
+  "year": 1978,
+  "clock_mhz": 4.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 8.0,
+      "measured_ipc": 0.125,
+      "measured_ips": 500000.0,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 7.5,
+      "measured_ipc": 0.1333,
+      "measured_ips": 533333.3,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 8.5,
+      "measured_ipc": 0.1176,
+      "measured_ips": 470588.2,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 8.2,
+      "measured_ipc": 0.122,
+      "measured_ips": 487804.9,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "processor": "MMI 67110",
+  "manufacturer": "Monolithic Memories Inc.",
+  "year": 1978,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "gibson_mix",
+      "score": 5.5556,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Gibson mix applied to instruction timings",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

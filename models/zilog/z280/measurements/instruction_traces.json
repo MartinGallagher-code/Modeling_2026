@@ -1,0 +1,49 @@
+{
+  "processor": "Zilog Z280",
+  "manufacturer": "Zilog",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD A,r",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Cached ALU operation, 3-4 cycles"
+    },
+    {
+      "mnemonic": "LD r,r",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register transfer, 3-4 cycles"
+    },
+    {
+      "mnemonic": "LD r,(HL)",
+      "category": "memory",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Cached memory load, 4-7 cycles"
+    },
+    {
+      "mnemonic": "JP nn",
+      "category": "control",
+      "measured_cycles": 5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Branch/call, 4-8 cycles"
+    },
+    {
+      "mnemonic": "PUSH qq",
+      "category": "stack",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Stack operation, 7-10 cycles"
+    }
+  ]
+}

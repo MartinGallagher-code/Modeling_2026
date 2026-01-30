@@ -1,0 +1,57 @@
+{
+  "processor": "KR1858VM1",
+  "manufacturer": "Soviet Union",
+  "year": 1991,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU operation"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfer"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 5.8,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 5.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control flow"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 10.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Stack operation"
+    },
+    {
+      "mnemonic": "LDIR",
+      "category": "block",
+      "measured_cycles": 12.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Block transfer"
+    }
+  ]
+}

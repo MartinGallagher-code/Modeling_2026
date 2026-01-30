@@ -1,0 +1,215 @@
+{
+  "processor": "Zilog Z80",
+  "manufacturer": "Zilog",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Z80 CPU Technical Manual, March 1976, Chapter 8",
+  "timings": [
+    {
+      "mnemonic": "ADD A,r",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "t_states": 4,
+      "source": "datasheet",
+      "addressing_mode": "register",
+      "notes": "Register-to-register ALU"
+    },
+    {
+      "mnemonic": "ADD A,n",
+      "category": "alu",
+      "measured_cycles": 7,
+      "bytes": 2,
+      "t_states": 7,
+      "source": "datasheet",
+      "addressing_mode": "immediate",
+      "notes": "Immediate ALU"
+    },
+    {
+      "mnemonic": "ADD A,(HL)",
+      "category": "alu",
+      "measured_cycles": 7,
+      "bytes": 1,
+      "t_states": 7,
+      "source": "datasheet",
+      "addressing_mode": "indirect",
+      "notes": "Memory-indirect ALU"
+    },
+    {
+      "mnemonic": "INC r",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "t_states": 4,
+      "source": "datasheet",
+      "addressing_mode": "register",
+      "notes": "Increment register"
+    },
+    {
+      "mnemonic": "LD r,r'",
+      "category": "data_transfer",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "t_states": 4,
+      "source": "datasheet",
+      "addressing_mode": "register",
+      "notes": "Register to register load"
+    },
+    {
+      "mnemonic": "LD r,n",
+      "category": "data_transfer",
+      "measured_cycles": 7,
+      "bytes": 2,
+      "t_states": 7,
+      "source": "datasheet",
+      "addressing_mode": "immediate",
+      "notes": "Immediate to register load"
+    },
+    {
+      "mnemonic": "LD r,(HL)",
+      "category": "memory",
+      "measured_cycles": 7,
+      "bytes": 1,
+      "t_states": 7,
+      "source": "datasheet",
+      "addressing_mode": "indirect",
+      "notes": "Load from memory via HL"
+    },
+    {
+      "mnemonic": "LD (HL),r",
+      "category": "memory",
+      "measured_cycles": 7,
+      "bytes": 1,
+      "t_states": 7,
+      "source": "datasheet",
+      "addressing_mode": "indirect",
+      "notes": "Store to memory via HL"
+    },
+    {
+      "mnemonic": "LD A,(nn)",
+      "category": "memory",
+      "measured_cycles": 13,
+      "bytes": 3,
+      "t_states": 13,
+      "source": "datasheet",
+      "addressing_mode": "direct",
+      "notes": "Load from absolute address"
+    },
+    {
+      "mnemonic": "JP nn",
+      "category": "control",
+      "measured_cycles": 10,
+      "bytes": 3,
+      "t_states": 10,
+      "source": "datasheet",
+      "addressing_mode": "absolute",
+      "notes": "Unconditional jump"
+    },
+    {
+      "mnemonic": "JP cc,nn",
+      "category": "control",
+      "measured_cycles": 10,
+      "bytes": 3,
+      "t_states": 10,
+      "source": "datasheet",
+      "addressing_mode": "absolute",
+      "condition": "condition true",
+      "notes": "Conditional jump (taken or not, always 10 T-states)"
+    },
+    {
+      "mnemonic": "JR e",
+      "category": "control",
+      "measured_cycles": 12,
+      "bytes": 2,
+      "t_states": 12,
+      "source": "datasheet",
+      "addressing_mode": "relative",
+      "notes": "Relative jump (always taken)"
+    },
+    {
+      "mnemonic": "JR cc,e",
+      "category": "control",
+      "measured_cycles": 7,
+      "bytes": 2,
+      "t_states": 7,
+      "source": "datasheet",
+      "condition": "branch not taken",
+      "notes": "7 T-states if not taken"
+    },
+    {
+      "mnemonic": "JR cc,e",
+      "category": "control",
+      "measured_cycles": 12,
+      "bytes": 2,
+      "t_states": 12,
+      "source": "datasheet",
+      "condition": "branch taken",
+      "notes": "12 T-states if taken"
+    },
+    {
+      "mnemonic": "CALL nn",
+      "category": "control",
+      "measured_cycles": 17,
+      "bytes": 3,
+      "t_states": 17,
+      "source": "datasheet",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "category": "control",
+      "measured_cycles": 10,
+      "bytes": 1,
+      "t_states": 10,
+      "source": "datasheet",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "PUSH qq",
+      "category": "stack",
+      "measured_cycles": 11,
+      "bytes": 1,
+      "t_states": 11,
+      "source": "datasheet",
+      "notes": "Push register pair to stack"
+    },
+    {
+      "mnemonic": "POP qq",
+      "category": "stack",
+      "measured_cycles": 10,
+      "bytes": 1,
+      "t_states": 10,
+      "source": "datasheet",
+      "notes": "Pop register pair from stack"
+    },
+    {
+      "mnemonic": "LDIR",
+      "category": "block",
+      "measured_cycles": 21,
+      "bytes": 2,
+      "t_states": 21,
+      "source": "datasheet",
+      "condition": "BC != 0",
+      "notes": "Block transfer, 21 T-states per byte when BC > 0"
+    },
+    {
+      "mnemonic": "LDIR",
+      "category": "block",
+      "measured_cycles": 16,
+      "bytes": 2,
+      "t_states": 16,
+      "source": "datasheet",
+      "condition": "BC = 0 (final)",
+      "notes": "16 T-states on final iteration"
+    },
+    {
+      "mnemonic": "NOP",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "t_states": 4,
+      "source": "datasheet",
+      "notes": "No operation"
+    }
+  ]
+}

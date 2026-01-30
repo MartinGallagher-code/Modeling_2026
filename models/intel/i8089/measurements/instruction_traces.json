@@ -1,0 +1,49 @@
+{
+  "processor": "Intel 8089",
+  "manufacturer": "Intel",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfer operations ~4 cycles"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Channel program operations ~6 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 10.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory-mapped I/O access ~10 cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control flow instructions ~5 cycles"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DMA block transfer setup/execute ~8 cycles"
+    }
+  ]
+}

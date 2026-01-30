@@ -1,0 +1,14 @@
+{
+  "processor": "TI TMS0800",
+  "manufacturer": "Texas Instruments",
+  "year": 1973,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "BCD addition"},
+    {"mnemonic": "DAA", "category": "bcd", "measured_cycles": 8, "bytes": 1, "source": "datasheet", "notes": "Decimal adjust"},
+    {"mnemonic": "SHR", "category": "shift", "measured_cycles": 4, "bytes": 1, "source": "datasheet", "notes": "Shift register right"},
+    {"mnemonic": "BR", "category": "control", "measured_cycles": 5, "bytes": 1, "source": "datasheet", "notes": "Branch"},
+    {"mnemonic": "DSP", "category": "display", "measured_cycles": 10, "bytes": 1, "source": "datasheet", "notes": "Display scan"}
+  ]
+}

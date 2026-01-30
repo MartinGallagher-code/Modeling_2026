@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "processor": "GTE G65SC802",
+  "manufacturer": "GTE Microcircuits",
+  "year": 1985,
+  "clock_mhz": 4.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "alu",
+      "instruction_example": "ALU",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 2,
+      "description": "ALU operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "data_transfer",
+      "instruction_example": "DATA TRANSFER",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 2,
+      "description": "Data transfer",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory",
+      "instruction_example": "MEMORY",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 2,
+      "description": "Memory access",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 2,
+      "description": "Control flow",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "stack",
+      "instruction_example": "STACK",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 2,
+      "description": "Stack operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "long_addr",
+      "instruction_example": "LONG ADDR",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 3,
+      "description": "24-bit addressing",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

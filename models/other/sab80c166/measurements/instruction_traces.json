@@ -1,0 +1,57 @@
+{
+  "processor": "Siemens SAB80C166",
+  "manufacturer": "Siemens",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD Rw,Rw",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "MOV Rw,[Rw]",
+      "category": "memory",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory category representative instruction"
+    },
+    {
+      "mnemonic": "JMPR cc,rel",
+      "category": "control",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Control category representative instruction"
+    },
+    {
+      "mnemonic": "MUL Rw,Rw",
+      "category": "multiply",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Multiply category representative instruction"
+    },
+    {
+      "mnemonic": "MOV SFR,Rw",
+      "category": "peripheral",
+      "measured_cycles": 4.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Peripheral category representative instruction"
+    },
+    {
+      "mnemonic": "BSET bitaddr",
+      "category": "bit_ops",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Bit ops category representative instruction"
+    }
+  ]
+}

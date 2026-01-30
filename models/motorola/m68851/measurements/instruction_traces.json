@@ -1,0 +1,49 @@
+{
+  "processor": "Motorola 68851",
+  "manufacturer": "Motorola",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "TRANSLATE",
+      "category": "translate",
+      "measured_cycles": 3,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "TLB hit address translation"
+    },
+    {
+      "mnemonic": "TABLE_WALK",
+      "category": "table_walk",
+      "measured_cycles": 23,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Hardware page table walk (TLB miss)"
+    },
+    {
+      "mnemonic": "FLUSH",
+      "category": "flush",
+      "measured_cycles": 8,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "TLB flush operation"
+    },
+    {
+      "mnemonic": "LOAD_DESCRIPTOR",
+      "category": "load_descriptor",
+      "measured_cycles": 6,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Load page/segment descriptor"
+    },
+    {
+      "mnemonic": "VALIDATE",
+      "category": "validate",
+      "measured_cycles": 4,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Address validation and protection check"
+    }
+  ]
+}

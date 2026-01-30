@@ -1,0 +1,73 @@
+{
+  "processor": "Intel 8086",
+  "manufacturer": "Intel",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ADD/SUB @2.5 effective with prefetch"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 2.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV r,r @2-3 effective"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 7.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV r,m @7-8 with EA calculation"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 10.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "JMP/CALL ~10-15 cycles"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 11.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "PUSH @11, POP @8"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 94.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MUL word 70-118 cycles"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 121.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DIV word 80-162 cycles"
+    },
+    {
+      "mnemonic": "MOVS",
+      "category": "string",
+      "measured_cycles": 18.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOVSB @18 cycles"
+    }
+  ]
+}

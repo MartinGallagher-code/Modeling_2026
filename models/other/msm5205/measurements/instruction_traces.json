@@ -1,0 +1,41 @@
+{
+  "processor": "OKI MSM5205",
+  "manufacturer": "OKI",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "DECODE",
+      "category": "decode",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADPCM decode"
+    },
+    {
+      "mnemonic": "FILTER",
+      "category": "filter",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Reconstruction filter"
+    },
+    {
+      "mnemonic": "DAC",
+      "category": "dac",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "DAC output"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sample sequencing"
+    }
+  ]
+}

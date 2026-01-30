@@ -1,0 +1,21 @@
+{
+  "processor": "Motorola 6804",
+  "manufacturer": "Motorola",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 4, "bytes": 1, "source": "datasheet", "notes": "Simple ALU add - 3-5 cycles"},
+    {"mnemonic": "INC", "category": "alu", "measured_cycles": 3, "bytes": 1, "source": "datasheet", "notes": "Increment"},
+    {"mnemonic": "CMP", "category": "alu", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Compare"},
+    {"mnemonic": "LDA", "category": "data_transfer", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Load accumulator"},
+    {"mnemonic": "MOV", "category": "data_transfer", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Move data"},
+    {"mnemonic": "STA", "category": "memory", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Store to memory"},
+    {"mnemonic": "LDA_ext", "category": "memory", "measured_cycles": 6, "bytes": 2, "source": "datasheet", "notes": "Load extended addressing"},
+    {"mnemonic": "JMP", "category": "control", "measured_cycles": 6, "bytes": 2, "source": "datasheet", "notes": "Jump"},
+    {"mnemonic": "BEQ", "category": "control", "measured_cycles": 7, "bytes": 2, "source": "datasheet", "notes": "Branch if equal"},
+    {"mnemonic": "BSR", "category": "control", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Branch to subroutine"},
+    {"mnemonic": "RTS", "category": "stack", "measured_cycles": 8, "bytes": 1, "source": "datasheet", "notes": "Return from subroutine"},
+    {"mnemonic": "NOP", "category": "control", "measured_cycles": 3, "bytes": 1, "source": "datasheet", "notes": "No operation"}
+  ]
+}

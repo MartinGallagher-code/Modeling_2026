@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "AT&T DSP-20",
+  "manufacturer": "AT&T Bell Labs",
+  "year": 1983,
+  "clock_mhz": 10.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.0,
+      "measured_ipc": 0.3333,
+      "measured_ips": 3333333.3,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.4,
+      "measured_ipc": 0.4167,
+      "measured_ips": 4166666.7,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.5,
+      "measured_ipc": 0.2857,
+      "measured_ips": 2857142.9,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    },
+    {
+      "workload": "io_heavy",
+      "measured_cpi": 4.0,
+      "measured_ipc": 0.25,
+      "measured_ips": 2500000.0,
+      "measurement_method": "model_prediction",
+      "notes": "io_heavy workload profile"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 2.8,
+      "measured_ipc": 0.3571,
+      "measured_ips": 3571428.6,
+      "measurement_method": "model_prediction",
+      "notes": "mixed workload profile"
+    }
+  ]
+}

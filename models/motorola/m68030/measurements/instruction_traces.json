@@ -1,0 +1,21 @@
+{
+  "processor": "M68030",
+  "manufacturer": "Motorola",
+  "year": 1987,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD.L_Dn_Dn", "category": "alu", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "ALU single-cycle operation"},
+    {"mnemonic": "SUB.L_Dn_Dn", "category": "alu", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "ALU subtract single-cycle"},
+    {"mnemonic": "CMP.L", "category": "alu", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "Compare single-cycle"},
+    {"mnemonic": "MOVE.L_mem_Dn", "category": "load", "measured_cycles": 2, "bytes": 4, "source": "datasheet", "notes": "Load from memory - 1 execute + 1 memory"},
+    {"mnemonic": "MOVE.L_Dn_mem", "category": "store", "measured_cycles": 1, "bytes": 4, "source": "datasheet", "notes": "Store to memory"},
+    {"mnemonic": "BRA", "category": "branch", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "Branch - 2 cycle penalty if taken"},
+    {"mnemonic": "BEQ", "category": "branch", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "Conditional branch"},
+    {"mnemonic": "MULU.L", "category": "multiply", "measured_cycles": 10, "bytes": 4, "source": "datasheet", "notes": "32-bit multiply"},
+    {"mnemonic": "DIVU.L", "category": "divide", "measured_cycles": 30, "bytes": 4, "source": "datasheet", "notes": "32-bit divide"},
+    {"mnemonic": "FADD.S", "category": "fp_single", "measured_cycles": 3, "bytes": 4, "source": "datasheet", "notes": "FP single precision add"},
+    {"mnemonic": "FMUL.D", "category": "fp_double", "measured_cycles": 6, "bytes": 4, "source": "datasheet", "notes": "FP double precision multiply"},
+    {"mnemonic": "NOP", "category": "alu", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "No operation"}
+  ]
+}

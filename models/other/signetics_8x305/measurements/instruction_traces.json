@@ -1,0 +1,49 @@
+{
+  "processor": "Signetics 8X305",
+  "manufacturer": "Signetics",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "MOVE",
+      "category": "transfer",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Transfer category representative instruction"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Io category representative instruction"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "control",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control category representative instruction"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory category representative instruction"
+    }
+  ]
+}

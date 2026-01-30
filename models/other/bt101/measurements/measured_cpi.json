@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "Brooktree Bt101",
+  "manufacturer": "Brooktree",
+  "year": 1984,
+  "clock_mhz": 25.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.2,
+      "measured_ipc": 0.4545,
+      "measured_ips": 11363636.4,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "video_active",
+      "measured_cpi": 2.0,
+      "measured_ipc": 0.5,
+      "measured_ips": 12500000.0,
+      "measurement_method": "model_prediction",
+      "notes": "video_active workload profile"
+    },
+    {
+      "workload": "palette_heavy",
+      "measured_cpi": 2.5,
+      "measured_ipc": 0.4,
+      "measured_ips": 10000000.0,
+      "measurement_method": "model_prediction",
+      "notes": "palette_heavy workload profile"
+    },
+    {
+      "workload": "idle",
+      "measured_cpi": 1.8,
+      "measured_ipc": 0.5556,
+      "measured_ips": 13888888.9,
+      "measurement_method": "model_prediction",
+      "notes": "idle workload profile"
+    }
+  ]
+}

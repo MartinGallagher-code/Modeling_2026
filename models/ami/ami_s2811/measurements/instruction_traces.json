@@ -1,0 +1,41 @@
+{
+  "processor": "S2811",
+  "manufacturer": "AMI",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Multiply operations - core signal processing"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 8,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operations (add, subtract, logic)"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 10,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory load/store operations (6 base + 4 memory)"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 8,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control and branch operations"
+    }
+  ]
+}

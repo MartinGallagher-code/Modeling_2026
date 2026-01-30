@@ -1,0 +1,12 @@
+{
+  "processor": "TI SN74181",
+  "manufacturer": "Texas Instruments",
+  "year": 1970,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "arithmetic", "measured_cycles": 1, "bytes": 1, "source": "datasheet", "notes": "Arithmetic add"},
+    {"mnemonic": "XOR", "category": "logic", "measured_cycles": 1, "bytes": 1, "source": "datasheet", "notes": "Logic XOR"},
+    {"mnemonic": "SHL", "category": "shift", "measured_cycles": 1, "bytes": 1, "source": "datasheet", "notes": "Shift left"}
+  ]
+}

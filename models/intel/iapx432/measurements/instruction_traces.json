@@ -1,0 +1,49 @@
+{
+  "processor": "Intel iAPX 432",
+  "manufacturer": "Intel",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 25.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU ops @25 with object capability checks"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 35.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Object access @35 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 60.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory @60 with capability check"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 50.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Control flow @50 cycles"
+    },
+    {
+      "mnemonic": "NOP",
+      "category": "nop",
+      "measured_cycles": 120.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Object creation/GC @120 cycles"
+    }
+  ]
+}

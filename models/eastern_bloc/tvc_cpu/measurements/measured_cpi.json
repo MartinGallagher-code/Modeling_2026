@@ -1,0 +1,64 @@
+{
+  "processor": "TVC CPU",
+  "manufacturer": "MEV/Tungsram (Hungary)",
+  "year": 1983,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 5.2,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 3.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Hungarian modified Z80 clone for Videoton TVC"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 5.05,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 3.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Hungarian modified Z80 clone for Videoton TVC"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 6.15,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 3.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Hungarian modified Z80 clone for Videoton TVC"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 5.7,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 3.5,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Hungarian modified Z80 clone for Videoton TVC"
+    }
+  ]
+}

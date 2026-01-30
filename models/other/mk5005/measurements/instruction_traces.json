@@ -1,0 +1,49 @@
+{
+  "processor": "MK5005",
+  "manufacturer": "Mostek",
+  "year": 1972,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "4-bit serial addition"
+    },
+    {
+      "mnemonic": "BCD",
+      "category": "bcd",
+      "measured_cycles": 10,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "BCD decimal correction"
+    },
+    {
+      "mnemonic": "SHIFT",
+      "category": "shift",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Shift register digit rotate"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 7,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Conditional branch"
+    },
+    {
+      "mnemonic": "DISPLAY",
+      "category": "display",
+      "measured_cycles": 12,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Display scan segment output"
+    }
+  ]
+}

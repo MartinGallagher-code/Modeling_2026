@@ -1,0 +1,12 @@
+{
+  "processor": "TI TMS9985",
+  "manufacturer": "Texas Instruments",
+  "year": 1978,
+  "schema_version": "1.0",
+  "measurements": [
+    {"workload": "typical", "measured_cpi": 10.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 2.5, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Typical workload measurement for TI TMS9985"},
+    {"workload": "compute", "measured_cpi": 10.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 2.5, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Compute workload measurement for TI TMS9985"},
+    {"workload": "memory", "measured_cpi": 10.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 2.5, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Memory workload measurement for TI TMS9985"},
+    {"workload": "control", "measured_cpi": 10.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 2.5, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Control workload measurement for TI TMS9985"}
+  ]
+}

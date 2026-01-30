@@ -1,0 +1,13 @@
+{
+  "processor": "TI SN74S481",
+  "manufacturer": "Texas Instruments",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "arithmetic", "measured_cycles": 1, "bytes": 1, "source": "datasheet", "notes": "Arithmetic add"},
+    {"mnemonic": "AND", "category": "logic", "measured_cycles": 1, "bytes": 1, "source": "datasheet", "notes": "Logic AND"},
+    {"mnemonic": "CMP", "category": "compare", "measured_cycles": 1, "bytes": 1, "source": "datasheet", "notes": "Compare"},
+    {"mnemonic": "PASS", "category": "pass", "measured_cycles": 1, "bytes": 1, "source": "datasheet", "notes": "Pass-through"}
+  ]
+}

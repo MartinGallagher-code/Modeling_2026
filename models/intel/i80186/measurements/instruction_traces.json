@@ -1,0 +1,73 @@
+{
+  "processor": "Intel 80186",
+  "manufacturer": "Intel",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ADD reg,reg - 2 cycles (faster than 8086)"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV reg,reg - 2 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 6,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "MOV reg,mem - 6 cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 9,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "JMP/CALL near - 9-12 cycles"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 36,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MUL reg16 - 36 cycles (much faster than 8086)"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 38,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DIV reg16 - 38 cycles"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "PUSH reg - 5 cycles"
+    },
+    {
+      "mnemonic": "NOP",
+      "category": "nop",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "NOP - 3 cycles"
+    }
+  ]
+}

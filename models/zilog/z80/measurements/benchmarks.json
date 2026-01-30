@@ -1,0 +1,44 @@
+{
+  "processor": "Zilog Z80",
+  "manufacturer": "Zilog",
+  "year": 1976,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "gibson_mix",
+      "score": 0.58,
+      "unit": "MIPS",
+      "source": "published",
+      "source_detail": "Gibson mix applied to Z80 instruction timings from Z80 Technical Manual",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Classic instruction mix benchmark"
+    },
+    {
+      "benchmark": "sieve",
+      "score": 0.52,
+      "unit": "MIPS",
+      "source": "emulator",
+      "source_detail": "Sieve of Eratosthenes in Z80 assembly, MAME cycle count",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Uses LDIR block transfers for array initialization"
+    },
+    {
+      "benchmark": "dhrystone_2_1",
+      "score": 0.10,
+      "unit": "DMIPS",
+      "source": "published",
+      "source_detail": "Dhrystone 2.1 compiled with Hi-Tech Z80 C compiler, CP/M 2.2",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Z80 Dhrystone score limited by 8-bit architecture and compiler quality"
+    }
+  ]
+}

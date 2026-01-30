@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "AMD Am8085A",
+  "manufacturer": "AMD",
+  "year": 1978,
+  "clock_mhz": 3.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "alu",
+      "instruction_example": "ALU",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "8085 ALU ops",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "data_transfer",
+      "instruction_example": "DATA TRANSFER",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "MOV/MVI",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory",
+      "instruction_example": "MEMORY",
+      "measured_cycles": 6.0,
+      "instruction_bytes": 2,
+      "description": "Memory load/store",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "Branch/call",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "stack",
+      "instruction_example": "STACK",
+      "measured_cycles": 10.0,
+      "instruction_bytes": 1,
+      "description": "Push/pop/call",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

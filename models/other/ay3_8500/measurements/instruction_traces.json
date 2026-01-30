@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "GI AY-3-8500",
+  "manufacturer": "General Instrument",
+  "year": 1976,
+  "clock_mhz": 2.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "game_logic",
+      "instruction_example": "GAME LOGIC",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "Game logic processing",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "video_gen",
+      "instruction_example": "VIDEO GEN",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "Video generation",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "sync",
+      "instruction_example": "SYNC",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "Sync generation",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "io",
+      "instruction_example": "IO",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 1,
+      "description": "Paddle/button I/O",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

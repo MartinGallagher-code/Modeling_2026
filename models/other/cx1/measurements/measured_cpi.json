@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "Nippon Columbia CX-1",
+  "manufacturer": "Nippon Columbia",
+  "year": 1983,
+  "clock_mhz": 5.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.0,
+      "measured_ipc": 0.3333,
+      "measured_ips": 1666666.7,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.7,
+      "measured_ipc": 0.3704,
+      "measured_ips": 1851851.9,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.15,
+      "measured_ipc": 0.3175,
+      "measured_ips": 1587301.6,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    },
+    {
+      "workload": "io_heavy",
+      "measured_cpi": 3.45,
+      "measured_ipc": 0.2899,
+      "measured_ips": 1449275.4,
+      "measurement_method": "model_prediction",
+      "notes": "io_heavy workload profile"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 3.0,
+      "measured_ipc": 0.3333,
+      "measured_ips": 1666666.7,
+      "measurement_method": "model_prediction",
+      "notes": "mixed workload profile"
+    }
+  ]
+}

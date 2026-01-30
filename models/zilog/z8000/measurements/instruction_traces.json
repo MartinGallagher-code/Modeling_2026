@@ -1,0 +1,57 @@
+{
+  "processor": "Z8000",
+  "manufacturer": "Zilog",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD R,R",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "16-bit register add, 4 cycles"
+    },
+    {
+      "mnemonic": "LD R,R",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "16-bit register-to-register load, 3 cycles"
+    },
+    {
+      "mnemonic": "LD R,@R",
+      "category": "memory",
+      "measured_cycles": 7,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Register indirect load, 7 cycles"
+    },
+    {
+      "mnemonic": "JP cc",
+      "category": "control",
+      "measured_cycles": 7,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Conditional jump, 7 cycles"
+    },
+    {
+      "mnemonic": "PUSH R",
+      "category": "stack",
+      "measured_cycles": 12,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Push 16-bit register, 12 cycles"
+    },
+    {
+      "mnemonic": "LDIR",
+      "category": "block",
+      "measured_cycles": 14,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Block load with increment, 14 cycles per iteration"
+    }
+  ]
+}

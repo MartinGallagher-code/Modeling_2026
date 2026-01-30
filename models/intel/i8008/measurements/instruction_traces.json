@@ -1,0 +1,41 @@
+{
+  "processor": "Intel 8008",
+  "manufacturer": "Intel",
+  "year": 1972,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD/SUB register - 5T states at 2 cycles/T"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOV register-to-register - 5T states"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 14,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Memory load operations - 7-8T states"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 18,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "JMP/CALL - 9-11T states"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "processor": "Data General mN602",
+  "manufacturer": "Data General",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 3.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Accumulator ALU"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 3.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Register/memory transfers"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 7.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/JSR"
+    },
+    {
+      "mnemonic": "STACK",
+      "category": "stack",
+      "measured_cycles": 7.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Stack operations"
+    }
+  ]
+}

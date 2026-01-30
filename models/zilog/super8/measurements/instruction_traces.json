@@ -1,0 +1,49 @@
+{
+  "processor": "Zilog Super8",
+  "manufacturer": "Zilog",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD r,r",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Pipelined ALU register-to-register add, 3-5 cycles"
+    },
+    {
+      "mnemonic": "LD r,r",
+      "category": "data_transfer",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Register-to-register load, 3-5 cycles"
+    },
+    {
+      "mnemonic": "LD r,(addr)",
+      "category": "memory",
+      "measured_cycles": 6,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Memory load, 5-8 cycles"
+    },
+    {
+      "mnemonic": "JP cc,addr",
+      "category": "control",
+      "measured_cycles": 6,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Conditional branch, 5-8 cycles"
+    },
+    {
+      "mnemonic": "PUSH rr",
+      "category": "stack",
+      "measured_cycles": 7,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Stack push, 6-8 cycles"
+    }
+  ]
+}

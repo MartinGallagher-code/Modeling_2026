@@ -1,0 +1,49 @@
+{
+  "processor": "Intel 82730",
+  "manufacturer": "Intel",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Character rendering - 3 cycles"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Row-based display processing - 5 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Smooth scrolling operations - 6 cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Cursor management - 3 cycles"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DMA display list fetch - 4 cycles"
+    }
+  ]
+}

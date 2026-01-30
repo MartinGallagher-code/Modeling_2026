@@ -1,0 +1,57 @@
+{
+  "processor": "Commodore VIC-II (6567)",
+  "manufacturer": "MOS Technology/Commodore",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "CHAR_GEN",
+      "category": "char_gen",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Character generation"
+    },
+    {
+      "mnemonic": "SPRITE",
+      "category": "sprite",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sprite processing"
+    },
+    {
+      "mnemonic": "SCROLL",
+      "category": "scroll",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Smooth scroll"
+    },
+    {
+      "mnemonic": "RASTER",
+      "category": "raster",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Raster/sync"
+    },
+    {
+      "mnemonic": "DMA",
+      "category": "dma",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "DMA cycle steal"
+    },
+    {
+      "mnemonic": "COLOR",
+      "category": "color",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Color lookup"
+    }
+  ]
+}

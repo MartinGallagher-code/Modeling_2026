@@ -1,0 +1,49 @@
+{
+  "processor": "Namco 50xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Score arithmetic"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register data movement"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Coin switch input, display output"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "State machine transitions"
+    },
+    {
+      "mnemonic": "TIMER",
+      "category": "timer",
+      "measured_cycles": 7,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Timing and delay operations"
+    }
+  ]
+}

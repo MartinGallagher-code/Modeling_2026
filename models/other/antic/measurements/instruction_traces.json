@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "Atari ANTIC",
+  "manufacturer": "Atari",
+  "year": 1979,
+  "clock_mhz": 1.79,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "display_list",
+      "instruction_example": "DISPLAY LIST",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "Display list processing",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "char_mode",
+      "instruction_example": "CHAR MODE",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "Character mode rendering",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "map_mode",
+      "instruction_example": "MAP MODE",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "Map mode rendering",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "dma",
+      "instruction_example": "DMA",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 1,
+      "description": "DMA operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "Control operations",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

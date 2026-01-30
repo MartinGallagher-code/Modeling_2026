@@ -1,0 +1,73 @@
+{
+  "processor": "WD16",
+  "manufacturer": "Western Digital",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "REGISTER_OPS",
+      "category": "register_ops",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Register-to-register"
+    },
+    {
+      "mnemonic": "IMMEDIATE",
+      "category": "immediate",
+      "measured_cycles": 5.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Immediate operand"
+    },
+    {
+      "mnemonic": "MEMORY_READ",
+      "category": "memory_read",
+      "measured_cycles": 6.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "MEMORY_WRITE",
+      "category": "memory_write",
+      "measured_cycles": 6.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "branch",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/conditional"
+    },
+    {
+      "mnemonic": "JSR",
+      "category": "jsr",
+      "measured_cycles": 6.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Subroutine call/return"
+    },
+    {
+      "mnemonic": "BYTE",
+      "category": "byte",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Byte operations"
+    },
+    {
+      "mnemonic": "TRAP",
+      "category": "trap",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Trap/interrupt"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "processor": "Novix NC4000",
+  "manufacturer": "Novix",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "DUP",
+      "category": "stack_op",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Stack op category representative instruction"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "FETCH",
+      "category": "memory",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory category representative instruction"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "category": "control",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control category representative instruction"
+    },
+    {
+      "mnemonic": "CALL",
+      "category": "call_return",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Call return category representative instruction"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "processor": "HD64180",
+  "manufacturer": "Hitachi",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 3.2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU ops - optimized vs Z80"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 3.2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "LD operations - faster than Z80"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 4.8,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Memory ops - slightly optimized"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 4.5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Control flow - faster branches"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 8.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "PUSH/POP - optimized"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "block",
+      "measured_cycles": 10.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Block ops - faster than Z80"
+    }
+  ]
+}

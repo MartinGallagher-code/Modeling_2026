@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "F100L",
+  "manufacturer": "Ferranti",
+  "year": 1976,
+  "clock_mhz": 1.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 4.0,
+      "measured_ipc": 0.25,
+      "measured_ips": 250000.0,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 3.5,
+      "measured_ipc": 0.2857,
+      "measured_ips": 285714.3,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 4.5,
+      "measured_ipc": 0.2222,
+      "measured_ips": 222222.2,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 4.1,
+      "measured_ipc": 0.2439,
+      "measured_ips": 243902.4,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    }
+  ]
+}

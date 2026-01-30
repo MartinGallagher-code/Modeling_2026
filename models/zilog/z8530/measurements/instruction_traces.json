@@ -1,0 +1,49 @@
+{
+  "processor": "Zilog Z8530 SCC",
+  "manufacturer": "Zilog",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "RD/WR reg",
+      "category": "register_io",
+      "measured_cycles": 2,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register read/write, 2 cycles"
+    },
+    {
+      "mnemonic": "FRAME_PROC",
+      "category": "frame_process",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Frame assembly/disassembly, 6 cycles"
+    },
+    {
+      "mnemonic": "CRC_CALC",
+      "category": "crc",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "CRC generation/checking, 4 cycles"
+    },
+    {
+      "mnemonic": "CMD_STAT",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Command/status processing, 3 cycles"
+    },
+    {
+      "mnemonic": "DMA_XFER",
+      "category": "dma",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DMA transfer operations, 5 cycles"
+    }
+  ]
+}

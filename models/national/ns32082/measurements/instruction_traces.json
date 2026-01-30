@@ -1,0 +1,49 @@
+{
+  "processor": "National NS32082",
+  "manufacturer": "National Semiconductor",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "XLAT",
+      "category": "translate",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Address translation on TLB hit"
+    },
+    {
+      "mnemonic": "PF",
+      "category": "page_fault",
+      "measured_cycles": 20.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Page fault exception handling"
+    },
+    {
+      "mnemonic": "WALK",
+      "category": "table_walk",
+      "measured_cycles": 25.667,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Page table walk on TLB miss"
+    },
+    {
+      "mnemonic": "CINV",
+      "category": "cache_op",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Translation cache operations"
+    },
+    {
+      "mnemonic": "CTRL",
+      "category": "control",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MMU control and status"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "processor": "M68000",
+  "manufacturer": "Motorola",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "MOVE.L_Dn_Dn", "category": "data_transfer", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Register-to-register move"},
+    {"mnemonic": "MOVE.L_mem_Dn", "category": "memory", "measured_cycles": 12, "bytes": 4, "source": "datasheet", "notes": "Memory to register"},
+    {"mnemonic": "MOVE.L_Dn_mem", "category": "memory", "measured_cycles": 12, "bytes": 4, "source": "datasheet", "notes": "Register to memory"},
+    {"mnemonic": "ADD.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 8, "bytes": 2, "source": "datasheet", "notes": "32-bit register add"},
+    {"mnemonic": "ADD.W_Dn_Dn", "category": "alu_reg", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "16-bit register add"},
+    {"mnemonic": "SUB.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 8, "bytes": 2, "source": "datasheet", "notes": "32-bit register subtract"},
+    {"mnemonic": "CMP.W_Dn_Dn", "category": "alu_reg", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "16-bit compare"},
+    {"mnemonic": "JMP", "category": "control", "measured_cycles": 8, "bytes": 4, "source": "datasheet", "notes": "Jump absolute"},
+    {"mnemonic": "BRA", "category": "control", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Branch always"},
+    {"mnemonic": "BEQ", "category": "control", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Branch if equal - taken"},
+    {"mnemonic": "JSR", "category": "control", "measured_cycles": 16, "bytes": 4, "source": "datasheet", "notes": "Jump to subroutine"},
+    {"mnemonic": "RTS", "category": "control", "measured_cycles": 16, "bytes": 2, "source": "datasheet", "notes": "Return from subroutine"},
+    {"mnemonic": "MULU", "category": "multiply", "measured_cycles": 70, "bytes": 2, "source": "datasheet", "notes": "Unsigned multiply 16x16->32"},
+    {"mnemonic": "MULS", "category": "multiply", "measured_cycles": 70, "bytes": 2, "source": "datasheet", "notes": "Signed multiply 16x16->32"},
+    {"mnemonic": "DIVU", "category": "divide", "measured_cycles": 140, "bytes": 2, "source": "datasheet", "notes": "Unsigned divide 32/16->16r16"},
+    {"mnemonic": "DIVS", "category": "divide", "measured_cycles": 158, "bytes": 2, "source": "datasheet", "notes": "Signed divide 32/16->16r16"},
+    {"mnemonic": "NOP", "category": "control", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "No operation"}
+  ]
+}

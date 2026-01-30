@@ -1,0 +1,57 @@
+{
+  "processor": "Plessey MIPROC",
+  "manufacturer": "Plessey",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operations"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfer MOV"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory operations"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 7,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "I/O operations"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control flow"
+    },
+    {
+      "mnemonic": "STACK",
+      "category": "stack",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Stack operations"
+    }
+  ]
+}

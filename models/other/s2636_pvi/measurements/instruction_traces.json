@@ -1,0 +1,41 @@
+{
+  "processor": "Signetics 2636 PVI",
+  "manufacturer": "Signetics",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "DRAW",
+      "category": "video",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Video category representative instruction"
+    },
+    {
+      "mnemonic": "COLL",
+      "category": "collision",
+      "measured_cycles": 5.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Collision category representative instruction"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control category representative instruction"
+    }
+  ]
+}

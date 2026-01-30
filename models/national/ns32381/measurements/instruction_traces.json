@@ -1,0 +1,41 @@
+{
+  "processor": "National NS32381",
+  "manufacturer": "National Semiconductor",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "FADD",
+      "category": "fp_add",
+      "measured_cycles": 6.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "FP add @5-7c"
+    },
+    {
+      "mnemonic": "FMUL",
+      "category": "fp_mul",
+      "measured_cycles": 8.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "FP mul @7-9c"
+    },
+    {
+      "mnemonic": "FDIV",
+      "category": "fp_div",
+      "measured_cycles": 16.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "FP div @12-20c"
+    },
+    {
+      "mnemonic": "FMOV",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Reg/mem @3-5c"
+    }
+  ]
+}

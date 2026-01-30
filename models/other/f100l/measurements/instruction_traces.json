@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "processor": "F100L",
+  "manufacturer": "Ferranti",
+  "year": 1976,
+  "clock_mhz": 1.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "alu_ops",
+      "instruction_example": "ALU OPS",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 2,
+      "description": "ALU operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory_read",
+      "instruction_example": "MEMORY READ",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "Memory read",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory_write",
+      "instruction_example": "MEMORY WRITE",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 2,
+      "description": "Memory write",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "branch",
+      "instruction_example": "BRANCH",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 2,
+      "description": "Branch operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "jump",
+      "instruction_example": "JUMP",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 2,
+      "description": "Jump operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "shift",
+      "instruction_example": "SHIFT",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 2,
+      "description": "Shift operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "io",
+      "instruction_example": "IO",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "I/O operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 2,
+      "description": "Control operations",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

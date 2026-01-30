@@ -1,0 +1,57 @@
+{
+  "processor": "M68881",
+  "manufacturer": "Motorola",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "FMOVE",
+      "category": "fp_move",
+      "measured_cycles": 4,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP register move"
+    },
+    {
+      "mnemonic": "FADD",
+      "category": "fp_add",
+      "measured_cycles": 6,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP addition"
+    },
+    {
+      "mnemonic": "FMUL",
+      "category": "fp_mul",
+      "measured_cycles": 8,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP multiplication"
+    },
+    {
+      "mnemonic": "FDIV",
+      "category": "fp_div",
+      "measured_cycles": 25,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP division"
+    },
+    {
+      "mnemonic": "FSQRT",
+      "category": "fp_sqrt",
+      "measured_cycles": 35,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP square root"
+    },
+    {
+      "mnemonic": "FSIN",
+      "category": "fp_trig",
+      "measured_cycles": 55,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "FP sine (transcendental)"
+    }
+  ]
+}

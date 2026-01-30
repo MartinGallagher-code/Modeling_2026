@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "DEC T-11",
+  "manufacturer": "DEC",
+  "year": 1981,
+  "clock_mhz": 2.5,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 6.0,
+      "measured_ipc": 0.1667,
+      "measured_ips": 416666.7,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 5.1,
+      "measured_ipc": 0.1961,
+      "measured_ips": 490196.1,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 6.6,
+      "measured_ipc": 0.1515,
+      "measured_ips": 378787.9,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 6.5,
+      "measured_ipc": 0.1538,
+      "measured_ips": 384615.4,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    }
+  ]
+}

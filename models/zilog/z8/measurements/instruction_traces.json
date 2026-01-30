@@ -1,0 +1,57 @@
+{
+  "processor": "Z8",
+  "manufacturer": "Zilog",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD r,r",
+      "category": "register_ops",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Register add, 6 external clock cycles"
+    },
+    {
+      "mnemonic": "LD r,IM",
+      "category": "immediate",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Immediate to register, 6 cycles"
+    },
+    {
+      "mnemonic": "LD r,@RR",
+      "category": "memory",
+      "measured_cycles": 10,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Indexed addressing, 10-14 cycles"
+    },
+    {
+      "mnemonic": "JP cc,DA",
+      "category": "control",
+      "measured_cycles": 10,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Conditional jump, 10-12 cycles"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 12,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Push to internal stack, 12 cycles"
+    },
+    {
+      "mnemonic": "CALL DA",
+      "category": "call_return",
+      "measured_cycles": 20,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Call subroutine, 20 cycles"
+    }
+  ]
+}

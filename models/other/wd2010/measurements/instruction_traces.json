@@ -1,0 +1,49 @@
+{
+  "processor": "Western Digital WD2010",
+  "manufacturer": "Western Digital",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "COMMAND",
+      "category": "command",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Command decode and dispatch"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sector data transfer"
+    },
+    {
+      "mnemonic": "SEEK",
+      "category": "seek",
+      "measured_cycles": 8.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Head seek operations"
+    },
+    {
+      "mnemonic": "FORMAT",
+      "category": "format",
+      "measured_cycles": 10.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Track format operations"
+    },
+    {
+      "mnemonic": "ERROR_CHECK",
+      "category": "error_check",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ECC error checking"
+    }
+  ]
+}

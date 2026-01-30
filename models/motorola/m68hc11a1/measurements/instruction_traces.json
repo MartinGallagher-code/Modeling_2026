@@ -1,0 +1,49 @@
+{
+  "processor": "Motorola 68HC11A1",
+  "manufacturer": "Motorola",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU_OP",
+      "category": "alu",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operation"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 3.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Register/memory transfer"
+    },
+    {
+      "mnemonic": "MEMORY_OP",
+      "category": "memory",
+      "measured_cycles": 5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Extended memory operation"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 5.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/call operation"
+    },
+    {
+      "mnemonic": "STACK_OP",
+      "category": "stack",
+      "measured_cycles": 6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Push/pull operation"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "processor": "M6802",
+  "manufacturer": "Motorola",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADDA_imm", "category": "alu", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "Add to accumulator A immediate - same as M6800"},
+    {"mnemonic": "INCA", "category": "alu", "measured_cycles": 2, "bytes": 1, "source": "datasheet", "notes": "Increment accumulator A"},
+    {"mnemonic": "DECA", "category": "alu", "measured_cycles": 2, "bytes": 1, "source": "datasheet", "notes": "Decrement accumulator A"},
+    {"mnemonic": "LDAA_imm", "category": "data_transfer", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "Load accumulator A immediate"},
+    {"mnemonic": "TAB", "category": "data_transfer", "measured_cycles": 2, "bytes": 1, "source": "datasheet", "notes": "Transfer A to B"},
+    {"mnemonic": "LDAA_dir", "category": "memory", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Load accumulator A direct"},
+    {"mnemonic": "LDAA_ext", "category": "memory", "measured_cycles": 4, "bytes": 3, "source": "datasheet", "notes": "Load accumulator A extended"},
+    {"mnemonic": "STAA_dir", "category": "memory", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Store accumulator A direct"},
+    {"mnemonic": "STAA_ext", "category": "memory", "measured_cycles": 5, "bytes": 3, "source": "datasheet", "notes": "Store accumulator A extended"},
+    {"mnemonic": "JMP_ext", "category": "control", "measured_cycles": 3, "bytes": 3, "source": "datasheet", "notes": "Jump extended"},
+    {"mnemonic": "BEQ", "category": "control", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Branch if equal"},
+    {"mnemonic": "BRA", "category": "control", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Branch always"},
+    {"mnemonic": "PSHA", "category": "stack", "measured_cycles": 4, "bytes": 1, "source": "datasheet", "notes": "Push accumulator A"},
+    {"mnemonic": "PULA", "category": "stack", "measured_cycles": 4, "bytes": 1, "source": "datasheet", "notes": "Pull accumulator A"},
+    {"mnemonic": "JSR_ext", "category": "call_return", "measured_cycles": 9, "bytes": 3, "source": "datasheet", "notes": "Jump to subroutine - identical to M6800"},
+    {"mnemonic": "RTS", "category": "call_return", "measured_cycles": 5, "bytes": 1, "source": "datasheet", "notes": "Return from subroutine"}
+  ]
+}

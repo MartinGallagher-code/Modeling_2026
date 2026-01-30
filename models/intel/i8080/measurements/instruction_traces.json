@@ -1,0 +1,49 @@
+{
+  "processor": "Intel 8080",
+  "manufacturer": "Intel",
+  "year": 1974,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 6.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD/ADI @4-7 cycles avg 6.5"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 7.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOV/MVI @5-7 cycles"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 10.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOV r,M / MOV M,r @7-10"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 15.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "JMP/CALL/RET @10-17"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 11.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "PUSH/POP @10-11"
+    }
+  ]
+}

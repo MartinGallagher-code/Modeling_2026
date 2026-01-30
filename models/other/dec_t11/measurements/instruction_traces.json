@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "DEC T-11",
+  "manufacturer": "DEC",
+  "year": 1981,
+  "clock_mhz": 2.5,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "alu",
+      "instruction_example": "ALU",
+      "measured_cycles": 4.5,
+      "instruction_bytes": 2,
+      "description": "ALU operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "data_transfer",
+      "instruction_example": "DATA TRANSFER",
+      "measured_cycles": 4.5,
+      "instruction_bytes": 2,
+      "description": "Data transfer",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory",
+      "instruction_example": "MEMORY",
+      "measured_cycles": 7.0,
+      "instruction_bytes": 2,
+      "description": "Memory access",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 7.0,
+      "instruction_bytes": 2,
+      "description": "Control flow",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "stack",
+      "instruction_example": "STACK",
+      "measured_cycles": 8.0,
+      "instruction_bytes": 2,
+      "description": "Stack operations",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

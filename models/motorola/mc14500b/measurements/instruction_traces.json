@@ -1,0 +1,137 @@
+{
+  "processor": "MC14500B",
+  "manufacturer": "Motorola",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "NOPO",
+      "category": "nop",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "No operation (outputs active)"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "load_store",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Load RR from data bus"
+    },
+    {
+      "mnemonic": "LDC",
+      "category": "load_store",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Load complement into RR"
+    },
+    {
+      "mnemonic": "AND",
+      "category": "logic",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "RR = RR AND data"
+    },
+    {
+      "mnemonic": "ANDC",
+      "category": "logic",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "RR = RR AND (NOT data)"
+    },
+    {
+      "mnemonic": "OR",
+      "category": "logic",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "RR = RR OR data"
+    },
+    {
+      "mnemonic": "ORC",
+      "category": "logic",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "RR = RR OR (NOT data)"
+    },
+    {
+      "mnemonic": "XNOR",
+      "category": "logic",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "RR = RR XNOR data"
+    },
+    {
+      "mnemonic": "STO",
+      "category": "load_store",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Store RR to data bus"
+    },
+    {
+      "mnemonic": "STOC",
+      "category": "load_store",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Store complement of RR"
+    },
+    {
+      "mnemonic": "IEN",
+      "category": "control",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Input enable register"
+    },
+    {
+      "mnemonic": "OEN",
+      "category": "control",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Output enable register"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Set JMP flag output"
+    },
+    {
+      "mnemonic": "RTN",
+      "category": "control",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Set RTN flag output"
+    },
+    {
+      "mnemonic": "SKZ",
+      "category": "control",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Skip next if RR = 0"
+    },
+    {
+      "mnemonic": "NOPF",
+      "category": "nop",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "No operation (outputs inactive)"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "processor": "I860",
+  "manufacturer": "Intel",
+  "year": 1989,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "ALU operations single-cycle"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 1,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Load from memory (cache hit)"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 1,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Branch with 3 delay slots"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 3,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Integer multiply pipelined (3 latency, 1/cycle throughput)"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 8,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Integer divide 8-12 cycles"
+    },
+    {
+      "mnemonic": "FADD",
+      "category": "float",
+      "measured_cycles": 1,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Pipelined FP add (3 latency, 1/cycle throughput)"
+    }
+  ]
+}

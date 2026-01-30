@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "Berkeley RISC I",
+  "manufacturer": "UC Berkeley",
+  "year": 1982,
+  "clock_mhz": 4.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 1.3,
+      "measured_ipc": 0.7692,
+      "measured_ips": 3076923.1,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 1.1,
+      "measured_ipc": 0.9091,
+      "measured_ips": 3636363.6,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 1.7,
+      "measured_ipc": 0.5882,
+      "measured_ips": 2352941.2,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 1.2,
+      "measured_ipc": 0.8333,
+      "measured_ips": 3333333.3,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    }
+  ]
+}

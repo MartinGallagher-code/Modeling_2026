@@ -1,0 +1,49 @@
+{
+  "processor": "Thomson EFCIS 90435",
+  "manufacturer": "Thomson-CSF",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU operations"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfers"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 6.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory access"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 7.5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/call"
+    },
+    {
+      "mnemonic": "STACK",
+      "category": "stack",
+      "measured_cycles": 8.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Stack operations"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "processor": "TI TMS9900",
+  "manufacturer": "Texas Instruments",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "A", "category": "register_ops", "measured_cycles": 14, "bytes": 2, "source": "datasheet", "notes": "Add registers"},
+    {"mnemonic": "LI", "category": "immediate", "measured_cycles": 16, "bytes": 4, "source": "datasheet", "notes": "Load immediate"},
+    {"mnemonic": "MOV", "category": "memory_read", "measured_cycles": 22, "bytes": 2, "source": "datasheet", "notes": "Move (read)"},
+    {"mnemonic": "MOVB", "category": "memory_write", "measured_cycles": 24, "bytes": 2, "source": "datasheet", "notes": "Move byte (write)"},
+    {"mnemonic": "JMP", "category": "branch", "measured_cycles": 20, "bytes": 2, "source": "datasheet", "notes": "Jump"},
+    {"mnemonic": "BL", "category": "call_return", "measured_cycles": 40, "bytes": 2, "source": "datasheet", "notes": "Branch and link"}
+  ]
+}

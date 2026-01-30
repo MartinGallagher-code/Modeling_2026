@@ -1,0 +1,20 @@
+{
+  "processor": "Inmos T212",
+  "manufacturer": "Inmos",
+  "year": 1985,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "gibson_mix",
+      "score": 6.0,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Gibson mix applied to instruction timings",
+      "conditions": {
+        "clock_mhz": 15.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

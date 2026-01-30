@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "processor": "AMD Am8085A",
+  "manufacturer": "AMD",
+  "year": 1978,
+  "clock_mhz": 3.0,
+  "benchmark_date": "2026-01-29",
+  "benchmarks": [
+    {
+      "name": "Gibson Mix",
+      "category": "synthetic",
+      "score": 0.6,
+      "unit": "MIPS",
+      "notes": "Estimated from typical CPI of 5.0"
+    },
+    {
+      "name": "Typical Workload IPS",
+      "category": "throughput",
+      "score": 600000.0,
+      "unit": "IPS",
+      "notes": "Instructions per second at typical workload"
+    }
+  ]
+}

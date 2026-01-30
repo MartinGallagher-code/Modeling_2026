@@ -1,0 +1,20 @@
+{
+  "processor": "Inmos T800",
+  "manufacturer": "Inmos",
+  "year": 1987,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "gibson_mix",
+      "score": 10.0,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Gibson mix applied to instruction timings",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

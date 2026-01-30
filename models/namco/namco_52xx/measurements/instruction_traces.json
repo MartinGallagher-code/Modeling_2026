@@ -1,0 +1,49 @@
+{
+  "processor": "Namco 52xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "AUDIO_DMA",
+      "category": "audio_dma",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "DMA fetch of sample data from ROM"
+    },
+    {
+      "mnemonic": "SAMPLE_READ",
+      "category": "sample_read",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Decode and process sample data"
+    },
+    {
+      "mnemonic": "DAC",
+      "category": "dac",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Digital-to-analog conversion output"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Playback state machine control"
+    },
+    {
+      "mnemonic": "TIMING",
+      "category": "timing",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sample rate timing control"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "processor": "Toshiba TLCS-12A",
+  "manufacturer": "Toshiba",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "ALU add"},
+    {"mnemonic": "MOV", "category": "data_transfer", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Data move"},
+    {"mnemonic": "LD", "category": "memory", "measured_cycles": 7, "bytes": 3, "source": "datasheet", "notes": "Load from memory"},
+    {"mnemonic": "IN", "category": "io", "measured_cycles": 9, "bytes": 2, "source": "datasheet", "notes": "Input"},
+    {"mnemonic": "JMP", "category": "control", "measured_cycles": 6, "bytes": 3, "source": "datasheet", "notes": "Jump"}
+  ]
+}

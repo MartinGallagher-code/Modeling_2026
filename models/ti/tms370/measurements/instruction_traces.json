@@ -1,0 +1,14 @@
+{
+  "processor": "TI TMS370",
+  "manufacturer": "Texas Instruments",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "Register add"},
+    {"mnemonic": "MOV", "category": "data_transfer", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Data move"},
+    {"mnemonic": "LDA", "category": "memory", "measured_cycles": 4, "bytes": 3, "source": "datasheet", "notes": "Load from memory"},
+    {"mnemonic": "BR", "category": "control", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Branch"},
+    {"mnemonic": "PCTL", "category": "peripheral", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Peripheral control"}
+  ]
+}

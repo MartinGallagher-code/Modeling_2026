@@ -1,0 +1,41 @@
+{
+  "processor": "Goodyear STARAN",
+  "manufacturer": "Goodyear Aerospace",
+  "year": 1972,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "BIT_OP",
+      "category": "bit_op",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Bit-serial operations"
+    },
+    {
+      "mnemonic": "WORD_OP",
+      "category": "word_op",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Word-level operations"
+    },
+    {
+      "mnemonic": "SEARCH",
+      "category": "search",
+      "measured_cycles": 12.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Associative search"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Array control"
+    }
+  ]
+}

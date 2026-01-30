@@ -1,0 +1,15 @@
+{
+  "processor": "Toshiba TLCS-870",
+  "manufacturer": "Toshiba",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "ALU add"},
+    {"mnemonic": "LD", "category": "data_transfer", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Load"},
+    {"mnemonic": "LDW", "category": "memory", "measured_cycles": 5, "bytes": 3, "source": "datasheet", "notes": "Load word"},
+    {"mnemonic": "IN", "category": "io", "measured_cycles": 6, "bytes": 2, "source": "datasheet", "notes": "Input"},
+    {"mnemonic": "JR", "category": "control", "measured_cycles": 5, "bytes": 2, "source": "datasheet", "notes": "Jump relative"},
+    {"mnemonic": "SET", "category": "bit_ops", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Set bit"}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "processor": "M68040",
+  "manufacturer": "Motorola",
+  "year": 1990,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADD.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "32-bit register add - pipelined single-cycle"},
+    {"mnemonic": "SUB.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "32-bit register subtract"},
+    {"mnemonic": "CMP.L", "category": "alu_reg", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "32-bit compare"},
+    {"mnemonic": "MOVE.L_Dn_Dn", "category": "data_transfer", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "Register-to-register single-cycle"},
+    {"mnemonic": "MOVE.L_mem_Dn", "category": "memory", "measured_cycles": 3, "bytes": 4, "source": "datasheet", "notes": "Memory to register with cache hit"},
+    {"mnemonic": "MOVE.L_Dn_mem", "category": "memory", "measured_cycles": 2, "bytes": 4, "source": "datasheet", "notes": "Register to memory"},
+    {"mnemonic": "BRA_taken", "category": "control", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Branch taken"},
+    {"mnemonic": "BRA_not_taken", "category": "control", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "Branch not taken"},
+    {"mnemonic": "JSR", "category": "control", "measured_cycles": 4, "bytes": 4, "source": "datasheet", "notes": "Jump to subroutine"},
+    {"mnemonic": "RTS", "category": "control", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Return from subroutine"},
+    {"mnemonic": "MULU.L", "category": "multiply", "measured_cycles": 5, "bytes": 4, "source": "datasheet", "notes": "32-bit multiply - pipelined"},
+    {"mnemonic": "DIVU.L", "category": "divide", "measured_cycles": 38, "bytes": 4, "source": "datasheet", "notes": "32-bit divide"},
+    {"mnemonic": "FADD.S", "category": "fp_ops", "measured_cycles": 3, "bytes": 4, "source": "datasheet", "notes": "FP add - integrated FPU"},
+    {"mnemonic": "FMUL.S", "category": "fp_ops", "measured_cycles": 5, "bytes": 4, "source": "datasheet", "notes": "FP multiply - integrated FPU"},
+    {"mnemonic": "NOP", "category": "alu_reg", "measured_cycles": 1, "bytes": 2, "source": "datasheet", "notes": "No operation"}
+  ]
+}

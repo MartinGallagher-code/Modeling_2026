@@ -1,0 +1,57 @@
+{
+  "processor": "Mitsubishi MELPS 740 (M50740)",
+  "manufacturer": "Mitsubishi Electric",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Arithmetic (ADC, SBC, INC, DEC)"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 3,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "LDA/STA/LDX/STX"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Indexed/indirect addressing"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Branch/jump operations"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Timer/serial/A-D I/O"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "bit_ops",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Bit manipulation (SET, CLR, TST)"
+    }
+  ]
+}

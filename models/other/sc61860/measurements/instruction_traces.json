@@ -1,0 +1,49 @@
+{
+  "processor": "SC61860",
+  "manufacturer": "Sharp",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADB",
+      "category": "alu",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "LIA",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Data transfer category representative instruction"
+    },
+    {
+      "mnemonic": "STP",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Memory category representative instruction"
+    },
+    {
+      "mnemonic": "JPZ",
+      "category": "control",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control category representative instruction"
+    },
+    {
+      "mnemonic": "DSPO",
+      "category": "display",
+      "measured_cycles": 8.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Display category representative instruction"
+    }
+  ]
+}

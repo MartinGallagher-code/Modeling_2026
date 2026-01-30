@@ -1,0 +1,49 @@
+{
+  "processor": "Sequoia S-16",
+  "manufacturer": "Sequoia Systems",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory category representative instruction"
+    },
+    {
+      "mnemonic": "BR",
+      "category": "control",
+      "measured_cycles": 4.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Control category representative instruction"
+    },
+    {
+      "mnemonic": "CAS",
+      "category": "compare_swap",
+      "measured_cycles": 8.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Compare swap category representative instruction"
+    },
+    {
+      "mnemonic": "CHECKPOINT",
+      "category": "checkpoint",
+      "measured_cycles": 12.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Checkpoint category representative instruction"
+    }
+  ]
+}

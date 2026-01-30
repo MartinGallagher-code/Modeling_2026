@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "HP Nanoprocessor",
+  "manufacturer": "Hewlett-Packard",
+  "year": 1977,
+  "clock_mhz": 1.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "alu",
+      "instruction_example": "ALU",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "ALU operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "data_transfer",
+      "instruction_example": "DATA TRANSFER",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "Data transfer",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory",
+      "instruction_example": "MEMORY",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "Memory access",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "io",
+      "instruction_example": "IO",
+      "measured_cycles": 4.0,
+      "instruction_bytes": 1,
+      "description": "I/O operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 5.0,
+      "instruction_bytes": 2,
+      "description": "Control flow",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

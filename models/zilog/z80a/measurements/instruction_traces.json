@@ -1,0 +1,57 @@
+{
+  "processor": "Z80A",
+  "manufacturer": "Zilog",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD A,r",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register add to A, 4 T-states (same as Z80)"
+    },
+    {
+      "mnemonic": "LD r,r",
+      "category": "data_transfer",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register-to-register load, 4 T-states"
+    },
+    {
+      "mnemonic": "LD r,(HL)",
+      "category": "memory",
+      "measured_cycles": 7,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Memory to register via HL, 7 T-states"
+    },
+    {
+      "mnemonic": "JP nn",
+      "category": "control",
+      "measured_cycles": 10,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Unconditional jump, 10 T-states"
+    },
+    {
+      "mnemonic": "PUSH qq",
+      "category": "stack",
+      "measured_cycles": 11,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Push register pair, 11 T-states"
+    },
+    {
+      "mnemonic": "LDIR",
+      "category": "block",
+      "measured_cycles": 21,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Block load with increment (BC!=0), 21 T-states"
+    }
+  ]
+}

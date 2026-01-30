@@ -1,0 +1,49 @@
+{
+  "processor": "Ridge 32",
+  "manufacturer": "Ridge Computers",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Alu category representative instruction"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 5.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Memory category representative instruction"
+    },
+    {
+      "mnemonic": "BR",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Control category representative instruction"
+    },
+    {
+      "mnemonic": "FADD",
+      "category": "float",
+      "measured_cycles": 8.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Float category representative instruction"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 6.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Io category representative instruction"
+    }
+  ]
+}

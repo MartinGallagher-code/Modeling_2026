@@ -1,0 +1,14 @@
+{
+  "processor": "TI TMS1000",
+  "manufacturer": "Texas Instruments",
+  "year": 1974,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "TAY", "category": "alu", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "Transfer A to Y"},
+    {"mnemonic": "TMA", "category": "data_transfer", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "Transfer M to A"},
+    {"mnemonic": "KNEZ", "category": "io", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "Keyboard not equal zero"},
+    {"mnemonic": "BR", "category": "control", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "Branch"},
+    {"mnemonic": "CALL", "category": "call", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "Call subroutine"}
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "Brooktree Bt101",
+  "manufacturer": "Brooktree",
+  "year": 1984,
+  "clock_mhz": 25.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "palette_read",
+      "instruction_example": "PALETTE READ",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 1,
+      "description": "Palette lookup",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "dac_convert",
+      "instruction_example": "DAC CONVERT",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "DAC conversion",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 1,
+      "description": "Control register ops",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "pixel_clock",
+      "instruction_example": "PIXEL CLOCK",
+      "measured_cycles": 1.0,
+      "instruction_bytes": 1,
+      "description": "Pixel clock sync",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "lookup",
+      "instruction_example": "LOOKUP",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 1,
+      "description": "Color lookup table",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "processor": "HD6301",
+  "manufacturer": "Hitachi",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU ops - ADDA imm @2, INCA @1, optimized"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 2.6,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "LDAA imm @2, register moves"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 3.8,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "LDAA dir @3, LDAA ext @4, STAA @4"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3.8,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JMP @3, BEQ @3, weighted avg"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 4.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "PSHA/PULA @3-4"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "call_return",
+      "measured_cycles": 7.5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "JSR @8, RTS @5, weighted"
+    }
+  ]
+}

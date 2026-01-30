@@ -1,0 +1,57 @@
+{
+  "processor": "Intersil 6100",
+  "manufacturer": "Intersil",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ARITHMETIC",
+      "category": "arithmetic",
+      "measured_cycles": 10,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "TAD direct"
+    },
+    {
+      "mnemonic": "LOGIC",
+      "category": "logic",
+      "measured_cycles": 10,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "AND direct"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 12,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DCA/ISZ"
+    },
+    {
+      "mnemonic": "JUMP",
+      "category": "jump",
+      "measured_cycles": 12,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JMP/JMS"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 12,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "IOT transfer"
+    },
+    {
+      "mnemonic": "OPERATE",
+      "category": "operate",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "OPR microcoded"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "processor": "Motorola MC6854",
+  "manufacturer": "Motorola",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "FRAME_PROCESS",
+      "category": "frame_process",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Frame handling"
+    },
+    {
+      "mnemonic": "CRC",
+      "category": "crc",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "CRC generation/check"
+    },
+    {
+      "mnemonic": "FLAG_DETECT",
+      "category": "flag_detect",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Flag sequence detection"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "FIFO/bus data transfer"
+    }
+  ]
+}

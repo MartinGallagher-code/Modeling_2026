@@ -1,0 +1,57 @@
+{
+  "processor": "Intel 8096",
+  "manufacturer": "Intel",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.9,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "ADD/SUB/AND/OR/XOR reg,reg @2-3 clocks"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 4.5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "LD/ST indirect @4-5 clocks average"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 6.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "MUL 16x16->32 @6 clocks (hardware multiplier)"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 12.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "DIV 32/16->16 @12 clocks (hardware divider)"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JMP/CALL/RET @4 clocks average"
+    },
+    {
+      "mnemonic": "IN",
+      "category": "io",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "PWM/ADC/Timer SFR access @4 clocks"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "processor": "Zilog Z8016 DMA",
+  "manufacturer": "Zilog",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "XFER",
+      "category": "transfer",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Single DMA transfer cycle, ~2 cycles"
+    },
+    {
+      "mnemonic": "SETUP",
+      "category": "setup",
+      "measured_cycles": 6,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "DMA channel setup and configuration, ~6 cycles"
+    },
+    {
+      "mnemonic": "CHAIN",
+      "category": "chain",
+      "measured_cycles": 9,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Chained/scatter-gather transfer, ~8+0.5 cycles"
+    },
+    {
+      "mnemonic": "CTRL",
+      "category": "control",
+      "measured_cycles": 4,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Control and status operations, ~4 cycles"
+    },
+    {
+      "mnemonic": "SEARCH",
+      "category": "search",
+      "measured_cycles": 5,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Search and match operations, ~5 cycles"
+    }
+  ]
+}

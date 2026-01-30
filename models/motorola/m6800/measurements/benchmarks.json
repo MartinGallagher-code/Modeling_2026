@@ -1,0 +1,20 @@
+{
+  "processor": "M6800",
+  "manufacturer": "Motorola",
+  "year": 1974,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "gibson_mix",
+      "score": 0.25,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Gibson mix applied to instruction timings",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Estimated from instruction mix"
+    }
+  ]
+}

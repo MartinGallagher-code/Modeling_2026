@@ -1,0 +1,49 @@
+{
+  "processor": "uPD1007C",
+  "manufacturer": "NEC",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 5.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "4-bit ALU @5 cycles"
+    },
+    {
+      "mnemonic": "ADDB",
+      "category": "bcd",
+      "measured_cycles": 7.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "BCD multi-digit @7 cycles"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register file load @6 cycles"
+    },
+    {
+      "mnemonic": "JP",
+      "category": "control",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Unconditional jump @4 cycles"
+    },
+    {
+      "mnemonic": "DOUT",
+      "category": "display",
+      "measured_cycles": 9.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Display output @9 cycles"
+    }
+  ]
+}

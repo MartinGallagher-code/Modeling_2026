@@ -1,0 +1,57 @@
+{
+  "processor": "Western Digital WD9000 Pascal MicroEngine",
+  "manufacturer": "Western Digital",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "STACK_OPS",
+      "category": "stack_ops",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Push/pop/dup stack operations"
+    },
+    {
+      "mnemonic": "ARITHMETIC",
+      "category": "arithmetic",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Add/sub/mul arithmetic"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Load/store indirect"
+    },
+    {
+      "mnemonic": "PROCEDURE",
+      "category": "procedure",
+      "measured_cycles": 14.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Procedure call/return with frame"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Branch/jump operations"
+    },
+    {
+      "mnemonic": "COMPARISON",
+      "category": "comparison",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Compare/test operations"
+    }
+  ]
+}

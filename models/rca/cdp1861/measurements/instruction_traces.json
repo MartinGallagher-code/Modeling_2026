@@ -1,0 +1,13 @@
+{
+  "processor": "RCA CDP1861 Pixie",
+  "manufacturer": "RCA",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "DMAFETCH", "category": "dma_fetch", "measured_cycles": 8, "bytes": 1, "source": "datasheet", "notes": "DMA fetch cycle"},
+    {"mnemonic": "DISPACT", "category": "display_active", "measured_cycles": 10, "bytes": 1, "source": "datasheet", "notes": "Display active scan"},
+    {"mnemonic": "BLANK", "category": "blanking", "measured_cycles": 6, "bytes": 1, "source": "datasheet", "notes": "Blanking interval"},
+    {"mnemonic": "SYNC", "category": "sync", "measured_cycles": 5, "bytes": 1, "source": "datasheet", "notes": "Sync generation"}
+  ]
+}

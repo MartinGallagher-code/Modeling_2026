@@ -1,0 +1,41 @@
+{
+  "processor": "Intel 8039",
+  "manufacturer": "Intel",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD A,Rn - 1 machine cycle"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOV A,Rn - 1 machine cycle"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 2,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOVX external memory - 2 machine cycles"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 2,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JMP/CALL - 2 machine cycles"
+    }
+  ]
+}

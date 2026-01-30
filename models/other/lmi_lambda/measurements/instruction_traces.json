@@ -1,0 +1,57 @@
+{
+  "processor": "LMI Lambda",
+  "manufacturer": "LISP Machines Inc.",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "CAR_CDR",
+      "category": "car_cdr",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "CAR/CDR list operations"
+    },
+    {
+      "mnemonic": "CONS",
+      "category": "cons",
+      "measured_cycles": 4.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "CONS cell allocation"
+    },
+    {
+      "mnemonic": "EVAL",
+      "category": "eval",
+      "measured_cycles": 7.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Evaluation/function dispatch"
+    },
+    {
+      "mnemonic": "GC",
+      "category": "gc",
+      "measured_cycles": 11.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Garbage collection"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 5.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Tagged memory read/write"
+    },
+    {
+      "mnemonic": "TYPE_CHECK",
+      "category": "type_check",
+      "measured_cycles": 3.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Type tag checking"
+    }
+  ]
+}

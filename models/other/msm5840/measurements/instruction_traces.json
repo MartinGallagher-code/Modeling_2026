@@ -1,0 +1,57 @@
+{
+  "processor": "OKI MSM5840",
+  "manufacturer": "OKI Semiconductor",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU ADD/SUB/logical"
+    },
+    {
+      "mnemonic": "DATA_TRANSFER",
+      "category": "data_transfer",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register-memory transfers"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Load/store operations"
+    },
+    {
+      "mnemonic": "LCD",
+      "category": "lcd",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "LCD driver control"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 7,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Input/output operations"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Branch/call/return"
+    }
+  ]
+}

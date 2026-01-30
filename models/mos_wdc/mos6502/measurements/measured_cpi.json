@@ -1,0 +1,64 @@
+{
+  "processor": "MOS 6502",
+  "manufacturer": "MOS Technology",
+  "year": 1975,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.5,
+      "source": "emulator",
+      "source_detail": "perfect6502 transistor-level simulation, average over mixed workload",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Transistor-level sim provides exact cycle counts"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.8,
+      "source": "emulator",
+      "source_detail": "perfect6502, ALU-heavy loop (ADC/SBC/AND/ORA)",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Most ALU ops are 2 cycles (immediate) or 3 cycles (zeropage)"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 4.2,
+      "source": "emulator",
+      "source_detail": "perfect6502, memory-intensive workload (LDA/STA abs,X)",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Indexed addressing adds page-crossing penalties"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.8,
+      "source": "emulator",
+      "source_detail": "perfect6502, branch-heavy control flow",
+      "conditions": {
+        "clock_mhz": 1.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "Branch taken adds 1 cycle, page cross adds another"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "processor": "Williams SC1",
+  "manufacturer": "Williams Electronics",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "SETUP",
+      "category": "setup",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Register setup"
+    },
+    {
+      "mnemonic": "BLIT",
+      "category": "blit",
+      "measured_cycles": 10.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Block transfer"
+    },
+    {
+      "mnemonic": "TRANSFORM",
+      "category": "transform",
+      "measured_cycles": 12.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "XOR/copy transform"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "DMA control"
+    }
+  ]
+}

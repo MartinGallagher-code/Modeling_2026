@@ -1,0 +1,14 @@
+{
+  "processor": "TI TMS320C10",
+  "manufacturer": "Texas Instruments",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "MAC", "category": "mac", "measured_cycles": 1, "bytes": 1, "source": "datasheet", "notes": "Multiply-accumulate"},
+    {"mnemonic": "ADD", "category": "alu", "measured_cycles": 2, "bytes": 1, "source": "datasheet", "notes": "ALU add"},
+    {"mnemonic": "DMOV", "category": "memory", "measured_cycles": 2, "bytes": 1, "source": "datasheet", "notes": "Data move"},
+    {"mnemonic": "B", "category": "branch", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "Branch"},
+    {"mnemonic": "NOP", "category": "control", "measured_cycles": 2, "bytes": 1, "source": "datasheet", "notes": "No operation"}
+  ]
+}

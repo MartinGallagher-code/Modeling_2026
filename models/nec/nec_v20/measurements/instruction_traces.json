@@ -1,0 +1,57 @@
+{
+  "processor": "NEC V20",
+  "manufacturer": "NEC",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 2.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU: ADD/SUB reg,reg @2"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV reg,reg @2, MOV reg,mem @4-6"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "memory",
+      "measured_cycles": 4.5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Memory ops with faster EA"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JMP @3, Jcc, CALL"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Hardware MUL 3-4x faster than 8088"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DIV improved 3x over 8088"
+    }
+  ]
+}

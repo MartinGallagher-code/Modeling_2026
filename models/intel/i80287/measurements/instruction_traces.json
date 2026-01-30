@@ -1,0 +1,41 @@
+{
+  "processor": "Intel 80287",
+  "manufacturer": "Intel",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "FADD",
+      "category": "float",
+      "measured_cycles": 85,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "FADD - floating-point addition 80-90 cycles"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 20,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "FLD/FST - floating-point load/store 17-22 cycles"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 140,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "FMUL - floating-point multiply 130-145 cycles"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 200,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "FDIV - floating-point divide 190-210 cycles"
+    }
+  ]
+}

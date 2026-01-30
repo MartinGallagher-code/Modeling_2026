@@ -1,0 +1,57 @@
+{
+  "processor": "Yamaha V9938",
+  "manufacturer": "Yamaha",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "BITMAP",
+      "category": "bitmap",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Bitmap rendering"
+    },
+    {
+      "mnemonic": "SPRITE",
+      "category": "sprite",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sprite processing"
+    },
+    {
+      "mnemonic": "SCROLL",
+      "category": "scroll",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "H/V scroll"
+    },
+    {
+      "mnemonic": "COMMAND",
+      "category": "command",
+      "measured_cycles": 8.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Command engine (line/fill/copy)"
+    },
+    {
+      "mnemonic": "VRAM",
+      "category": "vram",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "VRAM access (128KB)"
+    },
+    {
+      "mnemonic": "PALETTE",
+      "category": "palette",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Palette lookup"
+    }
+  ]
+}

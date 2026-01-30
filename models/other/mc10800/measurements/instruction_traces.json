@@ -1,0 +1,49 @@
+{
+  "processor": "Motorola MC10800",
+  "manufacturer": "Motorola",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU ADD/SUB fast ECL"
+    },
+    {
+      "mnemonic": "SHIFT",
+      "category": "shift",
+      "measured_cycles": 2.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Shift and rotate"
+    },
+    {
+      "mnemonic": "LOGIC",
+      "category": "logic",
+      "measured_cycles": 1.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "AND/OR/XOR fast ECL"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 3.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Microsequencer control"
+    },
+    {
+      "mnemonic": "CASCADE",
+      "category": "cascade",
+      "measured_cycles": 2.5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Cascade carry propagation"
+    }
+  ]
+}

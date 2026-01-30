@@ -1,0 +1,20 @@
+{
+  "processor": "M68008",
+  "manufacturer": "Motorola",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "MOVE.L_Dn_Dn", "category": "data_transfer", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Register-to-register (same as 68000 internal)"},
+    {"mnemonic": "MOVE.L_mem_Dn", "category": "memory", "measured_cycles": 16, "bytes": 4, "source": "datasheet", "notes": "Memory to register - slower 8-bit bus"},
+    {"mnemonic": "ADD.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 8, "bytes": 2, "source": "datasheet", "notes": "32-bit register add"},
+    {"mnemonic": "ADD.W_Dn_Dn", "category": "alu_reg", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "16-bit register add"},
+    {"mnemonic": "SUB.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 8, "bytes": 2, "source": "datasheet", "notes": "32-bit register subtract"},
+    {"mnemonic": "JMP", "category": "control", "measured_cycles": 10, "bytes": 4, "source": "datasheet", "notes": "Jump - extra fetch cycles on 8-bit bus"},
+    {"mnemonic": "BRA", "category": "control", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Branch always"},
+    {"mnemonic": "BEQ", "category": "control", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Branch if equal"},
+    {"mnemonic": "MULU", "category": "multiply", "measured_cycles": 72, "bytes": 2, "source": "datasheet", "notes": "Unsigned multiply"},
+    {"mnemonic": "DIVU", "category": "divide", "measured_cycles": 145, "bytes": 2, "source": "datasheet", "notes": "Unsigned divide"},
+    {"mnemonic": "NOP", "category": "control", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "No operation"}
+  ]
+}

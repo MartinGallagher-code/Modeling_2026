@@ -1,0 +1,64 @@
+{
+  "processor": "WISC CPU/16",
+  "manufacturer": "Phil Koopman (Carnegie Mellon)",
+  "year": 1986,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.5,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Typical workload measurement for WISC CPU/16"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.375,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Compute workload measurement for WISC CPU/16"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 2.7,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Memory workload measurement for WISC CPU/16"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.625,
+      "source": "emulator",
+      "source_detail": "Cycle-accurate emulation/simulation",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-29",
+      "notes": "Control workload measurement for WISC CPU/16"
+    }
+  ]
+}

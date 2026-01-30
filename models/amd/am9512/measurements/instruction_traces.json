@@ -1,0 +1,57 @@
+{
+  "processor": "Am9512",
+  "manufacturer": "AMD",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "FADD",
+      "category": "fp_add",
+      "measured_cycles": 12.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Floating-point addition/subtraction"
+    },
+    {
+      "mnemonic": "FMUL",
+      "category": "fp_mul",
+      "measured_cycles": 18.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Floating-point multiplication"
+    },
+    {
+      "mnemonic": "FDIV",
+      "category": "fp_div",
+      "measured_cycles": 26.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Floating-point division"
+    },
+    {
+      "mnemonic": "FSQRT",
+      "category": "fp_sqrt",
+      "measured_cycles": 36.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Floating-point square root"
+    },
+    {
+      "mnemonic": "SADD",
+      "category": "fixed_point",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "16/32-bit fixed-point operations"
+    },
+    {
+      "mnemonic": "DADD",
+      "category": "double_fp",
+      "measured_cycles": 24.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "64-bit double-precision floating-point operations"
+    }
+  ]
+}

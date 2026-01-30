@@ -1,0 +1,73 @@
+{
+  "processor": "MN601",
+  "manufacturer": "Data General",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU_OPS",
+      "category": "alu_ops",
+      "measured_cycles": 3.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operations"
+    },
+    {
+      "mnemonic": "MEMORY_READ",
+      "category": "memory_read",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "MEMORY_WRITE",
+      "category": "memory_write",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "JUMP",
+      "category": "jump",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Jump instructions"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "I/O operations"
+    },
+    {
+      "mnemonic": "SKIP",
+      "category": "skip",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Skip instructions"
+    },
+    {
+      "mnemonic": "SHIFT",
+      "category": "shift",
+      "measured_cycles": 5.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Shift operations"
+    },
+    {
+      "mnemonic": "STACK",
+      "category": "stack",
+      "measured_cycles": 6.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Stack operations"
+    }
+  ]
+}

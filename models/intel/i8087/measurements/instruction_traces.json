@@ -1,0 +1,49 @@
+{
+  "processor": "Intel 8087",
+  "manufacturer": "Intel",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "FADD",
+      "category": "float",
+      "measured_cycles": 70.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Floating-point addition/subtraction ~70 cycles"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 110.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Floating-point multiplication ~110 cycles"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 200.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Floating-point division ~200 cycles"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 20.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "FLD/FST load/store to FP stack ~20 cycles"
+    },
+    {
+      "mnemonic": "NOP",
+      "category": "nop",
+      "measured_cycles": 15.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "FXCH register exchange ~15 cycles"
+    }
+  ]
+}

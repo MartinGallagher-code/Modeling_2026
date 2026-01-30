@@ -1,0 +1,23 @@
+{
+  "processor": "Motorola 6803",
+  "manufacturer": "Motorola",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "ADDA_imm", "category": "alu", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "Add to accumulator A immediate"},
+    {"mnemonic": "INCA", "category": "alu", "measured_cycles": 2, "bytes": 1, "source": "datasheet", "notes": "Increment accumulator A"},
+    {"mnemonic": "CMPA_imm", "category": "alu", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "Compare immediate"},
+    {"mnemonic": "LDAA_imm", "category": "data_transfer", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "Load accumulator A immediate"},
+    {"mnemonic": "TAB", "category": "data_transfer", "measured_cycles": 2, "bytes": 1, "source": "datasheet", "notes": "Transfer A to B"},
+    {"mnemonic": "LDAA_dir", "category": "memory", "measured_cycles": 3, "bytes": 2, "source": "datasheet", "notes": "Load accumulator direct"},
+    {"mnemonic": "LDAA_ext", "category": "memory", "measured_cycles": 4, "bytes": 3, "source": "datasheet", "notes": "Load accumulator extended"},
+    {"mnemonic": "STAA_ext", "category": "memory", "measured_cycles": 5, "bytes": 3, "source": "datasheet", "notes": "Store accumulator extended"},
+    {"mnemonic": "BEQ", "category": "control", "measured_cycles": 4, "bytes": 2, "source": "datasheet", "notes": "Branch if equal"},
+    {"mnemonic": "JMP_ext", "category": "control", "measured_cycles": 3, "bytes": 3, "source": "datasheet", "notes": "Jump extended"},
+    {"mnemonic": "JSR_ext", "category": "control", "measured_cycles": 9, "bytes": 3, "source": "datasheet", "notes": "Jump to subroutine"},
+    {"mnemonic": "RTS", "category": "control", "measured_cycles": 5, "bytes": 1, "source": "datasheet", "notes": "Return from subroutine"},
+    {"mnemonic": "PSHA", "category": "stack", "measured_cycles": 4, "bytes": 1, "source": "datasheet", "notes": "Push accumulator A"},
+    {"mnemonic": "PULA", "category": "stack", "measured_cycles": 4, "bytes": 1, "source": "datasheet", "notes": "Pull accumulator A"}
+  ]
+}

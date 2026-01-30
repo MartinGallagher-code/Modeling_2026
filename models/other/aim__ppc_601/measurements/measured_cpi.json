@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "processor": "AIM PowerPC 601",
+  "manufacturer": "AIM (Apple/IBM/Motorola)",
+  "year": 1993,
+  "clock_mhz": 66.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 0.67,
+      "measured_ipc": 1.4925,
+      "measured_ips": 98507462.7,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 0.58,
+      "measured_ipc": 1.7241,
+      "measured_ips": 113793103.4,
+      "measurement_method": "model_prediction",
+      "notes": "compute workload profile"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 0.78,
+      "measured_ipc": 1.2821,
+      "measured_ips": 84615384.6,
+      "measurement_method": "model_prediction",
+      "notes": "memory workload profile"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 0.72,
+      "measured_ipc": 1.3889,
+      "measured_ips": 91666666.7,
+      "measurement_method": "model_prediction",
+      "notes": "control workload profile"
+    },
+    {
+      "workload": "fp_heavy",
+      "measured_cpi": 0.62,
+      "measured_ipc": 1.6129,
+      "measured_ips": 106451612.9,
+      "measurement_method": "model_prediction",
+      "notes": "fp_heavy workload profile"
+    }
+  ]
+}

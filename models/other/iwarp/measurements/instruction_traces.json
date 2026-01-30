@@ -1,0 +1,49 @@
+{
+  "processor": "iWarp",
+  "manufacturer": "Intel/CMU",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "VLIW ALU operations"
+    },
+    {
+      "mnemonic": "FP",
+      "category": "fp",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Pipelined floating-point"
+    },
+    {
+      "mnemonic": "MEMORY",
+      "category": "memory",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "On-chip memory access"
+    },
+    {
+      "mnemonic": "COMMUNICATION",
+      "category": "communication",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "Systolic link operations"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 2.0,
+      "bytes": 4,
+      "source": "datasheet",
+      "notes": "VLIW sequencing"
+    }
+  ]
+}

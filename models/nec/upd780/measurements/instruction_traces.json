@@ -1,0 +1,57 @@
+{
+  "processor": "uPD780",
+  "manufacturer": "NEC",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU ops @4, immediate @7"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "data_transfer",
+      "measured_cycles": 4.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "LD r,r @4, LD r,n @7"
+    },
+    {
+      "mnemonic": "LD",
+      "category": "memory",
+      "measured_cycles": 5.8,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "LD r,(HL) @7"
+    },
+    {
+      "mnemonic": "JP",
+      "category": "control",
+      "measured_cycles": 5.5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "JP @10, JR @9.5 avg"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 10.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "PUSH @11, POP @10"
+    },
+    {
+      "mnemonic": "LDIR",
+      "category": "block",
+      "measured_cycles": 12.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "LDIR/LDDR @21/16"
+    }
+  ]
+}

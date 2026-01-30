@@ -1,0 +1,15 @@
+{
+  "processor": "RCA CDP1806",
+  "manufacturer": "RCA",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "INC", "category": "register_ops", "measured_cycles": 5, "bytes": 1, "source": "datasheet", "notes": "Increment register"},
+    {"mnemonic": "LDI", "category": "immediate", "measured_cycles": 8, "bytes": 2, "source": "datasheet", "notes": "Load immediate"},
+    {"mnemonic": "LDN", "category": "memory_read", "measured_cycles": 9, "bytes": 2, "source": "datasheet", "notes": "Load via register N"},
+    {"mnemonic": "STR", "category": "memory_write", "measured_cycles": 9, "bytes": 2, "source": "datasheet", "notes": "Store via register N"},
+    {"mnemonic": "BR", "category": "branch", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Short branch"},
+    {"mnemonic": "CALL", "category": "call_return", "measured_cycles": 14, "bytes": 3, "source": "datasheet", "notes": "Call subroutine"}
+  ]
+}

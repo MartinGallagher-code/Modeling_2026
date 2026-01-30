@@ -1,0 +1,41 @@
+{
+  "processor": "AMD Am2901",
+  "manufacturer": "AMD",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU operation - single-cycle bipolar microinstruction"
+    },
+    {
+      "mnemonic": "SHL",
+      "category": "shift",
+      "measured_cycles": 1.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Shift operation through Q register"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "pass",
+      "measured_cycles": 1.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Pass through operation"
+    },
+    {
+      "mnemonic": "NOP",
+      "category": "zero",
+      "measured_cycles": 1.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Zero output operation"
+    }
+  ]
+}

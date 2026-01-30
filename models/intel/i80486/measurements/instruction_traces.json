@@ -1,0 +1,81 @@
+{
+  "processor": "Intel 80486",
+  "manufacturer": "Intel",
+  "year": 1989,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ADD reg,reg - 1 cycle (pipelined)"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 1,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MOV reg,reg - 1 cycle"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 1,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "MOV reg,mem - 1 cycle on cache hit"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 3,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "JMP near - 3 cycles (branch penalty)"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 13,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "MUL reg32 - 13 cycles"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 40,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "DIV reg32 - 40 cycles"
+    },
+    {
+      "mnemonic": "PUSH",
+      "category": "stack",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "PUSH reg - 1 cycle"
+    },
+    {
+      "mnemonic": "FADD",
+      "category": "float",
+      "measured_cycles": 8,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "FADD - on-chip FPU, 8-10x faster than 80387"
+    },
+    {
+      "mnemonic": "NOP",
+      "category": "nop",
+      "measured_cycles": 1,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "NOP - 1 cycle"
+    }
+  ]
+}

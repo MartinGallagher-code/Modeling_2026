@@ -1,0 +1,41 @@
+{
+  "processor": "ICL DAP",
+  "manufacturer": "ICL",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "BIT_OP",
+      "category": "bit_op",
+      "measured_cycles": 6.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Bit-serial operations"
+    },
+    {
+      "mnemonic": "WORD_OP",
+      "category": "word_op",
+      "measured_cycles": 10.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Word operations"
+    },
+    {
+      "mnemonic": "VECTOR",
+      "category": "vector",
+      "measured_cycles": 14.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "Vector operations"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 8.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Array control"
+    }
+  ]
+}

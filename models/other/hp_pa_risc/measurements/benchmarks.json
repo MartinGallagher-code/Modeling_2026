@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "processor": "HP PA-RISC 7100",
+  "manufacturer": "HP",
+  "year": 1992,
+  "clock_mhz": 100.0,
+  "benchmark_date": "2026-01-29",
+  "benchmarks": [
+    {
+      "name": "Gibson Mix",
+      "category": "synthetic",
+      "score": 109.8901,
+      "unit": "MIPS",
+      "notes": "Estimated from typical CPI of 0.91"
+    },
+    {
+      "name": "Typical Workload IPS",
+      "category": "throughput",
+      "score": 109890109.9,
+      "unit": "IPS",
+      "notes": "Instructions per second at typical workload"
+    }
+  ]
+}

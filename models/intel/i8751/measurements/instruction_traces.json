@@ -1,0 +1,57 @@
+{
+  "processor": "Intel 8751",
+  "manufacturer": "Intel",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 12.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ADD/SUB @12 clocks (1 machine cycle)"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 12.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOV @12 clocks (1 machine cycle)"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "memory",
+      "measured_cycles": 12.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MOVX @12 clocks (single machine cycle)"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "control",
+      "measured_cycles": 12.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "JMP/CALL @12 clocks"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 48.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "MUL AB @48 clocks (4 machine cycles)"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 48.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "DIV AB @48 clocks (4 machine cycles)"
+    }
+  ]
+}

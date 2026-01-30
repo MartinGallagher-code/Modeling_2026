@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "processor": "Ferranti ULA",
+  "manufacturer": "Ferranti",
+  "year": 1981,
+  "clock_mhz": 3.5,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 5.0,
+      "measured_ipc": 0.2,
+      "measured_ips": 700000.0,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "video_heavy",
+      "measured_cpi": 5.3,
+      "measured_ipc": 0.1887,
+      "measured_ips": 660377.4,
+      "measurement_method": "model_prediction",
+      "notes": "video_heavy workload profile"
+    },
+    {
+      "workload": "io_heavy",
+      "measured_cpi": 5.2,
+      "measured_ipc": 0.1923,
+      "measured_ips": 673076.9,
+      "measurement_method": "model_prediction",
+      "notes": "io_heavy workload profile"
+    },
+    {
+      "workload": "idle",
+      "measured_cpi": 4.5,
+      "measured_ipc": 0.2222,
+      "measured_ips": 777777.8,
+      "measurement_method": "model_prediction",
+      "notes": "idle workload profile"
+    }
+  ]
+}

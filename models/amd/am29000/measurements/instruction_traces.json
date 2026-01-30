@@ -1,0 +1,57 @@
+{
+  "processor": "AMD Am29000",
+  "manufacturer": "AMD",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "ALU operation - single-cycle RISC execution"
+    },
+    {
+      "mnemonic": "LOAD",
+      "category": "load",
+      "measured_cycles": 2.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Load word from memory"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "store",
+      "measured_cycles": 1.5,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Store word to memory"
+    },
+    {
+      "mnemonic": "JMP",
+      "category": "branch",
+      "measured_cycles": 2.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Branch with delay slot"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 4.0,
+      "bytes": 2,
+      "source": "datasheet",
+      "notes": "32-bit multiply operation"
+    },
+    {
+      "mnemonic": "CALL",
+      "category": "call_return",
+      "measured_cycles": 2.0,
+      "bytes": 3,
+      "source": "datasheet",
+      "notes": "Call/return with register stack"
+    }
+  ]
+}

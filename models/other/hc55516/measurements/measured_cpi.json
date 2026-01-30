@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "processor": "Harris HC-55516",
+  "manufacturer": "Harris",
+  "year": 1982,
+  "clock_mhz": 2.0,
+  "measurement_date": "2026-01-29",
+  "workload_measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.0,
+      "measured_ipc": 0.5,
+      "measured_ips": 1000000.0,
+      "measurement_method": "model_prediction",
+      "notes": "typical workload profile"
+    },
+    {
+      "workload": "decode_heavy",
+      "measured_cpi": 1.8,
+      "measured_ipc": 0.5556,
+      "measured_ips": 1111111.1,
+      "measurement_method": "model_prediction",
+      "notes": "decode_heavy workload profile"
+    },
+    {
+      "workload": "idle",
+      "measured_cpi": 2.2,
+      "measured_ipc": 0.4545,
+      "measured_ips": 909090.9,
+      "measurement_method": "model_prediction",
+      "notes": "idle workload profile"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "processor": "Intel 8231",
+  "manufacturer": "Intel",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "FADD",
+      "category": "float",
+      "measured_cycles": 30.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "FP add @25-35c"
+    },
+    {
+      "mnemonic": "MUL",
+      "category": "multiply",
+      "measured_cycles": 45.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "FP mul @40-50c"
+    },
+    {
+      "mnemonic": "DIV",
+      "category": "divide",
+      "measured_cycles": 65.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "FP div @55-75c"
+    },
+    {
+      "mnemonic": "ADD",
+      "category": "alu",
+      "measured_cycles": 25.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Fixed-point @20-30c"
+    },
+    {
+      "mnemonic": "MOV",
+      "category": "data_transfer",
+      "measured_cycles": 15.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Bus transfer @10-20c"
+    }
+  ]
+}

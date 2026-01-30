@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "processor": "Analog Devices ADSP-2100",
+  "manufacturer": "Analog Devices",
+  "year": 1986,
+  "clock_mhz": 25.0,
+  "trace_date": "2026-01-29",
+  "instruction_traces": [
+    {
+      "category": "mac",
+      "instruction_example": "MAC",
+      "measured_cycles": 1.0,
+      "instruction_bytes": 3,
+      "description": "Multiply-accumulate",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "alu",
+      "instruction_example": "ALU",
+      "measured_cycles": 1.0,
+      "instruction_bytes": 3,
+      "description": "ALU operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "shift",
+      "instruction_example": "SHIFT",
+      "measured_cycles": 1.0,
+      "instruction_bytes": 3,
+      "description": "Shift operations",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "memory",
+      "instruction_example": "MEMORY",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 3,
+      "description": "Memory access",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "control",
+      "instruction_example": "CONTROL",
+      "measured_cycles": 2.0,
+      "instruction_bytes": 3,
+      "description": "Control flow",
+      "measurement_source": "datasheet_timing"
+    },
+    {
+      "category": "io",
+      "instruction_example": "IO",
+      "measured_cycles": 3.0,
+      "instruction_bytes": 3,
+      "description": "I/O operations",
+      "measurement_source": "datasheet_timing"
+    }
+  ]
+}

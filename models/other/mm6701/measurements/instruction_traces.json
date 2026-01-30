@@ -1,0 +1,41 @@
+{
+  "processor": "Monolithic Memories 6701",
+  "manufacturer": "Monolithic Memories",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "ALU",
+      "category": "alu",
+      "measured_cycles": 1.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "ALU ADD/SUB/AND/OR/XOR"
+    },
+    {
+      "mnemonic": "SHIFT",
+      "category": "shift",
+      "measured_cycles": 1.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "SHL/SHR"
+    },
+    {
+      "mnemonic": "PASS",
+      "category": "pass",
+      "measured_cycles": 1.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Data routing pass-through"
+    },
+    {
+      "mnemonic": "ZERO",
+      "category": "zero",
+      "measured_cycles": 1.0,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Zero/clear operations"
+    }
+  ]
+}

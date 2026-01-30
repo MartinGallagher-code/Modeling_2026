@@ -1,0 +1,57 @@
+{
+  "processor": "Namco 54xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {
+      "mnemonic": "NOISE_GEN",
+      "category": "noise_gen",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "LFSR-based noise generation"
+    },
+    {
+      "mnemonic": "WAVEFORM",
+      "category": "waveform",
+      "measured_cycles": 6,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Waveform table lookup and synthesis"
+    },
+    {
+      "mnemonic": "MIX",
+      "category": "mix",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Audio channel mixing"
+    },
+    {
+      "mnemonic": "IO",
+      "category": "io",
+      "measured_cycles": 5,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Command input and status output"
+    },
+    {
+      "mnemonic": "CONTROL",
+      "category": "control",
+      "measured_cycles": 4,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Sound state machine control"
+    },
+    {
+      "mnemonic": "DAC",
+      "category": "dac",
+      "measured_cycles": 8,
+      "bytes": 1,
+      "source": "datasheet",
+      "notes": "Digital-to-analog conversion output"
+    }
+  ]
+}

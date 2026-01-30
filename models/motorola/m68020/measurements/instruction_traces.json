@@ -1,0 +1,21 @@
+{
+  "processor": "M68020",
+  "manufacturer": "Motorola",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Datasheet timing tables",
+  "timings": [
+    {"mnemonic": "MOVE.L_Dn_Dn", "category": "data_transfer", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "Register-to-register - pipelined"},
+    {"mnemonic": "MOVE.L_mem_Dn", "category": "memory", "measured_cycles": 6, "bytes": 4, "source": "datasheet", "notes": "Memory to register with 32-bit bus"},
+    {"mnemonic": "ADD.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "32-bit register add - fast"},
+    {"mnemonic": "SUB.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "32-bit register subtract"},
+    {"mnemonic": "CMP.L_Dn_Dn", "category": "alu_reg", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "32-bit compare"},
+    {"mnemonic": "JMP", "category": "control", "measured_cycles": 6, "bytes": 4, "source": "datasheet", "notes": "Jump absolute"},
+    {"mnemonic": "BRA", "category": "control", "measured_cycles": 6, "bytes": 2, "source": "datasheet", "notes": "Branch always"},
+    {"mnemonic": "JSR", "category": "control", "measured_cycles": 10, "bytes": 4, "source": "datasheet", "notes": "Jump to subroutine"},
+    {"mnemonic": "RTS", "category": "control", "measured_cycles": 10, "bytes": 2, "source": "datasheet", "notes": "Return from subroutine"},
+    {"mnemonic": "MULU.L", "category": "multiply", "measured_cycles": 44, "bytes": 4, "source": "datasheet", "notes": "32-bit unsigned multiply"},
+    {"mnemonic": "DIVU.L", "category": "divide", "measured_cycles": 90, "bytes": 4, "source": "datasheet", "notes": "32-bit unsigned divide"},
+    {"mnemonic": "NOP", "category": "control", "measured_cycles": 2, "bytes": 2, "source": "datasheet", "notes": "No operation"}
+  ]
+}

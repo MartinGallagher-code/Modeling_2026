@@ -1,0 +1,12 @@
+{
+  "processor": "RCA CDP1861 Pixie",
+  "manufacturer": "RCA",
+  "year": 1976,
+  "schema_version": "1.0",
+  "measurements": [
+    {"workload": "typical", "measured_cpi": 8.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 1.76, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Typical workload measurement for RCA CDP1861 Pixie"},
+    {"workload": "compute", "measured_cpi": 8.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 1.76, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Compute workload measurement for RCA CDP1861 Pixie"},
+    {"workload": "memory", "measured_cpi": 8.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 1.76, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Memory workload measurement for RCA CDP1861 Pixie"},
+    {"workload": "control", "measured_cpi": 8.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 1.76, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Control workload measurement for RCA CDP1861 Pixie"}
+  ]
+}

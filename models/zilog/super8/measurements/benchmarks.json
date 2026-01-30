@@ -1,0 +1,20 @@
+{
+  "processor": "Zilog Super8",
+  "manufacturer": "Zilog",
+  "year": 1982,
+  "schema_version": "1.0",
+  "benchmarks": [
+    {
+      "benchmark": "gibson_mix",
+      "score": 1.6,
+      "unit": "MIPS",
+      "source": "calculated",
+      "source_detail": "Gibson mix applied to instruction timings",
+      "conditions": {
+        "clock_mhz": 8.0,
+        "memory_config": "no wait states"
+      },
+      "notes": "Estimated from instruction mix: 8.0 / 5.0 = 1.6 MIPS"
+    }
+  ]
+}
