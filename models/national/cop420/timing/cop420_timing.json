@@ -1,0 +1,233 @@
+{
+  "processor": "National COP420",
+  "manufacturer": "National Semiconductor",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "COP420 datasheet",
+  "base_architecture": "COP400",
+  "base_timing_reference": "cop400",
+  "timing_notes": "Enhanced COP400 with more RAM and ROM. Same instruction timing.",
+  "instruction_count": 60,
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "ASC",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add with carry skip"
+    },
+    {
+      "mnemonic": "AISC",
+      "opcode": "0x10",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C",
+      "notes": "Add immediate skip carry"
+    },
+    {
+      "mnemonic": "COMP",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Complement A"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "XOR A with M"
+    },
+    {
+      "mnemonic": "LD",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Load A from RAM"
+    },
+    {
+      "mnemonic": "LBI",
+      "opcode": "0x20",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load B immediate"
+    },
+    {
+      "mnemonic": "LQID",
+      "opcode": "0x06",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load Q indirect"
+    },
+    {
+      "mnemonic": "X",
+      "opcode": "0x07",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Exchange A with M"
+    },
+    {
+      "mnemonic": "XIS",
+      "opcode": "0x08",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Exchange and increment skip"
+    },
+    {
+      "mnemonic": "STII",
+      "opcode": "0x09",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Store and increment"
+    },
+    {
+      "mnemonic": "RMB",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Reset memory bit"
+    },
+    {
+      "mnemonic": "SMB",
+      "opcode": "0x38",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Set memory bit"
+    },
+    {
+      "mnemonic": "INL",
+      "opcode": "0x0A",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input L port"
+    },
+    {
+      "mnemonic": "OGI",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Output G immediate"
+    },
+    {
+      "mnemonic": "ING",
+      "opcode": "0x0B",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input G port"
+    },
+    {
+      "mnemonic": "JP",
+      "opcode": "0x80",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump within page"
+    },
+    {
+      "mnemonic": "JSRP",
+      "opcode": "0xC0",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump subroutine in page"
+    },
+    {
+      "mnemonic": "JID",
+      "opcode": "0x0C",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Jump indirect"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x48",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "RETSK",
+      "opcode": "0x49",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return and skip"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

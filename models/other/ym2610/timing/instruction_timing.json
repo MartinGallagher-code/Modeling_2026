@@ -1,0 +1,150 @@
+{
+  "processor": "Yamaha YM2610 (OPNB)",
+  "manufacturer": "Yamaha",
+  "year": 1988,
+  "source": "YM2610 OPNB datasheet",
+  "instruction_count": 14,
+  "instructions": [
+    {
+      "mnemonic": "OP_FREQ",
+      "opcode": "0xA0",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set FM operator frequency"
+    },
+    {
+      "mnemonic": "OP_LEVEL",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set total level"
+    },
+    {
+      "mnemonic": "OP_ENVL",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set envelope rate"
+    },
+    {
+      "mnemonic": "FB_ALGO",
+      "opcode": "0xB0",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Feedback/algorithm"
+    },
+    {
+      "mnemonic": "KEY_ON",
+      "opcode": "0x28",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FM key on/off"
+    },
+    {
+      "mnemonic": "SSG_FREQ",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "SSG tone frequency"
+    },
+    {
+      "mnemonic": "SSG_ENVL",
+      "opcode": "0x0B",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "SSG envelope"
+    },
+    {
+      "mnemonic": "ADPCM_A",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "ADPCM-A channel start"
+    },
+    {
+      "mnemonic": "ADPCM_B",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "ADPCM-B channel control"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read status"
+    },
+    {
+      "mnemonic": "TIMER_SET",
+      "opcode": "0x24",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set timer"
+    },
+    {
+      "mnemonic": "IRQ_CTRL",
+      "opcode": "0x27",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "IRQ control"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xFF",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,25 @@
+{
+  "processor": "Intel 80C186",
+  "manufacturer": "Intel",
+  "year": 1987,
+  "schema_version": "1.0",
+  "source": "Intel 80C186/80C188 User's Manual, Intel 1990",
+  "base_architecture": "i80186",
+  "base_timing_reference": "../i80186/timing/i80186_timing.json",
+  "timing_notes": "The 80C186 is the CMOS version of the 80186. It is fully instruction-compatible and timing-compatible with the NMOS 80186. Advantages are lower power consumption and power-down modes (not present in NMOS version). Includes same on-chip peripherals: two DMA channels, three timer/counters, interrupt controller, chip selects. All instruction cycle counts are identical to the 80186.",
+  "clock_mhz_range": "8-25",
+  "instruction_count": 209,
+  "instructions": [
+    {"mnemonic": "MOV", "operands": "reg, reg", "bytes": 2, "cycles": 2, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "ADD", "operands": "reg, reg", "bytes": 2, "cycles": 3, "category": "alu", "addressing_mode": "register", "flags_affected": "OF SF ZF AF PF CF", "notes": "Same as 80186"},
+    {"mnemonic": "MUL", "operands": "reg8", "bytes": 2, "cycles": 26, "cycles_note": "26-28", "category": "multiply", "addressing_mode": "register", "flags_affected": "OF CF", "notes": "Same as 80186"},
+    {"mnemonic": "DIV", "operands": "reg8", "bytes": 2, "cycles": 29, "category": "divide", "addressing_mode": "register", "flags_affected": "undefined", "notes": "Same as 80186"},
+    {"mnemonic": "JMP", "operands": "short", "bytes": 2, "cycles": 14, "category": "control", "addressing_mode": "relative", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "CALL", "operands": "near", "bytes": 3, "cycles": 15, "category": "control", "addressing_mode": "relative", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "RET", "operands": "(near)", "bytes": 1, "cycles": 20, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "ENTER", "operands": "imm16, 0", "bytes": 4, "cycles": 15, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "LEAVE", "operands": "", "bytes": 1, "cycles": 8, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "NOP", "operands": "", "bytes": 1, "cycles": 3, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "HLT", "operands": "", "bytes": 1, "cycles": 2, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Halt. In CMOS version, enters low-power state"}
+  ]
+}

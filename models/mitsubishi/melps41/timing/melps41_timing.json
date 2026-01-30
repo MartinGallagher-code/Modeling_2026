@@ -1,0 +1,133 @@
+{
+  "processor": "Mitsubishi MELPS 41",
+  "manufacturer": "Mitsubishi",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "MELPS 41 Programming Manual",
+  "base_architecture": "MELPS 4",
+  "base_timing_reference": "melps4",
+  "timing_notes": "Enhanced MELPS 4 NMOS. 500 kHz. Slightly improved timing.",
+  "instruction_count": 35,
+  "instructions": [
+    {
+      "mnemonic": "AD",
+      "opcode": "0x0A",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x0D",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "LAI",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load A"
+    },
+    {
+      "mnemonic": "TAB",
+      "opcode": "0x14",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "A to B"
+    },
+    {
+      "mnemonic": "LM",
+      "opcode": "0x20",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load mem"
+    },
+    {
+      "mnemonic": "SM",
+      "opcode": "0x21",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store mem"
+    },
+    {
+      "mnemonic": "INP",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0x31",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "CAL",
+      "opcode": "0x90",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x33",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

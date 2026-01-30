@@ -1,0 +1,190 @@
+{
+  "processor": "Sega 315-5124 VDP",
+  "manufacturer": "Sega",
+  "year": 1985,
+  "source": "Sega Master System VDP documentation",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "TILE_FETCH",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Fetch tile pattern from name table"
+    },
+    {
+      "mnemonic": "TILE_RENDER",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render tile to line buffer"
+    },
+    {
+      "mnemonic": "SPR_SCAN",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Scan sprite attribute table"
+    },
+    {
+      "mnemonic": "SPR_RENDER",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render sprite line to buffer"
+    },
+    {
+      "mnemonic": "SPR_OVER",
+      "opcode": "0x12",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Sprite overflow check (8 per line)"
+    },
+    {
+      "mnemonic": "HSCROLL",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Apply horizontal scroll offset"
+    },
+    {
+      "mnemonic": "VSCROLL",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Apply vertical scroll offset"
+    },
+    {
+      "mnemonic": "VRAM_RD",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM read"
+    },
+    {
+      "mnemonic": "VRAM_WR",
+      "opcode": "0x31",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM write"
+    },
+    {
+      "mnemonic": "CRAM_WR",
+      "opcode": "0x32",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Color RAM write"
+    },
+    {
+      "mnemonic": "LINE_OUT",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Output line buffer to display"
+    },
+    {
+      "mnemonic": "BLANK_CHK",
+      "opcode": "0x41",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Blanking interval check"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write VDP register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x51",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read VDP status"
+    },
+    {
+      "mnemonic": "STAT_CLR",
+      "opcode": "0x52",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Clear status flags"
+    },
+    {
+      "mnemonic": "MODE_SET",
+      "opcode": "0x53",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set display mode"
+    },
+    {
+      "mnemonic": "INT_GEN",
+      "opcode": "0x60",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Generate VBlank/HBlank interrupt"
+    },
+    {
+      "mnemonic": "COLL_DET",
+      "opcode": "0x61",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Sprite collision detection"
+    }
+  ],
+  "schema_version": "1.0"
+}

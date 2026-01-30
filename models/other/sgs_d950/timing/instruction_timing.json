@@ -1,0 +1,190 @@
+{
+  "processor": "SGS-Thomson D950",
+  "manufacturer": "SGS-Thomson",
+  "year": 1991,
+  "source": "D950 GSM baseband DSP datasheet",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "MAC",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply-accumulate"
+    },
+    {
+      "mnemonic": "MAS",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply and subtract"
+    },
+    {
+      "mnemonic": "MPY",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply"
+    },
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,N",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,N",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x12",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "AND logical"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x13",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "OR logical"
+    },
+    {
+      "mnemonic": "SHL",
+      "opcode": "0x14",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Shift left"
+    },
+    {
+      "mnemonic": "SHR",
+      "opcode": "0x15",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Shift right"
+    },
+    {
+      "mnemonic": "LD",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Load from data memory"
+    },
+    {
+      "mnemonic": "ST",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Store to data memory"
+    },
+    {
+      "mnemonic": "LDI",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "BRA",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "BZ",
+      "opcode": "0x31",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch if zero"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x32",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x33",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "VIT",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Viterbi butterfly operation"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

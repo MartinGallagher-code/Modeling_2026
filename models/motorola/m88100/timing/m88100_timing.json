@@ -1,0 +1,514 @@
+{
+  "processor": "Motorola 88100",
+  "manufacturer": "Motorola",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "MC88100 RISC Microprocessor User's Manual, Motorola 1990",
+  "instruction_count": 120,
+  "instructions": [
+    {
+      "mnemonic": "ADD r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Add registers (scoreboarded)"
+    },
+    {
+      "mnemonic": "ADD r,r,imm16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Add register and immediate"
+    },
+    {
+      "mnemonic": "ADDU r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Add unsigned"
+    },
+    {
+      "mnemonic": "AND r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "AND registers"
+    },
+    {
+      "mnemonic": "AND r,r,imm16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND with immediate"
+    },
+    {
+      "mnemonic": "BB0 bit,r,disp16",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch on bit clear (1 delay slot)"
+    },
+    {
+      "mnemonic": "BB1 bit,r,disp16",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch on bit set (1 delay slot)"
+    },
+    {
+      "mnemonic": "BCND cond,r,disp16",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch conditional (1 delay slot)"
+    },
+    {
+      "mnemonic": "BR disp26",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch always (1 delay slot)"
+    },
+    {
+      "mnemonic": "BSR disp26",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch to subroutine (saves r1)"
+    },
+    {
+      "mnemonic": "CLR r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Clear bit field"
+    },
+    {
+      "mnemonic": "CMP r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Compare (sets destination reg)"
+    },
+    {
+      "mnemonic": "DIV r,r,r",
+      "bytes": 4,
+      "cycles": 38,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Signed integer divide"
+    },
+    {
+      "mnemonic": "DIVU r,r,r",
+      "bytes": 4,
+      "cycles": 38,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Unsigned integer divide"
+    },
+    {
+      "mnemonic": "EXT r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract bit field (unsigned)"
+    },
+    {
+      "mnemonic": "EXTU r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract bit field (signed)"
+    },
+    {
+      "mnemonic": "FADD.DDD r,r,r",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP add double (separate FP pipeline)"
+    },
+    {
+      "mnemonic": "FCMP.DDD r,r,r",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP compare double"
+    },
+    {
+      "mnemonic": "FDIV.DDD r,r,r",
+      "bytes": 4,
+      "cycles": 30,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP divide double"
+    },
+    {
+      "mnemonic": "FMUL.DDD r,r,r",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP multiply double"
+    },
+    {
+      "mnemonic": "FSQRT.DD r,r",
+      "bytes": 4,
+      "cycles": 40,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP square root double"
+    },
+    {
+      "mnemonic": "FSUB.DDD r,r,r",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP subtract double"
+    },
+    {
+      "mnemonic": "FF0 r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Find first zero"
+    },
+    {
+      "mnemonic": "FF1 r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Find first one"
+    },
+    {
+      "mnemonic": "FLDCR r,fcr",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Load FP control register"
+    },
+    {
+      "mnemonic": "FSTCR fcr,r",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Store FP control register"
+    },
+    {
+      "mnemonic": "INT.DS r,r",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Convert FP to integer"
+    },
+    {
+      "mnemonic": "JMP (r)",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Jump register indirect"
+    },
+    {
+      "mnemonic": "JSR (r)",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Jump subroutine register indirect"
+    },
+    {
+      "mnemonic": "LD r,r,imm16",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load word (memory latency)"
+    },
+    {
+      "mnemonic": "LD.D r,r,imm16",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load double word"
+    },
+    {
+      "mnemonic": "LD.B r,r,imm16",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load byte"
+    },
+    {
+      "mnemonic": "LD.H r,r,imm16",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load halfword"
+    },
+    {
+      "mnemonic": "LDCR r,cr",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Load control register"
+    },
+    {
+      "mnemonic": "MAK r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Make bit field"
+    },
+    {
+      "mnemonic": "MASK r,r,imm16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND with upper immediate"
+    },
+    {
+      "mnemonic": "MUL r,r,r",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply (32-bit result)"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation (OR r0,r0,r0)"
+    },
+    {
+      "mnemonic": "OR r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "OR registers"
+    },
+    {
+      "mnemonic": "OR r,r,imm16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "OR with immediate"
+    },
+    {
+      "mnemonic": "OR.U r,r,imm16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "OR upper immediate"
+    },
+    {
+      "mnemonic": "ROT r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rotate"
+    },
+    {
+      "mnemonic": "RTE",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "all",
+      "notes": "Return from exception"
+    },
+    {
+      "mnemonic": "SET r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set bit field"
+    },
+    {
+      "mnemonic": "ST r,r,imm16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Store word (write buffer)"
+    },
+    {
+      "mnemonic": "ST.D r,r,imm16",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Store double word"
+    },
+    {
+      "mnemonic": "ST.B r,r,imm16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Store byte"
+    },
+    {
+      "mnemonic": "STCR cr,r",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Store control register"
+    },
+    {
+      "mnemonic": "SUB r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Subtract registers"
+    },
+    {
+      "mnemonic": "SUB r,r,imm16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Subtract immediate"
+    },
+    {
+      "mnemonic": "SUBU r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Subtract unsigned"
+    },
+    {
+      "mnemonic": "TB0 bit,r,vec9",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Trap on bit clear"
+    },
+    {
+      "mnemonic": "TB1 bit,r,vec9",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Trap on bit set"
+    },
+    {
+      "mnemonic": "TCND cond,r,vec9",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Trap conditional"
+    },
+    {
+      "mnemonic": "XMEM r,r,imm16",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Exchange memory (atomic)"
+    },
+    {
+      "mnemonic": "XOR r,r,r",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "XOR registers"
+    }
+  ]
+}

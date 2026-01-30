@@ -1,0 +1,341 @@
+{
+  "processor": "Zilog Z80-SIO",
+  "manufacturer": "Zilog",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Z80-SIO datasheet, Zilog 1977",
+  "instruction_count": 33,
+  "notes": "Dual-channel Serial I/O controller for Z80 systems. Not a general-purpose CPU -- operates as a programmable peripheral with register-based command/status interface. Supports async and sync (SDLC/HDLC/bisync) protocols on each channel. Cycle counts represent internal operation timing at 4 MHz. Operations are initiated by Z80 CPU writing to SIO registers via I/O ports. Interrupt-driven with Z80 IM2 daisy-chain support.",
+  "instructions": [
+    {
+      "mnemonic": "WR0_CMD_NULL",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write Register 0: null command / register pointer"
+    },
+    {
+      "mnemonic": "WR0_RESET_EXT",
+      "opcode": "0x10",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Reset external/status interrupts"
+    },
+    {
+      "mnemonic": "WR0_CHAN_RESET",
+      "opcode": "0x18",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Channel reset"
+    },
+    {
+      "mnemonic": "WR0_INT_NEXT_RX",
+      "opcode": "0x20",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Enable interrupt on next receive character"
+    },
+    {
+      "mnemonic": "WR0_RESET_TX_INT",
+      "opcode": "0x28",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Reset transmit interrupt pending"
+    },
+    {
+      "mnemonic": "WR0_ERROR_RESET",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Error reset"
+    },
+    {
+      "mnemonic": "WR0_RETI",
+      "opcode": "0x38",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Return from interrupt (highest priority)"
+    },
+    {
+      "mnemonic": "WR1_CONFIG",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write Register 1: TX/RX interrupt and data transfer mode"
+    },
+    {
+      "mnemonic": "WR2_INT_VECTOR",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write Register 2: interrupt vector (Channel B only)"
+    },
+    {
+      "mnemonic": "WR3_RX_CONFIG",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write Register 3: receive parameters and control"
+    },
+    {
+      "mnemonic": "WR4_TX_RX_MODE",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write Register 4: TX/RX misc parameters (stop bits, parity, clock mode)"
+    },
+    {
+      "mnemonic": "WR5_TX_CONFIG",
+      "opcode": "0x05",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write Register 5: transmit parameters (DTR, TX enable, break)"
+    },
+    {
+      "mnemonic": "WR6_SYNC_BYTE",
+      "opcode": "0x06",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write Register 6: sync character / SDLC address"
+    },
+    {
+      "mnemonic": "WR7_SYNC_FLAG",
+      "opcode": "0x07",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write Register 7: sync character / SDLC flag"
+    },
+    {
+      "mnemonic": "RR0_READ_STATUS",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Read Register 0: TX/RX buffer status and external status"
+    },
+    {
+      "mnemonic": "RR1_READ_SPECIAL",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Read Register 1: special receive conditions (parity, framing, overrun)"
+    },
+    {
+      "mnemonic": "RR2_READ_VECTOR",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Read Register 2: interrupt vector (modified for Channel B)"
+    },
+    {
+      "mnemonic": "TX_DATA_WRITE",
+      "opcode": "0xD0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Write transmit data buffer"
+    },
+    {
+      "mnemonic": "RX_DATA_READ",
+      "opcode": "0xD1",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Read receive data buffer"
+    },
+    {
+      "mnemonic": "CHAR_ASSEMBLE",
+      "opcode": "0xA0",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: assemble received character (sample, shift, check parity)"
+    },
+    {
+      "mnemonic": "CHAR_SERIALIZE",
+      "opcode": "0xA1",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: serialize transmit character (shift out bits)"
+    },
+    {
+      "mnemonic": "CRC_CALC",
+      "opcode": "0xA2",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: CRC-16 calculation per byte (SDLC/HDLC mode)"
+    },
+    {
+      "mnemonic": "SYNC_DETECT",
+      "opcode": "0xA3",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: sync pattern detection and character framing"
+    },
+    {
+      "mnemonic": "SYNC_HUNT",
+      "opcode": "0xA4",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: enter sync hunt mode, scan for sync pattern"
+    },
+    {
+      "mnemonic": "FLAG_DETECT",
+      "opcode": "0xA5",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: SDLC flag (0x7E) detection"
+    },
+    {
+      "mnemonic": "ABORT_DETECT",
+      "opcode": "0xA6",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: SDLC abort sequence detection (7+ consecutive 1s)"
+    },
+    {
+      "mnemonic": "BIT_STUFF",
+      "opcode": "0xA7",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: SDLC zero-bit insertion/deletion"
+    },
+    {
+      "mnemonic": "INT_PENDING",
+      "opcode": "0xB0",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: check and prioritize pending interrupts"
+    },
+    {
+      "mnemonic": "INT_ACK",
+      "opcode": "0xB1",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: acknowledge interrupt and supply vector"
+    },
+    {
+      "mnemonic": "DAISY_IEI_CHECK",
+      "opcode": "0xB2",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: check IEI (interrupt enable in) from daisy chain"
+    },
+    {
+      "mnemonic": "DAISY_IEO_SET",
+      "opcode": "0xB3",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: set IEO (interrupt enable out) for daisy chain"
+    },
+    {
+      "mnemonic": "BAUD_RATE_GEN",
+      "opcode": "0xC0",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Internal: baud rate generator divide cycle"
+    },
+    {
+      "mnemonic": "MODEM_CTRL",
+      "opcode": "0xC1",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Modem control signal processing (CTS, DCD, RTS, DTR)"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "processor": "Motorola 6854",
+  "manufacturer": "Motorola",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Motorola MC6854 Advanced Data Link Controller datasheet, 1977",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "WRITE_CR1",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Write Control Register 1 (RIE, TIE, AC, etc.)"
+    },
+    {
+      "mnemonic": "WRITE_CR2",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Write Control Register 2 (PSE, 1/2 byte, flag/abort)"
+    },
+    {
+      "mnemonic": "WRITE_CR3",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Write Control Register 3 (LCF, CEX, AEX)"
+    },
+    {
+      "mnemonic": "WRITE_CR4",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Write Control Register 4 (word count, ABTEX)"
+    },
+    {
+      "mnemonic": "READ_SR1",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Read Status Register 1 (IRQ, TDRA, S2RQ, etc.)"
+    },
+    {
+      "mnemonic": "READ_SR2",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Read Status Register 2 (OVRN, RDA, FV, etc.)"
+    },
+    {
+      "mnemonic": "WRITE_TDR",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Write Transmit Data Register"
+    },
+    {
+      "mnemonic": "READ_RDR",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Read Receive Data Register"
+    },
+    {
+      "mnemonic": "TX_FRAME_START",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Begin HDLC/SDLC frame transmission (flag sequence)"
+    },
+    {
+      "mnemonic": "TX_FRAME_END",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "End frame with closing flag and CRC"
+    },
+    {
+      "mnemonic": "TX_ABORT",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transmit abort sequence (7+ ones)"
+    },
+    {
+      "mnemonic": "RX_FRAME_DETECT",
+      "bytes": 0,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Hardware frame detection (opening flag)"
+    },
+    {
+      "mnemonic": "CRC_CHECK",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "CRC-16 computation per bit (hardware, continuous)"
+    },
+    {
+      "mnemonic": "BIT_STUFF",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Zero insertion/deletion (hardware, per bit)"
+    },
+    {
+      "mnemonic": "RESET",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Reset ADLC (all registers cleared)"
+    },
+    {
+      "mnemonic": "DMA_TRANSFER",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "DMA data transfer cycle"
+    }
+  ]
+}

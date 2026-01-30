@@ -1,0 +1,250 @@
+{
+  "processor": "Siemens SAB80C166",
+  "manufacturer": "Siemens",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "SAB80C166 datasheet",
+  "instruction_count": 24,
+  "instructions": [
+    {
+      "mnemonic": "ADD Rwn,Rwm",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Add word registers"
+    },
+    {
+      "mnemonic": "ADDC Rwn,Rwm",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "SUB Rwn,Rwm",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Subtract word registers"
+    },
+    {
+      "mnemonic": "AND Rwn,Rwm",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "AND word registers"
+    },
+    {
+      "mnemonic": "OR Rwn,Rwm",
+      "opcode": "0x70",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "OR word registers"
+    },
+    {
+      "mnemonic": "CMP Rwn,Rwm",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Compare word registers"
+    },
+    {
+      "mnemonic": "MOV Rwn,Rwm",
+      "opcode": "0xF0",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move word register"
+    },
+    {
+      "mnemonic": "MOV Rwn,#data16",
+      "opcode": "0xE6",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate 16-bit"
+    },
+    {
+      "mnemonic": "MOV Rwn,[Rwm]",
+      "opcode": "0xA8",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move indirect to register"
+    },
+    {
+      "mnemonic": "MOV [Rwm],Rwn",
+      "opcode": "0xB8",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move register to indirect"
+    },
+    {
+      "mnemonic": "MOV Rwn,mem",
+      "opcode": "0xF2",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move memory to register"
+    },
+    {
+      "mnemonic": "JMPR cc,rel",
+      "opcode": "0x0D",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Conditional relative jump"
+    },
+    {
+      "mnemonic": "JMPA cc,caddr",
+      "opcode": "0xEA",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Conditional absolute jump"
+    },
+    {
+      "mnemonic": "CALLA cc,caddr",
+      "opcode": "0xCA",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Conditional call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0xCB",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "MUL Rwn,Rwm",
+      "opcode": "0x0B",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "16x16 multiply"
+    },
+    {
+      "mnemonic": "DIV Rwn",
+      "opcode": "0x4B",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "32/16 divide"
+    },
+    {
+      "mnemonic": "BSET bit",
+      "opcode": "0x0F",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "Z,N",
+      "notes": "Set bit"
+    },
+    {
+      "mnemonic": "BCLR bit",
+      "opcode": "0x1F",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "Z,N",
+      "notes": "Clear bit"
+    },
+    {
+      "mnemonic": "JB bitaddr,rel",
+      "opcode": "0x8A",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if bit set"
+    },
+    {
+      "mnemonic": "MOVB Rbn,[Rwm]",
+      "opcode": "0xA9",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move byte indirect"
+    },
+    {
+      "mnemonic": "IDLE",
+      "opcode": "0x87",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Enter idle mode (peripheral access)"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xCC",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "SRST",
+      "opcode": "0xB7",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Software reset"
+    }
+  ]
+}

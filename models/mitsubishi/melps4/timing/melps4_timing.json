@@ -1,0 +1,191 @@
+{
+  "processor": "Mitsubishi MELPS 4",
+  "manufacturer": "Mitsubishi",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "MELPS 4 Programming Manual",
+  "instruction_count": 33,
+  "notes": "4-bit pMOS MCU (M58840). 400 kHz. Slow PMOS.",
+  "instructions": [
+    {
+      "mnemonic": "AD",
+      "opcode": "0x0A",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "ADC",
+      "opcode": "0x0B",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x0C",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x0D",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x0E",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "EOR",
+      "opcode": "0x0F",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "CMA",
+      "opcode": "0x10",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Complement A"
+    },
+    {
+      "mnemonic": "LAI",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load A immediate"
+    },
+    {
+      "mnemonic": "TAB",
+      "opcode": "0x14",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Transfer A to B"
+    },
+    {
+      "mnemonic": "TBA",
+      "opcode": "0x15",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Transfer B to A"
+    },
+    {
+      "mnemonic": "LM",
+      "opcode": "0x20",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load memory"
+    },
+    {
+      "mnemonic": "SM",
+      "opcode": "0x21",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store memory"
+    },
+    {
+      "mnemonic": "INP",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0x31",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "CAL",
+      "opcode": "0x90",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x33",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

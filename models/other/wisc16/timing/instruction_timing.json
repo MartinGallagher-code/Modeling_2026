@@ -1,0 +1,150 @@
+{
+  "processor": "WISC CPU/16",
+  "manufacturer": "University of Wisconsin",
+  "year": 1986,
+  "source": "WISC CPU/16 documentation",
+  "instruction_count": 14,
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "LD",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "ST",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "LDI",
+      "opcode": "0x12",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JZ",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump if zero"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x23",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "WCTL",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Writable control store operation"
+    },
+    {
+      "mnemonic": "MICRO",
+      "opcode": "0x31",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Microinstruction execute"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

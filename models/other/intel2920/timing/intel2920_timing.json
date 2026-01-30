@@ -1,0 +1,30 @@
+{
+  "processor": "Intel 2920",
+  "manufacturer": "Intel",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "2920 Analog Signal Processor datasheet",
+  "instruction_count": 20,
+  "instructions": [
+    {"mnemonic": "ADD", "opcode": "0x00", "bytes": 3, "cycles": 2, "category": "alu", "addressing_mode": "direct", "flags_affected": "none", "notes": "25-bit add; 400ns (2 internal cycles at 5 MHz)"},
+    {"mnemonic": "SUB", "opcode": "0x01", "bytes": 3, "cycles": 2, "category": "alu", "addressing_mode": "direct", "flags_affected": "none", "notes": "25-bit subtract; 400ns"},
+    {"mnemonic": "ABS", "opcode": "0x02", "bytes": 3, "cycles": 2, "category": "alu", "addressing_mode": "direct", "flags_affected": "none", "notes": "Absolute value; 400ns"},
+    {"mnemonic": "NEG", "opcode": "0x03", "bytes": 3, "cycles": 2, "category": "alu", "addressing_mode": "direct", "flags_affected": "none", "notes": "Negate (two's complement); 400ns"},
+    {"mnemonic": "LDA", "opcode": "0x04", "bytes": 3, "cycles": 2, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Load accumulator from data RAM"},
+    {"mnemonic": "STA", "opcode": "0x05", "bytes": 3, "cycles": 2, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Store accumulator to data RAM"},
+    {"mnemonic": "LIM", "opcode": "0x06", "bytes": 3, "cycles": 2, "category": "data_transfer", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Load immediate constant"},
+    {"mnemonic": "CLR", "opcode": "0x07", "bytes": 3, "cycles": 2, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Clear accumulator"},
+    {"mnemonic": "ABA", "opcode": "0x08", "bytes": 3, "cycles": 4, "category": "io", "addressing_mode": "analog_in", "flags_affected": "none", "notes": "Analog input via on-chip ADC; 800ns includes conversion"},
+    {"mnemonic": "ENA", "opcode": "0x09", "bytes": 3, "cycles": 4, "category": "io", "addressing_mode": "analog_out", "flags_affected": "none", "notes": "Analog output via on-chip DAC; 800ns includes setup"},
+    {"mnemonic": "SHL", "opcode": "0x0A", "bytes": 3, "cycles": 2, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Shift left 1 bit; 400ns"},
+    {"mnemonic": "SHR", "opcode": "0x0B", "bytes": 3, "cycles": 2, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Shift right 1 bit; 400ns"},
+    {"mnemonic": "JMP", "opcode": "0x0C", "bytes": 3, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Unconditional jump; 600ns"},
+    {"mnemonic": "JNZ", "opcode": "0x0D", "bytes": 3, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump if not zero; 600ns"},
+    {"mnemonic": "JZ", "opcode": "0x0E", "bytes": 3, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump if zero; 600ns"},
+    {"mnemonic": "JP", "opcode": "0x0F", "bytes": 3, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump if positive; 600ns"},
+    {"mnemonic": "JN", "opcode": "0x10", "bytes": 3, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump if negative; 600ns"},
+    {"mnemonic": "NOP", "opcode": "0x11", "bytes": 3, "cycles": 2, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "No operation; 400ns"},
+    {"mnemonic": "LMT", "opcode": "0x12", "bytes": 3, "cycles": 2, "category": "alu", "addressing_mode": "direct", "flags_affected": "none", "notes": "Limit (saturate to max/min); 400ns"},
+    {"mnemonic": "CMP", "opcode": "0x13", "bytes": 3, "cycles": 2, "category": "alu", "addressing_mode": "direct", "flags_affected": "none", "notes": "Compare (subtract without store); 400ns"}
+  ]
+}

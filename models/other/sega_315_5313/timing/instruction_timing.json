@@ -1,0 +1,210 @@
+{
+  "processor": "Sega 315-5313 VDP",
+  "manufacturer": "Sega/Yamaha",
+  "year": 1988,
+  "source": "Genesis/Mega Drive VDP documentation",
+  "instruction_count": 20,
+  "instructions": [
+    {
+      "mnemonic": "PLANE_A",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render scroll plane A line"
+    },
+    {
+      "mnemonic": "PLANE_B",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render scroll plane B line"
+    },
+    {
+      "mnemonic": "WINDOW",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render window plane"
+    },
+    {
+      "mnemonic": "SPR_SCAN",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Scan 80-entry sprite table"
+    },
+    {
+      "mnemonic": "SPR_RENDER",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render sprite pixels"
+    },
+    {
+      "mnemonic": "PSET",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Set pixel in priority buffer"
+    },
+    {
+      "mnemonic": "PRIORITY",
+      "opcode": "0x21",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Priority compositing"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write VDP register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x31",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read status register"
+    },
+    {
+      "mnemonic": "VRAM_RD",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "64KB VRAM read"
+    },
+    {
+      "mnemonic": "VRAM_WR",
+      "opcode": "0x41",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "64KB VRAM write"
+    },
+    {
+      "mnemonic": "CRAM_WR",
+      "opcode": "0x42",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Color RAM write (512 colors)"
+    },
+    {
+      "mnemonic": "VSRAM_WR",
+      "opcode": "0x43",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "V-scroll RAM write"
+    },
+    {
+      "mnemonic": "DMA_FILL",
+      "opcode": "0x50",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "DMA fill operation"
+    },
+    {
+      "mnemonic": "DMA_COPY",
+      "opcode": "0x51",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "DMA VRAM copy"
+    },
+    {
+      "mnemonic": "DMA_68K",
+      "opcode": "0x52",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "DMA from 68000 bus"
+    },
+    {
+      "mnemonic": "HSCROLL",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "H-scroll (per-line/per-tile)"
+    },
+    {
+      "mnemonic": "HINT",
+      "opcode": "0x70",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "H-blank interrupt generation"
+    },
+    {
+      "mnemonic": "VINT",
+      "opcode": "0x71",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "V-blank interrupt generation"
+    },
+    {
+      "mnemonic": "MODE_SET",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set display mode (H32/H40)"
+    }
+  ],
+  "schema_version": "1.0"
+}

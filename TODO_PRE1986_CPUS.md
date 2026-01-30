@@ -650,7 +650,8 @@ Store as YAML or JSON in a new `timing/` directory per processor.
 | Phase 4 | 73 | ✓ All complete |
 | Phase 5 | 48 | ✓ All complete |
 | Phase 6 | 101 | ✓ All complete |
-| **Grand Total** | **396** | **All complete** |
+| Phase 7 | ~374 | Pending (timing for remaining models) |
+| **Grand Total** | **~770** | **396 models + 48 timings complete, ~374 timings pending** |
 
 **Last Updated:** 2026-01-30
 **Current Model Count:** 323 total validated models (across 19 families)
@@ -1088,3 +1089,568 @@ The final years of Eastern Bloc semiconductor production and emerging Asian desi
 | **TOTAL Phase 6** | **101** |
 
 **Note:** Some entries are borderline 1994/1995 (taped out or designed in 1994, production in 1995). These are included because the architecture work happened within the 1994 cutoff and they complete important lineages. Actual modeling may adjust boundaries based on availability of documentation.
+
+---
+
+# PHASE 7: Instruction Timing Collection for Remaining Models
+
+Phase 5 collected timing tables for 48 architecturally distinct CPUs. This phase extends timing coverage to all remaining 374 models. Models are grouped by the type of timing data required.
+
+**Note on clones and variants:** Many models share instruction timings with a base architecture (e.g., all Z80 clones have identical cycle counts). For these, the timing file should reference the base timing table and document only the differences (clock speed, additional instructions, removed instructions).
+
+---
+
+## Group A: General-Purpose CPUs — Distinct ISAs (67 models)
+
+CPUs with their own instruction sets requiring full per-instruction timing tables.
+
+### Intel (7)
+- [ ] i4040 — Enhanced 4004, 60 instructions. Source: Intel MCS-40 datasheet
+- [ ] i80386 — 32-bit x86, ~130 new instructions. Source: i386 Programmer's Reference
+- [ ] i80486 — Pipelined x86, revised cycle counts. Source: i486 Programmer's Reference
+- [ ] pentium — Superscalar x86, dual-pipe timings. Source: Pentium Processor Manual
+- [ ] iapx432 — Object-oriented 32-bit, unique ISA. Source: iAPX 432 GDP datasheet
+- [ ] i960 — 32-bit RISC, ~130 instructions. Source: i960 Programmer's Reference
+- [ ] i960ca — Superscalar i960, 3-issue timings. Source: i960CA User's Manual
+
+### Motorola (11)
+- [ ] m6804 — Minimal 8-bit, ~40 instructions. Source: MC6804 datasheet
+- [ ] m68030 — Cached 68020, revised timings. Source: MC68030 User's Manual
+- [ ] m68040 — Pipelined 68k, 1-cycle ALU. Source: MC68040 User's Manual
+- [ ] m68060 — Superscalar 68k. Source: MC68060 User's Manual
+- [ ] m68hc05 — Reduced 6800, ~62 instructions. Source: MC68HC05 Reference
+- [ ] m68hc16 — 16-bit 68k-derived MCU. Source: MC68HC16 Reference
+- [ ] m88100 — 88k RISC, ~80 instructions. Source: MC88100 User's Manual
+- [ ] m88110 — Superscalar 88k. Source: MC88110 User's Manual
+- [ ] coldfire — 68k RISC subset. Source: ColdFire Family Programmer's Reference
+- [ ] cpu32 — 68020-based embedded core. Source: CPU32 Reference Manual
+- [ ] mc14500b — 1-bit industrial controller, 16 instructions. Source: MC14500B datasheet
+
+### ARM (3)
+- [ ] arm3 — ARM2 + cache, 26-bit addressing. Source: ARM3 datasheet
+- [ ] arm7tdmi — Thumb mode, 3-stage pipeline. Source: ARM7TDMI Technical Reference
+- [ ] arm610 — ARM6 variant, 33 MHz. Source: ARM610 datasheet
+
+### Zilog (4)
+- [ ] super8 — Enhanced Z8, pipelined. Source: Z8S800 datasheet
+- [ ] z280 — Z80 + MMU + cache. Source: Z280 MPU datasheet
+- [ ] z380 — 32-bit Z80 extension. Source: Z380 datasheet
+- [ ] z80000 — 32-bit Zilog. Source: Z80000 datasheet
+
+### NEC (4)
+- [ ] nec_v60 — 32-bit CISC, unique ISA. Source: V60/V70 User's Manual
+- [ ] upd7801 — NEC proprietary 8-bit. Source: µPD7801 datasheet
+- [ ] upd7810 — Enhanced 7801, 16-bit ops. Source: µPD7810 datasheet
+- [ ] v810 — 32-bit RISC, 5-stage pipeline. Source: V810 User's Manual
+- [ ] v850 — Embedded RISC. Source: V850 Architecture Manual
+
+### Hitachi (6)
+- [ ] h8_300 — 8/16-bit RISC MCU. Source: H8/300 Programming Manual
+- [ ] h8_500 — 16-bit H8 variant. Source: H8/500 Programming Manual
+- [ ] hd6301 — Enhanced 6801 MCU. Source: HD6301 datasheet
+- [ ] hd6305 — 6805-compatible. Source: HD6305 datasheet
+- [ ] sh1 — 32-bit RISC, 16-bit ISA. Source: SH7032 Hardware Manual
+- [ ] sh2 — Enhanced SH-1, 5-stage pipeline. Source: SH7604 Hardware Manual
+
+### National (4)
+- [ ] cop400 — 4-bit MCU, ~57 instructions. Source: COP400 datasheet
+- [ ] cop420 — Enhanced COP400. Source: COP420 datasheet
+- [ ] cop444 — Top COP4xx. Source: COP444 datasheet
+- [ ] ns32032 — 32-bit CISC. Source: NS32032 datasheet
+
+### Toshiba (5)
+- [ ] tlcs12 — 12-bit, first Japanese µP. Source: TLCS-12 datasheet
+- [ ] tlcs12a — Improved TLCS-12. Source: TLCS-12A datasheet
+- [ ] tlcs47 — 4-bit MCU. Source: TLCS-47 datasheet
+- [ ] tlcs870 — 8-bit MCU. Source: TLCS-870 datasheet
+- [ ] tlcs90 — 8-bit Z80-like. Source: TLCS-90 datasheet
+
+### TI (5)
+- [ ] tms7000 — 8-bit MCU, ~80 instructions. Source: TMS7000 datasheet
+- [ ] tms9980 — 8-bit-bus TMS9900. Source: TMS9980 datasheet
+- [ ] tms9985 — Single-chip TMS9900. Source: TMS9985 datasheet
+- [ ] tms370 — Industrial control MCU. Source: TMS370 Family Reference
+- [ ] tms0800 — Calculator processor. Source: TMS0800 datasheet
+
+### Mitsubishi (4)
+- [ ] melps4 — 4-bit pMOS MCU. Source: MELPS 4 Programming Manual
+- [ ] melps740 — Enhanced 6502 MCU. Source: MELPS 740 Programming Manual
+- [ ] m50740 — MELPS 740 family. Source: M50740 datasheet
+- [ ] m50747 — MELPS 740 variant. Source: M50747 datasheet
+
+### Fujitsu (2)
+- [ ] mb8841 — 4-bit arcade MCU. Source: MB8841 datasheet
+- [ ] mb8861 — 6800 clone. Source: MB8861 datasheet
+
+### RCA (2)
+- [ ] cdp1804 — COSMAC variant. Source: CDP1804 datasheet
+- [ ] cdp1806 — Final COSMAC. Source: CDP1806 datasheet
+
+### Rockwell (2)
+- [ ] pps4_1 — Single-chip PPS-4. Source: PPS-4/1 datasheet
+- [ ] r65c02 — CMOS 6502 + extras. Source: R65C02 datasheet
+
+### Other (8)
+- [ ] lh5801 — Sharp pocket computer CPU. Source: LH5801 datasheet
+- [ ] mn1610 — Japanese 16-bit. Source: MN1610 datasheet
+- [ ] mn1613 — Improved MN1610. Source: MN1613 datasheet
+- [ ] mn601 — Data General microNova. Source: mN601 datasheet
+- [ ] mn602 — Enhanced microNova. Source: mN602 datasheet
+- [ ] mostek_3870 — F8 derivative. Source: MK3870 datasheet
+- [ ] fairchild9440 — Nova-on-a-chip. Source: F9440 datasheet
+- [ ] intersil6100 — PDP-8-on-a-chip. Source: IM6100 datasheet
+
+---
+
+## Group B: Clone/Variant CPUs — Reference Base Timings (97 models)
+
+These share instruction timings with a base architecture. Timing files should reference the base and document clock speed and any additions/removals.
+
+### Z80 Clones & Variants (13)
+- [ ] u880 — East German Z80 clone → ref: z80
+- [ ] kr1858vm1 — Soviet Z80 clone → ref: z80
+- [ ] tesla_mhb8080a — Czech 8080 clone → ref: i8080
+- [ ] upd780 — NEC Z80 clone → ref: z80
+- [ ] lh0080 — Sharp Z80 second-source → ref: z80
+- [ ] z8400 — SGS-Thomson Z80 → ref: z80
+- [ ] z80a — Speed-binned Z80 (4 MHz) → ref: z80
+- [ ] z80b — Speed-binned Z80 (6 MHz) → ref: z80
+- [ ] hd64180 — Hitachi Z180 equivalent → ref: z180
+- [ ] z8s180 — Enhanced Z180 → ref: z180
+- [ ] nsc800 — National Z80-compatible CMOS → ref: z80
+- [ ] tvc_cpu — Hungarian Z80 variant → ref: z80
+- [ ] mcy7880 — Polish 8080A clone → ref: i8080
+
+### 8080/8085 Clones (7)
+- [ ] u808 — East German 8008 clone → ref: i8008
+- [ ] im1821vm85a — Soviet 8085 clone → ref: i8085
+- [ ] kr580vm1 — Soviet 8080 extension → ref: i8080 (+ extensions)
+- [ ] sab8080a — Siemens 8080 → ref: i8080
+- [ ] sab8085 — Siemens 8085 → ref: i8085
+- [ ] msm80c85 — OKI CMOS 8085 → ref: i8085
+- [ ] msm80c85ah — OKI CMOS 8085 variant → ref: i8085
+- [ ] upd8080af — NEC 8080 clone → ref: i8080
+- [ ] am8085a — AMD 8085 → ref: i8085
+
+### 8086/8088 Clones & Variants (7)
+- [ ] i8088 — 8-bit bus 8086 → ref: i8086 (same cycle counts)
+- [ ] i80188 — 8-bit bus 80186 → ref: i80186
+- [ ] nec_v30 — V20 16-bit bus sibling → ref: nec_v20
+- [ ] k1810vm86 — Soviet 8086 clone → ref: i8086
+- [ ] k1810vm88 — Soviet 8088 clone → ref: i8086
+- [ ] nec_v70 — V60 variant → ref: nec_v60
+- [ ] mpa1008 — Romanian Z80A clone → ref: z80
+
+### x86 Clones (386/486/Pentium era) (7)
+- [ ] am386 — AMD 386 clone → ref: i80386
+- [ ] am486 — AMD 486 clone → ref: i80486
+- [ ] am5x86 — AMD 486 4x clock → ref: i80486 (+ pipeline changes)
+- [ ] cx486dlc — Cyrix 486 in 386 pin-out → ref: i80486 (+ bus diffs)
+- [ ] cx486slc — Cyrix 486 for 386SX → ref: i80486 (+ bus diffs)
+- [ ] cx5x86 — Cyrix superscalar 486 → ref: i80486 (+ superscalar)
+- [ ] umc_u5s — UMC 486 clone → ref: i80486
+- [ ] ibm_486slc2 — IBM 486-class → ref: i80486 (+ clock doubling)
+- [ ] hyundai_486 — Korean 486 clone → ref: i80486
+- [ ] nx586 — NexGen RISC-translated x86 (distinct microarch)
+
+### 6502 Family Variants (8)
+- [ ] mos6507 — 28-pin 6502 → ref: mos6502
+- [ ] mos6509 — Bank-switching 6502 → ref: mos6502
+- [ ] mos6510 — C64 CPU (6502 + I/O port) → ref: mos6502
+- [ ] mos8501 — C16 CPU (HMOS 6502 + clock) → ref: mos6502
+- [ ] mos8502 — C128 CPU (2 MHz 6502) → ref: mos6502
+- [ ] ricoh_2a03 — NES CPU (6502 - BCD) → ref: mos6502 (minus BCD)
+- [ ] sy6502a — Synertek 6502 → ref: mos6502
+- [ ] g65sc802 — WDC 65C816 second-source → ref: wdc65816
+- [ ] g65sc816 — WDC 65C816 second-source → ref: wdc65816
+- [ ] r6500_1 — Single-chip 6502 MCU → ref: mos6502 (subset)
+- [ ] r6511 — 6502 with peripherals → ref: mos6502
+- [ ] cm630 — Bulgarian CMOS 6502 → ref: mos6502
+- [ ] ricoh_5a22 — SNES CPU (65C816 + DMA) → ref: wdc65816
+- [ ] huc6280 — TG-16 CPU (65C02 + speed) → ref: wdc65c02
+
+### 6800 Family Variants (5)
+- [ ] m6802 — 6800 + clock + RAM → ref: m6800
+- [ ] m6803 — Enhanced 6801 → ref: m6801
+- [ ] m6805r2 — Low-cost 6805 → ref: m6805
+- [ ] m68hc11a1 — Specific 68HC11 variant → ref: m68hc11
+- [ ] m68008 — 8-bit bus 68000 → ref: m68000 (adjusted bus timings)
+
+### 8048/8051 Variants (4)
+- [ ] i8039 — ROM-less MCS-48 → ref: i8048
+- [ ] i8748 — EPROM MCS-48 → ref: i8048
+- [ ] i8751 — EPROM MCS-51 → ref: i8051
+- [ ] k580ik51 — Soviet 8051 clone → ref: i8051
+
+### Other CPU Clones (8)
+- [ ] sab80515 — Siemens enhanced 8051 → ref: i8051 (+ extensions)
+- [ ] sab80c166 — Siemens 16-bit automotive MCU (distinct ISA, needs own table)
+- [ ] i960cf — Enhanced i960 + FPU → ref: i960ca
+- [ ] arm250 — ARM2 + integrated peripherals → ref: arm2
+- [ ] melps41 — Enhanced MELPS 4 → ref: melps4
+- [ ] melps42 — CMOS MELPS 4 → ref: melps4
+- [ ] mb8842 — MB8841 variant → ref: mb8841
+- [ ] mb8843 — MB8841 variant → ref: mb8841
+- [ ] mb8844 — MB8841 variant → ref: mb8841
+- [ ] mb8845 — MB8841 variant → ref: mb8841
+- [ ] rca1805 — COSMAC variant → ref: rca1802
+- [ ] tx39 — Toshiba MIPS R3000 variant → ref: mips_r3000
+
+### Soviet PDP-11 Family (3)
+- [ ] k1801vm1 — Soviet PDP-11 chip. Source: BK-0010 documentation
+- [ ] k1801vm2 — Enhanced Soviet PDP-11. Source: DVK-3 documentation
+- [ ] k1801vm3 — Final Soviet PDP-11. Source: UKNC documentation
+
+### Eastern Bloc Misc (4)
+- [ ] k1839vm1 — Soviet VAX clone (distinct ISA)
+- [ ] elbrus_el90 — Soviet VLIW (distinct ISA)
+- [ ] u80701 — East German 32-bit (limited docs)
+- [ ] chinese_863 — Chinese 863 program (reverse-engineered cores)
+
+### SPARC Variants (7)
+- [ ] mb86900 — First SPARC silicon → ref: sparc
+- [ ] sparclite — Embedded SPARC → ref: sparc (subset)
+- [ ] lsi_l64801 — LSI Logic SPARC → ref: sparc
+- [ ] cy7c601 — Cypress SPARC → ref: sparc
+- [ ] supersparc — TI superscalar SPARC → ref: sparc (+ superscalar timings)
+- [ ] microsparc — Single-chip SPARC → ref: sparc
+- [ ] microsparc_ii — Enhanced MicroSPARC → ref: sparc
+- [ ] hypersparc — Ross SPARC → ref: sparc
+- [ ] ultrasparc_i — 64-bit SPARC V9 (distinct timings)
+- [ ] sparc64_hal — 64-bit SPARC V9 → ref: ultrasparc_i
+
+### MIPS Variants (6)
+- [ ] mips_r3000 — 32-bit MIPS, 5-stage → ref: r2000 (+ additions)
+- [ ] mips_r4000 — 64-bit superpipeline (distinct timings)
+- [ ] mips_r4400 — Improved R4000 → ref: mips_r4000
+- [ ] mips_r4600 — Low-cost R4000 → ref: mips_r4000
+- [ ] mips_r8000 — Superscalar MIPS (distinct timings)
+- [ ] mips_r10000 — Out-of-order MIPS (distinct timings)
+- [ ] sony_r3000a — PlayStation R3000A → ref: mips_r3000
+
+### PowerPC / POWER (5)
+- [ ] aim_ppc_601 — PowerPC 601. Source: PPC 601 User's Manual
+- [ ] ppc603 — PowerPC 603. Source: PPC 603 User's Manual
+- [ ] ppc604 — PowerPC 604. Source: PPC 604 User's Manual
+- [ ] ppc620 — 64-bit PowerPC. Source: PPC 620 datasheet
+- [ ] ibm_power1 — POWER1. Source: RS/6000 Technical Reference
+- [ ] ibm_power2 — POWER2. Source: POWER2 Architecture Note
+- [ ] ibm_rs64 — RS64/POWER3 design era
+
+### DEC Alpha (3)
+- [ ] alpha21064 — Alpha 21064. Source: Alpha AXP Architecture Reference
+- [ ] alpha_21064a — Faster 21064 → ref: alpha21064
+- [ ] alpha_21066 — Low-cost Alpha → ref: alpha21064
+
+### HP PA-RISC (4)
+- [ ] hp_pa_risc — Original PA-RISC. Source: PA-RISC Architecture Reference
+- [ ] pa7100 — PA-7100. Source: PA-7100 datasheet
+- [ ] pa7100lc — Low-cost PA-RISC → ref: pa7100
+- [ ] pa7200 — Superscalar PA-RISC (distinct timings)
+
+### DEC PDP-11-on-Chip (2)
+- [ ] dec_t11 — PDP-11 on chip. Source: DC310 datasheet
+- [ ] dec_j11 — Fastest PDP-11 chip. Source: DC333 datasheet
+
+### Other Distinct CPUs (5)
+- [ ] we32000 — AT&T WE32000. Source: WE32000 Information Manual
+- [ ] microvax_78032 — MicroVAX. Source: KA630 Technical Manual
+- [ ] clipper_c100 — Fairchild RISC. Source: Clipper Programmer's Reference
+- [ ] ridge_32 — Ridge RISC-like. Source: Ridge 32 Technical Summary
+- [ ] sequoia_s16 — Fault-tolerant 16/32-bit
+- [ ] apollo_dn300 — 68k-derived workstation CPU
+- [ ] ks86c4004 — Samsung MCU (distinct ISA)
+
+---
+
+## Group C: Math Coprocessors & FPUs (14 models)
+
+Operation timing tables (not instruction sets per se, but operation cycle counts).
+
+- [ ] i8087 — x87 FPU. Source: 8087 datasheet
+- [ ] i8087_2 — 8 MHz 8087 → ref: i8087
+- [ ] i80287 — 286 FPU. Source: 80287 datasheet
+- [ ] i80387 — 386 FPU. Source: 80387 datasheet
+- [ ] i8231 — Arithmetic Processing Unit. Source: 8231A datasheet
+- [ ] m68881 — 68k FPU. Source: MC68881 User's Manual
+- [ ] m68882 — Dual-bus 68k FPU → ref: m68881
+- [ ] m68851 — 68020 PMMU. Source: MC68851 User's Manual
+- [ ] am9511 — AMD APU. Source: Am9511A datasheet
+- [ ] am9512 — AMD floating-point APU. Source: Am9512 datasheet
+- [ ] ns32081 — NS32000 FPU. Source: NS32081 datasheet
+- [ ] ns32082 — NS32000 MMU. Source: NS32082 datasheet
+- [ ] ns32381 — Enhanced NS32000 FPU. Source: NS32381 datasheet
+- [ ] weitek1064 — Weitek FPU pair. Source: Weitek 1064/1065 datasheet
+
+---
+
+## Group D: DSPs — Full Instruction Timings (18 models)
+
+DSPs have real ISAs; collect full per-instruction timing tables.
+
+### TI TMS320 Family (6)
+- [ ] tms320c25 — Fixed-point, Harvard. Source: TMS320C25 User's Guide
+- [ ] tms320c30 — Floating-point. Source: TMS320C30 User's Guide
+- [ ] tms320c40 — Multi-processor. Source: TMS320C40 User's Guide
+- [ ] tms320c50 — Enhanced fixed-point. Source: TMS320C50 User's Guide
+- [ ] tms320c80 — MVP multiprocessor. Source: TMS320C80 datasheet
+- [ ] tms34010 — Graphics DSP/GPU. Source: TMS34010 User's Guide
+- [ ] tms34020 — Enhanced GPU. Source: TMS34020 User's Guide
+
+### Motorola DSP (2)
+- [ ] dsp56001 — 24-bit fixed-point. Source: DSP56001 User's Manual
+- [ ] dsp96002 — IEEE 754 floating-point DSP. Source: DSP96002 User's Manual
+
+### Analog Devices (2)
+- [ ] adsp2100 — Fixed-point DSP. Source: ADSP-2100 User's Manual
+- [ ] adsp21020 — Floating-point SHARC predecessor. Source: ADSP-21020 User's Manual
+- [ ] adsp2105 — Low-cost DSP → ref: adsp2100
+
+### AT&T / Lucent (3)
+- [ ] att_dsp1 — Bell Labs early DSP. Source: DSP-1 datasheet
+- [ ] att_dsp16 — 16-bit fixed-point. Source: DSP16 datasheet
+- [ ] att_dsp32c — 32-bit floating-point. Source: DSP32C datasheet
+- [ ] dsp1600 — Lucent 16-bit. Source: DSP1600 datasheet
+
+### NEC DSP (2)
+- [ ] upd7720 — Early DSP. Source: µPD7720 datasheet
+- [ ] upd7725 — Enhanced DSP. Source: µPD7725 datasheet
+
+### Other DSP (3)
+- [ ] ami_s2811 — AMI signal processor. Source: S2811 datasheet
+- [ ] ami_s28211 — AMI DSP. Source: S28211 datasheet
+- [ ] att_dsp20 — Bell Labs DSP. Source: DSP-20 datasheet
+- [ ] dsp56000 — Motorola 56k DSP → ref: dsp56001
+- [ ] intel2920 — Intel DSP with ADC/DAC. Source: 2920 datasheet
+- [ ] sgs_d950 — SGS-Thomson GSM DSP. Source: D950 datasheet
+- [ ] zoran_zr34161 — JPEG/MPEG decoder DSP. Source: ZR34161 datasheet
+
+---
+
+## Group E: Sound / Audio Processors (14 models)
+
+Register-programmable devices. Collect operation/register timing tables.
+
+- [ ] mos6581_sid — C64 SID. Source: 6581 datasheet
+- [ ] mos8580_sid — Revised SID → ref: mos6581_sid
+- [ ] ym2151 — Yamaha OPM FM synthesis. Source: YM2151 Application Manual
+- [ ] ym3526 — Yamaha OPL. Source: YM3526 datasheet
+- [ ] ym3812 — Yamaha OPL2. Source: YM3812 datasheet
+- [ ] ymf262 — Yamaha OPL3. Source: YMF262 datasheet
+- [ ] ym2612 — Yamaha OPN2. Source: YM2612 datasheet
+- [ ] ym2610 — Yamaha OPNB. Source: YM2610 datasheet
+- [ ] ay3_8910 — GI PSG. Source: AY-3-8910 datasheet
+- [ ] sn76489 — TI PSG. Source: SN76489 datasheet
+- [ ] es5503 — Ensoniq DOC wavetable. Source: ES5503 datasheet
+- [ ] ensoniq_otto — Ensoniq ES5505/5506. Source: ES5505 datasheet
+- [ ] sp0256 — GI speech processor. Source: SP0256 datasheet
+- [ ] tms5100 — TI Speak & Spell. Source: TMS5100 datasheet
+
+---
+
+## Group F: Video / Graphics Processors (22 models)
+
+Command/drawing operation timing tables.
+
+- [ ] tms9918a — TI VDP. Source: TMS9918A datasheet
+- [ ] rp2c02 — NES PPU. Source: RP2C02 register reference
+- [ ] rp2c07 — PAL NES PPU → ref: rp2c02
+- [ ] vic_ii — C64 VIC-II (6567/6569). Source: VIC-II datasheet
+- [ ] vic_6560 — VIC-20 VIC. Source: 6560/6561 datasheet
+- [ ] ted — C16/Plus4 TED. Source: 7360 datasheet
+- [ ] sega_315_5124 — SMS VDP. Source: Sega VDP documentation
+- [ ] sega_315_5313 — Genesis VDP. Source: Sega Genesis VDP docs
+- [ ] v9938 — MSX2 VDP. Source: V9938 Technical Data Book
+- [ ] hd63484 — Hitachi ACRTC. Source: HD63484 datasheet
+- [ ] hd63484_2 — Enhanced ACRTC → ref: hd63484
+- [ ] upd7220 — NEC GDC. Source: µPD7220 datasheet
+- [ ] antic — Atari ANTIC. Source: ANTIC chip documentation
+- [ ] cdp1861 — RCA Pixie VDC. Source: CDP1861 datasheet
+- [ ] s3_86c911 — S3 2D accelerator. Source: S3 86C911 datasheet
+- [ ] et4000 — Tseng Labs SVGA. Source: ET4000 datasheet
+- [ ] ct65545 — C&T laptop graphics. Source: 65545 datasheet
+- [ ] weitek_p9000 — Weitek 2D graphics. Source: P9000 datasheet
+- [ ] iit_agx — IIT XGA accelerator. Source: AGX datasheet
+- [ ] ati_mach32 — ATI graphics coprocessor. Source: Mach32 Register Reference
+- [ ] ati_mach64 — ATI graphics + video. Source: Mach64 Register Reference
+- [ ] snk_lspc2 — Neo Geo video. Source: LSPC2 documentation
+
+---
+
+## Group G: Bit-Slice, Programmable Logic & ALU (16 models)
+
+ALU operation timing tables. Cycle counts depend on microprogram, so document base ALU operation times.
+
+- [ ] am2901 — AMD 4-bit slice. Source: Am2901 datasheet
+- [ ] am2903 — Enhanced Am2901. Source: Am2903 datasheet
+- [ ] am2910 — Microprogram sequencer. Source: Am2910 datasheet
+- [ ] am29116 — 16-bit microprogrammable. Source: Am29116 datasheet
+- [ ] am29c101 — Four Am2901s in one. Source: Am29C101 datasheet
+- [ ] i3002 — Intel bit-slice. Source: 3001/3002 datasheet
+- [ ] i3003 — Intel carry look-ahead. Source: 3003 datasheet
+- [ ] sn74181 — TI single-chip ALU. Source: SN74181 datasheet
+- [ ] sn74s481 — TI bit-slice ALU. Source: SN74S481 datasheet
+- [ ] sbp0400 — TI I2L bit-slice. Source: SBP0400 datasheet
+- [ ] sbp0401 — SBP0400 variant. Source: SBP0401 datasheet
+- [ ] mc10800 — Motorola ECL bit-slice. Source: MC10800 datasheet
+- [ ] mm6701 — Monolithic Memories bit-slice. Source: 6701 datasheet
+- [ ] mmi_67110 — Enhanced sequencer. Source: 67110 datasheet
+- [ ] rp16 — Raytheon 16-bit military. Source: RP-16 datasheet
+- [ ] rp32 — Raytheon 32-bit military. Source: RP-32 datasheet
+
+---
+
+## Group H: Network, Communications & I/O Controllers (14 models)
+
+Programmable controllers with operation/command timing.
+
+- [ ] i8089 — Intel I/O processor. Source: 8089 datasheet
+- [ ] i82557 — Intel Ethernet. Source: 82557 datasheet
+- [ ] i82586 — Intel Ethernet coprocessor. Source: 82586 datasheet
+- [ ] i82596 — Intel 32-bit Ethernet. Source: 82596 datasheet
+- [ ] i82730 — Intel text coprocessor. Source: 82730 datasheet
+- [ ] i8044 — Intel RUPI. Source: 8044 datasheet
+- [ ] z8016_dma — Zilog DMA controller. Source: Z8016 datasheet
+- [ ] z80_sio — Zilog serial I/O. Source: Z80-SIO datasheet
+- [ ] z8530 — Zilog SCC. Source: Z8530 datasheet
+- [ ] m6854 — Motorola ADLC. Source: MC6854 datasheet
+- [ ] m68302 — Motorola IMP. Source: MC68302 User's Manual
+- [ ] m68360 — Motorola QUICC. Source: MC68360 User's Manual
+- [ ] am79c970 — AMD PCnet Ethernet. Source: Am79C970 datasheet
+- [ ] wd2010 — WD hard disk controller. Source: WD2010 datasheet
+
+---
+
+## Group I: 4-Bit Calculator & Appliance MCUs (16 models)
+
+Small instruction sets (30-60 instructions). Many share family timings.
+
+### AMI S2000 Family (4)
+- [ ] ami_s2000 — First <$10 system. Source: S2000 datasheet
+- [ ] ami_s2150 — S2000 variant → ref: ami_s2000
+- [ ] ami_s2200 — S2000 variant → ref: ami_s2000
+- [ ] ami_s2400 — S2000 variant → ref: ami_s2000
+
+### NEC 4-Bit (3)
+- [ ] ucom4 — NEC 4-bit MCU. Source: µCOM-4 datasheet
+- [ ] upd751 — NEC 4-bit. Source: µPD751 datasheet
+- [ ] upd546 — NEC calculator. Source: µPD546 datasheet
+- [ ] upd612x — Extended µCOM-4. Source: µPD612xA datasheet
+
+### Other 4-Bit (5)
+- [ ] hmcs40 — Hitachi 4-bit (HD44780 MCU). Source: HMCS40 datasheet
+- [ ] msm5840 — OKI 4-bit LCD. Source: MSM5840 datasheet
+- [ ] ks57 — Samsung 4-bit. Source: KS57 datasheet
+- [ ] sm4 — Sharp 4-bit. Source: SM4 datasheet
+- [ ] sm5 — Sharp enhanced 4-bit. Source: SM5 datasheet
+- [ ] mn1400 — Matsushita 4-bit. Source: MN1400 datasheet
+- [ ] mn1800 — Matsushita 8-bit. Source: MN1800 datasheet
+- [ ] mn10200 — Matsushita 16-bit. Source: MN10200 datasheet
+
+---
+
+## Group J: Gaming & Arcade Custom Chips (10 models)
+
+State-machine / custom logic timing. Document command/operation cycles.
+
+### Namco Custom (6)
+- [ ] namco_05xx — Starfield generator. Source: MAME documentation
+- [ ] namco_50xx — Pac-Man era custom. Source: MAME documentation
+- [ ] namco_51xx — I/O controller. Source: MAME documentation
+- [ ] namco_52xx — Sample player. Source: MAME documentation
+- [ ] namco_53xx — Multiplexer. Source: MAME documentation
+- [ ] namco_54xx — Sound generator. Source: MAME documentation
+
+### Other Gaming (4)
+- [ ] ay3_8500 — Pong-on-a-chip. Source: AY-3-8500 datasheet
+- [ ] ay3_8900 — Intellivision STIC. Source: AY-3-8900 datasheet
+- [ ] s2636_pvi — Signetics PVI. Source: 2636 datasheet
+- [ ] williams_sc1 — Williams blitter. Source: Williams hardware docs
+- [ ] fd1089 — Sega encrypted 68000 → ref: m68000
+- [ ] fd1094 — Sega encrypted 68000 → ref: m68000
+- [ ] sega_svp — Samsung SSP1601 DSP. Source: SVP reverse-engineering docs
+
+---
+
+## Group K: Special-Purpose & Unique Architectures (20 models)
+
+### LISP Machines & AI (4)
+- [ ] symbolics_cadr — LISP machine CPU. Source: MIT AI Lab Tech Reports
+- [ ] ti_explorer — TI LISP CPU. Source: TI Explorer Technical Summary
+- [ ] xerox_alto — Xerox PARC Alto. Source: Alto Hardware Manual
+- [ ] lmi_lambda — LMI CADR derivative → ref: symbolics_cadr
+
+### Stack / Forth Machines (5)
+- [ ] nc4000 — Novix Forth chip. Source: NC4000 datasheet
+- [ ] nc4016 — Enhanced Novix. Source: NC4016 datasheet
+- [ ] rtx2000 — Harris RTX2000. Source: RTX2000 datasheet
+- [ ] rtx32p — Harris 32-bit Forth. Source: RTX32P datasheet
+- [ ] mup21 — Chuck Moore minimal Forth. Source: MuP21 documentation
+- [ ] wisc16 — WISC CPU/16. Source: WISC documentation
+- [ ] wisc32 — WISC CPU/32. Source: WISC documentation
+
+### Parallel / Array Processors (4)
+- [ ] icl_dap — 4096-element SIMD. Source: ICL DAP documentation
+- [ ] staran — Goodyear STARAN. Source: STARAN documentation
+- [ ] iwarp — Intel/CMU VLIW. Source: iWarp documentation
+- [ ] t800 — Inmos transputer + FPU. Source: T800 datasheet
+
+### Transputers (3)
+- [ ] t212 — 16-bit transputer. Source: T212 datasheet
+- [ ] t414 — 32-bit transputer. Source: T414 datasheet
+- [ ] t424 — 32-bit + more RAM → ref: t414
+
+### Calculator CPUs (5)
+- [ ] hp_saturn — HP calculator CPU. Source: HP Saturn Architecture doc
+- [ ] hp_nano — HP Nanoprocessor. Source: HP Nano doc
+- [ ] sc61860 — Sharp pocket computer. Source: SC61860 instruction list
+- [ ] upd1007c — Casio calculator. Source: µPD1007C datasheet
+- [ ] mk5005 — Mostek calculator. Source: MK5005 datasheet
+
+### Unique / Misc (9)
+- [ ] signetics_8x300 — Bipolar signal processor. Source: 8X300 datasheet
+- [ ] signetics_8x305 — Enhanced 8X300. Source: 8X305 datasheet
+- [ ] wd9000 — Pascal MicroEngine. Source: WD9000 documentation
+- [ ] wd16 — LSI-11 compatible. Source: WD16 datasheet
+- [ ] hm6100 — CMOS PDP-8. Source: HM6100 datasheet
+- [ ] f100l — Ferranti military 16-bit. Source: F100-L datasheet
+- [ ] ferranti_ula — ZX Spectrum ULA (logic timing). Source: Ferranti ULA documentation
+- [ ] mac4 — Bell Labs telecom MCU. Source: MAC-4 documentation
+- [ ] pokey — Atari audio/I/O. Source: POKEY chip documentation
+- [ ] sm83 — Game Boy CPU. Source: SM83/LR35902 opcode table
+- [ ] hc55516 — CVSD sound decoder. Source: HC-55516 datasheet
+- [ ] msm5205 — OKI ADPCM speech. Source: MSM5205 datasheet
+- [ ] upd7759 — NEC ADPCM voice. Source: µPD7759 datasheet
+- [ ] thomson_90435 — French military 8-bit. Source: EFCIS 90435 datasheet
+- [ ] mas281 — British military 16-bit. Source: MAS281 datasheet
+- [ ] miproc — Plessey PDP-11. Source: MIPROC datasheet
+- [ ] i8061 — Ford engine controller. Source: 8061 datasheet
+- [ ] imp16 — National 16-bit. Source: IMP-16 datasheet
+- [ ] bt101 — Brooktree RAMDAC. Source: Bt101 datasheet
+- [ ] cx1 — Nippon Columbia arcade DSP. Source: CX-1 documentation
+- [ ] kr581ik1 — Soviet MCP-1600 clone. Source: KR581IK1 docs
+- [ ] kr581ik2 — Soviet MCP-1600 clone → ref: kr581ik1
+- [ ] u8001 — East German Z8000 clone → ref: z8000
+
+---
+
+## Phase 7 Summary
+
+| Group | Description | Count | Timing Type |
+|-------|-------------|-------|-------------|
+| A | CPUs — Distinct ISAs | 67 | Full instruction timing |
+| B | Clone/Variant CPUs | 97 | Reference base + deltas |
+| C | Math Coprocessors & FPUs | 14 | Operation timing |
+| D | DSPs | 18 | Full instruction timing |
+| E | Sound / Audio Processors | 14 | Register/operation timing |
+| F | Video / Graphics Processors | 22 | Command/drawing timing |
+| G | Bit-Slice & Programmable Logic | 16 | ALU operation timing |
+| H | Network / Comms / I/O | 14 | Command/operation timing |
+| I | 4-Bit Calculator & MCUs | 16 | Full instruction timing |
+| J | Gaming & Arcade Custom | 10 | State-machine timing |
+| K | Special-Purpose & Unique | 20 | Mixed (per architecture) |
+| **TOTAL** | | **~374** | |
+
+**Priority order:** A (distinct CPUs) → D (DSPs) → I (4-bit MCUs) → C (FPUs) → B (clones, quick references) → remainder.
+
+**Note:** Exact count may vary slightly due to models appearing in multiple categories or edge-case classification. Some models in Group B will need their own full timing tables if they have significant ISA extensions beyond the base architecture.

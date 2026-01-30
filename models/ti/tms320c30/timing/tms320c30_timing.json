@@ -1,0 +1,151 @@
+{
+  "processor": "TI TMS320C30",
+  "manufacturer": "Texas Instruments",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "TMS320C30 Users Guide",
+  "instruction_count": 113,
+  "notes": "Floating-point DSP. 33 MHz. IEEE 754 single precision.",
+  "instructions": [
+    {
+      "mnemonic": "ADDF",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "VNZUF",
+      "notes": "Float add"
+    },
+    {
+      "mnemonic": "SUBF",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "VNZUF",
+      "notes": "Float subtract"
+    },
+    {
+      "mnemonic": "MPYF",
+      "opcode": "0x08",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "VNZUF",
+      "notes": "Float multiply"
+    },
+    {
+      "mnemonic": "ADDI",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "VNZC",
+      "notes": "Integer add"
+    },
+    {
+      "mnemonic": "SUBI",
+      "opcode": "0x06",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "VNZC",
+      "notes": "Integer subtract"
+    },
+    {
+      "mnemonic": "LDI",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "Load integer"
+    },
+    {
+      "mnemonic": "LDF",
+      "opcode": "0x12",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "VNZUF",
+      "notes": "Load float"
+    },
+    {
+      "mnemonic": "STI",
+      "opcode": "0x14",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store integer"
+    },
+    {
+      "mnemonic": "STF",
+      "opcode": "0x16",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store float"
+    },
+    {
+      "mnemonic": "BR",
+      "opcode": "0x60",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x62",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RETS",
+      "opcode": "0x78",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "RPTS",
+      "opcode": "0x7A",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Repeat single"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x0C",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

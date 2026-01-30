@@ -1,0 +1,30 @@
+{
+  "processor": "Harris HM6100",
+  "manufacturer": "Harris",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "HM6100 datasheet",
+  "instruction_count": 20,
+  "instructions": [
+    {"mnemonic": "AND", "opcode": "0x0000", "bytes": 2, "cycles": 8, "category": "alu", "addressing_mode": "direct", "flags_affected": "none", "notes": "AND memory with AC, direct page; 8 states (faster CMOS)"},
+    {"mnemonic": "AND.I", "opcode": "0x0400", "bytes": 2, "cycles": 12, "category": "alu", "addressing_mode": "indirect", "flags_affected": "none", "notes": "AND memory with AC, indirect; 12 states"},
+    {"mnemonic": "TAD", "opcode": "0x1000", "bytes": 2, "cycles": 8, "category": "alu", "addressing_mode": "direct", "flags_affected": "L", "notes": "Two's complement add to AC, direct; 8 states"},
+    {"mnemonic": "TAD.I", "opcode": "0x1400", "bytes": 2, "cycles": 12, "category": "alu", "addressing_mode": "indirect", "flags_affected": "L", "notes": "Two's complement add to AC, indirect; 12 states"},
+    {"mnemonic": "ISZ", "opcode": "0x2000", "bytes": 2, "cycles": 12, "category": "memory", "addressing_mode": "direct", "flags_affected": "none", "notes": "Increment and skip if zero; 12 states"},
+    {"mnemonic": "ISZ.I", "opcode": "0x2400", "bytes": 2, "cycles": 16, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Increment and skip if zero, indirect; 16 states"},
+    {"mnemonic": "DCA", "opcode": "0x3000", "bytes": 2, "cycles": 9, "category": "memory", "addressing_mode": "direct", "flags_affected": "none", "notes": "Deposit and clear AC; 9 states"},
+    {"mnemonic": "DCA.I", "opcode": "0x3400", "bytes": 2, "cycles": 13, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Deposit and clear AC, indirect; 13 states"},
+    {"mnemonic": "JMS", "opcode": "0x4000", "bytes": 2, "cycles": 9, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump to subroutine; 9 states"},
+    {"mnemonic": "JMS.I", "opcode": "0x4400", "bytes": 2, "cycles": 13, "category": "control", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Jump to subroutine, indirect; 13 states"},
+    {"mnemonic": "JMP", "opcode": "0x5000", "bytes": 2, "cycles": 8, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump; 8 states"},
+    {"mnemonic": "JMP.I", "opcode": "0x5400", "bytes": 2, "cycles": 12, "category": "control", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Jump indirect; 12 states"},
+    {"mnemonic": "IOT", "opcode": "0x6000", "bytes": 2, "cycles": 8, "category": "io", "addressing_mode": "device", "flags_affected": "varies", "notes": "I/O transfer; 8 states"},
+    {"mnemonic": "CLA", "opcode": "0x7200", "bytes": 2, "cycles": 5, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Clear AC; OPR group 1, 5 states"},
+    {"mnemonic": "CMA", "opcode": "0x7040", "bytes": 2, "cycles": 5, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Complement AC; OPR group 1, 5 states"},
+    {"mnemonic": "RAL", "opcode": "0x7004", "bytes": 2, "cycles": 5, "category": "alu", "addressing_mode": "implied", "flags_affected": "L", "notes": "Rotate AC left; OPR group 1, 5 states"},
+    {"mnemonic": "RAR", "opcode": "0x7010", "bytes": 2, "cycles": 5, "category": "alu", "addressing_mode": "implied", "flags_affected": "L", "notes": "Rotate AC right; OPR group 1, 5 states"},
+    {"mnemonic": "SMA", "opcode": "0x7500", "bytes": 2, "cycles": 5, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Skip on minus AC; OPR group 2, 5 states"},
+    {"mnemonic": "SZA", "opcode": "0x7440", "bytes": 2, "cycles": 5, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Skip on zero AC; OPR group 2, 5 states"},
+    {"mnemonic": "HLT", "opcode": "0x7402", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Halt processor; OPR group 2, 5 states"}
+  ]
+}

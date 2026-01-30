@@ -1,0 +1,150 @@
+{
+  "processor": "Commodore TED (7360)",
+  "manufacturer": "MOS Technology/Commodore",
+  "year": 1984,
+  "source": "7360 TED datasheet",
+  "instruction_count": 14,
+  "instructions": [
+    {
+      "mnemonic": "CHAR_FETCH",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Fetch character from screen memory"
+    },
+    {
+      "mnemonic": "CHAR_RENDER",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render character row from ROM"
+    },
+    {
+      "mnemonic": "COLOR_PROC",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Process color attribute (121 colors)"
+    },
+    {
+      "mnemonic": "BITMAP_LINE",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Bitmap mode line render"
+    },
+    {
+      "mnemonic": "SND_TONE1",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Sound channel 1 generation"
+    },
+    {
+      "mnemonic": "SND_TONE2",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Sound channel 2 generation"
+    },
+    {
+      "mnemonic": "TIMER_TICK",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Timer counter decrement"
+    },
+    {
+      "mnemonic": "TIMER_IRQ",
+      "opcode": "0x31",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Timer interrupt generation"
+    },
+    {
+      "mnemonic": "DMA_FETCH",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "DMA cycle steal (badline)"
+    },
+    {
+      "mnemonic": "DMA_CHAR",
+      "opcode": "0x41",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "DMA character pointer fetch"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write TED register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x51",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read TED register"
+    },
+    {
+      "mnemonic": "MODE_SET",
+      "opcode": "0x52",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set display mode"
+    },
+    {
+      "mnemonic": "RASTER_IRQ",
+      "opcode": "0x60",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Raster interrupt"
+    }
+  ],
+  "schema_version": "1.0"
+}

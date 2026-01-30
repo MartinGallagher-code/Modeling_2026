@@ -1,0 +1,26 @@
+{
+  "processor": "GI AY-3-8900 STIC",
+  "manufacturer": "General Instrument",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "AY-3-8900 STIC documentation; Intellivision Technical Reference 1978",
+  "instruction_count": 16,
+  "instructions": [
+    {"mnemonic": "MOB_POS", "opcode": "0x00", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Set MOB (Movable Object Block/sprite) X/Y position"},
+    {"mnemonic": "MOB_ATTR", "opcode": "0x04", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Set MOB attributes (size, color, mirror)"},
+    {"mnemonic": "MOB_RENDER", "opcode": "0x08", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Render MOB to display (per scan line)"},
+    {"mnemonic": "MOB_PRIORITY", "opcode": "0x0C", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Set sprite display priority"},
+    {"mnemonic": "BG_CARD", "opcode": "0x10", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Background card (tile) definition"},
+    {"mnemonic": "BG_SCROLL", "opcode": "0x14", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Background scroll register update"},
+    {"mnemonic": "BG_RENDER", "opcode": "0x18", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Background tile rendering per scan line"},
+    {"mnemonic": "BG_COLOR", "opcode": "0x1C", "bytes": 2, "cycles": 5, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Background color stack mode setup"},
+    {"mnemonic": "COLL_MOB_MOB", "opcode": "0x20", "bytes": 2, "cycles": 7, "category": "special", "addressing_mode": "register", "flags_affected": "collision", "notes": "MOB-to-MOB collision detect"},
+    {"mnemonic": "COLL_MOB_BG", "opcode": "0x24", "bytes": 2, "cycles": 7, "category": "special", "addressing_mode": "register", "flags_affected": "collision", "notes": "MOB-to-background collision detect"},
+    {"mnemonic": "COLL_MOB_BORDER", "opcode": "0x28", "bytes": 2, "cycles": 7, "category": "special", "addressing_mode": "register", "flags_affected": "collision", "notes": "MOB-to-border collision detect"},
+    {"mnemonic": "COLL_READ", "opcode": "0x2C", "bytes": 2, "cycles": 7, "category": "special", "addressing_mode": "register", "flags_affected": "none", "notes": "Read collision register (clears on read)"},
+    {"mnemonic": "DISPLAY_EN", "opcode": "0x30", "bytes": 2, "cycles": 8, "category": "control", "addressing_mode": "register", "flags_affected": "none", "notes": "Display enable/disable and mode select"},
+    {"mnemonic": "COLOR_STACK", "opcode": "0x34", "bytes": 2, "cycles": 8, "category": "control", "addressing_mode": "register", "flags_affected": "none", "notes": "Color stack mode configuration"},
+    {"mnemonic": "HSYNC", "opcode": "0x38", "bytes": 2, "cycles": 8, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Horizontal sync/interrupt generation"},
+    {"mnemonic": "VSYNC", "opcode": "0x3C", "bytes": 2, "cycles": 8, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Vertical sync/VBLANK interrupt generation"}
+  ]
+}

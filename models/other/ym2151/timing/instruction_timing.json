@@ -1,0 +1,130 @@
+{
+  "processor": "Yamaha YM2151 (OPM)",
+  "manufacturer": "Yamaha",
+  "year": 1983,
+  "source": "YM2151 OPM Application Manual",
+  "instruction_count": 12,
+  "instructions": [
+    {
+      "mnemonic": "OP_FREQ",
+      "opcode": "0x28",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set operator frequency"
+    },
+    {
+      "mnemonic": "OP_LEVEL",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set total level (attenuation)"
+    },
+    {
+      "mnemonic": "OP_ENVL",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set envelope rate"
+    },
+    {
+      "mnemonic": "OP_DETUNE",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set detune/multiply"
+    },
+    {
+      "mnemonic": "FB_ALGO",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set feedback/algorithm"
+    },
+    {
+      "mnemonic": "LFO_CTRL",
+      "opcode": "0x18",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "LFO control"
+    },
+    {
+      "mnemonic": "KEY_ON",
+      "opcode": "0x08",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Key on/off (channel trigger)"
+    },
+    {
+      "mnemonic": "NOISE",
+      "opcode": "0x0F",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Noise enable/frequency"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read status"
+    },
+    {
+      "mnemonic": "TIMER_SET",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set timer A/B"
+    },
+    {
+      "mnemonic": "IRQ_CTRL",
+      "opcode": "0x14",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "IRQ enable/flag control"
+    }
+  ],
+  "schema_version": "1.0"
+}

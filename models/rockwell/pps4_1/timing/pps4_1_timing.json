@@ -1,0 +1,157 @@
+{
+  "processor": "Rockwell PPS-4/1",
+  "manufacturer": "Rockwell International",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "PPS-4/1 datasheet",
+  "base_architecture": "PPS-4",
+  "base_timing_reference": "pps4",
+  "timing_notes": "Single-chip PPS-4 with on-chip ROM/RAM. Same instruction timing as discrete PPS-4.",
+  "instruction_count": 50,
+  "instructions": [
+    {
+      "mnemonic": "AD",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add M to A"
+    },
+    {
+      "mnemonic": "ADC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "ADSK",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Add skip on carry"
+    },
+    {
+      "mnemonic": "AND",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "EOR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "LDI",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "LD",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Load from RAM"
+    },
+    {
+      "mnemonic": "X",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Exchange A and M"
+    },
+    {
+      "mnemonic": "T",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Transfer (jump)"
+    },
+    {
+      "mnemonic": "TM",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Transfer and mark (call)"
+    },
+    {
+      "mnemonic": "TL",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "long",
+      "flags_affected": "",
+      "notes": "Transfer long"
+    },
+    {
+      "mnemonic": "RT",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "RTSK",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": "Return skip"
+    },
+    {
+      "mnemonic": "IOL",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "I/O long"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

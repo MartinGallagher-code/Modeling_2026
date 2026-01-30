@@ -1,0 +1,233 @@
+{
+  "processor": "Sony CXD8530BQ (R3000A)",
+  "manufacturer": "Sony/LSI Logic",
+  "year": 1994,
+  "source": "PlayStation hardware documentation / MIPS R3000A datasheet",
+  "base_architecture": "mips_r3000",
+  "base_timing_reference": "MIPS R3000",
+  "timing_notes": "Sony customization of R3000A with GTE (Geometry Transform Engine) coprocessor. 4KB I-cache, 1KB D-cache scratchpad. Core MIPS timing identical.",
+  "instruction_count": 22,
+  "instructions": [
+    {
+      "mnemonic": "ADD rd,rs,rt",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Add (trap on overflow)"
+    },
+    {
+      "mnemonic": "ADDU rd,rs,rt",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Add unsigned"
+    },
+    {
+      "mnemonic": "SUB rd,rs,rt",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND rd,rs,rt",
+      "opcode": "0x24",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR rd,rs,rt",
+      "opcode": "0x25",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "SLT rd,rs,rt",
+      "opcode": "0x2A",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set on less than"
+    },
+    {
+      "mnemonic": "ADDI rt,rs,imm",
+      "opcode": "0x08",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Add immediate"
+    },
+    {
+      "mnemonic": "LW rt,off(rs)",
+      "opcode": "0x23",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load word"
+    },
+    {
+      "mnemonic": "LB rt,off(rs)",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load byte"
+    },
+    {
+      "mnemonic": "SW rt,off(rs)",
+      "opcode": "0x2B",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store word"
+    },
+    {
+      "mnemonic": "SB rt,off(rs)",
+      "opcode": "0x28",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store byte"
+    },
+    {
+      "mnemonic": "LUI rt,imm",
+      "opcode": "0x0F",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load upper immediate"
+    },
+    {
+      "mnemonic": "J target",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JAL target",
+      "opcode": "0x03",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump and link"
+    },
+    {
+      "mnemonic": "JR rs",
+      "opcode": "0x08",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Jump register"
+    },
+    {
+      "mnemonic": "BEQ rs,rt,off",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if equal"
+    },
+    {
+      "mnemonic": "BNE rs,rt,off",
+      "opcode": "0x05",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if not equal"
+    },
+    {
+      "mnemonic": "MULT rs,rt",
+      "opcode": "0x18",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply (result in HI/LO)"
+    },
+    {
+      "mnemonic": "DIV rs,rt",
+      "opcode": "0x1A",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Divide (result in HI/LO)"
+    },
+    {
+      "mnemonic": "MFC0 rt,rd",
+      "opcode": "0x40",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "coprocessor",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move from COP0"
+    },
+    {
+      "mnemonic": "MFC2 rt,rd",
+      "opcode": "0x48",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "coprocessor",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move from GTE (COP2)"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation (SLL $0,$0,0)"
+    }
+  ],
+  "schema_version": "1.0"
+}

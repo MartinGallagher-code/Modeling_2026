@@ -1,0 +1,30 @@
+{
+  "processor": "OKI MSM5205",
+  "manufacturer": "OKI",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "OKI MSM5205 datasheet, ADPCM speech synthesis IC documentation",
+  "instruction_count": 20,
+  "instructions": [
+    {"mnemonic": "DECODE_NIBBLE", "bytes": 1, "cycles": 3, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Decode 4-bit ADPCM nibble"},
+    {"mnemonic": "STEP_CALC", "bytes": 1, "cycles": 3, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Calculate step size from adaptation table"},
+    {"mnemonic": "DIFF_CALC", "bytes": 1, "cycles": 3, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Calculate difference value"},
+    {"mnemonic": "PREDICT", "bytes": 1, "cycles": 3, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Generate predicted sample"},
+    {"mnemonic": "CLAMP", "bytes": 1, "cycles": 2, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Clamp output to valid range"},
+    {"mnemonic": "FILTER_LP", "bytes": 1, "cycles": 4, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Low-pass reconstruction filter"},
+    {"mnemonic": "FILTER_INTERP", "bytes": 1, "cycles": 4, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Interpolation filter stage"},
+    {"mnemonic": "FILTER_SMOOTH", "bytes": 1, "cycles": 4, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Output smoothing filter"},
+    {"mnemonic": "DAC_LOAD", "bytes": 1, "cycles": 4, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Load value to DAC register"},
+    {"mnemonic": "DAC_OUTPUT", "bytes": 1, "cycles": 4, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "DAC analog output update"},
+    {"mnemonic": "SHIFT_IN", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Shift in serial data bit"},
+    {"mnemonic": "LATCH_DATA", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Latch 4-bit data nibble"},
+    {"mnemonic": "CLK_DIV", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Clock divider tick"},
+    {"mnemonic": "SAMPLE_REQ", "bytes": 1, "cycles": 5, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Generate sample request (DRDY)"},
+    {"mnemonic": "RESET", "bytes": 1, "cycles": 5, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Reset ADPCM decoder state"},
+    {"mnemonic": "SET_DIV", "bytes": 1, "cycles": 3, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Set prescaler division ratio (S1/S2)"},
+    {"mnemonic": "TABLE_LOOKUP", "bytes": 1, "cycles": 3, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Index step size adaptation table"},
+    {"mnemonic": "STEP_ADAPT", "bytes": 1, "cycles": 3, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Adapt step size for next sample"},
+    {"mnemonic": "SIGN_EXT", "bytes": 1, "cycles": 2, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Sign extend nibble to full word"},
+    {"mnemonic": "VCK_OUT", "bytes": 1, "cycles": 5, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "VCK clock output pulse"}
+  ]
+}

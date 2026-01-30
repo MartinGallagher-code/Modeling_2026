@@ -1,0 +1,20 @@
+{
+  "processor": "Intel 3003",
+  "manufacturer": "Intel",
+  "year": 1974,
+  "schema_version": "1.0",
+  "source": "Intel 3003 Look-Ahead Carry Generator datasheet, 1974",
+  "clock_mhz_range": "2-8",
+  "instruction_count": 8,
+  "notes": "The 3003 is a carry look-ahead generator for use with the 3002 bit-slice ALU. It generates carry signals for groups of 3002 slices in parallel, eliminating ripple carry delay. One 3003 handles up to eight 3002 slices (16 bits). Multiple 3003s can be cascaded for wider datapaths. All operations are combinational (no clock), but are documented here with the propagation delay as the timing metric.",
+  "instructions": [
+    {"mnemonic": "GENERATE_CARRY", "operands": "group 0-7", "bytes": 0, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "C", "notes": "Generate look-ahead carry for all 8 groups. Propagation delay ~25ns at 5V"},
+    {"mnemonic": "PROPAGATE", "operands": "P output", "bytes": 0, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Group propagate output for cascading to next 3003"},
+    {"mnemonic": "GENERATE", "operands": "G output", "bytes": 0, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Group generate output for cascading"},
+    {"mnemonic": "CARRY_OUT_0", "operands": "", "bytes": 0, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "C", "notes": "Carry out of slice pair 0-1"},
+    {"mnemonic": "CARRY_OUT_1", "operands": "", "bytes": 0, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "C", "notes": "Carry out of slice pair 2-3"},
+    {"mnemonic": "CARRY_OUT_2", "operands": "", "bytes": 0, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "C", "notes": "Carry out of slice pair 4-5"},
+    {"mnemonic": "CARRY_OUT_3", "operands": "", "bytes": 0, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "C", "notes": "Carry out of slice pair 6-7"},
+    {"mnemonic": "OVERFLOW", "operands": "", "bytes": 0, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "OVR", "notes": "Overflow detection output"}
+  ]
+}

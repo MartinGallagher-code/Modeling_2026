@@ -1,0 +1,110 @@
+{
+  "processor": "Williams Special Chip 1",
+  "manufacturer": "Williams Electronics",
+  "year": 1981,
+  "source": "Williams arcade hardware documentation",
+  "instruction_count": 10,
+  "instructions": [
+    {
+      "mnemonic": "BLIT_START",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Start blitter operation"
+    },
+    {
+      "mnemonic": "BLIT_SRC",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Set blit source address"
+    },
+    {
+      "mnemonic": "BLIT_DST",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Set blit destination address"
+    },
+    {
+      "mnemonic": "BLIT_SIZE",
+      "opcode": "0x12",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set blit width/height"
+    },
+    {
+      "mnemonic": "BLIT_COLOR",
+      "opcode": "0x13",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set blit color/mode"
+    },
+    {
+      "mnemonic": "DMA_RD",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "DMA read from video RAM"
+    },
+    {
+      "mnemonic": "DMA_WR",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "DMA write to video RAM"
+    },
+    {
+      "mnemonic": "DMA_FILL",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "DMA fill operation"
+    },
+    {
+      "mnemonic": "CTRL",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Control register write"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

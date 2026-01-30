@@ -1,0 +1,91 @@
+{
+  "processor": "Namco 05xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "MAME docs",
+  "instruction_count": 8,
+  "notes": "Starfield generator for Galaga/Bosconian. Custom 4-bit pixel engine.",
+  "instructions": [
+    {
+      "mnemonic": "SCALC",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Star position calculation"
+    },
+    {
+      "mnemonic": "PIXOUT",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Pixel data output to video"
+    },
+    {
+      "mnemonic": "SCROLL",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Scroll offset update"
+    },
+    {
+      "mnemonic": "CTRL",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "State machine control"
+    },
+    {
+      "mnemonic": "SYNC",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Video sync timing"
+    },
+    {
+      "mnemonic": "SLOAD",
+      "opcode": "0x06",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Load star table entry"
+    },
+    {
+      "mnemonic": "SSTORE",
+      "opcode": "0x07",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Store star data"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

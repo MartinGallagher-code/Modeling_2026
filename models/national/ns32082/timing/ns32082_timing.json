@@ -1,0 +1,71 @@
+{
+  "processor": "NS32082",
+  "manufacturer": "National Semiconductor",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "NS32082 datasheet",
+  "instruction_count": 12,
+  "notes": "NS32000 memory management unit. Address translation and protection.",
+  "instructions": [
+    {
+      "mnemonic": "LMR",
+      "opcode": "0x01",
+      "bytes": 3,
+      "cycles": 15,
+      "category": "protection",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Load MMU register"
+    },
+    {
+      "mnemonic": "SMR",
+      "opcode": "0x02",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "protection",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Store MMU register"
+    },
+    {
+      "mnemonic": "MOVSU",
+      "opcode": "0x03",
+      "bytes": 3,
+      "cycles": 12,
+      "category": "protection",
+      "addressing_mode": "special",
+      "flags_affected": "",
+      "notes": "Move supervisor to user"
+    },
+    {
+      "mnemonic": "MOVUS",
+      "opcode": "0x04",
+      "bytes": 3,
+      "cycles": 12,
+      "category": "protection",
+      "addressing_mode": "special",
+      "flags_affected": "",
+      "notes": "Move user to supervisor"
+    },
+    {
+      "mnemonic": "RDVAL",
+      "opcode": "0x05",
+      "bytes": 3,
+      "cycles": 20,
+      "category": "protection",
+      "addressing_mode": "displacement",
+      "flags_affected": "",
+      "notes": "Read valid (check page)"
+    },
+    {
+      "mnemonic": "WRVAL",
+      "opcode": "0x06",
+      "bytes": 3,
+      "cycles": 20,
+      "category": "protection",
+      "addressing_mode": "displacement",
+      "flags_affected": "",
+      "notes": "Write valid (check page)"
+    }
+  ]
+}

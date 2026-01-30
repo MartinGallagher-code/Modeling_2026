@@ -1,0 +1,981 @@
+{
+  "processor": "Zilog Z280",
+  "manufacturer": "Zilog",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "Z280 MPU datasheet, Zilog 1985",
+  "instruction_count": 97,
+  "notes": "Z80 superset with MMU, 256-byte on-chip cache, and additional instructions. Cycle counts are in CPU clock periods (up to 10 MHz). The Z280 adds multiply, divide, and new addressing modes to the Z80 base. Cached execution significantly reduces memory access penalties. Many Z80 instructions execute faster due to the on-chip cache. Includes user/system mode protection.",
+  "instructions": [
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Faster than Z80 due to cache"
+    },
+    {
+      "mnemonic": "LD BC,nn",
+      "opcode": "0x01",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "immediate_extended",
+      "flags_affected": "",
+      "notes": "Cached immediate load"
+    },
+    {
+      "mnemonic": "LD (BC),A",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "INC BC",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "16-bit increment, faster than Z80"
+    },
+    {
+      "mnemonic": "INC B",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH-V-",
+      "notes": ""
+    },
+    {
+      "mnemonic": "DEC B",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH-V-",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LD B,n",
+      "opcode": "0x06",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "RLCA",
+      "opcode": "0x07",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "H0C",
+      "notes": ""
+    },
+    {
+      "mnemonic": "EX AF,AF'",
+      "opcode": "0x08",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "ADD HL,BC",
+      "opcode": "0x09",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "-H-C",
+      "notes": "16-bit add"
+    },
+    {
+      "mnemonic": "LD A,(BC)",
+      "opcode": "0x0A",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "DEC BC",
+      "opcode": "0x0B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LD r,r",
+      "opcode": "0x40-7F",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Register-to-register; all 2 cycles cached"
+    },
+    {
+      "mnemonic": "LD r,(HL)",
+      "opcode": "0x46/4E/56/5E/66/6E/7E",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": "Load from (HL), cache hit"
+    },
+    {
+      "mnemonic": "LD (HL),r",
+      "opcode": "0x70-77",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": "Store to (HL)"
+    },
+    {
+      "mnemonic": "LD (HL),n",
+      "opcode": "0x36",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LD A,(nn)",
+      "opcode": "0x3A",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LD (nn),A",
+      "opcode": "0x32",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LD HL,(nn)",
+      "opcode": "0x2A",
+      "bytes": 3,
+      "cycles": 9,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LD (nn),HL",
+      "opcode": "0x22",
+      "bytes": 3,
+      "cycles": 9,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "EX DE,HL",
+      "opcode": "0xEB",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "EXX",
+      "opcode": "0xD9",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "EX (SP),HL",
+      "opcode": "0xE3",
+      "bytes": 1,
+      "cycles": 11,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LD SP,HL",
+      "opcode": "0xF9",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "ADD A,r",
+      "opcode": "0x80-87",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZHVNC",
+      "notes": "8-bit register ALU ops; all 2 cycles"
+    },
+    {
+      "mnemonic": "ADD A,(HL)",
+      "opcode": "0x86",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "SZHVNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "ADD A,n",
+      "opcode": "0xC6",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "SZHVNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "ADC A,r",
+      "opcode": "0x88-8F",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZHVNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "SUB r",
+      "opcode": "0x90-97",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZHVNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "SBC A,r",
+      "opcode": "0x98-9F",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZHVNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "AND r",
+      "opcode": "0xA0-A7",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH1PNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "XOR r",
+      "opcode": "0xA8-AF",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH0PNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "OR r",
+      "opcode": "0xB0-B7",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH0PNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "CP r",
+      "opcode": "0xB8-BF",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZHVNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "INC (HL)",
+      "opcode": "0x34",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "SZH-V-",
+      "notes": ""
+    },
+    {
+      "mnemonic": "DEC (HL)",
+      "opcode": "0x35",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "SZH-V-",
+      "notes": ""
+    },
+    {
+      "mnemonic": "ADD HL,DE",
+      "opcode": "0x19",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "-H-C",
+      "notes": ""
+    },
+    {
+      "mnemonic": "ADD HL,HL",
+      "opcode": "0x29",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "-H-C",
+      "notes": ""
+    },
+    {
+      "mnemonic": "ADD HL,SP",
+      "opcode": "0x39",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "-H-C",
+      "notes": ""
+    },
+    {
+      "mnemonic": "DAA",
+      "opcode": "0x27",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "SZHPC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "CPL",
+      "opcode": "0x2F",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "H1N1",
+      "notes": ""
+    },
+    {
+      "mnemonic": "NEG",
+      "opcode": "0xED44",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "SZHVNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "SCF",
+      "opcode": "0x37",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "H0C1",
+      "notes": ""
+    },
+    {
+      "mnemonic": "CCF",
+      "opcode": "0x3F",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "H?C",
+      "notes": ""
+    },
+    {
+      "mnemonic": "MULTW HL,nn",
+      "opcode": "0xED_CB",
+      "bytes": 4,
+      "cycles": 36,
+      "category": "multiply",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZVSN",
+      "notes": "Z280 extension: 16x16 signed multiply"
+    },
+    {
+      "mnemonic": "MULTUW HL,rr",
+      "opcode": "0xED_C3",
+      "bytes": 2,
+      "cycles": 36,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "CZVSN",
+      "notes": "16x16 unsigned multiply"
+    },
+    {
+      "mnemonic": "DIVW DEHL,nn",
+      "opcode": "0xED_CA",
+      "bytes": 4,
+      "cycles": 36,
+      "category": "divide",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZVSN",
+      "notes": "32/16 signed divide"
+    },
+    {
+      "mnemonic": "DIVUW DEHL,rr",
+      "opcode": "0xED_C8",
+      "bytes": 2,
+      "cycles": 36,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "CZVSN",
+      "notes": "32/16 unsigned divide"
+    },
+    {
+      "mnemonic": "JP nn",
+      "opcode": "0xC3",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "immediate_extended",
+      "flags_affected": "",
+      "notes": "Cached jump"
+    },
+    {
+      "mnemonic": "JP cc,nn",
+      "opcode": "0xC2/CA/D2/DA/E2/EA/F2/FA",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "immediate_extended",
+      "flags_affected": "",
+      "notes": "Conditional jump; 5 taken, 3 not taken"
+    },
+    {
+      "mnemonic": "JR e",
+      "opcode": "0x18",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Relative jump"
+    },
+    {
+      "mnemonic": "JR cc,e",
+      "opcode": "0x20/28/30/38",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "5 taken, 3 not taken"
+    },
+    {
+      "mnemonic": "DJNZ e",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "5 if B!=0, 3 if B=0"
+    },
+    {
+      "mnemonic": "JP (HL)",
+      "opcode": "0xE9",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "CALL nn",
+      "opcode": "0xCD",
+      "bytes": 3,
+      "cycles": 9,
+      "category": "control",
+      "addressing_mode": "immediate_extended",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "CALL cc,nn",
+      "opcode": "0xC4/CC/D4/DC/E4/EC/F4/FC",
+      "bytes": 3,
+      "cycles": 9,
+      "category": "control",
+      "addressing_mode": "immediate_extended",
+      "flags_affected": "",
+      "notes": "9 taken, 3 not taken"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0xC9",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "RET cc",
+      "opcode": "0xC0/C8/D0/D8/E0/E8/F0/F8",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "7 taken, 3 not taken"
+    },
+    {
+      "mnemonic": "RST p",
+      "opcode": "0xC7/CF/D7/DF/E7/EF/F7/FF",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Restart"
+    },
+    {
+      "mnemonic": "RETI",
+      "opcode": "0xED4D",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return from interrupt"
+    },
+    {
+      "mnemonic": "RETN",
+      "opcode": "0xED45",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return from NMI"
+    },
+    {
+      "mnemonic": "PUSH BC",
+      "opcode": "0xC5",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "PUSH DE",
+      "opcode": "0xD5",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "PUSH HL",
+      "opcode": "0xE5",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "PUSH AF",
+      "opcode": "0xF5",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "POP BC",
+      "opcode": "0xC1",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "POP DE",
+      "opcode": "0xD1",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "POP HL",
+      "opcode": "0xE1",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "POP AF",
+      "opcode": "0xF1",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "PUSH IX",
+      "opcode": "0xDDE5",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "POP IX",
+      "opcode": "0xDDE1",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "BIT b,r",
+      "opcode": "0xCB40-7F",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "SZH1PN",
+      "notes": "Test bit; faster than Z80"
+    },
+    {
+      "mnemonic": "BIT b,(HL)",
+      "opcode": "0xCB46+8*b",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "SZH1PN",
+      "notes": ""
+    },
+    {
+      "mnemonic": "SET b,r",
+      "opcode": "0xCBC0-FF",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "SET b,(HL)",
+      "opcode": "0xCBC6+8*b",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "bit",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "RES b,r",
+      "opcode": "0xCB80-BF",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "RES b,(HL)",
+      "opcode": "0xCB86+8*b",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "bit",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "RLC r",
+      "opcode": "0xCB00-07",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH0PNC",
+      "notes": "CB prefix rotate/shift ops"
+    },
+    {
+      "mnemonic": "RLC (HL)",
+      "opcode": "0xCB06",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "alu",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "SZH0PNC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LDIR",
+      "opcode": "0xEDB0",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "block",
+      "addressing_mode": "implied",
+      "flags_affected": "H0V0N0",
+      "notes": "9T per iteration when BC!=0; significantly faster than Z80"
+    },
+    {
+      "mnemonic": "LDDR",
+      "opcode": "0xEDB8",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "block",
+      "addressing_mode": "implied",
+      "flags_affected": "H0V0N0",
+      "notes": "9T per iteration"
+    },
+    {
+      "mnemonic": "LDI",
+      "opcode": "0xEDA0",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "block",
+      "addressing_mode": "implied",
+      "flags_affected": "H0VN0",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LDD",
+      "opcode": "0xEDA8",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "block",
+      "addressing_mode": "implied",
+      "flags_affected": "H0VN0",
+      "notes": ""
+    },
+    {
+      "mnemonic": "CPIR",
+      "opcode": "0xEDB1",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "block",
+      "addressing_mode": "implied",
+      "flags_affected": "SZHVN1",
+      "notes": ""
+    },
+    {
+      "mnemonic": "CPDR",
+      "opcode": "0xEDB9",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "block",
+      "addressing_mode": "implied",
+      "flags_affected": "SZHVN1",
+      "notes": ""
+    },
+    {
+      "mnemonic": "OUT (n),A",
+      "opcode": "0xD3",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "IN A,(n)",
+      "opcode": "0xDB",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "OUT (C),r",
+      "opcode": "0xED41/49/51/59/61/69/79",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "IN r,(C)",
+      "opcode": "0xED40/48/50/58/60/68/78",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "SZH0PN",
+      "notes": ""
+    },
+    {
+      "mnemonic": "OTIR",
+      "opcode": "0xEDB3",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "Z1N1",
+      "notes": "Block I/O repeat"
+    },
+    {
+      "mnemonic": "INIR",
+      "opcode": "0xEDB2",
+      "bytes": 2,
+      "cycles": 9,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "Z1N1",
+      "notes": ""
+    },
+    {
+      "mnemonic": "DI",
+      "opcode": "0xF3",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "EI",
+      "opcode": "0xFB",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "HALT",
+      "opcode": "0x76",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "IM 0",
+      "opcode": "0xED46",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "IM 1",
+      "opcode": "0xED56",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "IM 2",
+      "opcode": "0xED5E",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

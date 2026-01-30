@@ -1,0 +1,170 @@
+{
+  "processor": "TI TMS9918A VDP",
+  "manufacturer": "Texas Instruments",
+  "year": 1979,
+  "source": "TMS9918A Video Display Processor datasheet",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "SPR_SCAN",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Scan sprite attribute table (32 sprites)"
+    },
+    {
+      "mnemonic": "SPR_RENDER",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render sprite patterns (4 per line)"
+    },
+    {
+      "mnemonic": "SPR_COLL",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Sprite collision detection"
+    },
+    {
+      "mnemonic": "TILE_FETCH",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Fetch tile from name table"
+    },
+    {
+      "mnemonic": "TILE_RENDER",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render tile pattern row"
+    },
+    {
+      "mnemonic": "VRAM_RD",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM read (16KB)"
+    },
+    {
+      "mnemonic": "VRAM_WR",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM write"
+    },
+    {
+      "mnemonic": "VRAM_AUTO",
+      "opcode": "0x22",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM auto-increment access"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write VDP register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x31",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read VDP status"
+    },
+    {
+      "mnemonic": "MODE_SET",
+      "opcode": "0x32",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set display mode (Graphics I/II, Text, Multicolor)"
+    },
+    {
+      "mnemonic": "COLOR_SET",
+      "opcode": "0x33",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set color table entry"
+    },
+    {
+      "mnemonic": "COLL_CHK",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Check collision flag"
+    },
+    {
+      "mnemonic": "FIFTH_SPR",
+      "opcode": "0x41",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Check fifth sprite flag"
+    },
+    {
+      "mnemonic": "VBLANK_IRQ",
+      "opcode": "0x50",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "V-blank interrupt generation"
+    },
+    {
+      "mnemonic": "BLANK_CHK",
+      "opcode": "0x51",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Check blanking interval"
+    }
+  ],
+  "schema_version": "1.0"
+}

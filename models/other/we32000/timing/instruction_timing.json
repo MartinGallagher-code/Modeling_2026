@@ -1,0 +1,190 @@
+{
+  "processor": "AT&T WE32000",
+  "manufacturer": "AT&T",
+  "year": 1982,
+  "source": "WE32000 Information Manual",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "ADDW2 src,dst",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Add word"
+    },
+    {
+      "mnemonic": "SUBW2 src,dst",
+      "opcode": "0x08",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Subtract word"
+    },
+    {
+      "mnemonic": "ANDW2 src,dst",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "AND word"
+    },
+    {
+      "mnemonic": "ORW2 src,dst",
+      "opcode": "0x14",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "OR word"
+    },
+    {
+      "mnemonic": "CMPW src,dst",
+      "opcode": "0x24",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Compare word"
+    },
+    {
+      "mnemonic": "MOVW src,dst",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Move word"
+    },
+    {
+      "mnemonic": "MOVW #imm,dst",
+      "opcode": "0x24",
+      "bytes": 8,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "Z,N",
+      "notes": "Move immediate"
+    },
+    {
+      "mnemonic": "MOVW addr,dst",
+      "opcode": "0x20",
+      "bytes": 8,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "Z,N",
+      "notes": "Move from memory"
+    },
+    {
+      "mnemonic": "MOVW src,addr",
+      "opcode": "0x24",
+      "bytes": 8,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move to memory"
+    },
+    {
+      "mnemonic": "JMP addr",
+      "opcode": "0x70",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "BRB offset",
+      "opcode": "0x78",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch byte offset"
+    },
+    {
+      "mnemonic": "CALL addr",
+      "opcode": "0x2C",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x08",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "PUSHW src",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Push word"
+    },
+    {
+      "mnemonic": "POPW dst",
+      "opcode": "0x34",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Pop word"
+    },
+    {
+      "mnemonic": "MULW2 src,dst",
+      "opcode": "0x1C",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Multiply word"
+    },
+    {
+      "mnemonic": "DIVW2 src,dst",
+      "opcode": "0x1E",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Divide word"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x70",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

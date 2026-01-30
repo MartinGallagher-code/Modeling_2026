@@ -1,0 +1,291 @@
+{
+  "processor": "Rockwell R65C02",
+  "manufacturer": "Rockwell International",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "R65C02 datasheet",
+  "instruction_count": 178,
+  "notes": "CMOS 6502 with extra instructions (BBR/BBS/RMB/SMB/STZ/PHX/PLX/PHY/PLY/TRB/TSB/BRA). Rockwell variant adds bit manipulation.",
+  "instructions": [
+    {
+      "mnemonic": "ADC",
+      "opcode": "0x69",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NVZC",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x29",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZ",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "CMP",
+      "opcode": "0xC9",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZC",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "DEX",
+      "opcode": "0xCA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "NZ",
+      "notes": "Decrement X"
+    },
+    {
+      "mnemonic": "INX",
+      "opcode": "0xE8",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "NZ",
+      "notes": "Increment X"
+    },
+    {
+      "mnemonic": "LDA",
+      "opcode": "0xA9",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZ",
+      "notes": "Load A"
+    },
+    {
+      "mnemonic": "LDA",
+      "opcode": "0xA5",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "zero_page",
+      "flags_affected": "NZ",
+      "notes": ""
+    },
+    {
+      "mnemonic": "STA",
+      "opcode": "0x85",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "zero_page",
+      "flags_affected": "",
+      "notes": "Store A"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x4C",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JSR",
+      "opcode": "0x20",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RTS",
+      "opcode": "0x60",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "BEQ",
+      "opcode": "0xF0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch if equal"
+    },
+    {
+      "mnemonic": "BNE",
+      "opcode": "0xD0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch not equal"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xEA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "PHA",
+      "opcode": "0x48",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Push A"
+    },
+    {
+      "mnemonic": "PLA",
+      "opcode": "0x68",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "NZ",
+      "notes": "Pull A"
+    },
+    {
+      "mnemonic": "BBR0",
+      "opcode": "0x0F",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "zp_bit_rel",
+      "flags_affected": "",
+      "notes": "Branch if bit 0 reset (Rockwell ext)"
+    },
+    {
+      "mnemonic": "BBS0",
+      "opcode": "0x8F",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "zp_bit_rel",
+      "flags_affected": "",
+      "notes": "Branch if bit 0 set (Rockwell ext)"
+    },
+    {
+      "mnemonic": "RMB0",
+      "opcode": "0x07",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "bit",
+      "addressing_mode": "zero_page",
+      "flags_affected": "",
+      "notes": "Reset memory bit 0 (Rockwell ext)"
+    },
+    {
+      "mnemonic": "SMB0",
+      "opcode": "0x87",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "bit",
+      "addressing_mode": "zero_page",
+      "flags_affected": "",
+      "notes": "Set memory bit 0 (Rockwell ext)"
+    },
+    {
+      "mnemonic": "STZ",
+      "opcode": "0x64",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "zero_page",
+      "flags_affected": "",
+      "notes": "Store zero"
+    },
+    {
+      "mnemonic": "BRA",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch always"
+    },
+    {
+      "mnemonic": "PHX",
+      "opcode": "0xDA",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Push X"
+    },
+    {
+      "mnemonic": "PLX",
+      "opcode": "0xFA",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "NZ",
+      "notes": "Pull X"
+    },
+    {
+      "mnemonic": "PHY",
+      "opcode": "0x5A",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Push Y"
+    },
+    {
+      "mnemonic": "PLY",
+      "opcode": "0x7A",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "NZ",
+      "notes": "Pull Y"
+    },
+    {
+      "mnemonic": "TRB",
+      "opcode": "0x14",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "bit",
+      "addressing_mode": "zero_page",
+      "flags_affected": "Z",
+      "notes": "Test and reset bits"
+    },
+    {
+      "mnemonic": "TSB",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "bit",
+      "addressing_mode": "zero_page",
+      "flags_affected": "Z",
+      "notes": "Test and set bits"
+    }
+  ]
+}

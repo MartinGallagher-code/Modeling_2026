@@ -1,0 +1,23 @@
+{
+  "processor": "Intel 8748",
+  "manufacturer": "Intel",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "MCS-48 Family User's Manual, Intel 1978",
+  "base_architecture": "i8048",
+  "base_timing_reference": "../i8048/timing/i8048_timing.json",
+  "timing_notes": "The 8748 is the EPROM version of the 8048. It has 1KB UV-erasable EPROM instead of mask ROM. Instruction set and timing are identical to the 8048. The 8748 was used for prototyping and low-volume production. Has 64 bytes internal RAM. All instruction cycle counts are the same as the 8048.",
+  "clock_mhz": 6,
+  "machine_cycle_clocks": 15,
+  "instruction_count": 98,
+  "internal_eprom_bytes": 1024,
+  "internal_ram_bytes": 64,
+  "instructions": [
+    {"mnemonic": "MOV", "operands": "A, Rn", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Same as 8048. All timings identical"},
+    {"mnemonic": "ADD", "operands": "A, Rn", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "C AC", "notes": "Same as 8048"},
+    {"mnemonic": "JMP", "operands": "addr", "bytes": 2, "cycles": 2, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Same as 8048"},
+    {"mnemonic": "CALL", "operands": "addr", "bytes": 2, "cycles": 2, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Same as 8048"},
+    {"mnemonic": "RET", "operands": "", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 8048"},
+    {"mnemonic": "NOP", "operands": "", "bytes": 1, "cycles": 1, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 8048"}
+  ]
+}

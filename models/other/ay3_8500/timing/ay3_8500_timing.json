@@ -1,0 +1,22 @@
+{
+  "processor": "GI AY-3-8500",
+  "manufacturer": "General Instrument",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "AY-3-8500 datasheet, General Instrument 1976",
+  "instruction_count": 12,
+  "instructions": [
+    {"mnemonic": "BALL_MOVE", "opcode": "0x00", "bytes": 0, "cycles": 3, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Ball position update state (horizontal + vertical)"},
+    {"mnemonic": "PADDLE_SCAN", "opcode": "0x01", "bytes": 0, "cycles": 3, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Paddle position scan from pot inputs"},
+    {"mnemonic": "COLLISION_DET", "opcode": "0x02", "bytes": 0, "cycles": 3, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Ball-paddle collision detection"},
+    {"mnemonic": "SCORE_UPDATE", "opcode": "0x03", "bytes": 0, "cycles": 3, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Score counter update on goal"},
+    {"mnemonic": "HSYNC_GEN", "opcode": "0x10", "bytes": 0, "cycles": 4, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Horizontal sync generation"},
+    {"mnemonic": "VSYNC_GEN", "opcode": "0x11", "bytes": 0, "cycles": 4, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Vertical sync generation"},
+    {"mnemonic": "BLANK_GEN", "opcode": "0x12", "bytes": 0, "cycles": 4, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Blanking interval generation"},
+    {"mnemonic": "BALL_RENDER", "opcode": "0x20", "bytes": 0, "cycles": 4, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Ball sprite rendering to video output"},
+    {"mnemonic": "PADDLE_RENDER", "opcode": "0x21", "bytes": 0, "cycles": 4, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Paddle sprite rendering"},
+    {"mnemonic": "SCORE_RENDER", "opcode": "0x22", "bytes": 0, "cycles": 4, "category": "special", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Score digit rendering"},
+    {"mnemonic": "INPUT_READ", "opcode": "0x30", "bytes": 0, "cycles": 5, "category": "io", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Read paddle potentiometer inputs"},
+    {"mnemonic": "SOUND_OUT", "opcode": "0x31", "bytes": 0, "cycles": 5, "category": "io", "addressing_mode": "state_machine", "flags_affected": "none", "notes": "Sound effect output on ball hit"}
+  ]
+}

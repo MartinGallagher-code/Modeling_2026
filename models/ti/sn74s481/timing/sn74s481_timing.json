@@ -1,0 +1,101 @@
+{
+  "processor": "TI SN74S481",
+  "manufacturer": "Texas Instruments",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "SN74S481 datasheet",
+  "instruction_count": 16,
+  "notes": "4-bit Schottky bit-slice ALU. 32 functions. Faster than SN74181.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x09",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A plus B; ~15ns Schottky"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x06",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A minus B"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x0B",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "A AND B"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x0E",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "A OR B"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x06",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "A XOR B"
+    },
+    {
+      "mnemonic": "NOT",
+      "opcode": "0x00",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "NOT A"
+    },
+    {
+      "mnemonic": "INC",
+      "opcode": "0x00",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A plus 1"
+    },
+    {
+      "mnemonic": "DEC",
+      "opcode": "0x0F",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A minus 1"
+    },
+    {
+      "mnemonic": "SHL",
+      "opcode": "0x0C",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A+A (shift left)"
+    }
+  ]
+}

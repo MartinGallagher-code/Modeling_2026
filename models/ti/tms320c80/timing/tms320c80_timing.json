@@ -1,0 +1,101 @@
+{
+  "processor": "TI TMS320C80",
+  "manufacturer": "Texas Instruments",
+  "year": 1994,
+  "schema_version": "1.0",
+  "source": "TMS320C80 datasheet",
+  "instruction_count": 150,
+  "notes": "MVP multiprocessor DSP. 4 parallel processors + RISC master. 50 MHz.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "VNZC",
+      "notes": "Master processor add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "VNZC",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "MPY",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Multiply"
+    },
+    {
+      "mnemonic": "LD",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "displacement",
+      "flags_affected": "",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "ST",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "displacement",
+      "flags_affected": "",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "BR",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xFF",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

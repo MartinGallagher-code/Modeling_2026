@@ -1,0 +1,151 @@
+{
+  "processor": "NS32081",
+  "manufacturer": "National Semiconductor",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "NS32081 datasheet",
+  "instruction_count": 28,
+  "notes": "NS32000 floating-point unit coprocessor. IEEE 754.",
+  "instructions": [
+    {
+      "mnemonic": "ADDf",
+      "opcode": "0x01",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float add single"
+    },
+    {
+      "mnemonic": "ADDl",
+      "opcode": "0x02",
+      "bytes": 3,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float add double"
+    },
+    {
+      "mnemonic": "SUBf",
+      "opcode": "0x03",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float subtract single"
+    },
+    {
+      "mnemonic": "SUBl",
+      "opcode": "0x04",
+      "bytes": 3,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float subtract double"
+    },
+    {
+      "mnemonic": "MULf",
+      "opcode": "0x05",
+      "bytes": 3,
+      "cycles": 20,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float multiply single"
+    },
+    {
+      "mnemonic": "MULl",
+      "opcode": "0x06",
+      "bytes": 3,
+      "cycles": 30,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float multiply double"
+    },
+    {
+      "mnemonic": "DIVf",
+      "opcode": "0x07",
+      "bytes": 3,
+      "cycles": 35,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float divide single"
+    },
+    {
+      "mnemonic": "DIVl",
+      "opcode": "0x08",
+      "bytes": 3,
+      "cycles": 50,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float divide double"
+    },
+    {
+      "mnemonic": "CMPf",
+      "opcode": "0x09",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float compare"
+    },
+    {
+      "mnemonic": "MOVf",
+      "opcode": "0x0A",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move float"
+    },
+    {
+      "mnemonic": "NEGf",
+      "opcode": "0x0B",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Negate float"
+    },
+    {
+      "mnemonic": "ABSf",
+      "opcode": "0x0C",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Absolute value"
+    },
+    {
+      "mnemonic": "LFSR",
+      "opcode": "0x0D",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load FPU status"
+    },
+    {
+      "mnemonic": "SFSR",
+      "opcode": "0x0E",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Store FPU status"
+    }
+  ]
+}

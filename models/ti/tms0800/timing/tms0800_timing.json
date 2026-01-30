@@ -1,0 +1,121 @@
+{
+  "processor": "TI TMS0800",
+  "manufacturer": "Texas Instruments",
+  "year": 1973,
+  "schema_version": "1.0",
+  "source": "TMS0800 datasheet",
+  "instruction_count": 30,
+  "notes": "Calculator chip. 4-bit serial processor for Datamath.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "serial",
+      "flags_affected": "C",
+      "notes": "Serial BCD add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "serial",
+      "flags_affected": "C",
+      "notes": "Serial BCD subtract"
+    },
+    {
+      "mnemonic": "SHL",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "serial",
+      "flags_affected": "",
+      "notes": "Shift left (multiply by 10)"
+    },
+    {
+      "mnemonic": "SHR",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "serial",
+      "flags_affected": "",
+      "notes": "Shift right (divide by 10)"
+    },
+    {
+      "mnemonic": "XCH",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "serial",
+      "flags_affected": "",
+      "notes": "Exchange registers"
+    },
+    {
+      "mnemonic": "DISP",
+      "opcode": "0x06",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "io",
+      "addressing_mode": "serial",
+      "flags_affected": "",
+      "notes": "Output to display"
+    },
+    {
+      "mnemonic": "KEY",
+      "opcode": "0x07",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "io",
+      "addressing_mode": "serial",
+      "flags_affected": "",
+      "notes": "Scan keyboard"
+    },
+    {
+      "mnemonic": "BR",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x12",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

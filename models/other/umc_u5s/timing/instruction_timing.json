@@ -1,0 +1,173 @@
+{
+  "processor": "UMC U5S Green CPU",
+  "manufacturer": "UMC",
+  "year": 1994,
+  "source": "UMC U5S documentation / Intel i486 reference",
+  "base_architecture": "i80486",
+  "base_timing_reference": "Intel i486",
+  "timing_notes": "Taiwanese 486 clone. 8KB unified cache. Compatible instruction timing with possible minor variations in complex instructions.",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "ADD r,r",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S,O",
+      "notes": "Add registers"
+    },
+    {
+      "mnemonic": "SUB r,r",
+      "opcode": "0x29",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S,O",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND r,r",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,S",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "CMP r,r",
+      "opcode": "0x39",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S,O",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "MOV r,r",
+      "opcode": "0x89",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register"
+    },
+    {
+      "mnemonic": "MOV r,#imm",
+      "opcode": "0xB8",
+      "bytes": 5,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate"
+    },
+    {
+      "mnemonic": "MOV r,[mem]",
+      "opcode": "0x8B",
+      "bytes": 6,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "MOV [mem],r",
+      "opcode": "0x89",
+      "bytes": 6,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "JMP rel",
+      "opcode": "0xEB",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump relative"
+    },
+    {
+      "mnemonic": "Jcc rel",
+      "opcode": "0x70",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Conditional jump"
+    },
+    {
+      "mnemonic": "CALL rel",
+      "opcode": "0xE8",
+      "bytes": 5,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0xC3",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "PUSH r",
+      "opcode": "0x50",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Push register"
+    },
+    {
+      "mnemonic": "POP r",
+      "opcode": "0x58",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Pop register"
+    },
+    {
+      "mnemonic": "IMUL r,r",
+      "opcode": "0x0FAF",
+      "bytes": 3,
+      "cycles": 13,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "C,O",
+      "notes": "Signed multiply"
+    },
+    {
+      "mnemonic": "IDIV r",
+      "opcode": "0xF7",
+      "bytes": 2,
+      "cycles": 25,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S,O",
+      "notes": "Signed divide"
+    }
+  ],
+  "schema_version": "1.0"
+}

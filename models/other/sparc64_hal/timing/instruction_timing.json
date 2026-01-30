@@ -1,0 +1,210 @@
+{
+  "processor": "SPARC64 (HAL)",
+  "manufacturer": "HAL Computer/Fujitsu",
+  "year": 1995,
+  "source": "SPARC V9 Architecture Manual / HAL SPARC64 documentation",
+  "instruction_count": 20,
+  "instructions": [
+    {
+      "mnemonic": "ADD rd,rs1,rs2",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "icc,xcc",
+      "notes": "Add 64-bit"
+    },
+    {
+      "mnemonic": "SUB rd,rs1,rs2",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "icc,xcc",
+      "notes": "Subtract 64-bit"
+    },
+    {
+      "mnemonic": "AND rd,rs1,rs2",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "icc,xcc",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR rd,rs1,rs2",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "icc,xcc",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "SLL rd,rs1,cnt",
+      "opcode": "0x25",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Shift left logical"
+    },
+    {
+      "mnemonic": "SLLX rd,rs1,cnt",
+      "opcode": "0x25",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Shift left extended (64-bit)"
+    },
+    {
+      "mnemonic": "LDX [rs1+rs2],rd",
+      "opcode": "0x0B",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load 64-bit doubleword"
+    },
+    {
+      "mnemonic": "STX rd,[rs1+rs2]",
+      "opcode": "0x0E",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store 64-bit doubleword"
+    },
+    {
+      "mnemonic": "LDW [rs1+rs2],rd",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load word"
+    },
+    {
+      "mnemonic": "STW rd,[rs1+rs2]",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store word"
+    },
+    {
+      "mnemonic": "BA addr",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch always"
+    },
+    {
+      "mnemonic": "BEQ addr",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch if equal"
+    },
+    {
+      "mnemonic": "CALL addr",
+      "opcode": "0x40",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "JMPL addr,rd",
+      "opcode": "0x38",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Jump and link"
+    },
+    {
+      "mnemonic": "MULX rs1,rs2,rd",
+      "opcode": "0x09",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply 64-bit"
+    },
+    {
+      "mnemonic": "SDIVX rs1,rs2,rd",
+      "opcode": "0x2D",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Signed divide 64-bit"
+    },
+    {
+      "mnemonic": "FADDD frs1,frs2,frd",
+      "opcode": "0x42",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "fcc",
+      "notes": "FP add double"
+    },
+    {
+      "mnemonic": "FMULD frs1,frs2,frd",
+      "opcode": "0x49",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "fcc",
+      "notes": "FP multiply double"
+    },
+    {
+      "mnemonic": "FDIVD frs1,frs2,frd",
+      "opcode": "0x4E",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "fcc",
+      "notes": "FP divide double"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x01000000",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation (SETHI %g0,0)"
+    }
+  ],
+  "schema_version": "1.0"
+}

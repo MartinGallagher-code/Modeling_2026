@@ -1,0 +1,150 @@
+{
+  "processor": "Goodyear STARAN",
+  "manufacturer": "Goodyear Aerospace",
+  "year": 1972,
+  "source": "STARAN associative array processor documentation / NASA technical reports",
+  "instruction_count": 14,
+  "instructions": [
+    {
+      "mnemonic": "BSET",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Bit set across all PEs"
+    },
+    {
+      "mnemonic": "BCLR",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Bit clear across all PEs"
+    },
+    {
+      "mnemonic": "BAND",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Bit AND across all PEs"
+    },
+    {
+      "mnemonic": "BOR",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Bit OR across all PEs"
+    },
+    {
+      "mnemonic": "BXOR",
+      "opcode": "0x05",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Bit XOR across all PEs"
+    },
+    {
+      "mnemonic": "WADD",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Word add (bit-serial, N bits)"
+    },
+    {
+      "mnemonic": "WMOV",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Word move (bit-serial)"
+    },
+    {
+      "mnemonic": "SEARCH",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Associative search (content-addressable)"
+    },
+    {
+      "mnemonic": "RESOLVE",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Resolve multiple match (first responder)"
+    },
+    {
+      "mnemonic": "MASK_SET",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set PE activity mask"
+    },
+    {
+      "mnemonic": "MASK_CLR",
+      "opcode": "0x31",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Clear PE activity mask"
+    },
+    {
+      "mnemonic": "FLIP",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Flip network permutation"
+    },
+    {
+      "mnemonic": "CTRL_BR",
+      "opcode": "0x50",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Controller branch"
+    },
+    {
+      "mnemonic": "CTRL_NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Controller no-op"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,30 @@
+{
+  "processor": "Ensoniq ES5503 DOC",
+  "manufacturer": "Ensoniq",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "ES5503 DOC (Digital Oscillator Chip) datasheet, Ensoniq 1985; Apple IIGS Hardware Reference",
+  "instruction_count": 20,
+  "instructions": [
+    {"mnemonic": "WT_FETCH", "opcode": "0x00", "bytes": 1, "cycles": 6, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Wavetable memory fetch, 6 cycles per sample read"},
+    {"mnemonic": "WT_FETCH_NEXT", "opcode": "0x01", "bytes": 1, "cycles": 6, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Fetch next sample for interpolation pair"},
+    {"mnemonic": "WT_ADDR_CALC", "opcode": "0x02", "bytes": 1, "cycles": 6, "category": "memory", "addressing_mode": "register", "flags_affected": "none", "notes": "Calculate wavetable address from accumulator"},
+    {"mnemonic": "INTERP_FRAC", "opcode": "0x10", "bytes": 1, "cycles": 8, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Extract fractional part for interpolation"},
+    {"mnemonic": "INTERP_MUL", "opcode": "0x11", "bytes": 1, "cycles": 8, "category": "multiply", "addressing_mode": "register", "flags_affected": "none", "notes": "Multiply sample difference by fraction"},
+    {"mnemonic": "INTERP_ADD", "opcode": "0x12", "bytes": 1, "cycles": 8, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Add interpolated offset to base sample"},
+    {"mnemonic": "INTERP_COMBINE", "opcode": "0x13", "bytes": 1, "cycles": 8, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Combine interpolation result"},
+    {"mnemonic": "VOL_LOAD", "opcode": "0x20", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Load volume register for oscillator"},
+    {"mnemonic": "VOL_MUL", "opcode": "0x21", "bytes": 1, "cycles": 4, "category": "multiply", "addressing_mode": "register", "flags_affected": "none", "notes": "Multiply sample by volume (8-bit volume scaling)"},
+    {"mnemonic": "VOL_ACCUM", "opcode": "0x22", "bytes": 1, "cycles": 4, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Accumulate scaled sample to output"},
+    {"mnemonic": "OUT_DAC", "opcode": "0x30", "bytes": 1, "cycles": 5, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Output to DAC channel"},
+    {"mnemonic": "OUT_MIX", "opcode": "0x31", "bytes": 1, "cycles": 5, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Mix oscillator output to channel bus"},
+    {"mnemonic": "OUT_CHANNEL_SEL", "opcode": "0x32", "bytes": 1, "cycles": 5, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Select output channel assignment"},
+    {"mnemonic": "PHASE_ACCUM", "opcode": "0x33", "bytes": 1, "cycles": 5, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Phase accumulator update (frequency control)"},
+    {"mnemonic": "PHASE_WRAP", "opcode": "0x34", "bytes": 1, "cycles": 5, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Phase wrap/table size boundary check"},
+    {"mnemonic": "CTRL_HALT", "opcode": "0x40", "bytes": 1, "cycles": 3, "category": "control", "addressing_mode": "register", "flags_affected": "none", "notes": "Halt oscillator (set halt bit)"},
+    {"mnemonic": "CTRL_MODE", "opcode": "0x41", "bytes": 1, "cycles": 3, "category": "control", "addressing_mode": "register", "flags_affected": "none", "notes": "Set oscillator mode (one-shot, loop, sync)"},
+    {"mnemonic": "CTRL_IRQ", "opcode": "0x42", "bytes": 1, "cycles": 3, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Generate interrupt on oscillator halt"},
+    {"mnemonic": "REG_WRITE", "opcode": "0x50", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Write oscillator parameter register"},
+    {"mnemonic": "REG_READ", "opcode": "0x51", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Read oscillator parameter register"}
+  ]
+}

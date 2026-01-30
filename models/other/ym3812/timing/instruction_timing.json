@@ -1,0 +1,130 @@
+{
+  "processor": "Yamaha YM3812 (OPL2)",
+  "manufacturer": "Yamaha",
+  "year": 1985,
+  "source": "YM3812 OPL2 datasheet",
+  "instruction_count": 12,
+  "instructions": [
+    {
+      "mnemonic": "OP_FREQ",
+      "opcode": "0xA0",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set operator frequency"
+    },
+    {
+      "mnemonic": "OP_LEVEL",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set total level"
+    },
+    {
+      "mnemonic": "OP_ENVL",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set envelope rate"
+    },
+    {
+      "mnemonic": "FB_ALGO",
+      "opcode": "0xC0",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Feedback/connection"
+    },
+    {
+      "mnemonic": "KEY_ON",
+      "opcode": "0xB0",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Key on/off"
+    },
+    {
+      "mnemonic": "WAVEFORM",
+      "opcode": "0xE0",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Waveform select (4 types)"
+    },
+    {
+      "mnemonic": "TREMOLO",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "AM/Vibrato depth"
+    },
+    {
+      "mnemonic": "RHYTHM",
+      "opcode": "0xBD",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rhythm mode"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read status"
+    },
+    {
+      "mnemonic": "TIMER",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Timer control"
+    },
+    {
+      "mnemonic": "IRQ",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "IRQ control"
+    }
+  ],
+  "schema_version": "1.0"
+}

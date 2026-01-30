@@ -1,0 +1,190 @@
+{
+  "processor": "WD16",
+  "manufacturer": "Western Digital",
+  "year": 1977,
+  "source": "WD16 datasheet / PDP-11 compatible ISA reference",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "ADD src,dst",
+      "opcode": "0x06",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "SUB src,dst",
+      "opcode": "0x16",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "BIC src,dst",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Bit clear"
+    },
+    {
+      "mnemonic": "BIS src,dst",
+      "opcode": "0x05",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Bit set"
+    },
+    {
+      "mnemonic": "CMP src,dst",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "MOV src,dst",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Move"
+    },
+    {
+      "mnemonic": "CLR dst",
+      "opcode": "0x05",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "Clear"
+    },
+    {
+      "mnemonic": "MOV (R),dst",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "Z,N",
+      "notes": "Move indirect"
+    },
+    {
+      "mnemonic": "MOV @addr,dst",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "Z,N",
+      "notes": "Move absolute"
+    },
+    {
+      "mnemonic": "BR offset",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "BEQ offset",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if equal"
+    },
+    {
+      "mnemonic": "JSR PC,addr",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump to subroutine"
+    },
+    {
+      "mnemonic": "RTS PC",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "MUL src,reg",
+      "opcode": "0x70",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Multiply 16x16"
+    },
+    {
+      "mnemonic": "PUSH src",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Push to stack"
+    },
+    {
+      "mnemonic": "POP dst",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Pop from stack"
+    },
+    {
+      "mnemonic": "IOT",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "I/O trap"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

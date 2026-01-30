@@ -1,0 +1,18 @@
+{
+  "processor": "Harris HC-55516",
+  "manufacturer": "Harris",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "HC-55516 datasheet",
+  "instruction_count": 8,
+  "instructions": [
+    {"mnemonic": "DECODE_BIT", "opcode": "0x00", "bytes": 1, "cycles": 1, "category": "special", "addressing_mode": "serial", "flags_affected": "none", "notes": "Decode single CVSD bit from serial input"},
+    {"mnemonic": "SLOPE_ADAPT", "opcode": "0x01", "bytes": 1, "cycles": 2, "category": "special", "addressing_mode": "internal", "flags_affected": "none", "notes": "Adaptive slope size update based on consecutive bits"},
+    {"mnemonic": "SYLLABIC_FILT", "opcode": "0x02", "bytes": 1, "cycles": 2, "category": "special", "addressing_mode": "internal", "flags_affected": "none", "notes": "Syllabic filter integration step"},
+    {"mnemonic": "INTEGRATOR", "opcode": "0x03", "bytes": 1, "cycles": 2, "category": "special", "addressing_mode": "internal", "flags_affected": "none", "notes": "Signal integrator update"},
+    {"mnemonic": "DAC_OUT", "opcode": "0x04", "bytes": 1, "cycles": 2, "category": "io", "addressing_mode": "analog", "flags_affected": "none", "notes": "Update DAC analog output level"},
+    {"mnemonic": "CLK_SYNC", "opcode": "0x05", "bytes": 1, "cycles": 3, "category": "special", "addressing_mode": "internal", "flags_affected": "none", "notes": "Clock synchronization and sample rate control"},
+    {"mnemonic": "MODE_SET", "opcode": "0x06", "bytes": 1, "cycles": 1, "category": "special", "addressing_mode": "control", "flags_affected": "none", "notes": "Encode/decode mode selection"},
+    {"mnemonic": "IDLE", "opcode": "0x07", "bytes": 1, "cycles": 1, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "Idle cycle waiting for next bit clock"}
+  ]
+}

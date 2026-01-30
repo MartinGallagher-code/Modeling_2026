@@ -1,0 +1,273 @@
+{
+  "processor": "Toshiba TX39",
+  "manufacturer": "Toshiba",
+  "year": 1994,
+  "schema_version": "1.0",
+  "source": "TX39 datasheet",
+  "base_architecture": "MIPS R3000",
+  "base_timing_reference": "r2000",
+  "timing_notes": "MIPS R3000A-based embedded core for PDAs. On-chip caches. 66 MHz. Windows CE reference platform.",
+  "instruction_count": 92,
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Add (trap on overflow)"
+    },
+    {
+      "mnemonic": "ADDU",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Add unsigned"
+    },
+    {
+      "mnemonic": "ADDI",
+      "opcode": "0x08",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Add immediate"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x24",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x25",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x26",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "SLT",
+      "opcode": "0x2A",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Set on less than"
+    },
+    {
+      "mnemonic": "SLL",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Shift left logical"
+    },
+    {
+      "mnemonic": "SRL",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Shift right logical"
+    },
+    {
+      "mnemonic": "LW",
+      "opcode": "0x23",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "base_offset",
+      "flags_affected": "",
+      "notes": "Load word"
+    },
+    {
+      "mnemonic": "LB",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "base_offset",
+      "flags_affected": "",
+      "notes": "Load byte"
+    },
+    {
+      "mnemonic": "SW",
+      "opcode": "0x2B",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "",
+      "notes": "Store word"
+    },
+    {
+      "mnemonic": "SB",
+      "opcode": "0x28",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "base_offset",
+      "flags_affected": "",
+      "notes": "Store byte"
+    },
+    {
+      "mnemonic": "BEQ",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch if equal (1 delay slot)"
+    },
+    {
+      "mnemonic": "BNE",
+      "opcode": "0x05",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch if not equal"
+    },
+    {
+      "mnemonic": "J",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JAL",
+      "opcode": "0x03",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump and link"
+    },
+    {
+      "mnemonic": "JR",
+      "opcode": "0x08",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Jump register"
+    },
+    {
+      "mnemonic": "MULT",
+      "opcode": "0x18",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Multiply"
+    },
+    {
+      "mnemonic": "MULTU",
+      "opcode": "0x19",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Multiply unsigned"
+    },
+    {
+      "mnemonic": "DIV",
+      "opcode": "0x1A",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Divide"
+    },
+    {
+      "mnemonic": "DIVU",
+      "opcode": "0x1B",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Divide unsigned"
+    },
+    {
+      "mnemonic": "MFHI",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move from HI"
+    },
+    {
+      "mnemonic": "MFLO",
+      "opcode": "0x12",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move from LO"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "SLL $0,$0,0"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "processor": "Nippon Columbia CX-1",
+  "manufacturer": "Nippon Columbia",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "CX-1 arcade audio DSP documentation, Nippon Columbia 1983",
+  "instruction_count": 20,
+  "instructions": [
+    {"mnemonic": "MAC", "opcode": "0x00", "bytes": 2, "cycles": 2, "category": "multiply", "addressing_mode": "register", "flags_affected": "OV", "notes": "Multiply-accumulate, 2-cycle sequential"},
+    {"mnemonic": "MPY", "opcode": "0x01", "bytes": 2, "cycles": 2, "category": "multiply", "addressing_mode": "register", "flags_affected": "OV", "notes": "16-bit multiply"},
+    {"mnemonic": "ADD", "opcode": "0x10", "bytes": 2, "cycles": 2, "category": "alu", "addressing_mode": "register", "flags_affected": "Z,N,OV", "notes": "Add accumulator"},
+    {"mnemonic": "SUB", "opcode": "0x11", "bytes": 2, "cycles": 2, "category": "alu", "addressing_mode": "register", "flags_affected": "Z,N,OV", "notes": "Subtract"},
+    {"mnemonic": "ABS", "opcode": "0x12", "bytes": 2, "cycles": 2, "category": "alu", "addressing_mode": "register", "flags_affected": "Z,N", "notes": "Absolute value"},
+    {"mnemonic": "NEG", "opcode": "0x13", "bytes": 2, "cycles": 2, "category": "alu", "addressing_mode": "register", "flags_affected": "Z,N,OV", "notes": "Negate"},
+    {"mnemonic": "COEFF_LD", "opcode": "0x20", "bytes": 2, "cycles": 4, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Load filter coefficient from ROM"},
+    {"mnemonic": "COEFF_MUL", "opcode": "0x21", "bytes": 2, "cycles": 4, "category": "multiply", "addressing_mode": "indirect", "flags_affected": "OV", "notes": "Filter coefficient multiply"},
+    {"mnemonic": "FIR_TAP", "opcode": "0x22", "bytes": 2, "cycles": 4, "category": "multiply", "addressing_mode": "indirect", "flags_affected": "OV", "notes": "FIR filter tap operation"},
+    {"mnemonic": "IIR_POLE", "opcode": "0x23", "bytes": 2, "cycles": 4, "category": "multiply", "addressing_mode": "indirect", "flags_affected": "OV", "notes": "IIR filter pole computation"},
+    {"mnemonic": "DAC_OUT", "opcode": "0x30", "bytes": 2, "cycles": 3, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Write sample to DAC output"},
+    {"mnemonic": "ADC_IN", "opcode": "0x31", "bytes": 2, "cycles": 3, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Read sample from ADC input"},
+    {"mnemonic": "MIX_OUT", "opcode": "0x32", "bytes": 2, "cycles": 3, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Write to audio mixer output"},
+    {"mnemonic": "DATA_LD", "opcode": "0x40", "bytes": 2, "cycles": 3, "category": "data_transfer", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Load data from sample RAM"},
+    {"mnemonic": "DATA_ST", "opcode": "0x41", "bytes": 2, "cycles": 3, "category": "data_transfer", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Store data to sample RAM"},
+    {"mnemonic": "MOV", "opcode": "0x42", "bytes": 2, "cycles": 2, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Register move"},
+    {"mnemonic": "JMP", "opcode": "0x50", "bytes": 2, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Unconditional jump"},
+    {"mnemonic": "JZ", "opcode": "0x51", "bytes": 2, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump if zero"},
+    {"mnemonic": "LOOP", "opcode": "0x52", "bytes": 2, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Loop N times"},
+    {"mnemonic": "NOP", "opcode": "0xFF", "bytes": 2, "cycles": 2, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "No operation"}
+  ]
+}

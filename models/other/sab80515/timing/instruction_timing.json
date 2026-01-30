@@ -1,0 +1,213 @@
+{
+  "processor": "Siemens SAB80515",
+  "manufacturer": "Siemens",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "SAB80515 datasheet",
+  "base_architecture": "i8051",
+  "base_timing_reference": "Intel 8051",
+  "timing_notes": "Enhanced 8051 with on-chip ADC, additional timers. Identical core instruction timing.",
+  "instruction_count": 20,
+  "instructions": [
+    {
+      "mnemonic": "ADD A,Rn",
+      "opcode": "0x28",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,AC,OV",
+      "notes": "Add register to A"
+    },
+    {
+      "mnemonic": "ADDC A,#data",
+      "opcode": "0x34",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C,AC,OV",
+      "notes": "Add with carry immediate"
+    },
+    {
+      "mnemonic": "SUBB A,Rn",
+      "opcode": "0x98",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,AC,OV",
+      "notes": "Subtract with borrow"
+    },
+    {
+      "mnemonic": "ANL A,Rn",
+      "opcode": "0x58",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "AND logical"
+    },
+    {
+      "mnemonic": "MOV A,Rn",
+      "opcode": "0xE8",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register to A"
+    },
+    {
+      "mnemonic": "MOV Rn,A",
+      "opcode": "0xF8",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move A to register"
+    },
+    {
+      "mnemonic": "MOV A,#data",
+      "opcode": "0x74",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to A"
+    },
+    {
+      "mnemonic": "MOV DPTR,#data16",
+      "opcode": "0x90",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load 16-bit data pointer"
+    },
+    {
+      "mnemonic": "MOVX A,@DPTR",
+      "opcode": "0xE0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move external memory via DPTR"
+    },
+    {
+      "mnemonic": "MOVX @DPTR,A",
+      "opcode": "0xF0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Store to external memory"
+    },
+    {
+      "mnemonic": "MOVC A,@A+DPTR",
+      "opcode": "0x93",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Move code memory"
+    },
+    {
+      "mnemonic": "LJMP addr16",
+      "opcode": "0x02",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Long jump"
+    },
+    {
+      "mnemonic": "LCALL addr16",
+      "opcode": "0x12",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Long call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x22",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "SJMP rel",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Short jump"
+    },
+    {
+      "mnemonic": "MUL AB",
+      "opcode": "0xA4",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "multiply",
+      "addressing_mode": "implied",
+      "flags_affected": "C,OV",
+      "notes": "8x8 multiply"
+    },
+    {
+      "mnemonic": "DIV AB",
+      "opcode": "0x84",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "divide",
+      "addressing_mode": "implied",
+      "flags_affected": "C,OV",
+      "notes": "8/8 divide"
+    },
+    {
+      "mnemonic": "DA A",
+      "opcode": "0xD4",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "C",
+      "notes": "Decimal adjust"
+    },
+    {
+      "mnemonic": "ADC_START",
+      "opcode": "0xFE",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Start on-chip ADC conversion (SAB80515 extension)"
+    },
+    {
+      "mnemonic": "ADC_READ",
+      "opcode": "0xFF",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Read ADC result (SAB80515 extension)"
+    }
+  ]
+}

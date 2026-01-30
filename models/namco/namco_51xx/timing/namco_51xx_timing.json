@@ -1,0 +1,81 @@
+{
+  "processor": "Namco 51xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "MAME docs",
+  "instruction_count": 7,
+  "notes": "I/O controller for arcade input handling with debounce.",
+  "instructions": [
+    {
+      "mnemonic": "CMP",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Input compare/mask"
+    },
+    {
+      "mnemonic": "XFER",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Register move"
+    },
+    {
+      "mnemonic": "SWIN",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Switch read"
+    },
+    {
+      "mnemonic": "JMUX",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Joystick multiplex"
+    },
+    {
+      "mnemonic": "MODE",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Mode select"
+    },
+    {
+      "mnemonic": "DEB",
+      "opcode": "0x06",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Debounce timing loop"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

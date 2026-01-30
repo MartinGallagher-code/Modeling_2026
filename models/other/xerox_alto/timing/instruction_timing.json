@@ -1,0 +1,170 @@
+{
+  "processor": "Xerox Alto",
+  "manufacturer": "Xerox PARC",
+  "year": 1973,
+  "source": "Alto Hardware Manual",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "COM",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z",
+      "notes": "Complement"
+    },
+    {
+      "mnemonic": "NEG",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z",
+      "notes": "Negate"
+    },
+    {
+      "mnemonic": "INC",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z",
+      "notes": "Increment"
+    },
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x05",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "MOV",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register"
+    },
+    {
+      "mnemonic": "LDA",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load accumulator"
+    },
+    {
+      "mnemonic": "STA",
+      "opcode": "0x12",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store accumulator"
+    },
+    {
+      "mnemonic": "LDM",
+      "opcode": "0x13",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Load from memory indirect"
+    },
+    {
+      "mnemonic": "JMP addr",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JSR addr",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x22",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "SKP",
+      "opcode": "0x23",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Skip (microcode conditional)"
+    },
+    {
+      "mnemonic": "CYCLE",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Cycle shift (barrel shifter)"
+    },
+    {
+      "mnemonic": "TASK",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Task switch (microcode multitasking)"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation (microinstruction)"
+    }
+  ],
+  "schema_version": "1.0"
+}

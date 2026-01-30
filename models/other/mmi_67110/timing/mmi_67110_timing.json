@@ -1,0 +1,32 @@
+{
+  "processor": "MMI 67110",
+  "manufacturer": "MMI",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "MMI 67110 datasheet, Monolithic Memories microsequencer documentation",
+  "instruction_count": 22,
+  "instructions": [
+    {"mnemonic": "NEXT", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Continue to next microword"},
+    {"mnemonic": "JMP", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "microword", "flags_affected": "none", "notes": "Unconditional jump"},
+    {"mnemonic": "CJMP", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "microword", "flags_affected": "none", "notes": "Conditional jump on test input"},
+    {"mnemonic": "JMAP", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "mapped", "flags_affected": "none", "notes": "Jump to mapped address from opcode"},
+    {"mnemonic": "JSR", "bytes": 1, "cycles": 3, "category": "control", "addressing_mode": "microword", "flags_affected": "none", "notes": "Jump to subroutine, push return on stack"},
+    {"mnemonic": "CJSR", "bytes": 1, "cycles": 3, "category": "control", "addressing_mode": "microword", "flags_affected": "none", "notes": "Conditional jump to subroutine"},
+    {"mnemonic": "RTS", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Return from subroutine (pop stack)"},
+    {"mnemonic": "CRTS", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Conditional return from subroutine"},
+    {"mnemonic": "LOOP", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "microword", "flags_affected": "none", "notes": "Loop to address if counter nonzero"},
+    {"mnemonic": "LDCNT", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Load loop counter"},
+    {"mnemonic": "DECCNT", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "implied", "flags_affected": "Z", "notes": "Decrement loop counter"},
+    {"mnemonic": "PUSH", "bytes": 1, "cycles": 2, "category": "stack", "addressing_mode": "register", "flags_affected": "none", "notes": "Push address onto return stack"},
+    {"mnemonic": "POP", "bytes": 1, "cycles": 2, "category": "stack", "addressing_mode": "register", "flags_affected": "none", "notes": "Pop address from return stack"},
+    {"mnemonic": "TWB", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "microword", "flags_affected": "none", "notes": "Three-way branch based on test inputs"},
+    {"mnemonic": "JMPZ", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "microword", "flags_affected": "none", "notes": "Jump if zero"},
+    {"mnemonic": "JMPNZ", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "microword", "flags_affected": "none", "notes": "Jump if not zero"},
+    {"mnemonic": "RPTI", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Repeat instruction"},
+    {"mnemonic": "LDPC", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Load pipeline register"},
+    {"mnemonic": "STPC", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Store pipeline register"},
+    {"mnemonic": "VECT", "bytes": 1, "cycles": 3, "category": "control", "addressing_mode": "mapped", "flags_affected": "none", "notes": "Vectored jump from interrupt inputs"},
+    {"mnemonic": "CONT", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Continue (pass through)"},
+    {"mnemonic": "NOP", "bytes": 1, "cycles": 1, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "No operation"}
+  ]
+}

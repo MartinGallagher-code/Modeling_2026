@@ -1,0 +1,181 @@
+{
+  "processor": "TI TMS320C25",
+  "manufacturer": "Texas Instruments",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "TMS320C25 Users Guide",
+  "instruction_count": 109,
+  "notes": "Fixed-point DSP. 40 MHz. Single-cycle multiply-accumulate.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x0000",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Add to accumulator"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x0100",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x7900",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x7A00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "MPY",
+      "opcode": "0x6D00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Multiply"
+    },
+    {
+      "mnemonic": "MAC",
+      "opcode": "0x5600",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Multiply-accumulate"
+    },
+    {
+      "mnemonic": "LT",
+      "opcode": "0x6C00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Load T register"
+    },
+    {
+      "mnemonic": "LTA",
+      "opcode": "0x6C80",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Load T and accumulate"
+    },
+    {
+      "mnemonic": "DMOV",
+      "opcode": "0x6900",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Data move in memory"
+    },
+    {
+      "mnemonic": "TBLR",
+      "opcode": "0x6700",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Table read"
+    },
+    {
+      "mnemonic": "B",
+      "opcode": "0x7E00",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x7E20",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x7F80",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "RPTK",
+      "opcode": "0x7B00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Repeat next instruction K times"
+    },
+    {
+      "mnemonic": "IN",
+      "opcode": "0x8000",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input from port"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0x8800",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output to port"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x8B00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

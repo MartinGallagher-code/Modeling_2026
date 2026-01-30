@@ -1,0 +1,190 @@
+{
+  "processor": "SNK LSPC2-A2",
+  "manufacturer": "SNK",
+  "year": 1990,
+  "source": "LSPC2 Neo Geo hardware documentation",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "SPR_FETCH",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Fetch sprite tile from fix/sprite ROM"
+    },
+    {
+      "mnemonic": "SPR_RENDER",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render sprite line (hardware scaling)"
+    },
+    {
+      "mnemonic": "SPR_SCALE",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Apply sprite scaling (hardware scaler)"
+    },
+    {
+      "mnemonic": "TILE_FETCH",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Fetch fix layer tile"
+    },
+    {
+      "mnemonic": "TILE_RENDER",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render fix layer tile line"
+    },
+    {
+      "mnemonic": "PSET",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Set pixel in line buffer"
+    },
+    {
+      "mnemonic": "PRIORITY",
+      "opcode": "0x21",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Priority/compositing resolve"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write LSPC register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x31",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read LSPC register"
+    },
+    {
+      "mnemonic": "VRAM_RD",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM read (68KB)"
+    },
+    {
+      "mnemonic": "VRAM_WR",
+      "opcode": "0x41",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM write"
+    },
+    {
+      "mnemonic": "VRAM_AUTO",
+      "opcode": "0x42",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM auto-increment write"
+    },
+    {
+      "mnemonic": "LINE_OUT",
+      "opcode": "0x50",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Output line buffer"
+    },
+    {
+      "mnemonic": "TIMER_SET",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set timer interrupt"
+    },
+    {
+      "mnemonic": "HINT",
+      "opcode": "0x70",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "H-blank interrupt"
+    },
+    {
+      "mnemonic": "VINT",
+      "opcode": "0x71",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "V-blank interrupt"
+    },
+    {
+      "mnemonic": "AUTO_ANIM",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Auto-animation control"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

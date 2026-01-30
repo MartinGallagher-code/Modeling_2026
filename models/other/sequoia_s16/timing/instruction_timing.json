@@ -1,0 +1,210 @@
+{
+  "processor": "Sequoia S-16",
+  "manufacturer": "Sequoia Systems",
+  "year": 1983,
+  "source": "Sequoia Systems S-16 documentation",
+  "instruction_count": 20,
+  "instructions": [
+    {
+      "mnemonic": "ADD R,R",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Add registers"
+    },
+    {
+      "mnemonic": "SUB R,R",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Subtract registers"
+    },
+    {
+      "mnemonic": "AND R,R",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "AND registers"
+    },
+    {
+      "mnemonic": "OR R,R",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "OR registers"
+    },
+    {
+      "mnemonic": "CMP R,R",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,V,Z,N",
+      "notes": "Compare registers"
+    },
+    {
+      "mnemonic": "LD R,mem",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "ST R,mem",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "LD R,(R)",
+      "opcode": "0x12",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Load indirect"
+    },
+    {
+      "mnemonic": "ST R,(R)",
+      "opcode": "0x13",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Store indirect"
+    },
+    {
+      "mnemonic": "MOV R,R",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register"
+    },
+    {
+      "mnemonic": "LDI R,#imm",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "JMP addr",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Unconditional jump"
+    },
+    {
+      "mnemonic": "JZ addr",
+      "opcode": "0x31",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump if zero"
+    },
+    {
+      "mnemonic": "CALL addr",
+      "opcode": "0x32",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x33",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "CAS R,R,R",
+      "opcode": "0x40",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "Compare-and-swap (atomic)"
+    },
+    {
+      "mnemonic": "CHKPT",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Checkpoint state for recovery"
+    },
+    {
+      "mnemonic": "RECOV",
+      "opcode": "0x51",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Recovery to checkpoint"
+    },
+    {
+      "mnemonic": "SYNC",
+      "opcode": "0x52",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Synchronize processors"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

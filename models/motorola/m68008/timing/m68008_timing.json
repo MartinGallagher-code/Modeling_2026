@@ -1,0 +1,22 @@
+{
+  "processor": "Motorola 68008",
+  "manufacturer": "Motorola",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Motorola MC68008 datasheet, 1982",
+  "base_architecture": "Motorola 68000",
+  "base_timing_reference": "models/motorola/m68000/timing/m68000_timing.json",
+  "timing_notes": "Identical ISA to 68000 but with 8-bit external data bus (vs 16-bit). Word and long operations take additional bus cycles due to 8-bit bus width. 20-bit address bus (1MB vs 16MB). Internal timing identical for register-only operations; memory operations take roughly 2x for word and 4x for long accesses.",
+  "instruction_count": 235,
+  "instructions": [
+    {
+      "mnemonic": "NOTE",
+      "bytes": 0,
+      "cycles": 0,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "All 235 instructions share ISA with 68000. See m68000_timing.json for base instruction listing. 68008 memory access timings are longer due to 8-bit external bus: word ops add ~4 cycles, long ops add ~12 cycles vs 68000."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "processor": "Motorola 6802",
+  "manufacturer": "Motorola",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Motorola MC6802 datasheet, 1977",
+  "base_architecture": "Motorola 6800",
+  "base_timing_reference": "models/motorola/m6800/timing/m6800_timing.json",
+  "timing_notes": "Instruction set and timing identical to 6800. Adds 128 bytes on-chip RAM and internal clock oscillator. All cycle counts unchanged from 6800.",
+  "instruction_count": 197,
+  "instructions": [
+    {
+      "mnemonic": "NOTE",
+      "bytes": 0,
+      "cycles": 0,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "All 197 instructions identical to 6800 base. See m6800_timing.json for complete instruction listing. 6802 adds on-chip 128B RAM and clock oscillator but no ISA changes."
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "processor": "TI TMS34010",
+  "manufacturer": "Texas Instruments",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "TMS34010 Users Guide",
+  "instruction_count": 110,
+  "notes": "First programmable GPU. 32-bit with pixel operations. 6 MHz.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x4000",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "32-bit add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x4400",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x5000",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x5400",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x5800",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "CMP",
+      "opcode": "0x4800",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "MOVE",
+      "opcode": "0x4C00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move register"
+    },
+    {
+      "mnemonic": "MOVI",
+      "opcode": "0x09E0",
+      "bytes": 6,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Move immediate"
+    },
+    {
+      "mnemonic": "LMO",
+      "opcode": "0x6A00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "Leftmost one"
+    },
+    {
+      "mnemonic": "MOVE *R,R",
+      "opcode": "0x6C00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "MOVE R,*R",
+      "opcode": "0x6E00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "PIXBLT",
+      "opcode": "0x0F00",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Pixel block transfer"
+    },
+    {
+      "mnemonic": "LINE",
+      "opcode": "0xDF80",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Draw line"
+    },
+    {
+      "mnemonic": "FILL",
+      "opcode": "0x0FC0",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Fill region"
+    },
+    {
+      "mnemonic": "JR",
+      "opcode": "0x0100",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Jump relative"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x0920",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RETS",
+      "opcode": "0x00A0",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "MMTM",
+      "opcode": "0x0980",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move multiple to memory"
+    },
+    {
+      "mnemonic": "MMFM",
+      "opcode": "0x09A0",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move multiple from memory"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x0300",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

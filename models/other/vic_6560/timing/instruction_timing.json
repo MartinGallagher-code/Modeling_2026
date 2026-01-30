@@ -1,0 +1,130 @@
+{
+  "processor": "Commodore VIC (6560)",
+  "manufacturer": "Commodore/MOS",
+  "year": 1980,
+  "source": "6560/6561 VIC video chip datasheet",
+  "instruction_count": 12,
+  "instructions": [
+    {
+      "mnemonic": "CHAR_FETCH",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Fetch character code from screen RAM"
+    },
+    {
+      "mnemonic": "CHAR_RENDER",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render 8x8 character row"
+    },
+    {
+      "mnemonic": "COLOR_FETCH",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Fetch color nybble"
+    },
+    {
+      "mnemonic": "COLOR_APPLY",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Apply color attribute"
+    },
+    {
+      "mnemonic": "SPR_FETCH",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Sprite pattern fetch"
+    },
+    {
+      "mnemonic": "SPR_RENDER",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Sprite render"
+    },
+    {
+      "mnemonic": "SYNC_H",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Horizontal sync"
+    },
+    {
+      "mnemonic": "SYNC_V",
+      "opcode": "0x31",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Vertical sync"
+    },
+    {
+      "mnemonic": "SND_GEN",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Sound waveform generation"
+    },
+    {
+      "mnemonic": "NOISE_GEN",
+      "opcode": "0x41",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Noise generation"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write VIC register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x51",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read VIC register"
+    }
+  ],
+  "schema_version": "1.0"
+}

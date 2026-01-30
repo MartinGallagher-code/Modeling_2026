@@ -1,0 +1,111 @@
+{
+  "processor": "TI TMS320C50",
+  "manufacturer": "Texas Instruments",
+  "year": 1991,
+  "schema_version": "1.0",
+  "source": "TMS320C50 Users Guide",
+  "instruction_count": 128,
+  "notes": "Enhanced fixed-point DSP. 50 MHz. Improved C25 successor.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x0000",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x0100",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "MPY",
+      "opcode": "0x6D00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Multiply"
+    },
+    {
+      "mnemonic": "MAC",
+      "opcode": "0x5600",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "direct",
+      "flags_affected": "OV",
+      "notes": "Multiply-accumulate"
+    },
+    {
+      "mnemonic": "DMOV",
+      "opcode": "0x6900",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Data move"
+    },
+    {
+      "mnemonic": "B",
+      "opcode": "0x7E00",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x7E20",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x7F80",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "RPT",
+      "opcode": "0x7B00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Repeat"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x8B00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

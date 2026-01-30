@@ -1,0 +1,25 @@
+{
+  "processor": "Brooktree Bt101",
+  "manufacturer": "Brooktree",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "Bt101 RAMDAC datasheet, Brooktree Corporation 1984",
+  "instruction_count": 15,
+  "instructions": [
+    {"mnemonic": "PAL_ADDR_WR", "opcode": "0x00", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Write palette address register for write mode"},
+    {"mnemonic": "PAL_DATA_WR", "opcode": "0x01", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Write palette data (R/G/B sequential, auto-increment)"},
+    {"mnemonic": "PAL_ADDR_RD", "opcode": "0x02", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Write palette address for read mode"},
+    {"mnemonic": "PAL_DATA_RD", "opcode": "0x03", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Read palette data (auto-increment)"},
+    {"mnemonic": "PIX_LOOKUP", "opcode": "0x10", "bytes": 1, "cycles": 2, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Pixel index to palette color lookup"},
+    {"mnemonic": "RGB_LOOKUP", "opcode": "0x11", "bytes": 1, "cycles": 3, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Full RGB palette lookup with interpolation"},
+    {"mnemonic": "DAC_R", "opcode": "0x20", "bytes": 1, "cycles": 3, "category": "special", "addressing_mode": "pipeline", "flags_affected": "none", "notes": "Red channel DAC conversion"},
+    {"mnemonic": "DAC_G", "opcode": "0x21", "bytes": 1, "cycles": 3, "category": "special", "addressing_mode": "pipeline", "flags_affected": "none", "notes": "Green channel DAC conversion"},
+    {"mnemonic": "DAC_B", "opcode": "0x22", "bytes": 1, "cycles": 3, "category": "special", "addressing_mode": "pipeline", "flags_affected": "none", "notes": "Blue channel DAC conversion"},
+    {"mnemonic": "PIX_CLK_SYNC", "opcode": "0x30", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Pixel clock synchronization"},
+    {"mnemonic": "HSYNC", "opcode": "0x31", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Horizontal sync pulse"},
+    {"mnemonic": "VSYNC", "opcode": "0x32", "bytes": 1, "cycles": 2, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Vertical sync pulse"},
+    {"mnemonic": "BLANK", "opcode": "0x33", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Blanking output"},
+    {"mnemonic": "CTRL_REG_WR", "opcode": "0x40", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Control register write (mode, resolution)"},
+    {"mnemonic": "CTRL_REG_RD", "opcode": "0x41", "bytes": 1, "cycles": 2, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Control register read"}
+  ]
+}

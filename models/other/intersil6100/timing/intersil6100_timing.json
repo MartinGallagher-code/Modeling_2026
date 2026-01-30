@@ -1,0 +1,30 @@
+{
+  "processor": "Intersil IM6100",
+  "manufacturer": "Intersil",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "IM6100 datasheet",
+  "instruction_count": 20,
+  "instructions": [
+    {"mnemonic": "AND", "opcode": "0x0000", "bytes": 2, "cycles": 10, "category": "alu", "addressing_mode": "direct", "flags_affected": "none", "notes": "AND memory with AC, direct page; 10 states (500ns each at 4 MHz)"},
+    {"mnemonic": "AND.I", "opcode": "0x0400", "bytes": 2, "cycles": 15, "category": "alu", "addressing_mode": "indirect", "flags_affected": "none", "notes": "AND memory with AC, indirect; 15 states"},
+    {"mnemonic": "TAD", "opcode": "0x1000", "bytes": 2, "cycles": 10, "category": "alu", "addressing_mode": "direct", "flags_affected": "L", "notes": "Two's complement add to AC; 10 states direct"},
+    {"mnemonic": "TAD.I", "opcode": "0x1400", "bytes": 2, "cycles": 15, "category": "alu", "addressing_mode": "indirect", "flags_affected": "L", "notes": "Two's complement add, indirect; 15 states"},
+    {"mnemonic": "ISZ", "opcode": "0x2000", "bytes": 2, "cycles": 16, "category": "memory", "addressing_mode": "direct", "flags_affected": "none", "notes": "Increment memory and skip if zero; 16 states"},
+    {"mnemonic": "ISZ.I", "opcode": "0x2400", "bytes": 2, "cycles": 22, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Increment and skip, indirect; 22 states"},
+    {"mnemonic": "DCA", "opcode": "0x3000", "bytes": 2, "cycles": 11, "category": "memory", "addressing_mode": "direct", "flags_affected": "none", "notes": "Deposit and clear AC; 11 states"},
+    {"mnemonic": "DCA.I", "opcode": "0x3400", "bytes": 2, "cycles": 16, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Deposit and clear, indirect; 16 states"},
+    {"mnemonic": "JMS", "opcode": "0x4000", "bytes": 2, "cycles": 11, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump to subroutine; 11 states"},
+    {"mnemonic": "JMS.I", "opcode": "0x4400", "bytes": 2, "cycles": 16, "category": "control", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Jump to subroutine, indirect; 16 states"},
+    {"mnemonic": "JMP", "opcode": "0x5000", "bytes": 2, "cycles": 10, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Unconditional jump; 10 states"},
+    {"mnemonic": "JMP.I", "opcode": "0x5400", "bytes": 2, "cycles": 15, "category": "control", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Jump indirect; 15 states"},
+    {"mnemonic": "IOT", "opcode": "0x6000", "bytes": 2, "cycles": 12, "category": "io", "addressing_mode": "device", "flags_affected": "varies", "notes": "I/O transfer; 12 states"},
+    {"mnemonic": "CLA", "opcode": "0x7200", "bytes": 2, "cycles": 6, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Clear AC; OPR group 1, 6 states"},
+    {"mnemonic": "CMA", "opcode": "0x7040", "bytes": 2, "cycles": 6, "category": "alu", "addressing_mode": "implied", "flags_affected": "none", "notes": "Complement AC; OPR group 1"},
+    {"mnemonic": "RAL", "opcode": "0x7004", "bytes": 2, "cycles": 6, "category": "alu", "addressing_mode": "implied", "flags_affected": "L", "notes": "Rotate AC+L left; OPR group 1"},
+    {"mnemonic": "RAR", "opcode": "0x7010", "bytes": 2, "cycles": 6, "category": "alu", "addressing_mode": "implied", "flags_affected": "L", "notes": "Rotate AC+L right; OPR group 1"},
+    {"mnemonic": "SMA", "opcode": "0x7500", "bytes": 2, "cycles": 6, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Skip on minus AC; OPR group 2"},
+    {"mnemonic": "SZA", "opcode": "0x7440", "bytes": 2, "cycles": 6, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Skip on zero AC; OPR group 2"},
+    {"mnemonic": "HLT", "opcode": "0x7402", "bytes": 2, "cycles": 6, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Halt; OPR group 2"}
+  ]
+}

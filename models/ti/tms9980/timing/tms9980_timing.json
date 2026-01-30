@@ -1,0 +1,183 @@
+{
+  "processor": "TI TMS9980",
+  "manufacturer": "Texas Instruments",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "TMS9980 datasheet",
+  "base_architecture": "TMS9900",
+  "base_timing_reference": "tms9900",
+  "timing_notes": "8-bit bus version of TMS9900. Same instruction set, extra cycles for 8-bit bus word access.",
+  "instruction_count": 69,
+  "instructions": [
+    {
+      "mnemonic": "A",
+      "opcode": "0xA000",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "LAEOCV",
+      "notes": "Add word"
+    },
+    {
+      "mnemonic": "S",
+      "opcode": "0x6000",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "LAEOCV",
+      "notes": "Subtract word"
+    },
+    {
+      "mnemonic": "C",
+      "opcode": "0x8000",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "LAEO",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "MOV",
+      "opcode": "0xC000",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "LAEO",
+      "notes": "Move word"
+    },
+    {
+      "mnemonic": "LI",
+      "opcode": "0x0200",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "LAEO",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "SWPB",
+      "opcode": "0x06C0",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Swap bytes"
+    },
+    {
+      "mnemonic": "SLA",
+      "opcode": "0x0A00",
+      "bytes": 2,
+      "cycles": 20,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "LAEOCV",
+      "notes": "Shift left arithmetic"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x1000",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JEQ",
+      "opcode": "0x1300",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Jump if equal"
+    },
+    {
+      "mnemonic": "BL",
+      "opcode": "0x0680",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Branch and link"
+    },
+    {
+      "mnemonic": "BLWP",
+      "opcode": "0x0400",
+      "bytes": 4,
+      "cycles": 26,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Branch and load workspace"
+    },
+    {
+      "mnemonic": "RTWP",
+      "opcode": "0x0380",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "LAEOCV",
+      "notes": "Return workspace"
+    },
+    {
+      "mnemonic": "MPY",
+      "opcode": "0x3800",
+      "bytes": 2,
+      "cycles": 52,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Multiply"
+    },
+    {
+      "mnemonic": "DIV",
+      "opcode": "0x3C00",
+      "bytes": 2,
+      "cycles": 92,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "OV",
+      "notes": "Divide"
+    },
+    {
+      "mnemonic": "LDCR",
+      "opcode": "0x3000",
+      "bytes": 2,
+      "cycles": 20,
+      "category": "io",
+      "addressing_mode": "cru",
+      "flags_affected": "LAEO",
+      "notes": "Load CRU"
+    },
+    {
+      "mnemonic": "STCR",
+      "opcode": "0x3400",
+      "bytes": 2,
+      "cycles": 22,
+      "category": "io",
+      "addressing_mode": "cru",
+      "flags_affected": "LAEO",
+      "notes": "Store CRU"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x1000",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "processor": "TI SBP0400",
+  "manufacturer": "Texas Instruments",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "SBP0400 datasheet",
+  "instruction_count": 16,
+  "notes": "I2L (integrated injection logic) 4-bit bit-slice processor.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x0",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "4-bit add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x1",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x2",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x3",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x4",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "SHL",
+      "opcode": "0x5",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Shift left"
+    },
+    {
+      "mnemonic": "SHR",
+      "opcode": "0x6",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Shift right"
+    },
+    {
+      "mnemonic": "MOV",
+      "opcode": "0x7",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move"
+    },
+    {
+      "mnemonic": "LDI",
+      "opcode": "0x8",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "IN",
+      "opcode": "0x9",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0xA",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0xB",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JZ",
+      "opcode": "0xC",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump if zero"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xF",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

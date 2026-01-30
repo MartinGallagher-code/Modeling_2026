@@ -1,0 +1,172 @@
+{
+  "processor": "Motorola 68851",
+  "manufacturer": "Motorola",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "MC68851 Paged Memory Management Unit User's Manual, Motorola 1986",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "PFLUSH SFC,#mask",
+      "bytes": 4,
+      "cycles": 48,
+      "category": "protection",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Flush ATC entries matching SFC and mask"
+    },
+    {
+      "mnemonic": "PFLUSH DFC,#mask",
+      "bytes": 4,
+      "cycles": 48,
+      "category": "protection",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Flush ATC entries matching DFC and mask"
+    },
+    {
+      "mnemonic": "PFLUSHA",
+      "bytes": 4,
+      "cycles": 36,
+      "category": "protection",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Flush all ATC entries"
+    },
+    {
+      "mnemonic": "PFLUSHS SFC,#mask",
+      "bytes": 4,
+      "cycles": 48,
+      "category": "protection",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Flush shared ATC entries"
+    },
+    {
+      "mnemonic": "PLOAD SFC,(An)",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "protection",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Load ATC entry with SFC"
+    },
+    {
+      "mnemonic": "PLOAD DFC,(An)",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "protection",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Load ATC entry with DFC"
+    },
+    {
+      "mnemonic": "PMOVE.L TC,ea",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move translation control register to memory"
+    },
+    {
+      "mnemonic": "PMOVE.L ea,TC",
+      "bytes": 4,
+      "cycles": 28,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move memory to translation control register"
+    },
+    {
+      "mnemonic": "PMOVE.Q CRP,ea",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move CPU root pointer to memory"
+    },
+    {
+      "mnemonic": "PMOVE.Q ea,CRP",
+      "bytes": 4,
+      "cycles": 32,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move memory to CPU root pointer"
+    },
+    {
+      "mnemonic": "PMOVE.Q SRP,ea",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move supervisor root pointer to memory"
+    },
+    {
+      "mnemonic": "PMOVE.Q ea,SRP",
+      "bytes": 4,
+      "cycles": 32,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move memory to supervisor root pointer"
+    },
+    {
+      "mnemonic": "PMOVE.W MMUSR,ea",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move MMU status register"
+    },
+    {
+      "mnemonic": "PTEST SFC,(An),#level",
+      "bytes": 4,
+      "cycles": 40,
+      "category": "protection",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "MMUSR",
+      "notes": "Test translation with SFC (searches page tables)"
+    },
+    {
+      "mnemonic": "PTEST DFC,(An),#level",
+      "bytes": 4,
+      "cycles": 40,
+      "category": "protection",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "MMUSR",
+      "notes": "Test translation with DFC"
+    },
+    {
+      "mnemonic": "PSAVE (An)",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Save MMU state frame"
+    },
+    {
+      "mnemonic": "PRESTORE (An)",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Restore MMU state frame"
+    },
+    {
+      "mnemonic": "PVALID VAL,(An)",
+      "bytes": 4,
+      "cycles": 32,
+      "category": "protection",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "MMUSR",
+      "notes": "Validate address mapping"
+    }
+  ]
+}

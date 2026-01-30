@@ -1,0 +1,22 @@
+{
+  "processor": "Motorola 6805R2",
+  "manufacturer": "Motorola",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Motorola MC6805R2 datasheet, 1981",
+  "base_architecture": "Motorola 6805",
+  "base_timing_reference": "models/motorola/m6805/timing/m6805_timing.json",
+  "timing_notes": "Instruction set and timing identical to 6805. The 6805R2 adds on-chip peripherals (UART, timer, I/O ports) but the CPU core and instruction timing are unchanged from the base 6805.",
+  "instruction_count": 188,
+  "instructions": [
+    {
+      "mnemonic": "NOTE",
+      "bytes": 0,
+      "cycles": 0,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "All 188 instructions identical to 6805 base. See m6805_timing.json for complete instruction listing. 6805R2 adds UART, timer, and I/O peripherals with no CPU core changes."
+    }
+  ]
+}

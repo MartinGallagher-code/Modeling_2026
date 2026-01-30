@@ -1,0 +1,32 @@
+{
+  "processor": "LMI Lambda",
+  "manufacturer": "LISP Machines Inc.",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "LMI Lambda documentation",
+  "instruction_count": 22,
+  "instructions": [
+    {"mnemonic": "CAR", "opcode": "0x00", "bytes": 4, "cycles": 2, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Take first element of cons cell; hardware-assisted, 2 microcode cycles"},
+    {"mnemonic": "CDR", "opcode": "0x01", "bytes": 4, "cycles": 2, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Take rest of cons cell; hardware CDR-coding"},
+    {"mnemonic": "RPLACA", "opcode": "0x02", "bytes": 4, "cycles": 3, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Replace CAR of cons cell"},
+    {"mnemonic": "RPLACD", "opcode": "0x03", "bytes": 4, "cycles": 3, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Replace CDR of cons cell"},
+    {"mnemonic": "CONS", "opcode": "0x04", "bytes": 4, "cycles": 4, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Allocate new cons cell; slightly improved over CADR"},
+    {"mnemonic": "CONS.LIST", "opcode": "0x05", "bytes": 4, "cycles": 5, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Cons with list area allocation"},
+    {"mnemonic": "EVAL", "opcode": "0x10", "bytes": 4, "cycles": 7, "category": "special", "addressing_mode": "microcoded", "flags_affected": "all", "notes": "Evaluate S-expression; microcoded dispatch"},
+    {"mnemonic": "APPLY", "opcode": "0x11", "bytes": 4, "cycles": 8, "category": "special", "addressing_mode": "microcoded", "flags_affected": "all", "notes": "Apply function to arguments"},
+    {"mnemonic": "FUNCALL", "opcode": "0x12", "bytes": 4, "cycles": 6, "category": "special", "addressing_mode": "microcoded", "flags_affected": "all", "notes": "Function call dispatch"},
+    {"mnemonic": "RETURN", "opcode": "0x13", "bytes": 4, "cycles": 5, "category": "control", "addressing_mode": "microcoded", "flags_affected": "none", "notes": "Return from function"},
+    {"mnemonic": "GC.MARK", "opcode": "0x20", "bytes": 4, "cycles": 10, "category": "special", "addressing_mode": "tagged", "flags_affected": "gc_bits", "notes": "Garbage collector mark phase step"},
+    {"mnemonic": "GC.SWEEP", "opcode": "0x21", "bytes": 4, "cycles": 12, "category": "special", "addressing_mode": "tagged", "flags_affected": "gc_bits", "notes": "Garbage collector sweep phase step"},
+    {"mnemonic": "GC.TRANS", "opcode": "0x22", "bytes": 4, "cycles": 14, "category": "special", "addressing_mode": "tagged", "flags_affected": "gc_bits", "notes": "GC transport (copy collector)"},
+    {"mnemonic": "LD.TAGGED", "opcode": "0x30", "bytes": 4, "cycles": 5, "category": "memory", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Load with tag checking; 5 cycles includes type dispatch"},
+    {"mnemonic": "ST.TAGGED", "opcode": "0x31", "bytes": 4, "cycles": 5, "category": "memory", "addressing_mode": "tagged", "flags_affected": "none", "notes": "Store with tag preservation"},
+    {"mnemonic": "LD.ARRAY", "opcode": "0x32", "bytes": 4, "cycles": 6, "category": "memory", "addressing_mode": "indexed", "flags_affected": "type_tag", "notes": "Array element access with bounds check"},
+    {"mnemonic": "TYPEP", "opcode": "0x40", "bytes": 4, "cycles": 2, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Type predicate check (hardware tag compare)"},
+    {"mnemonic": "TYPECASE", "opcode": "0x41", "bytes": 4, "cycles": 4, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Multi-way type dispatch"},
+    {"mnemonic": "COERCE", "opcode": "0x42", "bytes": 4, "cycles": 3, "category": "special", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Type coercion with tag update"},
+    {"mnemonic": "ADD.FX", "opcode": "0x50", "bytes": 4, "cycles": 3, "category": "alu", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Fixnum add with overflow to bignum check"},
+    {"mnemonic": "SUB.FX", "opcode": "0x51", "bytes": 4, "cycles": 3, "category": "alu", "addressing_mode": "tagged", "flags_affected": "type_tag", "notes": "Fixnum subtract"},
+    {"mnemonic": "BRANCH", "opcode": "0x60", "bytes": 4, "cycles": 4, "category": "control", "addressing_mode": "relative", "flags_affected": "none", "notes": "Conditional branch on predicate"}
+  ]
+}

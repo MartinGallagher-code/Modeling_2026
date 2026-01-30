@@ -1,0 +1,26 @@
+{
+  "processor": "ICL DAP (Distributed Array Processor)",
+  "manufacturer": "ICL",
+  "year": 1980,
+  "schema_version": "1.0",
+  "source": "ICL DAP documentation",
+  "instruction_count": 16,
+  "instructions": [
+    {"mnemonic": "AND.B", "opcode": "0x00", "bytes": 2, "cycles": 6, "category": "bit", "addressing_mode": "array", "flags_affected": "none", "notes": "Bit-serial AND across 4096 PEs; 6 cycles per bit"},
+    {"mnemonic": "OR.B", "opcode": "0x01", "bytes": 2, "cycles": 6, "category": "bit", "addressing_mode": "array", "flags_affected": "none", "notes": "Bit-serial OR across 4096 PEs"},
+    {"mnemonic": "XOR.B", "opcode": "0x02", "bytes": 2, "cycles": 6, "category": "bit", "addressing_mode": "array", "flags_affected": "none", "notes": "Bit-serial XOR across 4096 PEs"},
+    {"mnemonic": "NOT.B", "opcode": "0x03", "bytes": 2, "cycles": 4, "category": "bit", "addressing_mode": "array", "flags_affected": "none", "notes": "Bit-serial NOT; single operand, 4 cycles"},
+    {"mnemonic": "ADD.W", "opcode": "0x10", "bytes": 2, "cycles": 10, "category": "alu", "addressing_mode": "array", "flags_affected": "none", "notes": "Word add across PEs; bit-serial 10 cycles for 32-bit"},
+    {"mnemonic": "SUB.W", "opcode": "0x11", "bytes": 2, "cycles": 10, "category": "alu", "addressing_mode": "array", "flags_affected": "none", "notes": "Word subtract across PEs; 10 cycles"},
+    {"mnemonic": "MUL.W", "opcode": "0x12", "bytes": 2, "cycles": 32, "category": "multiply", "addressing_mode": "array", "flags_affected": "none", "notes": "Word multiply; bit-serial ~32 cycles"},
+    {"mnemonic": "CMP.W", "opcode": "0x13", "bytes": 2, "cycles": 10, "category": "alu", "addressing_mode": "array", "flags_affected": "activity", "notes": "Word compare; sets PE activity mask"},
+    {"mnemonic": "VECLD", "opcode": "0x20", "bytes": 4, "cycles": 14, "category": "memory", "addressing_mode": "vector", "flags_affected": "none", "notes": "Vector load to PE array; 14 cycles"},
+    {"mnemonic": "VECST", "opcode": "0x21", "bytes": 4, "cycles": 14, "category": "memory", "addressing_mode": "vector", "flags_affected": "none", "notes": "Vector store from PE array; 14 cycles"},
+    {"mnemonic": "VECSHL", "opcode": "0x22", "bytes": 4, "cycles": 12, "category": "memory", "addressing_mode": "vector", "flags_affected": "none", "notes": "Vector shift (inter-PE communication); 12 cycles"},
+    {"mnemonic": "BCAST", "opcode": "0x23", "bytes": 4, "cycles": 16, "category": "memory", "addressing_mode": "broadcast", "flags_affected": "none", "notes": "Broadcast scalar to all PEs; 16 cycles"},
+    {"mnemonic": "ACTSET", "opcode": "0x30", "bytes": 2, "cycles": 8, "category": "control", "addressing_mode": "mask", "flags_affected": "activity", "notes": "Set PE activity mask; 8 cycles"},
+    {"mnemonic": "ACTCLR", "opcode": "0x31", "bytes": 2, "cycles": 6, "category": "control", "addressing_mode": "mask", "flags_affected": "activity", "notes": "Clear PE activity mask; 6 cycles"},
+    {"mnemonic": "BRANCH", "opcode": "0x32", "bytes": 4, "cycles": 8, "category": "control", "addressing_mode": "relative", "flags_affected": "none", "notes": "Control unit branch; 8 cycles"},
+    {"mnemonic": "SYNC", "opcode": "0x33", "bytes": 2, "cycles": 10, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Synchronize all PEs; 10 cycles"}
+  ]
+}

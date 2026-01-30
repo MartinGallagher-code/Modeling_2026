@@ -1,0 +1,203 @@
+{
+  "processor": "National NSC800",
+  "manufacturer": "National Semiconductor",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "NSC800 datasheet",
+  "base_architecture": "Z80",
+  "base_timing_reference": "z80",
+  "timing_notes": "Z80-compatible CMOS. Same instruction set and timing. Different pinout. Used in Epson HX-20.",
+  "instruction_count": 158,
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x80",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPNC",
+      "notes": "Add register"
+    },
+    {
+      "mnemonic": "ADC",
+      "opcode": "0x88",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPNC",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x90",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPNC",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0xA0",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYH1P0C",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0xB0",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYH0P0C",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "CP",
+      "opcode": "0xB8",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPNC",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "LD r,r",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Load register"
+    },
+    {
+      "mnemonic": "LD r,n",
+      "opcode": "0x06",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "LD r,(HL)",
+      "opcode": "0x46",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "LD (HL),r",
+      "opcode": "0x70",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "JP nn",
+      "opcode": "0xC3",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JR e",
+      "opcode": "0x18",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Jump relative"
+    },
+    {
+      "mnemonic": "CALL nn",
+      "opcode": "0xCD",
+      "bytes": 3,
+      "cycles": 17,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0xC9",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "PUSH rr",
+      "opcode": "0xC5",
+      "bytes": 1,
+      "cycles": 11,
+      "category": "stack",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Push pair"
+    },
+    {
+      "mnemonic": "POP rr",
+      "opcode": "0xC1",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "stack",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Pop pair"
+    },
+    {
+      "mnemonic": "IN A,(n)",
+      "opcode": "0xDB",
+      "bytes": 2,
+      "cycles": 11,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input from port"
+    },
+    {
+      "mnemonic": "OUT (n),A",
+      "opcode": "0xD3",
+      "bytes": 2,
+      "cycles": 11,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output to port"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

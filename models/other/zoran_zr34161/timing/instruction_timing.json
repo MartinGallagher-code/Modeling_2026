@@ -1,0 +1,150 @@
+{
+  "processor": "Zoran ZR34161",
+  "manufacturer": "Zoran",
+  "year": 1991,
+  "source": "ZR34161 JPEG/MPEG Decoder DSP datasheet",
+  "instruction_count": 14,
+  "instructions": [
+    {
+      "mnemonic": "IDCT_ROW",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "1D IDCT row transform"
+    },
+    {
+      "mnemonic": "IDCT_COL",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "1D IDCT column transform"
+    },
+    {
+      "mnemonic": "DEQUANT",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Dequantize DCT coefficients"
+    },
+    {
+      "mnemonic": "HUFFDEC",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Huffman decode symbol"
+    },
+    {
+      "mnemonic": "VLC_RD",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Variable-length code read"
+    },
+    {
+      "mnemonic": "MAC",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply-accumulate"
+    },
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x31",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x32",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "LD",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Load from buffer"
+    },
+    {
+      "mnemonic": "ST",
+      "opcode": "0x41",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Store to buffer"
+    },
+    {
+      "mnemonic": "BRA",
+      "opcode": "0x50",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x51",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x52",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

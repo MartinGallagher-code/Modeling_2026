@@ -1,0 +1,424 @@
+{
+  "processor": "Motorola 68881",
+  "manufacturer": "Motorola",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "MC68881/MC68882 Floating-Point Coprocessor User's Manual, Motorola 1990",
+  "instruction_count": 46,
+  "instructions": [
+    {
+      "mnemonic": "FABS.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point absolute value"
+    },
+    {
+      "mnemonic": "FACOS.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 460,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Arc cosine"
+    },
+    {
+      "mnemonic": "FADD.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 28,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point add extended"
+    },
+    {
+      "mnemonic": "FADD.D ea,FPn",
+      "bytes": 4,
+      "cycles": 32,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point add double from memory"
+    },
+    {
+      "mnemonic": "FADD.S ea,FPn",
+      "bytes": 4,
+      "cycles": 28,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point add single from memory"
+    },
+    {
+      "mnemonic": "FASIN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 460,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Arc sine"
+    },
+    {
+      "mnemonic": "FATAN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 400,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Arc tangent"
+    },
+    {
+      "mnemonic": "FBcc label",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch on FP condition"
+    },
+    {
+      "mnemonic": "FCMP.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point compare"
+    },
+    {
+      "mnemonic": "FCOS.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 440,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Cosine"
+    },
+    {
+      "mnemonic": "FDIV.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 108,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point divide extended"
+    },
+    {
+      "mnemonic": "FDIV.D ea,FPn",
+      "bytes": 4,
+      "cycles": 112,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point divide double from memory"
+    },
+    {
+      "mnemonic": "FETOX.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 420,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "e^x"
+    },
+    {
+      "mnemonic": "FGETEXP.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Get exponent"
+    },
+    {
+      "mnemonic": "FGETMAN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Get mantissa"
+    },
+    {
+      "mnemonic": "FINT.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Integer part"
+    },
+    {
+      "mnemonic": "FINTRZ.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Integer part (round to zero)"
+    },
+    {
+      "mnemonic": "FLOG10.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 480,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Log base 10"
+    },
+    {
+      "mnemonic": "FLOG2.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 480,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Log base 2"
+    },
+    {
+      "mnemonic": "FLOGN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 480,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Natural log"
+    },
+    {
+      "mnemonic": "FMOD.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 120,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Modulo remainder"
+    },
+    {
+      "mnemonic": "FMOVE.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Move FP register"
+    },
+    {
+      "mnemonic": "FMOVE.D ea,FPn",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "Move double from memory to FP register"
+    },
+    {
+      "mnemonic": "FMOVE.D FPn,ea",
+      "bytes": 4,
+      "cycles": 16,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move FP register to memory as double"
+    },
+    {
+      "mnemonic": "FMOVE.S ea,FPn",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "Move single from memory"
+    },
+    {
+      "mnemonic": "FMOVE.L Dn,FPn",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Move integer to FP register"
+    },
+    {
+      "mnemonic": "FMOVECR #rom,FPn",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "float",
+      "addressing_mode": "immediate",
+      "flags_affected": "FPCC",
+      "notes": "Move constant ROM (pi, e, etc.)"
+    },
+    {
+      "mnemonic": "FMOVEM.X list,ea",
+      "bytes": 4,
+      "cycles": 44,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move multiple FP registers to memory"
+    },
+    {
+      "mnemonic": "FMOVEM.X ea,list",
+      "bytes": 4,
+      "cycles": 44,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Move multiple FP registers from memory"
+    },
+    {
+      "mnemonic": "FMUL.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 76,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point multiply extended"
+    },
+    {
+      "mnemonic": "FMUL.D ea,FPn",
+      "bytes": 4,
+      "cycles": 80,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point multiply double from memory"
+    },
+    {
+      "mnemonic": "FNEG.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point negate"
+    },
+    {
+      "mnemonic": "FREM.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 120,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "IEEE remainder"
+    },
+    {
+      "mnemonic": "FRESTORE ea",
+      "bytes": 4,
+      "cycles": 28,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Restore FPU state"
+    },
+    {
+      "mnemonic": "FSAVE ea",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Save FPU state"
+    },
+    {
+      "mnemonic": "FSCALE.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Scale exponent"
+    },
+    {
+      "mnemonic": "FSIN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 420,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Sine"
+    },
+    {
+      "mnemonic": "FSINCOS.X FPn,FPc:FPs",
+      "bytes": 4,
+      "cycles": 480,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Simultaneous sine and cosine"
+    },
+    {
+      "mnemonic": "FSQRT.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 128,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Square root extended"
+    },
+    {
+      "mnemonic": "FSUB.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 28,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point subtract extended"
+    },
+    {
+      "mnemonic": "FTAN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 480,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Tangent"
+    },
+    {
+      "mnemonic": "FTANH.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 400,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Hyperbolic tangent"
+    },
+    {
+      "mnemonic": "FTENTOX.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 440,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "10^x"
+    },
+    {
+      "mnemonic": "FTST.X FPn",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Test FP register"
+    },
+    {
+      "mnemonic": "FTWOTOX.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 420,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "2^x"
+    },
+    {
+      "mnemonic": "FScc Dn",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "none",
+      "notes": "Set byte on FP condition"
+    }
+  ]
+}

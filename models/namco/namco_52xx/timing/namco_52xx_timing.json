@@ -1,0 +1,71 @@
+{
+  "processor": "Namco 52xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "MAME docs",
+  "instruction_count": 6,
+  "notes": "Sample playback chip with DMA and DAC.",
+  "instructions": [
+    {
+      "mnemonic": "DMA",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "DMA sample fetch from ROM"
+    },
+    {
+      "mnemonic": "SDEC",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Sample decode"
+    },
+    {
+      "mnemonic": "DAC",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "DAC output"
+    },
+    {
+      "mnemonic": "CTRL",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Playback control"
+    },
+    {
+      "mnemonic": "RATE",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Sample rate timing"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

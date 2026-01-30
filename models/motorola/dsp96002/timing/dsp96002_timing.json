@@ -1,0 +1,505 @@
+{
+  "processor": "Motorola DSP96002",
+  "manufacturer": "Motorola",
+  "year": 1989,
+  "schema_version": "1.0",
+  "source": "DSP96002 IEEE Floating-Point Dual-Port Processor User's Manual, Motorola 1990",
+  "instruction_count": 68,
+  "instructions": [
+    {
+      "mnemonic": "FABS.S D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "IEEE 754 single-precision absolute value"
+    },
+    {
+      "mnemonic": "FADD.S D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "IEEE 754 SP float add"
+    },
+    {
+      "mnemonic": "FADD.D D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "IEEE 754 DP float add"
+    },
+    {
+      "mnemonic": "FCMP.S D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float compare"
+    },
+    {
+      "mnemonic": "FDIV.S D0,D1",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float divide single (iterative)"
+    },
+    {
+      "mnemonic": "FDIV.D D0,D1",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float divide double"
+    },
+    {
+      "mnemonic": "FLOAT.S D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Convert integer to float single"
+    },
+    {
+      "mnemonic": "FLOAT.D D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Convert integer to float double"
+    },
+    {
+      "mnemonic": "FLOOR.S D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Floor (round toward -infinity)"
+    },
+    {
+      "mnemonic": "FMPY.S D0,D1,D2",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float multiply single (single-cycle throughput)"
+    },
+    {
+      "mnemonic": "FMPY.D D0,D1,D2",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float multiply double"
+    },
+    {
+      "mnemonic": "FMPY.S-FADD.S D0,D1,D2 D3,D4,D5",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Parallel multiply-add (key DSP operation)"
+    },
+    {
+      "mnemonic": "FMPY.S-FSUB.S D0,D1,D2 D3,D4,D5",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Parallel multiply-subtract"
+    },
+    {
+      "mnemonic": "FNEG.S D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float negate"
+    },
+    {
+      "mnemonic": "FSCALE.S D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Scale exponent"
+    },
+    {
+      "mnemonic": "FSEED.S D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Seed for reciprocal (Newton-Raphson)"
+    },
+    {
+      "mnemonic": "FSQRT.S D0",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float square root single"
+    },
+    {
+      "mnemonic": "FSUB.S D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float subtract"
+    },
+    {
+      "mnemonic": "FTFR D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float transfer register"
+    },
+    {
+      "mnemonic": "FTST.S D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Float test"
+    },
+    {
+      "mnemonic": "INT.S D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZIUNV",
+      "notes": "Convert float to integer"
+    },
+    {
+      "mnemonic": "ADD D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Integer add"
+    },
+    {
+      "mnemonic": "AND D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZL",
+      "notes": "Integer AND"
+    },
+    {
+      "mnemonic": "ASL D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUVC",
+      "notes": "Arithmetic shift left"
+    },
+    {
+      "mnemonic": "ASR D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUVC",
+      "notes": "Arithmetic shift right"
+    },
+    {
+      "mnemonic": "Bcc xxxx",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch conditionally"
+    },
+    {
+      "mnemonic": "BCHG #n,X:addr",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Bit test and change"
+    },
+    {
+      "mnemonic": "BCLR #n,X:addr",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Bit test and clear"
+    },
+    {
+      "mnemonic": "BSET #n,X:addr",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Bit test and set"
+    },
+    {
+      "mnemonic": "CLR D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Clear register"
+    },
+    {
+      "mnemonic": "CMP D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Integer compare"
+    },
+    {
+      "mnemonic": "DEC D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Decrement"
+    },
+    {
+      "mnemonic": "DO #count,label",
+      "bytes": 8,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Hardware loop (zero-overhead)"
+    },
+    {
+      "mnemonic": "EOR D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZL",
+      "notes": "Exclusive OR"
+    },
+    {
+      "mnemonic": "INC D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Increment"
+    },
+    {
+      "mnemonic": "JMP xxxx",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JSR xxxx",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump to subroutine"
+    },
+    {
+      "mnemonic": "LSL D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLC",
+      "notes": "Logical shift left"
+    },
+    {
+      "mnemonic": "LSR D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLC",
+      "notes": "Logical shift right"
+    },
+    {
+      "mnemonic": "MOVE X:(R0)+,D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Move from X memory"
+    },
+    {
+      "mnemonic": "MOVE D0,X:(R0)+",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Move to X memory"
+    },
+    {
+      "mnemonic": "MOVE #imm,D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate"
+    },
+    {
+      "mnemonic": "MOVEP X:<<pp,D0",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move peripheral data"
+    },
+    {
+      "mnemonic": "NEG D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Negate"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "NOT D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZL",
+      "notes": "Logical complement"
+    },
+    {
+      "mnemonic": "OR D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZL",
+      "notes": "Logical OR"
+    },
+    {
+      "mnemonic": "REP #count",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Repeat next instruction (zero-overhead)"
+    },
+    {
+      "mnemonic": "ROL D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLC",
+      "notes": "Rotate left"
+    },
+    {
+      "mnemonic": "ROR D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLC",
+      "notes": "Rotate right"
+    },
+    {
+      "mnemonic": "RTI",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "all",
+      "notes": "Return from interrupt"
+    },
+    {
+      "mnemonic": "RTS",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "SUB D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Integer subtract"
+    },
+    {
+      "mnemonic": "TFR D0,D1",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer register"
+    },
+    {
+      "mnemonic": "TST D0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Test register"
+    }
+  ]
+}

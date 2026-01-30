@@ -1,0 +1,193 @@
+{
+  "processor": "Siemens SAB8080A",
+  "manufacturer": "Siemens",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "SAB8080A datasheet / Intel 8080 datasheet",
+  "base_architecture": "i8080",
+  "base_timing_reference": "Intel 8080",
+  "timing_notes": "West German second-source of Intel 8080. Pin-compatible, identical timing at 2 MHz.",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "ADD r",
+      "opcode": "0x80",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S,P,AC",
+      "notes": "Add register to A"
+    },
+    {
+      "mnemonic": "ADI data",
+      "opcode": "0xC6",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C,Z,S,P,AC",
+      "notes": "Add immediate"
+    },
+    {
+      "mnemonic": "SUB r",
+      "opcode": "0x90",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S,P,AC",
+      "notes": "Subtract register"
+    },
+    {
+      "mnemonic": "CMP r",
+      "opcode": "0xB8",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S,P,AC",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "MOV r,r",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register to register"
+    },
+    {
+      "mnemonic": "MVI r,data",
+      "opcode": "0x06",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate"
+    },
+    {
+      "mnemonic": "LDA addr",
+      "opcode": "0x3A",
+      "bytes": 3,
+      "cycles": 13,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load A from memory"
+    },
+    {
+      "mnemonic": "STA addr",
+      "opcode": "0x32",
+      "bytes": 3,
+      "cycles": 13,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store A to memory"
+    },
+    {
+      "mnemonic": "MOV r,M",
+      "opcode": "0x46",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Move memory to register"
+    },
+    {
+      "mnemonic": "JMP addr",
+      "opcode": "0xC3",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JZ addr",
+      "opcode": "0xCA",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump if zero"
+    },
+    {
+      "mnemonic": "CALL addr",
+      "opcode": "0xCD",
+      "bytes": 3,
+      "cycles": 17,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0xC9",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "PUSH rp",
+      "opcode": "0xC5",
+      "bytes": 1,
+      "cycles": 11,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Push register pair"
+    },
+    {
+      "mnemonic": "POP rp",
+      "opcode": "0xC1",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Pop register pair"
+    },
+    {
+      "mnemonic": "INR r",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,S,P,AC",
+      "notes": "Increment"
+    },
+    {
+      "mnemonic": "DCR r",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,S,P,AC",
+      "notes": "Decrement"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ]
+}

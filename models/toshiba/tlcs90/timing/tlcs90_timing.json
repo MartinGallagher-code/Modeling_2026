@@ -1,0 +1,251 @@
+{
+  "processor": "Toshiba TLCS-90",
+  "manufacturer": "Toshiba",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "TLCS-90 datasheet",
+  "instruction_count": 110,
+  "notes": "8-bit Z80-like CMOS MCU. 6 MHz. Z80-compatible instruction subset.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x80",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPNC",
+      "notes": "Add"
+    },
+    {
+      "mnemonic": "ADC",
+      "opcode": "0x88",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPNC",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x90",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPNC",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0xA0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH1P0",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0xB0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH0P0",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0xA8",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZH0P0",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "CP",
+      "opcode": "0xB8",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPNC",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "INC",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPV",
+      "notes": "Increment"
+    },
+    {
+      "mnemonic": "DEC",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "SZYHPV",
+      "notes": "Decrement"
+    },
+    {
+      "mnemonic": "LD r,r",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Load register"
+    },
+    {
+      "mnemonic": "LD r,n",
+      "opcode": "0x06",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "LD r,(HL)",
+      "opcode": "0x46",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "LD (HL),r",
+      "opcode": "0x70",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "JP",
+      "opcode": "0xC3",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JR",
+      "opcode": "0x18",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Jump relative"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0xCD",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0xC9",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "PUSH",
+      "opcode": "0xC5",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Push"
+    },
+    {
+      "mnemonic": "POP",
+      "opcode": "0xC1",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Pop"
+    },
+    {
+      "mnemonic": "IN",
+      "opcode": "0xDB",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0xD3",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output"
+    },
+    {
+      "mnemonic": "MUL",
+      "opcode": "0xF9",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Multiply (TLCS-90 extension)"
+    },
+    {
+      "mnemonic": "DIV",
+      "opcode": "0xFA",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "V",
+      "notes": "Divide (TLCS-90 extension)"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

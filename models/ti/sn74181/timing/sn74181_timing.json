@@ -1,0 +1,171 @@
+{
+  "processor": "TI SN74181",
+  "manufacturer": "Texas Instruments",
+  "year": 1970,
+  "schema_version": "1.0",
+  "source": "SN74181 datasheet",
+  "instruction_count": 16,
+  "notes": "Single-chip 4-bit ALU. 16 arithmetic/logic functions. Combinational logic, no clock. Timing in propagation delays (ns).",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x1001",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A plus B; ~24ns propagation"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x0110",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A minus B minus 1"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x1011",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "A AND B"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x1110",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "A OR B"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x0110",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "A XOR B"
+    },
+    {
+      "mnemonic": "NOT",
+      "opcode": "0x0000",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "NOT A"
+    },
+    {
+      "mnemonic": "NAND",
+      "opcode": "0x0100",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "A NAND B"
+    },
+    {
+      "mnemonic": "NOR",
+      "opcode": "0x0001",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "G",
+      "notes": "A NOR B"
+    },
+    {
+      "mnemonic": "INCA",
+      "opcode": "0x0000",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A plus 1"
+    },
+    {
+      "mnemonic": "DECA",
+      "opcode": "0x1111",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A minus 1"
+    },
+    {
+      "mnemonic": "CLR",
+      "opcode": "0x0011",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "",
+      "notes": "Clear (output 0)"
+    },
+    {
+      "mnemonic": "SET",
+      "opcode": "0x1100",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "",
+      "notes": "Set (output F)"
+    },
+    {
+      "mnemonic": "SHL",
+      "opcode": "0x1100",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A+A (shift left)"
+    },
+    {
+      "mnemonic": "CMP",
+      "opcode": "0x0110",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "AeqB",
+      "notes": "Compare A=B"
+    },
+    {
+      "mnemonic": "AB",
+      "opcode": "0x1000",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "CG",
+      "notes": "A plus AB"
+    },
+    {
+      "mnemonic": "PASS",
+      "opcode": "0x1111",
+      "bytes": 0,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "combinational",
+      "flags_affected": "",
+      "notes": "Pass A through"
+    }
+  ]
+}

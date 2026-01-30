@@ -1,0 +1,170 @@
+{
+  "processor": "Signetics 8X305",
+  "manufacturer": "Signetics",
+  "year": 1982,
+  "source": "8X305 Enhanced Bipolar Signal Processor datasheet",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "MOVE s,d",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register - single cycle ALU register ops"
+    },
+    {
+      "mnemonic": "ADD s,d",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "OVF",
+      "notes": "Add registers"
+    },
+    {
+      "mnemonic": "AND s,d",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "AND registers"
+    },
+    {
+      "mnemonic": "XOR s,d",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "XOR registers"
+    },
+    {
+      "mnemonic": "XEC s,addr",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Execute at address"
+    },
+    {
+      "mnemonic": "NZT s,addr",
+      "opcode": "0xA0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch if non-zero"
+    },
+    {
+      "mnemonic": "XMIT s,IV",
+      "opcode": "0xC0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Transmit to I/O bus"
+    },
+    {
+      "mnemonic": "XMIT #imm,IV",
+      "opcode": "0xC8",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Transmit immediate to I/O"
+    },
+    {
+      "mnemonic": "MOVE IV,r",
+      "opcode": "0x08",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move from I/O bus"
+    },
+    {
+      "mnemonic": "MOVE r,IV",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move to I/O bus"
+    },
+    {
+      "mnemonic": "MOVE #imm,d",
+      "opcode": "0x18",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate"
+    },
+    {
+      "mnemonic": "ADD #imm,d",
+      "opcode": "0x28",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "OVF",
+      "notes": "Add immediate"
+    },
+    {
+      "mnemonic": "EXT_RD",
+      "opcode": "0xE0",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "External memory read"
+    },
+    {
+      "mnemonic": "EXT_WR",
+      "opcode": "0xE8",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "External memory write"
+    },
+    {
+      "mnemonic": "JMP addr",
+      "opcode": "0xF0",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump absolute"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

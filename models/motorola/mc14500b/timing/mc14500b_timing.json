@@ -1,0 +1,154 @@
+{
+  "processor": "Motorola MC14500B",
+  "manufacturer": "Motorola",
+  "year": 1976,
+  "schema_version": "1.0",
+  "source": "Motorola MC14500B Industrial Control Unit Handbook, 1977",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "NOPO",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation (output)"
+    },
+    {
+      "mnemonic": "LD",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "RR",
+      "notes": "Load result register from data bus"
+    },
+    {
+      "mnemonic": "LDC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "RR",
+      "notes": "Load complement of data into RR"
+    },
+    {
+      "mnemonic": "AND",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "RR",
+      "notes": "AND data with RR"
+    },
+    {
+      "mnemonic": "ANDC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "RR",
+      "notes": "AND complement of data with RR"
+    },
+    {
+      "mnemonic": "OR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "RR",
+      "notes": "OR data with RR"
+    },
+    {
+      "mnemonic": "ORC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "RR",
+      "notes": "OR complement of data with RR"
+    },
+    {
+      "mnemonic": "XNOR",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "RR",
+      "notes": "Exclusive NOR data with RR"
+    },
+    {
+      "mnemonic": "STO",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Store RR to data bus"
+    },
+    {
+      "mnemonic": "STOC",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Store complement of RR to data bus"
+    },
+    {
+      "mnemonic": "IEN",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "IEN",
+      "notes": "Input enable register set from RR"
+    },
+    {
+      "mnemonic": "OEN",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "OEN",
+      "notes": "Output enable register set from RR"
+    },
+    {
+      "mnemonic": "JMP",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "JMP",
+      "notes": "Jump flag output set (external logic needed)"
+    },
+    {
+      "mnemonic": "RTN",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "RTN",
+      "notes": "Return flag output set (external logic needed)"
+    },
+    {
+      "mnemonic": "SKZ",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Skip next if RR is zero"
+    },
+    {
+      "mnemonic": "NOPF",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "FLAG_F",
+      "notes": "No operation (flag F output)"
+    }
+  ]
+}

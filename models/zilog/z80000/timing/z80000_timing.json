@@ -1,0 +1,811 @@
+{
+  "processor": "Zilog Z80000",
+  "manufacturer": "Zilog",
+  "year": 1986,
+  "schema_version": "1.0",
+  "source": "Z80000 CPU datasheet, Zilog 1986",
+  "instruction_count": 80,
+  "notes": "32-bit CMOS microprocessor extending the Z8000 architecture. 16 general-purpose 32-bit registers, on-chip MMU with segmentation support. Sequential execution with instruction prefetch. Very limited commercial adoption. Cycle counts estimated from Z8000 heritage scaled for 32-bit datapath at up to 16 MHz. Microcoded architecture with 3-80 cycles per instruction depending on complexity.",
+  "instructions": [
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x8D07",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "LD R,R",
+      "opcode": "0xA100",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "32-bit register-to-register"
+    },
+    {
+      "mnemonic": "LD R,#IM",
+      "opcode": "0x2100",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "32-bit immediate load"
+    },
+    {
+      "mnemonic": "LD R,@RR",
+      "opcode": "0x2100",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load indirect through register pair"
+    },
+    {
+      "mnemonic": "LD R,addr",
+      "opcode": "0x6100",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Load from direct address"
+    },
+    {
+      "mnemonic": "LD R,addr(R)",
+      "opcode": "0x6100",
+      "bytes": 4,
+      "cycles": 9,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "",
+      "notes": "Indexed addressing"
+    },
+    {
+      "mnemonic": "LD @RR,R",
+      "opcode": "0x2F00",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "data_transfer",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store indirect"
+    },
+    {
+      "mnemonic": "LD addr,R",
+      "opcode": "0x6F00",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Store to direct address"
+    },
+    {
+      "mnemonic": "LDB R,R",
+      "opcode": "0xA000",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "8-bit register load"
+    },
+    {
+      "mnemonic": "LDW R,R",
+      "opcode": "0xA100",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "16-bit register load"
+    },
+    {
+      "mnemonic": "LDL RR,RR",
+      "opcode": "0x9400",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "64-bit register pair load"
+    },
+    {
+      "mnemonic": "EX R,R",
+      "opcode": "0xAD00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Exchange registers"
+    },
+    {
+      "mnemonic": "LDA R,addr",
+      "opcode": "0x7600",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Load effective address"
+    },
+    {
+      "mnemonic": "LDAR R,disp",
+      "opcode": "0x3400",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Load address relative"
+    },
+    {
+      "mnemonic": "POP R,@SP",
+      "opcode": "0x9700",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Pop 32-bit register from stack"
+    },
+    {
+      "mnemonic": "PUSH @SP,R",
+      "opcode": "0x9300",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Push 32-bit register to stack"
+    },
+    {
+      "mnemonic": "POPL RR,@SP",
+      "opcode": "0x9500",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Pop 64-bit register pair"
+    },
+    {
+      "mnemonic": "PUSHL @SP,RR",
+      "opcode": "0x9100",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Push 64-bit register pair"
+    },
+    {
+      "mnemonic": "ADD R,R",
+      "opcode": "0x8100",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSVDH",
+      "notes": "32-bit add"
+    },
+    {
+      "mnemonic": "ADD R,#IM",
+      "opcode": "0x0100",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZSVDH",
+      "notes": "Add 32-bit immediate"
+    },
+    {
+      "mnemonic": "ADD R,@RR",
+      "opcode": "0x0100",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "alu",
+      "addressing_mode": "indirect",
+      "flags_affected": "CZSVDH",
+      "notes": ""
+    },
+    {
+      "mnemonic": "ADC R,R",
+      "opcode": "0xB400",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSVDH",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "SUB R,R",
+      "opcode": "0x8300",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSVDH",
+      "notes": "32-bit subtract"
+    },
+    {
+      "mnemonic": "SUB R,#IM",
+      "opcode": "0x0300",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZSVDH",
+      "notes": ""
+    },
+    {
+      "mnemonic": "SBC R,R",
+      "opcode": "0xB600",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSVDH",
+      "notes": "Subtract with carry"
+    },
+    {
+      "mnemonic": "AND R,R",
+      "opcode": "0x8700",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "32-bit AND"
+    },
+    {
+      "mnemonic": "OR R,R",
+      "opcode": "0x8500",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "32-bit OR"
+    },
+    {
+      "mnemonic": "XOR R,R",
+      "opcode": "0x8900",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "32-bit XOR"
+    },
+    {
+      "mnemonic": "CP R,R",
+      "opcode": "0x8B00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSVDH",
+      "notes": "32-bit compare"
+    },
+    {
+      "mnemonic": "CP R,#IM",
+      "opcode": "0x0B00",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZSVDH",
+      "notes": ""
+    },
+    {
+      "mnemonic": "INC R,#n",
+      "opcode": "0xA900",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZSV",
+      "notes": "Increment by 1-16"
+    },
+    {
+      "mnemonic": "DEC R,#n",
+      "opcode": "0xAB00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZSV",
+      "notes": "Decrement by 1-16"
+    },
+    {
+      "mnemonic": "NEG R",
+      "opcode": "0x8D00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSVDH",
+      "notes": "Negate (two's complement)"
+    },
+    {
+      "mnemonic": "COM R",
+      "opcode": "0x8D00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Complement (one's complement)"
+    },
+    {
+      "mnemonic": "RL R,#n",
+      "opcode": "0xB200",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Rotate left n places"
+    },
+    {
+      "mnemonic": "RLC R,#n",
+      "opcode": "0xB200",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Rotate left circular"
+    },
+    {
+      "mnemonic": "RR R,#n",
+      "opcode": "0xB200",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Rotate right"
+    },
+    {
+      "mnemonic": "RRC R,#n",
+      "opcode": "0xB200",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Rotate right circular"
+    },
+    {
+      "mnemonic": "SLA R,#n",
+      "opcode": "0xB300",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Shift left arithmetic"
+    },
+    {
+      "mnemonic": "SRA R,#n",
+      "opcode": "0xB300",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Shift right arithmetic"
+    },
+    {
+      "mnemonic": "SRL R,#n",
+      "opcode": "0xB300",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Shift right logical"
+    },
+    {
+      "mnemonic": "DAB R",
+      "opcode": "0xB000",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZSVDH",
+      "notes": "Decimal adjust byte"
+    },
+    {
+      "mnemonic": "MULT R,R",
+      "opcode": "0x9800",
+      "bytes": 2,
+      "cycles": 40,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "32x32 signed multiply, result in register pair"
+    },
+    {
+      "mnemonic": "MULT R,#IM",
+      "opcode": "0x1800",
+      "bytes": 4,
+      "cycles": 42,
+      "category": "multiply",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZSV",
+      "notes": "Multiply by immediate"
+    },
+    {
+      "mnemonic": "MULTU R,R",
+      "opcode": "0x9800",
+      "bytes": 2,
+      "cycles": 40,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Unsigned multiply"
+    },
+    {
+      "mnemonic": "DIV RR,R",
+      "opcode": "0x9A00",
+      "bytes": 2,
+      "cycles": 55,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "64/32 signed divide"
+    },
+    {
+      "mnemonic": "DIV RR,#IM",
+      "opcode": "0x1A00",
+      "bytes": 4,
+      "cycles": 57,
+      "category": "divide",
+      "addressing_mode": "immediate",
+      "flags_affected": "CZSV",
+      "notes": "Divide by immediate"
+    },
+    {
+      "mnemonic": "DIVU RR,R",
+      "opcode": "0x9A00",
+      "bytes": 2,
+      "cycles": 55,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "CZSV",
+      "notes": "Unsigned divide"
+    },
+    {
+      "mnemonic": "BIT R,b",
+      "opcode": "0xA700",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "ZS",
+      "notes": "Test bit"
+    },
+    {
+      "mnemonic": "BIT R,R",
+      "opcode": "0x2700",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "ZS",
+      "notes": "Test bit (dynamic)"
+    },
+    {
+      "mnemonic": "SET R,b",
+      "opcode": "0xA500",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "ZS",
+      "notes": "Set bit"
+    },
+    {
+      "mnemonic": "RES R,b",
+      "opcode": "0xA300",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "register",
+      "flags_affected": "ZS",
+      "notes": "Reset bit"
+    },
+    {
+      "mnemonic": "TSET @RR",
+      "opcode": "0x0D00",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "bit",
+      "addressing_mode": "indirect",
+      "flags_affected": "ZS",
+      "notes": "Test and set (atomic)"
+    },
+    {
+      "mnemonic": "JP cc,addr",
+      "opcode": "0x1E00",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Conditional jump"
+    },
+    {
+      "mnemonic": "JP addr",
+      "opcode": "0x5E00",
+      "bytes": 4,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Unconditional jump"
+    },
+    {
+      "mnemonic": "JP @RR",
+      "opcode": "0x1E00",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Jump indirect"
+    },
+    {
+      "mnemonic": "JR cc,disp",
+      "opcode": "0xE000",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Conditional relative jump"
+    },
+    {
+      "mnemonic": "DJNZ R,disp",
+      "opcode": "0xF000",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Decrement and jump if non-zero"
+    },
+    {
+      "mnemonic": "CALL cc,addr",
+      "opcode": "0x1F00",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Conditional call"
+    },
+    {
+      "mnemonic": "CALL addr",
+      "opcode": "0x5F00",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Unconditional call"
+    },
+    {
+      "mnemonic": "CALL @RR",
+      "opcode": "0x1F00",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Call indirect"
+    },
+    {
+      "mnemonic": "RET cc",
+      "opcode": "0x9E00",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Conditional return"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x9E08",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Unconditional return"
+    },
+    {
+      "mnemonic": "IRET",
+      "opcode": "0x7B00",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "all",
+      "notes": "Return from interrupt"
+    },
+    {
+      "mnemonic": "SC #IM",
+      "opcode": "0x7F00",
+      "bytes": 2,
+      "cycles": 25,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "System call (trap)"
+    },
+    {
+      "mnemonic": "LDM R,@RR,#n",
+      "opcode": "0x1C00",
+      "bytes": 4,
+      "cycles": 11,
+      "category": "block",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load multiple registers; 11+3n cycles for n registers"
+    },
+    {
+      "mnemonic": "LDM @RR,R,#n",
+      "opcode": "0x1C00",
+      "bytes": 4,
+      "cycles": 11,
+      "category": "block",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Store multiple registers"
+    },
+    {
+      "mnemonic": "LDIR @RR,@RR,R",
+      "opcode": "0xBB00",
+      "bytes": 2,
+      "cycles": 11,
+      "category": "block",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Block transfer; 11 cycles per word"
+    },
+    {
+      "mnemonic": "CPIR R,@RR,R,cc",
+      "opcode": "0xBA00",
+      "bytes": 2,
+      "cycles": 11,
+      "category": "block",
+      "addressing_mode": "indirect",
+      "flags_affected": "CZSV",
+      "notes": "Block compare and scan"
+    },
+    {
+      "mnemonic": "IN R,@RR",
+      "opcode": "0x3C00",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Input from I/O port"
+    },
+    {
+      "mnemonic": "OUT @RR,R",
+      "opcode": "0x3E00",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Output to I/O port"
+    },
+    {
+      "mnemonic": "INB R,@RR",
+      "opcode": "0x3A00",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Input byte"
+    },
+    {
+      "mnemonic": "OUTB @RR,R",
+      "opcode": "0x3E00",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Output byte"
+    },
+    {
+      "mnemonic": "SINIR @RR,@RR,R",
+      "opcode": "0x3B00",
+      "bytes": 2,
+      "cycles": 11,
+      "category": "io",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Block special input"
+    },
+    {
+      "mnemonic": "SOTIR @RR,@RR,R",
+      "opcode": "0x3B00",
+      "bytes": 2,
+      "cycles": 11,
+      "category": "io",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Block special output"
+    },
+    {
+      "mnemonic": "DI int",
+      "opcode": "0x7C00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Disable interrupts"
+    },
+    {
+      "mnemonic": "EI int",
+      "opcode": "0x7C00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Enable interrupts"
+    },
+    {
+      "mnemonic": "HALT",
+      "opcode": "0x7A00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Halt CPU"
+    },
+    {
+      "mnemonic": "LDCTL R,ctrl",
+      "opcode": "0x7D00",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Load control register (system mode)"
+    },
+    {
+      "mnemonic": "LDCTLB R,FLAGS",
+      "opcode": "0x8C00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Load flags"
+    }
+  ]
+}

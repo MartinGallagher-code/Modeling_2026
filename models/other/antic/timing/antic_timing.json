@@ -1,0 +1,30 @@
+{
+  "processor": "Atari ANTIC",
+  "manufacturer": "Atari",
+  "year": 1979,
+  "schema_version": "1.0",
+  "source": "Atari ANTIC documentation; De Re Atari; Altirra Hardware Reference Manual",
+  "instruction_count": 20,
+  "instructions": [
+    {"mnemonic": "BLANK 1", "opcode": "0x00", "bytes": 1, "cycles": 1, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "1 blank scan line"},
+    {"mnemonic": "BLANK 2", "opcode": "0x10", "bytes": 1, "cycles": 2, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "2 blank scan lines"},
+    {"mnemonic": "BLANK 3", "opcode": "0x20", "bytes": 1, "cycles": 3, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "3 blank scan lines"},
+    {"mnemonic": "BLANK 4", "opcode": "0x30", "bytes": 1, "cycles": 4, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "4 blank scan lines"},
+    {"mnemonic": "BLANK 5", "opcode": "0x40", "bytes": 1, "cycles": 5, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "5 blank scan lines"},
+    {"mnemonic": "BLANK 6", "opcode": "0x50", "bytes": 1, "cycles": 6, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "6 blank scan lines"},
+    {"mnemonic": "BLANK 7", "opcode": "0x60", "bytes": 1, "cycles": 7, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "7 blank scan lines"},
+    {"mnemonic": "BLANK 8", "opcode": "0x70", "bytes": 1, "cycles": 8, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "8 blank scan lines"},
+    {"mnemonic": "JMP", "opcode": "0x01", "bytes": 3, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump to new display list address"},
+    {"mnemonic": "JVB", "opcode": "0x41", "bytes": 3, "cycles": 3, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Jump and wait for vertical blank"},
+    {"mnemonic": "MODE 2", "opcode": "0x02", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Character mode 2: 40 chars, 8 scan lines, 1.5 color"},
+    {"mnemonic": "MODE 3", "opcode": "0x03", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Character mode 3: 40 chars, 10 scan lines"},
+    {"mnemonic": "MODE 4", "opcode": "0x04", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Character mode 4: 40 chars, multicolor"},
+    {"mnemonic": "MODE 5", "opcode": "0x05", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Character mode 5: 40 chars, multicolor"},
+    {"mnemonic": "MODE 6", "opcode": "0x06", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Character mode 6: 20 chars, 5-color"},
+    {"mnemonic": "MODE 7", "opcode": "0x07", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "implied", "flags_affected": "none", "notes": "Character mode 7: 20 chars, 5-color"},
+    {"mnemonic": "MODE 8", "opcode": "0x08", "bytes": 1, "cycles": 4, "category": "memory", "addressing_mode": "implied", "flags_affected": "none", "notes": "Map mode 8: 40 pixels wide, 4 colors"},
+    {"mnemonic": "MODE D", "opcode": "0x0D", "bytes": 1, "cycles": 4, "category": "memory", "addressing_mode": "implied", "flags_affected": "none", "notes": "Map mode D: 160 pixels, 2 colors"},
+    {"mnemonic": "MODE E", "opcode": "0x0E", "bytes": 1, "cycles": 4, "category": "memory", "addressing_mode": "implied", "flags_affected": "none", "notes": "Map mode E: 160 pixels, 4 colors"},
+    {"mnemonic": "MODE F", "opcode": "0x0F", "bytes": 1, "cycles": 4, "category": "memory", "addressing_mode": "implied", "flags_affected": "none", "notes": "Map mode F: 320 pixels (GTIA), high-res bitmap"}
+  ]
+}

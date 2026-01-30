@@ -1,0 +1,32 @@
+{
+  "processor": "Ensoniq OTTO (ES5505)",
+  "manufacturer": "Ensoniq",
+  "year": 1991,
+  "schema_version": "1.0",
+  "source": "ES5505/ES5506 OTTO Wavetable Synthesizer datasheet, Ensoniq 1991",
+  "instruction_count": 22,
+  "instructions": [
+    {"mnemonic": "OSC_FETCH", "opcode": "0x00", "bytes": 2, "cycles": 2, "category": "memory", "addressing_mode": "indirect", "flags_affected": "none", "notes": "Fetch wavetable sample from external memory for oscillator"},
+    {"mnemonic": "OSC_INTERP", "opcode": "0x01", "bytes": 2, "cycles": 2, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Linear interpolation between adjacent samples"},
+    {"mnemonic": "OSC_ACCUM", "opcode": "0x02", "bytes": 2, "cycles": 2, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Phase accumulator update for oscillator pitch"},
+    {"mnemonic": "ENV_UPDATE", "opcode": "0x10", "bytes": 2, "cycles": 2, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Envelope generator update step"},
+    {"mnemonic": "ENV_MULTIPLY", "opcode": "0x11", "bytes": 2, "cycles": 2, "category": "multiply", "addressing_mode": "register", "flags_affected": "none", "notes": "Apply envelope to oscillator output"},
+    {"mnemonic": "VOL_SCALE", "opcode": "0x12", "bytes": 2, "cycles": 2, "category": "multiply", "addressing_mode": "register", "flags_affected": "none", "notes": "Volume scaling with left/right panning"},
+    {"mnemonic": "REG_WRITE", "opcode": "0x20", "bytes": 2, "cycles": 1, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Write to voice register (frequency, volume, address)"},
+    {"mnemonic": "REG_READ", "opcode": "0x21", "bytes": 2, "cycles": 1, "category": "data_transfer", "addressing_mode": "direct", "flags_affected": "none", "notes": "Read from voice register"},
+    {"mnemonic": "REG_ADDR", "opcode": "0x22", "bytes": 2, "cycles": 1, "category": "data_transfer", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Set register page/address"},
+    {"mnemonic": "MEM_READ", "opcode": "0x30", "bytes": 2, "cycles": 2, "category": "memory", "addressing_mode": "direct", "flags_affected": "none", "notes": "Read from sample memory"},
+    {"mnemonic": "MEM_WRITE", "opcode": "0x31", "bytes": 2, "cycles": 2, "category": "memory", "addressing_mode": "direct", "flags_affected": "none", "notes": "Write to sample memory"},
+    {"mnemonic": "MEM_BURST", "opcode": "0x32", "bytes": 2, "cycles": 4, "category": "memory", "addressing_mode": "direct", "flags_affected": "none", "notes": "Burst access for multi-sample fetch"},
+    {"mnemonic": "VOICE_ON", "opcode": "0x40", "bytes": 2, "cycles": 3, "category": "control", "addressing_mode": "register", "flags_affected": "none", "notes": "Start oscillator voice"},
+    {"mnemonic": "VOICE_OFF", "opcode": "0x41", "bytes": 2, "cycles": 3, "category": "control", "addressing_mode": "register", "flags_affected": "none", "notes": "Stop oscillator voice"},
+    {"mnemonic": "IRQ_CHECK", "opcode": "0x42", "bytes": 2, "cycles": 3, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Check and service interrupt request"},
+    {"mnemonic": "MODE_SET", "opcode": "0x43", "bytes": 2, "cycles": 3, "category": "control", "addressing_mode": "register", "flags_affected": "none", "notes": "Set operating mode (sample rate, voices)"},
+    {"mnemonic": "SYNC", "opcode": "0x44", "bytes": 2, "cycles": 3, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Synchronize voice processing to sample clock"},
+    {"mnemonic": "MIX_ACCUM", "opcode": "0x50", "bytes": 2, "cycles": 2, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Accumulate voice into mix bus"},
+    {"mnemonic": "MIX_OUT", "opcode": "0x51", "bytes": 2, "cycles": 2, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Output mixed audio to DAC"},
+    {"mnemonic": "DAC_WRITE", "opcode": "0x52", "bytes": 2, "cycles": 2, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Write sample to serial DAC output"},
+    {"mnemonic": "ADC_READ", "opcode": "0x53", "bytes": 2, "cycles": 2, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Read from ADC input (ES5506 only)"},
+    {"mnemonic": "NOP", "opcode": "0xFF", "bytes": 2, "cycles": 1, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "No operation"}
+  ]
+}

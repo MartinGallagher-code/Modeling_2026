@@ -1,0 +1,213 @@
+{
+  "processor": "Synertek SY6502A",
+  "manufacturer": "Synertek",
+  "year": 1978,
+  "source": "SY6502A datasheet / MOS 6502 datasheet",
+  "base_architecture": "mos6502",
+  "base_timing_reference": "MOS 6502",
+  "timing_notes": "Licensed MOS 6502 second-source. Speed-binned for 2 MHz. Identical instruction timing to original 6502.",
+  "instruction_count": 20,
+  "instructions": [
+    {
+      "mnemonic": "LDA #nn",
+      "opcode": "0xA9",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "Z,N",
+      "notes": "Load A immediate"
+    },
+    {
+      "mnemonic": "LDA zp",
+      "opcode": "0xA5",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "zero_page",
+      "flags_affected": "Z,N",
+      "notes": "Load A zero page"
+    },
+    {
+      "mnemonic": "LDA abs",
+      "opcode": "0xAD",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "absolute",
+      "flags_affected": "Z,N",
+      "notes": "Load A absolute"
+    },
+    {
+      "mnemonic": "STA zp",
+      "opcode": "0x85",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "zero_page",
+      "flags_affected": "none",
+      "notes": "Store A zero page"
+    },
+    {
+      "mnemonic": "STA abs",
+      "opcode": "0x8D",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Store A absolute"
+    },
+    {
+      "mnemonic": "STA (zp),Y",
+      "opcode": "0x91",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "indirect_y",
+      "flags_affected": "none",
+      "notes": "Store A indirect indexed"
+    },
+    {
+      "mnemonic": "ADC #nn",
+      "opcode": "0x69",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C,Z,V,N",
+      "notes": "Add with carry immediate"
+    },
+    {
+      "mnemonic": "ADC zp",
+      "opcode": "0x65",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "zero_page",
+      "flags_affected": "C,Z,V,N",
+      "notes": "Add with carry zero page"
+    },
+    {
+      "mnemonic": "SBC #nn",
+      "opcode": "0xE9",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C,Z,V,N",
+      "notes": "Subtract with carry"
+    },
+    {
+      "mnemonic": "CMP #nn",
+      "opcode": "0xC9",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C,Z,N",
+      "notes": "Compare A immediate"
+    },
+    {
+      "mnemonic": "INX",
+      "opcode": "0xE8",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "Z,N",
+      "notes": "Increment X"
+    },
+    {
+      "mnemonic": "DEX",
+      "opcode": "0xCA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "Z,N",
+      "notes": "Decrement X"
+    },
+    {
+      "mnemonic": "TAX",
+      "opcode": "0xAA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "implied",
+      "flags_affected": "Z,N",
+      "notes": "Transfer A to X"
+    },
+    {
+      "mnemonic": "JMP abs",
+      "opcode": "0x4C",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump absolute"
+    },
+    {
+      "mnemonic": "BEQ rel",
+      "opcode": "0xF0",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if equal (taken)"
+    },
+    {
+      "mnemonic": "BNE rel",
+      "opcode": "0xD0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if not equal (not taken)"
+    },
+    {
+      "mnemonic": "JSR abs",
+      "opcode": "0x20",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump to subroutine"
+    },
+    {
+      "mnemonic": "RTS",
+      "opcode": "0x60",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "PHA",
+      "opcode": "0x48",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Push A"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xEA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

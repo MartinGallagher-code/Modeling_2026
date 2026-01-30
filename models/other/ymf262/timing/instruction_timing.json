@@ -1,0 +1,150 @@
+{
+  "processor": "Yamaha YMF262 (OPL3)",
+  "manufacturer": "Yamaha",
+  "year": 1990,
+  "source": "YMF262 OPL3 datasheet",
+  "instruction_count": 14,
+  "instructions": [
+    {
+      "mnemonic": "OP_FREQ",
+      "opcode": "0xA0",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set operator frequency"
+    },
+    {
+      "mnemonic": "OP_LEVEL",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set total level"
+    },
+    {
+      "mnemonic": "OP_ENVL",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set envelope rate"
+    },
+    {
+      "mnemonic": "FB_ALGO",
+      "opcode": "0xC0",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Feedback/connection"
+    },
+    {
+      "mnemonic": "KEY_ON",
+      "opcode": "0xB0",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Key on/off"
+    },
+    {
+      "mnemonic": "WAVEFORM",
+      "opcode": "0xE0",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Waveform select (8 types)"
+    },
+    {
+      "mnemonic": "4OP_EN",
+      "opcode": "0x104",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "4-operator mode enable"
+    },
+    {
+      "mnemonic": "OPL3_EN",
+      "opcode": "0x105",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "OPL3 mode enable"
+    },
+    {
+      "mnemonic": "STEREO",
+      "opcode": "0xC0",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Stereo panning L/R"
+    },
+    {
+      "mnemonic": "RHYTHM",
+      "opcode": "0xBD",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rhythm mode"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write register (4 ports)"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read status"
+    },
+    {
+      "mnemonic": "TIMER",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Timer control"
+    },
+    {
+      "mnemonic": "IRQ",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "IRQ control"
+    }
+  ],
+  "schema_version": "1.0"
+}

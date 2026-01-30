@@ -1,0 +1,81 @@
+{
+  "processor": "Namco 53xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "MAME docs",
+  "instruction_count": 7,
+  "notes": "Multiplexer chip for input channel selection.",
+  "instructions": [
+    {
+      "mnemonic": "MSEL",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Mux channel select"
+    },
+    {
+      "mnemonic": "XFER",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Data routing"
+    },
+    {
+      "mnemonic": "INP",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Input read"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Output write"
+    },
+    {
+      "mnemonic": "CTRL",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Mode control"
+    },
+    {
+      "mnemonic": "SYNC",
+      "opcode": "0x06",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Sync timing"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

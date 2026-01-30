@@ -1,0 +1,190 @@
+{
+  "processor": "Symbolics CADR",
+  "manufacturer": "Symbolics (MIT AI Lab)",
+  "year": 1981,
+  "source": "MIT AI Lab Technical Reports / CADR LISP Machine documentation",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "CAR",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract first element of cons cell (hardware)"
+    },
+    {
+      "mnemonic": "CDR",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract rest of cons cell (hardware)"
+    },
+    {
+      "mnemonic": "CONS",
+      "opcode": "0x03",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Allocate new cons cell with car/cdr"
+    },
+    {
+      "mnemonic": "RPLACA",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Replace car of cons cell"
+    },
+    {
+      "mnemonic": "RPLACD",
+      "opcode": "0x05",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Replace cdr of cons cell"
+    },
+    {
+      "mnemonic": "TYPE_CHK",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Check data type tag (hardware)"
+    },
+    {
+      "mnemonic": "TYPE_DSP",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Type-based dispatch"
+    },
+    {
+      "mnemonic": "EVAL",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Evaluate S-expression (microcoded)"
+    },
+    {
+      "mnemonic": "APPLY",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 10,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Apply function (microcoded)"
+    },
+    {
+      "mnemonic": "FUNCALL",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Function call with args on stack"
+    },
+    {
+      "mnemonic": "RETURN",
+      "opcode": "0x23",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from function"
+    },
+    {
+      "mnemonic": "LD_MEM",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Tagged memory read"
+    },
+    {
+      "mnemonic": "ST_MEM",
+      "opcode": "0x31",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Tagged memory write"
+    },
+    {
+      "mnemonic": "PUSH",
+      "opcode": "0x40",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Push to PDL (push-down list)"
+    },
+    {
+      "mnemonic": "POP",
+      "opcode": "0x41",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Pop from PDL"
+    },
+    {
+      "mnemonic": "GC_MARK",
+      "opcode": "0x50",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Garbage collection mark phase"
+    },
+    {
+      "mnemonic": "GC_SWEEP",
+      "opcode": "0x51",
+      "bytes": 4,
+      "cycles": 14,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Garbage collection sweep phase"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "opcode": "0x60",
+      "bytes": 4,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch (microcoded)"
+    }
+  ],
+  "schema_version": "1.0"
+}

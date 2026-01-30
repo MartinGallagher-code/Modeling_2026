@@ -1,0 +1,170 @@
+{
+  "processor": "Weitek P9000",
+  "manufacturer": "Weitek",
+  "year": 1991,
+  "source": "P9000 2D Graphics Accelerator datasheet",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "LINE",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Draw line"
+    },
+    {
+      "mnemonic": "QUAD",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Draw quadrilateral"
+    },
+    {
+      "mnemonic": "RECT",
+      "opcode": "0x03",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Draw rectangle"
+    },
+    {
+      "mnemonic": "BLIT",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "BitBLT operation"
+    },
+    {
+      "mnemonic": "PIXEL",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Pixel plot"
+    },
+    {
+      "mnemonic": "PAT_FILL",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Pattern fill"
+    },
+    {
+      "mnemonic": "FRGD_WR",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set foreground color"
+    },
+    {
+      "mnemonic": "BKGD_WR",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set background color"
+    },
+    {
+      "mnemonic": "COORD_WR",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write coordinate register"
+    },
+    {
+      "mnemonic": "CLIP_WR",
+      "opcode": "0x31",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set clip rectangle"
+    },
+    {
+      "mnemonic": "MEM_RD",
+      "opcode": "0x40",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Memory read"
+    },
+    {
+      "mnemonic": "MEM_WR",
+      "opcode": "0x41",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Memory write"
+    },
+    {
+      "mnemonic": "MEM_BURST",
+      "opcode": "0x42",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Burst memory transfer"
+    },
+    {
+      "mnemonic": "CMD",
+      "opcode": "0x50",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Execute drawing command"
+    },
+    {
+      "mnemonic": "STAT_RD",
+      "opcode": "0x51",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read status"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

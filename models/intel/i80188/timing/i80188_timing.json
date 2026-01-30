@@ -1,0 +1,32 @@
+{
+  "processor": "Intel 80188",
+  "manufacturer": "Intel",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Intel 80186/80188 User's Manual, Intel 1983",
+  "base_architecture": "i80186",
+  "base_timing_reference": "../i80186/timing/i80186_timing.json",
+  "timing_notes": "The 80188 is the 8-bit bus version of the 80186, analogous to the 8088/8086 relationship. Instruction execution timing is identical to the 80186. Word (16-bit) memory accesses require two bus cycles, adding 4 clocks per word access. Prefetch queue is 4 bytes (vs 6 on 80186). Includes same on-chip peripherals: DMA, timers, interrupt controller, chip select.",
+  "clock_mhz_range": "6-8",
+  "instruction_count": 209,
+  "bus_width": 8,
+  "prefetch_queue_bytes": 4,
+  "word_access_penalty": 4,
+  "instructions": [
+    {"mnemonic": "MOV", "operands": "reg, reg", "bytes": 2, "cycles": 2, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "MOV", "operands": "reg, mem (word)", "bytes": 2, "cycles": 13, "cycles_note": "9 + 4 (word penalty)", "category": "data_transfer", "addressing_mode": "memory", "flags_affected": "none", "notes": "Word read penalty vs 80186"},
+    {"mnemonic": "MOV", "operands": "reg, imm", "bytes": 2, "cycles": 3, "category": "data_transfer", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "ADD", "operands": "reg, reg", "bytes": 2, "cycles": 3, "category": "alu", "addressing_mode": "register", "flags_affected": "OF SF ZF AF PF CF", "notes": "Same as 80186"},
+    {"mnemonic": "MUL", "operands": "reg8", "bytes": 2, "cycles": 26, "cycles_note": "26-28", "category": "multiply", "addressing_mode": "register", "flags_affected": "OF CF", "notes": "Same as 80186. Much faster than 8086"},
+    {"mnemonic": "MUL", "operands": "reg16", "bytes": 2, "cycles": 35, "cycles_note": "35-37", "category": "multiply", "addressing_mode": "register", "flags_affected": "OF CF", "notes": "Same as 80186"},
+    {"mnemonic": "DIV", "operands": "reg8", "bytes": 2, "cycles": 29, "category": "divide", "addressing_mode": "register", "flags_affected": "undefined", "notes": "Same as 80186"},
+    {"mnemonic": "PUSH", "operands": "reg16", "bytes": 1, "cycles": 14, "cycles_note": "10 + 4 (word penalty)", "category": "stack", "addressing_mode": "register", "flags_affected": "none", "notes": "Word write penalty"},
+    {"mnemonic": "POP", "operands": "reg16", "bytes": 1, "cycles": 14, "cycles_note": "10 + 4 (word penalty)", "category": "stack", "addressing_mode": "register", "flags_affected": "none", "notes": "Word read penalty"},
+    {"mnemonic": "JMP", "operands": "short", "bytes": 2, "cycles": 14, "category": "control", "addressing_mode": "relative", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "CALL", "operands": "near", "bytes": 3, "cycles": 15, "category": "control", "addressing_mode": "relative", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "RET", "operands": "(near)", "bytes": 1, "cycles": 20, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "ENTER", "operands": "imm16, 0", "bytes": 4, "cycles": 15, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "LEAVE", "operands": "", "bytes": 1, "cycles": 8, "category": "control", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 80186"},
+    {"mnemonic": "NOP", "operands": "", "bytes": 1, "cycles": 3, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 80186"}
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "processor": "Thomson EFCIS 90435",
+  "manufacturer": "Thomson-CSF",
+  "year": 1980,
+  "source": "EFCIS 90435 datasheet",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "ADD r",
+      "opcode": "0x80",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S",
+      "notes": "Add register"
+    },
+    {
+      "mnemonic": "SUB r",
+      "opcode": "0x90",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND r",
+      "opcode": "0xA0",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,S",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR r",
+      "opcode": "0xB0",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,S",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "CMP r",
+      "opcode": "0xC0",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C,Z,S",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "LD r,r",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Load register"
+    },
+    {
+      "mnemonic": "LD r,#n",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "LD r,(addr)",
+      "opcode": "0x60",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "ST r,(addr)",
+      "opcode": "0x70",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "LD r,(HL)",
+      "opcode": "0x46",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Load indirect"
+    },
+    {
+      "mnemonic": "JP addr",
+      "opcode": "0xC3",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JR cc,rel",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Conditional relative jump"
+    },
+    {
+      "mnemonic": "CALL addr",
+      "opcode": "0xCD",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0xC9",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "PUSH r",
+      "opcode": "0xC5",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Push register"
+    },
+    {
+      "mnemonic": "POP r",
+      "opcode": "0xC1",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Pop register"
+    }
+  ],
+  "schema_version": "1.0"
+}

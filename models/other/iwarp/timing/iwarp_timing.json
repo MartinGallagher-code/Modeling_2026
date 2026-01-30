@@ -1,0 +1,28 @@
+{
+  "processor": "iWarp",
+  "manufacturer": "Intel/CMU",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "iWarp documentation",
+  "instruction_count": 18,
+  "instructions": [
+    {"mnemonic": "ADD", "opcode": "0x00", "bytes": 4, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Integer add; VLIW slot, single-cycle"},
+    {"mnemonic": "SUB", "opcode": "0x01", "bytes": 4, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Integer subtract"},
+    {"mnemonic": "AND", "opcode": "0x02", "bytes": 4, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Logical AND"},
+    {"mnemonic": "OR", "opcode": "0x03", "bytes": 4, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Logical OR"},
+    {"mnemonic": "SHL", "opcode": "0x04", "bytes": 4, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "none", "notes": "Shift left"},
+    {"mnemonic": "FADD", "opcode": "0x10", "bytes": 4, "cycles": 2, "category": "float", "addressing_mode": "register", "flags_affected": "FP_flags", "notes": "FP add; pipelined, 2 cycle latency"},
+    {"mnemonic": "FSUB", "opcode": "0x11", "bytes": 4, "cycles": 2, "category": "float", "addressing_mode": "register", "flags_affected": "FP_flags", "notes": "FP subtract; pipelined"},
+    {"mnemonic": "FMUL", "opcode": "0x12", "bytes": 4, "cycles": 2, "category": "float", "addressing_mode": "register", "flags_affected": "FP_flags", "notes": "FP multiply; pipelined"},
+    {"mnemonic": "FDIV", "opcode": "0x13", "bytes": 4, "cycles": 8, "category": "float", "addressing_mode": "register", "flags_affected": "FP_flags", "notes": "FP divide; 8 cycles"},
+    {"mnemonic": "LD", "opcode": "0x20", "bytes": 4, "cycles": 2, "category": "memory", "addressing_mode": "register_offset", "flags_affected": "none", "notes": "Load from on-chip memory; 2 cycles"},
+    {"mnemonic": "ST", "opcode": "0x21", "bytes": 4, "cycles": 2, "category": "memory", "addressing_mode": "register_offset", "flags_affected": "none", "notes": "Store to on-chip memory; 2 cycles"},
+    {"mnemonic": "SEND", "opcode": "0x30", "bytes": 4, "cycles": 2, "category": "io", "addressing_mode": "channel", "flags_affected": "none", "notes": "Send data on systolic link; 2 cycles"},
+    {"mnemonic": "RECV", "opcode": "0x31", "bytes": 4, "cycles": 2, "category": "io", "addressing_mode": "channel", "flags_affected": "none", "notes": "Receive data from systolic link; 2 cycles"},
+    {"mnemonic": "CSEND", "opcode": "0x32", "bytes": 4, "cycles": 3, "category": "io", "addressing_mode": "channel", "flags_affected": "none", "notes": "Conditional send (with handshake)"},
+    {"mnemonic": "JMP", "opcode": "0x40", "bytes": 4, "cycles": 2, "category": "control", "addressing_mode": "direct", "flags_affected": "none", "notes": "Unconditional jump; 2 cycle branch penalty"},
+    {"mnemonic": "BEQ", "opcode": "0x41", "bytes": 4, "cycles": 2, "category": "control", "addressing_mode": "relative", "flags_affected": "none", "notes": "Branch if equal"},
+    {"mnemonic": "LOOP", "opcode": "0x42", "bytes": 4, "cycles": 1, "category": "control", "addressing_mode": "relative", "flags_affected": "none", "notes": "Hardware loop; zero-overhead when predicted"},
+    {"mnemonic": "NOP", "opcode": "0xFF", "bytes": 4, "cycles": 1, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "No operation; VLIW slot filler"}
+  ]
+}

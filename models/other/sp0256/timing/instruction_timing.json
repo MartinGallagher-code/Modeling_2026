@@ -1,0 +1,130 @@
+{
+  "processor": "GI SP0256",
+  "manufacturer": "General Instrument",
+  "year": 1981,
+  "source": "SP0256 Allophone Speech Processor datasheet",
+  "instruction_count": 12,
+  "instructions": [
+    {
+      "mnemonic": "ALLOPHONE",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load allophone from ROM (64 allophones)"
+    },
+    {
+      "mnemonic": "SETADDR",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Set speech ROM address"
+    },
+    {
+      "mnemonic": "SETPITCH",
+      "opcode": "0x20",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set pitch period parameter"
+    },
+    {
+      "mnemonic": "SETAMP",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set amplitude parameter"
+    },
+    {
+      "mnemonic": "FILTER_LD",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Load LPC filter coefficients (12-pole)"
+    },
+    {
+      "mnemonic": "FILTER_UP",
+      "opcode": "0x41",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Update LPC filter state"
+    },
+    {
+      "mnemonic": "EXCITE_P",
+      "opcode": "0x50",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Pulse excitation (voiced)"
+    },
+    {
+      "mnemonic": "EXCITE_N",
+      "opcode": "0x51",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Noise excitation (unvoiced)"
+    },
+    {
+      "mnemonic": "DAC_OUT",
+      "opcode": "0x60",
+      "bytes": 1,
+      "cycles": 14,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Output audio sample to DAC"
+    },
+    {
+      "mnemonic": "IRQ_GEN",
+      "opcode": "0x70",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Generate interrupt (buffer empty)"
+    },
+    {
+      "mnemonic": "PAUSE",
+      "opcode": "0x80",
+      "bytes": 1,
+      "cycles": 18,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Insert silence/pause period"
+    },
+    {
+      "mnemonic": "RESET",
+      "opcode": "0xFF",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Reset speech processor"
+    }
+  ],
+  "schema_version": "1.0"
+}

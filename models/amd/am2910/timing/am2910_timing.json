@@ -1,0 +1,28 @@
+{
+  "processor": "AMD Am2910",
+  "manufacturer": "AMD",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "Am2910 Microprogram Controller datasheet, AMD 1977",
+  "clock_mhz": 10.0,
+  "instruction_count": 16,
+  "notes": "12-bit microprogram sequencer with 33-word microprogram counter stack. All 16 sequencer commands execute in a single clock cycle. The 4-bit instruction field (I3-I0) selects one of 16 sequencer operations. Supports conditional branching, looping, subroutine call/return, and stack operations. Used as a companion chip to the Am2901 bit-slice ALU.",
+  "instructions": [
+    {"mnemonic": "JZ", "opcode": "0x0", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Jump Zero. Forces microprogram counter to zero (reset vector). Used for initialization"},
+    {"mnemonic": "CJS", "opcode": "0x1", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Conditional Jump to Subroutine. If condition true, push PC+1 onto stack and load D input to PC. If false, continue"},
+    {"mnemonic": "JMAP", "opcode": "0x2", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Jump Map. Load D input to PC unconditionally. Used for instruction decode mapping"},
+    {"mnemonic": "CJP", "opcode": "0x3", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Conditional Jump to Pipeline register. If condition true, load D to PC. If false, continue"},
+    {"mnemonic": "PUSH", "opcode": "0x4", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Push/Conditional Load Counter. Push D onto register/counter stack. Load loop counter"},
+    {"mnemonic": "JSRP", "opcode": "0x5", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Conditional Jump to Subroutine via R. If condition true, push PC+1 and load R register to PC"},
+    {"mnemonic": "CJV", "opcode": "0x6", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Conditional Jump Vector. If condition true, load D to PC. Used for vectored interrupt entry"},
+    {"mnemonic": "JRP", "opcode": "0x7", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Conditional Jump via R or Pipeline. Select between R register and pipeline register based on condition"},
+    {"mnemonic": "RFCT", "opcode": "0x8", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implicit", "flags_affected": "none", "notes": "Repeat Loop, Counter Not Zero. If counter != 0, decrement and jump to stack top. If zero, pop and continue"},
+    {"mnemonic": "RPCT", "opcode": "0x9", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Repeat Pipeline, Counter Not Zero. If counter != 0, decrement and load D to PC. If zero, continue"},
+    {"mnemonic": "CRTN", "opcode": "0xA", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implicit", "flags_affected": "none", "notes": "Conditional Return. If condition true, pop stack to PC (return from subroutine). If false, continue"},
+    {"mnemonic": "CJPP", "opcode": "0xB", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Conditional Jump and Pop. If condition true, load D to PC and pop stack. If false, continue"},
+    {"mnemonic": "LDCT", "opcode": "0xC", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Load Counter and Continue. Load D into loop counter, PC increments. Sets up loop count"},
+    {"mnemonic": "LOOP", "opcode": "0xD", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implicit", "flags_affected": "none", "notes": "Test End of Loop. If counter != 0, jump to stack top address. If zero, pop and continue"},
+    {"mnemonic": "CONT", "opcode": "0xE", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "implicit", "flags_affected": "none", "notes": "Continue. PC increments to next sequential address. Simple sequential execution"},
+    {"mnemonic": "TWB", "opcode": "0xF", "bytes": 1, "cycles": 1, "category": "control", "addressing_mode": "immediate", "flags_affected": "none", "notes": "Three-Way Branch. Tests condition and counter. Branch to D, stack top, or continue based on both tests"}
+  ]
+}

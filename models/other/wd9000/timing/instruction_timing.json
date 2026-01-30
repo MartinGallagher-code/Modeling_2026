@@ -1,0 +1,170 @@
+{
+  "processor": "WD9000 Pascal MicroEngine",
+  "manufacturer": "Western Digital",
+  "year": 1979,
+  "source": "WD9000 Pascal MicroEngine documentation",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "SLDC n",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Short load constant"
+    },
+    {
+      "mnemonic": "LDCI n",
+      "opcode": "0x80",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load constant integer"
+    },
+    {
+      "mnemonic": "SLDL n",
+      "opcode": "0x10",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Short load local"
+    },
+    {
+      "mnemonic": "STRL n",
+      "opcode": "0x20",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store local"
+    },
+    {
+      "mnemonic": "LDB",
+      "opcode": "0xB0",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Load byte from memory"
+    },
+    {
+      "mnemonic": "STB",
+      "opcode": "0xB1",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "Store byte to memory"
+    },
+    {
+      "mnemonic": "ADI",
+      "opcode": "0x82",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Add integer"
+    },
+    {
+      "mnemonic": "SBI",
+      "opcode": "0x83",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Subtract integer"
+    },
+    {
+      "mnemonic": "LAND",
+      "opcode": "0x84",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Logical AND"
+    },
+    {
+      "mnemonic": "MPI",
+      "opcode": "0x86",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "multiply",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Multiply integer"
+    },
+    {
+      "mnemonic": "DVI",
+      "opcode": "0x87",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "divide",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Divide integer"
+    },
+    {
+      "mnemonic": "UJP offset",
+      "opcode": "0xB9",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Unconditional jump"
+    },
+    {
+      "mnemonic": "FJP offset",
+      "opcode": "0xBA",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "False jump (conditional)"
+    },
+    {
+      "mnemonic": "CBP n",
+      "opcode": "0xBE",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Call base procedure"
+    },
+    {
+      "mnemonic": "RBP",
+      "opcode": "0xBF",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from base procedure"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xFF",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

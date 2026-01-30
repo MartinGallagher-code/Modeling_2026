@@ -1,0 +1,221 @@
+{
+  "processor": "TI TMS7000",
+  "manufacturer": "Texas Instruments",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "TMS7000 datasheet",
+  "instruction_count": 85,
+  "notes": "8-bit MCU with 128-register file. 2 MHz.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x68",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "Add registers"
+    },
+    {
+      "mnemonic": "ADC",
+      "opcode": "0x69",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x6A",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x63",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x64",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x65",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "CMP",
+      "opcode": "0x6D",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "INC",
+      "opcode": "0x70",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "Increment"
+    },
+    {
+      "mnemonic": "DEC",
+      "opcode": "0x72",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "Decrement"
+    },
+    {
+      "mnemonic": "MOV",
+      "opcode": "0x62",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move register"
+    },
+    {
+      "mnemonic": "MOVD",
+      "opcode": "0x88",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Move immediate to register pair"
+    },
+    {
+      "mnemonic": "LDA",
+      "opcode": "0x8A",
+      "bytes": 3,
+      "cycles": 9,
+      "category": "memory",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "STA",
+      "opcode": "0x8B",
+      "bytes": 3,
+      "cycles": 9,
+      "category": "memory",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "BR",
+      "opcode": "0x8C",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x8E",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x8F",
+      "bytes": 3,
+      "cycles": 14,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RETS",
+      "opcode": "0x0A",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "PUSH",
+      "opcode": "0x0D",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "stack",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Push"
+    },
+    {
+      "mnemonic": "POP",
+      "opcode": "0x09",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "stack",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Pop"
+    },
+    {
+      "mnemonic": "MPY",
+      "opcode": "0x6C",
+      "bytes": 2,
+      "cycles": 43,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "8x8 multiply"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

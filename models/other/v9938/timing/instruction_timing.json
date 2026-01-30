@@ -1,0 +1,170 @@
+{
+  "processor": "Yamaha V9938",
+  "manufacturer": "Yamaha",
+  "year": 1985,
+  "source": "V9938 MSX2 VDP Technical Data Book",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "BITMAP_RD",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Read bitmap pixel"
+    },
+    {
+      "mnemonic": "BITMAP_WR",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Write bitmap pixel"
+    },
+    {
+      "mnemonic": "SPR_SCAN",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Scan sprite table (32 sprites)"
+    },
+    {
+      "mnemonic": "SPR_RENDER",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render sprite line"
+    },
+    {
+      "mnemonic": "HSCROLL",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Horizontal scroll"
+    },
+    {
+      "mnemonic": "VSCROLL",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Vertical scroll"
+    },
+    {
+      "mnemonic": "CMD_LINE",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Command: line draw"
+    },
+    {
+      "mnemonic": "CMD_FILL",
+      "opcode": "0x31",
+      "bytes": 4,
+      "cycles": 10,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Command: area fill"
+    },
+    {
+      "mnemonic": "CMD_COPY",
+      "opcode": "0x32",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Command: block copy (HMMM)"
+    },
+    {
+      "mnemonic": "CMD_POINT",
+      "opcode": "0x33",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Command: point read"
+    },
+    {
+      "mnemonic": "VRAM_RD",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM read (128KB)"
+    },
+    {
+      "mnemonic": "VRAM_WR",
+      "opcode": "0x41",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "VRAM write"
+    },
+    {
+      "mnemonic": "PAL_WR",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Palette register write (512 colors)"
+    },
+    {
+      "mnemonic": "PAL_RD",
+      "opcode": "0x51",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Palette read"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write VDP register"
+    },
+    {
+      "mnemonic": "STATUS_RD",
+      "opcode": "0x61",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read status register"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,22 @@
+{
+  "processor": "Motorola 68HC11A1",
+  "manufacturer": "Motorola",
+  "year": 1985,
+  "schema_version": "1.0",
+  "source": "MC68HC11A8 Technical Data, Motorola 1991",
+  "base_architecture": "Motorola 68HC11",
+  "base_timing_reference": "models/motorola/m68hc11/timing/m68hc11_timing.json",
+  "timing_notes": "Instruction set and timing identical to 68HC11. The 68HC11A1 is a ROMless variant of the 68HC11A8 with identical CPU core. Same dual index register (X/Y) architecture and all cycle counts unchanged.",
+  "instruction_count": 309,
+  "instructions": [
+    {
+      "mnemonic": "NOTE",
+      "bytes": 0,
+      "cycles": 0,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "All 309 instructions identical to 68HC11 base. See m68hc11_timing.json for complete instruction listing. 68HC11A1 is ROMless variant of 68HC11A8 with no CPU core differences."
+    }
+  ]
+}

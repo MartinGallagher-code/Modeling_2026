@@ -1,0 +1,101 @@
+{
+  "processor": "NS32381",
+  "manufacturer": "National Semiconductor",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "NS32381 datasheet",
+  "instruction_count": 30,
+  "notes": "Enhanced NS32000 FPU. 2-3x faster than NS32081.",
+  "instructions": [
+    {
+      "mnemonic": "ADDf",
+      "opcode": "0x01",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float add single (2x faster)"
+    },
+    {
+      "mnemonic": "ADDl",
+      "opcode": "0x02",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float add double"
+    },
+    {
+      "mnemonic": "MULf",
+      "opcode": "0x05",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float multiply single"
+    },
+    {
+      "mnemonic": "MULl",
+      "opcode": "0x06",
+      "bytes": 3,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float multiply double"
+    },
+    {
+      "mnemonic": "DIVf",
+      "opcode": "0x07",
+      "bytes": 3,
+      "cycles": 16,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float divide single"
+    },
+    {
+      "mnemonic": "DIVl",
+      "opcode": "0x08",
+      "bytes": 3,
+      "cycles": 24,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float divide double"
+    },
+    {
+      "mnemonic": "CMPf",
+      "opcode": "0x09",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float compare"
+    },
+    {
+      "mnemonic": "MOVf",
+      "opcode": "0x0A",
+      "bytes": 3,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move float"
+    },
+    {
+      "mnemonic": "SUBf",
+      "opcode": "0x03",
+      "bytes": 3,
+      "cycles": 4,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Float subtract single"
+    }
+  ]
+}

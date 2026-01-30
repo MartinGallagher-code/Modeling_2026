@@ -1,0 +1,190 @@
+{
+  "processor": "Sega SVP (SSP1601)",
+  "manufacturer": "Samsung",
+  "year": 1994,
+  "source": "SVP reverse-engineering documentation (Tasco Deluxe / Notaz)",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "LD d,s",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Load register from register/pointer"
+    },
+    {
+      "mnemonic": "LD d,#imm",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load immediate 16-bit"
+    },
+    {
+      "mnemonic": "ADD a,s",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Add to accumulator"
+    },
+    {
+      "mnemonic": "SUB a,s",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Subtract from accumulator"
+    },
+    {
+      "mnemonic": "CMP a,s",
+      "opcode": "0x38",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "Compare with accumulator"
+    },
+    {
+      "mnemonic": "AND a,s",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "AND with accumulator"
+    },
+    {
+      "mnemonic": "OR a,s",
+      "opcode": "0x51",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "OR with accumulator"
+    },
+    {
+      "mnemonic": "EOR a,s",
+      "opcode": "0x52",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z,N",
+      "notes": "XOR with accumulator"
+    },
+    {
+      "mnemonic": "MLD s1,s2",
+      "opcode": "0x65",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply and load (MAC init)"
+    },
+    {
+      "mnemonic": "MPYA s1,s2",
+      "opcode": "0x15",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply and accumulate"
+    },
+    {
+      "mnemonic": "MPYS s1,s2",
+      "opcode": "0x55",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Multiply and subtract"
+    },
+    {
+      "mnemonic": "BRA cond,addr",
+      "opcode": "0x48",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Conditional branch"
+    },
+    {
+      "mnemonic": "CALL cond,addr",
+      "opcode": "0x49",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Conditional call"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x65",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "MOD cond,op",
+      "opcode": "0x08",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Modifier (pointer adjust)"
+    },
+    {
+      "mnemonic": "EXT_RD",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "External ROM/RAM read"
+    },
+    {
+      "mnemonic": "EXT_WR",
+      "opcode": "0x81",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "none",
+      "notes": "External RAM write"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}

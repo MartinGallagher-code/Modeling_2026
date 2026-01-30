@@ -1,0 +1,111 @@
+{
+  "processor": "TI TMS5100",
+  "manufacturer": "Texas Instruments",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "TMS5100 datasheet",
+  "instruction_count": 12,
+  "notes": "Linear Predictive Coding speech synthesizer. Speak & Spell.",
+  "instructions": [
+    {
+      "mnemonic": "SPEAK",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 20,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Begin speech output"
+    },
+    {
+      "mnemonic": "LOAD_ADDR",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load ROM address for speech data"
+    },
+    {
+      "mnemonic": "READ",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Read speech data byte from ROM"
+    },
+    {
+      "mnemonic": "FILTER",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 12,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Apply LPC filter coefficients"
+    },
+    {
+      "mnemonic": "ENERGY",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Set energy level"
+    },
+    {
+      "mnemonic": "PITCH",
+      "opcode": "0x06",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Set pitch period"
+    },
+    {
+      "mnemonic": "DAC",
+      "opcode": "0x07",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "DAC output sample"
+    },
+    {
+      "mnemonic": "STOP",
+      "opcode": "0x08",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Stop speech"
+    },
+    {
+      "mnemonic": "RESET",
+      "opcode": "0x09",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Reset synthesizer"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

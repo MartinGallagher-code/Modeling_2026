@@ -1,0 +1,181 @@
+{
+  "processor": "National IMP-16",
+  "manufacturer": "National Semiconductor",
+  "year": 1973,
+  "schema_version": "1.0",
+  "source": "IMP-16 datasheet",
+  "instruction_count": 43,
+  "notes": "16-bit bit-slice based processor. PMOS technology.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CVZN",
+      "notes": "Add registers"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CVZN",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ZN",
+      "notes": "Logical AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ZN",
+      "notes": "Logical OR"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x05",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "ZN",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "LD",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "ST",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "LI",
+      "opcode": "0x12",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JSR",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x22",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "BOC",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch on condition"
+    },
+    {
+      "mnemonic": "SHL",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Shift left"
+    },
+    {
+      "mnemonic": "SHR",
+      "opcode": "0x41",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Shift right"
+    },
+    {
+      "mnemonic": "INP",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input from port"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0x51",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output to port"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 8,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "processor": "TI Explorer",
+  "manufacturer": "Texas Instruments",
+  "year": 1985,
+  "source": "TI Explorer Technical Summary",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "CAR",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract first (pipelined, single cycle)"
+    },
+    {
+      "mnemonic": "CDR",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Extract rest (pipelined)"
+    },
+    {
+      "mnemonic": "CONS",
+      "opcode": "0x03",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Allocate cons cell (improved allocator)"
+    },
+    {
+      "mnemonic": "RPLACA",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Replace car"
+    },
+    {
+      "mnemonic": "TYPE_CHK",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Type tag check"
+    },
+    {
+      "mnemonic": "TYPE_DSP",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Type-based dispatch"
+    },
+    {
+      "mnemonic": "EVAL",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Evaluate (pipelined microcode)"
+    },
+    {
+      "mnemonic": "APPLY",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Apply function"
+    },
+    {
+      "mnemonic": "FUNCALL",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Function call"
+    },
+    {
+      "mnemonic": "RETURN",
+      "opcode": "0x23",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return from function"
+    },
+    {
+      "mnemonic": "LD_MEM",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Tagged memory read"
+    },
+    {
+      "mnemonic": "ST_MEM",
+      "opcode": "0x31",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Tagged memory write"
+    },
+    {
+      "mnemonic": "GC_MARK",
+      "opcode": "0x50",
+      "bytes": 4,
+      "cycles": 10,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "GC mark phase"
+    },
+    {
+      "mnemonic": "GC_SWEEP",
+      "opcode": "0x51",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "GC sweep phase"
+    },
+    {
+      "mnemonic": "PUSH",
+      "opcode": "0x40",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Push to stack"
+    },
+    {
+      "mnemonic": "BRANCH",
+      "opcode": "0x60",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch"
+    }
+  ],
+  "schema_version": "1.0"
+}

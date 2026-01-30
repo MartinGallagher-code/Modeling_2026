@@ -1,0 +1,22 @@
+{
+  "processor": "Ferranti ULA (ZX Spectrum)",
+  "manufacturer": "Ferranti",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "Ferranti ULA documentation",
+  "instruction_count": 12,
+  "instructions": [
+    {"mnemonic": "MEM_RD", "opcode": "0x00", "bytes": 1, "cycles": 4, "category": "memory", "addressing_mode": "bus", "flags_affected": "none", "notes": "Memory read bus arbitration cycle"},
+    {"mnemonic": "MEM_WR", "opcode": "0x01", "bytes": 1, "cycles": 4, "category": "memory", "addressing_mode": "bus", "flags_affected": "none", "notes": "Memory write bus arbitration cycle"},
+    {"mnemonic": "MEM_REF", "opcode": "0x02", "bytes": 1, "cycles": 3, "category": "memory", "addressing_mode": "bus", "flags_affected": "none", "notes": "DRAM refresh cycle"},
+    {"mnemonic": "VID_FETCH", "opcode": "0x10", "bytes": 1, "cycles": 5, "category": "memory", "addressing_mode": "bus", "flags_affected": "none", "notes": "Video data fetch from DRAM"},
+    {"mnemonic": "VID_ATTR", "opcode": "0x11", "bytes": 1, "cycles": 5, "category": "memory", "addressing_mode": "bus", "flags_affected": "none", "notes": "Attribute data fetch for video"},
+    {"mnemonic": "VID_SHIFT", "opcode": "0x12", "bytes": 1, "cycles": 4, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Pixel shift register output"},
+    {"mnemonic": "VID_BORDER", "opcode": "0x13", "bytes": 1, "cycles": 6, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Border color output timing"},
+    {"mnemonic": "IO_DECODE", "opcode": "0x20", "bytes": 1, "cycles": 5, "category": "io", "addressing_mode": "port", "flags_affected": "none", "notes": "I/O port address decode"},
+    {"mnemonic": "IO_KBD", "opcode": "0x21", "bytes": 1, "cycles": 5, "category": "io", "addressing_mode": "port", "flags_affected": "none", "notes": "Keyboard matrix scan"},
+    {"mnemonic": "IO_TAPE", "opcode": "0x22", "bytes": 1, "cycles": 5, "category": "io", "addressing_mode": "port", "flags_affected": "none", "notes": "Tape interface control"},
+    {"mnemonic": "CONTEND_WAIT", "opcode": "0x30", "bytes": 1, "cycles": 6, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Bus contention wait state insertion"},
+    {"mnemonic": "CONTEND_RESOLVE", "opcode": "0x31", "bytes": 1, "cycles": 8, "category": "special", "addressing_mode": "implied", "flags_affected": "none", "notes": "Bus contention resolution with priority"}
+  ]
+}

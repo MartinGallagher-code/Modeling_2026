@@ -1,0 +1,101 @@
+{
+  "processor": "Namco 50xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "MAME docs",
+  "instruction_count": 9,
+  "notes": "Score/coin handler for Pac-Man era games. 4-bit state machine.",
+  "instructions": [
+    {
+      "mnemonic": "SADD",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Score addition"
+    },
+    {
+      "mnemonic": "SSUB",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Score subtraction"
+    },
+    {
+      "mnemonic": "SCMP",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Score compare"
+    },
+    {
+      "mnemonic": "XFER",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Register transfer"
+    },
+    {
+      "mnemonic": "COIN",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Coin switch read"
+    },
+    {
+      "mnemonic": "DISP",
+      "opcode": "0x06",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Display output"
+    },
+    {
+      "mnemonic": "MODE",
+      "opcode": "0x07",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "State transition"
+    },
+    {
+      "mnemonic": "WAIT",
+      "opcode": "0x08",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Timing delay"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

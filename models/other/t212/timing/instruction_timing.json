@@ -1,0 +1,190 @@
+{
+  "processor": "Inmos T212",
+  "manufacturer": "Inmos",
+  "year": 1985,
+  "source": "T212 16-bit Transputer datasheet",
+  "instruction_count": 18,
+  "instructions": [
+    {
+      "mnemonic": "ADC",
+      "opcode": "0x08",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Add constant (prefix byte encoding)"
+    },
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Add top two stack items"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0xC0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x46",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Bitwise AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x4B",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Bitwise OR"
+    },
+    {
+      "mnemonic": "LDC n",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load constant"
+    },
+    {
+      "mnemonic": "LDL n",
+      "opcode": "0x07",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load local"
+    },
+    {
+      "mnemonic": "STL n",
+      "opcode": "0x0D",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store local"
+    },
+    {
+      "mnemonic": "LDNL n",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load non-local (memory)"
+    },
+    {
+      "mnemonic": "STNL n",
+      "opcode": "0x0E",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store non-local"
+    },
+    {
+      "mnemonic": "LDNLP n",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load non-local pointer"
+    },
+    {
+      "mnemonic": "J offset",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "CJ offset",
+      "opcode": "0x0A",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Conditional jump"
+    },
+    {
+      "mnemonic": "CALL offset",
+      "opcode": "0x09",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x20",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "IN",
+      "opcode": "0x07",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Input from channel link"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0x0B",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Output to channel link"
+    },
+    {
+      "mnemonic": "STARTP",
+      "opcode": "0x0D",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Start process (CSP concurrency)"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,303 @@
+{
+  "processor": "RCA CDP1805",
+  "manufacturer": "RCA",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "CDP1805 datasheet",
+  "base_architecture": "RCA 1802 COSMAC",
+  "base_timing_reference": "rca1802",
+  "timing_notes": "COSMAC variant with counter/timer. Extended instruction set adds SCAL/SRET. Same base timing.",
+  "instruction_count": 98,
+  "instructions": [
+    {
+      "mnemonic": "IDL",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Idle; wait for DMA/interrupt"
+    },
+    {
+      "mnemonic": "LDN",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "memory",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": "D=M(R(N))"
+    },
+    {
+      "mnemonic": "INC",
+      "opcode": "0x10",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "R(N)=R(N)+1"
+    },
+    {
+      "mnemonic": "DEC",
+      "opcode": "0x20",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "R(N)=R(N)-1"
+    },
+    {
+      "mnemonic": "BR",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "short_branch",
+      "flags_affected": "",
+      "notes": "Short branch always"
+    },
+    {
+      "mnemonic": "BZ",
+      "opcode": "0x32",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "short_branch",
+      "flags_affected": "",
+      "notes": "Branch if D=0"
+    },
+    {
+      "mnemonic": "BNZ",
+      "opcode": "0x3A",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "short_branch",
+      "flags_affected": "",
+      "notes": "Branch if D!=0"
+    },
+    {
+      "mnemonic": "LDA",
+      "opcode": "0x40",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "memory",
+      "addressing_mode": "register_indirect_inc",
+      "flags_affected": "",
+      "notes": "D=M(R(N)); R(N)++"
+    },
+    {
+      "mnemonic": "STR",
+      "opcode": "0x50",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "memory",
+      "addressing_mode": "register_indirect",
+      "flags_affected": "",
+      "notes": "M(R(N))=D"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0x61",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output from M(R(X))"
+    },
+    {
+      "mnemonic": "INP",
+      "opcode": "0x69",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input to M(R(X)) and D"
+    },
+    {
+      "mnemonic": "GLO",
+      "opcode": "0x80",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "D=R(N).0"
+    },
+    {
+      "mnemonic": "GHI",
+      "opcode": "0x90",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "D=R(N).1"
+    },
+    {
+      "mnemonic": "PLO",
+      "opcode": "0xA0",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "R(N).0=D"
+    },
+    {
+      "mnemonic": "PHI",
+      "opcode": "0xB0",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "R(N).1=D"
+    },
+    {
+      "mnemonic": "LBR",
+      "opcode": "0xC0",
+      "bytes": 3,
+      "cycles": 24,
+      "category": "control",
+      "addressing_mode": "long_branch",
+      "flags_affected": "",
+      "notes": "Long branch always (3 cycles)"
+    },
+    {
+      "mnemonic": "SEP",
+      "opcode": "0xD0",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Set P=N (program counter select)"
+    },
+    {
+      "mnemonic": "SEX",
+      "opcode": "0xE0",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Set X=N"
+    },
+    {
+      "mnemonic": "LDI",
+      "opcode": "0xF8",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "D=immediate"
+    },
+    {
+      "mnemonic": "ORI",
+      "opcode": "0xF9",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "D=D OR immediate"
+    },
+    {
+      "mnemonic": "ANI",
+      "opcode": "0xFA",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "D=D AND immediate"
+    },
+    {
+      "mnemonic": "XRI",
+      "opcode": "0xFB",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "D=D XOR immediate"
+    },
+    {
+      "mnemonic": "ADI",
+      "opcode": "0xFC",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "DF",
+      "notes": "D=D+immediate"
+    },
+    {
+      "mnemonic": "SDI",
+      "opcode": "0xFD",
+      "bytes": 2,
+      "cycles": 16,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "DF",
+      "notes": "D=immediate-D"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x70",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return; enable interrupts"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xC4",
+      "bytes": 3,
+      "cycles": 24,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Long NOP (3 machine cycles)"
+    },
+    {
+      "mnemonic": "SCAL",
+      "opcode": "0x68",
+      "bytes": 3,
+      "cycles": 32,
+      "category": "control",
+      "addressing_mode": "long_branch",
+      "flags_affected": "",
+      "notes": "Standard call (extended)"
+    },
+    {
+      "mnemonic": "SRET",
+      "opcode": "0x69",
+      "bytes": 1,
+      "cycles": 24,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Standard return (extended)"
+    },
+    {
+      "mnemonic": "DBNZ",
+      "opcode": "0x6A",
+      "bytes": 3,
+      "cycles": 24,
+      "category": "control",
+      "addressing_mode": "long_branch",
+      "flags_affected": "",
+      "notes": "Decrement R(N) and branch if not zero"
+    }
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "processor": "Motorola DSP56001",
+  "manufacturer": "Motorola",
+  "year": 1987,
+  "schema_version": "1.0",
+  "source": "DSP56000/DSP56001 Digital Signal Processor User's Manual, Motorola 1990",
+  "instruction_count": 62,
+  "instructions": [
+    {
+      "mnemonic": "ABS A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Absolute value of 56-bit accumulator A"
+    },
+    {
+      "mnemonic": "ADC X,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "ADD X,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Add 24-bit source to 56-bit accumulator"
+    },
+    {
+      "mnemonic": "AND X0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZL",
+      "notes": "Logical AND with 24-bit portion"
+    },
+    {
+      "mnemonic": "ASL A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUVC",
+      "notes": "Arithmetic shift left"
+    },
+    {
+      "mnemonic": "ASR A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUVC",
+      "notes": "Arithmetic shift right"
+    },
+    {
+      "mnemonic": "Bcc xxxx",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch conditionally"
+    },
+    {
+      "mnemonic": "BCHG #n,X:addr",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Bit test and change"
+    },
+    {
+      "mnemonic": "BCLR #n,X:addr",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Bit test and clear"
+    },
+    {
+      "mnemonic": "BSET #n,X:addr",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Bit test and set"
+    },
+    {
+      "mnemonic": "BTST #n,X:addr",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Bit test"
+    },
+    {
+      "mnemonic": "CLR A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Clear 56-bit accumulator"
+    },
+    {
+      "mnemonic": "CMP X0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "DEC A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Decrement accumulator"
+    },
+    {
+      "mnemonic": "DIV X0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "divide",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUVC",
+      "notes": "Divide iteration (1 step, repeat 24x for full divide)"
+    },
+    {
+      "mnemonic": "DO #count,label",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Hardware loop (zero-overhead after setup)"
+    },
+    {
+      "mnemonic": "DO X:addr,label",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Hardware loop from memory count"
+    },
+    {
+      "mnemonic": "ENDDO",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "End current DO loop"
+    },
+    {
+      "mnemonic": "EOR X0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZL",
+      "notes": "Exclusive OR"
+    },
+    {
+      "mnemonic": "INC A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Increment accumulator"
+    },
+    {
+      "mnemonic": "Jcc xxxx",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump conditionally"
+    },
+    {
+      "mnemonic": "JMP xxxx",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JSR xxxx",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump to subroutine"
+    },
+    {
+      "mnemonic": "JScc xxxx",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump to subroutine conditionally"
+    },
+    {
+      "mnemonic": "LSL A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLC",
+      "notes": "Logical shift left"
+    },
+    {
+      "mnemonic": "LSR A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLC",
+      "notes": "Logical shift right"
+    },
+    {
+      "mnemonic": "MAC X0,Y0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Multiply-accumulate 24x24+56->56 (single-cycle MAC)"
+    },
+    {
+      "mnemonic": "MAC X0,Y0,A X:(R0)+,X0 Y:(R4)+,Y0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "MAC with parallel X and Y memory moves (DSP core strength)"
+    },
+    {
+      "mnemonic": "MACR X0,Y0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Multiply-accumulate and round"
+    },
+    {
+      "mnemonic": "MOVE X:(R0)+,X0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Move from X memory with post-increment"
+    },
+    {
+      "mnemonic": "MOVE Y:(R4)+,Y0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Move from Y memory with post-increment"
+    },
+    {
+      "mnemonic": "MOVE #imm,X0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate to register"
+    },
+    {
+      "mnemonic": "MOVE A,X:(R0)+",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Move accumulator to X memory"
+    },
+    {
+      "mnemonic": "MOVEC X0,SR",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "all",
+      "notes": "Move to control register"
+    },
+    {
+      "mnemonic": "MOVEP X:<<pp,X0",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "io",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Move peripheral data (I/O mapped)"
+    },
+    {
+      "mnemonic": "MPY X0,Y0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Signed multiply 24x24->56"
+    },
+    {
+      "mnemonic": "MPYR X0,Y0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "multiply",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Signed multiply and round"
+    },
+    {
+      "mnemonic": "NEG A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Negate accumulator"
+    },
+    {
+      "mnemonic": "NOP",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "NORM R0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Normalize accumulator"
+    },
+    {
+      "mnemonic": "NOT A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZL",
+      "notes": "Logical complement"
+    },
+    {
+      "mnemonic": "OR X0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZL",
+      "notes": "Logical OR"
+    },
+    {
+      "mnemonic": "REP #count",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Repeat next instruction N times (zero-overhead)"
+    },
+    {
+      "mnemonic": "RESET",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Reset on-chip peripherals"
+    },
+    {
+      "mnemonic": "RND A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Round accumulator (convergent rounding)"
+    },
+    {
+      "mnemonic": "ROL A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLC",
+      "notes": "Rotate left"
+    },
+    {
+      "mnemonic": "ROR A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLC",
+      "notes": "Rotate right"
+    },
+    {
+      "mnemonic": "RTI",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "all",
+      "notes": "Return from interrupt"
+    },
+    {
+      "mnemonic": "RTS",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "SBC X,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Subtract with carry"
+    },
+    {
+      "mnemonic": "STOP",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Stop processing"
+    },
+    {
+      "mnemonic": "SUB X,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Subtract from accumulator"
+    },
+    {
+      "mnemonic": "SWI",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Software interrupt"
+    },
+    {
+      "mnemonic": "TFR X0,A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Transfer register to accumulator"
+    },
+    {
+      "mnemonic": "TST A",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "SZLEUV",
+      "notes": "Test accumulator"
+    },
+    {
+      "mnemonic": "WAIT",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Wait for interrupt"
+    }
+  ]
+}

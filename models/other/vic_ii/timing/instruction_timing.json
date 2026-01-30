@@ -1,0 +1,170 @@
+{
+  "processor": "Commodore VIC-II (6567)",
+  "manufacturer": "MOS Technology/Commodore",
+  "year": 1982,
+  "source": "VIC-II (6567/6569) datasheet / C64 Programmer's Reference Guide",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "CHAR_FETCH",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Character code fetch"
+    },
+    {
+      "mnemonic": "CHAR_RENDER",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render character/bitmap row"
+    },
+    {
+      "mnemonic": "SPR_FETCH",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Sprite data fetch (8 sprites)"
+    },
+    {
+      "mnemonic": "SPR_RENDER",
+      "opcode": "0x11",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Render sprite line"
+    },
+    {
+      "mnemonic": "SCROLL_H",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Fine horizontal scroll"
+    },
+    {
+      "mnemonic": "SCROLL_V",
+      "opcode": "0x21",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Fine vertical scroll"
+    },
+    {
+      "mnemonic": "RASTER_CMP",
+      "opcode": "0x30",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Raster compare for IRQ"
+    },
+    {
+      "mnemonic": "RASTER_IRQ",
+      "opcode": "0x31",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Raster interrupt generation"
+    },
+    {
+      "mnemonic": "DMA_STEAL",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "DMA cycle steal from CPU"
+    },
+    {
+      "mnemonic": "DMA_CHAR",
+      "opcode": "0x41",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "DMA character pointer fetch"
+    },
+    {
+      "mnemonic": "COLOR_LUT",
+      "opcode": "0x50",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Color lookup (16 colors)"
+    },
+    {
+      "mnemonic": "BORDER",
+      "opcode": "0x51",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Border color control"
+    },
+    {
+      "mnemonic": "REG_WR",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write VIC-II register"
+    },
+    {
+      "mnemonic": "REG_RD",
+      "opcode": "0x61",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read VIC-II register"
+    },
+    {
+      "mnemonic": "MODE_SET",
+      "opcode": "0x62",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set display mode (text/bitmap/multicolor)"
+    },
+    {
+      "mnemonic": "SPR_COLL",
+      "opcode": "0x63",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Sprite collision detect"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,301 @@
+{
+  "processor": "Mitsubishi M50740",
+  "manufacturer": "Mitsubishi",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "M50740 datasheet",
+  "instruction_count": 69,
+  "notes": "MELPS 740 family enhanced 6502 with bit manipulation and multiply. 2 MHz.",
+  "instructions": [
+    {
+      "mnemonic": "ADC",
+      "opcode": "0x69",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NVZC",
+      "notes": "Add with carry"
+    },
+    {
+      "mnemonic": "ADC",
+      "opcode": "0x65",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "zero_page",
+      "flags_affected": "NVZC",
+      "notes": ""
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x29",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZ",
+      "notes": "Logical AND"
+    },
+    {
+      "mnemonic": "ASL",
+      "opcode": "0x0A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZC",
+      "notes": "Shift left"
+    },
+    {
+      "mnemonic": "BCC",
+      "opcode": "0x90",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch if carry clear"
+    },
+    {
+      "mnemonic": "BEQ",
+      "opcode": "0xF0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch if equal"
+    },
+    {
+      "mnemonic": "BNE",
+      "opcode": "0xD0",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch if not equal"
+    },
+    {
+      "mnemonic": "CMP",
+      "opcode": "0xC9",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZC",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "DEX",
+      "opcode": "0xCA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "NZ",
+      "notes": "Decrement X"
+    },
+    {
+      "mnemonic": "INX",
+      "opcode": "0xE8",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "NZ",
+      "notes": "Increment X"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x4C",
+      "bytes": 3,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JSR",
+      "opcode": "0x20",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump to subroutine"
+    },
+    {
+      "mnemonic": "LDA",
+      "opcode": "0xA9",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "NZ",
+      "notes": "Load A"
+    },
+    {
+      "mnemonic": "LDA",
+      "opcode": "0xA5",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "zero_page",
+      "flags_affected": "NZ",
+      "notes": ""
+    },
+    {
+      "mnemonic": "STA",
+      "opcode": "0x85",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "zero_page",
+      "flags_affected": "",
+      "notes": "Store A"
+    },
+    {
+      "mnemonic": "RTS",
+      "opcode": "0x60",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0xEA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    },
+    {
+      "mnemonic": "PHA",
+      "opcode": "0x48",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Push A"
+    },
+    {
+      "mnemonic": "PLA",
+      "opcode": "0x68",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "NZ",
+      "notes": "Pull A"
+    },
+    {
+      "mnemonic": "MUL",
+      "opcode": "0x62",
+      "bytes": 1,
+      "cycles": 12,
+      "category": "multiply",
+      "addressing_mode": "implied",
+      "flags_affected": "NZC",
+      "notes": "Hardware multiply"
+    },
+    {
+      "mnemonic": "SET",
+      "opcode": "0x32",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "bit",
+      "addressing_mode": "zero_page_bit",
+      "flags_affected": "",
+      "notes": "Set bit"
+    },
+    {
+      "mnemonic": "CLR",
+      "opcode": "0x12",
+      "bytes": 2,
+      "cycles": 2,
+      "category": "bit",
+      "addressing_mode": "zero_page_bit",
+      "flags_affected": "",
+      "notes": "Clear bit"
+    },
+    {
+      "mnemonic": "TST",
+      "opcode": "0x22",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "bit",
+      "addressing_mode": "zero_page_bit",
+      "flags_affected": "Z",
+      "notes": "Test bit"
+    },
+    {
+      "mnemonic": "BBC",
+      "opcode": "0x13",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "zp_bit_rel",
+      "flags_affected": "",
+      "notes": "Branch if bit clear"
+    },
+    {
+      "mnemonic": "BBS",
+      "opcode": "0x03",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "zp_bit_rel",
+      "flags_affected": "",
+      "notes": "Branch if bit set"
+    },
+    {
+      "mnemonic": "COM",
+      "opcode": "0x44",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "accumulator",
+      "flags_affected": "NZ",
+      "notes": "Complement A"
+    },
+    {
+      "mnemonic": "DIV",
+      "opcode": "0xE2",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "divide",
+      "addressing_mode": "implied",
+      "flags_affected": "NVZC",
+      "notes": "Hardware divide"
+    },
+    {
+      "mnemonic": "STP",
+      "opcode": "0x42",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Stop"
+    },
+    {
+      "mnemonic": "WIT",
+      "opcode": "0xC2",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Wait for interrupt"
+    }
+  ]
+}

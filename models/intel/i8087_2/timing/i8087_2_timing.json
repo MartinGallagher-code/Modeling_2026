@@ -1,0 +1,23 @@
+{
+  "processor": "Intel 8087-2",
+  "manufacturer": "Intel",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Intel 8087-2 datasheet, 1982",
+  "base_architecture": "i8087",
+  "base_timing_reference": "../i8087/timing/i8087_timing.json",
+  "timing_notes": "The 8087-2 is the 8 MHz version of the 8087. It is instruction-compatible and timing-compatible in terms of clock counts. The only difference is the higher maximum clock frequency (8 MHz vs 5 MHz for the original 8087), which provides proportionally faster wall-clock execution. All instruction cycle counts in clocks are identical to the 8087.",
+  "clock_mhz": 8,
+  "instruction_count": 68,
+  "instructions": [
+    {"mnemonic": "FADD", "operands": "ST, ST(i)", "bytes": 2, "cycles": 85, "cycles_note": "70-100", "category": "float", "addressing_mode": "register", "flags_affected": "C1", "notes": "Same clock counts as 8087. Faster wall time at 8 MHz"},
+    {"mnemonic": "FSUB", "operands": "ST, ST(i)", "bytes": 2, "cycles": 85, "cycles_note": "70-100", "category": "float", "addressing_mode": "register", "flags_affected": "C1", "notes": "Same as 8087"},
+    {"mnemonic": "FMUL", "operands": "ST, ST(i)", "bytes": 2, "cycles": 130, "cycles_note": "90-145", "category": "float", "addressing_mode": "register", "flags_affected": "C1", "notes": "Same as 8087"},
+    {"mnemonic": "FDIV", "operands": "ST, ST(i)", "bytes": 2, "cycles": 198, "cycles_note": "193-203", "category": "float", "addressing_mode": "register", "flags_affected": "C1", "notes": "Same as 8087"},
+    {"mnemonic": "FSQRT", "operands": "", "bytes": 2, "cycles": 183, "cycles_note": "180-186", "category": "float", "addressing_mode": "implied", "flags_affected": "C1", "notes": "Same as 8087"},
+    {"mnemonic": "FLD", "operands": "ST(i)", "bytes": 2, "cycles": 17, "category": "float", "addressing_mode": "register", "flags_affected": "none", "notes": "Same as 8087"},
+    {"mnemonic": "FST", "operands": "ST(i)", "bytes": 2, "cycles": 15, "category": "float", "addressing_mode": "register", "flags_affected": "none", "notes": "Same as 8087"},
+    {"mnemonic": "FCOM", "operands": "ST(i)", "bytes": 2, "cycles": 45, "category": "float", "addressing_mode": "register", "flags_affected": "C0 C2 C3", "notes": "Same as 8087"},
+    {"mnemonic": "FNOP", "operands": "", "bytes": 2, "cycles": 13, "category": "nop", "addressing_mode": "implied", "flags_affected": "none", "notes": "Same as 8087"}
+  ]
+}

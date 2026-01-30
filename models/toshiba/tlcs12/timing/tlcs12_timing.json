@@ -1,0 +1,211 @@
+{
+  "processor": "Toshiba TLCS-12",
+  "manufacturer": "Toshiba",
+  "year": 1973,
+  "schema_version": "1.0",
+  "source": "TLCS-12 datasheet",
+  "instruction_count": 42,
+  "notes": "First Japanese microprocessor. 12-bit PMOS for Ford EEC. 1 MHz.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x01",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZ",
+      "notes": "12-bit add"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x02",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZ",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "AND",
+      "opcode": "0x03",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "OR",
+      "opcode": "0x04",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "XOR",
+      "opcode": "0x05",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "Z",
+      "notes": "XOR"
+    },
+    {
+      "mnemonic": "CMP",
+      "opcode": "0x06",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CZ",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "SHL",
+      "opcode": "0x07",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Shift left"
+    },
+    {
+      "mnemonic": "SHR",
+      "opcode": "0x08",
+      "bytes": 2,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "C",
+      "notes": "Shift right"
+    },
+    {
+      "mnemonic": "MOV",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move register"
+    },
+    {
+      "mnemonic": "LDI",
+      "opcode": "0x11",
+      "bytes": 3,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Load immediate"
+    },
+    {
+      "mnemonic": "LD",
+      "opcode": "0x20",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Load from memory (slow PMOS)"
+    },
+    {
+      "mnemonic": "ST",
+      "opcode": "0x21",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "IN",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Input from port"
+    },
+    {
+      "mnemonic": "OUT",
+      "opcode": "0x31",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "io",
+      "addressing_mode": "port",
+      "flags_affected": "",
+      "notes": "Output to port"
+    },
+    {
+      "mnemonic": "JMP",
+      "opcode": "0x40",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump"
+    },
+    {
+      "mnemonic": "JZ",
+      "opcode": "0x41",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump if zero"
+    },
+    {
+      "mnemonic": "JC",
+      "opcode": "0x42",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump if carry"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x43",
+      "bytes": 3,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x44",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

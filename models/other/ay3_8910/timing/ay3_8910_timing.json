@@ -1,0 +1,26 @@
+{
+  "processor": "GI AY-3-8910 PSG",
+  "manufacturer": "General Instrument",
+  "year": 1978,
+  "schema_version": "1.0",
+  "source": "AY-3-8910 Programmable Sound Generator datasheet, General Instrument 1978",
+  "instruction_count": 16,
+  "instructions": [
+    {"mnemonic": "TONE_A_FINE", "opcode": "0x00", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Write channel A tone period fine tune (R0)"},
+    {"mnemonic": "TONE_A_COARSE", "opcode": "0x01", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Write channel A tone period coarse (R1)"},
+    {"mnemonic": "TONE_B_FINE", "opcode": "0x02", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Write channel B tone period fine tune (R2)"},
+    {"mnemonic": "TONE_B_COARSE", "opcode": "0x03", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Write channel B tone period coarse (R3)"},
+    {"mnemonic": "TONE_C_FINE", "opcode": "0x04", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Write channel C tone period fine tune (R4)"},
+    {"mnemonic": "TONE_C_COARSE", "opcode": "0x05", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Write channel C tone period coarse (R5)"},
+    {"mnemonic": "NOISE_PERIOD", "opcode": "0x06", "bytes": 1, "cycles": 4, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Write noise generator period (R6, 5-bit LFSR rate)"},
+    {"mnemonic": "MIXER_CTRL", "opcode": "0x07", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Mixer control: tone/noise enable per channel + I/O direction (R7)"},
+    {"mnemonic": "AMP_A", "opcode": "0x08", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Channel A amplitude / envelope mode select (R8)"},
+    {"mnemonic": "AMP_B", "opcode": "0x09", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Channel B amplitude (R9)"},
+    {"mnemonic": "AMP_C", "opcode": "0x0A", "bytes": 1, "cycles": 3, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Channel C amplitude (R10)"},
+    {"mnemonic": "ENV_FINE", "opcode": "0x0B", "bytes": 1, "cycles": 5, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Envelope period fine tune (R11)"},
+    {"mnemonic": "ENV_COARSE", "opcode": "0x0C", "bytes": 1, "cycles": 5, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Envelope period coarse (R12)"},
+    {"mnemonic": "ENV_SHAPE", "opcode": "0x0D", "bytes": 1, "cycles": 5, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Envelope shape/cycle control (R13, resets envelope on write)"},
+    {"mnemonic": "IO_PORT_A", "opcode": "0x0E", "bytes": 1, "cycles": 4, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Read/write I/O port A (R14)"},
+    {"mnemonic": "IO_PORT_B", "opcode": "0x0F", "bytes": 1, "cycles": 4, "category": "io", "addressing_mode": "register", "flags_affected": "none", "notes": "Read/write I/O port B (R15)"}
+  ]
+}

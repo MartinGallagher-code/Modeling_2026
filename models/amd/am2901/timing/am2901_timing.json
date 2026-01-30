@@ -1,0 +1,28 @@
+{
+  "processor": "AMD Am2901",
+  "manufacturer": "AMD",
+  "year": 1975,
+  "schema_version": "1.0",
+  "source": "Am2901 Four-Bit Bipolar Microprocessor Slice datasheet, AMD 1975",
+  "clock_mhz": 10.0,
+  "instruction_count": 16,
+  "notes": "4-bit ALU bit-slice processor. All operations execute in a single microinstruction cycle. The Am2901 has 16 ALU function codes selected by I5-I3, with source operand selection via I2-I0 (8 source combinations) and destination/shift via I8-I6 (8 destination combinations). Cycle counts represent single microinstruction execution times. The 3-bit ALU function select (I5-I3) determines the core operation.",
+  "instructions": [
+    {"mnemonic": "ADD", "opcode": "0x0", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "C,OVR,F=0,F3", "notes": "R plus S. Function code I5-I3=000. Single-cycle ALU add"},
+    {"mnemonic": "SUBR", "opcode": "0x1", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "C,OVR,F=0,F3", "notes": "S minus R. Function code I5-I3=001. Reverse subtract"},
+    {"mnemonic": "SUBS", "opcode": "0x2", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "C,OVR,F=0,F3", "notes": "R minus S. Function code I5-I3=010. Forward subtract"},
+    {"mnemonic": "OR", "opcode": "0x3", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "F=0,F3", "notes": "R OR S. Function code I5-I3=011. Logical OR"},
+    {"mnemonic": "AND", "opcode": "0x4", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "F=0,F3", "notes": "R AND S. Function code I5-I3=100. Logical AND"},
+    {"mnemonic": "NOTRS", "opcode": "0x5", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "F=0,F3", "notes": "NOT(R) AND S. Function code I5-I3=101. Inverted R masked with S"},
+    {"mnemonic": "EXOR", "opcode": "0x6", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "F=0,F3", "notes": "R XOR S. Function code I5-I3=110. Exclusive OR"},
+    {"mnemonic": "EXNOR", "opcode": "0x7", "bytes": 1, "cycles": 1, "category": "alu", "addressing_mode": "register", "flags_affected": "F=0,F3", "notes": "R XNOR S. Function code I5-I3=111. Exclusive NOR (equivalence)"},
+    {"mnemonic": "SRC_AQ", "opcode": "0x0_src", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Source select I2-I0=000: R=A, S=Q. Selects A register and Q register as ALU operands"},
+    {"mnemonic": "SRC_AB", "opcode": "0x1_src", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Source select I2-I0=001: R=A, S=B. Selects A and B registers as ALU operands"},
+    {"mnemonic": "SRC_ZQ", "opcode": "0x2_src", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Source select I2-I0=010: R=0, S=Q. Zero and Q register"},
+    {"mnemonic": "SRC_ZB", "opcode": "0x3_src", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Source select I2-I0=011: R=0, S=B. Zero and B register"},
+    {"mnemonic": "SRC_ZA", "opcode": "0x4_src", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Source select I2-I0=100: R=0, S=A. Zero and A register"},
+    {"mnemonic": "SRC_DA", "opcode": "0x5_src", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Source select I2-I0=101: R=D, S=A. External data and A register"},
+    {"mnemonic": "SRC_DQ", "opcode": "0x6_src", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Source select I2-I0=110: R=D, S=Q. External data and Q register"},
+    {"mnemonic": "SRC_D0", "opcode": "0x7_src", "bytes": 1, "cycles": 1, "category": "data_transfer", "addressing_mode": "register", "flags_affected": "none", "notes": "Source select I2-I0=111: R=D, S=0. External data and zero"}
+  ]
+}

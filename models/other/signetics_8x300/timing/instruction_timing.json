@@ -1,0 +1,170 @@
+{
+  "processor": "Signetics 8X300",
+  "manufacturer": "Signetics",
+  "year": 1976,
+  "source": "8X300 Bipolar Signal Processor datasheet",
+  "instruction_count": 16,
+  "instructions": [
+    {
+      "mnemonic": "MOVE s,d",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move data between registers/IV bus - single cycle"
+    },
+    {
+      "mnemonic": "ADD s,d",
+      "opcode": "0x20",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "OVF",
+      "notes": "Add source to destination - single cycle"
+    },
+    {
+      "mnemonic": "AND s,d",
+      "opcode": "0x40",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "AND source with destination - single cycle"
+    },
+    {
+      "mnemonic": "XOR s,d",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "XOR source with destination - single cycle"
+    },
+    {
+      "mnemonic": "XEC s,addr",
+      "opcode": "0x80",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Execute instruction at address - single cycle"
+    },
+    {
+      "mnemonic": "NZT s,addr",
+      "opcode": "0xA0",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch if non-zero - single cycle"
+    },
+    {
+      "mnemonic": "XMIT s,d",
+      "opcode": "0xC0",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Transmit to IV bus - single cycle"
+    },
+    {
+      "mnemonic": "XMIT #imm,d",
+      "opcode": "0xC8",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Transmit immediate to IV bus"
+    },
+    {
+      "mnemonic": "MOVE IV,r",
+      "opcode": "0x08",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move from IV bus to register"
+    },
+    {
+      "mnemonic": "MOVE r,IV",
+      "opcode": "0x10",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "io",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Move register to IV bus"
+    },
+    {
+      "mnemonic": "ADD #imm,d",
+      "opcode": "0x28",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "OVF",
+      "notes": "Add immediate"
+    },
+    {
+      "mnemonic": "AND #imm,d",
+      "opcode": "0x48",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND immediate"
+    },
+    {
+      "mnemonic": "MOVE #imm,d",
+      "opcode": "0x18",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Move immediate"
+    },
+    {
+      "mnemonic": "NZT IV,addr",
+      "opcode": "0xA8",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Branch on IV non-zero"
+    },
+    {
+      "mnemonic": "XEC IV,addr",
+      "opcode": "0x88",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "none",
+      "notes": "Execute from IV bus"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation - all single cycle"
+    }
+  ],
+  "schema_version": "1.0"
+}

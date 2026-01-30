@@ -1,0 +1,202 @@
+{
+  "processor": "Motorola 68882",
+  "manufacturer": "Motorola",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "MC68881/MC68882 Floating-Point Coprocessor User's Manual, Motorola 1990",
+  "base_architecture": "Motorola 68881",
+  "base_timing_reference": "models/motorola/m68881/timing/m68881_timing.json",
+  "timing_notes": "The 68882 is a faster version of the 68881 with improved internal architecture. Same ISA but roughly 1.5x faster for most operations due to improved microcode and hardware multiplier. Key improvements: FADD ~20 cycles (vs 28), FMUL ~52 cycles (vs 76), FDIV ~72 cycles (vs 108), transcendentals roughly 40% faster.",
+  "instruction_count": 46,
+  "instructions": [
+    {
+      "mnemonic": "FABS.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point absolute value"
+    },
+    {
+      "mnemonic": "FADD.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point add (faster than 68881)"
+    },
+    {
+      "mnemonic": "FADD.D ea,FPn",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "FP add double from memory"
+    },
+    {
+      "mnemonic": "FCMP.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Floating-point compare"
+    },
+    {
+      "mnemonic": "FDIV.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 72,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "FP divide extended (improved over 68881)"
+    },
+    {
+      "mnemonic": "FMOVE.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Move FP register"
+    },
+    {
+      "mnemonic": "FMOVE.D ea,FPn",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "Move double from memory"
+    },
+    {
+      "mnemonic": "FMUL.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 52,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "FP multiply extended (faster hardware multiplier)"
+    },
+    {
+      "mnemonic": "FMUL.D ea,FPn",
+      "bytes": 4,
+      "cycles": 56,
+      "category": "float",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "FPCC",
+      "notes": "FP multiply double from memory"
+    },
+    {
+      "mnemonic": "FNEG.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "FP negate"
+    },
+    {
+      "mnemonic": "FSQRT.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 84,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Square root (improved over 68881)"
+    },
+    {
+      "mnemonic": "FSUB.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "FP subtract"
+    },
+    {
+      "mnemonic": "FSIN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 280,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Sine (faster microcode)"
+    },
+    {
+      "mnemonic": "FCOS.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 280,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Cosine"
+    },
+    {
+      "mnemonic": "FTAN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 320,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Tangent"
+    },
+    {
+      "mnemonic": "FLOGN.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 320,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Natural log"
+    },
+    {
+      "mnemonic": "FETOX.X FPn,FPn",
+      "bytes": 4,
+      "cycles": 280,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "e^x"
+    },
+    {
+      "mnemonic": "FSINCOS.X FPn,FPc:FPs",
+      "bytes": 4,
+      "cycles": 320,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Simultaneous sine and cosine"
+    },
+    {
+      "mnemonic": "FTST.X FPn",
+      "bytes": 4,
+      "cycles": 6,
+      "category": "float",
+      "addressing_mode": "data_register",
+      "flags_affected": "FPCC",
+      "notes": "Test FP register"
+    },
+    {
+      "mnemonic": "FRESTORE ea",
+      "bytes": 4,
+      "cycles": 24,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Restore FPU state"
+    },
+    {
+      "mnemonic": "FSAVE ea",
+      "bytes": 4,
+      "cycles": 20,
+      "category": "coprocessor",
+      "addressing_mode": "address_indirect",
+      "flags_affected": "none",
+      "notes": "Save FPU state"
+    }
+  ]
+}

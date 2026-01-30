@@ -1,0 +1,111 @@
+{
+  "processor": "TI TMS34020",
+  "manufacturer": "Texas Instruments",
+  "year": 1988,
+  "schema_version": "1.0",
+  "source": "TMS34020 Users Guide",
+  "instruction_count": 130,
+  "notes": "Enhanced GPU. 40 MHz. Faster PIXBLT, hardware window clipping.",
+  "instructions": [
+    {
+      "mnemonic": "ADD",
+      "opcode": "0x4000",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "32-bit add (faster)"
+    },
+    {
+      "mnemonic": "SUB",
+      "opcode": "0x4400",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "CNZV",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "MOVE",
+      "opcode": "0x4C00",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move"
+    },
+    {
+      "mnemonic": "MOVE *R,R",
+      "opcode": "0x6C00",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "indirect",
+      "flags_affected": "",
+      "notes": "Load"
+    },
+    {
+      "mnemonic": "PIXBLT",
+      "opcode": "0x0F00",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Fast pixel BLT"
+    },
+    {
+      "mnemonic": "CLIPT",
+      "opcode": "0x0F80",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Clip test (new)"
+    },
+    {
+      "mnemonic": "JR",
+      "opcode": "0x0100",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Jump relative"
+    },
+    {
+      "mnemonic": "CALL",
+      "opcode": "0x0920",
+      "bytes": 4,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Call"
+    },
+    {
+      "mnemonic": "RETS",
+      "opcode": "0x00A0",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x0300",
+      "bytes": 2,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

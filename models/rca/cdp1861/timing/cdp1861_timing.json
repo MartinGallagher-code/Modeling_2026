@@ -1,0 +1,91 @@
+{
+  "processor": "RCA CDP1861",
+  "manufacturer": "RCA",
+  "year": 1977,
+  "schema_version": "1.0",
+  "source": "CDP1861 datasheet",
+  "instruction_count": 8,
+  "notes": "Pixie Video Display Controller for COSMAC. DMA-driven 64x128 or 64x32 display.",
+  "instructions": [
+    {
+      "mnemonic": "DISP_ON",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Enable display via INP/OUT"
+    },
+    {
+      "mnemonic": "DISP_OFF",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Disable display"
+    },
+    {
+      "mnemonic": "DMA_OUT",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "memory",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "DMA byte to display"
+    },
+    {
+      "mnemonic": "INT_REQ",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Frame interrupt request"
+    },
+    {
+      "mnemonic": "EFx_POLL",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Poll EF1 line for vsync"
+    },
+    {
+      "mnemonic": "HSYNC",
+      "opcode": "0x06",
+      "bytes": 1,
+      "cycles": 14,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Horizontal sync"
+    },
+    {
+      "mnemonic": "VSYNC",
+      "opcode": "0x07",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Vertical sync"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 16,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

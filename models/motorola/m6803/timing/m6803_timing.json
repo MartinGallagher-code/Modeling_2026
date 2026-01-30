@@ -1,0 +1,22 @@
+{
+  "processor": "Motorola 6803",
+  "manufacturer": "Motorola",
+  "year": 1982,
+  "schema_version": "1.0",
+  "source": "Motorola MC6803 datasheet, 1982",
+  "base_architecture": "Motorola 6801",
+  "base_timing_reference": "models/motorola/m6801/timing/m6801_timing.json",
+  "timing_notes": "Instruction set and timing identical to 6801. The 6803 is a ROMless version of the 6801, intended for external EPROM use. All cycle counts unchanged from 6801.",
+  "instruction_count": 222,
+  "instructions": [
+    {
+      "mnemonic": "NOTE",
+      "bytes": 0,
+      "cycles": 0,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "All 222 instructions identical to 6801 base. See m6801_timing.json for complete instruction listing. 6803 is ROMless variant with no ISA changes."
+    }
+  ]
+}

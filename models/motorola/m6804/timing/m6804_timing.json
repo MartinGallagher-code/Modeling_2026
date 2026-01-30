@@ -1,0 +1,361 @@
+{
+  "processor": "Motorola 6804",
+  "manufacturer": "Motorola",
+  "year": 1983,
+  "schema_version": "1.0",
+  "source": "Motorola MC6804P2 datasheet, 1983",
+  "instruction_count": 39,
+  "instructions": [
+    {
+      "mnemonic": "NOP",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "No operation"
+    },
+    {
+      "mnemonic": "ADD dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Add memory to accumulator"
+    },
+    {
+      "mnemonic": "ADD imm",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C",
+      "notes": "Add immediate to accumulator"
+    },
+    {
+      "mnemonic": "SUB dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Subtract memory from accumulator"
+    },
+    {
+      "mnemonic": "SUB imm",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C",
+      "notes": "Subtract immediate from accumulator"
+    },
+    {
+      "mnemonic": "CMP dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "C",
+      "notes": "Compare memory with accumulator"
+    },
+    {
+      "mnemonic": "CMP imm",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "C",
+      "notes": "Compare immediate with accumulator"
+    },
+    {
+      "mnemonic": "AND dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "AND memory with accumulator"
+    },
+    {
+      "mnemonic": "AND imm",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "alu",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "AND immediate with accumulator"
+    },
+    {
+      "mnemonic": "INC A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Increment accumulator"
+    },
+    {
+      "mnemonic": "DEC A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Decrement accumulator"
+    },
+    {
+      "mnemonic": "INC X",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Increment X register"
+    },
+    {
+      "mnemonic": "DEC X",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Decrement X register"
+    },
+    {
+      "mnemonic": "INC Y",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Increment Y register"
+    },
+    {
+      "mnemonic": "DEC Y",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Decrement Y register"
+    },
+    {
+      "mnemonic": "CLR A",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Clear accumulator"
+    },
+    {
+      "mnemonic": "LDA dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Load accumulator from memory"
+    },
+    {
+      "mnemonic": "LDA imm",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load accumulator immediate"
+    },
+    {
+      "mnemonic": "LDA idx",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Load accumulator indexed via X/Y"
+    },
+    {
+      "mnemonic": "STA dir",
+      "bytes": 2,
+      "cycles": 5,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Store accumulator to memory"
+    },
+    {
+      "mnemonic": "STA idx",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "data_transfer",
+      "addressing_mode": "indexed",
+      "flags_affected": "none",
+      "notes": "Store accumulator indexed via X/Y"
+    },
+    {
+      "mnemonic": "LDX imm",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load X register immediate"
+    },
+    {
+      "mnemonic": "LDY imm",
+      "bytes": 2,
+      "cycles": 3,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "none",
+      "notes": "Load Y register immediate"
+    },
+    {
+      "mnemonic": "BSET dir",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Set bit in memory"
+    },
+    {
+      "mnemonic": "BCLR dir",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Clear bit in memory"
+    },
+    {
+      "mnemonic": "BRSET dir",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Branch if bit set"
+    },
+    {
+      "mnemonic": "BRCLR dir",
+      "bytes": 3,
+      "cycles": 7,
+      "category": "bit",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Branch if bit clear"
+    },
+    {
+      "mnemonic": "JMP",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump absolute"
+    },
+    {
+      "mnemonic": "JSR",
+      "bytes": 2,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Jump to subroutine"
+    },
+    {
+      "mnemonic": "RTS",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Return from subroutine"
+    },
+    {
+      "mnemonic": "RTI",
+      "bytes": 1,
+      "cycles": 7,
+      "category": "control",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Return from interrupt"
+    },
+    {
+      "mnemonic": "BCC",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if carry clear"
+    },
+    {
+      "mnemonic": "BCS",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if carry set"
+    },
+    {
+      "mnemonic": "BEQ",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if accumulator zero"
+    },
+    {
+      "mnemonic": "BNE",
+      "bytes": 2,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "none",
+      "notes": "Branch if accumulator not zero"
+    },
+    {
+      "mnemonic": "SEC",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Set carry"
+    },
+    {
+      "mnemonic": "CLC",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Clear carry"
+    },
+    {
+      "mnemonic": "SWI",
+      "bytes": 1,
+      "cycles": 10,
+      "category": "special",
+      "addressing_mode": "inherent",
+      "flags_affected": "none",
+      "notes": "Software interrupt"
+    },
+    {
+      "mnemonic": "RRA",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "alu",
+      "addressing_mode": "inherent",
+      "flags_affected": "C",
+      "notes": "Rotate right through carry"
+    }
+  ]
+}

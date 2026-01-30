@@ -1,0 +1,250 @@
+{
+  "processor": "S3 86C911",
+  "manufacturer": "S3",
+  "year": 1991,
+  "schema_version": "1.0",
+  "source": "S3 86C911 Graphics Accelerator datasheet",
+  "instruction_count": 24,
+  "instructions": [
+    {
+      "mnemonic": "LINE",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Line draw command"
+    },
+    {
+      "mnemonic": "RECT",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Rectangle draw command"
+    },
+    {
+      "mnemonic": "FILL",
+      "opcode": "0x03",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Area fill command"
+    },
+    {
+      "mnemonic": "BITBLT",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "BitBLT block transfer"
+    },
+    {
+      "mnemonic": "PSET",
+      "opcode": "0x05",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Pixel set operation"
+    },
+    {
+      "mnemonic": "PGET",
+      "opcode": "0x06",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Pixel read operation"
+    },
+    {
+      "mnemonic": "FRGD_COLOR",
+      "opcode": "0x10",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set foreground color"
+    },
+    {
+      "mnemonic": "BKGD_COLOR",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Set background color"
+    },
+    {
+      "mnemonic": "WRT_MASK",
+      "opcode": "0x12",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Write mask register"
+    },
+    {
+      "mnemonic": "CUR_X",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Current X position"
+    },
+    {
+      "mnemonic": "CUR_Y",
+      "opcode": "0x21",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Current Y position"
+    },
+    {
+      "mnemonic": "DEST_X",
+      "opcode": "0x22",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Destination X"
+    },
+    {
+      "mnemonic": "DEST_Y",
+      "opcode": "0x23",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Destination Y"
+    },
+    {
+      "mnemonic": "MAJ_AXIS",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Major axis pixel count"
+    },
+    {
+      "mnemonic": "MEM_RD",
+      "opcode": "0x40",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Memory read"
+    },
+    {
+      "mnemonic": "MEM_WR",
+      "opcode": "0x41",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Memory write"
+    },
+    {
+      "mnemonic": "MEM_BURST",
+      "opcode": "0x42",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "memory",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "Burst memory transfer"
+    },
+    {
+      "mnemonic": "PIX_CNTL",
+      "opcode": "0x50",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Pixel control"
+    },
+    {
+      "mnemonic": "SCISSORS_T",
+      "opcode": "0x60",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Scissors top"
+    },
+    {
+      "mnemonic": "SCISSORS_L",
+      "opcode": "0x61",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Scissors left"
+    },
+    {
+      "mnemonic": "SCISSORS_B",
+      "opcode": "0x62",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Scissors bottom"
+    },
+    {
+      "mnemonic": "SCISSORS_R",
+      "opcode": "0x63",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Scissors right"
+    },
+    {
+      "mnemonic": "CMD",
+      "opcode": "0x70",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "control",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Execute drawing command"
+    },
+    {
+      "mnemonic": "GP_STAT",
+      "opcode": "0x71",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Read engine status"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "processor": "Namco 54xx",
+  "manufacturer": "Namco",
+  "year": 1981,
+  "schema_version": "1.0",
+  "source": "MAME docs",
+  "instruction_count": 7,
+  "notes": "Sound generator with LFSR noise and waveform synthesis.",
+  "instructions": [
+    {
+      "mnemonic": "NOISE",
+      "opcode": "0x01",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "LFSR noise generation"
+    },
+    {
+      "mnemonic": "WAVE",
+      "opcode": "0x02",
+      "bytes": 1,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Waveform synthesis"
+    },
+    {
+      "mnemonic": "MIX",
+      "opcode": "0x03",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "alu",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Channel mixing"
+    },
+    {
+      "mnemonic": "CMD",
+      "opcode": "0x04",
+      "bytes": 1,
+      "cycles": 5,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Command input"
+    },
+    {
+      "mnemonic": "CTRL",
+      "opcode": "0x05",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "State machine"
+    },
+    {
+      "mnemonic": "DAC",
+      "opcode": "0x06",
+      "bytes": 1,
+      "cycles": 8,
+      "category": "io",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "DAC output"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "processor": "TI SN76489",
+  "manufacturer": "Texas Instruments",
+  "year": 1980,
+  "source": "SN76489 Programmable Sound Generator datasheet",
+  "instruction_count": 12,
+  "instructions": [
+    {
+      "mnemonic": "TONE1_FREQ",
+      "opcode": "0x80",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Latch tone 1 frequency (10-bit)"
+    },
+    {
+      "mnemonic": "TONE1_FREQ2",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Tone 1 frequency data byte 2"
+    },
+    {
+      "mnemonic": "TONE1_ATTEN",
+      "opcode": "0x90",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Tone 1 attenuation (4-bit)"
+    },
+    {
+      "mnemonic": "TONE2_FREQ",
+      "opcode": "0xA0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Latch tone 2 frequency"
+    },
+    {
+      "mnemonic": "TONE2_ATTEN",
+      "opcode": "0xB0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Tone 2 attenuation"
+    },
+    {
+      "mnemonic": "TONE3_FREQ",
+      "opcode": "0xC0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Latch tone 3 frequency"
+    },
+    {
+      "mnemonic": "TONE3_ATTEN",
+      "opcode": "0xD0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Tone 3 attenuation"
+    },
+    {
+      "mnemonic": "NOISE_CTRL",
+      "opcode": "0xE0",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Noise control (white/periodic, freq select)"
+    },
+    {
+      "mnemonic": "NOISE_ATTEN",
+      "opcode": "0xF0",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "Noise attenuation"
+    },
+    {
+      "mnemonic": "COUNTER_DEC",
+      "opcode": "0xFF",
+      "bytes": 1,
+      "cycles": 2,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "Internal frequency counter decrement"
+    },
+    {
+      "mnemonic": "LFSR_CLOCK",
+      "opcode": "0xFE",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "LFSR noise generation clock"
+    },
+    {
+      "mnemonic": "DAC_OUT",
+      "opcode": "0xFD",
+      "bytes": 1,
+      "cycles": 3,
+      "category": "special",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "DAC output mixing (4 channels)"
+    }
+  ],
+  "schema_version": "1.0"
+}

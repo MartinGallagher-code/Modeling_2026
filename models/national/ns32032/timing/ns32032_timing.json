@@ -1,0 +1,211 @@
+{
+  "processor": "NS32032",
+  "manufacturer": "National Semiconductor",
+  "year": 1984,
+  "schema_version": "1.0",
+  "source": "NS32032 datasheet",
+  "instruction_count": 102,
+  "notes": "32-bit CISC. 10 MHz. Complex microcoded instructions.",
+  "instructions": [
+    {
+      "mnemonic": "ADDi",
+      "opcode": "0x01",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NVZC",
+      "notes": "Add integer"
+    },
+    {
+      "mnemonic": "SUBi",
+      "opcode": "0x02",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NVZC",
+      "notes": "Subtract"
+    },
+    {
+      "mnemonic": "ANDi",
+      "opcode": "0x03",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "AND"
+    },
+    {
+      "mnemonic": "ORi",
+      "opcode": "0x04",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NZ",
+      "notes": "OR"
+    },
+    {
+      "mnemonic": "CMPi",
+      "opcode": "0x05",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "alu",
+      "addressing_mode": "register",
+      "flags_affected": "NVZC",
+      "notes": "Compare"
+    },
+    {
+      "mnemonic": "MOVi",
+      "opcode": "0x10",
+      "bytes": 3,
+      "cycles": 8,
+      "category": "data_transfer",
+      "addressing_mode": "immediate",
+      "flags_affected": "",
+      "notes": "Move immediate"
+    },
+    {
+      "mnemonic": "MOV",
+      "opcode": "0x11",
+      "bytes": 3,
+      "cycles": 6,
+      "category": "data_transfer",
+      "addressing_mode": "register",
+      "flags_affected": "",
+      "notes": "Move register"
+    },
+    {
+      "mnemonic": "LDi",
+      "opcode": "0x20",
+      "bytes": 5,
+      "cycles": 12,
+      "category": "memory",
+      "addressing_mode": "displacement",
+      "flags_affected": "",
+      "notes": "Load from memory"
+    },
+    {
+      "mnemonic": "STi",
+      "opcode": "0x21",
+      "bytes": 5,
+      "cycles": 14,
+      "category": "memory",
+      "addressing_mode": "displacement",
+      "flags_affected": "",
+      "notes": "Store to memory"
+    },
+    {
+      "mnemonic": "BR",
+      "opcode": "0x30",
+      "bytes": 2,
+      "cycles": 10,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch"
+    },
+    {
+      "mnemonic": "BSR",
+      "opcode": "0x31",
+      "bytes": 2,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "relative",
+      "flags_affected": "",
+      "notes": "Branch subroutine"
+    },
+    {
+      "mnemonic": "RET",
+      "opcode": "0x32",
+      "bytes": 1,
+      "cycles": 12,
+      "category": "control",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Return"
+    },
+    {
+      "mnemonic": "JSR",
+      "opcode": "0x33",
+      "bytes": 3,
+      "cycles": 14,
+      "category": "control",
+      "addressing_mode": "absolute",
+      "flags_affected": "",
+      "notes": "Jump subroutine"
+    },
+    {
+      "mnemonic": "MULi",
+      "opcode": "0x40",
+      "bytes": 3,
+      "cycles": 24,
+      "category": "multiply",
+      "addressing_mode": "register",
+      "flags_affected": "NV",
+      "notes": "Integer multiply"
+    },
+    {
+      "mnemonic": "DIVi",
+      "opcode": "0x41",
+      "bytes": 3,
+      "cycles": 40,
+      "category": "divide",
+      "addressing_mode": "register",
+      "flags_affected": "NV",
+      "notes": "Integer divide"
+    },
+    {
+      "mnemonic": "MOVS",
+      "opcode": "0x50",
+      "bytes": 3,
+      "cycles": 16,
+      "category": "string",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Move string"
+    },
+    {
+      "mnemonic": "CMPS",
+      "opcode": "0x51",
+      "bytes": 3,
+      "cycles": 16,
+      "category": "string",
+      "addressing_mode": "implied",
+      "flags_affected": "NVZC",
+      "notes": "Compare string"
+    },
+    {
+      "mnemonic": "ENTER",
+      "opcode": "0x60",
+      "bytes": 2,
+      "cycles": 14,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Enter procedure"
+    },
+    {
+      "mnemonic": "EXIT",
+      "opcode": "0x61",
+      "bytes": 1,
+      "cycles": 12,
+      "category": "stack",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": "Exit procedure"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 1,
+      "cycles": 4,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "",
+      "notes": ""
+    }
+  ]
+}

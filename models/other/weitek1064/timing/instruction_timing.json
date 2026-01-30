@@ -1,0 +1,150 @@
+{
+  "processor": "Weitek 1064/1065",
+  "manufacturer": "Weitek",
+  "year": 1985,
+  "source": "Weitek 1064/1065 FPU datasheet",
+  "instruction_count": 14,
+  "instructions": [
+    {
+      "mnemonic": "FADD s,d",
+      "opcode": "0x01",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP add single"
+    },
+    {
+      "mnemonic": "FSUB s,d",
+      "opcode": "0x02",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP subtract single"
+    },
+    {
+      "mnemonic": "FMUL s,d",
+      "opcode": "0x03",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP multiply single"
+    },
+    {
+      "mnemonic": "FDIV s,d",
+      "opcode": "0x04",
+      "bytes": 4,
+      "cycles": 8,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP divide single"
+    },
+    {
+      "mnemonic": "FSQRT s",
+      "opcode": "0x05",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP square root"
+    },
+    {
+      "mnemonic": "DADD s,d",
+      "opcode": "0x11",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP add double"
+    },
+    {
+      "mnemonic": "DSUB s,d",
+      "opcode": "0x12",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP subtract double"
+    },
+    {
+      "mnemonic": "DMUL s,d",
+      "opcode": "0x13",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP multiply double"
+    },
+    {
+      "mnemonic": "DDIV s,d",
+      "opcode": "0x14",
+      "bytes": 4,
+      "cycles": 12,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP divide double"
+    },
+    {
+      "mnemonic": "FCMP s,d",
+      "opcode": "0x20",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP compare"
+    },
+    {
+      "mnemonic": "FCVT s,d",
+      "opcode": "0x30",
+      "bytes": 4,
+      "cycles": 3,
+      "category": "float",
+      "addressing_mode": "register",
+      "flags_affected": "none",
+      "notes": "FP convert format"
+    },
+    {
+      "mnemonic": "FLD addr",
+      "opcode": "0x40",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "FP load from memory"
+    },
+    {
+      "mnemonic": "FST addr",
+      "opcode": "0x41",
+      "bytes": 4,
+      "cycles": 2,
+      "category": "data_transfer",
+      "addressing_mode": "direct",
+      "flags_affected": "none",
+      "notes": "FP store to memory"
+    },
+    {
+      "mnemonic": "NOP",
+      "opcode": "0x00",
+      "bytes": 4,
+      "cycles": 1,
+      "category": "nop",
+      "addressing_mode": "implied",
+      "flags_affected": "none",
+      "notes": "No operation"
+    }
+  ],
+  "schema_version": "1.0"
+}
