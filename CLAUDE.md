@@ -2,9 +2,9 @@
 
 ## Project Purpose
 
-This repository contains grey-box queueing models for 321 historical microprocessors (1970-1994) organized into 19 manufacturer/family directories. Each model predicts processor performance (CPI, IPC, IPS) using category-based instruction timing and M/M/1 queueing theory.
+This repository contains grey-box queueing models for 422 historical microprocessors (1970-1995) organized into 19 manufacturer/family directories. Each model predicts processor performance (CPI, IPC, IPS) using category-based instruction timing and M/M/1 queueing theory.
 
-**Goal**: Achieve <5% CPI prediction error for each model compared to documented/expected values. All 321 models currently pass.
+**Goal**: Achieve <5% CPI prediction error for each model compared to documented/expected values. All 422 models currently pass.
 
 ---
 
@@ -40,7 +40,7 @@ If you modify model files without updating documentation, you have NOT completed
 ```
 Modeling_2026/
 ├── CLAUDE.md                 # This file
-├── index.json                # Master index of all 196 processors
+├── index.json                # Master index of all 422 processors
 ├── models/                   # All processor model families
 │   ├── intel/                # Intel (24)
 │   ├── motorola/             # Motorola (17)

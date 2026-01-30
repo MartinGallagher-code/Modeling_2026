@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the methodology used to create performance models for the 196 historical microprocessors in this collection. The approach combines architectural knowledge with queueing theory to achieve <5% CPI prediction accuracy.
+This document describes the methodology used to create performance models for the 422 historical microprocessors in this collection. The approach combines architectural knowledge with queueing theory to achieve <5% CPI prediction accuracy.
 
 ---
 
@@ -418,7 +418,7 @@ The grey-box queueing methodology achieves high accuracy by:
 3. **Calibrating against measurements** - Tuning workload profiles to match documented CPI
 4. **Validating thoroughly** - Per-instruction tests, multiple workloads, cross-validation
 
-This approach has successfully modeled **196 processors** from 1970-1994 with **average CPI error of ~1.6%**.
+This approach has successfully modeled **422 processors** from 1970-1995 with **average CPI error of ~1.6%**.
 
 ---
 

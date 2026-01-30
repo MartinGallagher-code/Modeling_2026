@@ -83,7 +83,7 @@ For real chips, the classic technique is a **calibration loop** — run a known 
 - **1980s chips (68000, 8086, etc.)**: Some systems have programmable interval timers (e.g., Intel 8253/8254 on PC-compatible systems). Read timer counts before/after.
 - **Late 1980s–90s (ARM, 486, etc.)**: Often have cycle counters or performance counters built in.
 
-### Emulators (More Practical for 196 Processors)
+### Emulators (More Practical for 422 Processors)
 
 Cycle-accurate emulators are likely the best bet for broad coverage:
 
@@ -151,7 +151,7 @@ Rather than writing custom test programs for each architecture, a more practical
 
 ### Advantages Over Custom Test Code
 
-- **Published results already exist** — for many of the 196 processors, someone has already run Dhrystone, Whetstone, or similar benchmarks. Measurement data can be bootstrapped without touching hardware.
+- **Published results already exist** — for many of the 422 processors, someone has already run Dhrystone, Whetstone, or similar benchmarks. Measurement data can be bootstrapped without touching hardware.
 - **Reproducibility** — benchmarks have standardized source code and run conditions. A user who wants to verify on their own hardware downloads the same benchmark everyone else uses.
 - **Lower barrier** — "run Dhrystone on your system and paste the result" is far simpler than "assemble this custom test ROM, flash it, hook up a logic analyzer."
 - **Cross-validation** — if the model predicts Dhrystone MIPS and the published number is known, that's an immediate sanity check.
