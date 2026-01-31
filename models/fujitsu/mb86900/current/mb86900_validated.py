@@ -188,12 +188,12 @@ class Mb86900Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.4670765771553405,
-            'branch': -0.3415010921238632,
-            'divide': -14.298612745727874,
-            'load': -3.178522934601052,
-            'multiply': -7.384389438519853,
-            'store': 3.6943872542721325,
+            'alu': -0.175894,
+            'branch': 0.781052,
+            'divide': -19.986540,
+            'load': -3.242740,
+            'multiply': -2.960123,
+            'store': 4.332475
         }
 
         # Cache configuration for memory hierarchy modeling

@@ -1,51 +1,26 @@
-# NEC V60 Model Handoff
+# nec_v60 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 1.67%
-- **Last Updated**: 2026-01-29
-- **Cross-validation**: Initial validation complete
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: 32-bit, new NEC proprietary ISA, sequential execution
-- Clock: 16.0 MHz
-- Target CPI: 3.0
-- Predicted CPI: 3.05
+- Typical CPI: 2.286
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-Key instruction categories:
-| Category | Cycles | Description |
-|----------|--------|-------------|
-| alu | 2 | ALU operations (ADD, SUB, MUL) - 32-bit |
-| data_transfer | 2 | Data transfer (MOV, MOVEA) - 32-bit |
-| memory | 4 | Memory operations (load/store, indexed) |
-| control | 3 | Control flow (BR, Bcc, JSR, RET) |
-| float | 8 | Floating point operations (FADD, FMUL) |
-| string | 6 | String manipulation (MOVS, CMPS) |
-
-## Cross-Validation Summary
-- Per-instruction tests: 11 tests, all passing
-- Reference sources: NEC V60 Technical Manual
+## External Benchmark Data
+- mips_rating: 7.0 MIPS @ 16.0MHz
 
 ## Known Issues
-- None - model validated within 5% error
+- None significant
 
 ## Suggested Next Steps
-- Add detailed FPU pipeline timing
-- Compare with V70 successor
-- Model cache effects if documentation available
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- NEC V60 (1986) - Japan's first major 32-bit processor
-- ~375,000 transistors, 16 MHz CMOS
-- New proprietary ISA (NOT x86 compatible)
-- On-chip floating point unit
-- String manipulation instructions
-- 32-bit address space (4GB)
-- Used in NEC workstations and embedded systems
-- Followed by V70 and V80 successors
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

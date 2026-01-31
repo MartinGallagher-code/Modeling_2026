@@ -190,12 +190,12 @@ class M68Hc11Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -1.353347,
-            'control': -0.692822,
-            'data_transfer': 3.523112,
-            'memory': -1.371611,
-            'multiply': -0.596104,
-            'stack': -1.316201
+            'alu': -0.659237,
+            'control': -0.502022,
+            'data_transfer': 0.171257,
+            'memory': 0.085476,
+            'multiply': -6.782957,
+            'stack': 0.301539
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

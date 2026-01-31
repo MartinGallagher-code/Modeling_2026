@@ -1,18 +1,19 @@
 {
   "processor": "sc61860",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 24,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 2.028711,
-    "cor.control": -0.240075,
-    "cor.data_transfer": 0.417834,
-    "cor.display": -2.238236,
-    "cor.memory": -0.733047
+    "cor.alu": 2.059043,
+    "cor.control": -0.507947,
+    "cor.data_transfer": -0.228643,
+    "cor.display": -1.388138,
+    "cor.memory": -0.437379
   },
   "residuals_before": {
     "typical": -0.0,
@@ -21,8 +22,8 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
+    "typical": 0.0002,
+    "compute": -0.0003,
     "memory": 0.0,
     "control": 0.0
   },

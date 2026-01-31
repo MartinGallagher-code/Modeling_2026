@@ -250,9 +250,9 @@
     "notes": "Cross-validated from WDC 65C02 with Rockwell extensions",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_cpi_error_percent": 0.02,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "method": "Cross-reference with validated WDC 65C02 model plus Rockwell docs",
@@ -342,5 +342,14 @@
       "addressing": "zero-page, relative",
       "description": "Branch if specified bit is set"
     }
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

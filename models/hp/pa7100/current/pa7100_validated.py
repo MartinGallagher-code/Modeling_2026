@@ -188,12 +188,12 @@ class Pa7100Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.6486737302325586,
-            'branch': 0.10482678449612236,
-            'divide': -8.175938486821712,
-            'load': -1.806079925581396,
-            'multiply': -3.614407944186047,
-            'store': 2.816619113178298,
+            'alu': -0.213135,
+            'branch': 0.107251,
+            'divide': -9.469306,
+            'load': -2.863414,
+            'multiply': -3.828838,
+            'store': 4.852292
         }
 
         # Cache configuration for memory hierarchy modeling

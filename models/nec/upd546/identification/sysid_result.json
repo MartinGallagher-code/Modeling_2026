@@ -1,18 +1,19 @@
 {
   "processor": "upd546",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 14,
+  "iterations": 2,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.000659,
-    "cor.control": -0.000298,
-    "cor.data_transfer": -0.000545,
-    "cor.io": -0.000418,
-    "cor.memory": -0.000418
+    "cor.alu": -0.000558,
+    "cor.control": -0.00053,
+    "cor.data_transfer": -0.000365,
+    "cor.io": -0.000531,
+    "cor.memory": -0.000531
   },
   "residuals_before": {
     "typical": 0.0

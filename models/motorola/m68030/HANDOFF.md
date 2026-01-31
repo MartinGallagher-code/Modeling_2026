@@ -1,36 +1,27 @@
-# M68030 Model Handoff
+# m68030 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0.00% (all workloads)
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 1.1%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-The Motorola 68030 (1987) 32-bit microprocessor with on-chip MMU and data cache. Uses 8 instruction categories (pipelined RISC-style model) with correction terms.
+- Typical CPI: 6.494
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-| Parameter | Value |
-|-----------|-------|
-| Clock | 16 MHz |
-| Categories | alu(1), load(1+1mem), store(1), branch(1), multiply(10), divide(30), fp_single(3), fp_double(6) |
-| Corrections | Applied via scipy least_squares — see identification/sysid_result.json |
-| Typical CPI | 2.98 (measured), 2.98 (predicted) |
-
-## System Identification
-Correction terms fitted against 4 workload measurements. Key corrections:
-- load: +1.47 (memory access overhead), store: +1.16, alu: +0.80
-- multiply: -3.66, divide: -14.30, fp_double: -5.00, fp_single: -1.79
+## External Benchmark Data
+- dhrystone: 3.85 DMIPS @ 25.0MHz
+- mips_rating: 9.0 MIPS @ 25.0MHz
 
 ## Known Issues
-- Workload profiles manually fixed (mul/div/FP weights reduced in compute/memory/control profiles)
-- Large negative divide correction (-14.30) suggests 30-cycle base may be too high
+- None significant
 
 ## Suggested Next Steps
-1. MMU overhead modeling could be more detailed
-2. Validate against Amiga 3000 or Mac SE/30 emulator data
-3. Investigate divide timing — actual may be closer to 16 cycles for common cases
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- First 68K with on-chip data cache (256 bytes) and on-chip MMU
-- 3-stage pipeline (same as 68020)
-- Faster multiply/divide than 68020 (28 vs 44 cycles for multiply)
-- 273,000 transistors, 16-50 MHz clock range
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

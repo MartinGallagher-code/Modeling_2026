@@ -1,18 +1,19 @@
 {
   "processor": "mn1400",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.4792,
-    "cor.control": -1.0208,
-    "cor.data_transfer": 0.4792,
-    "cor.io": -0.4408,
-    "cor.memory": -0.4408
+    "cor.alu": 0.478066,
+    "cor.control": -1.021126,
+    "cor.data_transfer": 0.478066,
+    "cor.io": -0.438191,
+    "cor.memory": -0.438191
   },
   "residuals_before": {
     "typical": 0.0,
@@ -21,9 +22,9 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
+    "typical": 0.0001,
+    "compute": -0.0001,
+    "memory": -0.0001,
     "control": 0.0
   },
   "free_parameters": [

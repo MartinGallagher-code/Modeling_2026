@@ -1,30 +1,31 @@
 {
   "processor": "sequoia_s16",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 127,
-  "loss_before": 5.8e-05,
+  "iterations": 4,
+  "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 2.0544713412707925,
-    "cor.checkpoint": -5.637063635610684,
-    "cor.compare_swap": -4.669013424863314,
-    "cor.control": 0.9737730579066641,
-    "cor.memory": -0.7322546241239822
+    "cor.alu": 2.006319,
+    "cor.checkpoint": -6.837903,
+    "cor.compare_swap": -3.185469,
+    "cor.control": 0.991743,
+    "cor.memory": -0.970418
   },
   "residuals_before": {
-    "typical": -0.0127,
-    "compute": 0.007,
-    "memory": 0.0033,
-    "control": 0.003
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": -0.0003,
+    "compute": 0.0,
+    "memory": 0.0002,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

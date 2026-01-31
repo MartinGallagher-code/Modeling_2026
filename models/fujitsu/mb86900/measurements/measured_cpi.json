@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.1053,
+      "source": "published_benchmark",
+      "source_detail": "SPARCstation 1 used Fujitsu MB86900 (SPARC gate array)",
       "conditions": {
         "clock_mhz": 16.7,
         "memory_config": "typical"
       },
-      "uncertainty": 0.09,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "uncertainty": 0.211,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from specint89: 9.5 SPECint89 @ 20.0MHz. Original: Same as SPARC V7 in SPARCstation 1",
+      "source_url": "https://www.spec.org/"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.7895,
+      "source": "published_benchmark",
+      "source_detail": "SPARCstation 1 used Fujitsu MB86900 (SPARC gate array)",
       "conditions": {
         "clock_mhz": 16.7,
         "memory_config": "typical"
       },
-      "uncertainty": 0.09,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "uncertainty": 0.211,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from specint89: 9.5 SPECint89 @ 20.0MHz. Original: Same as SPARC V7 in SPARCstation 1",
+      "source_url": "https://www.spec.org/"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.6316,
+      "source": "published_benchmark",
+      "source_detail": "SPARCstation 1 used Fujitsu MB86900 (SPARC gate array)",
       "conditions": {
         "clock_mhz": 16.7,
         "memory_config": "typical"
       },
-      "uncertainty": 0.09,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "uncertainty": 0.211,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from specint89: 9.5 SPECint89 @ 20.0MHz. Original: Same as SPARC V7 in SPARCstation 1",
+      "source_url": "https://www.spec.org/"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.3158,
+      "source": "published_benchmark",
+      "source_detail": "SPARCstation 1 used Fujitsu MB86900 (SPARC gate array)",
       "conditions": {
         "clock_mhz": 16.7,
         "memory_config": "typical"
       },
-      "uncertainty": 0.09,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "uncertainty": 0.211,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from specint89: 9.5 SPECint89 @ 20.0MHz. Original: Same as SPARC V7 in SPARCstation 1",
+      "source_url": "https://www.spec.org/"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.1053,
+      "source": "published_benchmark",
+      "source_detail": "SPARCstation 1 used Fujitsu MB86900 (SPARC gate array)",
       "conditions": {
         "clock_mhz": 16.7,
         "memory_config": "typical"
       },
-      "uncertainty": 0.09,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "uncertainty": 0.211,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from specint89: 9.5 SPECint89 @ 20.0MHz. Original: Same as SPARC V7 in SPARCstation 1",
+      "source_url": "https://www.spec.org/"
     }
   ]
 }

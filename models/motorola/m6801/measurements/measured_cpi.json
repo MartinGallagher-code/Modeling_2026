@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 3.825,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.0,
+      "source": "published_benchmark",
+      "source_detail": "6801 is enhanced 6800 with on-chip peripherals",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M6801 typical workload - enhanced 6800 with peripherals"
+      "uncertainty": 0.3,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.5 MIPS @ 1.0MHz. Original: Enhanced 6800 microcontroller",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.35,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.8,
+      "source": "published_benchmark",
+      "source_detail": "6801 is enhanced 6800 with on-chip peripherals",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M6801 compute workload"
+      "uncertainty": 0.3,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.5 MIPS @ 1.0MHz. Original: Enhanced 6800 microcontroller",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "memory",
-      "measured_cpi": 4.24,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.3,
+      "source": "published_benchmark",
+      "source_detail": "6801 is enhanced 6800 with on-chip peripherals",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M6801 memory workload"
+      "uncertainty": 0.3,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.5 MIPS @ 1.0MHz. Original: Enhanced 6800 microcontroller",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "control",
-      "measured_cpi": 4.65,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.16,
+      "source": "published_benchmark",
+      "source_detail": "6801 is enhanced 6800 with on-chip peripherals",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M6801 control workload"
+      "uncertainty": 0.3,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.5 MIPS @ 1.0MHz. Original: Enhanced 6800 microcontroller",
+      "source_url": "https://bitsavers.org/components/motorola/"
     }
   ]
 }

@@ -1,38 +1,39 @@
 {
   "processor": "hitachi_6309",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 28,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`xtol` termination condition is satisfied.",
+  "cpi_error_percent": 0.01,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -1.50817,
-    "cor.alu_16bit": -2.1573,
-    "cor.bit_manipulation": -4.841465,
-    "cor.block_transfer": -4.287143,
-    "cor.control": -0.574897,
-    "cor.data_transfer": 3.56791,
-    "cor.divide": -0.293685,
-    "cor.memory": -0.552564,
-    "cor.multiply_16x16": -12.856438,
-    "cor.multiply_8x8": -4.261231,
-    "cor.stack": 4.999948
+    "cor.alu": -0.610526,
+    "cor.alu_16bit": -0.978077,
+    "cor.bit_manipulation": -1.321971,
+    "cor.block_transfer": -8.83956,
+    "cor.control": -1.036304,
+    "cor.data_transfer": 0.212232,
+    "cor.divide": -18.71649,
+    "cor.memory": 0.206688,
+    "cor.multiply_16x16": -26.044502,
+    "cor.multiply_8x8": -9.086879,
+    "cor.stack": 0.498891
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
     "control": 0.0,
-    "graphics": 0.0
+    "graphics": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": -0.0,
-    "graphics": -0.0
+    "typical": -0.0001,
+    "compute": 0.0001,
+    "memory": -0.0003,
+    "control": 0.0001,
+    "graphics": 0.0003
   },
   "free_parameters": [
     "cor.alu",

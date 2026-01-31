@@ -1,16 +1,32 @@
 {
+  "processor": "ti_explorer",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 25,
-  "loss_before": 5.672249999172974e-11,
-  "loss_after": 5.171675944761255e-21,
-  "cpi_error_percent": 1.5783224100686508e-09,
+  "iterations": 4,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.car_cdr": -0.47963593911102337,
-    "cor.cons": -1.6140580968626617,
-    "cor.eval": -0.519142708971353,
-    "cor.gc": -0.20802336957819723,
-    "cor.memory": 1.107788562548515,
-    "cor.type_check": 1.139687345764705
+    "cor.car_cdr": -0.466733,
+    "cor.cons": -0.71206,
+    "cor.eval": -0.951808,
+    "cor.gc": -1.301839,
+    "cor.memory": 1.55248,
+    "cor.type_check": 1.156426
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": 0.0,
+    "control": -0.0
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0001,
+    "memory": 0.0,
+    "control": -0.0003
   },
   "free_parameters": [
     "cor.car_cdr",
@@ -19,17 +35,5 @@
     "cor.gc",
     "cor.memory",
     "cor.type_check"
-  ],
-  "residuals_before": {
-    "typical": 1.064999999922378e-05,
-    "compute": 1.4999999997655777e-07,
-    "memory": 1.064999999922378e-05,
-    "control": 1.4999999997655777e-07
-  },
-  "residuals_after": {
-    "typical": 6.546407860241743e-11,
-    "compute": -1.1739498262386405e-11,
-    "memory": 6.546407860241743e-11,
-    "control": -1.0944312123228883e-10
-  }
+  ]
 }

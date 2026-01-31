@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 6.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 12.0,
+      "source": "published_benchmark",
+      "source_detail": "Atmel 8051 variant, standard 12-clock machine cycle",
       "conditions": {
         "clock_mhz": 24.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.3,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Atmel AT89C51 typical workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 timing",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 6.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 10.2,
+      "source": "published_benchmark",
+      "source_detail": "Atmel 8051 variant, standard 12-clock machine cycle",
       "conditions": {
         "clock_mhz": 24.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.3,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Atmel AT89C51 compute workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 timing",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 6.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 15.0,
+      "source": "published_benchmark",
+      "source_detail": "Atmel 8051 variant, standard 12-clock machine cycle",
       "conditions": {
         "clock_mhz": 24.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.3,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Atmel AT89C51 memory workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 timing",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 6.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 13.2,
+      "source": "published_benchmark",
+      "source_detail": "Atmel 8051 variant, standard 12-clock machine cycle",
       "conditions": {
         "clock_mhz": 24.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.3,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Atmel AT89C51 control workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 timing",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 6.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 12.0,
+      "source": "published_benchmark",
+      "source_detail": "Atmel 8051 variant, standard 12-clock machine cycle",
       "conditions": {
         "clock_mhz": 24.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.3,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Atmel AT89C51 mixed workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 timing",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

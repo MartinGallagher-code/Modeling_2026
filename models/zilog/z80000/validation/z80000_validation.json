@@ -217,10 +217,10 @@
     "validation_date": "2026-01-29",
     "notes": "Calibrated based on Z8000 heritage, estimated timings for 32-bit extension",
     "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_after": 1e-06,
+    "sysid_cpi_error_percent": 0.01,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "methodology": "Grey-box queueing model calibrated for Z80000's 32-bit architecture based on Z8000 heritage",

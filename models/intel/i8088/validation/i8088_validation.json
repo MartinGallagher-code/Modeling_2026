@@ -337,11 +337,11 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "sysid_loss_before": 0.000121,
-    "sysid_loss_after": 0.000121,
-    "sysid_cpi_error_percent": 0.24,
+    "sysid_loss_before": 0.063216,
+    "sysid_loss_after": 0.063246,
+    "sysid_cpi_error_percent": 3.37,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "instruction_mix": {
     "alu": 0.25,
@@ -350,5 +350,14 @@
     "control": 0.15,
     "stack": 0.1,
     "string": 0.05
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "dhrystone"
+    ],
+    "primary_source": "dhrystone",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 43.73
   }
 }

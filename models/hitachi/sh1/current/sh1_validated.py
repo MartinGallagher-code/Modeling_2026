@@ -188,12 +188,12 @@ class Sh1Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.7113685468328411,
-            'branch': -0.6660478735706049,
-            'divide': -6.778965771553387,
-            'load': -1.6184053449826536,
-            'multiply': -3.553129975587819,
-            'store': 1.5896342284466154,
+            'alu': -0.144085,
+            'branch': -0.426507,
+            'divide': -7.847730,
+            'load': -3.285771,
+            'multiply': -4.088618,
+            'store': 4.989818
         }
 
         # Cache configuration for memory hierarchy modeling

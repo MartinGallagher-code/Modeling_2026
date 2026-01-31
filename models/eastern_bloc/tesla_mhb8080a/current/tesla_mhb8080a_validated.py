@@ -195,7 +195,14 @@ class TeslaMHB8080AModel(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -1.201488,
+            'control': -1.274986,
+            'data_transfer': 1.202450,
+            'io': -2.300591,
+            'memory': -0.303503,
+            'stack': 0.332365
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""

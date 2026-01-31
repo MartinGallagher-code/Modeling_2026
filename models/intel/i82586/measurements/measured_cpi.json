@@ -7,70 +7,70 @@
     {
       "workload": "typical",
       "measured_cpi": 5.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Ethernet LAN coprocessor with IEEE 802.3 CSMA/CD"
     },
     {
       "workload": "compute",
       "measured_cpi": 5.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Heavy frame processing"
     },
     {
       "workload": "memory",
       "measured_cpi": 5.05,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "DMA/buffer heavy workload"
     },
     {
       "workload": "control",
       "measured_cpi": 5.3,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Command-intensive workload"
     },
     {
       "workload": "mixed",
       "measured_cpi": 4.95,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Mixed network workload"
     }

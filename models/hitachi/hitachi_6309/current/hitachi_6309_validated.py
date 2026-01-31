@@ -155,17 +155,17 @@ class Hitachi6309Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -1.508170,
-            'alu_16bit': -2.157300,
-            'bit_manipulation': -4.841465,
-            'block_transfer': -4.287143,
-            'control': -0.574897,
-            'data_transfer': 3.567910,
-            'divide': -0.293685,
-            'memory': -0.552564,
-            'multiply_16x16': -12.856438,
-            'multiply_8x8': -4.261231,
-            'stack': 4.999948
+            'alu': -1.904613,
+            'alu_16bit': -2.381835,
+            'bit_manipulation': -4.999885,
+            'block_transfer': -8.999558,
+            'control': -1.993913,
+            'data_transfer': 2.443440,
+            'divide': -18.463203,
+            'memory': -0.730863,
+            'multiply_16x16': -3.133709,
+            'multiply_8x8': -9.999998,
+            'stack': 4.921273
         }
 
     def _init_native_mode(self):

@@ -389,7 +389,7 @@
       }
     },
     "sysid_converged": true,
-    "sysid_date": "2026-01-30",
+    "sysid_date": "2026-01-31",
     "sysid_corrections": {
       "alu": -3.1036,
       "control": 2.8693,
@@ -399,7 +399,7 @@
     },
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0
+    "sysid_cpi_error_percent": 0.01
   },
   "cross_validation": {
     "method": "Instruction timing analysis with realistic program mix",
@@ -427,5 +427,14 @@
     "memory": 0.3,
     "control": 0.2,
     "stack": 0.1
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

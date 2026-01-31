@@ -260,11 +260,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests",
-    "sysid_loss_before": 6.1e-05,
-    "sysid_loss_after": 6.1e-05,
-    "sysid_cpi_error_percent": 0.99,
+    "sysid_loss_before": 0.001238,
+    "sysid_loss_after": 1.1e-05,
+    "sysid_cpi_error_percent": 0.37,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "family": "ARM",
@@ -318,5 +318,14 @@
       "ARM3 load latency (1.7 cached) < ARM2 load latency (2.0) - cache effect",
       "ARM3 CPI < ARM6 CPI despite ARM6 being newer - ARM3 optimized for cache"
     ]
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "arm_benchmark"
+    ],
+    "primary_source": "arm_benchmark",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.02
   }
 }

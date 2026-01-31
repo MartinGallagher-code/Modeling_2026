@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.19,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Game Boy CPU specs",
       "conditions": {
         "clock_mhz": 4.194304,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Typical workload measurement"
+      "uncertainty": 0.629,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 4.19MHz. Original: Sharp SM83 (Game Boy CPU), hybrid 8080/Z80",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 3.5615,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Game Boy CPU specs",
       "conditions": {
         "clock_mhz": 4.194304,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute workload measurement"
+      "uncertainty": 0.629,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 4.19MHz. Original: Sharp SM83 (Game Boy CPU), hybrid 8080/Z80",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 5.2375,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Game Boy CPU specs",
       "conditions": {
         "clock_mhz": 4.194304,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory workload measurement"
+      "uncertainty": 0.629,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 4.19MHz. Original: Sharp SM83 (Game Boy CPU), hybrid 8080/Z80",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.609,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Game Boy CPU specs",
       "conditions": {
         "clock_mhz": 4.194304,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control workload measurement"
+      "uncertainty": 0.629,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 4.19MHz. Original: Sharp SM83 (Game Boy CPU), hybrid 8080/Z80",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

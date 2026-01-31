@@ -1,19 +1,20 @@
 {
   "processor": "snk_lspc2",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 20,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.blit": 0.496076,
-    "cor.branch": -1.543167,
-    "cor.draw": 0.535319,
-    "cor.memory": -0.503924,
-    "cor.pixel": 0.456833,
-    "cor.register": 1.574562
+    "cor.blit": 0.491803,
+    "cor.branch": -0.880788,
+    "cor.draw": 0.013495,
+    "cor.memory": -0.418827,
+    "cor.pixel": 1.102276,
+    "cor.register": 0.443158
   },
   "residuals_before": {
     "typical": 0.0,
@@ -23,11 +24,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": -0.0003,
+    "compute": -0.0001,
+    "memory": -0.0001,
+    "control": -0.0002,
+    "mixed": 0.0006
   },
   "free_parameters": [
     "cor.blit",

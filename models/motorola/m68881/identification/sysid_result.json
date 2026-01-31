@@ -1,16 +1,32 @@
 {
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 1.3440131249636487e-09,
-  "loss_after": 3.352006851486291e-11,
-  "cpi_error_percent": 8.766537372036617e-05,
+  "processor": "m68881",
+  "date": "2026-01-31",
+  "method": "ridge",
+  "converged": true,
+  "iterations": 5,
+  "loss_before": 0.0,
+  "loss_after": 6e-06,
+  "cpi_error_percent": 0.03,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.fp_add": -0.4535370057497912,
-    "cor.fp_div": -12.506350602183131,
-    "cor.fp_move": 4.255514715205455,
-    "cor.fp_mul": 5.000264062883197,
-    "cor.fp_sqrt": -17.496214384704693,
-    "cor.fp_trig": -27.500705605604786
+    "cor.fp_add": 1.286182,
+    "cor.fp_div": -9.299355,
+    "cor.fp_move": 3.426158,
+    "cor.fp_mul": 1.499368,
+    "cor.fp_sqrt": 1.764392,
+    "cor.fp_trig": -41.922763
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": 0.0028,
+    "compute": -0.0023,
+    "memory": -0.0027,
+    "control": 0.002
   },
   "free_parameters": [
     "cor.fp_add",
@@ -19,17 +35,5 @@
     "cor.fp_mul",
     "cor.fp_sqrt",
     "cor.fp_trig"
-  ],
-  "residuals_before": {
-    "typical": 4.319999999857771e-05,
-    "compute": -1.24999999986386e-05,
-    "memory": -4.539999999941813e-05,
-    "control": 3.595000000089499e-05
-  },
-  "residuals_after": {
-    "typical": 8.606022072754627e-06,
-    "compute": -6.512641801847963e-06,
-    "memory": -3.344509607927648e-06,
-    "control": 2.533063439003058e-06
-  }
+  ]
 }

@@ -7,44 +7,56 @@
     {
       "workload": "typical",
       "measured_cpi": 1.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 10.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "12-bit microprogram sequencer, all single-cycle instructions"
     },
     {
       "workload": "compute",
       "measured_cpi": 1.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 10.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Compute-intensive sequencing workload"
     },
     {
       "workload": "memory",
       "measured_cpi": 1.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 10.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Memory-intensive sequencing workload"
     },
     {
       "workload": "control",
       "measured_cpi": 1.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 10.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Control-flow intensive sequencing workload"
     }

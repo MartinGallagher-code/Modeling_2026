@@ -176,14 +176,14 @@ class R2000Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.385535,
-            'branch': -0.430264,
-            'divide': -1.004472,
-            'jump': -0.892887,
-            'load': 0.364216,
-            'multiply': -1.102744,
-            'shift': -0.738764,
-            'store': -0.871568
+            'alu': -1.500968,
+            'branch': -1.696903,
+            'divide': -1.248407,
+            'jump': 2.248468,
+            'load': -0.192529,
+            'multiply': -1.622007,
+            'shift': 3.630637,
+            'store': 0.940028
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

@@ -1,28 +1,24 @@
 {
   "processor": "rtx2000",
   "date": "2026-01-31",
-  "converged": false,
-  "iterations": 200,
+  "method": "ridge",
+  "converged": true,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.10000000000000282,
-    "cor.branch": -0.39999999999999764,
-    "cor.literals": 0.09999999999997324,
-    "cor.memory": -0.548199999999998,
-    "cor.stack_ops": 0.10000000000000021
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.907413,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
+    "cor.alu": 0.100841,
+    "cor.branch": -0.399258,
+    "cor.literals": 0.090447,
+    "cor.memory": -1.299325,
+    "cor.stack_ops": 0.100188
   },
   "residuals_before": {
     "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0001,
+    "compute": -0.0,
+    "memory": 0.0,
     "control": 0.0,
     "mixed": 0.0
   },

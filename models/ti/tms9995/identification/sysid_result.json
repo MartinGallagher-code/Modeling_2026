@@ -1,19 +1,20 @@
 {
   "processor": "tms9995",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 16,
+  "iterations": 4,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 1e-06,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.branch": 1.571187,
-    "cor.call_return": -1.270685,
-    "cor.immediate": 0.76513,
-    "cor.memory_read": -1.857889,
-    "cor.memory_write": -2.251738,
-    "cor.register_ops": 1.546768
+    "cor.branch": 1.350543,
+    "cor.call_return": -0.847105,
+    "cor.immediate": 1.716051,
+    "cor.memory_read": -1.909561,
+    "cor.memory_write": -2.146051,
+    "cor.register_ops": 0.965477
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0013,
+    "compute": -0.0006,
+    "memory": -0.0002,
+    "control": -0.0004
   },
   "free_parameters": [
     "cor.branch",

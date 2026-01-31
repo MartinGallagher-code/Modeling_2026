@@ -1,31 +1,32 @@
 {
   "processor": "i4040",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 4,
+  "loss_before": 0.008266,
+  "loss_after": 0.008267,
+  "cpi_error_percent": 0.85,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.5,
-    "cor.control": -5.5,
-    "cor.data_transfer": 1.5,
-    "cor.memory": 2.5
+    "cor.alu": -3.952077,
+    "cor.control": -6.15128,
+    "cor.data_transfer": -1.424922,
+    "cor.memory": 5.145871
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": -0.0683,
+    "compute": -0.0295,
+    "memory": -0.0542,
+    "control": -0.0372,
+    "mixed": 0.1775
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": -0.0681,
+    "compute": -0.0295,
+    "memory": -0.0544,
+    "control": -0.0371,
+    "mixed": 0.1775
   },
   "free_parameters": [
     "cor.alu",

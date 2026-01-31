@@ -188,12 +188,12 @@ class UmcU5sModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.8302012854354923,
-            'control': -1.1697987145645097,
-            'data_transfer': 0.8302012854354883,
-            'divide': -9.210055801662445,
-            'memory': -0.17502111456451003,
-            'multiply': -18.149670171015583,
+            'alu': -3.209320,
+            'control': -0.560248,
+            'data_transfer': 3.405872,
+            'divide': 24.998527,
+            'memory': 1.359843,
+            'multiply': -4.645142
         }
 
         # Cache configuration for memory hierarchy modeling

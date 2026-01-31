@@ -1,40 +1,34 @@
 {
   "processor": "pentium",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 35,
-  "loss_before": 0.000567,
+  "iterations": 10,
+  "loss_before": 0.000234,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.12367395393504262,
-    "cor.control": -0.07224472602303915,
-    "cor.data_transfer": 0.5025845807274352,
-    "cor.divide": -35.63346452665178,
-    "cor.memory": 0.304936662865828,
-    "cor.multiply": -16.096065191222866
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.998504,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 18.0,
-    "cache.l2_hit_rate": 0.919475,
-    "cache.l2_latency": 8.0
+    "cor.alu": -0.447197,
+    "cor.control": -0.820655,
+    "cor.data_transfer": 0.739071,
+    "cor.divide": -48.094234,
+    "cor.memory": -1.089036,
+    "cor.multiply": -3.309027
   },
   "residuals_before": {
-    "typical": -0.0266,
-    "compute": -0.0053,
-    "memory": -0.0089,
-    "control": -0.0041,
-    "mixed": 0.0448
+    "typical": -0.0164,
+    "compute": -0.0107,
+    "memory": -0.0262,
+    "control": -0.0101,
+    "mixed": 0.0005
   },
   "residuals_after": {
-    "typical": -0.0,
+    "typical": -0.0001,
     "compute": -0.0,
     "memory": -0.0,
-    "control": -0.0,
-    "mixed": 0.0
+    "control": 0.0,
+    "mixed": 0.0001
   },
   "free_parameters": [
     "cache.l1_hit_rate",

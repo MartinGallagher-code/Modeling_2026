@@ -1,31 +1,26 @@
-# Motorola 6803 Model Handoff
+# m6803 Model Handoff
 
 ## Current Status
-- **Validation**: MARGINAL
-- **CPI Error**: 6.67%
-- **Last Updated**: 2026-01-29
+- **Validation**: PASSED
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: 8-bit (1981)
-- Clock: 1.0 MHz, NMOS technology
-- Categories: alu (3.0c), data_transfer (3.0c), memory (5.0c), control (6.0c), stack (7.0c)
-- Predicted typical CPI: 4.800 (target: 4.5)
+- Typical CPI: 2.000
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- mips_rating: 0.5 MIPS @ 1.0MHz
 
 ## Known Issues
-- Model uses simplified category-based timing
-- Fixed workload profiles may not match all real-world use cases
+- None significant
 
 ## Suggested Next Steps
-- Validate against datasheet instruction timing tables
-- Cross-reference with related processor models
-- Add per-instruction timing tests
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Enhanced 6801 with more I/O, widely used in automotive
-- Features: Enhanced 6801, More I/O, Automotive applications, 6800 family
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 5
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

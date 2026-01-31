@@ -1,33 +1,34 @@
 {
   "processor": "i750",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 28,
-  "loss_before": 0.08962,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.pixel": 1.0,
-    "cor.dct": -1.0,
-    "cor.quantize": 0.5,
-    "cor.motion": -2.0,
-    "cor.memory": 0.0,
-    "cor.control": 0.5
+    "cor.control": 0.408411,
+    "cor.dct": -0.999124,
+    "cor.memory": 0.00072,
+    "cor.motion": -1.99908,
+    "cor.pixel": 1.000312,
+    "cor.quantize": 0.588089
   },
   "residuals_before": {
-    "typical": 0.19,
-    "compute": -0.02,
-    "memory": 0.52,
-    "control": 0.16,
-    "mixed": 0.34
-  },
-  "residuals_after": {
     "typical": -0.0,
     "compute": 0.0,
     "memory": 0.0,
     "control": 0.0,
     "mixed": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0001,
+    "compute": -0.0,
+    "memory": 0.0001,
+    "control": 0.0,
+    "mixed": 0.0001
   },
   "free_parameters": [
     "cor.control",

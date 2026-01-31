@@ -1,30 +1,31 @@
 {
   "processor": "mc10800",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 9,
-  "loss_before": 7.8e-05,
-  "loss_after": 7.8e-05,
-  "cpi_error_percent": 0.62,
-  "message": "`ftol` termination condition is satisfied.",
+  "iterations": 3,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.035336,
-    "cor.cascade": 0.231725,
-    "cor.control": -1.014138,
-    "cor.logic": 0.134523,
-    "cor.shift": -1.014892
+    "cor.alu": 0.554629,
+    "cor.cascade": -0.370918,
+    "cor.control": -0.885782,
+    "cor.logic": 0.017299,
+    "cor.shift": 0.270331
   },
   "residuals_before": {
-    "typical": 0.0123,
+    "typical": 0.0,
     "compute": 0.0,
-    "memory": -0.0127,
+    "cascaded": 0.0,
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0123,
+    "typical": -0.0,
     "compute": -0.0,
-    "memory": -0.0127,
-    "control": -0.0
+    "cascaded": 0.0,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

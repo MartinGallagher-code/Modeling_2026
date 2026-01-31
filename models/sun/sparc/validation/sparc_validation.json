@@ -275,10 +275,20 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Model uses weighted instruction mix. Category timings reflect average effective cycles including pipeline effects.",
-    "sysid_loss_before": 0.0,
+    "sysid_loss_before": 0.000361,
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "dhrystone",
+      "specint89"
+    ],
+    "primary_source": "dhrystone",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

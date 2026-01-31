@@ -1,31 +1,32 @@
 {
   "processor": "we32000",
-  "date": "2026-01-30",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "date": "2026-01-31",
+  "method": "ridge",
+  "converged": true,
+  "iterations": 13,
+  "loss_before": 0.817894,
+  "loss_after": 0.01468,
+  "cpi_error_percent": 1.41,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.branch": 3.442438,
-    "cor.call_return": -5.000225,
-    "cor.immediate": -4.99804,
-    "cor.memory_read": 1.930287,
-    "cor.memory_write": -4.977022,
-    "cor.register_ops": 3.16822
+    "cor.branch": 16.0,
+    "cor.call_return": -4.657501,
+    "cor.immediate": -2.688023,
+    "cor.memory_read": 10.0,
+    "cor.memory_write": 6.543901,
+    "cor.register_ops": 6.63217
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0846,
+    "compute": 0.3522,
+    "memory": -1.7671,
+    "control": 0.1329
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.1973,
+    "compute": -0.0559,
+    "memory": -0.1082,
+    "control": -0.0704
   },
   "free_parameters": [
     "cor.branch",

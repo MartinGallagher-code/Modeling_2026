@@ -1,18 +1,19 @@
 {
   "processor": "mos8501",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 19,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.374744,
-    "cor.control": 0.273256,
-    "cor.data_transfer": 1.381256,
-    "cor.memory": -0.863826,
-    "cor.stack": -0.929661
+    "cor.alu": -0.378013,
+    "cor.control": 0.26931,
+    "cor.data_transfer": 1.376035,
+    "cor.memory": -0.791409,
+    "cor.stack": -0.997098
   },
   "residuals_before": {
     "typical": -0.0,
@@ -21,10 +22,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0002,
+    "compute": 0.0,
+    "memory": -0.0002,
+    "control": -0.0001
   },
   "free_parameters": [
     "cor.alu",

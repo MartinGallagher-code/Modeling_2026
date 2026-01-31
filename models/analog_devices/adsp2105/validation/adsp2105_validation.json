@@ -61,6 +61,15 @@
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "dsp_peak"
+    ],
+    "primary_source": "dsp_peak",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

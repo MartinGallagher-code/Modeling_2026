@@ -1,18 +1,19 @@
 {
   "processor": "t212",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 13,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.020407,
-    "cor.control": -0.479593,
-    "cor.data_transfer": 2.620407,
-    "cor.memory": -1.697432,
-    "cor.stack": -1.361755
+    "cor.alu": 0.003293,
+    "cor.control": -0.496721,
+    "cor.data_transfer": 2.601256,
+    "cor.memory": -1.284531,
+    "cor.stack": -1.788762
   },
   "residuals_before": {
     "typical": 0.0,
@@ -21,10 +22,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": 0.0004,
+    "compute": -0.0001,
+    "memory": -0.0003,
+    "control": -0.0001
   },
   "free_parameters": [
     "cor.alu",

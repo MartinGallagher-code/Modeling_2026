@@ -22,14 +22,23 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_before": 0.001621,
+    "sysid_loss_after": 0.000926,
+    "sysid_cpi_error_percent": 0.75,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "sources": [
     "Siemens SAB8080A datasheet (1976)",
     "Intel 8080 timing reference"
-  ]
+  ],
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.99
+  }
 }

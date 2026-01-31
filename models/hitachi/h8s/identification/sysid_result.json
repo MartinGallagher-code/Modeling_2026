@@ -1,33 +1,34 @@
 {
   "processor": "h8s",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 37,
-  "loss_before": 2.46276,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.0,
-    "cor.memory": 0.0,
-    "cor.branch": 0.0,
-    "cor.multiply": -1.5,
-    "cor.divide": -7.5,
-    "cor.bitop": -0.0
+    "cor.alu": 0.999728,
+    "cor.bitop": -3.3e-05,
+    "cor.branch": -4.8e-05,
+    "cor.divide": -7.499865,
+    "cor.memory": 5e-06,
+    "cor.multiply": -1.499832
   },
   "residuals_before": {
-    "typical": 1.38,
-    "compute": 0.96,
-    "memory": 1.41,
-    "control": 2.49,
-    "mixed": 1.14
-  },
-  "residuals_after": {
-    "typical": -0.0,
+    "typical": 0.0,
     "compute": 0.0,
     "memory": 0.0,
     "control": 0.0,
     "mixed": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": -0.0
   },
   "free_parameters": [
     "cor.alu",

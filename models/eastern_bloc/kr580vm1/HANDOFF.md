@@ -1,22 +1,26 @@
-# KR580VM1 Model Handoff
+# kr580vm1 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <0.01% (all workloads)
-- **Last Updated**: 2026-01-30
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Grey-box queueing model with per-category instruction timing
-- System identification correction terms fitted via least-squares
-- Correction terms: {"alu": -0.508868, "data_transfer": -0.737274, "memory": -0.429291, "io": 0.516107, "control": -0.978177, "bank_switch": -2.816851}
+- Typical CPI: 6.897
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- mips_rating: 0.29 MIPS @ 2.0MHz
 
 ## Known Issues
-- None. All 4 workloads (typical, compute, memory, control) pass <5% CPI error.
+- None significant
 
 ## Suggested Next Steps
-- Model is fully validated; no further tuning needed.
-- If new measured CPI data becomes available, re-run system identification.
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Pre-1985 Eastern Bloc processor, no cache.
-- Sequential execution model (no pipeline).
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

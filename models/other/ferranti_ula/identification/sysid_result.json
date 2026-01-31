@@ -1,29 +1,30 @@
 {
   "processor": "ferranti_ula",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 4,
-  "loss_before": 0.001668,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.contention": 0.069195,
-    "cor.io_decode": -0.043532,
-    "cor.memory_ctrl": 0.061402,
-    "cor.video_gen": -0.043532
+    "cor.contention": 0.0,
+    "cor.io_decode": -0.0,
+    "cor.memory_ctrl": 0.0,
+    "cor.video_gen": -0.0
   },
   "residuals_before": {
-    "typical": -0.0408,
-    "video_heavy": -0.0408,
-    "io_heavy": -0.0408,
-    "idle": -0.0408
-  },
-  "residuals_after": {
     "typical": 0.0,
     "video_heavy": 0.0,
     "io_heavy": 0.0,
     "idle": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "video_heavy": -0.0,
+    "io_heavy": -0.0,
+    "idle": -0.0
   },
   "free_parameters": [
     "cor.contention",

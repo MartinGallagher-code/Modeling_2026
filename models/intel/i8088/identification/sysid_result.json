@@ -1,36 +1,39 @@
 {
   "processor": "i8088",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 2,
-  "loss_before": 0.000121,
-  "loss_after": 0.000121,
-  "cpi_error_percent": 0.24,
+  "iterations": 6,
+  "loss_before": 0.063216,
+  "loss_after": 0.063246,
+  "cpi_error_percent": 3.37,
   "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -1.994207,
-    "cor.control": -2.830204,
-    "cor.data_transfer": 3.574021,
-    "cor.memory": -1.079106
+    "cor.alu": 5.319432,
+    "cor.control": 9.492332,
+    "cor.data_transfer": 6.0,
+    "cor.memory": 13.567118,
+    "cor.multiply": 18.0
   },
   "residuals_before": {
-    "typical": 0.0123,
-    "compute": 0.0015,
-    "memory": 0.0058,
-    "control": 0.0007,
-    "mixed": -0.0204
+    "typical": -0.487,
+    "compute": 0.1807,
+    "memory": 0.1804,
+    "control": 0.1082,
+    "mixed": -0.0454
   },
   "residuals_after": {
-    "typical": 0.0123,
-    "compute": 0.0015,
-    "memory": 0.0058,
-    "control": 0.0007,
-    "mixed": -0.0204
+    "typical": -0.4874,
+    "compute": 0.1794,
+    "memory": 0.1807,
+    "control": 0.1086,
+    "mixed": -0.0458
   },
   "free_parameters": [
     "cor.alu",
     "cor.control",
     "cor.data_transfer",
-    "cor.memory"
+    "cor.memory",
+    "cor.multiply"
   ]
 }

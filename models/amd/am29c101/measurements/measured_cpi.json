@@ -7,55 +7,70 @@
     {
       "workload": "typical",
       "measured_cpi": 2.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "16-bit CMOS integrated bit-slice, four Am2901s on single chip"
     },
     {
       "workload": "compute",
       "measured_cpi": 2.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Compute-intensive workload with heavy ALU/shift usage"
     },
     {
       "workload": "control",
       "measured_cpi": 2.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Control-intensive workload with microsequencer operations"
     },
     {
       "workload": "cascaded",
       "measured_cpi": 2.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Cascade-heavy workload using internal slice interconnects"
     },
     {
       "workload": "mixed",
       "measured_cpi": 2.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Mixed workload combining all operation types"
     }

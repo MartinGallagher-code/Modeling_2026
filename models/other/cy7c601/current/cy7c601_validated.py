@@ -188,12 +188,12 @@ class Cy7c601Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.0879672833954348,
-            'branch': -0.503508211629336,
-            'divide': -11.546130736505493,
-            'load': -2.5813724442160253,
-            'multiply': -6.460885686753177,
-            'store': 2.446169263494513,
+            'alu': -0.208717,
+            'branch': -0.125589,
+            'divide': -14.694929,
+            'load': -4.281807,
+            'multiply': -4.981179,
+            'store': 3.243076
         }
 
         # Cache configuration for memory hierarchy modeling

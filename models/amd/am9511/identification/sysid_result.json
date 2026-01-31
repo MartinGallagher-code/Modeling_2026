@@ -1,32 +1,33 @@
 {
   "processor": "am9511",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 4,
-  "loss_before": 0.000177,
-  "loss_after": 0.0,
+  "iterations": 5,
+  "loss_before": 0.0,
+  "loss_after": 1e-06,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.fixed_point": 11.111932773109245,
-    "cor.fp_add": 8.48137039431157,
-    "cor.fp_div": -15.657013574660647,
-    "cor.fp_mul": 5.935048480930841,
-    "cor.fp_sqrt": -7.765326438267616
+    "cor.fixed_point": 2.034768,
+    "cor.fp_add": 7.279646,
+    "cor.fp_div": -16.596409,
+    "cor.fp_mul": 15.956655,
+    "cor.fp_sqrt": -12.425545
   },
   "residuals_before": {
-    "typical": 0.0055,
-    "compute": 0.0055,
-    "memory": 0.0055,
-    "control": 0.0055,
-    "mixed": -0.0276
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0,
-    "mixed": 0.0
+    "typical": 0.0005,
+    "compute": 0.0005,
+    "memory": 0.0005,
+    "control": 0.0005,
+    "mixed": -0.0021
   },
   "free_parameters": [
     "cor.fixed_point",

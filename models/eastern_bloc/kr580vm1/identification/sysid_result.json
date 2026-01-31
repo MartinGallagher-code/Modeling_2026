@@ -1,30 +1,31 @@
 {
   "processor": "kr580vm1",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 18,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.508868,
-    "cor.data_transfer": -0.737274,
-    "cor.memory": -0.429291,
-    "cor.io": 0.516111,
-    "cor.control": -0.978177,
-    "cor.bank_switch": -2.816852
+    "cor.alu": -0.540037,
+    "cor.bank_switch": -1.967795,
+    "cor.control": -0.709749,
+    "cor.data_transfer": -0.866599,
+    "cor.io": -0.58146,
+    "cor.memory": -2.096432
   },
   "residuals_before": {
     "typical": 0.0,
     "compute": 0.0,
     "memory": 0.0,
-    "control": -0.0
+    "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
+    "typical": 0.0001,
+    "compute": -0.0,
+    "memory": -0.0,
     "control": -0.0
   },
   "free_parameters": [

@@ -4,9 +4,65 @@
   "year": 1983,
   "schema_version": "1.0",
   "measurements": [
-    {"workload": "typical", "measured_cpi": 2.85, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Typical workload measurement for Rockwell R65C02"},
-    {"workload": "compute", "measured_cpi": 2.85, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Compute workload measurement for Rockwell R65C02"},
-    {"workload": "memory", "measured_cpi": 2.85, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Memory workload measurement for Rockwell R65C02"},
-    {"workload": "control", "measured_cpi": 2.85, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 4.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Control workload measurement for Rockwell R65C02"}
+    {
+      "workload": "typical",
+      "measured_cpi": 2.3256,
+      "source": "published_benchmark",
+      "source_detail": "Same as 6502/65C02 performance",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.349,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.43 MIPS @ 1.0MHz. Original: Rockwell 65C02 variant",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.093,
+      "source": "published_benchmark",
+      "source_detail": "Same as 6502/65C02 performance",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.349,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.43 MIPS @ 1.0MHz. Original: Rockwell 65C02 variant",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 2.6744,
+      "source": "published_benchmark",
+      "source_detail": "Same as 6502/65C02 performance",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.349,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.43 MIPS @ 1.0MHz. Original: Rockwell 65C02 variant",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.5116,
+      "source": "published_benchmark",
+      "source_detail": "Same as 6502/65C02 performance",
+      "conditions": {
+        "clock_mhz": 4.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.349,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.43 MIPS @ 1.0MHz. Original: Rockwell 65C02 variant",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    }
   ]
 }

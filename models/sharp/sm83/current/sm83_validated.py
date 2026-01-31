@@ -171,11 +171,11 @@ class Sm83Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.531225,
-            'control': -0.572857,
-            'data_transfer': 0.461837,
-            'memory': -0.555510,
-            'stack': -0.277959
+            'alu': -1.729565,
+            'control': -0.521015,
+            'data_transfer': -1.653865,
+            'memory': 2.602560,
+            'stack': 2.299761
         }
 
         # No cache on this processor

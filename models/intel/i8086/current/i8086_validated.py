@@ -122,13 +122,15 @@ class I8086Model(BaseProcessorModel):
     address_width = 20
 
     def __init__(self):
-        # Effective cycles accounting for prefetch queue overlap
+        # Real effective cycles including bus contention and EA calculation
+        # 8086 has 16-bit bus but 4-clock bus cycles; memory operands dominate
+        # ADD reg,reg=3 but ADD reg,mem=9+EA(~7)=16; weighted average ~8
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 2.5, 0, "ADD/SUB @2.5 effective"),
-            'data_transfer': InstructionCategory('data_transfer', 2.5, 0, "MOV r,r @2-3"),
-            'memory': InstructionCategory('memory', 7.0, 0, "MOV r,m @7-8"),
-            'control': InstructionCategory('control', 10.0, 0, "JMP/CALL ~10-15"),
-            'multiply': InstructionCategory('multiply', 7.5, 0, "Multiply/complex ALU"),
+            'alu': InstructionCategory('alu', 8, 0, "ADD reg,reg @3, ADD reg,mem @16, weighted ~8"),
+            'data_transfer': InstructionCategory('data_transfer', 8, 0, "MOV reg,reg @2, MOV reg,mem @15, weighted ~8"),
+            'memory': InstructionCategory('memory', 14, 0, "PUSH/POP @11-17, LDS/LES @16-24, weighted ~14"),
+            'control': InstructionCategory('control', 16, 0, "JMP @15, CALL near @19, CALL far @28, weighted ~16"),
+            'multiply': InstructionCategory('multiply', 15, 0, "MUL 8b @70-77, MUL 16b @118-133, weighted avg ~15"),
         }
 
         self.workload_profiles = {
@@ -166,11 +168,11 @@ class I8086Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.5045454545454622,
-            'control': -2.5803030303030248,
-            'data_transfer': 2.8590909090909062,
-            'memory': -0.8833333333333321,
-            'multiply': -11.716666666666637,
+            'alu': -4.245990,
+            'control': 4.714018,
+            'data_transfer': 5.163653,
+            'memory': 7.662285,
+            'multiply': 28.076150
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

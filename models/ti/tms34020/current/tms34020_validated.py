@@ -188,12 +188,12 @@ class Tms34020Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'blit': 0.028133527696797847,
-            'branch': -0.6905311953352774,
-            'draw': -0.25320174927113565,
-            'memory': -0.27146647230320725,
-            'pixel': 1.309468804664721,
-            'register': 0.46546297376093143,
+            'blit': 5.000000,
+            'branch': 2.137610,
+            'draw': -1.736348,
+            'memory': 3.821241,
+            'pixel': 2.425450,
+            'register': 5.000000
         }
 
         # Cache configuration for memory hierarchy modeling

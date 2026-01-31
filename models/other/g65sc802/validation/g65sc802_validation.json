@@ -44,9 +44,9 @@
     "notes": "Model uses 65C816 emulation mode timing",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_cpi_error_percent": 0.02,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "per_instruction_timing_tests": [
     {

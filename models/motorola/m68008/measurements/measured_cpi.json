@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 7.168,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 11.4286,
+      "source": "published_benchmark",
+      "source_detail": "68008 is 8-bit bus version of 68000",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68008 typical workload - 8-bit bus version of 68000"
+      "uncertainty": 1.714,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.7 MIPS @ 8.0MHz. Original: 8-bit external bus limits throughput",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 5.995,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 10.2857,
+      "source": "published_benchmark",
+      "source_detail": "68008 is 8-bit bus version of 68000",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68008 compute workload"
+      "uncertainty": 1.714,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.7 MIPS @ 8.0MHz. Original: 8-bit external bus limits throughput",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 7.885,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 13.1429,
+      "source": "published_benchmark",
+      "source_detail": "68008 is 8-bit bus version of 68000",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68008 memory workload - slower due to 8-bit bus"
+      "uncertainty": 1.714,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.7 MIPS @ 8.0MHz. Original: 8-bit external bus limits throughput",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 8.57,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 12.3429,
+      "source": "published_benchmark",
+      "source_detail": "68008 is 8-bit bus version of 68000",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68008 control workload"
+      "uncertainty": 1.714,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.7 MIPS @ 8.0MHz. Original: 8-bit external bus limits throughput",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

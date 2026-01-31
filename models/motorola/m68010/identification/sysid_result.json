@@ -1,19 +1,20 @@
 {
   "processor": "m68010",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 24,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu_reg": -2.671276,
-    "cor.control": 1.723333,
-    "cor.data_transfer": 2.543238,
-    "cor.divide": -4.804094,
-    "cor.memory": -0.986308,
-    "cor.multiply": -2.418092
+    "cor.alu_reg": -1.390789,
+    "cor.control": -0.78111,
+    "cor.data_transfer": 1.244657,
+    "cor.divide": -2.042802,
+    "cor.memory": 0.278225,
+    "cor.multiply": -0.518328
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": 0.0
+    "typical": -0.0007,
+    "compute": 0.0004,
+    "memory": 0.0001,
+    "control": 0.0001
   },
   "free_parameters": [
     "cor.alu_reg",

@@ -1,33 +1,34 @@
 {
   "processor": "tms320c50",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 27,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 7,
+  "loss_before": 0.00047,
+  "loss_after": 0.000473,
+  "cpi_error_percent": 0.63,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.101958,
-    "cor.branch": -0.898042,
-    "cor.load": 0.062805,
-    "cor.mac": 0.101958,
-    "cor.special": -0.898042,
-    "cor.store": 0.14111
+    "cor.alu": 1.714614,
+    "cor.branch": 2.422581,
+    "cor.load": 5.0,
+    "cor.mac": 0.967809,
+    "cor.special": -0.358075,
+    "cor.store": 5.0
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": 0.0
+    "typical": 0.0216,
+    "compute": -0.0051,
+    "memory": -0.0428,
+    "control": 0.0023,
+    "mixed": 0.0045
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0,
-    "mixed": 0.0
+    "typical": 0.0211,
+    "compute": -0.0049,
+    "memory": -0.0432,
+    "control": 0.0023,
+    "mixed": 0.0048
   },
   "free_parameters": [
     "cor.alu",

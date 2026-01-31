@@ -171,11 +171,11 @@ class I8080Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.6187499999999448,
-            'control': -11.006250000000042,
-            'data_transfer': -4.256249999999864,
-            'memory': -4.756250000000064,
-            'stack': 35.99375000000001,
+            'alu': -2.745619,
+            'control': -4.139974,
+            'data_transfer': -0.161205,
+            'memory': 1.209509,
+            'stack': -11.000000
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

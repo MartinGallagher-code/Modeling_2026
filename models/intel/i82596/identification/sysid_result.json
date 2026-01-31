@@ -1,19 +1,20 @@
 {
   "processor": "i82596",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 13,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.control": 0.029328,
-    "cor.dma": 0.224851,
-    "cor.memory": -0.117314,
-    "cor.packet": -1.019552,
-    "cor.protocol": -1.019552,
-    "cor.register": 1.833806
+    "cor.control": 0.131519,
+    "cor.dma": 0.963505,
+    "cor.memory": -0.494482,
+    "cor.packet": -1.086023,
+    "cor.protocol": -1.079701,
+    "cor.register": 1.263294
   },
   "residuals_before": {
     "typical": -0.0,
@@ -23,11 +24,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0,
-    "mixed": 0.0
+    "typical": -0.0005,
+    "compute": 0.0003,
+    "memory": 0.0003,
+    "control": 0.0001,
+    "mixed": -0.0002
   },
   "free_parameters": [
     "cor.control",

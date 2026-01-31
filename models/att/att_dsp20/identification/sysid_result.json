@@ -1,32 +1,33 @@
 {
   "processor": "att_dsp20",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 7,
-  "loss_before": 0.29906,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.0,
-    "cor.control": -1.0,
-    "cor.data_move": 1.0,
-    "cor.io": -2.0,
-    "cor.mac": 1.0
+    "cor.alu": 1.003077,
+    "cor.control": -0.999203,
+    "cor.data_move": 0.992736,
+    "cor.io": -1.998832,
+    "cor.mac": 1.001512
   },
   "residuals_before": {
-    "typical": -0.0432,
-    "compute": -0.6396,
-    "control": 0.487,
-    "io_heavy": 0.9186,
-    "mixed": -0.058
-  },
-  "residuals_after": {
     "typical": 0.0,
     "compute": 0.0,
     "control": 0.0,
     "io_heavy": 0.0,
     "mixed": -0.0
+  },
+  "residuals_after": {
+    "typical": -0.0002,
+    "compute": 0.0,
+    "control": 0.0001,
+    "io_heavy": 0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
     "cor.alu",

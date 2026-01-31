@@ -1,29 +1,30 @@
 {
   "processor": "williams_sc1",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 5,
-  "loss_before": 0.00112,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 3,
+  "loss_before": 0.0,
+  "loss_after": 1e-06,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.blit": -6.69537480063797,
-    "cor.control": 5.215311004784691,
-    "cor.setup": 1.2002734107997253,
-    "cor.transform": 1.0198222829801937
+    "cor.blit": -6.655571,
+    "cor.control": 5.198672,
+    "cor.setup": 1.185785,
+    "cor.transform": 1.00617
   },
   "residuals_before": {
-    "typical": 0.0577,
-    "compute": -0.0159,
-    "memory": -0.0205,
-    "control": -0.022
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0013,
+    "compute": -0.0004,
+    "memory": -0.0003,
+    "control": -0.0007
   },
   "free_parameters": [
     "cor.blit",

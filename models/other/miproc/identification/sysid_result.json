@@ -1,31 +1,32 @@
 {
   "processor": "miproc",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 2,
-  "loss_before": 0.002815,
-  "loss_after": 0.002815,
-  "cpi_error_percent": 1.5,
-  "message": "`ftol` termination condition is satisfied.",
+  "iterations": 3,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.02,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 2.126798,
-    "cor.control": 1.023128,
-    "cor.data_transfer": 0.937426,
-    "cor.io": -3.332895,
-    "cor.memory": -0.041971,
-    "cor.stack": -2.37466
+    "cor.alu": 3.093925,
+    "cor.control": 0.401046,
+    "cor.data_transfer": 0.227034,
+    "cor.io": -1.171325,
+    "cor.memory": -2.297581,
+    "cor.stack": -0.805832
   },
   "residuals_before": {
-    "typical": 0.0727,
+    "typical": -0.0,
     "compute": 0.0,
-    "memory": -0.0773,
-    "control": 0.0
+    "crypto": 0.0,
+    "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0727,
-    "compute": 0.0,
-    "memory": -0.0773,
-    "control": -0.0
+    "typical": 0.0009,
+    "compute": -0.0004,
+    "crypto": -0.0002,
+    "control": -0.0005
   },
   "free_parameters": [
     "cor.alu",

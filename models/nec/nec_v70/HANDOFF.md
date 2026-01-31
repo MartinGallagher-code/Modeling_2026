@@ -1,29 +1,26 @@
-# NEC V70 Model Handoff
+# nec_v70 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0.89%
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- 32-bit CMOS processor at 20 MHz
-- V60 variant with same ISA, higher clock
-- Target CPI: 2.8, predicted CPI: 2.825
-- 6 instruction categories, 4 workload profiles
+- Typical CPI: 1.667
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- mips_rating: 12.0 MIPS @ 20.0MHz
 
 ## Known Issues
-- None
+- None significant
 
 ## Suggested Next Steps
-- None - model validates successfully
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Same proprietary ISA as V60 (not x86 compatible)
-- On-chip FPU and string manipulation instructions
-- Used primarily in NEC workstations
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

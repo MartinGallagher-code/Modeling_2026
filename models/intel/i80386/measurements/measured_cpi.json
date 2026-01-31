@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 5.5556,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 4.3-10.1 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.444,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "First 32-bit x86 processor - no on-chip cache"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 7.2 DMIPS @ 40.0MHz. Original: 80386DX @ 40MHz, range 4.3-10.1 DMIPS depending on system",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.7222,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 4.3-10.1 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.444,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 7.2 DMIPS @ 40.0MHz. Original: 80386DX @ 40MHz, range 4.3-10.1 DMIPS depending on system",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 6.9444,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 4.3-10.1 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.444,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 7.2 DMIPS @ 40.0MHz. Original: 80386DX @ 40MHz, range 4.3-10.1 DMIPS depending on system",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 6.1111,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 4.3-10.1 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.444,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-flow intensive workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 7.2 DMIPS @ 40.0MHz. Original: 80386DX @ 40MHz, range 4.3-10.1 DMIPS depending on system",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 5.5556,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 4.3-10.1 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.444,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 7.2 DMIPS @ 40.0MHz. Original: 80386DX @ 40MHz, range 4.3-10.1 DMIPS depending on system",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

@@ -1,17 +1,18 @@
 {
   "processor": "icl_dap",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 2,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.bit_op": 3.427273,
-    "cor.control": 1.427273,
-    "cor.vector": -3.057576,
-    "cor.word_op": -0.572727
+    "cor.bit_op": 3.408819,
+    "cor.control": 1.409687,
+    "cor.vector": -3.029753,
+    "cor.word_op": -0.584986
   },
   "residuals_before": {
     "typical": 0.0,
@@ -20,10 +21,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": -0.0,
-    "control": 0.0
+    "typical": 0.001,
+    "compute": -0.0006,
+    "memory": 0.0,
+    "control": -0.0005
   },
   "free_parameters": [
     "cor.bit_op",

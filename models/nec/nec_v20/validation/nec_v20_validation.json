@@ -43,11 +43,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Cross-validated against 8088 with documented speedup factors",
-    "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_before": 0.052873,
+    "sysid_loss_after": 0.052907,
+    "sysid_cpi_error_percent": 0.91,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "per_instruction_timing_tests": [
     {
@@ -141,5 +141,14 @@
       "average_timing_error_percent": 3.5,
       "cross_validation_passed": true
     }
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 32.0
   }
 }

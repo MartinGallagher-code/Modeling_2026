@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.1,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.3333,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C50 datasheet, 25 MIPS peak @ 50MHz",
       "conditions": {
         "clock_mhz": 50.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "uncertainty": 0.833,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 25.0 MIPS @ 50.0MHz. Original: Fixed-point DSP",
+      "source_url": "https://www.ti.com/"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.1,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.8333,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C50 datasheet, 25 MIPS peak @ 50MHz",
       "conditions": {
         "clock_mhz": 50.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "uncertainty": 0.833,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 25.0 MIPS @ 50.0MHz. Original: Fixed-point DSP",
+      "source_url": "https://www.ti.com/"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.1,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 4.1667,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C50 datasheet, 25 MIPS peak @ 50MHz",
       "conditions": {
         "clock_mhz": 50.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "uncertainty": 0.833,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 25.0 MIPS @ 50.0MHz. Original: Fixed-point DSP",
+      "source_url": "https://www.ti.com/"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.1,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.6667,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C50 datasheet, 25 MIPS peak @ 50MHz",
       "conditions": {
         "clock_mhz": 50.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "uncertainty": 0.833,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 25.0 MIPS @ 50.0MHz. Original: Fixed-point DSP",
+      "source_url": "https://www.ti.com/"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.1,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.3333,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C50 datasheet, 25 MIPS peak @ 50MHz",
       "conditions": {
         "clock_mhz": 50.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "uncertainty": 0.833,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 25.0 MIPS @ 50.0MHz. Original: Fixed-point DSP",
+      "source_url": "https://www.ti.com/"
     }
   ]
 }

@@ -178,12 +178,12 @@ class Intersil6100Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'arithmetic': 0.520532,
-            'io': -0.206137,
-            'jump': -1.963135,
-            'logic': 0.740667,
-            'memory': -0.947387,
-            'operate': 1.418923
+            'arithmetic': 8.565965,
+            'io': 24.000000,
+            'jump': 19.454143,
+            'logic': 14.674849,
+            'memory': 24.000000,
+            'operate': 12.000000
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

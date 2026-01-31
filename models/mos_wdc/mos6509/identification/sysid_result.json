@@ -1,18 +1,19 @@
 {
   "processor": "mos6509",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 17,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.050914,
-    "cor.control": -0.240907,
-    "cor.data_transfer": -0.726552,
-    "cor.memory": -0.622743,
-    "cor.stack": 0.812584
+    "cor.alu": 1.005405,
+    "cor.control": 0.077123,
+    "cor.data_transfer": -0.805083,
+    "cor.memory": -0.492029,
+    "cor.stack": 0.014059
   },
   "residuals_before": {
     "typical": -0.0,
@@ -21,10 +22,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": -0.0002,
+    "compute": 0.0,
+    "memory": 0.0001,
+    "control": 0.0001
   },
   "free_parameters": [
     "cor.alu",

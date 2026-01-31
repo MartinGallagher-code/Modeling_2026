@@ -1,19 +1,20 @@
 {
   "processor": "adsp2100",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 26,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.296728,
-    "cor.control": 0.133177,
-    "cor.io": 0.927571,
-    "cor.mac": -0.334115,
-    "cor.memory": -0.76402,
-    "cor.shift": 0.964958
+    "cor.alu": -0.471969,
+    "cor.control": 0.246661,
+    "cor.io": 0.709922,
+    "cor.mac": 0.234635,
+    "cor.memory": -0.483901,
+    "cor.shift": 0.002403
   },
   "residuals_before": {
     "typical": 0.0,
@@ -25,9 +26,9 @@
   "residuals_after": {
     "typical": 0.0,
     "compute": -0.0,
-    "control": 0.0,
-    "io_heavy": 0.0,
-    "mixed": -0.0
+    "control": -0.0,
+    "io_heavy": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
     "cor.alu",

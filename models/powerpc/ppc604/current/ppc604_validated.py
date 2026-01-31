@@ -188,12 +188,12 @@ class Ppc604Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.322961335736439,
-            'branch': -0.3109311924289429,
-            'divide': -9.141468551602083,
-            'load': -4.692891911007758,
-            'multiply': -4.480393833255814,
-            'store': 0.6951945783979407,
+            'alu': -0.551959,
+            'branch': 0.044113,
+            'divide': -12.232245,
+            'load': -1.799166,
+            'multiply': -2.031530,
+            'store': 2.462227
         }
 
         # Cache configuration for memory hierarchy modeling

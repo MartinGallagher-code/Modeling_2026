@@ -7,14 +7,14 @@
     {
       "workload": "typical",
       "measured_cpi": 4.004,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Validated model prediction for National COP444 typical workload"
     }

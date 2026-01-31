@@ -235,11 +235,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Calibrated with Z8 register-file architecture timings",
-    "sysid_loss_before": 0.0387,
-    "sysid_loss_after": 0.031517,
-    "sysid_cpi_error_percent": 3.13,
-    "sysid_converged": false,
-    "sysid_date": "2026-01-30"
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 1.5e-05,
+    "sysid_cpi_error_percent": 0.07,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "methodology": "Grey-box queueing model calibrated for Z8's register-file microcontroller architecture",

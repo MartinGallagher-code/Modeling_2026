@@ -1,48 +1,28 @@
-# Intel 80486 Model Handoff
+# i80486 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 2.5%
-- **Last Updated**: 2026-01-28
+- **CPI Error**: 1.2%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: 32-bit pipelined CISC with on-chip cache and FPU
-- Year: 1989
-- Clock: 25.0 MHz (up to 100 MHz with DX4)
-- Target CPI: 2.0
-- Predicted CPI: 2.05
-- Instruction categories: alu (1 cycle), data_transfer (1), memory (2), control (4), multiply (13), divide (40)
+- Typical CPI: 1.792
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-## Cross-Validation Status
-- **Family**: Intel 80x86
-- **Position**: First pipelined x86 with on-chip cache and FPU
-- **Predecessor**: Intel 80386 (1985) - added pipeline, cache, integrated FPU
-- **Successor**: Intel Pentium (1993) - superscalar, separate I/D cache
-- **Variants**: 486DX, 486SX (no FPU), 486DX2, 486DX4
-
-## Timing Tests
-- 29 per-instruction timing tests documented in validation JSON
-- Most ALU instructions execute in 1 cycle (vs 2 for 386)
-- FPU instruction timings included (FADD, FMUL, FDIV)
+## External Benchmark Data
+- dhrystone: 27.9 DMIPS @ 50.0MHz
+- mips_rating: 8.7 MIPS @ 25.0MHz
+- specint89: 13.9 SPECint89 @ 25.0MHz
 
 ## Known Issues
-- None - model validates within 5% error
+- None significant
 
 ## Suggested Next Steps
-- Model is fully validated and cross-referenced with family
-- Consider adding cache miss modeling for memory-heavy workloads
-- Add workload profiles for Windows 3.x/95 era applications
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- First x86 to break 1 MIPS/MHz barrier
-- 5-stage pipeline: Prefetch, Decode1, Decode2, Execute, Writeback
-- 8KB unified cache (4-way set associative, write-through)
-- On-chip FPU is 8-10x faster than external 80387
-- Introduced clock multiplying with DX2 (2x) and DX4 (3x)
-- 1.2 million transistors (1um process)
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.13%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

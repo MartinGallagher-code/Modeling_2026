@@ -7,56 +7,56 @@
     {
       "workload": "typical",
       "measured_cpi": 3.2,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Enhanced 6502-compatible MCU with CMOS design, MUL/DIV, bit manipulation"
     },
     {
       "workload": "compute",
       "measured_cpi": 2.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Compute-intensive workload"
     },
     {
       "workload": "memory",
       "measured_cpi": 3.55,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Memory-intensive workload"
     },
     {
       "workload": "control",
       "measured_cpi": 3.35,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Control/I-O intensive workload"
     }

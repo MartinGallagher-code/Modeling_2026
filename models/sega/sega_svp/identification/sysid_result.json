@@ -1,19 +1,20 @@
 {
   "processor": "sega_svp",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.4883,
-    "cor.branch": -0.5117,
-    "cor.load": 0.7223,
-    "cor.mac": 0.4883,
-    "cor.special": -1.5117,
-    "cor.store": 0.2543
+    "cor.alu": 0.495832,
+    "cor.branch": -0.501273,
+    "cor.load": 0.511192,
+    "cor.mac": 0.500397,
+    "cor.special": -1.496539,
+    "cor.store": 0.488426
   },
   "residuals_before": {
     "typical": 0.0,
@@ -23,7 +24,7 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
+    "typical": -0.0001,
     "compute": 0.0,
     "memory": 0.0,
     "control": 0.0,

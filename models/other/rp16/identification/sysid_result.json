@@ -1,18 +1,19 @@
 {
   "processor": "rp16",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 2,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.010681,
-    "cor.control": -0.989319,
-    "cor.logic": 0.797066,
-    "cor.memory": -1.989319,
-    "cor.shift": 1.224295
+    "cor.alu": 1.018562,
+    "cor.control": -0.998854,
+    "cor.logic": 1.016699,
+    "cor.memory": -1.998899,
+    "cor.shift": 0.942032
   },
   "residuals_before": {
     "typical": 0.0,
@@ -22,11 +23,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "control": 0.0,
-    "memory_heavy": 0.0,
-    "mixed": -0.0
+    "typical": -0.0003,
+    "compute": 0.0002,
+    "control": 0.0002,
+    "memory_heavy": 0.0002,
+    "mixed": -0.0003
   },
   "free_parameters": [
     "cor.alu",

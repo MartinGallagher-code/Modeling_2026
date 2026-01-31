@@ -1,21 +1,22 @@
 {
   "processor": "mn601",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 13,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu_ops": 0.872034,
-    "cor.io": -1.205959,
-    "cor.jump": 0.896513,
-    "cor.memory_read": -0.372233,
-    "cor.memory_write": -0.875174,
-    "cor.shift": 0.666506,
-    "cor.skip": -1.265856,
-    "cor.stack": -2.523655
+    "cor.alu_ops": 0.887303,
+    "cor.io": -1.383365,
+    "cor.jump": -0.309523,
+    "cor.memory_read": -0.471479,
+    "cor.memory_write": -0.637292,
+    "cor.shift": 0.120023,
+    "cor.skip": -0.049216,
+    "cor.stack": -0.356296
   },
   "residuals_before": {
     "typical": -0.0,
@@ -24,8 +25,8 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
+    "typical": 0.0004,
+    "compute": -0.0003,
     "memory": -0.0,
     "control": -0.0
   },

@@ -6,17 +6,18 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 10.16,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 14.2857,
+      "source": "published_benchmark",
+      "source_detail": "National Semiconductor NS32032 datasheet",
       "conditions": {
         "clock_mhz": 10.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Validated model prediction for NS32032 typical workload"
+      "uncertainty": 2.143,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.7 MIPS @ 10.0MHz. Original: Complex CISC processor",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

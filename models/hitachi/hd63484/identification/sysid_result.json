@@ -1,20 +1,21 @@
 {
   "processor": "hd63484",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 20,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.area_fill": 1.885813,
-    "cor.bitblt": 0.180253,
-    "cor.char_display": 0.73291,
-    "cor.control": -2.89788,
-    "cor.dma": -3.82604,
-    "cor.draw_circle": 1.058218,
-    "cor.draw_line": -0.367307
+    "cor.area_fill": 1.105376,
+    "cor.bitblt": 0.180723,
+    "cor.char_display": -1.575505,
+    "cor.control": -0.288491,
+    "cor.dma": -0.233034,
+    "cor.draw_circle": 0.001239,
+    "cor.draw_line": 0.384564
   },
   "residuals_before": {
     "typical": -0.0,
@@ -23,10 +24,10 @@
     "text": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "drawing": 0.0,
-    "gui": 0.0,
-    "text": -0.0
+    "typical": 0.0001,
+    "drawing": -0.0,
+    "gui": -0.0002,
+    "text": 0.0001
   },
   "free_parameters": [
     "cor.area_fill",

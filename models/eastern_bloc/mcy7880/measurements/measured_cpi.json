@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 5.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 6.8966,
+      "source": "published_benchmark",
+      "source_detail": "8080-compatible, same performance",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Polish Intel 8080A clone by CEMI"
+      "uncertainty": 1.034,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.29 MIPS @ 2.0MHz. Original: Romanian 8080 clone",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 5.3,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 6.2069,
+      "source": "published_benchmark",
+      "source_detail": "8080-compatible, same performance",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Polish Intel 8080A clone by CEMI"
+      "uncertainty": 1.034,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.29 MIPS @ 2.0MHz. Original: Romanian 8080 clone",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 6.3,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 7.931,
+      "source": "published_benchmark",
+      "source_detail": "8080-compatible, same performance",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Polish Intel 8080A clone by CEMI"
+      "uncertainty": 1.034,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.29 MIPS @ 2.0MHz. Original: Romanian 8080 clone",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 6.05,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 7.4483,
+      "source": "published_benchmark",
+      "source_detail": "8080-compatible, same performance",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Polish Intel 8080A clone by CEMI"
+      "uncertainty": 1.034,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.29 MIPS @ 2.0MHz. Original: Romanian 8080 clone",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

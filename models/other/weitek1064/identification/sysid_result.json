@@ -1,29 +1,30 @@
 {
   "processor": "weitek1064",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 2,
-  "loss_before": 0.001013,
-  "loss_after": 0.001013,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 7,
+  "loss_before": 0.0,
+  "loss_after": 0.003334,
+  "cpi_error_percent": 0.73,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.data_transfer": 2.390255,
-    "cor.fp_add": -0.194201,
-    "cor.fp_div": -2.395975,
-    "cor.fp_mul": 2.436378
+    "cor.data_transfer": 0.644428,
+    "cor.fp_add": 1.142495,
+    "cor.fp_div": -1.160987,
+    "cor.fp_mul": -6.0
   },
   "residuals_before": {
     "typical": 0.0,
-    "compute": 0.0,
-    "memory": -0.0463,
-    "control": 0.0437
+    "compute": -0.0,
+    "memory": 0.0,
+    "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": -0.0463,
-    "control": 0.0437
+    "typical": 0.022,
+    "compute": 0.0327,
+    "memory": -0.1028,
+    "control": 0.0348
   },
   "free_parameters": [
     "cor.data_transfer",

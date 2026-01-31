@@ -1,31 +1,32 @@
 {
   "processor": "rca1802",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 20,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 17,
+  "loss_before": 0.090776,
+  "loss_after": 0.040121,
+  "cpi_error_percent": 1.62,
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.branch": -1.981571,
-    "cor.call_return": -8.32891,
-    "cor.immediate": -0.514634,
-    "cor.memory_read": -4.044355,
-    "cor.memory_write": 1.333064,
-    "cor.register_ops": 4.343089
+    "cor.branch": -8.795492,
+    "cor.call_return": 40.0,
+    "cor.immediate": 24.0,
+    "cor.memory_read": -0.83409,
+    "cor.memory_write": 23.799992,
+    "cor.register_ops": 0.14313
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": 0.4887,
+    "compute": -0.1582,
+    "memory": -0.3034,
+    "control": -0.0847
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.3249,
+    "compute": -0.1055,
+    "memory": -0.2019,
+    "control": -0.0551
   },
   "free_parameters": [
     "cor.branch",

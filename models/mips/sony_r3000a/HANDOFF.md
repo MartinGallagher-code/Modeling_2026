@@ -1,27 +1,26 @@
-# Sony CXD8530BQ Model Handoff
+# sony_r3000a Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <5%
-- **Last Updated**: 2026-01-30
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: PlayStation CPU, MIPS R3000A with GTE coprocessor
-- Year: 1994
-- Clock: 33.8688 MHz
-- Target CPI: 1.4
-- Instruction categories: alu (1.0 cyc), load (2.0 cyc), store (2.0 cyc), branch (2.0 cyc), multiply (4.0 cyc), divide (12.0 cyc)
-- Bottleneck: pipeline_stall
+- Typical CPI: 1.129
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- mips_rating: 30.0 MIPS @ 33.87MHz
 
 ## Known Issues
-- None - model validates within 5% error
+- None significant
 
 ## Suggested Next Steps
-- Refine instruction timing with detailed datasheet analysis
-- Add more granular workload profiles for specific use cases
-- Cross-validate with cycle-accurate simulators if available
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Sony CXD8530BQ (1994) by Sony/LSI Logic
-- PlayStation CPU, MIPS R3000A with GTE coprocessor
-- Key features: MIPS R3000A core, GTE coprocessor, 4KB I+D cache
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

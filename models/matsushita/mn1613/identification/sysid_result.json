@@ -1,19 +1,20 @@
 {
   "processor": "mn1613",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 22,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 2.985038,
-    "cor.control": -0.645133,
-    "cor.data_transfer": -1.976422,
-    "cor.io": -1.739804,
-    "cor.memory": -0.461695,
-    "cor.stack": -0.544503
+    "cor.alu": 2.052999,
+    "cor.control": -0.945544,
+    "cor.data_transfer": 0.520023,
+    "cor.io": -2.499751,
+    "cor.memory": -0.65556,
+    "cor.stack": -0.206393
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0004,
+    "compute": -0.0003,
+    "memory": -0.0001,
+    "control": -0.0001
   },
   "free_parameters": [
     "cor.alu",

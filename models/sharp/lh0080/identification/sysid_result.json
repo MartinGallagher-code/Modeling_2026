@@ -1,30 +1,31 @@
 {
   "processor": "lh0080",
-  "date": "2026-01-30",
-  "converged": false,
-  "iterations": 200,
+  "date": "2026-01-31",
+  "method": "ridge",
+  "converged": true,
+  "iterations": 4,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "loss_after": 4e-06,
+  "cpi_error_percent": 0.05,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.259056056733584,
-    "cor.block": -5.898668538928546,
-    "cor.control": -0.3345300993039592,
-    "cor.data_transfer": 2.0545383830526385,
-    "cor.memory": -2.1681328228388983
+    "cor.alu": -1.947544,
+    "cor.block": -4.356207,
+    "cor.control": 3.060133,
+    "cor.data_transfer": 4.651894,
+    "cor.memory": 4.573402
   },
   "residuals_before": {
-    "typical": -0.0008,
-    "compute": 0.0004,
-    "memory": 0.0002,
-    "control": 0.0001
-  },
-  "residuals_after": {
-    "typical": -0.0001,
+    "typical": 0.0,
     "compute": 0.0,
     "memory": 0.0,
     "control": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0033,
+    "compute": 0.0018,
+    "memory": 0.0006,
+    "control": 0.0006
   },
   "free_parameters": [
     "cor.alu",

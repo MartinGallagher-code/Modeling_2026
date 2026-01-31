@@ -1,17 +1,18 @@
 {
   "processor": "msm5205",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.control": -1.0,
-    "cor.dac": -0.0,
-    "cor.decode": 1.0,
-    "cor.filter": 0.0
+    "cor.control": -1.000326,
+    "cor.dac": -0.000508,
+    "cor.decode": 0.998824,
+    "cor.filter": 0.0017
   },
   "residuals_before": {
     "typical": 0.0,
@@ -20,10 +21,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
+    "typical": 0.0001,
+    "compute": -0.0001,
     "memory": 0.0,
-    "control": -0.0
+    "control": 0.0
   },
   "free_parameters": [
     "cor.control",

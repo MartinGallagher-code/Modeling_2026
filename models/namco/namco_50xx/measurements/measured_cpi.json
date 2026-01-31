@@ -7,56 +7,56 @@
     {
       "workload": "typical",
       "measured_cpi": 5.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 1.5,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Target CPI for typical workload from validation data"
     },
     {
       "workload": "scoring",
       "measured_cpi": 5.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 1.5,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Target CPI for scoring workload from validation data"
     },
     {
       "workload": "coin_handling",
       "measured_cpi": 5.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 1.5,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Target CPI for coin_handling workload from validation data"
     },
     {
       "workload": "idle",
       "measured_cpi": 5.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
       "conditions": {
         "clock_mhz": 1.5,
         "memory_config": "no wait states"
       },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Target CPI for idle workload from validation data"
     }

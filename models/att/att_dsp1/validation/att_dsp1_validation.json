@@ -41,11 +41,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Early DSP with microcoded multi-cycle operations",
-    "sysid_loss_before": 0.003801,
-    "sysid_loss_after": 0.003801,
-    "sysid_cpi_error_percent": 0.85,
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 7e-06,
+    "sysid_cpi_error_percent": 0.06,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "instruction_timing_tests": [
     {

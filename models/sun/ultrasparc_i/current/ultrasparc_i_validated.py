@@ -188,12 +188,12 @@ class UltrasparcIModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.12853287263689622,
-            'branch': -0.3909009415179547,
-            'divide': -6.793727447487577,
-            'load': -2.2329072228740308,
-            'multiply': -4.9880720832454974,
-            'store': 2.1822801712270663,
+            'alu': -0.350913,
+            'branch': -0.285079,
+            'divide': -7.590249,
+            'load': -2.807541,
+            'multiply': -4.991909,
+            'store': 3.614870
         }
 
         # Cache configuration for memory hierarchy modeling

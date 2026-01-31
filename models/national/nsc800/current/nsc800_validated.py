@@ -151,7 +151,13 @@ class Nsc800Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.090189,
+            'control': 2.491388,
+            'data_transfer': 1.143806,
+            'memory': 1.185345,
+            'stack': 2.253612
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

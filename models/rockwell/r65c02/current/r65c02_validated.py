@@ -217,12 +217,12 @@ class R65c02Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.658687,
-            'bit_ops': 3.874720,
-            'control': 0.287680,
-            'data_transfer': 0.266241,
-            'memory': -0.776061,
-            'stack': -0.193257
+            'alu': -1.834376,
+            'bit_ops': 4.879902,
+            'control': 0.641410,
+            'data_transfer': 1.823732,
+            'memory': -1.207672,
+            'stack': -0.953463
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

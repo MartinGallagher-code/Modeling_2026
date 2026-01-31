@@ -164,10 +164,10 @@ class I4040Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.500000,
-            'control': -5.500000,
-            'data_transfer': 1.500000,
-            'memory': 2.500000
+            'alu': -3.951872,
+            'control': -6.151094,
+            'data_transfer': -1.426196,
+            'memory': 5.147650
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

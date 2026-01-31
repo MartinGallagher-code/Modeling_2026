@@ -180,11 +180,11 @@ class Wdc65c02Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.680834,
-            'control': 0.366856,
-            'data_transfer': 0.214092,
-            'memory': 0.142503,
-            'stack': 0.219726
+            'alu': -1.767280,
+            'control': 0.160070,
+            'data_transfer': 1.949172,
+            'memory': -1.408960,
+            'stack': 0.257181
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

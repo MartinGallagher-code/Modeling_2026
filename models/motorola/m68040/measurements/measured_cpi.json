@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.903,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.7323,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 18.6-19.5 DMIPS @ 28-33MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.139,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68040 typical workload - 6-stage pipeline, on-chip FPU, 4KB I/D caches"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 19.05 DMIPS @ 33.0MHz. Original: 68040 @ 33MHz, integrated FPU and caches",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.553,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.4724,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 18.6-19.5 DMIPS @ 28-33MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.139,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68040 compute workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 19.05 DMIPS @ 33.0MHz. Original: 68040 @ 33MHz, integrated FPU and caches",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 2.263,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.1654,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 18.6-19.5 DMIPS @ 28-33MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.139,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68040 memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 19.05 DMIPS @ 33.0MHz. Original: 68040 @ 33MHz, integrated FPU and caches",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 2.218,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.9055,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 18.6-19.5 DMIPS @ 28-33MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.139,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68040 control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 19.05 DMIPS @ 33.0MHz. Original: 68040 @ 33MHz, integrated FPU and caches",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

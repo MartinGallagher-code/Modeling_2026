@@ -1,19 +1,20 @@
 {
   "processor": "mostek_3870",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 16,
+  "iterations": 4,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 2e-06,
+  "cpi_error_percent": 0.04,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.branch": -3.530373,
-    "cor.call_return": -1.818753,
-    "cor.immediate": -1.191236,
-    "cor.memory_read": 0.104789,
-    "cor.memory_write": -3.039048,
-    "cor.register_ops": 2.196175
+    "cor.branch": -4.258031,
+    "cor.call_return": -0.368985,
+    "cor.immediate": 0.308038,
+    "cor.memory_read": -0.944293,
+    "cor.memory_write": -1.737063,
+    "cor.register_ops": 1.587671
   },
   "residuals_before": {
     "typical": 0.0,
@@ -22,10 +23,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.0024,
+    "compute": 0.0015,
+    "memory": 0.0006,
+    "control": 0.0002
   },
   "free_parameters": [
     "cor.branch",

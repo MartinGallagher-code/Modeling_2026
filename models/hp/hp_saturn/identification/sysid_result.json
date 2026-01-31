@@ -1,18 +1,19 @@
 {
   "processor": "hp_saturn",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 23,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -1.174622,
-    "cor.bcd": 1.316415,
-    "cor.control": -2.56,
-    "cor.memory": 1.101793,
-    "cor.register_op": 0.916415
+    "cor.alu": 0.114708,
+    "cor.bcd": 0.457454,
+    "cor.control": -2.559369,
+    "cor.memory": 1.531955,
+    "cor.register_op": 0.054932
   },
   "residuals_before": {
     "typical": 0.0,
@@ -21,10 +22,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
+    "typical": -0.0001,
     "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "memory": -0.0001,
+    "control": 0.0001
   },
   "free_parameters": [
     "cor.alu",

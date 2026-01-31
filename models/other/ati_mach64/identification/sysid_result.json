@@ -1,19 +1,20 @@
 {
   "processor": "ati_mach64",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 16,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.blit": 0.544535,
-    "cor.branch": -1.010111,
-    "cor.draw": -0.900818,
-    "cor.memory": -0.455465,
-    "cor.pixel": 0.989889,
-    "cor.register": -0.346172
+    "cor.blit": 0.487653,
+    "cor.branch": -1.309235,
+    "cor.draw": -0.64693,
+    "cor.memory": -0.471283,
+    "cor.pixel": 0.683121,
+    "cor.register": 0.17642
   },
   "residuals_before": {
     "typical": 0.0,
@@ -23,11 +24,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
+    "typical": -0.0001,
+    "compute": -0.0001,
     "memory": -0.0,
-    "control": -0.0,
-    "mixed": 0.0
+    "control": -0.0001,
+    "mixed": 0.0003
   },
   "free_parameters": [
     "cor.blit",

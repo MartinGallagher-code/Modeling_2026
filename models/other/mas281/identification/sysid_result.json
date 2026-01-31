@@ -1,18 +1,19 @@
 {
   "processor": "mas281",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 20,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.351815,
-    "cor.control": -1.648185,
-    "cor.data_transfer": 1.351815,
-    "cor.memory": -0.861581,
-    "cor.stack": -0.974789
+    "cor.alu": 1.343678,
+    "cor.control": -1.653996,
+    "cor.data_transfer": 1.343681,
+    "cor.memory": -0.742385,
+    "cor.stack": -1.083095
   },
   "residuals_before": {
     "typical": -0.0,
@@ -21,9 +22,9 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
+    "typical": 0.0005,
+    "compute": -0.0003,
+    "memory": -0.0003,
     "control": 0.0
   },
   "free_parameters": [

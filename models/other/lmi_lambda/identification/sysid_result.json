@@ -1,19 +1,20 @@
 {
   "processor": "lmi_lambda",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 18,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.car_cdr": 0.550108,
-    "cor.cons": -2.051844,
-    "cor.eval": 0.097846,
-    "cor.gc": 1.247537,
-    "cor.memory": 0.213264,
-    "cor.type_check": 0.191423
+    "cor.car_cdr": -0.11735,
+    "cor.cons": -0.425985,
+    "cor.eval": -0.125468,
+    "cor.gc": -0.823885,
+    "cor.memory": 0.560316,
+    "cor.type_check": 0.384725
   },
   "residuals_before": {
     "typical": -0.0,
@@ -25,7 +26,7 @@
     "typical": 0.0,
     "compute": 0.0,
     "memory": 0.0,
-    "control": 0.0
+    "control": -0.0001
   },
   "free_parameters": [
     "cor.car_cdr",

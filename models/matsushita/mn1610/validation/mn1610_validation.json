@@ -43,11 +43,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Model calibrated for early 16-bit minicomputer-like applications",
-    "sysid_loss_before": 0.006453,
-    "sysid_loss_after": 0.003461,
-    "sysid_cpi_error_percent": 1.24,
-    "sysid_converged": false,
-    "sysid_date": "2026-01-30"
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.000323,
+    "sysid_cpi_error_percent": 0.38,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-31"
   },
   "per_instruction_timing_tests": [
     {

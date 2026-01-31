@@ -1,31 +1,32 @@
 {
   "processor": "m68000",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 8,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`xtol` termination condition is satisfied.",
+  "iterations": 5,
+  "loss_before": 0.006747,
+  "loss_after": 0.007416,
+  "cpi_error_percent": 0.91,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu_reg": -2.780197,
-    "cor.control": 2.115021,
-    "cor.data_transfer": 3.277875,
-    "cor.divide": -53.893587,
-    "cor.memory": -0.661327,
-    "cor.multiply": -26.946971
+    "cor.alu_reg": 2.982289,
+    "cor.control": 10.458358,
+    "cor.data_transfer": 8.0,
+    "cor.divide": 280.0,
+    "cor.memory": 13.662918,
+    "cor.multiply": 123.477482
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.1445,
+    "compute": 0.0571,
+    "memory": 0.0459,
+    "control": 0.0271
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": 0.0
+    "typical": -0.1523,
+    "compute": 0.0596,
+    "memory": 0.0467,
+    "control": 0.0275
   },
   "free_parameters": [
     "cor.alu_reg",

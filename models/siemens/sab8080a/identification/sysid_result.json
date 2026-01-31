@@ -1,30 +1,31 @@
 {
   "processor": "sab8080a",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 14,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 10,
+  "loss_before": 0.001621,
+  "loss_after": 0.000926,
+  "cpi_error_percent": 0.75,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.17335,
-    "cor.control": -1.459895,
-    "cor.data_transfer": 0.173355,
-    "cor.memory": -1.826655,
-    "cor.stack": 1.706333
+    "cor.alu": -1.717943,
+    "cor.control": 2.26489,
+    "cor.data_transfer": -3.996319,
+    "cor.memory": 13.778589,
+    "cor.stack": 2.934443
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": -0.0,
-    "control": 0.0
+    "typical": 0.0682,
+    "compute": -0.0263,
+    "memory": -0.0298,
+    "control": -0.0157
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0517,
+    "compute": -0.0198,
+    "memory": -0.0221,
+    "control": -0.0123
   },
   "free_parameters": [
     "cor.alu",

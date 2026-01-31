@@ -196,12 +196,12 @@ class PentiumModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.12367395393504262,
-            'control': -0.07224472602303915,
-            'data_transfer': 0.5025845807274352,
-            'divide': -35.63346452665178,
-            'memory': 0.304936662865828,
-            'multiply': -16.096065191222866,
+            'alu': -0.194544,
+            'control': -0.824046,
+            'data_transfer': 0.488497,
+            'divide': -39.000000,
+            'memory': 0.806615,
+            'multiply': -11.000000
         }
 
         # Cache configuration for memory hierarchy modeling

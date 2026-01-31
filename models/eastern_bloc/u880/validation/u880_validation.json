@@ -64,9 +64,9 @@
     "notes": "Z80 clone - identical timing. Model uses same categories and weights as Z80.",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_cpi_error_percent": 0.01,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "timing_tests": [
     {
@@ -195,5 +195,14 @@
     },
     "cross_validation_date": "2026-01-29",
     "notes": "Z80 clone made by VEB Mikroelektronik Erfurt in East Germany. Full instruction set and timing compatibility. Used in KC 85, Robotron computers, and throughout Eastern Bloc. 8500 transistors, NMOS process."
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

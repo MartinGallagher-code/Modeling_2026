@@ -152,11 +152,11 @@ class Sab8080aModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.173343,
-            'control': -1.459894,
-            'data_transfer': 0.173411,
-            'memory': -1.826725,
-            'stack': 1.706326
+            'alu': -2.787048,
+            'control': -0.106092,
+            'data_transfer': 0.632441,
+            'memory': 7.000000,
+            'stack': 9.999997
         }
 
     def analyze(self, workload='typical'):

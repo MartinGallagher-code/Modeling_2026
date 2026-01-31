@@ -1,17 +1,18 @@
 {
   "processor": "cdp1861",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 6,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 8e-06,
+  "cpi_error_percent": 0.05,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.blanking": 2.0,
-    "cor.display_active": -2.0,
-    "cor.dma_fetch": -0.0,
-    "cor.sync": 3.0
+    "cor.blanking": 1.513668,
+    "cor.display_active": -1.533317,
+    "cor.dma_fetch": -0.385955,
+    "cor.sync": 2.441689
   },
   "residuals_before": {
     "typical": 0.0,
@@ -20,10 +21,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": 0.0044,
+    "compute": 0.0002,
+    "memory": -0.0013,
+    "control": -0.0033
   },
   "free_parameters": [
     "cor.blanking",

@@ -205,11 +205,11 @@ class Ricoh2A03Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.648775,
-            'control': 0.767486,
-            'data_transfer': 0.104231,
-            'memory': -0.846324,
-            'stack': -1.424283
+            'alu': -1.843393,
+            'control': 4.404722,
+            'data_transfer': 4.781833,
+            'memory': 0.846958,
+            'stack': -2.945347
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

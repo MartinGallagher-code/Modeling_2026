@@ -529,9 +529,9 @@
     "validation_date": "2026-01-29",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_cpi_error_percent": 0.01,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "instruction_mix": {
     "alu": 0.25,
@@ -634,5 +634,15 @@
     ],
     "validation_confidence": "High - CPI error < 2% across all workloads",
     "conclusion": "The model accurately predicts overall CPI using weighted category averages. While individual instruction timing tests show high error rates due to averaging, the aggregate CPI prediction is within 1.55% of expected values."
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "dhrystone",
+      "mips_rating"
+    ],
+    "primary_source": "dhrystone",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

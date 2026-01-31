@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 10.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 8.0435,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, Intel 4040 - enhanced 4004",
       "conditions": {
         "clock_mhz": 0.74,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Enhanced 4004 with interrupts - same 8/16 cycle timing"
+      "uncertainty": 1.207,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.092 MIPS @ 0.74MHz. Original: Enhanced 4004 with more instructions",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 10.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 7.2391,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, Intel 4040 - enhanced 4004",
       "conditions": {
         "clock_mhz": 0.74,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive workload"
+      "uncertainty": 1.207,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.092 MIPS @ 0.74MHz. Original: Enhanced 4004 with more instructions",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 10.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 9.25,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, Intel 4040 - enhanced 4004",
       "conditions": {
         "clock_mhz": 0.74,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive workload"
+      "uncertainty": 1.207,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.092 MIPS @ 0.74MHz. Original: Enhanced 4004 with more instructions",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 10.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 8.687,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, Intel 4040 - enhanced 4004",
       "conditions": {
         "clock_mhz": 0.74,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-flow intensive workload"
+      "uncertainty": 1.207,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.092 MIPS @ 0.74MHz. Original: Enhanced 4004 with more instructions",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 10.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 8.0435,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, Intel 4040 - enhanced 4004",
       "conditions": {
         "clock_mhz": 0.74,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Mixed workload"
+      "uncertainty": 1.207,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.092 MIPS @ 0.74MHz. Original: Enhanced 4004 with more instructions",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

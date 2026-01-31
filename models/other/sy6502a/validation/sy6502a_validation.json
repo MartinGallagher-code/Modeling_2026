@@ -253,9 +253,9 @@
     "notes": "Timing identical to MOS 6502 - cross-validated from datasheet",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_cpi_error_percent": 0.02,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "method": "Cross-reference with validated MOS 6502 model",

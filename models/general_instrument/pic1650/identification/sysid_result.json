@@ -1,19 +1,20 @@
 {
   "processor": "pic1650",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 18,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.264141,
-    "cor.bit_ops": -0.312174,
-    "cor.branch": -0.509403,
-    "cor.call": -0.341125,
-    "cor.data_transfer": 0.513034,
-    "cor.literal": -1.058853
+    "cor.alu": 0.213964,
+    "cor.bit_ops": -0.127886,
+    "cor.branch": -0.850834,
+    "cor.call": -0.208294,
+    "cor.data_transfer": 0.234236,
+    "cor.literal": -0.187967
   },
   "residuals_before": {
     "typical": -0.0,

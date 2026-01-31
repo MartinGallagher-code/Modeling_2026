@@ -201,7 +201,14 @@ class UPD780Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 1.149581,
+            'block': 0.589756,
+            'control': 0.996362,
+            'data_transfer': 1.149581,
+            'memory': 1.422085,
+            'stack': 2.734503
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""

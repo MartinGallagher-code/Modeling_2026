@@ -1,18 +1,19 @@
 {
   "processor": "sy6502a",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 21,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.619025,
-    "cor.control": 0.62779,
-    "cor.data_transfer": 1.907909,
-    "cor.memory": -1.242924,
-    "cor.stack": 0.508891
+    "cor.alu": -0.635165,
+    "cor.control": 0.762382,
+    "cor.data_transfer": 1.861986,
+    "cor.memory": -1.180601,
+    "cor.stack": 0.166542
   },
   "residuals_before": {
     "typical": 0.0,
@@ -21,10 +22,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0005,
+    "compute": -0.0001,
+    "memory": -0.0002,
+    "control": -0.0002
   },
   "free_parameters": [
     "cor.alu",

@@ -188,12 +188,12 @@ class MipsR8000Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.47789219541564903,
-            'branch': -0.8589468293305942,
-            'divide': -5.174751705599375,
-            'load': -2.2189303359424346,
-            'multiply': -2.5431419530618014,
-            'store': 0.6442013744006105,
+            'alu': -0.852848,
+            'branch': -1.504648,
+            'divide': -7.996856,
+            'load': -2.457097,
+            'multiply': -1.638645,
+            'store': -1.091075
         }
 
         # Cache configuration for memory hierarchy modeling

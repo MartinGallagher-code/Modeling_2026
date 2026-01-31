@@ -1,16 +1,32 @@
 {
+  "processor": "xerox_alto",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 25,
-  "loss_before": 2.05112500013531e-11,
-  "loss_after": 1.4585190112063396e-25,
-  "cpi_error_percent": 5.43295747533038e-12,
+  "iterations": 4,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.01,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.627801199064871,
-    "cor.control": -1.1388221224147317,
-    "cor.disk": -0.4144905752895572,
-    "cor.display": 0.9117056028985266,
-    "cor.ethernet": 1.5137129223063768,
-    "cor.memory": 2.5486428328336905
+    "cor.alu": -0.405794,
+    "cor.control": -1.195268,
+    "cor.disk": 0.165116,
+    "cor.display": 0.9997,
+    "cor.ethernet": 2.132247,
+    "cor.memory": 1.785969
+  },
+  "residuals_before": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0004,
+    "compute": 0.0004,
+    "memory": -0.0004,
+    "control": 0.0004
   },
   "free_parameters": [
     "cor.alu",
@@ -19,17 +35,5 @@
     "cor.display",
     "cor.ethernet",
     "cor.memory"
-  ],
-  "residuals_before": {
-    "typical": -6.400000000184036e-06,
-    "compute": 2.500000002569891e-07,
-    "memory": -6.400000000184036e-06,
-    "control": 2.500000011451675e-07
-  },
-  "residuals_after": {
-    "typical": -3.943512183468556e-13,
-    "compute": 3.6770586575585185e-13,
-    "memory": -3.943512183468556e-13,
-    "control": 3.703704010149522e-13
-  }
+  ]
 }

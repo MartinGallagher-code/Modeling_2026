@@ -1,40 +1,34 @@
 {
   "processor": "am5x86",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 30,
-  "loss_before": 0.000218,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 10,
+  "loss_before": 0.005461,
+  "loss_after": 2e-06,
+  "cpi_error_percent": 0.07,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.5395999803616071,
-    "cor.control": -1.4604000196383948,
-    "cor.data_transfer": 0.5395999803615998,
-    "cor.divide": -8.380396091958996,
-    "cor.memory": -0.777021909638396,
-    "cor.multiply": -16.500401983478124
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.982933,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 10.6,
-    "cache.l2_hit_rate": 0.948528,
-    "cache.l2_latency": 20.0
+    "cor.alu": -2.792471,
+    "cor.control": -0.76704,
+    "cor.data_transfer": 2.881374,
+    "cor.divide": 4.902884,
+    "cor.memory": -1.281274,
+    "cor.multiply": 3.26758
   },
   "residuals_before": {
-    "typical": 0.0134,
-    "compute": 0.0059,
-    "memory": 0.0087,
-    "control": 0.0008,
-    "mixed": -0.0283
+    "typical": 0.0596,
+    "compute": 0.0447,
+    "memory": 0.1192,
+    "control": 0.0447,
+    "mixed": 0.0745
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
+    "typical": -0.0015,
+    "compute": -0.0001,
+    "memory": -0.0008,
     "control": 0.0,
-    "mixed": -0.0
+    "mixed": 0.0021
   },
   "free_parameters": [
     "cache.l1_hit_rate",

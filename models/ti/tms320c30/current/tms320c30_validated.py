@@ -188,12 +188,12 @@ class Tms320c30Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.341911,
-            'branch': 0.341911,
-            'load': -0.496315,
-            'mac': 0.341911,
-            'special': -1.658089,
-            'store': 1.180137
+            'alu': -0.145357,
+            'branch': 1.186643,
+            'load': 1.115791,
+            'mac': 0.186643,
+            'special': -1.813357,
+            'store': 3.257494
         }
 
         # No cache on this processor

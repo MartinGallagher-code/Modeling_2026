@@ -7,72 +7,77 @@
     {
       "workload": "typical",
       "measured_cpi": 12.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "published_benchmark",
+      "source_detail": "8051 takes 12 clock cycles per machine cycle",
       "conditions": {
         "clock_mhz": 12.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Most popular 8-bit MCU - 12 clocks per machine cycle"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 requires 12 clocks per instruction",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 12.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 10.8,
+      "source": "published_benchmark",
+      "source_detail": "8051 takes 12 clock cycles per machine cycle",
       "conditions": {
         "clock_mhz": 12.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 requires 12 clocks per instruction",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 12.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 13.8,
+      "source": "published_benchmark",
+      "source_detail": "8051 takes 12 clock cycles per machine cycle",
       "conditions": {
         "clock_mhz": 12.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 requires 12 clocks per instruction",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 12.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 12.96,
+      "source": "published_benchmark",
+      "source_detail": "8051 takes 12 clock cycles per machine cycle",
       "conditions": {
         "clock_mhz": 12.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-flow intensive workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 requires 12 clocks per instruction",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
       "measured_cpi": 12.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "source": "published_benchmark",
+      "source_detail": "8051 takes 12 clock cycles per machine cycle",
       "conditions": {
         "clock_mhz": 12.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Mixed workload"
+      "uncertainty": 1.8,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 12.0MHz. Original: Standard 8051 requires 12 clocks per instruction",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 5.845,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 5.7143,
+      "source": "published_benchmark",
+      "source_detail": "68010 is enhanced 68000, ~10% faster per clock",
       "conditions": {
         "clock_mhz": 10.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68010 typical workload - enhanced 68000 with VM and loop mode"
+      "uncertainty": 0.857,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.4 MIPS @ 8.0MHz. Original: Virtual memory support, loop optimization",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 4.93,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 5.1429,
+      "source": "published_benchmark",
+      "source_detail": "68010 is enhanced 68000, ~10% faster per clock",
       "conditions": {
         "clock_mhz": 10.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68010 compute workload"
+      "uncertainty": 0.857,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.4 MIPS @ 8.0MHz. Original: Virtual memory support, loop optimization",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 6.385,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 6.5714,
+      "source": "published_benchmark",
+      "source_detail": "68010 is enhanced 68000, ~10% faster per clock",
       "conditions": {
         "clock_mhz": 10.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68010 memory workload"
+      "uncertainty": 0.857,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.4 MIPS @ 8.0MHz. Original: Virtual memory support, loop optimization",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 7.04,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 6.1714,
+      "source": "published_benchmark",
+      "source_detail": "68010 is enhanced 68000, ~10% faster per clock",
       "conditions": {
         "clock_mhz": 10.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68010 control workload"
+      "uncertainty": 0.857,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.4 MIPS @ 8.0MHz. Original: Virtual memory support, loop optimization",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

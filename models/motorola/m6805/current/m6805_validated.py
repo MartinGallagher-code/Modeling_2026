@@ -190,12 +190,12 @@ class M6805Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.685013,
-            'bit_ops': -0.311742,
-            'control': 0.148106,
-            'data_transfer': -0.664135,
-            'memory': 0.632501,
-            'stack': 1.598265
+            'alu': -0.460837,
+            'bit_ops': -4.072295,
+            'control': 2.829594,
+            'data_transfer': -3.090279,
+            'memory': 0.264221,
+            'stack': -6.999998
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

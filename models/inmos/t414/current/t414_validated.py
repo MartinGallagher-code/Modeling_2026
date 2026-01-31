@@ -166,12 +166,12 @@ class T414Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.334201,
-            'branch': -0.102165,
-            'complex': -0.048451,
-            'link_ops': -0.143009,
-            'memory': 0.095061,
-            'stack_ops': 0.169667
+            'alu': -1.022466,
+            'branch': 0.287324,
+            'complex': 0.703463,
+            'link_ops': 4.352572,
+            'memory': 1.261648,
+            'stack_ops': -0.931428
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

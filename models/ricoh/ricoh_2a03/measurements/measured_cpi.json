@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 3.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.1628,
+      "source": "published_benchmark",
+      "source_detail": "6502-based, NES CPU",
       "conditions": {
         "clock_mhz": 1.79,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Typical workload measurement"
+      "uncertainty": 0.624,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.43 MIPS @ 1.79MHz. Original: Ricoh 2A03, modified 6502 without BCD",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 3.7465,
+      "source": "published_benchmark",
+      "source_detail": "6502-based, NES CPU",
       "conditions": {
         "clock_mhz": 1.79,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute workload measurement"
+      "uncertainty": 0.624,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.43 MIPS @ 1.79MHz. Original: Ricoh 2A03, modified 6502 without BCD",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 3.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.7872,
+      "source": "published_benchmark",
+      "source_detail": "6502-based, NES CPU",
       "conditions": {
         "clock_mhz": 1.79,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory workload measurement"
+      "uncertainty": 0.624,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.43 MIPS @ 1.79MHz. Original: Ricoh 2A03, modified 6502 without BCD",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 3.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.4958,
+      "source": "published_benchmark",
+      "source_detail": "6502-based, NES CPU",
       "conditions": {
         "clock_mhz": 1.79,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control workload measurement"
+      "uncertainty": 0.624,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.43 MIPS @ 1.79MHz. Original: Ricoh 2A03, modified 6502 without BCD",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

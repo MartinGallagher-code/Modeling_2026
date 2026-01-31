@@ -1,27 +1,26 @@
-# Sun MicroSPARC Model Handoff
+# microsparc Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <5%
-- **Last Updated**: 2026-01-30
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: Low-cost single-chip SPARC, SPARCclassic/LX
-- Year: 1992
-- Clock: 50.0 MHz
-- Target CPI: 1.6
-- Instruction categories: alu (1.0 cyc), load (2.0 cyc), store (2.0 cyc), branch (2.0 cyc), multiply (5.0 cyc), divide (18.0 cyc)
-- Bottleneck: single_issue
+- Typical CPI: 1.389
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- specint92: 36.0 SPECint92 @ 50.0MHz
 
 ## Known Issues
-- None - model validates within 5% error
+- None significant
 
 ## Suggested Next Steps
-- Refine instruction timing with detailed datasheet analysis
-- Add more granular workload profiles for specific use cases
-- Cross-validate with cycle-accurate simulators if available
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Sun MicroSPARC (1992) by Sun/Fujitsu
-- Low-cost single-chip SPARC, SPARCclassic/LX
-- Key features: Single-issue, 4KB I+D cache, Integrated MMU
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

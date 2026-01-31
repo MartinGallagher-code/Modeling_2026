@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.2727,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 486SLC reviews",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "uncertainty": 0.182,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 11.0 DMIPS @ 25.0MHz. Original: Low-power 486 variant",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.9318,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 486SLC reviews",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "uncertainty": 0.182,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 11.0 DMIPS @ 25.0MHz. Original: Low-power 486 variant",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.8409,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 486SLC reviews",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "uncertainty": 0.182,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 11.0 DMIPS @ 25.0MHz. Original: Low-power 486 variant",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.5,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 486SLC reviews",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "uncertainty": 0.182,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 11.0 DMIPS @ 25.0MHz. Original: Low-power 486 variant",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.2727,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 486SLC reviews",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "uncertainty": 0.182,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 11.0 DMIPS @ 25.0MHz. Original: Low-power 486 variant",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

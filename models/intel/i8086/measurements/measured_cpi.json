@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 15.1515,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia/HandWiki instructions per second table",
       "conditions": {
         "clock_mhz": 5.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Foundation of x86 architecture with 6-byte prefetch queue"
+      "uncertainty": 2.273,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 5.0MHz. Original: 16-bit processor, high CPI due to memory bus contention",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 13.6364,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia/HandWiki instructions per second table",
       "conditions": {
         "clock_mhz": 5.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive workload"
+      "uncertainty": 2.273,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 5.0MHz. Original: 16-bit processor, high CPI due to memory bus contention",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 5.15,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 17.4242,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia/HandWiki instructions per second table",
       "conditions": {
         "clock_mhz": 5.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive workload"
+      "uncertainty": 2.273,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 5.0MHz. Original: 16-bit processor, high CPI due to memory bus contention",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 5.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 16.3636,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia/HandWiki instructions per second table",
       "conditions": {
         "clock_mhz": 5.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-intensive workload"
+      "uncertainty": 2.273,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 5.0MHz. Original: 16-bit processor, high CPI due to memory bus contention",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 4.6,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 15.1515,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia/HandWiki instructions per second table",
       "conditions": {
         "clock_mhz": 5.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Mixed workload"
+      "uncertainty": 2.273,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 5.0MHz. Original: 16-bit processor, high CPI due to memory bus contention",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

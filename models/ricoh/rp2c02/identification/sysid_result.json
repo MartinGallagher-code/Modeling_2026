@@ -1,18 +1,19 @@
 {
   "processor": "rp2c02",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 28,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.background": 2.280622,
-    "cor.oam": -1.194211,
-    "cor.pixel_output": -0.518038,
-    "cor.sprite_eval": -1.618708,
-    "cor.vram_fetch": -1.093541
+    "cor.background": 1.245995,
+    "cor.oam": -1.950786,
+    "cor.pixel_output": 0.653145,
+    "cor.sprite_eval": -1.549583,
+    "cor.vram_fetch": -0.748794
   },
   "residuals_before": {
     "typical": -0.0,
@@ -21,9 +22,9 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
+    "typical": -0.0002,
+    "compute": 0.0001,
+    "memory": 0.0001,
     "control": 0.0
   },
   "free_parameters": [

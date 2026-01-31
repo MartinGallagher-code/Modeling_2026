@@ -1,38 +1,34 @@
 {
   "processor": "cx486dlc",
   "date": "2026-01-31",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.000252,
+  "method": "ridge",
+  "converged": true,
+  "iterations": 6,
+  "loss_before": 4e-06,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "cpi_error_percent": 0.04,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.9094086455447215,
-    "cor.control": -2.590591354455284,
-    "cor.data_transfer": 0.9094086455447074,
-    "cor.divide": -9.472320463397999,
-    "cor.memory": -0.5975913544552834,
-    "cor.multiply": -18.649726799984016
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.998976,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
+    "cor.alu": -3.247699,
+    "cor.control": -2.921723,
+    "cor.data_transfer": 2.175237,
+    "cor.divide": -0.10641,
+    "cor.memory": -0.684244,
+    "cor.multiply": 0.485915
   },
   "residuals_before": {
-    "typical": 0.0143,
-    "compute": 0.0062,
-    "memory": 0.0091,
-    "control": 0.0008,
-    "mixed": -0.0305
+    "typical": 0.0017,
+    "compute": 0.0004,
+    "memory": 0.0016,
+    "control": 0.0,
+    "mixed": -0.0035
   },
   "residuals_after": {
-    "typical": 0.0004,
-    "compute": 0.0002,
-    "memory": 0.0002,
+    "typical": -0.0009,
+    "compute": -0.0,
+    "memory": -0.0005,
     "control": 0.0,
-    "mixed": -0.0007
+    "mixed": 0.0012
   },
   "free_parameters": [
     "cache.l1_hit_rate",

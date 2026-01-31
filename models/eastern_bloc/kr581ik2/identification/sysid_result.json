@@ -1,18 +1,19 @@
 {
   "processor": "kr581ik2",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 15,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.518625,
-    "cor.data_transfer": -0.465691,
-    "cor.memory": -0.00098,
-    "cor.io": -0.072539,
-    "cor.control": -0.982355
+    "cor.alu": -0.573678,
+    "cor.data_transfer": -0.364155,
+    "cor.memory": -0.003894,
+    "cor.io": -0.287899,
+    "cor.control": -0.929911
   },
   "residuals_before": {
     "typical": 0.0,
@@ -22,8 +23,8 @@
   },
   "residuals_after": {
     "typical": -0.0,
-    "compute": -0.0,
-    "memory": 0.0,
+    "compute": 0.0,
+    "memory": -0.0,
     "control": 0.0
   },
   "free_parameters": [

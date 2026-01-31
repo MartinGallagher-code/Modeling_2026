@@ -236,9 +236,9 @@
     "validation_date": "2026-01-29",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_cpi_error_percent": 0.01,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "methodology": "Grey-box queueing model calibrated for Z8000's orthogonal 16-bit architecture",
@@ -340,5 +340,14 @@
     ],
     "validation_confidence": "High - Z8000 16-bit architecture modeled correctly, CPI error 0.67%",
     "conclusion": "Z8000 model is valid. Accurately models the orthogonal 16-bit architecture with fast register operations. CPI prediction within 0.67% of expected values - best accuracy among Zilog family."
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

@@ -1,33 +1,34 @@
 {
   "processor": "ds80c320",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 36,
-  "loss_before": 1.97392,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 1,
+  "loss_before": 1.55838,
+  "loss_after": 1.55838,
+  "cpi_error_percent": 3.91,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.0,
-    "cor.memory": -0.0,
-    "cor.branch": -1.0,
-    "cor.multiply": -3.0,
-    "cor.divide": -3.0,
-    "cor.special": -1.0
+    "cor.alu": 5.0,
+    "cor.branch": 8.0,
+    "cor.divide": 10.0,
+    "cor.memory": 5.0,
+    "cor.multiply": 10.0,
+    "cor.special": 5.0
   },
   "residuals_before": {
-    "typical": 1.36,
-    "compute": 1.12,
-    "memory": 1.66,
-    "control": 1.66,
-    "mixed": 1.12
+    "typical": -0.43,
+    "compute": 0.59,
+    "memory": -2.37,
+    "control": -0.72,
+    "mixed": -1.06
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0,
-    "mixed": -0.0
+    "typical": -0.43,
+    "compute": 0.59,
+    "memory": -2.37,
+    "control": -0.72,
+    "mixed": -1.06
   },
   "free_parameters": [
     "cor.alu",

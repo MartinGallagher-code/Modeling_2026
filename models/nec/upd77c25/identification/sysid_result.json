@@ -1,32 +1,33 @@
 {
   "processor": "upd77c25",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 29,
-  "loss_before": 0.03448,
+  "iterations": 2,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.mac": 0.5,
-    "cor.alu": 0.5,
-    "cor.load": 0.0,
-    "cor.store": 0.5,
-    "cor.branch": -0.5,
-    "cor.special": 0.0
+    "cor.alu": 0.499879,
+    "cor.branch": -0.500021,
+    "cor.load": 0.000231,
+    "cor.mac": 0.499877,
+    "cor.special": 0.000231,
+    "cor.store": 0.499879
   },
   "residuals_before": {
-    "typical": -0.16,
-    "compute": -0.22,
-    "memory": -0.22,
-    "control": -0.04,
-    "mixed": -0.22
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
     "typical": 0.0,
     "compute": -0.0,
     "memory": -0.0,
-    "control": -0.0,
+    "control": 0.0,
     "mixed": -0.0
   },
   "free_parameters": [

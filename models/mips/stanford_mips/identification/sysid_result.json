@@ -1,18 +1,19 @@
 {
   "processor": "stanford_mips",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 13,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.1,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.091779,
-    "cor.branch": 0.317839,
-    "cor.jump": -0.716509,
-    "cor.load": 1.95616,
-    "cor.store": -1.735596
+    "cor.alu": -0.445597,
+    "cor.branch": 0.154209,
+    "cor.jump": -0.699666,
+    "cor.load": 2.257116,
+    "cor.store": -2.179565
   },
   "residuals_before": {
     "typical": -0.0,
@@ -21,10 +22,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.001,
+    "compute": -0.0004,
+    "memory": -0.0005,
+    "control": -0.0002
   },
   "free_parameters": [
     "cor.alu",

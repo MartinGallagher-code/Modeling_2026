@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 15.0,
+      "source": "published_benchmark",
+      "source_detail": "8048 datasheet, 15 cycles per instruction typical",
       "conditions": {
         "clock_mhz": 6.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "First single-chip microcontroller - MCS-48 family"
+      "uncertainty": 2.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 6.0MHz. Original: Intel's first microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 13.5,
+      "source": "published_benchmark",
+      "source_detail": "8048 datasheet, 15 cycles per instruction typical",
       "conditions": {
         "clock_mhz": 6.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive workload"
+      "uncertainty": 2.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 6.0MHz. Original: Intel's first microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 17.25,
+      "source": "published_benchmark",
+      "source_detail": "8048 datasheet, 15 cycles per instruction typical",
       "conditions": {
         "clock_mhz": 6.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive workload"
+      "uncertainty": 2.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 6.0MHz. Original: Intel's first microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 16.2,
+      "source": "published_benchmark",
+      "source_detail": "8048 datasheet, 15 cycles per instruction typical",
       "conditions": {
         "clock_mhz": 6.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-flow intensive workload"
+      "uncertainty": 2.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 6.0MHz. Original: Intel's first microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 15.0,
+      "source": "published_benchmark",
+      "source_detail": "8048 datasheet, 15 cycles per instruction typical",
       "conditions": {
         "clock_mhz": 6.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Mixed workload"
+      "uncertainty": 2.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 6.0MHz. Original: Intel's first microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

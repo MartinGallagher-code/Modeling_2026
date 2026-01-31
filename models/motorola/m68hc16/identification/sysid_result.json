@@ -1,19 +1,20 @@
 {
   "processor": "m68hc16",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 12,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`xtol` termination condition is satisfied.",
+  "cpi_error_percent": 0.02,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.475446,
-    "cor.control": -2.524554,
-    "cor.data_transfer": 0.475446,
-    "cor.divide": -12.613692,
-    "cor.memory": -1.524554,
-    "cor.multiply": -9.979986
+    "cor.alu": 0.461768,
+    "cor.control": -2.519011,
+    "cor.data_transfer": 0.517995,
+    "cor.divide": -16.095159,
+    "cor.memory": -1.510474,
+    "cor.multiply": -7.890048
   },
   "residuals_before": {
     "typical": 0.0,
@@ -23,11 +24,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": 0.0
+    "typical": 0.0004,
+    "compute": 0.0002,
+    "memory": 0.0003,
+    "control": 0.0001,
+    "mixed": -0.001
   },
   "free_parameters": [
     "cor.alu",

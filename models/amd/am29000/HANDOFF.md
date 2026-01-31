@@ -1,38 +1,26 @@
-# AMD Am29000 Model Handoff
+# am29000 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 3.33%
-- **Last Updated**: 2026-01-28
+- **CPI Error**: 0.1%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: 32-bit RISC with 192 registers
-- Clock: 25 MHz
-- Target CPI: 1.5 (IPC 0.67)
-- Key instruction categories: alu (1.0), load (2.0), store (1.5), branch (2.0), multiply (4.0), call_return (2.0)
+- Typical CPI: 1.667
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-## Validation Status
-- 14 per-instruction timing tests added
-- Cross-validation against amd_29000, sparc, i960
-- 4 architectural consistency checks (all passed)
-- MIPS and Dhrystone benchmark references included
+## External Benchmark Data
+- specint89: 15.0 SPECint89 @ 25.0MHz
 
 ## Known Issues
-- None currently - model validates within 5% error
-- Slight discrepancy in atomic load/store timing
+- None significant
 
 ## Suggested Next Steps
-- Consider adding divide instruction category
-- Could refine cycle counts based on actual Am29000 benchmarks
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- AMD's 32-bit RISC processor (1988) with 192 registers (64 global + 128 local stack)
-- 4-stage pipeline designed for embedded and graphics applications
-- Register stack similar to SPARC windows for fast procedure calls
-- Competed with Intel i960 in embedded market
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

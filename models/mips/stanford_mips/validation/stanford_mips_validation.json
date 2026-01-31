@@ -48,9 +48,9 @@
     "notes": "Model validated against Stanford MIPS papers and comparison to Berkeley RISC. 13/13 tests passed.",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_cpi_error_percent": 0.1,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "per_instruction_timing_tests": [
     {
@@ -232,5 +232,14 @@
     "current": "Stanford MIPS (1983)",
     "successor": "MIPS R2000 (1986)",
     "influence": "Foundation for entire MIPS architecture family"
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

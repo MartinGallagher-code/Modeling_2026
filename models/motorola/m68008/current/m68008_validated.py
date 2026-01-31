@@ -177,12 +177,12 @@ class M68008Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu_reg': -4.187920,
-            'control': 1.071751,
-            'data_transfer': 2.678558,
-            'divide': 72.500000,
-            'memory': -1.862227,
-            'multiply': 36.000000
+            'alu_reg': -0.118806,
+            'control': 3.570268,
+            'data_transfer': 4.999755,
+            'divide': 108.221109,
+            'memory': 5.695289,
+            'multiply': 53.737363
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

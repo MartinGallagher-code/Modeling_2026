@@ -1,19 +1,20 @@
 {
   "processor": "fairchild9440",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 23,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -1.29235,
-    "cor.control": -1.958542,
-    "cor.data_transfer": 0.547642,
-    "cor.io": -0.568479,
-    "cor.memory": 2.320981,
-    "cor.stack": -0.444808
+    "cor.alu": -1.201547,
+    "cor.control": -1.929437,
+    "cor.data_transfer": 0.491251,
+    "cor.io": 0.118706,
+    "cor.memory": 2.368269,
+    "cor.stack": -1.070499
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": -0.0006,
+    "compute": 0.0002,
+    "memory": 0.0002,
+    "control": 0.0001
   },
   "free_parameters": [
     "cor.alu",

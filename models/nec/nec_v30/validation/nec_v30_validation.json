@@ -48,11 +48,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-30",
     "notes": "Calibrated to measured CPI 3.025 from cycle-accurate emulation. Zero sysid corrections needed.",
-    "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_before": 1.019758,
+    "sysid_loss_after": 1.019878,
+    "sysid_cpi_error_percent": 1.08,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "per_instruction_timing_tests": [
     {
@@ -152,5 +152,14 @@
       "average_timing_error_percent": 5.5,
       "cross_validation_passed": true
     }
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 35.0
   }
 }

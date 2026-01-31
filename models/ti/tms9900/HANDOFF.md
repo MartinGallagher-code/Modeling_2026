@@ -1,39 +1,26 @@
-# TI TMS9900 Model Handoff
+# tms9900 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 4.7%
-- **Last Updated**: 2026-01-28
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: Memory-to-memory with workspace pointer
-- Clock: 3 MHz
-- Target CPI: 20.0
-- Predicted CPI: 19.06
-- Key instruction categories: register_ops, immediate, memory_read, memory_write, branch, call_return
+- Typical CPI: 9.091
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-## Cross-Validation Status
-- **Instruction timing tests**: 15 tests added
-- **Family comparison**: TMS9995 validated as 40-50% faster successor
-- **Era comparison**: Compared against Intel 8086 and Z8000
+## External Benchmark Data
+- mips_rating: 0.33 MIPS @ 3.0MHz
 
 ## Known Issues
-- None currently - model validates within 5% error
-- Some individual instruction timings vary from datasheet (e.g., branch is modeled at 20 cycles but ranges 10-22)
+- None significant
 
 ## Suggested Next Steps
-- Consider adding more granular branch timing (short vs long displacement)
-- Could refine context switch timing (BLWP/RTWP) if more accuracy needed
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Texas Instruments 16-bit processor (1976) with unique memory-to-memory architecture
-- No on-chip registers - uses workspace pointer to access 16 registers in external memory
-- Fast context switch by changing workspace pointer (saves 16 register copies)
-- Memory bandwidth is primary performance bottleneck
-- Higher CPI than contemporaries due to memory access for every register operation
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

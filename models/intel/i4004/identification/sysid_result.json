@@ -1,31 +1,32 @@
 {
   "processor": "i4004",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 8,
+  "loss_before": 0.009198,
+  "loss_after": 0.009199,
+  "cpi_error_percent": 0.87,
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.8,
-    "cor.control": -5.2,
-    "cor.data_transfer": 2.8,
-    "cor.memory": 2.8
+    "cor.alu": -5.024867,
+    "cor.control": -6.214507,
+    "cor.data_transfer": -0.176166,
+    "cor.memory": 4.962388
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": -0.0,
-    "mixed": -0.0
+    "typical": -0.0701,
+    "compute": -0.0315,
+    "memory": -0.0618,
+    "control": -0.0363,
+    "mixed": 0.1869
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": -0.0,
-    "mixed": -0.0
+    "typical": -0.07,
+    "compute": -0.0315,
+    "memory": -0.062,
+    "control": -0.0363,
+    "mixed": 0.1869
   },
   "free_parameters": [
     "cor.alu",

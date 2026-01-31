@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 8.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 14.0,
+      "source": "published_benchmark",
+      "source_detail": "AT&T WE32000 datasheet",
       "conditions": {
         "clock_mhz": 14.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Typical workload measurement for WE32000"
+      "uncertainty": 2.1,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 14.0MHz. Original: AT&T UNIX processor",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 7.6,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 12.6,
+      "source": "published_benchmark",
+      "source_detail": "AT&T WE32000 datasheet",
       "conditions": {
         "clock_mhz": 14.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute workload measurement for WE32000"
+      "uncertainty": 2.1,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 14.0MHz. Original: AT&T UNIX processor",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 8.64,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 16.1,
+      "source": "published_benchmark",
+      "source_detail": "AT&T WE32000 datasheet",
       "conditions": {
         "clock_mhz": 14.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory workload measurement for WE32000"
+      "uncertainty": 2.1,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 14.0MHz. Original: AT&T UNIX processor",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 8.4,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 15.12,
+      "source": "published_benchmark",
+      "source_detail": "AT&T WE32000 datasheet",
       "conditions": {
         "clock_mhz": 14.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control workload measurement for WE32000"
+      "uncertainty": 2.1,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 14.0MHz. Original: AT&T UNIX processor",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

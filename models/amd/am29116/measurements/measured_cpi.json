@@ -7,44 +7,56 @@
     {
       "workload": "typical",
       "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 10.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "16-bit single-chip microprogrammable CPU based on Am2901"
     },
     {
       "workload": "compute",
       "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 10.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Compute-intensive workload with heavy ALU/shift usage"
     },
     {
       "workload": "memory",
       "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 10.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Memory-intensive workload"
     },
     {
       "workload": "control",
       "measured_cpi": 1.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
-      "conditions": {"clock_mhz": 10.0, "memory_config": "no wait states"},
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "no wait states"
+      },
       "uncertainty": 0.2,
-      "confidence": "high",
+      "confidence": "medium",
       "date_measured": "2026-01-29",
       "notes": "Control-flow intensive workload"
     }

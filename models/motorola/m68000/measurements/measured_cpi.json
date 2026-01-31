@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 6.533,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 16.7391,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 0.40-0.52 DMIPS",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 1.339,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68000 typical workload - Macintosh/Amiga/Atari ST"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 0.46 DMIPS @ 7.7MHz. Original: 68000 @ 7.7MHz, midrange of published values",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 5.48,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 15.0652,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 0.40-0.52 DMIPS",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 1.339,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68000 compute workload - higher multiply/divide usage"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 0.46 DMIPS @ 7.7MHz. Original: 68000 @ 7.7MHz, midrange of published values",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 7.185,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 19.25,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 0.40-0.52 DMIPS",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 1.339,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68000 memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 0.46 DMIPS @ 7.7MHz. Original: 68000 @ 7.7MHz, midrange of published values",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 7.84,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 18.0783,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 0.40-0.52 DMIPS",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 1.339,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68000 control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 0.46 DMIPS @ 7.7MHz. Original: 68000 @ 7.7MHz, midrange of published values",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

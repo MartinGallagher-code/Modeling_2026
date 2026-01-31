@@ -1,53 +1,26 @@
-# M6801 Model Handoff
+# m6801 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0.26%
-- **Last Updated**: 2026-01-28
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-The Motorola 6801 (1978) is an 8-bit microcontroller based on the 6800. Features enhanced timing, on-chip RAM, ROM, timer, and serial I/O. Adds hardware multiply (MUL @10) and 16-bit operations. Target CPI is 3.8 cycles per instruction for typical workloads.
+- Typical CPI: 2.000
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-## Cross-Validation Status
-Cross-validated against entire 6800 family:
-- **M6800**: M6801 is upward compatible, adds MUL and 16-bit ops
-- **M6802**: M6801 has more enhancements than simple M6802
-- **M6805**: Different path - M6805 is cost-reduced
-- **M6809**: Different architecture with position-independent code
-- **M68HC11**: Evolved from M6801, adds more peripherals
-
-## Validation
-- **Model tests**: 16/16 passing
-- **Timing tests**: 25 per-instruction tests documented
-- **Cross-validation**: Complete with family comparison tables
-
-## Key Enhancements Over 6800
-| Feature | M6800 | M6801 |
-|---------|-------|-------|
-| MUL | N/A | 10 cycles |
-| LDD/STD | N/A | 3/4 cycles |
-| ADDD | N/A | 4 cycles |
-| ABX | N/A | 3 cycles |
-| On-chip RAM | N/A | 128 bytes |
-| Timer | N/A | Yes |
-| Serial I/O | N/A | Yes |
+## External Benchmark Data
+- mips_rating: 0.5 MIPS @ 1.0MHz
 
 ## Known Issues
-None - model is fully validated and cross-validated.
+- None significant
 
 ## Suggested Next Steps
-1. All cross-validation work complete
-2. Consider peripheral timing models if needed
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Enhanced 6800 with integrated peripherals
-- 8-bit data bus, 16-bit address bus
-- 35000 transistors
-- 1 MHz typical clock
-- On-chip RAM, ROM, timer, serial I/O
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

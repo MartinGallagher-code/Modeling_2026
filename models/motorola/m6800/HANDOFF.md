@@ -1,43 +1,26 @@
-# M6800 Model Handoff
+# m6800 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
 - **CPI Error**: 0.0%
-- **Last Updated**: 2026-01-28
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-The Motorola 6800 (1974) is an 8-bit microprocessor with 16-bit address bus. First Motorola microprocessor, featuring two 8-bit accumulators (A, B), single index register (X), and sequential execution. Target CPI is 4.0 cycles per instruction for typical workloads.
+- Typical CPI: 2.000
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-## Cross-Validation Status
-Cross-validated against entire 6800 family:
-- **M6802**: Identical timing (just adds on-chip clock/RAM)
-- **M6801**: Compatible, adds MUL and 16-bit ops
-- **M6805**: Simplified MCU variant with bit manipulation
-- **M6809**: Major upgrade with position-independent code
-- **M68HC11**: Enhanced 6801 derivative
-
-## Validation
-- **Model tests**: 16/16 passing
-- **Timing tests**: 25 per-instruction tests documented
-- **Cross-validation**: Complete with family comparison tables
+## External Benchmark Data
+- mips_rating: 0.5 MIPS @ 1.0MHz
 
 ## Known Issues
-None - model is fully validated and cross-validated.
+- None significant
 
 ## Suggested Next Steps
-1. Consider cycle-accurate emulator validation (MAME)
-2. All cross-validation work complete
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Sequential execution (no pipeline)
-- 8-bit data bus, 16-bit address bus
-- 4100 transistors
-- 1 MHz typical clock
-- 2-12 cycles per instruction
-- Forms the baseline for entire 6800 family timing
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

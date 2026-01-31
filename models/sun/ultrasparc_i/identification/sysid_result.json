@@ -1,38 +1,32 @@
 {
   "processor": "ultrasparc_i",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 165,
-  "loss_before": 0.000403,
+  "iterations": 17,
+  "loss_before": 2e-06,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "`xtol` termination condition is satisfied.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.128533,
-    "cor.branch": -0.390901,
-    "cor.divide": -6.793727,
-    "cor.load": -2.232907,
-    "cor.multiply": -4.988072,
-    "cor.store": 2.18228
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.999,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 13.4,
-    "cache.l2_hit_rate": 0.998954,
-    "cache.l2_latency": 25.0
+    "cor.alu": -0.902691,
+    "cor.branch": -0.168062,
+    "cor.divide": -10.815834,
+    "cor.load": -4.43394,
+    "cor.multiply": -1.531396,
+    "cor.store": -3.693518
   },
   "residuals_before": {
-    "typical": -0.0318,
-    "compute": 0.0054,
-    "memory": -0.0007,
-    "control": -0.0008,
-    "mixed": 0.0312
+    "typical": 0.0012,
+    "compute": 0.0008,
+    "memory": 0.0019,
+    "control": 0.0008,
+    "mixed": 0.0012
   },
   "residuals_after": {
     "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
     "control": -0.0,
     "mixed": 0.0
   },

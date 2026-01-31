@@ -171,9 +171,9 @@ class IAPX432Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -91.15000000000032,
-            'control': 6.850000000000156,
-            'data_transfer': 246.85000000000102,
-            'memory': -50.15000000000057,
-            'object_ops': -405.1500000000012,
+            'alu': -6.847249,
+            'control': 34.478485,
+            'data_transfer': 20.500220,
+            'memory': 33.730231,
+            'object_ops': -120.000000
         }

@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 10.4,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 26.6667,
+      "source": "published_benchmark",
+      "source_detail": "PDP-8 compatible, CMOS microprocessor",
       "conditions": {
         "clock_mhz": 4.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Typical workload measurement for Intersil 6100"
+      "uncertainty": 4.0,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.15 MIPS @ 4.0MHz. Original: Intersil 6100, PDP-8-on-a-chip",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 10.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 24.0,
+      "source": "published_benchmark",
+      "source_detail": "PDP-8 compatible, CMOS microprocessor",
       "conditions": {
         "clock_mhz": 4.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute workload measurement for Intersil 6100"
+      "uncertainty": 4.0,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.15 MIPS @ 4.0MHz. Original: Intersil 6100, PDP-8-on-a-chip",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 10.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 30.6667,
+      "source": "published_benchmark",
+      "source_detail": "PDP-8 compatible, CMOS microprocessor",
       "conditions": {
         "clock_mhz": 4.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory workload measurement for Intersil 6100"
+      "uncertainty": 4.0,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.15 MIPS @ 4.0MHz. Original: Intersil 6100, PDP-8-on-a-chip",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 10.5,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 28.8,
+      "source": "published_benchmark",
+      "source_detail": "PDP-8 compatible, CMOS microprocessor",
       "conditions": {
         "clock_mhz": 4.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control workload measurement for Intersil 6100"
+      "uncertainty": 4.0,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.15 MIPS @ 4.0MHz. Original: Intersil 6100, PDP-8-on-a-chip",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

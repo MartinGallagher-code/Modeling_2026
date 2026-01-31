@@ -1,19 +1,20 @@
 {
   "processor": "sega_315_5124",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 13,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.control": 0.165927,
-    "cor.line_buffer": -0.108305,
-    "cor.scroll": 1.977913,
-    "cor.sprite": -0.626083,
-    "cor.tile_render": -0.559842,
-    "cor.vram": 0.011033
+    "cor.control": 0.741196,
+    "cor.line_buffer": 0.120354,
+    "cor.scroll": 1.009031,
+    "cor.sprite": -1.074074,
+    "cor.tile_render": 0.346415,
+    "cor.vram": -0.267885
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
+    "typical": 0.0003,
     "compute": -0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "memory": -0.0001,
+    "control": -0.0002
   },
   "free_parameters": [
     "cor.control",

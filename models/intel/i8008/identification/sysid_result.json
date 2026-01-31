@@ -1,31 +1,32 @@
 {
   "processor": "i8008",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 5,
+  "loss_before": 0.009607,
+  "loss_after": 0.009607,
+  "cpi_error_percent": 0.97,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 3.0,
-    "cor.control": -7.0,
-    "cor.data_transfer": 3.0,
-    "cor.memory": -3.0
+    "cor.alu": -1.579249,
+    "cor.control": -7.134469,
+    "cor.data_transfer": -2.535275,
+    "cor.memory": -1.581321
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": 0.0
+    "typical": -0.081,
+    "compute": -0.0219,
+    "memory": -0.0357,
+    "control": -0.063,
+    "mixed": 0.1891
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": 0.0
+    "typical": -0.081,
+    "compute": -0.0219,
+    "memory": -0.0358,
+    "control": -0.063,
+    "mixed": 0.1891
   },
   "free_parameters": [
     "cor.alu",

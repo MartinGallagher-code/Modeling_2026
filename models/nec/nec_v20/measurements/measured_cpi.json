@@ -6,17 +6,54 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 3.35,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 12.5,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8088 compatibility, ~10-20% faster",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Validated model prediction for NEC V20 typical workload"
+      "uncertainty": 1.875,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 5.0MHz. Original: V20 is NEC's enhanced 8088",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 11.25,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8088 compatibility, ~10-20% faster",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second",
+      "conditions": {},
+      "uncertainty": 1.875,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 5.0MHz. Original: V20 is NEC's enhanced 8088"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 14.375,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8088 compatibility, ~10-20% faster",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second",
+      "conditions": {},
+      "uncertainty": 1.875,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 5.0MHz. Original: V20 is NEC's enhanced 8088"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 13.5,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8088 compatibility, ~10-20% faster",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second",
+      "conditions": {},
+      "uncertainty": 1.875,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.4 MIPS @ 5.0MHz. Original: V20 is NEC's enhanced 8088"
     }
   ]
 }

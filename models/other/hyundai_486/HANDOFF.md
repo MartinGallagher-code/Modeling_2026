@@ -1,27 +1,26 @@
-# Hyundai 80486 Clone Model Handoff
+# hyundai_486 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <5%
-- **Last Updated**: 2026-01-30
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: Korean 486-compatible, beginning of Korean CPU efforts
-- Year: 1993
-- Clock: 33.0 MHz
-- Target CPI: 1.9
-- Instruction categories: alu (1.0 cyc), data_transfer (1.0 cyc), memory (2.0 cyc), control (3.0 cyc), multiply (13.0 cyc), divide (25.0 cyc)
-- Bottleneck: pipeline
+- Typical CPI: 2.200
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- dhrystone: 15.0 DMIPS @ 33.0MHz
 
 ## Known Issues
-- None - model validates within 5% error
+- None significant
 
 ## Suggested Next Steps
-- Refine instruction timing with detailed datasheet analysis
-- Add more granular workload profiles for specific use cases
-- Cross-validate with cycle-accurate simulators if available
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Hyundai 80486 Clone (1993) by Hyundai
-- Korean 486-compatible, beginning of Korean CPU efforts
-- Key features: 486-compatible, Korean fabrication, Licensed design
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

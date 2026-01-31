@@ -1,31 +1,32 @@
 {
   "processor": "m68008",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 17,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 5,
+  "loss_before": 3.1e-05,
+  "loss_after": 5e-06,
+  "cpi_error_percent": 0.03,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu_reg": -4.187822,
-    "cor.control": 1.071849,
-    "cor.data_transfer": 2.678657,
-    "cor.divide": 72.486931,
-    "cor.memory": -1.862129,
-    "cor.multiply": 35.993511
+    "cor.alu_reg": 0.380076,
+    "cor.control": 4.090338,
+    "cor.data_transfer": 5.605219,
+    "cor.divide": 44.889649,
+    "cor.memory": 6.210574,
+    "cor.multiply": 11.068152
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.0098,
+    "compute": 0.0039,
+    "memory": 0.0032,
+    "control": 0.0019
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": -0.004,
+    "compute": 0.0017,
+    "memory": 0.0009,
+    "control": 0.0006
   },
   "free_parameters": [
     "cor.alu_reg",

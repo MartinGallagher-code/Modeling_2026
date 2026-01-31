@@ -277,9 +277,9 @@
     "validation_date": "2026-01-29",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_cpi_error_percent": 0.01,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "methodology": "Grey-box queueing model with weighted instruction category cycles, validated against Z80 datasheet timing",
@@ -382,5 +382,14 @@
     },
     "validation_confidence": "High - identical to validated Z80 model, CPI error 1.55%",
     "conclusion": "Z80A model is valid. Uses same timing as Z80 (confirmed by datasheet). Only clock frequency differs. CPI prediction within 1.55% of expected values."
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

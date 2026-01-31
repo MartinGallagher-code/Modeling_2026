@@ -151,11 +151,11 @@ class Msm80c85Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.504924,
-            'control': -1.495076,
-            'data_transfer': 1.504924,
-            'memory': -1.560733,
-            'stack': -4.429418
+            'alu': -2.959437,
+            'control': 3.548599,
+            'data_transfer': 5.000000,
+            'memory': 7.000000,
+            'stack': -8.044485
         }
 
     def analyze(self, workload='typical'):

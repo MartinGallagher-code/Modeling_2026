@@ -22,11 +22,11 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "sysid_loss_before": 0.001013,
-    "sysid_loss_after": 0.001013,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.003334,
+    "sysid_cpi_error_percent": 0.73,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "sources": [
     "Weitek 1064/1065 datasheet"

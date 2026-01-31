@@ -258,8 +258,8 @@ def validate_measured_cpi(data: MeasuredCPIFile) -> List[str]:
             errors.append(f"measurement[{i}]: measured_cpi must be a positive number")
         if "source" not in m or not m["source"]:
             errors.append(f"measurement[{i}]: source is required")
-        elif m["source"] not in ("hardware", "emulator", "published", "datasheet"):
-            errors.append(f"measurement[{i}]: source must be one of: hardware, emulator, published, datasheet")
+        elif m["source"] not in ("hardware", "emulator", "published", "datasheet", "published_benchmark", "estimated"):
+            errors.append(f"measurement[{i}]: source must be one of: hardware, emulator, published, datasheet, published_benchmark, estimated")
         conf = m.get("confidence", "medium")
         if conf not in ("low", "medium", "high"):
             errors.append(f"measurement[{i}]: confidence must be low, medium, or high")

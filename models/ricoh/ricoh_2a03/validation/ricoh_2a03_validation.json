@@ -409,10 +409,10 @@
     "validation_date": "2026-01-29",
     "notes": "Cross-validated against MOS 6502 - identical instruction timing",
     "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_after": 2e-06,
+    "sysid_cpi_error_percent": 0.05,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "method": "Direct comparison with MOS 6502 model",
@@ -453,5 +453,14 @@
     "nmi_timing": "NMI occurs at start of vertical blank (scanline 241)",
     "ppu_interaction": "CPU/PPU run asynchronously, memory-mapped I/O",
     "apu_registers": "APU control via memory-mapped registers $4000-$4017"
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

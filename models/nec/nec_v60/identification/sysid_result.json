@@ -1,30 +1,26 @@
 {
   "processor": "nec_v60",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 46,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 6,
+  "loss_before": 0.009664,
+  "loss_after": 1e-06,
+  "cpi_error_percent": 0.04,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.164527,
-    "cor.control": -0.082256,
-    "cor.data_transfer": -0.137111,
-    "cor.float": -0.02778,
-    "cor.memory": -0.109667,
-    "cor.string": -0.027702
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.913799,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
+    "cor.alu": -0.956447,
+    "cor.control": -0.688642,
+    "cor.data_transfer": -0.797039,
+    "cor.float": -1.632336,
+    "cor.memory": -1.632336,
+    "cor.string": -0.918189
   },
   "residuals_before": {
-    "typical": -0.0001
+    "typical": 0.0983
   },
   "residuals_after": {
-    "typical": 0.0
+    "typical": 0.0008
   },
   "free_parameters": [
     "cache.l1_hit_rate",

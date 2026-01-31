@@ -1,6 +1,7 @@
 {
   "processor": "sn74s481",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
   "iterations": 1,
   "loss_before": 0.0,

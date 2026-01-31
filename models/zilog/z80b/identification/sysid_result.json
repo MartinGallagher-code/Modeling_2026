@@ -1,31 +1,32 @@
 {
   "processor": "z80b",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 15,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.177903,
-    "cor.block": -0.36801,
-    "cor.control": 0.949043,
-    "cor.data_transfer": -0.317217,
-    "cor.memory": 0.047241,
-    "cor.stack": -1.835754
+    "cor.alu": 1.071073,
+    "cor.block": 4.381315,
+    "cor.control": 2.297931,
+    "cor.data_transfer": -0.099789,
+    "cor.memory": 3.058603,
+    "cor.stack": -1.057928
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
-  },
-  "residuals_after": {
-    "typical": 0.0,
+    "typical": -0.0,
     "compute": -0.0,
     "memory": -0.0,
     "control": -0.0
+  },
+  "residuals_after": {
+    "typical": 0.0009,
+    "compute": -0.0003,
+    "memory": -0.0005,
+    "control": -0.0003
   },
   "free_parameters": [
     "cor.alu",

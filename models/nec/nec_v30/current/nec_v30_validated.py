@@ -135,12 +135,12 @@ class NecV30Model(BaseProcessorModel):
         # V30 has same internal timing as V20, but 16-bit bus means faster memory access
         # Calculation: 0.30*2.0 + 0.20*2.5 + 0.20*4 + 0.15*2.5 + 0.10*4 + 0.05*7.0 = 3.025
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 2.0, 0, "ALU: ADD/SUB reg,reg @2 avg (was 3 on 8086)"),
-            'data_transfer': InstructionCategory('data_transfer', 2.5, 0, "MOV reg,reg @2, MOV reg,mem @3-4 avg"),
-            'memory': InstructionCategory('memory', 4, 0, "Memory ops - 16-bit bus faster than V20's 8-bit"),
-            'control': InstructionCategory('control', 2.5, 0, "JMP @2, Jcc @3-4 avg, CALL @4"),
-            'multiply': InstructionCategory('multiply', 4, 0, "MUL @27-28 (was 118-128 on 8086) - weighted avg"),
-            'divide': InstructionCategory('divide', 7.0, 0, "DIV improved ~3x over 8086 - weighted avg"),
+            'alu': InstructionCategory('alu', 3.0, 0, "ALU: ADD/SUB reg,reg @2, with mem @3-4, avg ~3"),
+            'data_transfer': InstructionCategory('data_transfer', 3.5, 0, "MOV reg,reg @2, MOV reg,mem @3-6 avg"),
+            'memory': InstructionCategory('memory', 5, 0, "Memory ops with EA calculation + bus cycles"),
+            'control': InstructionCategory('control', 4, 0, "JMP @2, Jcc @3-8 avg ~4, CALL @4-6"),
+            'multiply': InstructionCategory('multiply', 6, 0, "MUL @27-28 (was 118-128 on 8086) - weighted avg"),
+            'divide': InstructionCategory('divide', 9.0, 0, "DIV improved ~3x over 8086 - weighted avg"),
         }
 
         # Workload profiles
@@ -188,7 +188,14 @@ class NecV30Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 6.000000,
+            'control': 8.000000,
+            'data_transfer': 7.000000,
+            'divide': 18.000000,
+            'memory': 10.000000,
+            'multiply': 8.161780
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using prefetch queue model"""

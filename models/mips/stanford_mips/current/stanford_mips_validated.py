@@ -199,11 +199,11 @@ class StanfordMipsModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.091779,
-            'branch': 0.317839,
-            'jump': -0.716509,
-            'load': 1.956160,
-            'store': -1.735596
+            'alu': -0.477069,
+            'branch': -0.204650,
+            'jump': 0.108140,
+            'load': 2.471699,
+            'store': -2.623371
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

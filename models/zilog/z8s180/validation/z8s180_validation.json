@@ -57,10 +57,10 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-30",
-    "sysid_loss_before": 6e-05,
-    "sysid_loss_after": 4.8e-05,
-    "sysid_cpi_error_percent": 0.18,
-    "sysid_converged": false,
-    "sysid_date": "2026-01-30"
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 1e-06,
+    "sysid_cpi_error_percent": 0.02,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-31"
   }
 }

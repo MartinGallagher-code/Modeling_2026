@@ -1,38 +1,34 @@
 {
   "processor": "hyundai_486",
   "date": "2026-01-31",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.000259,
+  "method": "ridge",
+  "converged": true,
+  "iterations": 6,
+  "loss_before": 0.001015,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "cpi_error_percent": 0.04,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.8302141810223719,
-    "cor.control": -1.1697858189776307,
-    "cor.data_transfer": 0.8302141810223614,
-    "cor.divide": -9.212622023450992,
-    "cor.memory": -0.817285818977631,
-    "cor.multiply": -18.14836771674101
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.907545,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
+    "cor.alu": -2.732434,
+    "cor.control": -0.906275,
+    "cor.data_transfer": 2.69097,
+    "cor.divide": 1.808233,
+    "cor.memory": 0.33114,
+    "cor.multiply": 1.054334
   },
   "residuals_before": {
-    "typical": 0.0145,
-    "compute": 0.0064,
-    "memory": 0.0093,
-    "control": 0.0008,
-    "mixed": -0.0309
+    "typical": -0.0257,
+    "compute": -0.0193,
+    "memory": -0.0514,
+    "control": -0.0193,
+    "mixed": -0.0321
   },
   "residuals_after": {
-    "typical": 0.0069,
-    "compute": 0.003,
-    "memory": 0.0044,
-    "control": 0.0004,
-    "mixed": -0.0147
+    "typical": -0.0009,
+    "compute": -0.0,
+    "memory": -0.0005,
+    "control": 0.0,
+    "mixed": 0.0012
   },
   "free_parameters": [
     "cache.l1_hit_rate",

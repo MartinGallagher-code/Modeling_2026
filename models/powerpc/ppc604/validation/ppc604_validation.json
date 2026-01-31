@@ -57,13 +57,22 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-30",
-    "sysid_loss_before": 0.00059,
+    "sysid_loss_before": 0.571346,
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30",
+    "sysid_date": "2026-01-31",
     "phase10_cache_identification": true,
     "phase10_previous_error_pct": 4.87,
     "phase10_current_error_pct": 0.0
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "dhrystone"
+    ],
+    "primary_source": "dhrystone",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.01
   }
 }

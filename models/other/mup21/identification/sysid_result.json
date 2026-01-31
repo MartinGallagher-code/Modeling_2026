@@ -1,18 +1,19 @@
 {
   "processor": "mup21",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.3,
-    "cor.control": 0.3,
-    "cor.io": -1.7,
-    "cor.memory": -0.7,
-    "cor.stack_op": 0.3
+    "cor.alu": 0.300457,
+    "cor.control": 0.299827,
+    "cor.io": -1.697488,
+    "cor.memory": -0.701126,
+    "cor.stack_op": 0.299175
   },
   "residuals_before": {
     "typical": -0.0,
@@ -23,10 +24,10 @@
   },
   "residuals_after": {
     "typical": -0.0,
-    "compute": -0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
     "cor.alu",

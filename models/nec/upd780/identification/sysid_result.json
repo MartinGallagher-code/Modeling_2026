@@ -1,25 +1,26 @@
 {
   "processor": "upd780",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 4,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 7e-06,
+  "cpi_error_percent": 0.04,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.0,
-    "cor.data_transfer": 0.0,
-    "cor.memory": 0.0,
-    "cor.control": 0.0,
-    "cor.stack": 0.0,
-    "cor.block": 0.0
+    "cor.alu": 0.972109,
+    "cor.block": 1.749796,
+    "cor.control": 1.102736,
+    "cor.data_transfer": 0.972109,
+    "cor.memory": 1.635087,
+    "cor.stack": 2.430272
   },
   "residuals_before": {
-    "typical": 0.0
+    "typical": -0.0
   },
   "residuals_after": {
-    "typical": 0.0
+    "typical": -0.0026
   },
   "free_parameters": [
     "cor.alu",

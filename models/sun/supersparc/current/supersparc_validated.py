@@ -188,12 +188,12 @@ class SupersparcModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.21066798578097654,
-            'branch': -0.2871113909232409,
-            'divide': -8.798214507402179,
-            'load': -2.5249392093879823,
-            'multiply': -4.7760082744443,
-            'store': 1.7061854925978308,
+            'alu': -0.456844,
+            'branch': -0.075175,
+            'divide': -10.514188,
+            'load': -2.697164,
+            'multiply': -3.870828,
+            'store': 2.578646
         }
 
         # Cache configuration for memory hierarchy modeling

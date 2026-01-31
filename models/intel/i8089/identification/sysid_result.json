@@ -1,18 +1,19 @@
 {
   "processor": "i8089",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 16,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.channel_op": -0.523343,
-    "cor.control": 0.514479,
-    "cor.dma": 1.504955,
-    "cor.memory": -4.839738,
-    "cor.transfer": 1.508221
+    "cor.channel_op": -0.9105,
+    "cor.control": 0.667247,
+    "cor.dma": 2.040927,
+    "cor.memory": -4.620888,
+    "cor.transfer": 1.22131
   },
   "residuals_before": {
     "typical": -0.0,
@@ -21,10 +22,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": 0.0
+    "typical": -0.0006,
+    "compute": 0.0003,
+    "memory": 0.0002,
+    "control": 0.0001
   },
   "free_parameters": [
     "cor.channel_op",

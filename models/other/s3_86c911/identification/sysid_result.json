@@ -1,19 +1,20 @@
 {
   "processor": "s3_86c911",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 21,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.blit": 1.091254,
-    "cor.branch": 0.003791,
-    "cor.draw": -0.821284,
-    "cor.memory": 0.091254,
-    "cor.pixel": 1.003791,
-    "cor.register": -0.733821
+    "cor.blit": 0.979176,
+    "cor.branch": -0.555698,
+    "cor.draw": -0.34613,
+    "cor.memory": 0.063383,
+    "cor.pixel": 0.430413,
+    "cor.register": 0.244597
   },
   "residuals_before": {
     "typical": 0.0,
@@ -23,11 +24,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": -0.0001,
+    "compute": -0.0002,
+    "memory": -0.0001,
+    "control": -0.0002,
+    "mixed": 0.0006
   },
   "free_parameters": [
     "cor.blit",

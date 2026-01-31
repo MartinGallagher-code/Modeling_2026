@@ -1,27 +1,28 @@
 {
   "processor": "ay3_8900",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 32,
-  "loss_before": 8.8e-05,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.background": 0.005731,
-    "cor.collision": -0.017972,
-    "cor.sprite_engine": 0.005731,
-    "cor.sync": -0.000826
+    "cor.background": -0.000814,
+    "cor.collision": -0.001275,
+    "cor.sprite_engine": -0.000814,
+    "cor.sync": -0.001254
   },
   "residuals_before": {
-    "typical": 0.0094,
-    "sprite_heavy": 0.0094,
-    "collision_heavy": 0.0094
-  },
-  "residuals_after": {
     "typical": -0.0,
     "sprite_heavy": -0.0,
     "collision_heavy": -0.0
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "sprite_heavy": 0.0,
+    "collision_heavy": 0.0
   },
   "free_parameters": [
     "cor.background",

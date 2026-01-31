@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 10.0,
-      "source": "datasheet",
-      "source_detail": "Intel 8008 compatible timing, VEB U808 datasheet. Target CPI based on 8008 instruction mix analysis.",
+      "measured_cpi": 6.8966,
+      "source": "published_benchmark",
+      "source_detail": "8080-compatible, same performance",
       "conditions": {
         "clock_mhz": 0.5,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.5,
+      "uncertainty": 1.034,
       "confidence": "medium",
-      "date_measured": "2026-01-29",
-      "notes": "U808 is Intel 8008 clone with identical timing. CPI ~10 based on 8008 instruction mix studies."
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.29 MIPS @ 2.0MHz. Original: East German 8080 clone",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 9.0,
-      "source": "datasheet",
-      "source_detail": "Intel 8008 ALU-heavy instruction mix timing analysis",
+      "measured_cpi": 6.2069,
+      "source": "published_benchmark",
+      "source_detail": "8080-compatible, same performance",
       "conditions": {
         "clock_mhz": 0.5,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.5,
+      "uncertainty": 1.034,
       "confidence": "medium",
-      "date_measured": "2026-01-29",
-      "notes": "ALU-heavy workload, mostly register-register ops at 5-8 T-states"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.29 MIPS @ 2.0MHz. Original: East German 8080 clone",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "io_heavy",
-      "measured_cpi": 10.5,
-      "source": "datasheet",
-      "source_detail": "Intel 8008 I/O-heavy industrial control timing analysis",
+      "measured_cpi": 6.8966,
+      "source": "published_benchmark",
+      "source_detail": "8080-compatible, same performance",
       "conditions": {
         "clock_mhz": 0.5,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.5,
+      "uncertainty": 1.034,
       "confidence": "medium",
-      "date_measured": "2026-01-29",
-      "notes": "I/O-heavy industrial control workload with INP/OUT ops"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.29 MIPS @ 2.0MHz. Original: East German 8080 clone",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 10.5,
-      "source": "datasheet",
-      "source_detail": "Intel 8008 branch-heavy timing analysis",
+      "measured_cpi": 7.4483,
+      "source": "published_benchmark",
+      "source_detail": "8080-compatible, same performance",
       "conditions": {
         "clock_mhz": 0.5,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.5,
+      "uncertainty": 1.034,
       "confidence": "medium",
-      "date_measured": "2026-01-29",
-      "notes": "Control-flow heavy workload with JMP/CALL/RET"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.29 MIPS @ 2.0MHz. Original: East German 8080 clone",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

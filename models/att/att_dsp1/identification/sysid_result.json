@@ -1,15 +1,33 @@
 {
+  "processor": "att_dsp1",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 3,
-  "loss_before": 1.1783089799933044e-09,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 4,
+  "loss_before": 0.0,
+  "loss_after": 7e-06,
+  "cpi_error_percent": 0.06,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -5.003380952380967,
-    "cor.control": 0.636333333333335,
-    "cor.data_move": 3.6344285714285816,
-    "cor.io": -0.07880952380952701,
-    "cor.mac": 0.7121428571428603
+    "cor.alu": -4.564764,
+    "cor.control": 0.611855,
+    "cor.data_move": 3.284797,
+    "cor.io": -0.018295,
+    "cor.mac": 0.59733
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "control": -0.0,
+    "io_heavy": 0.0,
+    "mixed": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0022,
+    "compute": -0.0011,
+    "control": -0.0001,
+    "io_heavy": -0.002,
+    "mixed": 0.005
   },
   "free_parameters": [
     "cor.alu",
@@ -17,19 +35,5 @@
     "cor.data_move",
     "cor.io",
     "cor.mac"
-  ],
-  "residuals_before": {
-    "typical": 2.250000000536545e-06,
-    "compute": -4.3599999999699435e-05,
-    "control": 3.609999999998337e-05,
-    "io_heavy": -4.5799999999651675e-05,
-    "mixed": 2.418000000048437e-05
-  },
-  "residuals_after": {
-    "typical": -1.0684286606998938e-05,
-    "compute": -1.0393656741047863e-05,
-    "control": -3.039047840047715e-06,
-    "io_heavy": -1.760294971120402e-05,
-    "mixed": 3.930068225921346e-05
-  }
+  ]
 }

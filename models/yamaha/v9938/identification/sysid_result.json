@@ -1,19 +1,20 @@
 {
   "processor": "v9938",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 53,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.bitmap": 1.506342,
-    "cor.command": -4.212574,
-    "cor.palette": 0.079876,
-    "cor.scroll": 3.025802,
-    "cor.sprite": -3.877417,
-    "cor.vram": 0.471215
+    "cor.bitmap": 0.377844,
+    "cor.command": -5.33311,
+    "cor.palette": 1.991015,
+    "cor.scroll": 1.38154,
+    "cor.sprite": -1.401217,
+    "cor.vram": 0.249806
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": 0.0005,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0006
   },
   "free_parameters": [
     "cor.bitmap",

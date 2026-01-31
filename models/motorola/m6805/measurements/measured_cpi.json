@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 4.925,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.0,
+      "source": "published_benchmark",
+      "source_detail": "Motorola 6805 datasheet",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M6805 typical workload - cost-reduced 8-bit MCU"
+      "uncertainty": 0.6,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.5 MIPS @ 2.0MHz. Original: Original 6805 microcontroller",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "compute",
-      "measured_cpi": 4.275,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 3.6,
+      "source": "published_benchmark",
+      "source_detail": "Motorola 6805 datasheet",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M6805 compute workload"
+      "uncertainty": 0.6,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.5 MIPS @ 2.0MHz. Original: Original 6805 microcontroller",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "memory",
-      "measured_cpi": 5.505,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.6,
+      "source": "published_benchmark",
+      "source_detail": "Motorola 6805 datasheet",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M6805 memory workload"
+      "uncertainty": 0.6,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.5 MIPS @ 2.0MHz. Original: Original 6805 microcontroller",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "control",
-      "measured_cpi": 5.325,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 4.32,
+      "source": "published_benchmark",
+      "source_detail": "Motorola 6805 datasheet",
       "conditions": {
         "clock_mhz": 1.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M6805 control workload"
+      "uncertainty": 0.6,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.5 MIPS @ 2.0MHz. Original: Original 6805 microcontroller",
+      "source_url": "https://bitsavers.org/components/motorola/"
     }
   ]
 }

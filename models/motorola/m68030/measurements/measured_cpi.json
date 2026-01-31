@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 2.98,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 6.4935,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 3.1-4.6 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.519,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68030 typical workload - 5-stage pipeline with 4KB I/D caches"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.85 DMIPS @ 25.0MHz. Original: 68030 @ 25MHz, midrange",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 2.455,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 5.5195,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 3.1-4.6 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.519,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68030 compute workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.85 DMIPS @ 25.0MHz. Original: 68030 @ 25MHz, midrange",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 3.05,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 8.1169,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 3.1-4.6 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.519,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68030 memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.85 DMIPS @ 25.0MHz. Original: 68030 @ 25MHz, midrange",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 2.69,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 7.1429,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 3.1-4.6 DMIPS",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.519,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "M68030 control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.85 DMIPS @ 25.0MHz. Original: 68030 @ 25MHz, midrange",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

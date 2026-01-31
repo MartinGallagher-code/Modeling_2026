@@ -1,16 +1,32 @@
 {
+  "processor": "symbolics_cadr",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 22,
-  "loss_before": 1.0101875000957755e-11,
-  "loss_after": 3.665193368273951e-18,
-  "cpi_error_percent": 2.5620998545734064e-08,
+  "iterations": 4,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.car_cdr": -0.5923327307746936,
-    "cor.cons": -0.7785377558704388,
-    "cor.eval": -1.9060539661287315,
-    "cor.gc": -4.63364560095979,
-    "cor.memory": 2.8019459943375935,
-    "cor.type_check": 1.8875647836891554
+    "cor.car_cdr": -0.405581,
+    "cor.cons": -1.716956,
+    "cor.eval": -2.140403,
+    "cor.gc": 0.545058,
+    "cor.memory": 2.56668,
+    "cor.type_check": 1.50875
+  },
+  "residuals_before": {
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0001,
+    "compute": 0.0003,
+    "memory": -0.0001,
+    "control": -0.0003
   },
   "free_parameters": [
     "cor.car_cdr",
@@ -19,17 +35,5 @@
     "cor.gc",
     "cor.memory",
     "cor.type_check"
-  ],
-  "residuals_before": {
-    "typical": -1.6499999997421355e-06,
-    "compute": -1.1500000010045142e-06,
-    "memory": -1.6499999997421355e-06,
-    "control": 5.800000000277805e-06
-  },
-  "residuals_after": {
-    "typical": -1.4611911680617595e-09,
-    "compute": -2.0899637576121677e-10,
-    "memory": -1.4611911680617595e-09,
-    "control": 3.2166651564580206e-09
-  }
+  ]
 }

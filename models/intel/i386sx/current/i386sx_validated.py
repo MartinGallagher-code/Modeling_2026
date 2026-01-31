@@ -149,12 +149,12 @@ class I386SXModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 2.500000,
-            'control': -4.000000,
-            'data_transfer': 1.500000,
-            'divide': -31.304347,
-            'memory': -4.695653,
-            'multiply': -9.000000,
+            'alu': -1.458000,
+            'control': 7.474222,
+            'data_transfer': 3.328667,
+            'divide': -34.834686,
+            'memory': -5.225203,
+            'multiply': -3.313000
         }
 
         self.cache_config = None

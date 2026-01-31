@@ -196,14 +196,14 @@ class SparcModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.17918191592273996,
-            'branch': -0.09955213274409788,
-            'call_ret': 0.2146028114680855,
-            'divide': -0.19894597892221386,
-            'load': 0.1283664683226953,
-            'multiply': -0.4080867476544135,
-            'shift': -0.163474386140533,
-            'store': -0.4973351488306577,
+            'alu': -0.416851,
+            'branch': 1.710035,
+            'call_ret': -0.762626,
+            'divide': -1.643990,
+            'load': 0.909877,
+            'multiply': -0.853768,
+            'shift': -0.616080,
+            'store': 1.688214
         }
 
         # Cache configuration for memory hierarchy modeling

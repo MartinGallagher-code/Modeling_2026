@@ -43,11 +43,11 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "sysid_loss_before": 0.306638,
-    "sysid_loss_after": 0.306638,
-    "sysid_cpi_error_percent": 1.81,
+    "sysid_loss_before": 1.126671,
+    "sysid_loss_after": 0.780296,
+    "sysid_cpi_error_percent": 1.56,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "instruction_timing_tests": [
     {
@@ -193,5 +193,14 @@
       "consistent": true
     },
     "validation_notes": "iAPX 432 high CPI reflects capability-checking overhead. Every memory access required capability validation. Object creation/deletion was extremely expensive due to hardware GC support."
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 1.36
   }
 }

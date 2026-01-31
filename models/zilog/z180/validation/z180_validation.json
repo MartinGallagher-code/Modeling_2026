@@ -236,10 +236,10 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_after": 1e-06,
+    "sysid_cpi_error_percent": 0.02,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "methodology": "Grey-box queueing model with weighted instruction category cycles, optimized for Z180's faster execution",
@@ -337,5 +337,14 @@
     ],
     "validation_confidence": "High - Z180 optimizations modeled correctly, CPI error 1.89%",
     "conclusion": "Z180 model is valid. Accurately models ~18% faster execution vs Z80 due to CMOS optimization. On-chip peripherals don't affect instruction timing directly. CPI prediction within 1.89% of expected values."
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

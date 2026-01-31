@@ -1,34 +1,27 @@
-# M68020 Model Handoff
+# m68020 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0.00% (all workloads)
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-The Motorola 68020 (1984) first full 32-bit 68K model — 256-byte instruction cache, 3-stage pipeline. Uses 6 instruction categories with correction terms.
+- Typical CPI: 7.591
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-| Parameter | Value |
-|-----------|-------|
-| Clock | 16 MHz |
-| Categories | alu_reg(2), data_transfer(2), memory(4.5), control(4.5), multiply(44), divide(90) |
-| Corrections | Applied via scipy least_squares — see identification/sysid_result.json |
-| Typical CPI | 3.54 (measured), 3.54 (predicted) |
-
-## System Identification
-Correction terms fitted against 4 workload measurements. Key corrections:
-- control: +1.86 (branch/call overhead), alu_reg: -1.05
-- multiply: -3.21, divide: -6.57
+## External Benchmark Data
+- dhrystone: 2.2 DMIPS @ 16.7MHz
+- mips_rating: 4.848 MIPS @ 16.0MHz
 
 ## Known Issues
-- Workload profiles manually fixed (mul/div weights reduced from 3-4% to 0.5%)
+- None significant
 
 ## Suggested Next Steps
-1. Cache miss penalty modeling could be more detailed
-2. Validate against Mac II or Amiga 1200 emulator data
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- First full 32-bit 68K processor
-- 256-byte instruction cache (direct-mapped), 3-stage pipeline
-- Coprocessor interface (68881/68882 FPU), bit field instructions
-- 190,000 transistors, 16 MHz typical clock
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

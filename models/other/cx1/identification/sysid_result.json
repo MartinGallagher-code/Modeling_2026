@@ -1,18 +1,19 @@
 {
   "processor": "cx1",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.control": 0.27,
-    "cor.filter": -1.93,
-    "cor.mac": 0.07,
-    "cor.memory": -1.33,
-    "cor.output": 2.07
+    "cor.control": 0.269235,
+    "cor.filter": -1.926034,
+    "cor.mac": 0.072307,
+    "cor.memory": -1.303218,
+    "cor.output": 2.042133
   },
   "residuals_before": {
     "typical": 0.0,
@@ -22,11 +23,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "control": 0.0,
-    "io_heavy": -0.0,
-    "mixed": 0.0
+    "typical": -0.0004,
+    "compute": 0.0003,
+    "control": 0.0002,
+    "io_heavy": 0.0002,
+    "mixed": -0.0003
   },
   "free_parameters": [
     "cor.control",

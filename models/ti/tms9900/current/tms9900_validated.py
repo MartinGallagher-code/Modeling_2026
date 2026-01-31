@@ -164,12 +164,12 @@ class Tms9900Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': -6.908652,
-            'call_return': -6.310733,
-            'immediate': 5.019695,
-            'memory_read': -9.361360,
-            'memory_write': 6.673303,
-            'register_ops': 6.040949
+            'branch': -12.479165,
+            'call_return': -23.195894,
+            'immediate': -9.266810,
+            'memory_read': -4.658069,
+            'memory_write': -21.592455,
+            'register_ops': -6.773299
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

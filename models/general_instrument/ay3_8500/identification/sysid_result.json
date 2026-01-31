@@ -1,27 +1,28 @@
 {
   "processor": "ay3_8500",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 35,
-  "loss_before": 0.003027,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.game_logic": 0.062131,
-    "cor.io": 0.062131,
-    "cor.sync": -0.041421,
-    "cor.video_gen": -0.041421
+    "cor.game_logic": 0.0,
+    "cor.io": 0.0,
+    "cor.sync": -0.0,
+    "cor.video_gen": -0.0
   },
   "residuals_before": {
-    "typical": -0.055,
-    "game_active": -0.055,
-    "idle": -0.055
-  },
-  "residuals_after": {
     "typical": 0.0,
     "game_active": 0.0,
     "idle": 0.0
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "game_active": -0.0,
+    "idle": -0.0
   },
   "free_parameters": [
     "cor.game_logic",

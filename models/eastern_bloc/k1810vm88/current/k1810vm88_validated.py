@@ -161,19 +161,22 @@ class K1810VM88Model(BaseProcessorModel):
         #   MUL (16-bit): 118-133 cycles
         #   REP MOVSB: 9+17/byte
 
+        # Real effective cycles including 8-bit bus contention
+        # 8088/K1810VM88 has 8-bit external bus: 16-bit transfers need
+        # 2 bus cycles, making memory operands ~30% slower than 8086
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 3.0, 0,
-                "ALU ops - ADD reg,reg @3, INC @2, CMP @3, weighted ~3"),
-            'data_transfer': InstructionCategory('data_transfer', 4.0, 0,
-                "MOV reg,reg @2, MOV reg,imm @4, MOV reg,mem @8+EA, weighted ~4"),
-            'memory': InstructionCategory('memory', 6.0, 0,
-                "Memory ops with 8-bit bus penalty, EA calculation ~6"),
-            'control': InstructionCategory('control', 5.0, 0,
-                "JMP @15, CALL @19, RET @8, Jcc ~5 average"),
-            'multiply': InstructionCategory('multiply', 30.0, 0,
-                "MUL 8-bit @70-77, MUL 16-bit @118-133, DIV ~30 weighted avg"),
-            'string': InstructionCategory('string', 8.0, 0,
-                "REP MOVSB/STOSB with 8-bit bus overhead ~8"),
+            'alu': InstructionCategory('alu', 9.0, 0,
+                "ALU: ADD reg,reg @3, ADD reg,mem @16+bus, weighted ~9"),
+            'data_transfer': InstructionCategory('data_transfer', 10.0, 0,
+                "MOV reg,reg @2, MOV reg,mem @15+bus(8-bit penalty), weighted ~10"),
+            'memory': InstructionCategory('memory', 16.0, 0,
+                "Memory ops: 8-bit bus doubles word transfers, EA calc, weighted ~16"),
+            'control': InstructionCategory('control', 16.0, 0,
+                "JMP @15, CALL @19-28, RET @8, Jcc @16 taken, weighted ~16"),
+            'multiply': InstructionCategory('multiply', 35.0, 0,
+                "MUL 8-bit @70-77, MUL 16-bit @118-133, weighted avg ~35"),
+            'string': InstructionCategory('string', 14.0, 0,
+                "REP MOVSB/STOSB: 9+17/byte, heavily bus-bound, weighted ~14"),
         }
 
         self.workload_profiles = {
@@ -212,7 +215,14 @@ class K1810VM88Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -0.806197,
+            'control': 2.986814,
+            'data_transfer': 4.227807,
+            'memory': 14.299858,
+            'multiply': -40.402842,
+            'string': 4.287532
+        }
 
         # No cache on this processor
         self.cache_config = None

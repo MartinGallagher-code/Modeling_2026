@@ -1,30 +1,31 @@
 {
   "processor": "msm80c85",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 21,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 9,
+  "loss_before": 0.110131,
+  "loss_after": 0.009217,
+  "cpi_error_percent": 1.3,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.504924,
-    "cor.control": -1.495076,
-    "cor.data_transfer": 1.504924,
-    "cor.memory": -1.560733,
-    "cor.stack": -4.429418
+    "cor.alu": -4.311613,
+    "cor.control": 2.495444,
+    "cor.data_transfer": 8.0,
+    "cor.memory": 10.79097,
+    "cor.stack": -20.0
   },
   "residuals_before": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.2034,
+    "compute": 0.1095,
+    "memory": -0.6196,
+    "control": 0.0566
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0899,
+    "compute": 0.0163,
+    "memory": -0.1689,
+    "control": 0.0007
   },
   "free_parameters": [
     "cor.alu",

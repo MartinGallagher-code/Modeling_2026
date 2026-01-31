@@ -1,27 +1,26 @@
-# Cypress CY7C601 Model Handoff
+# cy7c601 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <5%
-- **Last Updated**: 2026-01-30
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: Early merchant SPARC, 25-40 MHz
-- Year: 1988
-- Clock: 40.0 MHz
-- Target CPI: 1.6
-- Instruction categories: alu (1.0 cyc), load (2.0 cyc), store (2.0 cyc), branch (2.0 cyc), multiply (5.0 cyc), divide (16.0 cyc)
-- Bottleneck: pipeline_stall
+- Typical CPI: 1.454
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- specint89: 27.5 SPECint89 @ 40.0MHz
 
 ## Known Issues
-- None - model validates within 5% error
+- None significant
 
 ## Suggested Next Steps
-- Refine instruction timing with detailed datasheet analysis
-- Add more granular workload profiles for specific use cases
-- Cross-validate with cycle-accurate simulators if available
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Cypress CY7C601 (1988) by Cypress
-- Early merchant SPARC, 25-40 MHz
-- Key features: SPARC V7, FPU companion CY7C602, Early merchant SPARC
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

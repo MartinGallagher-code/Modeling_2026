@@ -189,12 +189,12 @@ class Rca1802Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': -1.981570,
-            'call_return': -8.328910,
-            'immediate': -0.514635,
-            'memory_read': -4.044355,
-            'memory_write': 1.333064,
-            'register_ops': 4.343090
+            'branch': 1.215569,
+            'call_return': 19.999733,
+            'immediate': 11.999999,
+            'memory_read': 7.645320,
+            'memory_write': 13.998891,
+            'register_ops': 4.520112
         }
     
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

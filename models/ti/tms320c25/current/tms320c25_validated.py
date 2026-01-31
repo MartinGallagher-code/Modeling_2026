@@ -135,13 +135,17 @@ class Tms320c25Model(BaseProcessorModel):
     address_width = 16
 
     def __init__(self):
+        # Real effective cycles: single-cycle MAC is peak throughput only.
+        # Real DSP code includes external memory stalls (2-3 wait states),
+        # multi-word instructions, pipeline flushes on branches, and
+        # data address generation overhead.
         self.instruction_categories = {
-            'mac': InstructionCategory('mac', 1.0, 0, "Multiply-accumulate"),
-            'alu': InstructionCategory('alu', 1.0, 0, "ALU/logic"),
-            'load': InstructionCategory('load', 1.0, 0, "Data load"),
-            'store': InstructionCategory('store', 1.0, 0, "Data store"),
-            'branch': InstructionCategory('branch', 2.0, 0, "Branch/loop"),
-            'special': InstructionCategory('special', 2.0, 0, "Special function"),
+            'mac': InstructionCategory('mac', 3, 0, "MAC: 1-cycle core but +data fetch overhead, avg ~3"),
+            'alu': InstructionCategory('alu', 2, 0, "ALU/logic: 1 cycle + operand fetch, avg ~2"),
+            'load': InstructionCategory('load', 4, 0, "Data load: 2-3 cycles external memory + addressing"),
+            'store': InstructionCategory('store', 3, 0, "Data store: 2-3 cycles external memory"),
+            'branch': InstructionCategory('branch', 5, 0, "Branch/loop: pipeline flush + refill, avg ~5"),
+            'special': InstructionCategory('special', 4, 0, "Block move, bit-reverse, special addr modes, avg ~4"),
         }
 
         self.workload_profiles = {
@@ -188,12 +192,12 @@ class Tms320c25Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.202216,
-            'branch': -0.797784,
-            'load': 0.157901,
-            'mac': 0.202216,
-            'special': -0.797784,
-            'store': 0.246531
+            'alu': 5.000000,
+            'branch': 4.772528,
+            'load': 8.000000,
+            'mac': 0.647963,
+            'special': -0.743926,
+            'store': 6.000000
         }
 
         # No cache on this processor

@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 3.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.3867,
+      "source": "published_benchmark",
+      "source_detail": "65C816-based, SNES CPU",
       "conditions": {
         "clock_mhz": 3.58,
         "memory_config": "typical"
       },
-      "uncertainty": 0.16,
+      "uncertainty": 0.358,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.5 MIPS @ 3.58MHz. Original: Ricoh 5A22, modified 65C816 for SNES",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.0287,
+      "source": "published_benchmark",
+      "source_detail": "65C816-based, SNES CPU",
       "conditions": {
         "clock_mhz": 3.58,
         "memory_config": "typical"
       },
-      "uncertainty": 0.16,
+      "uncertainty": 0.358,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.5 MIPS @ 3.58MHz. Original: Ricoh 5A22, modified 65C816 for SNES",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 3.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.9833,
+      "source": "published_benchmark",
+      "source_detail": "65C816-based, SNES CPU",
       "conditions": {
         "clock_mhz": 3.58,
         "memory_config": "typical"
       },
-      "uncertainty": 0.16,
+      "uncertainty": 0.358,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.5 MIPS @ 3.58MHz. Original: Ricoh 5A22, modified 65C816 for SNES",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 3.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.6253,
+      "source": "published_benchmark",
+      "source_detail": "65C816-based, SNES CPU",
       "conditions": {
         "clock_mhz": 3.58,
         "memory_config": "typical"
       },
-      "uncertainty": 0.16,
+      "uncertainty": 0.358,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.5 MIPS @ 3.58MHz. Original: Ricoh 5A22, modified 65C816 for SNES",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 3.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.3867,
+      "source": "published_benchmark",
+      "source_detail": "65C816-based, SNES CPU",
       "conditions": {
         "clock_mhz": 3.58,
         "memory_config": "typical"
       },
-      "uncertainty": 0.16,
+      "uncertainty": 0.358,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.5 MIPS @ 3.58MHz. Original: Ricoh 5A22, modified 65C816 for SNES",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

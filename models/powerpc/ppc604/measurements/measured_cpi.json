@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 0.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 0.8114,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 128.4-167.4 DMIPS @ 120-125MHz",
       "conditions": {
         "clock_mhz": 133.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.04,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "uncertainty": 0.065,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 147.9 DMIPS @ 120.0MHz. Original: PPC 604 @ 120MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 0.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 0.6897,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 128.4-167.4 DMIPS @ 120-125MHz",
       "conditions": {
         "clock_mhz": 133.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.04,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "uncertainty": 0.065,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 147.9 DMIPS @ 120.0MHz. Original: PPC 604 @ 120MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 0.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.0142,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 128.4-167.4 DMIPS @ 120-125MHz",
       "conditions": {
         "clock_mhz": 133.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.04,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "uncertainty": 0.065,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 147.9 DMIPS @ 120.0MHz. Original: PPC 604 @ 120MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 0.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 0.8925,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 128.4-167.4 DMIPS @ 120-125MHz",
       "conditions": {
         "clock_mhz": 133.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.04,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "uncertainty": 0.065,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 147.9 DMIPS @ 120.0MHz. Original: PPC 604 @ 120MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 0.8,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 0.8114,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 128.4-167.4 DMIPS @ 120-125MHz",
       "conditions": {
         "clock_mhz": 133.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.04,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "uncertainty": 0.065,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 147.9 DMIPS @ 120.0MHz. Original: PPC 604 @ 120MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

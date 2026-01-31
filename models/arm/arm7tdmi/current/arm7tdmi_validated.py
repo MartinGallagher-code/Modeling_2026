@@ -188,12 +188,12 @@ class Arm7tdmiModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.8555966122746177,
-            'branch': -1.5754295844218906,
-            'divide': -8.420298600939379,
-            'load': -2.184121272859651,
-            'multiply': -4.730560567904413,
-            'store': 1.4796013990606327,
+            'alu': -0.233972,
+            'branch': -1.602448,
+            'divide': -10.057779,
+            'load': -4.748815,
+            'multiply': -4.999899,
+            'store': 2.667122
         }
 
         # Cache configuration for memory hierarchy modeling

@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 4.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 8.0,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8086 data, 80186 is enhanced 8086",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Enhanced 8086 with integrated peripherals"
+      "uncertainty": 1.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 8.0MHz. Original: Integrated peripherals, slightly faster than 8086",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 4.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 7.2,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8086 data, 80186 is enhanced 8086",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive workload"
+      "uncertainty": 1.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 8.0MHz. Original: Integrated peripherals, slightly faster than 8086",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 4.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 9.2,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8086 data, 80186 is enhanced 8086",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive workload"
+      "uncertainty": 1.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 8.0MHz. Original: Integrated peripherals, slightly faster than 8086",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 4.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 8.64,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8086 data, 80186 is enhanced 8086",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-flow intensive workload"
+      "uncertainty": 1.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 8.0MHz. Original: Integrated peripherals, slightly faster than 8086",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 4.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 8.0,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 8086 data, 80186 is enhanced 8086",
       "conditions": {
         "clock_mhz": 8.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Mixed workload"
+      "uncertainty": 1.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 1.0 MIPS @ 8.0MHz. Original: Integrated peripherals, slightly faster than 8086",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

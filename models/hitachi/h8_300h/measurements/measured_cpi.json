@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 3.2,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300H datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Hitachi H8/300H typical workload"
+      "uncertainty": 0.48,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 5.0 MIPS @ 16.0MHz. Original: Extended H8/300 with 32-bit registers",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 2.72,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300H datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Hitachi H8/300H compute workload"
+      "uncertainty": 0.48,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 5.0 MIPS @ 16.0MHz. Original: Extended H8/300 with 32-bit registers",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 4.0,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300H datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Hitachi H8/300H memory workload"
+      "uncertainty": 0.48,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 5.0 MIPS @ 16.0MHz. Original: Extended H8/300 with 32-bit registers",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 3.52,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300H datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Hitachi H8/300H control workload"
+      "uncertainty": 0.48,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 5.0 MIPS @ 16.0MHz. Original: Extended H8/300 with 32-bit registers",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 3.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 3.2,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300H datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.15,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Hitachi H8/300H mixed workload"
+      "uncertainty": 0.48,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 5.0 MIPS @ 16.0MHz. Original: Extended H8/300 with 32-bit registers",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

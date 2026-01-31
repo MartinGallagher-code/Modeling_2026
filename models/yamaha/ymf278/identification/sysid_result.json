@@ -1,32 +1,33 @@
 {
   "processor": "ymf278",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 35,
-  "loss_before": 0.056065,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.oscillator": 0.5,
-    "cor.envelope": 0.5,
-    "cor.register": 0.5,
-    "cor.memory": -0.0,
-    "cor.control": -0.5,
-    "cor.mixing": 0.5
+    "cor.control": -0.499563,
+    "cor.envelope": 0.500259,
+    "cor.memory": 0.000348,
+    "cor.mixing": 0.499203,
+    "cor.oscillator": 0.500254,
+    "cor.register": 0.499203
   },
   "residuals_before": {
-    "typical": -0.245,
-    "compute": -0.29,
-    "memory": -0.2,
-    "control": -0.11,
-    "mixed": -0.29
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
+    "typical": -0.0001,
     "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0,
+    "memory": 0.0,
+    "control": 0.0,
     "mixed": -0.0
   },
   "free_parameters": [

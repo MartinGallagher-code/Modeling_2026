@@ -1,18 +1,19 @@
 {
   "processor": "iwarp",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 3,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.45056,
-    "cor.communication": -0.30944,
-    "cor.control": -0.54944,
-    "cor.fp": -0.30944,
-    "cor.memory": -0.54944
+    "cor.alu": 0.45028,
+    "cor.communication": -0.308854,
+    "cor.control": -0.549393,
+    "cor.fp": -0.308854,
+    "cor.memory": -0.549393
   },
   "residuals_before": {
     "typical": 0.0,
@@ -22,7 +23,7 @@
   },
   "residuals_after": {
     "typical": 0.0,
-    "compute": 0.0,
+    "compute": -0.0,
     "memory": 0.0,
     "control": 0.0
   },

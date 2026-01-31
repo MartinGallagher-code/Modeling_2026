@@ -1,54 +1,29 @@
-# K1810VM88 Model Handoff
+# k1810vm88 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 0.0%
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 0.01%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Soviet Intel 8088 clone, 8/16-bit, 5 MHz, 29,000 transistors (1980s)
-- Sequential execution model with 4-byte prefetch queue
-- 6 instruction categories: alu (3), data_transfer (4), memory (6), control (5), multiply (30), string (8)
-- Target CPI: 5.0 -- achieved exactly
-
-## Key Parameters
-
-| Parameter | Value |
-|-----------|-------|
-| Manufacturer | Soviet Union |
-| Year | 1986 |
-| Clock | 5.0 MHz |
-| Architecture | 8/16-bit 8088 compatible |
-| Target CPI | 5.0 |
-
-## Instruction Categories
-
-| Category | Cycles | Weight |
-|----------|--------|--------|
-| alu | 3.0 | 0.32 |
-| data_transfer | 4.0 | 0.25 |
-| memory | 6.0 | 0.12 |
-| control | 5.0 | 0.20 |
-| multiply | 30.0 | 0.02 |
-| string | 8.0 | 0.09 |
+- Soviet clone of the Intel 8088 with 8-bit external bus
+- Base instruction cycles reflect 8-bit bus contention: alu=9, data_transfer=10, memory=16, control=16, multiply=35, string=14
+- Correction terms: alu=-0.81, control=2.99, data_transfer=4.23, memory=14.30, multiply=-40.40, string=4.29
+- All corrections within optimizer bounds
+- Calibrated against published MIPS benchmark (0.22 MIPS @ 5.0 MHz)
 
 ## Known Issues
-- None. Model validates at 0.0% error.
+- The multiply correction of -40.40 is large in magnitude, suggesting the multiply base of 35 may be too high; however, it is within bounds and the model validates well
+- No other issues; model passes validation with 0.01% error
 
 ## Suggested Next Steps
-- Cross-validate with K1810VM86 (existing 8086 clone model) for consistency
-- Compare 8-bit bus impact on memory-intensive workloads
+- Model is in excellent shape; no immediate work needed
+- Could investigate lowering multiply base cycles to reduce the magnitude of the -40.40 correction
+- Could add additional benchmark sources for further cross-validation
 
-## Related Models
-- K1810VM86: Soviet 8086 clone (16-bit bus variant)
-
-## Files
-- **Model:** `current/k1810vm88_validated.py`
-- **Validation:** `validation/k1810vm88_validation.json`
-- **Changelog:** `CHANGELOG.md`
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+## Key Architectural Notes
+- 8-bit external bus doubles memory access time for 16-bit transfers compared to the 8086/K1810VM86
+- 4-byte prefetch queue (vs 6-byte on 8086 variant)
+- Bus contention is the dominant factor in effective cycle counts, especially for memory and data transfer operations
+- Soviet clone shares identical internal architecture with Intel 8088

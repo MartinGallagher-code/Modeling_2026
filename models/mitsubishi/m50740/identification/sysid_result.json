@@ -1,19 +1,20 @@
 {
   "processor": "m50740",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 22,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.182581,
-    "cor.bit_ops": 2.239477,
-    "cor.control": -1.275869,
-    "cor.data_transfer": -2.678239,
-    "cor.io": -0.303705,
-    "cor.memory": 2.2096
+    "cor.alu": -0.843341,
+    "cor.bit_ops": 0.650939,
+    "cor.control": -1.027439,
+    "cor.data_transfer": -0.483856,
+    "cor.io": -0.699555,
+    "cor.memory": 3.046401
   },
   "residuals_before": {
     "typical": 0.0,
@@ -22,10 +23,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "io_heavy": 0.0,
-    "control": 0.0
+    "typical": -0.0006,
+    "compute": 0.0002,
+    "io_heavy": 0.0001,
+    "control": 0.0002
   },
   "free_parameters": [
     "cor.alu",

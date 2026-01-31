@@ -1,18 +1,19 @@
 {
   "processor": "upd7801",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 11,
+  "iterations": 2,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.000639,
-    "cor.control": 0.000358,
-    "cor.data_transfer": 0.00056,
-    "cor.memory": 0.000478,
-    "cor.stack": 0.000288
+    "cor.alu": 0.000381,
+    "cor.control": 0.000674,
+    "cor.data_transfer": 0.000264,
+    "cor.memory": 0.000691,
+    "cor.stack": 0.000687
   },
   "residuals_before": {
     "typical": -0.0

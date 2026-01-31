@@ -187,7 +187,13 @@ class MCY7880Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': -1.007347,
+            'control': 4.245868,
+            'data_transfer': 3.261717,
+            'memory': 3.532880,
+            'stack': -4.957481
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""

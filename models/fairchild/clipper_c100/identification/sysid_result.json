@@ -1,31 +1,32 @@
 {
   "processor": "clipper_c100",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 6,
-  "loss_before": 0.02386,
+  "iterations": 4,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.450377,
-    "cor.load": -0.735143,
-    "cor.store": 0.832979,
-    "cor.branch": -0.475048,
-    "cor.float": -1.435152
+    "cor.alu": 0.551571,
+    "cor.branch": -0.525944,
+    "cor.float": -1.567333,
+    "cor.load": -0.255194,
+    "cor.store": 0.153369
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.22,
-    "memory": 0.15,
-    "control": 0.22,
-    "fp_heavy": 0.0
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": -0.0,
+    "fp_heavy": -0.0
   },
   "residuals_after": {
     "typical": -0.0,
     "compute": 0.0,
     "memory": 0.0,
-    "control": -0.0,
+    "control": 0.0,
     "fp_heavy": -0.0
   },
   "free_parameters": [

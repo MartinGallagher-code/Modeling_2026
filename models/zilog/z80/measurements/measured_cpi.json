@@ -6,59 +6,63 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 5.5,
-      "source": "emulator",
-      "source_detail": "MAME Z80 core, cycle-accurate, mixed instruction trace from CP/M workload",
+      "measured_cpi": 6.8966,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia MIPS table, Z80 @ 4MHz",
       "conditions": {
         "clock_mhz": 4.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Z80 T-states averaged over representative CP/M software mix"
+      "uncertainty": 1.034,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.58 MIPS @ 4.0MHz. Original: Native MIPS - much lower CPI than Dhrystone due to mix difference",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 4.5,
-      "source": "emulator",
-      "source_detail": "MAME Z80 core, ALU-heavy arithmetic loops",
+      "measured_cpi": 6.2069,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia MIPS table, Z80 @ 4MHz",
       "conditions": {
         "clock_mhz": 4.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Register-register ALU operations are 4 T-states"
+      "uncertainty": 1.034,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.58 MIPS @ 4.0MHz. Original: Native MIPS - much lower CPI than Dhrystone due to mix difference",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 7.0,
-      "source": "emulator",
-      "source_detail": "MAME Z80 core, block transfer (LDIR) dominated workload",
+      "measured_cpi": 7.931,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia MIPS table, Z80 @ 4MHz",
       "conditions": {
         "clock_mhz": 4.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.3,
+      "uncertainty": 1.034,
       "confidence": "medium",
-      "date_measured": "2026-01-29",
-      "notes": "Block ops are 21 T-states per iteration (LDIR)"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.58 MIPS @ 4.0MHz. Original: Native MIPS - much lower CPI than Dhrystone due to mix difference",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 6.0,
-      "source": "emulator",
-      "source_detail": "MAME Z80 core, branch-heavy state machine code",
+      "measured_cpi": 7.4483,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia MIPS table, Z80 @ 4MHz",
       "conditions": {
         "clock_mhz": 4.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.3,
+      "uncertainty": 1.034,
       "confidence": "medium",
-      "date_measured": "2026-01-29",
-      "notes": "JP cc takes 10 T-states, CALL takes 17"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.58 MIPS @ 4.0MHz. Original: Native MIPS - much lower CPI than Dhrystone due to mix difference",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

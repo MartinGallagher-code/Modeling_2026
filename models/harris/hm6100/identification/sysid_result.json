@@ -1,19 +1,20 @@
 {
   "processor": "hm6100",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 5,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 1e-06,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.arithmetic": -1.072161,
-    "cor.io": 3.172831,
-    "cor.jump": -1.444937,
-    "cor.logic": -1.227951,
-    "cor.memory": -0.165635,
-    "cor.operate": 4.993307
+    "cor.arithmetic": -3.361719,
+    "cor.io": 1.9097,
+    "cor.jump": -1.39999,
+    "cor.logic": 2.20626,
+    "cor.memory": 0.984562,
+    "cor.operate": 1.589902
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.0012,
+    "compute": 0.0006,
+    "memory": 0.0002,
+    "control": 0.0003
   },
   "free_parameters": [
     "cor.arithmetic",

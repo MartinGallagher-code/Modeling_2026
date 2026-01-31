@@ -1,40 +1,34 @@
 {
   "processor": "microsparc_ii",
   "date": "2026-01-31",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.001604,
+  "method": "ridge",
+  "converged": true,
+  "iterations": 11,
+  "loss_before": 0.211079,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.7623926379851399,
-    "cor.branch": -0.798083286845334,
-    "cor.divide": -9.995703662692987,
-    "cor.load": -3.9202458787519827,
-    "cor.multiply": -5.6004629109976864,
-    "cor.store": 0.8437994823070268
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.925125,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 11.0,
-    "cache.l2_hit_rate": 0.998934,
-    "cache.l2_latency": 16.5
+    "cor.alu": -0.864471,
+    "cor.branch": -0.536848,
+    "cor.divide": -15.629292,
+    "cor.load": -3.443578,
+    "cor.multiply": -1.21391,
+    "cor.store": -2.504685
   },
   "residuals_before": {
-    "typical": -0.0641,
-    "compute": 0.0104,
-    "memory": -0.0025,
-    "control": -0.0019,
-    "mixed": 0.0616
+    "typical": 0.458,
+    "compute": 0.2863,
+    "memory": 0.687,
+    "control": 0.2863,
+    "mixed": 0.458
   },
   "residuals_after": {
-    "typical": 0.0,
+    "typical": -0.0,
     "compute": 0.0,
-    "memory": -0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "memory": 0.0001,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
     "cache.l1_hit_rate",

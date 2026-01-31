@@ -1,32 +1,33 @@
 {
   "processor": "k1810vm86",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 11,
+  "loss_before": 3.499642,
+  "loss_after": 8e-06,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.0,
-    "cor.data_transfer": 0.0,
-    "cor.memory": 0.0,
-    "cor.io": 0.0,
-    "cor.control": 0.0,
-    "cor.stack": 0.0,
-    "cor.string": 0.0
+    "cor.alu": 2.759792,
+    "cor.control": 11.584259,
+    "cor.data_transfer": 4.003434,
+    "cor.io": 6.481754,
+    "cor.memory": 19.999999,
+    "cor.stack": 9.719697,
+    "cor.string": 14.480622
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": -0.0
+    "typical": -1.2515,
+    "compute": -0.4888,
+    "memory": -3.0294,
+    "control": -1.7367
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": -0.0
+    "typical": -0.003,
+    "compute": 0.0009,
+    "memory": -0.0049,
+    "control": -0.0004
   },
   "free_parameters": [
     "cor.alu",

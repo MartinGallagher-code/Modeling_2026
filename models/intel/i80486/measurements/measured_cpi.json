@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 2.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.7921,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 18.1-37.7 DMIPS @ 33-50MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.143,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "First pipelined x86 with on-chip cache and FPU"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 27.9 DMIPS @ 50.0MHz. Original: 486DX @ 50MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 2.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.5233,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 18.1-37.7 DMIPS @ 33-50MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.143,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 27.9 DMIPS @ 50.0MHz. Original: 486DX @ 50MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 2.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.2401,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 18.1-37.7 DMIPS @ 33-50MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.143,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 27.9 DMIPS @ 50.0MHz. Original: 486DX @ 50MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 2.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.9713,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 18.1-37.7 DMIPS @ 33-50MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.143,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-flow intensive workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 27.9 DMIPS @ 50.0MHz. Original: 486DX @ 50MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 2.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.7921,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, midrange of 18.1-37.7 DMIPS @ 33-50MHz",
       "conditions": {
         "clock_mhz": 25.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.143,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 27.9 DMIPS @ 50.0MHz. Original: 486DX @ 50MHz",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

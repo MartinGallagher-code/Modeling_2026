@@ -1,21 +1,22 @@
 {
   "processor": "r2000",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 13,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.04,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.385535,
-    "cor.branch": -0.430264,
-    "cor.divide": -1.004472,
-    "cor.jump": -0.892887,
-    "cor.load": 0.364216,
-    "cor.multiply": -1.102744,
-    "cor.shift": -0.738764,
-    "cor.store": -0.871568
+    "cor.alu": -1.592004,
+    "cor.branch": -1.639581,
+    "cor.divide": 1.06997,
+    "cor.jump": 1.981715,
+    "cor.load": 0.518157,
+    "cor.multiply": -0.332628,
+    "cor.shift": 0.184042,
+    "cor.store": -0.053721
   },
   "residuals_before": {
     "typical": 0.0,
@@ -25,11 +26,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": -0.0006,
+    "compute": -0.0001,
+    "memory": -0.0003,
+    "control": -0.0001,
+    "mixed": 0.0009
   },
   "free_parameters": [
     "cor.alu",

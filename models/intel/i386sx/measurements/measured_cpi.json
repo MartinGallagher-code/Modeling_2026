@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 5.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 6.9444,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, estimated from 386DX scaled by 16-bit bus",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.25,
+      "uncertainty": 0.556,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 386SX typical workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.6 DMIPS @ 25.0MHz. Original: 386SX has 16-bit external bus, ~25% slower than DX",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 5.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 5.9028,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, estimated from 386DX scaled by 16-bit bus",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.25,
+      "uncertainty": 0.556,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 386SX compute workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.6 DMIPS @ 25.0MHz. Original: 386SX has 16-bit external bus, ~25% slower than DX",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 5.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 8.6806,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, estimated from 386DX scaled by 16-bit bus",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.25,
+      "uncertainty": 0.556,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 386SX memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.6 DMIPS @ 25.0MHz. Original: 386SX has 16-bit external bus, ~25% slower than DX",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 5.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 7.6389,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, estimated from 386DX scaled by 16-bit bus",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.25,
+      "uncertainty": 0.556,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 386SX control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.6 DMIPS @ 25.0MHz. Original: 386SX has 16-bit external bus, ~25% slower than DX",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 5.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 6.9444,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, estimated from 386DX scaled by 16-bit bus",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.25,
+      "uncertainty": 0.556,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 386SX mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 3.6 DMIPS @ 25.0MHz. Original: 386SX has 16-bit external bus, ~25% slower than DX",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

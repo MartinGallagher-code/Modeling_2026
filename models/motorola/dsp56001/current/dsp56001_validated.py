@@ -188,12 +188,12 @@ class Dsp56001Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.202216,
-            'branch': -0.797784,
-            'load': 0.157901,
-            'mac': 0.202216,
-            'special': -0.797784,
-            'store': 0.246531
+            'alu': 1.041972,
+            'branch': 2.230822,
+            'load': 5.000000,
+            'mac': 1.082391,
+            'special': -0.064139,
+            'store': 5.000000
         }
 
         # No cache on this processor

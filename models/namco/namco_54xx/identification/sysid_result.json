@@ -1,19 +1,20 @@
 {
   "processor": "namco_54xx",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 18,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.control": 3.233572,
-    "cor.dac": -3.116467,
-    "cor.io": -0.114483,
-    "cor.mix": -0.29744,
-    "cor.noise_gen": 2.235557,
-    "cor.waveform": 1.235557
+    "cor.control": 1.321159,
+    "cor.dac": -1.533131,
+    "cor.io": 2.253645,
+    "cor.mix": 0.614354,
+    "cor.noise_gen": 1.127098,
+    "cor.waveform": 0.127435
   },
   "residuals_before": {
     "typical": 0.0,
@@ -22,9 +23,9 @@
     "idle": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "noise_heavy": 0.0,
-    "waveform_heavy": 0.0,
+    "typical": -0.0007,
+    "noise_heavy": 0.0002,
+    "waveform_heavy": 0.0003,
     "idle": 0.0
   },
   "free_parameters": [

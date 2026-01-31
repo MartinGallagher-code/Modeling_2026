@@ -50,10 +50,10 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_after": 1e-06,
+    "sysid_cpi_error_percent": 0.03,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "instruction_mix": {
     "alu": 0.3,
@@ -68,5 +68,14 @@
     "reference_processor": "Intel 8080A",
     "timing_verified": true,
     "notes": "Polish maintained full timing compatibility with Intel 8080A"
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

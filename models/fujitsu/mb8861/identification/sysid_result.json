@@ -1,19 +1,20 @@
 {
   "processor": "mb8861",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 16,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -1.51095,
-    "cor.call_return": 4.87681,
-    "cor.control": 0.623183,
-    "cor.data_transfer": 0.862643,
-    "cor.memory": 0.08019,
-    "cor.stack": -3.905776
+    "cor.alu": -1.701027,
+    "cor.call_return": 2.925987,
+    "cor.control": 0.197885,
+    "cor.data_transfer": 1.401519,
+    "cor.memory": -0.334861,
+    "cor.stack": -0.365015
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.0009,
+    "compute": 0.0004,
+    "memory": 0.0002,
+    "control": 0.0002
   },
   "free_parameters": [
     "cor.alu",

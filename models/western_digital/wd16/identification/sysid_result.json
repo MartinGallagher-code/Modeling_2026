@@ -1,21 +1,22 @@
 {
   "processor": "wd16",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 21,
+  "iterations": 4,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 1e-06,
+  "cpi_error_percent": 0.03,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.branch": 0.124169,
-    "cor.byte": -1.453353,
-    "cor.immediate": 0.533046,
-    "cor.jsr": 1.093407,
-    "cor.memory_read": -0.237952,
-    "cor.memory_write": 0.242948,
-    "cor.register_ops": 0.553514,
-    "cor.trap": -4.518852
+    "cor.branch": 0.78956,
+    "cor.byte": -1.741872,
+    "cor.immediate": 0.108847,
+    "cor.jsr": 0.020581,
+    "cor.memory_read": 0.227489,
+    "cor.memory_write": -0.286321,
+    "cor.register_ops": 0.737289,
+    "cor.trap": -3.218257
   },
   "residuals_before": {
     "typical": -0.0,
@@ -24,10 +25,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": 0.0014,
+    "compute": -0.0007,
+    "memory": -0.0004,
+    "control": -0.0004
   },
   "free_parameters": [
     "cor.branch",

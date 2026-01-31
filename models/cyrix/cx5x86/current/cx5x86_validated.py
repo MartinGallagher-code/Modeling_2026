@@ -188,12 +188,12 @@ class Cx5x86Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.4432262805666031,
-            'control': -1.5567737194333993,
-            'data_transfer': 0.4432262805665939,
-            'divide': -5.202029832753088,
-            'memory': -0.8849036194334002,
-            'multiply': -10.234145662773605,
+            'alu': -2.466245,
+            'control': -1.284425,
+            'data_transfer': 2.079708,
+            'divide': 4.199667,
+            'memory': -1.458764,
+            'multiply': 5.931701
         }
 
         # Cache configuration for memory hierarchy modeling

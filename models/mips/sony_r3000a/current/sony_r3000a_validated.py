@@ -188,12 +188,12 @@ class SonyR3000aModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.7576029380273253,
-            'branch': -0.6758551686724654,
-            'divide': -8.508564635173542,
-            'load': -2.1999585421217267,
-            'multiply': -4.843145702171391,
-            'store': 1.4844353648264879,
+            'alu': -0.437876,
+            'branch': -0.533886,
+            'divide': -11.311343,
+            'load': -3.852850,
+            'multiply': -3.648759,
+            'store': 1.453452
         }
 
         # Cache configuration for memory hierarchy modeling

@@ -1,40 +1,34 @@
 {
   "processor": "mips_r4600",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 47,
-  "loss_before": 0.000829,
+  "iterations": 14,
+  "loss_before": 0.34635,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.6590991179450949,
-    "cor.branch": -0.7761725401701731,
-    "cor.divide": -8.599814249593852,
-    "cor.load": -2.3186166435736024,
-    "cor.multiply": -4.952530830746495,
-    "cor.store": 1.3811924504061595
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.998965,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 13.3,
-    "cache.l2_hit_rate": 0.998995,
-    "cache.l2_latency": 20.0
+    "cor.alu": -0.838613,
+    "cor.branch": -0.474317,
+    "cor.divide": -13.587772,
+    "cor.load": -4.098895,
+    "cor.multiply": -1.210429,
+    "cor.store": -2.913144
   },
   "residuals_before": {
-    "typical": -0.0458,
-    "compute": 0.0076,
-    "memory": -0.0014,
-    "control": -0.0012,
-    "mixed": 0.0445
+    "typical": -0.5865,
+    "compute": -0.3667,
+    "memory": -0.88,
+    "control": -0.3667,
+    "mixed": -0.5868
   },
   "residuals_after": {
     "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "compute": -0.0,
+    "memory": 0.0001,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
     "cache.l1_hit_rate",

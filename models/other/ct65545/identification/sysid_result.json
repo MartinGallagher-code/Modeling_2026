@@ -1,19 +1,20 @@
 {
   "processor": "ct65545",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 18,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.blit": 0.476422,
-    "cor.branch": -0.759361,
-    "cor.draw": -0.287796,
-    "cor.memory": 0.476422,
-    "cor.pixel": 0.240639,
-    "cor.register": 1.947987
+    "cor.blit": 0.496012,
+    "cor.branch": -0.093116,
+    "cor.draw": -0.818793,
+    "cor.memory": 0.553073,
+    "cor.pixel": 0.894682,
+    "cor.register": 0.805098
   },
   "residuals_before": {
     "typical": -0.0,
@@ -23,11 +24,11 @@
     "mixed": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
+    "typical": -0.0002,
     "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0,
-    "mixed": 0.0
+    "memory": -0.0001,
+    "control": -0.0001,
+    "mixed": 0.0004
   },
   "free_parameters": [
     "cor.blit",

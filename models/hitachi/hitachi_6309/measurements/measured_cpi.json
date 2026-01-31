@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 3.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.2222,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 6809 with native mode improvements",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Native mode - enhanced 6809 with additional registers and instructions"
+      "uncertainty": 0.333,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.9 MIPS @ 2.0MHz. Original: Enhanced 6809 with native mode",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 2.78,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.0,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 6809 with native mode improvements",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive with 16-bit math"
+      "uncertainty": 0.333,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.9 MIPS @ 2.0MHz. Original: Enhanced 6809 with native mode",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 3.36,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.5556,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 6809 with native mode improvements",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive with block transfers"
+      "uncertainty": 0.333,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.9 MIPS @ 2.0MHz. Original: Enhanced 6809 with native mode",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 3.41,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.4,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 6809 with native mode improvements",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-flow intensive workload"
+      "uncertainty": 0.333,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.9 MIPS @ 2.0MHz. Original: Enhanced 6809 with native mode",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "graphics",
-      "measured_cpi": 3.42,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 2.2222,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from 6809 with native mode improvements",
       "conditions": {
         "clock_mhz": 2.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Graphics/game workload with block transfers"
+      "uncertainty": 0.333,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.9 MIPS @ 2.0MHz. Original: Enhanced 6809 with native mode",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

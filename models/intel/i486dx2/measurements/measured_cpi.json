@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 2.0625,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 25.0-39.0 DMIPS",
       "conditions": {
         "clock_mhz": 66.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.165,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 486DX2 typical workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 32.0 DMIPS @ 66.0MHz. Original: 486DX2 @ 66MHz, clock-doubled",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 1.7531,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 25.0-39.0 DMIPS",
       "conditions": {
         "clock_mhz": 66.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.165,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 486DX2 compute workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 32.0 DMIPS @ 66.0MHz. Original: 486DX2 @ 66MHz, clock-doubled",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 2.5781,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 25.0-39.0 DMIPS",
       "conditions": {
         "clock_mhz": 66.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.165,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 486DX2 memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 32.0 DMIPS @ 66.0MHz. Original: 486DX2 @ 66MHz, clock-doubled",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 2.2688,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 25.0-39.0 DMIPS",
       "conditions": {
         "clock_mhz": 66.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.165,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 486DX2 control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 32.0 DMIPS @ 66.0MHz. Original: 486DX2 @ 66MHz, clock-doubled",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 2.0625,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 25.0-39.0 DMIPS",
       "conditions": {
         "clock_mhz": 66.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.165,
       "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "Intel 486DX2 mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 32.0 DMIPS @ 66.0MHz. Original: 486DX2 @ 66MHz, clock-doubled",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

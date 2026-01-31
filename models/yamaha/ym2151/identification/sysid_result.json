@@ -1,18 +1,19 @@
 {
   "processor": "ym2151",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 14,
+  "iterations": 4,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 2e-06,
+  "cpi_error_percent": 0.05,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.envelope": 3.530643,
-    "cor.lfo": -1.102631,
-    "cor.operator": -2.882666,
-    "cor.output": -0.329339,
-    "cor.register": 4.064006
+    "cor.envelope": 2.83955,
+    "cor.lfo": -0.025038,
+    "cor.operator": -2.901755,
+    "cor.output": -0.444501,
+    "cor.register": 4.196333
   },
   "residuals_before": {
     "typical": 0.0,
@@ -21,10 +22,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0021,
+    "compute": -0.0006,
+    "memory": -0.0012,
+    "control": -0.0006
   },
   "free_parameters": [
     "cor.envelope",

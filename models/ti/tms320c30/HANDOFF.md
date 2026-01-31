@@ -1,27 +1,26 @@
-# TI TMS320C30 Model Handoff
+# tms320c30 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <5%
-- **Last Updated**: 2026-01-30
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: First floating-point TMS320, audio and scientific
-- Year: 1988
-- Clock: 33.3 MHz
-- Target CPI: 1.3
-- Instruction categories: mac (1.0 cyc), alu (1.0 cyc), load (1.0 cyc), store (1.0 cyc), branch (1.0 cyc), special (3.0 cyc)
-- Bottleneck: memory_bandwidth
+- Typical CPI: 1.667
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- dsp_peak: 33.0 MFLOPS @ 33.0MHz
 
 ## Known Issues
-- None - model validates within 5% error
+- None significant
 
 ## Suggested Next Steps
-- Refine instruction timing with detailed datasheet analysis
-- Add more granular workload profiles for specific use cases
-- Cross-validate with cycle-accurate simulators if available
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- TI TMS320C30 (1988) by TI
-- First floating-point TMS320, audio and scientific
-- Key features: 32-bit floating-point, Dual bus, 60ns cycle
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

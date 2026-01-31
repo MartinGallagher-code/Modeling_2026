@@ -130,12 +130,12 @@ class NecV20Model(BaseProcessorModel):
         # 8088 CPI ~4.0, so V20 target CPI ~3.4
         # Calculation: 0.30*2 + 0.20*3 + 0.20*4.5 + 0.15*3 + 0.10*4 + 0.05*8 = 3.35
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 2, 0, "ALU: ADD/SUB reg,reg @2 (was 3 on 8088)"),
-            'data_transfer': InstructionCategory('data_transfer', 3, 0, "MOV reg,reg @2, MOV reg,mem @4-6"),
-            'memory': InstructionCategory('memory', 4.5, 0, "Memory ops with faster EA calculation"),
-            'control': InstructionCategory('control', 3, 0, "JMP @3, Jcc @4-16 avg, CALL @5"),
-            'multiply': InstructionCategory('multiply', 4, 0, "MUL @29-30 (was 118-133 on 8088) - weighted avg"),
-            'divide': InstructionCategory('divide', 8, 0, "DIV improved ~3x over 8088 - weighted avg"),
+            'alu': InstructionCategory('alu', 3, 0, "ALU: ADD/SUB reg,reg @3 (incl memory operands)"),
+            'data_transfer': InstructionCategory('data_transfer', 4, 0, "MOV reg,reg @2, MOV reg,mem @4-8, avg ~4"),
+            'memory': InstructionCategory('memory', 6, 0, "Memory ops with EA calculation + bus cycles"),
+            'control': InstructionCategory('control', 5, 0, "JMP @3, Jcc @4-16 avg ~5, CALL @5-7"),
+            'multiply': InstructionCategory('multiply', 6, 0, "MUL @29-30 (was 118-133 on 8088) - weighted avg"),
+            'divide': InstructionCategory('divide', 10, 0, "DIV improved ~3x over 8088 - weighted avg"),
         }
 
         # Workload profiles
@@ -175,7 +175,14 @@ class NecV20Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 6.000000,
+            'control': 10.000000,
+            'data_transfer': 8.000000,
+            'divide': 6.689831,
+            'memory': 12.000000,
+            'multiply': 2.306361
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using prefetch queue model"""

@@ -188,12 +188,12 @@ class ColdfireModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.9131210584800215,
-            'branch': -0.4664196184654612,
-            'divide': -6.568716233738063,
-            'load': -1.8401226377746343,
-            'multiply': -3.3641230031928586,
-            'store': 1.3859731162619373,
+            'alu': -0.260302,
+            'branch': 1.690299,
+            'divide': -9.999996,
+            'load': -1.025833,
+            'multiply': 0.866566,
+            'store': 4.945264
         }
 
         # Cache configuration for memory hierarchy modeling

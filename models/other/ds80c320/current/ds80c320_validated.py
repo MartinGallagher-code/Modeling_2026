@@ -149,12 +149,12 @@ class Ds80c320Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': -0.000000,
-            'branch': -1.000000,
-            'divide': -3.000000,
-            'memory': -0.000000,
-            'multiply': -3.000000,
-            'special': -1.000000,
+            'alu': 5.000000,
+            'branch': 8.000000,
+            'divide': 10.000000,
+            'memory': 5.000000,
+            'multiply': 10.000000,
+            'special': 5.000000
         }
 
         self.cache_config = None

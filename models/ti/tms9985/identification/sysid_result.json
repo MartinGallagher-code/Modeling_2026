@@ -1,18 +1,19 @@
 {
   "processor": "tms9985",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 14,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 3.760129,
-    "cor.control": -3.739871,
-    "cor.data_transfer": 2.260129,
-    "cor.memory": -4.72986,
-    "cor.stack": -1.749881
+    "cor.alu": 3.515202,
+    "cor.control": -3.978675,
+    "cor.data_transfer": 2.018743,
+    "cor.memory": -2.252002,
+    "cor.stack": -4.656264
   },
   "residuals_before": {
     "typical": 0.0,
@@ -21,10 +22,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.001,
+    "compute": -0.0008,
+    "memory": -0.0003,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

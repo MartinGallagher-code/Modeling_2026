@@ -201,7 +201,15 @@ class K1810VM86Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 5.000000,
+            'control': 8.000000,
+            'data_transfer': 5.000000,
+            'io': 10.000000,
+            'memory': 10.000000,
+            'stack': 9.000000,
+            'string': 12.000000
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""

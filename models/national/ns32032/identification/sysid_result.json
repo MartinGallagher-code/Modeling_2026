@@ -1,26 +1,27 @@
 {
   "processor": "ns32032",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 4,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 0.00082,
+  "cpi_error_percent": 0.2,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.register_ops": 0.0,
-    "cor.immediate": 0.0,
-    "cor.memory_read": 0.0,
-    "cor.memory_write": 0.0,
-    "cor.branch": 0.0,
-    "cor.call_return": 0.0,
-    "cor.complex": 0.0
+    "cor.branch": 5.498428,
+    "cor.call_return": 5.278492,
+    "cor.complex": 5.86499,
+    "cor.immediate": 4.398742,
+    "cor.memory_read": 3.299057,
+    "cor.memory_write": 2.474293,
+    "cor.register_ops": 4.123821
   },
   "residuals_before": {
-    "typical": 0.0
+    "typical": -0.0
   },
   "residuals_after": {
-    "typical": 0.0
+    "typical": -0.0286
   },
   "free_parameters": [
     "cor.branch",

@@ -601,7 +601,7 @@ def get_model_parameter_bounds(model) -> Dict[str, tuple]:
             cat_name = key[4:]  # strip 'cor.' prefix
             cat = categories.get(cat_name)
             if cat is not None:
-                limit = max(5.0, cat.base_cycles)
+                limit = max(5.0, cat.base_cycles * 2.0)
             else:
                 limit = 5.0
             bounds[key] = (-limit, limit)

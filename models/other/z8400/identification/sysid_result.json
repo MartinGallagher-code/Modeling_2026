@@ -1,18 +1,19 @@
 {
   "processor": "z8400",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 16,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.230708,
-    "cor.block": -1.981149,
-    "cor.control": 0.268743,
-    "cor.data_transfer": 1.34443,
-    "cor.memory": -1.714319
+    "cor.alu": 0.229342,
+    "cor.block": -3.100102,
+    "cor.control": 0.417725,
+    "cor.data_transfer": 0.58335,
+    "cor.memory": 0.035784
   },
   "residuals_before": {
     "typical": -0.0,
@@ -21,10 +22,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": -0.0002,
+    "compute": 0.0001,
+    "memory": 0.0001,
+    "control": 0.0001
   },
   "free_parameters": [
     "cor.alu",

@@ -202,7 +202,14 @@ class U880Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 0.304196,
+            'block': 2.628901,
+            'control': 3.043924,
+            'data_transfer': 1.251871,
+            'memory': 3.416820,
+            'stack': -3.488146
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze using sequential execution model"""

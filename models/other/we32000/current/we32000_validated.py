@@ -166,12 +166,12 @@ class We32000Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': 3.442257,
-            'call_return': -4.999954,
-            'immediate': -4.998023,
-            'memory_read': 1.930279,
-            'memory_write': -4.977015,
-            'register_ops': 3.168212
+            'branch': 8.000000,
+            'call_return': 9.999998,
+            'immediate': 2.528806,
+            'memory_read': 5.000000,
+            'memory_write': 5.000000,
+            'register_ops': 5.999985
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 1.6667,
+      "source": "published_benchmark",
+      "source_detail": "Analog Devices ADSP-21060 SHARC datasheet",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.05,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "ADSP-21060 SHARC typical workload"
+      "uncertainty": 0.417,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 40.0 MFLOPS @ 40.0MHz. Original: SHARC DSP, multiprocessing capability",
+      "source_url": "https://www.analog.com/"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 1.4167,
+      "source": "published_benchmark",
+      "source_detail": "Analog Devices ADSP-21060 SHARC datasheet",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.05,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "ADSP-21060 SHARC compute workload"
+      "uncertainty": 0.417,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 40.0 MFLOPS @ 40.0MHz. Original: SHARC DSP, multiprocessing capability",
+      "source_url": "https://www.analog.com/"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 2.0833,
+      "source": "published_benchmark",
+      "source_detail": "Analog Devices ADSP-21060 SHARC datasheet",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.05,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "ADSP-21060 SHARC memory workload"
+      "uncertainty": 0.417,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 40.0 MFLOPS @ 40.0MHz. Original: SHARC DSP, multiprocessing capability",
+      "source_url": "https://www.analog.com/"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 1.8333,
+      "source": "published_benchmark",
+      "source_detail": "Analog Devices ADSP-21060 SHARC datasheet",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.05,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "ADSP-21060 SHARC control workload"
+      "uncertainty": 0.417,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 40.0 MFLOPS @ 40.0MHz. Original: SHARC DSP, multiprocessing capability",
+      "source_url": "https://www.analog.com/"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.0,
-      "source": "literature",
-      "source_detail": "Datasheet and architectural analysis",
+      "measured_cpi": 1.6667,
+      "source": "published_benchmark",
+      "source_detail": "Analog Devices ADSP-21060 SHARC datasheet",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.05,
-      "confidence": "high",
-      "date_measured": "2026-01-30",
-      "notes": "ADSP-21060 SHARC mixed workload"
+      "uncertainty": 0.417,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 40.0 MFLOPS @ 40.0MHz. Original: SHARC DSP, multiprocessing capability",
+      "source_url": "https://www.analog.com/"
     }
   ]
 }

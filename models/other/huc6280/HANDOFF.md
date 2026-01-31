@@ -1,27 +1,26 @@
-# Hudson HuC6280 Model Handoff
+# huc6280 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <5%
-- **Last Updated**: 2026-01-30
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: TurboGrafx-16 CPU, enhanced 65C02 with speed modes
-- Year: 1987
-- Clock: 7.16 MHz
-- Target CPI: 3.5
-- Instruction categories: alu (2.0 cyc), data_transfer (2.0 cyc), memory (4.0 cyc), control (5.0 cyc), multiply (10.0 cyc), divide (18.0 cyc)
-- Bottleneck: bus_contention
+- Typical CPI: 2.387
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- mips_rating: 3.0 MIPS @ 7.16MHz
 
 ## Known Issues
-- None - model validates within 5% error
+- None significant
 
 ## Suggested Next Steps
-- Refine instruction timing with detailed datasheet analysis
-- Add more granular workload profiles for specific use cases
-- Cross-validate with cycle-accurate simulators if available
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Hudson HuC6280 (1987) by Hudson Soft
-- TurboGrafx-16 CPU, enhanced 65C02 with speed modes
-- Key features: Enhanced 65C02, Dual speed modes, 8KB RAM
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

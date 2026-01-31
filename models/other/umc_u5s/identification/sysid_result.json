@@ -1,40 +1,34 @@
 {
   "processor": "umc_u5s",
   "date": "2026-01-31",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.000259,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "method": "ridge",
+  "converged": true,
+  "iterations": 8,
+  "loss_before": 0.069967,
+  "loss_after": 3e-06,
+  "cpi_error_percent": 0.08,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.8302012854354923,
-    "cor.control": -1.1697987145645097,
-    "cor.data_transfer": 0.8302012854354883,
-    "cor.divide": -9.210055801662445,
-    "cor.memory": -0.17502111456451003,
-    "cor.multiply": -18.149670171015583
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.998968,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0,
-    "cache.l2_hit_rate": 0.888832,
-    "cache.l2_latency": 6.0
+    "cor.alu": -3.046988,
+    "cor.control": -0.440557,
+    "cor.data_transfer": 3.43059,
+    "cor.divide": 7.416474,
+    "cor.memory": 1.408294,
+    "cor.multiply": 3.553461
   },
   "residuals_before": {
-    "typical": 0.0145,
-    "compute": 0.0064,
-    "memory": 0.0093,
-    "control": 0.0008,
-    "mixed": -0.0309
+    "typical": -0.2137,
+    "compute": -0.1601,
+    "memory": -0.427,
+    "control": -0.16,
+    "mixed": -0.2658
   },
   "residuals_after": {
-    "typical": 0.0002,
-    "compute": 0.0001,
-    "memory": 0.0001,
+    "typical": -0.002,
+    "compute": -0.0001,
+    "memory": -0.0013,
     "control": 0.0,
-    "mixed": -0.0004
+    "mixed": 0.0029
   },
   "free_parameters": [
     "cache.l1_hit_rate",

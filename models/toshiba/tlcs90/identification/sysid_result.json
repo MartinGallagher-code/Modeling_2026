@@ -1,19 +1,20 @@
 {
   "processor": "tlcs90",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 35,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.331985,
-    "cor.block": -2.012076,
-    "cor.control": -2.159782,
-    "cor.data_transfer": 1.018671,
-    "cor.io": 4.218548,
-    "cor.memory": -1.630126
+    "cor.alu": 1.081829,
+    "cor.block": -4.295613,
+    "cor.control": -0.515868,
+    "cor.data_transfer": 0.993262,
+    "cor.io": 0.244481,
+    "cor.memory": -0.379381
   },
   "residuals_before": {
     "typical": -0.0,
@@ -22,10 +23,10 @@
     "control": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
+    "typical": -0.0003,
     "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "memory": 0.0001,
+    "control": 0.0001
   },
   "free_parameters": [
     "cor.alu",

@@ -122,12 +122,14 @@ class I8048Model(BaseProcessorModel):
     address_width = 12
 
     def __init__(self):
-        # Most instructions are 1-2 cycles (machine cycles)
+        # 8048 divides oscillator by 15 for machine cycles.
+        # 1 machine cycle = 15 clock cycles, 2 machine cycles = 30 clocks.
+        # Base cycles are in CLOCK cycles (not machine cycles) to match CPI units.
         self.instruction_categories = {
-            'alu': InstructionCategory('alu', 1.0, 0, "ADD/SUB @1 cycle"),
-            'data_transfer': InstructionCategory('data_transfer', 1.0, 0, "MOV @1 cycle"),
-            'memory': InstructionCategory('memory', 2.5, 0, "MOVX @2.5 cycles"),
-            'control': InstructionCategory('control', 2.5, 0, "JMP/CALL @2.5 cycles"),
+            'alu': InstructionCategory('alu', 15.0, 0, "ADD/SUB @1 machine cycle = 15 clocks"),
+            'data_transfer': InstructionCategory('data_transfer', 15.0, 0, "MOV @1 machine cycle = 15 clocks"),
+            'memory': InstructionCategory('memory', 30.0, 0, "MOVX @2 machine cycles = 30 clocks"),
+            'control': InstructionCategory('control', 30.0, 0, "JMP/CALL @2 machine cycles = 30 clocks"),
         }
 
         self.workload_profiles = {
@@ -165,10 +167,10 @@ class I8048Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.500000,
-            'control': -1.000000,
-            'data_transfer': 0.500000,
-            'memory': -1.000000
+            'alu': -4.487241,
+            'control': -11.132145,
+            'data_transfer': -0.893632,
+            'memory': -7.155769
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

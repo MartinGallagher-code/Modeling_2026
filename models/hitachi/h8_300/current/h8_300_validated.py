@@ -188,12 +188,12 @@ class H8300Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.197569,
-            'control': -3.802430,
-            'data_transfer': 0.197572,
-            'divide': -17.316485,
-            'memory': -1.802430,
-            'multiply': -10.045386
+            'alu': -4.522096,
+            'control': -1.924124,
+            'data_transfer': 4.287727,
+            'divide': 20.000000,
+            'memory': 2.882693,
+            'multiply': 12.000000
         }
 
         # No cache on this processor

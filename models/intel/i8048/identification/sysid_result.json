@@ -1,31 +1,32 @@
 {
   "processor": "i8048",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 3,
+  "loss_before": 0.023364,
+  "loss_after": 0.023364,
+  "cpi_error_percent": 0.97,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.5,
-    "cor.control": -1.0,
-    "cor.data_transfer": 0.5,
-    "cor.memory": -1.0
+    "cor.alu": -4.486571,
+    "cor.control": -11.131499,
+    "cor.data_transfer": -0.894903,
+    "cor.memory": -7.15517
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": -0.1456,
+    "compute": -0.0393,
+    "memory": -0.0899,
+    "control": -0.034,
+    "mixed": 0.2913
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": -0.1457,
+    "compute": -0.0392,
+    "memory": -0.0898,
+    "control": -0.0339,
+    "mixed": 0.2912
   },
   "free_parameters": [
     "cor.alu",

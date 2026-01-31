@@ -1,31 +1,32 @@
 {
   "processor": "im1821vm85a",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 22,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.33433,
-    "cor.data_transfer": 0.062679,
-    "cor.memory": 0.941417,
-    "cor.io": 3.184527,
-    "cor.control": 0.359806,
-    "cor.stack": 2.096213
+    "cor.alu": -0.249196,
+    "cor.control": 1.572908,
+    "cor.data_transfer": 1.42073,
+    "cor.io": 3.171961,
+    "cor.memory": 4.841354,
+    "cor.stack": 4.99792
   },
   "residuals_before": {
     "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
-  },
-  "residuals_after": {
-    "typical": 0.0,
     "compute": 0.0,
     "memory": 0.0,
     "control": -0.0
+  },
+  "residuals_after": {
+    "typical": -0.0006,
+    "compute": 0.0004,
+    "memory": -0.0001,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

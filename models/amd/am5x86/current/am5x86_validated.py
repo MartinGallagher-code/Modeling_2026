@@ -188,12 +188,12 @@ class Am5x86Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.5395999803616071,
-            'control': -1.4604000196383948,
-            'data_transfer': 0.5395999803615998,
-            'divide': -8.380396091958996,
-            'memory': -0.777021909638396,
-            'multiply': -16.500401983478124,
+            'alu': -2.951952,
+            'control': -0.883083,
+            'data_transfer': 2.860649,
+            'divide': 21.775923,
+            'memory': 1.842222,
+            'multiply': -4.557411
         }
 
         # Cache configuration for memory hierarchy modeling

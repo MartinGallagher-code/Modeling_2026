@@ -149,12 +149,12 @@ class At89c51Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': -0.000000,
-            'branch': -4.000000,
-            'divide': -18.000000,
-            'memory': -0.000000,
-            'multiply': -18.000000,
-            'special': -2.000000,
+            'alu': -4.200000,
+            'branch': -5.155553,
+            'divide': -5.533334,
+            'memory': 5.799999,
+            'multiply': 4.466666,
+            'special': -2.577777
         }
 
         self.cache_config = None

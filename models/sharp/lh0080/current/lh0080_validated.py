@@ -152,11 +152,11 @@ class Lh0080Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.259056056733584,
-            'block': -5.898668538928546,
-            'control': -0.3345300993039592,
-            'data_transfer': 2.0545383830526385,
-            'memory': -2.1681328228388983,
+            'alu': -1.998337,
+            'block': -4.193925,
+            'control': 3.008951,
+            'data_transfer': 4.992720,
+            'memory': 4.083298
         }
 
     def analyze(self, workload='typical'):

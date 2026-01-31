@@ -1,31 +1,32 @@
 {
   "processor": "intersil6100",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 17,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 4,
+  "loss_before": 0.287242,
+  "loss_after": 0.286487,
+  "cpi_error_percent": 1.31,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.arithmetic": 0.520532,
-    "cor.io": -0.206137,
-    "cor.jump": -1.963135,
-    "cor.logic": 0.740667,
-    "cor.memory": -0.947387,
-    "cor.operate": 1.418923
+    "cor.arithmetic": 8.73931,
+    "cor.io": 24.0,
+    "cor.jump": 19.46955,
+    "cor.logic": 14.448823,
+    "cor.memory": 24.0,
+    "cor.operate": 12.0
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.3384,
+    "compute": 0.2743,
+    "memory": -0.8962,
+    "control": 0.3951
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": -0.0
+    "typical": -0.3492,
+    "compute": 0.2773,
+    "memory": -0.8905,
+    "control": 0.3926
   },
   "free_parameters": [
     "cor.arithmetic",

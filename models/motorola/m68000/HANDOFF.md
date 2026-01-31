@@ -1,39 +1,27 @@
-# M68000 Model Handoff
+# m68000 Model Handoff
 
 ## Current Status
-- **Validation**: PASSED
-- **CPI Error**: 0.00% (all workloads)
-- **Last Updated**: 2026-01-29
+- **Validation**: FAILED
+- **CPI Error**: 18.8%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-The Motorola 68000 (1979) 16/32-bit microprocessor model uses 6 instruction categories with system identification correction terms applied.
+- Typical CPI: 16.739
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-| Parameter | Value |
-|-----------|-------|
-| Clock | 8 MHz |
-| Categories | alu_reg(4), data_transfer(4), memory(8), control(8), multiply(70), divide(140) |
-| Corrections | Applied via scipy least_squares — see identification/sysid_result.json |
-| Typical CPI | 6.533 (measured), 6.533 (predicted) |
-
-## System Identification
-Correction terms fitted against 4 workload measurements (typical, compute, memory, control).
-All workloads now match to <0.01% error. Key corrections:
-- data_transfer: +3.28 (model under-counts transfer overhead)
-- control: +2.12 (branch/call overhead higher than modeled)
-- alu_reg: -2.78 (model over-counts register ALU)
+## External Benchmark Data
+- dhrystone: 0.46 DMIPS @ 7.7MHz
+- mips_rating: 1.4 MIPS @ 8.0MHz
 
 ## Known Issues
-- Workload profiles had to be manually fixed (mul/div weights reduced from 3-4% to 0.5%)
-- Large multiply/divide corrections (-27, -54) suggest datasheet cycle counts may be too high for typical instruction mixes, or the remaining 0.5% weight is still too much
-- Grey-box model not suitable for cycle-exact emulation
+- CPI error > 15% — model architecture may need adjustment to match real benchmark behavior
 
 ## Suggested Next Steps
-1. Investigate whether multiply/divide datasheet timings represent worst-case or average
-2. Consider splitting multiply into signed/unsigned categories
-3. Cross-validate correction terms against MAME emulator traces
+- Investigate architectural mismatch causing high error
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- 32-bit internal, 16-bit external data bus
-- Microcoded CISC execution (not pipelined)
-- MULU/DIVU are extremely expensive (70/140 cycles) but very rare in practice (<1% of instructions)
-- 68,000 transistors, 8 MHz typical clock
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

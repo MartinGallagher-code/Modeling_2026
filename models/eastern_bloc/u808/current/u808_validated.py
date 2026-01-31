@@ -188,11 +188,11 @@ class U808Model(BaseProcessorModel):
 
         # Correction terms for system identification
         self.corrections = {
-            'alu': -2.317078,
-            'control': -0.536578,
-            'data_transfer': 2.341477,
-            'io': -0.341466,
-            'memory': 1.926812
+            'alu': -4.992533,
+            'control': -0.471240,
+            'data_transfer': 1.554367,
+            'io': -6.428611,
+            'memory': -6.283747
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

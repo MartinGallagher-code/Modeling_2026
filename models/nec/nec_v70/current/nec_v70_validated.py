@@ -163,12 +163,12 @@ class NecV70Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.20629217874507536,
-            'control': -0.16033704559145484,
-            'data_transfer': -0.187447255631908,
-            'float': -0.11296978172680307,
-            'memory': -0.1322234544262536,
-            'string': -0.11296666484108013,
+            'alu': -2.044937,
+            'control': 4.705470,
+            'data_transfer': -2.269877,
+            'float': -0.083491,
+            'memory': -3.666937,
+            'string': -0.065600
         }
 
         # Cache configuration for memory hierarchy modeling

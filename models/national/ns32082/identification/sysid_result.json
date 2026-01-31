@@ -1,24 +1,25 @@
 {
   "processor": "ns32082",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 13,
+  "iterations": 2,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.cache_op": -4.7e-05,
-    "cor.control": -5.4e-05,
-    "cor.page_fault": -0.000108,
-    "cor.table_walk": -8.1e-05,
-    "cor.translate": -3.3e-05
+    "cor.cache_op": -9e-06,
+    "cor.control": -1.8e-05,
+    "cor.page_fault": -9.8e-05,
+    "cor.table_walk": -0.000165,
+    "cor.translate": -3.5e-05
   },
   "residuals_before": {
     "typical": 0.0
   },
   "residuals_after": {
-    "typical": -0.0
+    "typical": 0.0
   },
   "free_parameters": [
     "cor.cache_op",

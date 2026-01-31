@@ -8,7 +8,10 @@ and runs scipy.optimize.least_squares to fit correction terms that minimize
 CPI prediction error.
 
 Usage:
-    python run_system_identification.py                    # all models
+    python run_system_identification.py                    # all models (ridge default)
+    python run_system_identification.py --method de        # differential evolution
+    python run_system_identification.py --method bayesian  # bayesian optimization
+    python run_system_identification.py --method trf       # plain least-squares
     python run_system_identification.py --family zilog     # one family
     python run_system_identification.py --processor z80    # one processor
     python run_system_identification.py --dry-run          # preview only
@@ -139,6 +142,7 @@ def save_identification_result(
     data = {
         "processor": proc_name,
         "date": datetime.now().strftime("%Y-%m-%d"),
+        "method": getattr(result, 'method', 'ridge'),
         "converged": result.converged,
         "iterations": result.iterations,
         "loss_before": round(result.loss_before, 6),
@@ -186,6 +190,7 @@ def run_identification(
     processor_filter: Optional[str] = None,
     dry_run: bool = False,
     verbose: bool = False,
+    method: str = "ridge",
 ) -> List[Dict[str, Any]]:
     """Run system identification across all matching processors.
 
@@ -237,7 +242,7 @@ def run_identification(
 
         # Run identification
         try:
-            result = identify_model(model, measurements, verbose=2 if verbose else 0)
+            result = identify_model(model, measurements, method=method, verbose=2 if verbose else 0)
         except Exception as e:
             errors += 1
             if verbose:
@@ -388,6 +393,12 @@ def main():
         action="store_true",
         help="Show detailed output including skipped models",
     )
+    parser.add_argument(
+        "--method", "-m",
+        choices=["ridge", "de", "bayesian", "trf"],
+        default="ridge",
+        help="Optimization method: ridge (default), de (differential evolution), bayesian, trf (plain least-squares)",
+    )
 
     args = parser.parse_args()
 
@@ -399,6 +410,7 @@ def main():
         print(f"Family filter: {args.family}")
     if args.processor:
         print(f"Processor filter: {args.processor}")
+    print(f"Method: {args.method}")
     print(f"Mode: {'DRY-RUN' if args.dry_run else 'WRITE RESULTS'}")
     print()
 
@@ -408,6 +420,7 @@ def main():
         processor_filter=args.processor,
         dry_run=args.dry_run,
         verbose=args.verbose,
+        method=args.method,
     )
 
     print_summary(summaries)

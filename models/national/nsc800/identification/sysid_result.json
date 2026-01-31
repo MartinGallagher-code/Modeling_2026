@@ -1,24 +1,25 @@
 {
   "processor": "nsc800",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 1,
+  "iterations": 4,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 3e-06,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.0,
-    "cor.data_transfer": 0.0,
-    "cor.memory": 0.0,
-    "cor.control": 0.0,
-    "cor.stack": 0.0
+    "cor.alu": 0.965238,
+    "cor.control": 1.640996,
+    "cor.data_transfer": 1.430653,
+    "cor.memory": 1.684579,
+    "cor.stack": 1.812114
   },
   "residuals_before": {
     "typical": 0.0
   },
   "residuals_after": {
-    "typical": 0.0
+    "typical": -0.0017
   },
   "free_parameters": [
     "cor.alu",

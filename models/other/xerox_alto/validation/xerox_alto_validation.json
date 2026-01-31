@@ -42,11 +42,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "TTL custom with bit-serial ALU and microcode-driven execution",
-    "sysid_loss_before": 0.039431,
-    "sysid_loss_after": 0.039431,
-    "sysid_cpi_error_percent": 3.69,
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.01,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "instruction_timing_tests": [
     {

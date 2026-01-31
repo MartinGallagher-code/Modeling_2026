@@ -188,12 +188,12 @@ class Huc6280Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.455226277958471,
-            'control': -1.5447737220415259,
-            'data_transfer': 1.4552262779584841,
-            'divide': -5.590029313737251,
-            'memory': -0.5447737220415215,
-            'multiply': -11.022145926193561,
+            'alu': -3.897788,
+            'control': -2.721789,
+            'data_transfer': 2.068211,
+            'divide': 5.945969,
+            'memory': 0.068211,
+            'multiply': 8.289325
         }
 
         # No cache on this processor

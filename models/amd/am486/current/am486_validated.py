@@ -188,12 +188,12 @@ class Am486Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.7300180982210976,
-            'control': -1.2699819017788998,
-            'data_transfer': 0.7300180982210961,
-            'divide': -9.273601545998446,
-            'memory': -0.5513819017789013,
-            'multiply': -18.268172079669117,
+            'alu': -2.277096,
+            'control': -1.688360,
+            'data_transfer': 1.415467,
+            'divide': 10.723311,
+            'memory': 0.414284,
+            'multiply': -12.291059
         }
 
         # Cache configuration for memory hierarchy modeling

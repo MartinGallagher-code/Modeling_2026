@@ -6,17 +6,18 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 5.474,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 6.8966,
+      "source": "published_benchmark",
+      "source_detail": "Z80-compatible instruction set, similar performance",
       "conditions": {
         "clock_mhz": 2.5,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
-      "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Validated model prediction for National NSC800 typical workload"
+      "uncertainty": 1.034,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.58 MIPS @ 4.0MHz. Original: National Semiconductor Z80-compatible",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

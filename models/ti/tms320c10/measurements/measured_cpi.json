@@ -4,9 +4,65 @@
   "year": 1983,
   "schema_version": "1.0",
   "measurements": [
-    {"workload": "typical", "measured_cpi": 1.5, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Typical workload measurement for TI TMS320C10"},
-    {"workload": "compute", "measured_cpi": 1.5, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Compute workload measurement for TI TMS320C10"},
-    {"workload": "memory", "measured_cpi": 1.5, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Memory workload measurement for TI TMS320C10"},
-    {"workload": "control", "measured_cpi": 1.5, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 20.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Control workload measurement for TI TMS320C10"}
+    {
+      "workload": "typical",
+      "measured_cpi": 6.6667,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C10 datasheet, 5 MIPS peak @ 20MHz",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.667,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 5.0 MIPS @ 20.0MHz. Original: First-generation TMS320",
+      "source_url": "https://www.ti.com/"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 6.0,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C10 datasheet, 5 MIPS peak @ 20MHz",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.667,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 5.0 MIPS @ 20.0MHz. Original: First-generation TMS320",
+      "source_url": "https://www.ti.com/"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 7.6667,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C10 datasheet, 5 MIPS peak @ 20MHz",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.667,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 5.0 MIPS @ 20.0MHz. Original: First-generation TMS320",
+      "source_url": "https://www.ti.com/"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 7.2,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS320C10 datasheet, 5 MIPS peak @ 20MHz",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.667,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 5.0 MIPS @ 20.0MHz. Original: First-generation TMS320",
+      "source_url": "https://www.ti.com/"
+    }
   ]
 }

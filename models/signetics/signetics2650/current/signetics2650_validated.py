@@ -164,12 +164,12 @@ class Signetics2650Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': -0.445412,
-            'call_return': -1.084407,
-            'immediate': -0.172366,
-            'memory_read': -1.291559,
-            'memory_write': -0.589078,
-            'register_ops': 1.110825
+            'branch': 2.728597,
+            'call_return': -2.984141,
+            'immediate': -4.726815,
+            'memory_read': 3.187157,
+            'memory_write': -1.603703,
+            'register_ops': 3.463391
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

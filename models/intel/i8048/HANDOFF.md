@@ -1,40 +1,26 @@
-# Intel 8048 Model Handoff
+# i8048 Model Handoff
 
 ## Current Status
-- **Validation**: PASSED
-- **CPI Error**: 3.3%
-- **Last Updated**: 2026-01-28
+- **Validation**: FAILED
+- **CPI Error**: 57.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: 8-bit NMOS microcontroller (MCS-48)
-- Year: 1976
-- Clock: 6.0 MHz
-- Target CPI: 1.5 (actual: 1.45)
-- Machine cycle: 15 clock periods = 2.5 us
-- Instruction categories: ALU (1 cycle), data_transfer (1 cycle), memory (2.5 cycles), control (2.5 cycles)
+- Typical CPI: 15.000
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-## Cross-Validation Status
-- **Identical timing**: Intel 8748 (EPROM variant)
-- **Related to**: Intel 8049 (larger memory), Intel 8051 (successor, different architecture)
-- **Timing tests**: 16 instructions documented with opcodes
-- **Timing rule**: Register ops 1 cycle, memory/control 2 cycles
+## External Benchmark Data
+- mips_rating: 0.4 MIPS @ 6.0MHz
 
 ## Known Issues
-- None - model validates within 5% error
+- CPI error > 15% — model architecture may need adjustment to match real benchmark behavior
 
 ## Suggested Next Steps
-- Model is fully validated with comprehensive timing tests
-- Future work could add specific workload profiles for embedded control applications
-- Cross-validation with 8748 confirms identical timing (EPROM variant)
+- Investigate architectural mismatch causing high error
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- The Intel 8048 was the first single-chip microcontroller, integrating CPU, ROM, RAM, I/O, and timer
-- It became extremely successful in embedded applications, notably used in IBM PC keyboards
-- Harvard architecture with separate program and data memory spaces
-- Two banks of 8 registers (R0-R7)
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 4
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

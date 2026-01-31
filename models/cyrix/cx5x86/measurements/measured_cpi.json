@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.5,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.8182,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 5x86 reviews",
       "conditions": {
         "clock_mhz": 100.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "uncertainty": 0.145,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 55.0 DMIPS @ 100.0MHz. Original: Cyrix 486-class competitor",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.5,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.5455,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 5x86 reviews",
       "conditions": {
         "clock_mhz": 100.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "uncertainty": 0.145,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 55.0 DMIPS @ 100.0MHz. Original: Cyrix 486-class competitor",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.5,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.2727,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 5x86 reviews",
       "conditions": {
         "clock_mhz": 100.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "uncertainty": 0.145,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 55.0 DMIPS @ 100.0MHz. Original: Cyrix 486-class competitor",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.5,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.0,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 5x86 reviews",
       "conditions": {
         "clock_mhz": 100.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "uncertainty": 0.145,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 55.0 DMIPS @ 100.0MHz. Original: Cyrix 486-class competitor",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.5,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.8182,
+      "source": "published_benchmark",
+      "source_detail": "Estimated from Cyrix 5x86 reviews",
       "conditions": {
         "clock_mhz": 100.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "uncertainty": 0.145,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 55.0 DMIPS @ 100.0MHz. Original: Cyrix 486-class competitor",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

@@ -22,11 +22,11 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "sysid_loss_before": 0.042692,
-    "sysid_loss_after": 0.042692,
-    "sysid_cpi_error_percent": 1.38,
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "sources": [
     "GI AY-3-8500 datasheet"

@@ -1,31 +1,32 @@
 {
   "processor": "i80c196kb",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 38,
-  "loss_before": 1.995445,
+  "iterations": 4,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.0,
-    "cor.memory": -0.5,
-    "cor.multiply": -0.75,
-    "cor.divide": -6.5,
-    "cor.branch": -0.0,
-    "cor.peripheral": -0.75
+    "cor.alu": 0.998659,
+    "cor.branch": -0.000798,
+    "cor.divide": -6.500577,
+    "cor.memory": -0.500692,
+    "cor.multiply": -1.003981,
+    "cor.peripheral": -0.491951
   },
   "residuals_before": {
-    "typical": 1.295,
-    "compute": 0.89,
-    "memory": 2.24,
-    "control": 1.07,
-    "mixed": 1.16
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
+    "typical": 0.0001,
+    "compute": -0.0001,
+    "memory": 0.0,
     "control": -0.0,
     "mixed": -0.0
   },

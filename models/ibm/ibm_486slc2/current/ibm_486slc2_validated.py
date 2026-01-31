@@ -188,12 +188,12 @@ class Ibm486slc2Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.1287840079508493,
-            'control': -1.871215992049152,
-            'data_transfer': 1.1287840079508487,
-            'divide': -8.628017582218984,
-            'memory': -1.0875159920491497,
-            'multiply': -16.992815196964216,
+            'alu': -2.975198,
+            'control': -1.600198,
+            'data_transfer': 3.274800,
+            'divide': -2.560448,
+            'memory': 0.811587,
+            'multiply': 8.504914
         }
 
         # Cache configuration for memory hierarchy modeling

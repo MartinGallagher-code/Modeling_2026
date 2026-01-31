@@ -188,12 +188,12 @@ class Nx586Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.25281718406228637,
-            'control': -1.747182815937716,
-            'data_transfer': 0.2528171840622773,
-            'divide': -4.310619628394053,
-            'memory': -1.5598522219377162,
-            'multiply': -8.465464409709586,
+            'alu': -2.117536,
+            'control': -1.710694,
+            'data_transfer': 1.321496,
+            'divide': 3.367906,
+            'memory': 0.309342,
+            'multiply': 3.226119
         }
 
         # Cache configuration for memory hierarchy modeling

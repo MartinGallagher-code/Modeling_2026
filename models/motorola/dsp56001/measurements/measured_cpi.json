@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.252,
+      "source": "published_benchmark",
+      "source_detail": "Motorola DSP56001 datasheet, peak 10.25 MIPS @ 20.5MHz",
       "conditions": {
         "clock_mhz": 27.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "uncertainty": 0.813,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 10.25 MIPS @ 20.0MHz. Original: Peak MIPS, real workloads lower",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.7642,
+      "source": "published_benchmark",
+      "source_detail": "Motorola DSP56001 datasheet, peak 10.25 MIPS @ 20.5MHz",
       "conditions": {
         "clock_mhz": 27.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "uncertainty": 0.813,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 10.25 MIPS @ 20.0MHz. Original: Peak MIPS, real workloads lower",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 4.065,
+      "source": "published_benchmark",
+      "source_detail": "Motorola DSP56001 datasheet, peak 10.25 MIPS @ 20.5MHz",
       "conditions": {
         "clock_mhz": 27.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "uncertainty": 0.813,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 10.25 MIPS @ 20.0MHz. Original: Peak MIPS, real workloads lower",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.5772,
+      "source": "published_benchmark",
+      "source_detail": "Motorola DSP56001 datasheet, peak 10.25 MIPS @ 20.5MHz",
       "conditions": {
         "clock_mhz": 27.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "uncertainty": 0.813,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 10.25 MIPS @ 20.0MHz. Original: Peak MIPS, real workloads lower",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.252,
+      "source": "published_benchmark",
+      "source_detail": "Motorola DSP56001 datasheet, peak 10.25 MIPS @ 20.5MHz",
       "conditions": {
         "clock_mhz": 27.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.06,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "uncertainty": 0.813,
+      "confidence": "low",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dsp_peak: 10.25 MIPS @ 20.0MHz. Original: Peak MIPS, real workloads lower",
+      "source_url": "https://bitsavers.org/components/motorola/"
     }
   ]
 }

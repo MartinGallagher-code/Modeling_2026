@@ -1,31 +1,32 @@
 {
   "processor": "z8000",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 16,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.529863,
-    "cor.block": 0.646775,
-    "cor.control": 0.175109,
-    "cor.data_transfer": -1.304053,
-    "cor.memory": 0.303614,
-    "cor.stack": 1.042199
+    "cor.alu": 1.253063,
+    "cor.block": 3.277563,
+    "cor.control": 1.997152,
+    "cor.data_transfer": 0.323411,
+    "cor.memory": 3.342352,
+    "cor.stack": 0.045953
   },
   "residuals_before": {
-    "typical": 0.0,
+    "typical": -0.0,
     "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
-  },
-  "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
     "memory": -0.0,
     "control": -0.0
+  },
+  "residuals_after": {
+    "typical": 0.0006,
+    "compute": -0.0003,
+    "memory": -0.0004,
+    "control": -0.0002
   },
   "free_parameters": [
     "cor.alu",

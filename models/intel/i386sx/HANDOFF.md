@@ -1,22 +1,26 @@
-# Intel 386SX Model Handoff
+# i386sx Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <5%
-- **Last Updated**: 2026-01-30
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Target CPI: 5.0
-- 16-bit architecture, 16.0 MHz
-- Intel (1988)
+- Typical CPI: 6.944
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- dhrystone: 3.6 DMIPS @ 25.0MHz
 
 ## Known Issues
-- Initial model, may need refinement after system identification
+- None significant
 
 ## Suggested Next Steps
-- Run system identification to fit correction terms
-- Validate against additional benchmark data if available
-- Cross-validate with related processors in the family
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- Cost-reduced 386 with 16-bit external bus, 32-bit internal
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

@@ -1,15 +1,31 @@
 {
+  "processor": "wisc32",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 26,
-  "loss_before": 1.6145106536429246e-09,
+  "iterations": 5,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.19023420074349345,
-    "cor.control": 0.13550185873605855,
-    "cor.memory": 0.1509498141263931,
-    "cor.microcode": 0.030895910780668914,
-    "cor.stack_ops": 0.18184572490706197
+    "cor.alu": -0.157876,
+    "cor.control": -0.046815,
+    "cor.memory": -0.068123,
+    "cor.microcode": -0.042617,
+    "cor.stack_ops": -0.11074
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
   },
   "free_parameters": [
     "cache.l1_hit_rate",
@@ -18,22 +34,5 @@
     "cor.memory",
     "cor.microcode",
     "cor.stack_ops"
-  ],
-  "residuals_before": {
-    "typical": 4.611721978697858e-05,
-    "compute": 8.811851787804414e-06,
-    "memory": 4.611721978697858e-05,
-    "control": 4.611721978697858e-05
-  },
-  "residuals_after": {
-    "typical": 8.08242361927114e-14,
-    "compute": -2.1183055309847987e-13,
-    "memory": 8.08242361927114e-14,
-    "control": 8.08242361927114e-14
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.9130101240302431,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
-  }
+  ]
 }

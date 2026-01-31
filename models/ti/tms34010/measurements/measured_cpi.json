@@ -4,9 +4,65 @@
   "year": 1986,
   "schema_version": "1.0",
   "measurements": [
-    {"workload": "typical", "measured_cpi": 4.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 6.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Typical workload measurement for TI TMS34010"},
-    {"workload": "compute", "measured_cpi": 4.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 6.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Compute workload measurement for TI TMS34010"},
-    {"workload": "memory", "measured_cpi": 4.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 6.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Memory workload measurement for TI TMS34010"},
-    {"workload": "control", "measured_cpi": 4.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 6.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Control workload measurement for TI TMS34010"}
+    {
+      "workload": "typical",
+      "measured_cpi": 8.3333,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34010 datasheet, graphics processor",
+      "conditions": {
+        "clock_mhz": 6.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 6.0 MIPS @ 50.0MHz. Original: Graphics processor, programmable",
+      "source_url": "https://www.ti.com/"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 7.0833,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34010 datasheet, graphics processor",
+      "conditions": {
+        "clock_mhz": 6.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 6.0 MIPS @ 50.0MHz. Original: Graphics processor, programmable",
+      "source_url": "https://www.ti.com/"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 10.4167,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34010 datasheet, graphics processor",
+      "conditions": {
+        "clock_mhz": 6.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 6.0 MIPS @ 50.0MHz. Original: Graphics processor, programmable",
+      "source_url": "https://www.ti.com/"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 9.1667,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34010 datasheet, graphics processor",
+      "conditions": {
+        "clock_mhz": 6.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.25,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 6.0 MIPS @ 50.0MHz. Original: Graphics processor, programmable",
+      "source_url": "https://www.ti.com/"
+    }
   ]
 }

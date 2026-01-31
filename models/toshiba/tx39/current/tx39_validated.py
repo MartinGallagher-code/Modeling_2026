@@ -188,12 +188,12 @@ class Tx39Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.7576029380273253,
-            'branch': -0.6758551686724654,
-            'divide': -8.508564635173542,
-            'load': -2.1999585421217267,
-            'multiply': -4.843145702171391,
-            'store': 1.4844353648264879,
+            'alu': -0.365104,
+            'branch': -0.378199,
+            'divide': -11.308730,
+            'load': -3.964531,
+            'multiply': -3.620524,
+            'store': 2.073679
         }
 
         # Cache configuration for memory hierarchy modeling

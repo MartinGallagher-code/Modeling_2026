@@ -1,15 +1,31 @@
 {
+  "processor": "dec_t11",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 29,
-  "loss_before": 1.3117825389735645e-09,
-  "loss_after": 4.0596641967374566e-14,
-  "cpi_error_percent": 1.91991498953168e-06,
+  "iterations": 4,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.01,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -4.999999999999999,
-    "cor.control": 2.954398952541056,
-    "cor.data_transfer": 4.999996033355389,
-    "cor.memory": 0.48113186386476414,
-    "cor.stack": -4.6475275814243435
+    "cor.alu": -4.884234,
+    "cor.control": 3.064117,
+    "cor.data_transfer": 5.104846,
+    "cor.memory": -1.692106,
+    "cor.stack": -2.223391
+  },
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0
+  },
+  "residuals_after": {
+    "typical": 0.0005,
+    "compute": 0.0004,
+    "memory": -0.0009,
+    "control": -0.0003
   },
   "free_parameters": [
     "cor.alu",
@@ -17,17 +33,5 @@
     "cor.data_transfer",
     "cor.memory",
     "cor.stack"
-  ],
-  "residuals_before": {
-    "typical": 1.715800000035017e-05,
-    "compute": 4.9757999999400226e-05,
-    "memory": 4.9757999999400226e-05,
-    "control": 1.008000000801701e-06
-  },
-  "residuals_after": {
-    "typical": 1.1520257903185893e-07,
-    "compute": 1.3349415706187528e-07,
-    "memory": -3.6233641953486995e-07,
-    "control": 2.561789003152626e-09
-  }
+  ]
 }

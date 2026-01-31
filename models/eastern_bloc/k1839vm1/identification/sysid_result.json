@@ -1,38 +1,34 @@
 {
   "processor": "k1839vm1",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 39,
-  "loss_before": 0.000615,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 5,
+  "loss_before": 0.0,
+  "loss_after": 1e-06,
+  "cpi_error_percent": 0.02,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.8686906738144015,
-    "cor.control": -4.131309326185599,
-    "cor.data_transfer": 0.8686906738143987,
-    "cor.divide": -14.869444089065556,
-    "cor.memory": -1.1390093261855991,
-    "cor.multiply": -29.262241944745654
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.998929,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
+    "cor.alu": 0.941956,
+    "cor.control": -4.024335,
+    "cor.data_transfer": 1.038117,
+    "cor.divide": -40.154343,
+    "cor.memory": -2.409655,
+    "cor.multiply": -15.868401
   },
   "residuals_before": {
-    "typical": 0.0225,
-    "compute": 0.0099,
-    "memory": 0.0145,
-    "control": 0.0013,
-    "mixed": -0.0476
-  },
-  "residuals_after": {
     "typical": 0.0,
     "compute": 0.0,
     "memory": 0.0,
     "control": 0.0,
-    "mixed": -0.0
+    "mixed": 0.0
+  },
+  "residuals_after": {
+    "typical": 0.0006,
+    "compute": 0.0004,
+    "memory": 0.0007,
+    "control": 0.0001,
+    "mixed": -0.0018
   },
   "free_parameters": [
     "cache.l1_hit_rate",

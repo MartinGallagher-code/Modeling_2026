@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.4,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.25,
+      "source": "published_benchmark",
+      "source_detail": "NEC V850 datasheet, embedded RISC",
       "conditions": {
         "clock_mhz": 20.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.07,
+      "uncertainty": 0.188,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 16.0 MIPS @ 20.0MHz. Original: Embedded RISC microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.4,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.0625,
+      "source": "published_benchmark",
+      "source_detail": "NEC V850 datasheet, embedded RISC",
       "conditions": {
         "clock_mhz": 20.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.07,
+      "uncertainty": 0.188,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 16.0 MIPS @ 20.0MHz. Original: Embedded RISC microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.4,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.5625,
+      "source": "published_benchmark",
+      "source_detail": "NEC V850 datasheet, embedded RISC",
       "conditions": {
         "clock_mhz": 20.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.07,
+      "uncertainty": 0.188,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 16.0 MIPS @ 20.0MHz. Original: Embedded RISC microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.4,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.375,
+      "source": "published_benchmark",
+      "source_detail": "NEC V850 datasheet, embedded RISC",
       "conditions": {
         "clock_mhz": 20.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.07,
+      "uncertainty": 0.188,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 16.0 MIPS @ 20.0MHz. Original: Embedded RISC microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.4,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 1.25,
+      "source": "published_benchmark",
+      "source_detail": "NEC V850 datasheet, embedded RISC",
       "conditions": {
         "clock_mhz": 20.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.07,
+      "uncertainty": 0.188,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 16.0 MIPS @ 20.0MHz. Original: Embedded RISC microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

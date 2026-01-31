@@ -149,12 +149,12 @@ class H8300HModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.000000,
-            'bitop': 0.000001,
-            'branch': -0.000001,
-            'divide': -9.000000,
-            'memory': 0.000000,
-            'multiply': -3.000000,
+            'alu': -1.520000,
+            'bitop': -1.631111,
+            'branch': -1.631111,
+            'divide': -7.075556,
+            'memory': 0.146667,
+            'multiply': 1.591111
         }
 
         self.cache_config = None

@@ -149,12 +149,12 @@ class Adsp21060Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': -0.000000,
-            'branch': -0.000000,
-            'load': -0.500000,
-            'mac': -0.000000,
-            'special': -0.500000,
-            'store': -0.000000,
+            'alu': 0.638922,
+            'branch': 1.564478,
+            'load': -0.786633,
+            'mac': -0.749967,
+            'special': -0.786633,
+            'store': 2.953367
         }
 
         self.cache_config = None

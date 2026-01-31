@@ -281,11 +281,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with per-instruction timing tests",
-    "sysid_loss_before": 0.000313,
-    "sysid_loss_after": 0.000313,
-    "sysid_cpi_error_percent": 2.12,
+    "sysid_loss_before": 0.00369,
+    "sysid_loss_after": 0.000315,
+    "sysid_cpi_error_percent": 1.51,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "cross_validation": {
     "family": "ARM",
@@ -343,5 +343,14 @@
   "accuracy_percent": 99.0,
   "validation_status": "PASSED",
   "last_validated": "2026-01-31",
-  "max_per_workload_error_percent": 2.0
+  "max_per_workload_error_percent": 2.0,
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 1.51
+  }
 }

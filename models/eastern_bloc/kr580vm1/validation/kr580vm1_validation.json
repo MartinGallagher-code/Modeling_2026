@@ -60,7 +60,7 @@
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30",
+    "sysid_date": "2026-01-31",
     "sysid_corrections": {
       "alu": -0.508868,
       "data_transfer": -0.737274,
@@ -84,5 +84,14 @@
     "reference_processor": "Intel 8080",
     "timing_verified": true,
     "notes": "Base instructions use 8080 timing; bank-switch adds ~12 cycle overhead per operation"
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

@@ -1,19 +1,20 @@
 {
   "processor": "am9512",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 2,
+  "iterations": 5,
   "loss_before": 0.0,
-  "loss_after": 0.0,
+  "loss_after": 1e-06,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.double_fp": 11.795132,
-    "cor.fixed_point": 2.348996,
-    "cor.fp_add": 3.906037,
-    "cor.fp_div": -12.217726,
-    "cor.fp_mul": 8.999999,
-    "cor.fp_sqrt": -13.485099
+    "cor.double_fp": 2.860432,
+    "cor.fixed_point": 0.25029,
+    "cor.fp_add": 4.447403,
+    "cor.fp_div": -0.703805,
+    "cor.fp_mul": 7.416794,
+    "cor.fp_sqrt": -19.431692
   },
   "residuals_before": {
     "typical": 0.0,
@@ -23,11 +24,11 @@
     "mixed": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": 0.0004,
+    "compute": 0.0004,
+    "memory": 0.0004,
+    "control": 0.0004,
+    "mixed": -0.002
   },
   "free_parameters": [
     "cor.double_fp",

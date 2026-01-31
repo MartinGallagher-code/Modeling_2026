@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 0.878,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 49.5-178.4 DMIPS @ 60-133MHz",
       "conditions": {
         "clock_mhz": 60.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.07,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "First superscalar x86 with dual U/V pipelines"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 113.9 DMIPS @ 100.0MHz. Original: Pentium @ 100MHz, superscalar dual-issue",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "compute",
-      "measured_cpi": 0.845,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 0.7463,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 49.5-178.4 DMIPS @ 60-133MHz",
       "conditions": {
         "clock_mhz": 60.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.07,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Compute-intensive, good instruction pairing"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 113.9 DMIPS @ 100.0MHz. Original: Pentium @ 100MHz, superscalar dual-issue",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.085,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 1.0975,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 49.5-178.4 DMIPS @ 60-133MHz",
       "conditions": {
         "clock_mhz": 60.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.07,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Memory-intensive workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 113.9 DMIPS @ 100.0MHz. Original: Pentium @ 100MHz, superscalar dual-issue",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.195,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 0.9658,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 49.5-178.4 DMIPS @ 60-133MHz",
       "conditions": {
         "clock_mhz": 60.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.07,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Control-intensive, branch prediction helps"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 113.9 DMIPS @ 100.0MHz. Original: Pentium @ 100MHz, superscalar dual-issue",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.0,
-      "source": "emulator",
-      "source_detail": "Cycle-accurate emulation/simulation",
+      "measured_cpi": 0.878,
+      "source": "published_benchmark",
+      "source_detail": "Netlib Dhrystone database, range 49.5-178.4 DMIPS @ 60-133MHz",
       "conditions": {
         "clock_mhz": 60.0,
         "memory_config": "no wait states"
       },
-      "uncertainty": 0.2,
+      "uncertainty": 0.07,
       "confidence": "high",
-      "date_measured": "2026-01-29",
-      "notes": "Mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 113.9 DMIPS @ 100.0MHz. Original: Pentium @ 100MHz, superscalar dual-issue",
+      "source_url": "https://www.netlib.org/performance/html/dhrystone.data.col0.html"
     }
   ]
 }

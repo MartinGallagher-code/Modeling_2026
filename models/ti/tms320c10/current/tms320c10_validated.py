@@ -159,11 +159,11 @@ class Tms320C10Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.503829,
-            'branch': -0.532219,
-            'control': -0.430986,
-            'mac': 0.501774,
-            'memory': -0.500467
+            'alu': 5.000000,
+            'branch': 5.000000,
+            'control': 5.000000,
+            'mac': 5.000000,
+            'memory': 5.000000
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

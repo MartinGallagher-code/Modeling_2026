@@ -1,38 +1,34 @@
 {
   "processor": "tms34020",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 111,
-  "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "iterations": 7,
+  "loss_before": 0.018618,
+  "loss_after": 0.001536,
+  "cpi_error_percent": 0.29,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.blit": 0.028133527696797847,
-    "cor.branch": -0.6905311953352774,
-    "cor.draw": -0.25320174927113565,
-    "cor.memory": -0.27146647230320725,
-    "cor.pixel": 1.309468804664721,
-    "cor.register": 0.46546297376093143
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.957171,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
+    "cor.blit": 5.0,
+    "cor.branch": 2.219446,
+    "cor.draw": -1.775591,
+    "cor.memory": 3.314866,
+    "cor.pixel": 2.475705,
+    "cor.register": 4.856492
   },
   "residuals_before": {
-    "typical": -0.0001,
-    "compute": -0.0001,
-    "memory": -0.0001,
-    "control": -0.0001,
-    "mixed": -0.0001
+    "typical": -0.1254,
+    "compute": -0.1051,
+    "memory": -0.2262,
+    "control": -0.1165,
+    "mixed": -0.0398
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": -0.0
+    "typical": -0.0116,
+    "compute": -0.0177,
+    "memory": -0.0244,
+    "control": -0.0304,
+    "mixed": 0.0756
   },
   "free_parameters": [
     "cache.l1_hit_rate",

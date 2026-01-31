@@ -1,19 +1,20 @@
 {
   "processor": "weitek_p9000",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 17,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.blit": 0.798579,
-    "cor.branch": -1.215631,
-    "cor.draw": -0.187211,
-    "cor.memory": -0.201421,
-    "cor.pixel": 0.784369,
-    "cor.register": 0.826999
+    "cor.blit": 0.772767,
+    "cor.branch": -0.968761,
+    "cor.draw": -0.374531,
+    "cor.memory": -0.160547,
+    "cor.pixel": 1.019085,
+    "cor.register": 0.410141
   },
   "residuals_before": {
     "typical": 0.0,
@@ -23,11 +24,11 @@
     "mixed": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": -0.0,
-    "mixed": 0.0
+    "typical": -0.0002,
+    "compute": -0.0001,
+    "memory": -0.0001,
+    "control": -0.0001,
+    "mixed": 0.0004
   },
   "free_parameters": [
     "cor.blit",

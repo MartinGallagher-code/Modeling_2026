@@ -4,9 +4,65 @@
   "year": 1976,
   "schema_version": "1.0",
   "measurements": [
-    {"workload": "typical", "measured_cpi": 20.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 3.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Typical workload measurement for TI TMS9900"},
-    {"workload": "compute", "measured_cpi": 20.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 3.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Compute workload measurement for TI TMS9900"},
-    {"workload": "memory", "measured_cpi": 20.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 3.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Memory workload measurement for TI TMS9900"},
-    {"workload": "control", "measured_cpi": 20.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 3.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Control workload measurement for TI TMS9900"}
+    {
+      "workload": "typical",
+      "measured_cpi": 9.0909,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, TMS9900 @ 3MHz",
+      "conditions": {
+        "clock_mhz": 3.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.364,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 3.0MHz. Original: 16-bit processor, memory-to-memory architecture",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 8.1818,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, TMS9900 @ 3MHz",
+      "conditions": {
+        "clock_mhz": 3.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.364,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 3.0MHz. Original: 16-bit processor, memory-to-memory architecture",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 10.4545,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, TMS9900 @ 3MHz",
+      "conditions": {
+        "clock_mhz": 3.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.364,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 3.0MHz. Original: 16-bit processor, memory-to-memory architecture",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 9.8182,
+      "source": "published_benchmark",
+      "source_detail": "Wikipedia, TMS9900 @ 3MHz",
+      "conditions": {
+        "clock_mhz": 3.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 1.364,
+      "confidence": "medium",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 0.33 MIPS @ 3.0MHz. Original: 16-bit processor, memory-to-memory architecture",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
+    }
   ]
 }

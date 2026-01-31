@@ -1,31 +1,32 @@
 {
   "processor": "microvax_78032",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 23,
-  "loss_before": 0.000224,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "iterations": 5,
+  "loss_before": 0.0,
+  "loss_after": 1e-06,
+  "cpi_error_percent": 0.03,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 3.0285207305720045,
-    "cor.control": 0.6568993029546667,
-    "cor.decimal": -1.6757478569961664,
-    "cor.float": -7.899949092906745,
-    "cor.memory": -2.364884499323639,
-    "cor.string": -0.08529961638105454
+    "cor.alu": 3.023772,
+    "cor.control": 0.999016,
+    "cor.decimal": 0.201314,
+    "cor.float": -8.467812,
+    "cor.memory": -1.537075,
+    "cor.string": -2.878429
   },
   "residuals_before": {
-    "typical": -0.0243,
-    "compute": 0.0148,
-    "memory": 0.0047,
-    "control": 0.008
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.0015,
+    "compute": 0.0002,
+    "memory": 0.0007,
+    "control": 0.0005
   },
   "free_parameters": [
     "cor.alu",

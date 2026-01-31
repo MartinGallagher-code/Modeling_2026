@@ -1,35 +1,31 @@
 {
   "processor": "sgs_d950",
   "date": "2026-01-31",
-  "converged": false,
-  "iterations": 200,
+  "method": "ridge",
+  "converged": true,
+  "iterations": 5,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "cpi_error_percent": 0.01,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.301242,
-    "cor.branch": -0.698758,
-    "cor.load": 2.206389,
-    "cor.mac": 0.301243,
-    "cor.special": -1.698756,
-    "cor.store": -1.743903
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.99,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
+    "cor.alu": 0.397676,
+    "cor.branch": -0.597457,
+    "cor.load": -1.067858,
+    "cor.mac": 0.405215,
+    "cor.special": -1.590531,
+    "cor.store": -0.923343
   },
   "residuals_before": {
     "typical": -0.0,
     "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": 0.0
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
   },
   "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
+    "typical": -0.0002,
+    "compute": 0.0001,
     "memory": 0.0,
     "control": 0.0,
     "mixed": 0.0

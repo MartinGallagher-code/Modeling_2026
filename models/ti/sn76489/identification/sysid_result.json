@@ -1,18 +1,19 @@
 {
   "processor": "sn76489",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 19,
+  "iterations": 4,
   "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "cpi_error_percent": 0.01,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.attenuation": 0.214259,
-    "cor.noise_gen": -1.004854,
-    "cor.output": 0.189722,
-    "cor.register": 0.055199,
-    "cor.tone_gen": 0.951131
+    "cor.attenuation": 0.441546,
+    "cor.noise_gen": -0.602698,
+    "cor.output": -0.356811,
+    "cor.register": 0.406815,
+    "cor.tone_gen": 0.591226
   },
   "residuals_before": {
     "typical": 0.0,
@@ -21,10 +22,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": -0.0,
+    "typical": 0.0001,
     "compute": -0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "memory": -0.0,
+    "control": -0.0
   },
   "free_parameters": [
     "cor.attenuation",

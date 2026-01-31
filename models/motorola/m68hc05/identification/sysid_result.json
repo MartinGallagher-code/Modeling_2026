@@ -1,31 +1,32 @@
 {
   "processor": "m68hc05",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 13,
+  "iterations": 5,
   "loss_before": 0.0,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
+  "loss_after": 2e-06,
+  "cpi_error_percent": 0.05,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.285184,
-    "cor.bit_ops": -0.993703,
-    "cor.control": -0.731264,
-    "cor.data_transfer": 0.994473,
-    "cor.memory": -1.06785,
-    "cor.stack": -0.883364
+    "cor.alu": -0.330712,
+    "cor.bit_ops": -5.021724,
+    "cor.control": 1.03177,
+    "cor.data_transfer": -2.743075,
+    "cor.memory": 0.036067,
+    "cor.stack": -0.562584
   },
   "residuals_before": {
     "typical": -0.0,
-    "compute": 0.0,
+    "compute": -0.0,
     "memory": -0.0,
     "control": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": 0.0022,
+    "compute": -0.0007,
+    "memory": -0.0009,
+    "control": -0.0006
   },
   "free_parameters": [
     "cor.alu",

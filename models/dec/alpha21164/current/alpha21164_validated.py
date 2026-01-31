@@ -149,12 +149,12 @@ class Alpha21164Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.35000000000000103,
-            'branch': -0.0999999999999998,
-            'divide': -2.1275832000000037,
-            'load': -0.1551664000000005,
-            'multiply': -1.300000000000001,
-            'store': -2.1275832000000032,
+            'alu': -0.252824,
+            'branch': 0.743289,
+            'divide': -2.545389,
+            'load': -0.208996,
+            'multiply': -0.998934,
+            'store': -2.545389
         }
 
         self.cache_config = CacheConfig(

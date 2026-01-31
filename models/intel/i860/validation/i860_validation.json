@@ -74,10 +74,10 @@
     "validation_date": "2026-01-29",
     "expected_ipc": 0.8333,
     "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
+    "sysid_loss_after": 3e-06,
+    "sysid_cpi_error_percent": 0.04,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-31"
   },
   "instruction_timing_tests": [
     {
@@ -215,5 +215,14 @@
       "consistent": true
     },
     "validation_notes": "CPI of 1.2 represents reasonably optimized code. Peak would be ~0.5 with full dual-issue. Naive compiled code would see CPI 2-3."
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "specint89"
+    ],
+    "primary_source": "specint89",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.0
   }
 }

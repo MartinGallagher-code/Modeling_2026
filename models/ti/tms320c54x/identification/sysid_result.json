@@ -1,32 +1,33 @@
 {
   "processor": "tms320c54x",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 31,
-  "loss_before": 0.03802,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.mac": -0.0,
-    "cor.alu": -0.0,
-    "cor.load": 0.0,
-    "cor.store": -0.0,
-    "cor.branch": -1.0,
-    "cor.special": 0.0
+    "cor.alu": 3.1e-05,
+    "cor.branch": -0.999924,
+    "cor.load": -0.000103,
+    "cor.mac": 3.2e-05,
+    "cor.special": -0.000103,
+    "cor.store": 3.1e-05
   },
   "residuals_before": {
-    "typical": 0.17,
-    "compute": 0.14,
-    "memory": 0.14,
-    "control": 0.32,
-    "mixed": 0.14
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
+    "typical": -0.0,
+    "compute": 0.0,
     "memory": -0.0,
-    "control": -0.0,
+    "control": 0.0,
     "mixed": -0.0
   },
   "free_parameters": [

@@ -201,12 +201,12 @@ class Z80Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -1.292594,
-            'block': -0.167164,
-            'control': 0.297215,
-            'data_transfer': -2.780604,
-            'memory': 4.860001,
-            'stack': -0.749247
+            'alu': 0.304196,
+            'block': 2.628901,
+            'control': 3.043924,
+            'data_transfer': 1.251871,
+            'memory': 3.416820,
+            'stack': -3.488146
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

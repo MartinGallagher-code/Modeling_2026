@@ -1,39 +1,33 @@
 {
   "processor": "mips_r8000",
   "date": "2026-01-31",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.0,
+  "method": "ridge",
+  "converged": true,
+  "iterations": 13,
+  "loss_before": 0.014236,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.47789219541564903,
-    "cor.branch": -0.8589468293305942,
-    "cor.divide": -5.174751705599375,
-    "cor.load": -2.2189303359424346,
-    "cor.multiply": -2.5431419530618014,
-    "cor.store": 0.6442013744006105
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.98507,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 9.0,
-    "cache.l2_hit_rate": 0.9224,
-    "cache.l2_latency": 13.5
+    "cor.alu": -0.927093,
+    "cor.branch": -1.488964,
+    "cor.divide": -8.428235,
+    "cor.load": -3.873999,
+    "cor.multiply": -1.174606,
+    "cor.store": -3.282889
   },
   "residuals_before": {
-    "typical": -0.0002,
-    "compute": -0.0001,
-    "memory": -0.0002,
-    "control": -0.0001,
-    "mixed": -0.0002
+    "typical": -0.119,
+    "compute": -0.0743,
+    "memory": -0.1783,
+    "control": -0.0743,
+    "mixed": -0.1191
   },
   "residuals_after": {
     "typical": -0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
     "mixed": 0.0
   },
   "free_parameters": [

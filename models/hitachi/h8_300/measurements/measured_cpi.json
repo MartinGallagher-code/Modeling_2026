@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 2.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 4.0,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300 datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.11,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 2.5 MIPS @ 10.0MHz. Original: 8/16-bit microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "compute",
-      "measured_cpi": 2.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.4,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300 datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.11,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 2.5 MIPS @ 10.0MHz. Original: 8/16-bit microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "memory",
-      "measured_cpi": 2.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 5.0,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300 datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.11,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 2.5 MIPS @ 10.0MHz. Original: 8/16-bit microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "control",
-      "measured_cpi": 2.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 4.4,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300 datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.11,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 2.5 MIPS @ 10.0MHz. Original: 8/16-bit microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 2.2,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 4.0,
+      "source": "published_benchmark",
+      "source_detail": "Hitachi H8/300 datasheet",
       "conditions": {
         "clock_mhz": 16.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.11,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 2.5 MIPS @ 10.0MHz. Original: 8/16-bit microcontroller",
+      "source_url": "https://en.wikipedia.org/wiki/Instructions_per_second"
     }
   ]
 }

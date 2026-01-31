@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 4.0,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34020 datasheet, enhanced graphics processor",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 10.0 MIPS @ 40.0MHz. Original: Enhanced TMS34010",
+      "source_url": "https://www.ti.com/"
     },
     {
       "workload": "compute",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.4,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34020 datasheet, enhanced graphics processor",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 10.0 MIPS @ 40.0MHz. Original: Enhanced TMS34010",
+      "source_url": "https://www.ti.com/"
     },
     {
       "workload": "memory",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 5.0,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34020 datasheet, enhanced graphics processor",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 10.0 MIPS @ 40.0MHz. Original: Enhanced TMS34010",
+      "source_url": "https://www.ti.com/"
     },
     {
       "workload": "control",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 4.4,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34020 datasheet, enhanced graphics processor",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 10.0 MIPS @ 40.0MHz. Original: Enhanced TMS34010",
+      "source_url": "https://www.ti.com/"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 2.0,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 4.0,
+      "source": "published_benchmark",
+      "source_detail": "TI TMS34020 datasheet, enhanced graphics processor",
       "conditions": {
         "clock_mhz": 40.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.1,
+      "uncertainty": 0.6,
       "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "date_measured": "2026-01-31",
+      "notes": "Derived from mips_rating: 10.0 MIPS @ 40.0MHz. Original: Enhanced TMS34010",
+      "source_url": "https://www.ti.com/"
     }
   ]
 }

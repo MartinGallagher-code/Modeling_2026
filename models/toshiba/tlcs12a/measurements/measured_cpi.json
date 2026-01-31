@@ -4,9 +4,61 @@
   "year": 1975,
   "schema_version": "1.0",
   "measurements": [
-    {"workload": "typical", "measured_cpi": 6.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 2.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Typical workload measurement for Toshiba TLCS-12A"},
-    {"workload": "compute", "measured_cpi": 6.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 2.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Compute workload measurement for Toshiba TLCS-12A"},
-    {"workload": "memory", "measured_cpi": 6.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 2.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Memory workload measurement for Toshiba TLCS-12A"},
-    {"workload": "control", "measured_cpi": 6.0, "source": "emulator", "source_detail": "Cycle-accurate emulation/simulation", "conditions": {"clock_mhz": 2.0, "memory_config": "no wait states"}, "uncertainty": 0.2, "confidence": "high", "date_measured": "2026-01-29", "notes": "Control workload measurement for Toshiba TLCS-12A"}
+    {
+      "workload": "typical",
+      "measured_cpi": 6.0,
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 2.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "Typical workload measurement for Toshiba TLCS-12A"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 6.0,
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 2.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "Compute workload measurement for Toshiba TLCS-12A"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 6.0,
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 2.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "Memory workload measurement for Toshiba TLCS-12A"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 6.0,
+      "source": "estimated",
+      "source_detail": "Estimated from architectural analysis and instruction timing",
+      "conditions": {
+        "clock_mhz": 2.0,
+        "memory_config": "no wait states"
+      },
+      "uncertainty": 0.2,
+      "confidence": "medium",
+      "date_measured": "2026-01-29",
+      "notes": "Control workload measurement for Toshiba TLCS-12A"
+    }
   ]
 }

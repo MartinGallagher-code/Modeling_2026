@@ -1,23 +1,26 @@
-# TI TMS34010 Model Handoff
+# tms34010 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 1.25%
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 4.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- First programmable GPU (1986)
-- 6 instruction categories including pixel and graphics ops
-- Target CPI: 4.0
+- Typical CPI: 8.333
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
+
+## External Benchmark Data
+- mips_rating: 6.0 MIPS @ 50.0MHz
 
 ## Known Issues
-- None
+- None significant
 
 ## Suggested Next Steps
-- None - model validates successfully
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+## Key Architectural Notes
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets

@@ -43,11 +43,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Model calibrated and validated with cross-validation",
-    "sysid_loss_before": 0.0,
-    "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.0,
-    "sysid_converged": false,
-    "sysid_date": "2026-01-30"
+    "sysid_loss_before": 0.817894,
+    "sysid_loss_after": 0.01468,
+    "sysid_cpi_error_percent": 1.41,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-31"
   },
   "timing_tests": [
     {
@@ -190,5 +190,14 @@
     },
     "cross_validation_date": "2026-01-28",
     "notes": "32-bit CISC architecture typical of early Unix workstations. Microcoded execution with variable instruction lengths."
+  },
+  "external_validation": {
+    "has_external_data": true,
+    "benchmark_sources": [
+      "mips_rating"
+    ],
+    "primary_source": "mips_rating",
+    "date_updated": "2026-01-31",
+    "cpi_error_percent": 0.6
   }
 }

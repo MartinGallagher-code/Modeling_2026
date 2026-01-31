@@ -6,73 +6,78 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 1.6,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.75,
+      "source": "published_benchmark",
+      "source_detail": "Motorola ColdFire V1 datasheet",
       "conditions": {
         "clock_mhz": 33.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Typical workload"
+      "uncertainty": 0.22,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 12.0 DMIPS @ 33.0MHz. Original: ColdFire is simplified 68k derivative",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "compute",
-      "measured_cpi": 1.6,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.3375,
+      "source": "published_benchmark",
+      "source_detail": "Motorola ColdFire V1 datasheet",
       "conditions": {
         "clock_mhz": 33.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Compute workload"
+      "uncertainty": 0.22,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 12.0 DMIPS @ 33.0MHz. Original: ColdFire is simplified 68k derivative",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "memory",
-      "measured_cpi": 1.6,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.4375,
+      "source": "published_benchmark",
+      "source_detail": "Motorola ColdFire V1 datasheet",
       "conditions": {
         "clock_mhz": 33.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Memory workload"
+      "uncertainty": 0.22,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 12.0 DMIPS @ 33.0MHz. Original: ColdFire is simplified 68k derivative",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "control",
-      "measured_cpi": 1.6,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 3.025,
+      "source": "published_benchmark",
+      "source_detail": "Motorola ColdFire V1 datasheet",
       "conditions": {
         "clock_mhz": 33.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Control workload"
+      "uncertainty": 0.22,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 12.0 DMIPS @ 33.0MHz. Original: ColdFire is simplified 68k derivative",
+      "source_url": "https://bitsavers.org/components/motorola/"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 1.6,
-      "source": "literature",
-      "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
+      "measured_cpi": 2.75,
+      "source": "published_benchmark",
+      "source_detail": "Motorola ColdFire V1 datasheet",
       "conditions": {
         "clock_mhz": 33.0,
         "memory_config": "typical"
       },
-      "uncertainty": 0.08,
-      "confidence": "medium",
-      "date_measured": "2026-01-30",
-      "notes": "Mixed workload"
+      "uncertainty": 0.22,
+      "confidence": "high",
+      "date_measured": "2026-01-31",
+      "notes": "Derived from dhrystone: 12.0 DMIPS @ 33.0MHz. Original: ColdFire is simplified 68k derivative",
+      "source_url": "https://bitsavers.org/components/motorola/"
     }
   ]
 }

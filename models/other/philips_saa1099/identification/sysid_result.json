@@ -1,32 +1,33 @@
 {
   "processor": "philips_saa1099",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 30,
-  "loss_before": 0.2725,
+  "iterations": 3,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.tone": 1.0,
-    "cor.noise": 0.0,
-    "cor.envelope": 0.499999,
-    "cor.register": 2.0,
-    "cor.control": -1.0,
-    "cor.mixing": 0.500001
+    "cor.control": -1.000228,
+    "cor.envelope": 0.36146,
+    "cor.mixing": 0.64256,
+    "cor.noise": -0.000406,
+    "cor.register": 1.998173,
+    "cor.tone": 0.999059
   },
   "residuals_before": {
-    "typical": -0.49,
-    "compute": -0.58,
-    "memory": -0.76,
-    "control": -0.22,
-    "mixed": -0.4
-  },
-  "residuals_after": {
-    "typical": -0.0,
+    "typical": 0.0,
     "compute": 0.0,
     "memory": 0.0,
     "control": 0.0,
+    "mixed": 0.0
+  },
+  "residuals_after": {
+    "typical": 0.0001,
+    "compute": -0.0001,
+    "memory": -0.0002,
+    "control": 0.0001,
     "mixed": 0.0
   },
   "free_parameters": [

@@ -1,38 +1,34 @@
 {
   "processor": "sparc",
   "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 24,
-  "loss_before": 0.0,
+  "iterations": 6,
+  "loss_before": 0.000361,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.17918191592273996,
-    "cor.branch": -0.09955213274409788,
-    "cor.call_ret": 0.2146028114680855,
-    "cor.divide": -0.19894597892221386,
-    "cor.load": 0.1283664683226953,
-    "cor.multiply": -0.4080867476544135,
-    "cor.shift": -0.163474386140533,
-    "cor.store": -0.4973351488306577
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.945183,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
+    "cor.alu": -0.578125,
+    "cor.branch": 1.004263,
+    "cor.call_ret": 0.547635,
+    "cor.divide": 0.03178,
+    "cor.load": 0.282022,
+    "cor.multiply": -0.181108,
+    "cor.shift": -0.018878,
+    "cor.store": 0.159933
   },
   "residuals_before": {
-    "typical": -0.0001,
-    "compute": -0.0,
-    "memory": -0.0001,
-    "control": -0.0
+    "typical": -0.0166,
+    "compute": -0.0111,
+    "memory": -0.0304,
+    "control": -0.0111
   },
   "residuals_after": {
     "typical": -0.0,
     "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "memory": -0.0,
+    "control": -0.0001
   },
   "free_parameters": [
     "cache.l1_hit_rate",

@@ -1,36 +1,39 @@
 {
   "processor": "i8085",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
+  "method": "ridge",
   "converged": true,
-  "iterations": 7,
-  "loss_before": 0.000367,
-  "loss_after": 0.000367,
-  "cpi_error_percent": 0.34,
-  "message": "`xtol` termination condition is satisfied.",
+  "iterations": 5,
+  "loss_before": 0.000123,
+  "loss_after": 6e-06,
+  "cpi_error_percent": 0.03,
+  "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -1.567857,
-    "cor.control": -1.559078,
-    "cor.data_transfer": 2.304152,
-    "cor.memory": -0.603326
+    "cor.alu": -3.558059,
+    "cor.control": -0.227995,
+    "cor.data_transfer": 1.332795,
+    "cor.memory": 3.657979,
+    "cor.multiply": 14.397111
   },
   "residuals_before": {
-    "typical": -0.0184,
-    "compute": -0.0043,
-    "memory": -0.0127,
-    "control": -0.0017,
-    "mixed": 0.0362
+    "typical": -0.0099,
+    "compute": -0.0034,
+    "memory": -0.0082,
+    "control": -0.0008,
+    "mixed": 0.0208
   },
   "residuals_after": {
-    "typical": -0.0184,
-    "compute": -0.0043,
-    "memory": -0.0127,
-    "control": -0.0017,
-    "mixed": 0.0362
+    "typical": -0.0024,
+    "compute": -0.0004,
+    "memory": -0.0018,
+    "control": -0.0001,
+    "mixed": 0.0043
   },
   "free_parameters": [
     "cor.alu",
     "cor.control",
     "cor.data_transfer",
-    "cor.memory"
+    "cor.memory",
+    "cor.multiply"
   ]
 }

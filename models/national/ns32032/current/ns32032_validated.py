@@ -169,7 +169,15 @@ class Ns32032Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'branch': 4.913267,
+            'call_return': 4.831989,
+            'complex': 4.983071,
+            'immediate': 4.354822,
+            'memory_read': 3.704346,
+            'memory_write': 3.266116,
+            'register_ops': 4.065541
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

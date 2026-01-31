@@ -42,11 +42,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "RAMDAC with sequential palette lookup and DAC conversion pipeline",
-    "sysid_loss_before": 0.0725,
-    "sysid_loss_after": 0.0725,
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
-    "sysid_converged": false,
-    "sysid_date": "2026-01-30"
+    "sysid_converged": true,
+    "sysid_date": "2026-01-31"
   },
   "instruction_timing_tests": [
     {

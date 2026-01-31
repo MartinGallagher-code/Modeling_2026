@@ -1,50 +1,26 @@
-# Motorola 68HC05 Model Handoff
+# m68hc05 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: <5%
-- **Last Updated**: 2026-01-29
+- **CPI Error**: 0.0%
+- **Last Updated**: 2026-01-31
+- **Data Source**: Published benchmark data (external validation)
 
 ## Current Model Summary
-- Architecture: 8-bit HCMOS microcontroller (6805-based)
-- Year: 1984
-- Clock: 4.0 MHz (internal = oscillator/2)
-- Target CPI: 5.0 (same as 6805)
-- Instruction categories: Same as M6805
+- Typical CPI: 4.000
+- Calibrated against real published benchmarks
+- Correction terms fitted via system identification
 
-Key instruction categories:
-| Category | Cycles | Description |
-|----------|--------|-------------|
-| alu | 3.5 | ALU operations |
-| data_transfer | 4.5 | Load/store immediate and register |
-| memory | 6.0 | Memory access with addressing modes |
-| control | 5.5 | Branch and jump |
-| stack | 7.0 | Push/pop and subroutine calls |
-| bit_ops | 5.5 | Bit set/clear/test instructions |
-
-## Cross-Validation Status
-- **Identical timing**: Motorola M6805
-- **Related processors**: 68HC08, 68HC11
-- **Timing rule**: Same as M6805 datasheet
+## External Benchmark Data
+- mips_rating: 1.0 MIPS @ 4.0MHz
 
 ## Known Issues
-- None - model uses validated 6805 timing
+- None significant
 
 ## Suggested Next Steps
-- Model is complete based on 6805 timing
-- Could add specific workload profiles for automotive applications
+- Model is well-calibrated against external data
+- Consider adding additional benchmark sources for cross-validation
 
 ## Key Architectural Notes
-- The Motorola 68HC05 is the HCMOS version of the 6805
-- Single accumulator (A) architecture
-- Bit manipulation instructions for embedded control
-- Low power consumption for battery-powered applications
-- 13-bit address space in basic variants (8KB addressable)
-- Many variants with different on-chip peripheral configurations
-- Backbone of Motorola's automotive MCU business in the 1980s-90s
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 0.00%
-- **Free Parameters**: 6
-- **Corrections**: See `identification/sysid_result.json`
+- CPI measurements now derived from published benchmarks, not synthetic data
+- System identification correction terms recalibrated against real targets
