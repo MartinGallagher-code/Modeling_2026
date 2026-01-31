@@ -775,4 +775,4 @@ POWER2 (1993)     ════════════════════�
 
 **Document Version:** 3.0
 **Last Updated:** January 30, 2026
-**Processors Covered:** 422
+**Processors Covered:** 467

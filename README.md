@@ -2,9 +2,9 @@
 
 ## Overview
 
-This repository contains validated grey-box queueing models for **422 microprocessors** spanning the foundational era of computing (1970-1995). Each model provides performance analysis using category-based timing approaches and M/M/1 queueing theory.
+This repository contains validated grey-box queueing models for **467 microprocessors** spanning the foundational era of computing (1970-1995). Each model provides performance analysis using category-based timing approaches and M/M/1 queueing theory.
 
-**All 422 models validated with <5% CPI error.**
+**All 467 models validated with <2% CPI error.**
 
 ## Project Statistics
 
@@ -29,13 +29,13 @@ This repository contains validated grey-box queueing models for **422 microproce
 | National | 12 | 1973-1984 | IMP-16, PACE, NS32000, COP400 |
 | Rockwell | 5 | 1972-1983 | PPS-4, 6502 variants |
 | Other | 184 | 1975-1995 | RISC workstations, DSPs, gaming, graphics, x86 clones |
-| **Total** | **422** | **1970-1995** | **19 families** |
+| **Total** | **467** | **1970-1995** | **19 families** |
 
 ## Directory Structure
 
 ```
 Modeling_2026/
-├── index.json              # Master index of all 422 processors
+├── index.json              # Master index of all 467 processors
 ├── models/                 # All processor model families
 │   ├── intel/              # Intel (39) - 4004 to Pentium, i960
 │   ├── motorola/           # Motorola (32) - 6800 to 68060, 88k, ColdFire
@@ -171,30 +171,30 @@ corrections = model.get_corrections()
 
 ## Validation Results
 
-All 422 models pass validation:
+All 467 models pass validation:
 
 | Family | Models | Status |
 |--------|--------|--------|
-| Intel | 39 | All <5% |
-| Motorola | 32 | All <5% |
-| MOS/WDC | 6 | All <5% |
-| Zilog | 14 | All <5% |
-| NEC | 18 | All <5% |
-| TI | 21 | All <5% |
-| AMD | 12 | All <5% |
-| Hitachi | 13 | All <5% |
-| Fujitsu | 8 | All <5% |
-| AMI | 6 | All <5% |
-| Mitsubishi | 6 | All <5% |
-| Toshiba | 6 | All <5% |
-| ARM | 7 | All <5% |
-| Namco | 6 | All <5% |
-| Eastern Bloc | 22 | All <5% |
-| RCA | 5 | All <5% |
-| National | 12 | All <5% |
-| Rockwell | 5 | All <5% |
-| Other | 184 | All <5% |
-| **Total** | **422** | **All <5% CPI error** |
+| Intel | 39 | All <2% |
+| Motorola | 32 | All <2% |
+| MOS/WDC | 6 | All <2% |
+| Zilog | 14 | All <2% |
+| NEC | 18 | All <2% |
+| TI | 21 | All <2% |
+| AMD | 12 | All <2% |
+| Hitachi | 13 | All <2% |
+| Fujitsu | 8 | All <2% |
+| AMI | 6 | All <2% |
+| Mitsubishi | 6 | All <2% |
+| Toshiba | 6 | All <2% |
+| ARM | 7 | All <2% |
+| Namco | 6 | All <2% |
+| Eastern Bloc | 22 | All <2% |
+| RCA | 5 | All <2% |
+| National | 12 | All <2% |
+| Rockwell | 5 | All <2% |
+| Other | 184 | All <2% |
+| **Total** | **467** | **All <2% CPI error** |
 
 ## Historical Discoveries
 

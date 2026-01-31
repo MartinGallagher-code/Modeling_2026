@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document presents a comprehensive analysis of microprocessor evolution during the foundational period of computing (1970-1995), based on grey-box queueing network models of **422 processors**. The analysis reveals that architectural innovation contributed **~50x IPC improvement** while technology scaling (Moore's Law) contributed **~270x clock frequency improvement**, yielding a combined **~18,000x performance gain** in 25 years -- from the Intel 4004 at 0.02 MIPS to the MIPS R10000 at approximately 360 MIPS.
+This document presents a comprehensive analysis of microprocessor evolution during the foundational period of computing (1970-1995), based on grey-box queueing network models of **467 processors**. The analysis reveals that architectural innovation contributed **~50x IPC improvement** while technology scaling (Moore's Law) contributed **~270x clock frequency improvement**, yielding a combined **~18,000x performance gain** in 25 years -- from the Intel 4004 at 0.02 MIPS to the MIPS R10000 at approximately 360 MIPS.
 
 **Key Finding:** The transition from simple accumulator-based architectures (4004, 8008) through register-rich designs (6809, Z80) to pipelined/prefetch architectures (8086, 80286, 68020) and finally to superscalar out-of-order RISC machines (Alpha 21064, R10000, Pentium) represents the fundamental arc of microprocessor evolution, with each generation learning from predecessors' limitations.
 
@@ -55,7 +55,7 @@ The period 1970-1995 represents the **microprocessor revolution**:
 
 ### 1.3 Scope
 
-This analysis covers **422 processors** organized into **19 families** and distinct architectural approaches, from the 4-bit Intel 4004 (1971) to the superscalar out-of-order MIPS R10000 (1995).
+This analysis covers **467 processors** organized into **19 families** and distinct architectural approaches, from the 4-bit Intel 4004 (1971) to the superscalar out-of-order MIPS R10000 (1995).
 
 ---
 
@@ -1070,7 +1070,7 @@ The processors of 1970-1995 established patterns that persist today:
 
 **Document Version:** 3.0
 **Date:** January 30, 2026
-**Processors Covered:** 422
+**Processors Covered:** 467
 **Period:** 1970-1995
 
 *This analysis is part of the Modeling_2026 grey-box CPU performance research project.*

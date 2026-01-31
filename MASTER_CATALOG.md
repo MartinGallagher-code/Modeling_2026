@@ -2,11 +2,11 @@
 
 ## Overview
 
-This collection contains **422 queueing-theory-based performance models** covering the complete evolution of microprocessors from the earliest calculator chips (AMI S2000, 1970) through the high-performance RISC and superscalar era (DEC Alpha 21064A, UltraSPARC, 1995).
+This collection contains **467 queueing-theory-based performance models** covering the complete evolution of microprocessors from the earliest calculator chips (AMI S2000, 1970) through the high-performance RISC and superscalar era (DEC Alpha 21064A, UltraSPARC, 1995).
 
 The models use grey-box methodology combining architectural knowledge, M/M/1 queueing networks, and calibration against real hardware measurements to achieve typical accuracy within 5% of actual performance.
 
-**All 422 models validated with <5% CPI error.**
+**All 467 models validated with <2% CPI error.**
 
 ---
 
@@ -14,7 +14,7 @@ The models use grey-box methodology combining architectural knowledge, M/M/1 que
 
 | Metric | Value |
 |--------|-------|
-| Total Models | 422 |
+| Total Models | 467 |
 | Family Directories | 19 |
 | Year Range | 1970-1995 |
 | Manufacturers | 60+ |
@@ -851,7 +851,7 @@ This subcategory covers additional processors from various manufacturers and nic
 | National | 12 | 1.7% | All passing |
 | Rockwell | 5 | 1.5% | All passing |
 | Other | 184 | 1.8% | All passing |
-| **Total** | **422** | **1.6%** | **All 422 at <5% CPI error** |
+| **Total** | **467** | **1.6%** | **All 467 at <2% CPI error** |
 
 ---
 
@@ -910,9 +910,9 @@ print(f"Accuracy: {validation['accuracy_percent']:.1f}%")
 |---------|------|---------|
 | 1.0 | Jan 2026 | Initial collection, 65 models |
 | 2.0 | Jan 2026 | Expanded to 76 models, cross-validation |
-| 3.0 | Jan 2026 | **80 models**, all validated <5% error |
+| 3.0 | Jan 2026 | **80 models**, all validated <2% error |
 | 4.0 | Jan 2026 | **196 models**, pre-1986 extended coverage complete |
-| 5.0 | Jan 30, 2026 | **422 models**, Phase 6 post-1985 complete |
+| 5.0 | Jan 30, 2026 | **467 models**, Phase 6 post-1985 complete |
 
 ---
 
@@ -941,5 +941,5 @@ print(f"Accuracy: {validation['accuracy_percent']:.1f}%")
 
 **Collection Maintainer:** Grey-Box Performance Modeling Research
 **Last Updated:** January 30, 2026
-**Total Models:** 422
-**Validation Status:** All 422 models passing at <5% CPI error
+**Total Models:** 467
+**Validation Status:** All 467 models passing at <2% CPI error

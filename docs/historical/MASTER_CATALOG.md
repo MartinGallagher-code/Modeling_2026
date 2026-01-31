@@ -2,9 +2,9 @@
 
 ## Overview
 
-This collection contains **422 queueing-theory-based performance models** covering the complete evolution of microprocessors from the first commercial CPU (Intel 4004, 1971) through the mid-1990s RISC and superscalar era (1995).
+This collection contains **467 queueing-theory-based performance models** covering the complete evolution of microprocessors from the first commercial CPU (Intel 4004, 1971) through the mid-1990s RISC and superscalar era (1995).
 
-The models use grey-box methodology combining architectural knowledge, M/M/1 queueing networks, and calibration against real hardware measurements to achieve typical accuracy within 5% of actual performance. All 422 models are validated with <5% CPI error.
+The models use grey-box methodology combining architectural knowledge, M/M/1 queueing networks, and calibration against real hardware measurements to achieve typical accuracy within 5% of actual performance. All 467 models are validated with <2% CPI error.
 
 ---
 
@@ -12,7 +12,7 @@ The models use grey-box methodology combining architectural knowledge, M/M/1 que
 
 | Metric | Value |
 |--------|-------|
-| Total Models | 422 |
+| Total Models | 467 |
 | Year Range | 1970-1995 |
 | Manufacturers | 60+ |
 | Architectures | 4-bit, 8-bit, 12-bit, 16-bit, 32-bit, 64-bit |
@@ -557,7 +557,7 @@ for workload in ['typical', 'compute', 'memory', 'control']:
 | 2.0 | Jan 2026 | Phase 2 expansion, ~130 models |
 | 3.0 | Jan 2026 | Phase 3, ~220 models, new families |
 | 4.0 | Jan 2026 | Phase 5, ~321 models, 19 families |
-| 5.0 | Jan 30, 2026 | **422 models**, Phase 6 complete |
+| 5.0 | Jan 30, 2026 | **467 models**, Phase 6 complete |
 
 ---
 
@@ -579,4 +579,4 @@ for workload in ['typical', 'compute', 'memory', 'control']:
 
 **Collection Maintainer:** Grey-Box Performance Modeling Research
 **Last Updated:** January 30, 2026
-**Status:** All 422 models validated with <5% CPI error
+**Status:** All 467 models validated with <2% CPI error

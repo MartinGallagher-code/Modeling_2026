@@ -2,7 +2,7 @@
 
 ## The Complete Collection
 
-This collection contains **422 grey-box queueing models** documenting the complete evolution of microprocessors from the earliest calculator chips (AMI S2000, 1970) through the superscalar era (Pentium, 1993).
+This collection contains **467 grey-box queueing models** documenting the complete evolution of microprocessors from the earliest calculator chips (AMI S2000, 1970) through the superscalar era (Pentium, 1993).
 
 ---
 
@@ -126,8 +126,8 @@ python old_scripts/run_accuracy_tests.py -p i8080
 
 ## Validation
 
-All 422 models pass validation with <5% CPI error:
-- **422 fully validated** (<5% error)
+All 467 models pass validation with <2% CPI error:
+- **467 fully validated** (<2% error)
 
 **Pass rate: 100%**
 

@@ -761,4 +761,4 @@ PowerPC (1993): Gaming consoles (Wii/Wii U), automotive
 
 **Document Version:** 3.0
 **Last Updated:** January 30, 2026
-**Processors Covered:** 422
+**Processors Covered:** 467

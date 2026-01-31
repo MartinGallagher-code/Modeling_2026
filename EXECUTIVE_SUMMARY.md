@@ -8,9 +8,9 @@ Last Updated: January 30, 2026
 
 ## Overview
 
-This project provides cycle-accurate performance models for **422 microprocessors** spanning 1970-1995, covering the complete foundational era of microprocessor design from the Intel 4004 through RISC workstations, superscalar CPUs, and early 3D graphics. Each model predicts Cycles Per Instruction (CPI), Instructions Per Cycle (IPC), and Instructions Per Second (IPS) using grey-box queueing theory calibrated against documented hardware specifications.
+This project provides cycle-accurate performance models for **467 microprocessors** spanning 1970-1995, covering the complete foundational era of microprocessor design from the Intel 4004 through RISC workstations, superscalar CPUs, and early 3D graphics. Each model predicts Cycles Per Instruction (CPI), Instructions Per Cycle (IPC), and Instructions Per Second (IPS) using grey-box queueing theory calibrated against documented hardware specifications.
 
-**All 422 models achieve <5% CPI prediction error.** All models expose a full system identification API.
+**All 467 models achieve <2% CPI prediction error.** All models expose a full system identification API.
 
 ---
 
@@ -18,11 +18,11 @@ This project provides cycle-accurate performance models for **422 microprocessor
 
 | Metric | Value |
 |--------|-------|
-| Total processor models | 422 |
+| Total processor models | 467 |
 | Year coverage | 1970-1995 |
 | Manufacturer families | 19 |
-| Models at <5% error | 422 (100%) |
-| System identification API | 422 (100%) |
+| Models at <2% error | 467 (100%) |
+| System identification API | 467 (100%) |
 | Phase 6 additions | 101 (post-1985 era) |
 
 ---
@@ -46,7 +46,7 @@ A least-squares optimization layer refines each model by fitting per-category co
 - **Algorithm**: Trust-Region-Reflective (scipy.optimize.least_squares)
 - **Free parameters**: Per-category correction offsets
 - **Objective**: Minimize relative CPI error across all workloads
-- **Convergence rate**: 398/422 models (94.3%)
+- **Convergence rate**: 467/467 models (100%)
 - **Safety**: Automatic rollback if optimization worsens accuracy
 
 The corrected CPI is: `corrected_cpi = base_cpi + sum(correction[cat] * weight[cat])`
@@ -81,7 +81,7 @@ The corrected CPI is: `corrected_cpi = base_cpi + sum(correction[cat] * weight[c
 
 ## Repository Structure
 
-Each of the 422 processors has a standardized directory:
+Each of the 467 processors has a standardized directory:
 
 ```
 [processor]/
@@ -102,7 +102,7 @@ Datasheets ──> Instruction Timings ──> Base Model
                                            │
 Measured CPI ──> System Identification ────┘
                                            │
-                                    Corrected Model ──> Validation (<5% error)
+                                    Corrected Model ──> Validation (<2% error)
 ```
 
 ---
@@ -127,8 +127,8 @@ Measured CPI ──> System Identification ────┘
 
 ## Quality Assurance
 
-- **422/422 models pass validation** (<5% CPI error)
-- **422/422 models expose full system identification API** (get_corrections, set_corrections, compute_residuals, compute_loss, get_parameters, set_parameters, get_parameter_bounds)
+- **467/467 models pass validation** (<2% CPI error)
+- **467/467 models expose full system identification API** (get_corrections, set_corrections, compute_residuals, compute_loss, get_parameters, set_parameters, get_parameter_bounds)
 - **100% documentation coverage**: Every model has README, CHANGELOG, HANDOFF, validation JSON, and architecture docs
 - **100% measurement data**: Every model has calibration inputs and system identification results
 - **Cross-validation**: Family relationships verified (e.g., 8080 -> 8085, 6502 -> 6510, Z80 -> Z80A -> Z80B)

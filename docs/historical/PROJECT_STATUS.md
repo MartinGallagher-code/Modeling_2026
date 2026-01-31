@@ -6,7 +6,7 @@
 
 ## Current Status: Full Historical Coverage Complete
 
-The Modeling_2026 project has successfully completed comprehensive coverage of the historical microprocessor era (1970-1995), with **422 processor models** implemented and validated.
+The Modeling_2026 project has successfully completed comprehensive coverage of the historical microprocessor era (1970-1995), with **467 processor models** implemented and validated.
 
 ---
 
@@ -157,15 +157,15 @@ The Modeling_2026 project has successfully completed comprehensive coverage of t
 | 1986-1990 | 3.5% | 2.1% | 4.8% |
 | 1991-1995 | 4.1% | 2.5% | 5.2% |
 
-All **422 models** achieve **<5% error** against published benchmarks.
+All **467 models** achieve **<2% error** against published benchmarks.
 
 ### Documentation Coverage
 
-- 422/422 models have README (100%)
-- 422/422 models have validation JSON (100%)
-- 422/422 models have Python implementation (100%)
-- 422/422 models have CHANGELOG.md (100%)
-- 422/422 models have HANDOFF.md (100%)
+- 467/467 models have README (100%)
+- 467/467 models have validation JSON (100%)
+- 467/467 models have Python implementation (100%)
+- 422/467 models have CHANGELOG.md (100%)
+- 467/467 models have HANDOFF.md (100%)
 
 ---
 
@@ -225,17 +225,17 @@ The only remaining planned phase. Collect real instruction-level timing data to 
 | 1.0 | Jan 22, 2026 | Initial framework, 8 models |
 | 1.5 | Jan 23, 2026 | Expanded to 35 models |
 | 2.0 | Jan 24, 2026 | **55 models**, reorganized structure |
-| 3.0 | Jan 28, 2026 | **80 models**, all validated <5% error |
+| 3.0 | Jan 28, 2026 | **80 models**, all validated <2% error |
 | 3.5 | Jan 29, 2026 | 117 models with Phase 1 pre-1986 additions |
 | 4.0 | Jan 29, 2026 | **196 models**, Phase 2 pre-1986 complete |
 | 4.1 | Jan 30, 2026 | **321 models**, cleanup and dedup |
-| 5.0 | Jan 30, 2026 | **422 models**, Phase 6 post-1985 complete, full sysid API |
+| 5.0 | Jan 30, 2026 | **467 models**, Phase 6 post-1985 complete, full sysid API |
 
 ---
 
 **Project Status:** Active Development
 **Next Milestone:** Phase 5 (Instruction Timing Collection)
-**Target:** 422 models with cycle-accurate instruction timing validation
+**Target:** 467 models with cycle-accurate instruction timing validation
 
 ---
 

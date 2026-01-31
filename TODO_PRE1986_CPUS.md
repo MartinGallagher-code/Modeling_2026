@@ -1668,12 +1668,12 @@ State-machine / custom logic timing. Document command/operation cycles.
 # PHASE 8: Integrate Instruction Timing Data into Models
 
 **Status:** Pending
-**Scope:** All 422 models — leverage per-instruction timing JSON files to improve CPI prediction accuracy
+**Scope:** All 467 models — leverage per-instruction timing JSON files to improve CPI prediction accuracy
 **Prerequisites:** Phase 7 complete (all timing JSON files created)
 
 ## Background
 
-All 422 models currently use **category-based averaging**: 4–6 broad instruction categories (e.g., "alu", "memory", "control") each with a single representative cycle count. CPI is computed as a weighted sum of these category averages, refined by system identification correction terms.
+All 467 models currently use **category-based averaging**: 4–6 broad instruction categories (e.g., "alu", "memory", "control") each with a single representative cycle count. CPI is computed as a weighted sum of these category averages, refined by system identification correction terms.
 
 Phase 7 created per-instruction timing JSON files for every model, containing exact cycle counts for 20–235 individual instructions per processor, broken down by addressing mode. **These files are currently unused by any model.**
 
@@ -1690,7 +1690,7 @@ Compute proper weighted averages per category from the timing JSON instead of ha
 - **How:** For each model, load its timing JSON, group instructions by category, compute the mean cycle count per category, and update the `instruction_categories` dictionary.
 - **Example:** i8085 `alu` changes from 4.0 → ~5.8 (weighted average of 48 ALU instructions ranging 4–10 cycles).
 - **Impact:** Eliminates systematic under/over-estimation within categories. May reduce reliance on system identification correction terms.
-- **Scope:** All 422 models. Can be automated with a script.
+- **Scope:** All 467 models. Can be automated with a script.
 - **Risk:** Low. Models already pass validation; refined averages should improve or maintain accuracy. System identification can be re-run to adjust correction terms.
 
 ### Strategy B: Addressing-Mode Subcategories (Medium Complexity)
@@ -1700,7 +1700,7 @@ Split broad categories into addressing-mode subcategories with distinct cycle co
 - **How:** For each model, create subcategories like `data_transfer_register` (4 cycles), `data_transfer_memory` (7 cycles), `data_transfer_direct` (13 cycles). Update workload profiles to weight subcategories. Re-run system identification.
 - **Example:** i8085 `data_transfer` (4.0 cycles) splits into register (4), memory (7), immediate (7), direct (13), indirect (16).
 - **Impact:** Better models workload-specific memory access patterns. Estimated 5–10% accuracy improvement for memory-heavy workloads.
-- **Scope:** Requires changes to the base model class, workload profiles, and all 422 model files. Significant refactoring.
+- **Scope:** Requires changes to the base model class, workload profiles, and all 467 model files. Significant refactoring.
 - **Risk:** Medium. Changes workload profile format. May require re-calibrating all models.
 
 ### Strategy C: Per-Instruction CPI Calculation (High Complexity)
@@ -1710,7 +1710,7 @@ Load timing JSON at runtime and compute CPI directly from instruction frequencie
 - **How:** Each model loads its timing JSON at initialization, building a mnemonic→cycles lookup table. Workload profiles specify instruction frequency distributions (not just category weights). CPI = Σ(freq[i] × cycles[i]).
 - **Example:** Instead of "30% ALU at 4.0 cycles", the model uses "5% ADD r at 4 cycles, 3% ADD M at 7 cycles, 2% INR M at 10 cycles, ..."
 - **Impact:** Most accurate CPI prediction possible. Enables per-instruction bottleneck analysis. Estimated 5–20% accuracy improvement.
-- **Scope:** Requires enriching `measurements/instruction_traces.json` with per-instruction frequency data for each workload, rewriting the CPI calculation engine, and updating all 422 models.
+- **Scope:** Requires enriching `measurements/instruction_traces.json` with per-instruction frequency data for each workload, rewriting the CPI calculation engine, and updating all 467 models.
 - **Risk:** High. Requires instruction frequency data that may not exist for all processors. Major architectural change to the modeling pipeline.
 
 ## Recommended Approach

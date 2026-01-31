@@ -26,7 +26,7 @@
 
 ## Suggested Next Steps
 - This model is a Phase 10 pilot; results validate the cache co-optimization approach
-- Consider rolling out cache parameter identification to all 422 models
+- Consider rolling out cache parameter identification to all 467 models
 - PPC604 showed the largest improvement, suggesting cache-sensitive architectures benefit most
 
 ## Key Architectural Notes

@@ -2,7 +2,7 @@
 
 ## Processor Lineages and Relationships (1971-1995)
 
-This document traces the evolutionary relationships between all **422 processors** in the collection, showing how architectures developed and influenced each other.
+This document traces the evolutionary relationships between all **467 processors** in the collection, showing how architectures developed and influenced each other.
 
 ---
 
@@ -2507,12 +2507,12 @@ Soviet Clones:
 | Japanese (Sharp, Panafacom, OKI, Samsung, Sanyo) | 17 | 1975-1993 |
 | Siemens | 4 | 1976-1990 |
 | Other (WE, Clipper, Ridge, Xerox, WISC, etc.) | 31 | 1973-1995 |
-| **Total** | **422** | **1970-1997** |
+| **Total** | **467** | **1970-1997** |
 
 ---
 
 **Document Version:** 3.0
 **Last Updated:** January 30, 2026
-**Processors Covered:** 422
+**Processors Covered:** 467
 
 ✓ = Model included in collection

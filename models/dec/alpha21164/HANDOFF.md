@@ -22,7 +22,7 @@
 
 ## Suggested Next Steps
 - This model is a Phase 10 pilot; results validate the cache co-optimization approach
-- Consider rolling out cache parameter identification to all 422 models
+- Consider rolling out cache parameter identification to all 467 models
 - Monitor for overfitting if applied to models with fewer measurement points
 
 ## Key Architectural Notes
