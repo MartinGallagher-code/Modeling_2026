@@ -1,30 +1,30 @@
 {
   "processor": "lh0080",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": false,
   "iterations": 200,
-  "loss_before": 0.254031,
+  "loss_before": 0.0,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.01,
+  "cpi_error_percent": 0.0,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": 1.217584,
-    "cor.data_transfer": 2.960527,
-    "cor.memory": -3.97241,
-    "cor.control": -0.498504,
-    "cor.block": -4.888099
+    "cor.alu": 1.209911,
+    "cor.block": -4.918176,
+    "cor.control": -0.498599,
+    "cor.data_transfer": 2.973557,
+    "cor.memory": -3.96017
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": -0.18,
-    "memory": 0.95,
-    "control": 0.285
-  },
-  "residuals_after": {
     "typical": -0.0008,
     "compute": 0.0004,
     "memory": 0.0002,
     "control": 0.0001
+  },
+  "residuals_after": {
+    "typical": -0.0001,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

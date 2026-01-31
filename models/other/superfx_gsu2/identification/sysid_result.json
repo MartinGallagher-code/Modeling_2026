@@ -1,0 +1,40 @@
+{
+  "processor": "superfx_gsu2",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 30,
+  "loss_before": 0.0333,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 1.5,
+    "cor.plot": -0.5,
+    "cor.multiply": -0.0,
+    "cor.memory": -1.5,
+    "cor.branch": 0.5,
+    "cor.color": -0.0
+  },
+  "residuals_before": {
+    "typical": 0.03,
+    "compute": -0.24,
+    "memory": 0.3,
+    "control": -0.06,
+    "mixed": 0.12
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.branch",
+    "cor.color",
+    "cor.memory",
+    "cor.multiply",
+    "cor.plot"
+  ]
+}

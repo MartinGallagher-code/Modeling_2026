@@ -2,39 +2,40 @@
   "processor": "tms34020",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": 50,
-  "loss_before": 0.00175,
-  "loss_after": 0.0001,
+  "iterations": 111,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.draw": 0.35,
-    "cor.pixel": 0.35,
-    "cor.register": 0.35,
-    "cor.memory": 0.35,
-    "cor.branch": 0.35,
-    "cor.blit": 0.35
+    "cor.blit": 0.068067,
+    "cor.branch": -0.251267,
+    "cor.draw": -0.6126,
+    "cor.memory": -0.231736,
+    "cor.pixel": 1.748733,
+    "cor.register": -0.293266
   },
   "residuals_before": {
-    "typical": -0.175,
-    "compute": -0.15,
-    "memory": -0.125,
-    "control": -0.075,
-    "mixed": -0.125
+    "typical": -0.0001,
+    "compute": -0.0001,
+    "memory": -0.0001,
+    "control": -0.0001,
+    "mixed": -0.0001
   },
   "residuals_after": {
     "typical": 0.0,
-    "compute": 0.025,
-    "memory": 0.05,
-    "control": 0.1,
-    "mixed": 0.05
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": -0.0
   },
   "free_parameters": [
-    "cor.draw",
-    "cor.pixel",
-    "cor.register",
-    "cor.memory",
+    "cache.l1_hit_rate",
+    "cor.blit",
     "cor.branch",
-    "cor.blit"
+    "cor.draw",
+    "cor.memory",
+    "cor.pixel",
+    "cor.register"
   ]
 }

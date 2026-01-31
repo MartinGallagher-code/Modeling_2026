@@ -1,0 +1,40 @@
+{
+  "processor": "ym2413",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 31,
+  "loss_before": 0.40252,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.oscillator": 0.5,
+    "cor.envelope": 1.0,
+    "cor.register": 1.25,
+    "cor.memory": 0.5,
+    "cor.control": -0.5,
+    "cor.mixing": 1.25
+  },
+  "residuals_before": {
+    "typical": -0.67,
+    "compute": -0.64,
+    "memory": -0.64,
+    "control": -0.46,
+    "mixed": -0.73
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.control",
+    "cor.envelope",
+    "cor.memory",
+    "cor.mixing",
+    "cor.oscillator",
+    "cor.register"
+  ]
+}

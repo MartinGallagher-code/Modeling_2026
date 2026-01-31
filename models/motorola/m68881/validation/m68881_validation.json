@@ -47,10 +47,10 @@
     "validation_date": "2026-01-29",
     "notes": "FPU coprocessor for 68020/68030 - 80-bit extended precision",
     "sysid_loss_before": 0.075716,
-    "sysid_loss_after": 0.075716,
-    "sysid_cpi_error_percent": 1.83,
-    "sysid_converged": true,
-    "sysid_date": "2026-01-29"
+    "sysid_loss_after": 0.000976,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-30"
   },
   "per_instruction_timing": {
     "description": "Per-instruction cycle counts from MC68881/MC68882 User's Manual. M68881 is ~1.5x slower than M68882 due to less pipelining.",

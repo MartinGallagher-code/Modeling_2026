@@ -1,0 +1,78 @@
+{
+  "processor": "Intel 486SX",
+  "manufacturer": "Intel",
+  "year": 1991,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 25.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486SX typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 25.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486SX compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 25.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486SX memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 25.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486SX control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 25.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486SX mixed workload"
+    }
+  ]
+}

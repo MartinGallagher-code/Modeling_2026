@@ -2,39 +2,41 @@
   "processor": "am5x86",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": 50,
-  "loss_before": 0.001125,
-  "loss_after": 0.0001,
+  "iterations": 30,
+  "loss_before": 0.000218,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.18,
-    "cor.data_transfer": -0.18,
-    "cor.memory": -0.18,
-    "cor.control": -0.18,
-    "cor.multiply": -0.18,
-    "cor.divide": -0.18
+    "cor.alu": 0.584159,
+    "cor.control": -1.415841,
+    "cor.data_transfer": 0.584159,
+    "cor.divide": -17.247594,
+    "cor.memory": -0.731861,
+    "cor.multiply": -11.999965
   },
   "residuals_before": {
-    "typical": 0.1125,
-    "compute": 0.3125,
-    "memory": 0.2375,
-    "control": 0.3313,
-    "mixed": 0.1438
+    "typical": 0.0134,
+    "compute": 0.0059,
+    "memory": 0.0087,
+    "control": 0.0008,
+    "mixed": -0.0283
   },
   "residuals_after": {
     "typical": 0.0,
-    "compute": 0.2,
-    "memory": 0.125,
-    "control": 0.2188,
-    "mixed": 0.0313
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": -0.0
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
+    "cache.l2_hit_rate",
     "cor.alu",
-    "cor.data_transfer",
-    "cor.memory",
     "cor.control",
-    "cor.multiply",
-    "cor.divide"
+    "cor.data_transfer",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
   ]
 }

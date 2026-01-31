@@ -1,35 +1,37 @@
 {
   "processor": "pentium",
-  "date": "2026-01-29",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.000571,
-  "loss_after": 0.00057,
-  "cpi_error_percent": 2.67,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 35,
+  "loss_before": 0.000567,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.706667,
-    "cor.control": -0.717748,
-    "cor.data_transfer": 1.222322,
-    "cor.divide": -19.474229,
-    "cor.memory": -0.355847,
-    "cor.multiply": -5.41322
+    "cor.alu": -0.202313,
+    "cor.control": -0.187918,
+    "cor.data_transfer": 0.80754,
+    "cor.divide": -38.903849,
+    "cor.memory": 0.189297,
+    "cor.multiply": -8.850744
   },
   "residuals_before": {
-    "typical": -0.0268,
+    "typical": -0.0266,
     "compute": -0.0053,
-    "memory": -0.009,
+    "memory": -0.0089,
     "control": -0.0041,
-    "mixed": 0.0449
+    "mixed": 0.0448
   },
   "residuals_after": {
-    "typical": -0.0267,
-    "compute": -0.0052,
-    "memory": -0.0089,
-    "control": -0.004,
-    "mixed": 0.0449
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
+    "cache.l2_hit_rate",
     "cor.alu",
     "cor.control",
     "cor.data_transfer",

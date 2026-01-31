@@ -1,19 +1,19 @@
 {
   "processor": "fd1089",
-  "date": "2026-01-29",
-  "converged": true,
-  "iterations": 3,
+  "date": "2026-01-30",
+  "converged": false,
+  "iterations": 200,
   "loss_before": 0.001731,
-  "loss_after": 0.001731,
-  "cpi_error_percent": 1.07,
-  "message": "`ftol` termination condition is satisfied.",
+  "loss_after": 7e-06,
+  "cpi_error_percent": 0.07,
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.address": -4.999999,
-    "cor.alu": -2.636701,
-    "cor.control": -1.054807,
+    "cor.address": -5.999395,
+    "cor.alu": -2.376272,
+    "cor.control": -2.777271,
     "cor.data_transfer": 5.0,
-    "cor.decrypt": 5.0,
-    "cor.memory": 1.213242
+    "cor.decrypt": 9.999741,
+    "cor.memory": 0.530172
   },
   "residuals_before": {
     "typical": -0.0747,
@@ -22,10 +22,10 @@
     "control_heavy": 0.0173
   },
   "residuals_after": {
-    "typical": -0.0747,
-    "compute": 0.0218,
-    "memory_heavy": 0.0236,
-    "control_heavy": 0.0173
+    "typical": -0.0046,
+    "compute": 0.0013,
+    "memory_heavy": 0.0015,
+    "control_heavy": 0.0011
   },
   "free_parameters": [
     "cor.address",

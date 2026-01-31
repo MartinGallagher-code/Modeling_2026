@@ -1,18 +1,18 @@
 {
   "processor": "tms9900",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 8,
+  "iterations": 13,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.branch": -6.908652,
-    "cor.call_return": -6.310733,
-    "cor.immediate": 5.019695,
-    "cor.memory_read": -9.36136,
-    "cor.memory_write": 6.673303,
+    "cor.branch": -6.90865,
+    "cor.call_return": -6.310737,
+    "cor.immediate": 5.019696,
+    "cor.memory_read": -9.361361,
+    "cor.memory_write": 6.673305,
     "cor.register_ops": 6.040949
   },
   "residuals_before": {

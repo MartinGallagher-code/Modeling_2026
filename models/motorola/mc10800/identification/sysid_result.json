@@ -1,18 +1,18 @@
 {
   "processor": "mc10800",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 8,
+  "iterations": 9,
   "loss_before": 7.8e-05,
   "loss_after": 7.8e-05,
   "cpi_error_percent": 0.62,
   "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 1.03537,
-    "cor.cascade": 0.231045,
-    "cor.control": -1.014102,
-    "cor.logic": 0.134916,
-    "cor.shift": -1.015208
+    "cor.alu": 1.035336,
+    "cor.cascade": 0.231725,
+    "cor.control": -1.014138,
+    "cor.logic": 0.134523,
+    "cor.shift": -1.014892
   },
   "residuals_before": {
     "typical": 0.0123,

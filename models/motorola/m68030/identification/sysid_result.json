@@ -1,12 +1,12 @@
 {
   "processor": "m68030",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 31,
+  "iterations": 34,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "`xtol` termination condition is satisfied.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": 0.797279,
     "cor.branch": -0.342667,
@@ -26,10 +26,11 @@
   "residuals_after": {
     "typical": -0.0,
     "compute": 0.0,
-    "memory": 0.0,
+    "memory": -0.0,
     "control": 0.0
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
     "cor.alu",
     "cor.branch",
     "cor.divide",

@@ -1,0 +1,40 @@
+{
+  "processor": "i486sx",
+  "date": "2026-01-30",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.192213,
+  "loss_after": 9e-06,
+  "cpi_error_percent": 0.26,
+  "message": "The maximum number of function evaluations is exceeded.",
+  "corrections": {
+    "cor.alu": 0.963703,
+    "cor.control": -2.035618,
+    "cor.data_transfer": 0.963487,
+    "cor.divide": -33.627342,
+    "cor.memory": -4.203419,
+    "cor.multiply": -11.034571
+  },
+  "residuals_before": {
+    "typical": -0.2978,
+    "compute": -0.5644,
+    "memory": -0.461,
+    "control": -0.1508,
+    "mixed": -0.5644
+  },
+  "residuals_after": {
+    "typical": 0.0052,
+    "compute": -0.0021,
+    "memory": -0.002,
+    "control": -0.0018,
+    "mixed": -0.0022
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
+  ]
+}

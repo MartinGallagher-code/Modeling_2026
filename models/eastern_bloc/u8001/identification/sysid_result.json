@@ -1,24 +1,38 @@
 {
-  "processor": "U8001",
+  "processor": "u8001",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": "auto",
+  "iterations": 15,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": -0.50954,
     "cor.data_transfer": -0.478958,
-    "cor.memory": -0.505553,
+    "cor.memory": -0.505554,
     "cor.io": -0.165774,
     "cor.control": 0.022371,
-    "cor.string": 0.040993
+    "cor.string": 0.040994
   },
-  "loss_before": null,
-  "loss_after": 0.0,
-  "cpi_error_percent": 0.0,
-  "residuals_after": {
+  "residuals_before": {
     "typical": 0.0,
     "compute": 0.0,
     "memory": 0.0,
     "control": 0.0
   },
-  "method": "scipy.optimize.least_squares (trf)"
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.io",
+    "cor.memory",
+    "cor.string"
+  ]
 }

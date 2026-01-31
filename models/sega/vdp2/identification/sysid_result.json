@@ -1,0 +1,40 @@
+{
+  "processor": "vdp2",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 37,
+  "loss_before": 0.03772,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.scroll": 0.5,
+    "cor.pixel": 1.0,
+    "cor.rotate": 0.0,
+    "cor.memory": -0.0,
+    "cor.control": -0.5,
+    "cor.color": 0.0
+  },
+  "residuals_before": {
+    "typical": -0.16,
+    "compute": -0.22,
+    "memory": -0.13,
+    "control": -0.04,
+    "mixed": -0.31
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
+  },
+  "free_parameters": [
+    "cor.color",
+    "cor.control",
+    "cor.memory",
+    "cor.pixel",
+    "cor.rotate",
+    "cor.scroll"
+  ]
+}

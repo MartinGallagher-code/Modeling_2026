@@ -1,19 +1,19 @@
 {
   "processor": "rca1802",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 10,
+  "iterations": 20,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.branch": -1.98157,
+    "cor.branch": -1.981571,
     "cor.call_return": -8.32891,
-    "cor.immediate": -0.514635,
+    "cor.immediate": -0.514634,
     "cor.memory_read": -4.044355,
     "cor.memory_write": 1.333064,
-    "cor.register_ops": 4.34309
+    "cor.register_ops": 4.343089
   },
   "residuals_before": {
     "typical": 0.0,
@@ -22,10 +22,10 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
+    "typical": -0.0,
     "compute": -0.0,
     "memory": -0.0,
-    "control": 0.0
+    "control": -0.0
   },
   "free_parameters": [
     "cor.branch",

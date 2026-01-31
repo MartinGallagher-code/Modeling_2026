@@ -1,8 +1,8 @@
 {
   "processor": "namco_50xx",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 20,
+  "iterations": 18,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
@@ -22,8 +22,8 @@
   },
   "residuals_after": {
     "typical": 0.0,
-    "scoring": -0.0,
-    "coin_handling": -0.0,
+    "scoring": 0.0,
+    "coin_handling": 0.0,
     "idle": -0.0
   },
   "free_parameters": [

@@ -9,7 +9,10 @@
     "package": "PGA-68"
   },
   "timing": {
-    "cycles_per_instruction_range": [4, 120],
+    "cycles_per_instruction_range": [
+      4,
+      120
+    ],
     "typical_cpi": 20.0
   },
   "accuracy": {
@@ -20,14 +23,33 @@
     "fully_validated": true,
     "validation_date": "2026-01-30",
     "per_workload": {
-      "typical": {"predicted_cpi": 19.9995, "measured_cpi": 20.0, "error_percent": 0.0},
-      "compute": {"predicted_cpi": 19.9996, "measured_cpi": 20.0, "error_percent": 0.0},
-      "memory": {"predicted_cpi": 19.999, "measured_cpi": 20.0, "error_percent": 0.01},
-      "control": {"predicted_cpi": 19.9972, "measured_cpi": 20.0, "error_percent": 0.01}
+      "typical": {
+        "predicted_cpi": 19.9995,
+        "measured_cpi": 20.0,
+        "error_percent": 0.0
+      },
+      "compute": {
+        "predicted_cpi": 19.9996,
+        "measured_cpi": 20.0,
+        "error_percent": 0.0
+      },
+      "memory": {
+        "predicted_cpi": 19.999,
+        "measured_cpi": 20.0,
+        "error_percent": 0.01
+      },
+      "control": {
+        "predicted_cpi": 19.9972,
+        "measured_cpi": 20.0,
+        "error_percent": 0.01
+      }
     },
     "max_workload_error_percent": 0.01,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-30",
+    "sysid_loss_before": 2e-06,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0
   },
   "sources": [
     "Motorola MC68882 datasheet"

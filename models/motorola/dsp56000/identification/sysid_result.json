@@ -1,33 +1,33 @@
 {
   "processor": "dsp56000",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": false,
-  "iterations": 46,
-  "loss_before": 0.148125,
-  "loss_after": 0.148125,
+  "iterations": 200,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Rolled back: optimization worsened typical-workload error",
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.mac": 0.0,
-    "cor.alu": 0.0,
-    "cor.data_move": 0.0,
-    "cor.control": 0.0,
-    "cor.io": 0.0,
-    "cor.loop": 0.0
+    "cor.alu": -1.47954,
+    "cor.control": 0.144421,
+    "cor.data_move": 3.917152,
+    "cor.io": -0.421694,
+    "cor.loop": 0.834498,
+    "cor.mac": -2.157233
   },
   "residuals_before": {
     "typical": 0.0,
-    "compute": 0.8,
-    "control": -0.1,
-    "io_heavy": -0.3,
-    "mixed": -0.025
+    "compute": -0.0,
+    "control": 0.0,
+    "io_heavy": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
     "typical": 0.0,
-    "compute": 0.8,
-    "control": -0.1,
-    "io_heavy": -0.3,
-    "mixed": -0.025
+    "compute": -0.0,
+    "control": -0.0,
+    "io_heavy": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
     "cor.alu",

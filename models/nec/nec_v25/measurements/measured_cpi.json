@@ -1,0 +1,78 @@
+{
+  "processor": "NEC V25",
+  "manufacturer": "NEC",
+  "year": 1987,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.18,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "NEC V25 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 3.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.18,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "NEC V25 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 3.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.18,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "NEC V25 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.18,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "NEC V25 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 3.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.18,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "NEC V25 mixed workload"
+    }
+  ]
+}

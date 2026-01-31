@@ -1,0 +1,40 @@
+{
+  "processor": "i750",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 28,
+  "loss_before": 0.08962,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.pixel": 1.0,
+    "cor.dct": -1.0,
+    "cor.quantize": 0.5,
+    "cor.motion": -2.0,
+    "cor.memory": 0.0,
+    "cor.control": 0.5
+  },
+  "residuals_before": {
+    "typical": 0.19,
+    "compute": -0.02,
+    "memory": 0.52,
+    "control": 0.16,
+    "mixed": 0.34
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.control",
+    "cor.dct",
+    "cor.memory",
+    "cor.motion",
+    "cor.pixel",
+    "cor.quantize"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "processor": "konami_scc",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 34,
+  "loss_before": 0.39978,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.wave": 1.0,
+    "cor.envelope": 1.0,
+    "cor.register": 1.25,
+    "cor.memory": 0.5,
+    "cor.control": -1.0,
+    "cor.mixing": 1.25
+  },
+  "residuals_before": {
+    "typical": -0.66,
+    "compute": -0.72,
+    "memory": -0.63,
+    "control": -0.36,
+    "mixed": -0.72
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
+  },
+  "free_parameters": [
+    "cor.control",
+    "cor.envelope",
+    "cor.memory",
+    "cor.mixing",
+    "cor.register",
+    "cor.wave"
+  ]
+}

@@ -22,11 +22,11 @@
     "validation_passed": true,
     "fully_validated": true,
     "validation_date": "2026-01-29",
-    "sysid_loss_before": 0.0433,
-    "sysid_loss_after": 8.7e-05,
-    "sysid_cpi_error_percent": 0.32,
+    "sysid_loss_before": 8.7e-05,
+    "sysid_loss_after": 1e-06,
+    "sysid_cpi_error_percent": 0.03,
     "sysid_converged": false,
-    "sysid_date": "2026-01-29"
+    "sysid_date": "2026-01-30"
   },
   "sources": [
     "AMD Am8085A datasheet (1978)",

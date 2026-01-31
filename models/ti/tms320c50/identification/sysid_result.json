@@ -2,39 +2,39 @@
   "processor": "tms320c50",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": 50,
-  "loss_before": 0.000455,
-  "loss_after": 0.0001,
+  "iterations": 27,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.mac": -0.05,
-    "cor.alu": -0.05,
-    "cor.load": -0.05,
-    "cor.store": -0.05,
-    "cor.branch": -0.05,
-    "cor.special": -0.05
+    "cor.alu": 0.101958,
+    "cor.branch": -0.898042,
+    "cor.load": 0.062805,
+    "cor.mac": 0.101958,
+    "cor.special": -0.898042,
+    "cor.store": 0.14111
   },
   "residuals_before": {
-    "typical": 0.0455,
+    "typical": 0.0,
     "compute": 0.0,
-    "memory": 0.0455,
-    "control": 0.2273,
-    "mixed": 0.0909
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0455,
-    "memory": 0.0,
-    "control": 0.1818,
-    "mixed": 0.0455
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
-    "cor.mac",
     "cor.alu",
-    "cor.load",
-    "cor.store",
     "cor.branch",
-    "cor.special"
+    "cor.load",
+    "cor.mac",
+    "cor.special",
+    "cor.store"
   ]
 }

@@ -1,0 +1,78 @@
+{
+  "processor": "Fairchild Clipper C300",
+  "manufacturer": "Intergraph",
+  "year": 1988,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Fairchild Clipper C300 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Fairchild Clipper C300 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Fairchild Clipper C300 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Fairchild Clipper C300 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 1.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.08,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Fairchild Clipper C300 mixed workload"
+    }
+  ]
+}

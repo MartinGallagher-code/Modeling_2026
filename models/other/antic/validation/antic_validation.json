@@ -26,7 +26,7 @@
     "sysid_loss_after": 0.032772,
     "sysid_cpi_error_percent": 1.66,
     "sysid_converged": true,
-    "sysid_date": "2026-01-29"
+    "sysid_date": "2026-01-30"
   },
   "sources": [
     "Atari ANTIC datasheet"

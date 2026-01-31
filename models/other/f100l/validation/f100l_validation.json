@@ -8,7 +8,10 @@
     "technology": "bipolar military"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 5],
+    "cycles_per_instruction_range": [
+      3,
+      5
+    ],
     "typical_cpi": 3.92
   },
   "validated_performance": {
@@ -39,16 +42,16 @@
     "validation_date": "2026-01-30",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 2.04,
+    "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
     "sysid_date": "2026-01-30"
   },
   "instruction_mix": {
-    "alu_ops": 0.30,
+    "alu_ops": 0.3,
     "memory_read": 0.18,
     "memory_write": 0.15,
     "branch": 0.12,
-    "jump": 0.10,
+    "jump": 0.1,
     "shift": 0.08,
     "io": 0.04,
     "control": 0.03

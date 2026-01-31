@@ -1,8 +1,8 @@
 {
   "processor": "m6800",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 20,
+  "iterations": 19,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
@@ -12,7 +12,7 @@
     "cor.call_return": -0.340683,
     "cor.control": 1.389268,
     "cor.data_transfer": -0.782628,
-    "cor.memory": 0.21798,
+    "cor.memory": 0.217981,
     "cor.stack": -0.605171
   },
   "residuals_before": {
@@ -24,8 +24,8 @@
   "residuals_after": {
     "typical": -0.0,
     "compute": 0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "memory": 0.0,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

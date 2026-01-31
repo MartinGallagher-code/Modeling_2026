@@ -1,18 +1,18 @@
 {
   "processor": "wd9000",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": false,
   "iterations": 200,
   "loss_before": 0.00064,
-  "loss_after": 0.00064,
-  "cpi_error_percent": 0.51,
+  "loss_after": 0.000402,
+  "cpi_error_percent": 0.4,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.arithmetic": -1.533049,
-    "cor.comparison": -4.999973,
+    "cor.arithmetic": -1.415628,
+    "cor.comparison": -5.999994,
     "cor.control": 5.0,
-    "cor.memory": 4.021382,
-    "cor.procedure": -3.489572,
+    "cor.memory": 4.084094,
+    "cor.procedure": -3.034667,
     "cor.stack_ops": 5.0
   },
   "residuals_before": {
@@ -22,10 +22,10 @@
     "control": -0.0276
   },
   "residuals_after": {
-    "typical": 0.0404,
-    "compute": -0.009,
-    "memory": -0.0093,
-    "control": -0.0276
+    "typical": 0.032,
+    "compute": -0.0071,
+    "memory": -0.0073,
+    "control": -0.0219
   },
   "free_parameters": [
     "cor.arithmetic",

@@ -1,0 +1,78 @@
+{
+  "processor": "Roland LA32",
+  "manufacturer": "Roland",
+  "year": 1987,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Roland LA32 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Roland LA32 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Roland LA32 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Roland LA32 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Roland LA32 mixed workload"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "processor": "m68020",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 22,
+  "iterations": 24,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
@@ -11,9 +11,9 @@
     "cor.alu_reg": -1.052383,
     "cor.control": 1.861079,
     "cor.data_transfer": 0.193771,
-    "cor.divide": -6.573368,
+    "cor.divide": -6.57338,
     "cor.memory": 0.322617,
-    "cor.multiply": -3.212541
+    "cor.multiply": -3.212547
   },
   "residuals_before": {
     "typical": -0.0,

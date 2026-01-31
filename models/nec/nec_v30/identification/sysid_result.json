@@ -1,18 +1,32 @@
 {
+  "processor": "nec_v30",
+  "date": "2026-01-30",
   "converged": true,
-  "corrections": {
-    "alu": 0.0,
-    "data_transfer": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "multiply": 0.0,
-    "divide": 0.0
-  },
+  "iterations": 1,
   "loss_before": 0.0,
   "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 0.0,
+    "cor.data_transfer": 0.0,
+    "cor.memory": 0.0,
+    "cor.control": 0.0,
+    "cor.multiply": 0.0,
+    "cor.divide": 0.0
+  },
+  "residuals_before": {
+    "typical": 0.0
+  },
   "residuals_after": {
     "typical": 0.0
   },
-  "date": "2026-01-30",
-  "notes": "Base model matches measured CPI exactly; no corrections needed"
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
+  ]
 }

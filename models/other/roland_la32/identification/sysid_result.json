@@ -1,0 +1,40 @@
+{
+  "processor": "roland_la32",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 33,
+  "loss_before": 0.03492,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.partial": 1.0,
+    "cor.envelope": 0.5,
+    "cor.pcm": 0.25,
+    "cor.memory": -0.0,
+    "cor.control": -1.0,
+    "cor.mixing": 0.25
+  },
+  "residuals_before": {
+    "typical": -0.15,
+    "compute": -0.3,
+    "memory": -0.12,
+    "control": 0.06,
+    "mixed": -0.21
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
+  },
+  "free_parameters": [
+    "cor.control",
+    "cor.envelope",
+    "cor.memory",
+    "cor.mixing",
+    "cor.partial",
+    "cor.pcm"
+  ]
+}

@@ -2,39 +2,40 @@
   "processor": "ks86c4004",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": 50,
-  "loss_before": 0.0006,
-  "loss_after": 0.0001,
+  "iterations": 23,
+  "loss_before": 8e-05,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.18,
-    "cor.data_transfer": -0.18,
-    "cor.memory": -0.18,
-    "cor.control": -0.18,
-    "cor.multiply": -0.18,
-    "cor.divide": -0.18
+    "cor.alu": 0.97056,
+    "cor.control": -3.02944,
+    "cor.data_transfer": 0.970559,
+    "cor.divide": -11.141331,
+    "cor.memory": -1.296233,
+    "cor.multiply": -9.973499
   },
   "residuals_before": {
-    "typical": 0.06,
-    "compute": 0.1,
-    "memory": 0.1933,
-    "control": 0.2933,
-    "mixed": 0.0933
+    "typical": 0.0082,
+    "compute": 0.0036,
+    "memory": 0.0053,
+    "control": 0.0005,
+    "mixed": -0.0172
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.04,
-    "memory": 0.1333,
-    "control": 0.2333,
-    "mixed": 0.0333
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
     "cor.alu",
-    "cor.data_transfer",
-    "cor.memory",
     "cor.control",
-    "cor.multiply",
-    "cor.divide"
+    "cor.data_transfer",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
   ]
 }

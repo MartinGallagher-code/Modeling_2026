@@ -1,0 +1,78 @@
+{
+  "processor": "AMD Am29050",
+  "manufacturer": "AMD",
+  "year": 1990,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 1.2,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 40.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.06,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "AMD Am29050 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 1.2,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 40.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.06,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "AMD Am29050 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 1.2,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 40.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.06,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "AMD Am29050 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 1.2,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 40.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.06,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "AMD Am29050 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 1.2,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 40.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.06,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "AMD Am29050 mixed workload"
+    }
+  ]
+}

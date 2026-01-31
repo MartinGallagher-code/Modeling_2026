@@ -1,6 +1,6 @@
 {
   "processor": "tlcs47",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
   "iterations": 18,
   "loss_before": 0.0,
@@ -12,7 +12,7 @@
     "cor.control": 1.002674,
     "cor.data_transfer": 1.34332,
     "cor.io": -3.209282,
-    "cor.memory": -0.227973,
+    "cor.memory": -0.227972,
     "cor.timer": -1.611898
   },
   "residuals_before": {

@@ -1,8 +1,8 @@
 {
   "processor": "arm3",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 2,
+  "iterations": 3,
   "loss_before": 6.1e-05,
   "loss_after": 6.1e-05,
   "cpi_error_percent": 0.99,
@@ -10,15 +10,15 @@
   "corrections": {
     "cor.alu": -0.278999,
     "cor.branch": 0.016847,
-    "cor.load": 2.148424,
-    "cor.store": -2.387738
+    "cor.load": 1.7126,
+    "cor.store": -2.823562
   },
   "residuals_before": {
-    "typical": -0.0132,
-    "compute": 0.0014,
-    "memory": -0.0007,
-    "control": 0.0009,
-    "mixed": 0.0113
+    "typical": -0.0133,
+    "compute": 0.0013,
+    "memory": -0.0009,
+    "control": 0.0008,
+    "mixed": 0.0112
   },
   "residuals_after": {
     "typical": -0.0132,
@@ -28,6 +28,7 @@
     "mixed": 0.0113
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
     "cor.alu",
     "cor.branch",
     "cor.load",

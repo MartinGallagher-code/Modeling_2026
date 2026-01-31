@@ -1,0 +1,40 @@
+{
+  "processor": "i386sx",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 40,
+  "loss_before": 48.91444,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 2.5,
+    "cor.data_transfer": 1.5,
+    "cor.memory": -4.695653,
+    "cor.control": -4.0,
+    "cor.multiply": -9.0,
+    "cor.divide": -31.304347
+  },
+  "residuals_before": {
+    "typical": 7.7,
+    "compute": 5.9,
+    "memory": 7.07,
+    "control": 7.97,
+    "mixed": 6.08
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.control",
+    "cor.data_transfer",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
+  ]
+}

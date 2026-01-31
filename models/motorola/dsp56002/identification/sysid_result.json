@@ -1,0 +1,40 @@
+{
+  "processor": "dsp56002",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 39,
+  "loss_before": 0.05688,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.mac": 0.1,
+    "cor.alu": 0.1,
+    "cor.load": -0.4,
+    "cor.store": 0.1,
+    "cor.branch": -0.9,
+    "cor.special": -0.4
+  },
+  "residuals_before": {
+    "typical": 0.24,
+    "compute": 0.18,
+    "memory": 0.18,
+    "control": 0.36,
+    "mixed": 0.18
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.branch",
+    "cor.load",
+    "cor.mac",
+    "cor.special",
+    "cor.store"
+  ]
+}

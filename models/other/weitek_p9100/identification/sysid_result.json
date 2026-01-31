@@ -1,0 +1,40 @@
+{
+  "processor": "weitek_p9100",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 29,
+  "loss_before": 0.04068,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.draw": 0.5,
+    "cor.pixel": 1.0,
+    "cor.blit": -0.5,
+    "cor.memory": -1.0,
+    "cor.control": -0.5,
+    "cor.special": -0.5
+  },
+  "residuals_before": {
+    "typical": 0.18,
+    "compute": 0.06,
+    "memory": 0.33,
+    "control": 0.24,
+    "mixed": -0.03
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.blit",
+    "cor.control",
+    "cor.draw",
+    "cor.memory",
+    "cor.pixel",
+    "cor.special"
+  ]
+}

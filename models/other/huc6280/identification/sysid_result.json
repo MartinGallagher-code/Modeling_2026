@@ -1,40 +1,40 @@
 {
   "processor": "huc6280",
   "date": "2026-01-30",
-  "converged": true,
-  "iterations": 50,
-  "loss_before": 0.001343,
-  "loss_after": 0.0001,
-  "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.02,
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": 0.47,
-    "cor.data_transfer": 0.47,
-    "cor.memory": 0.47,
-    "cor.control": 0.47,
-    "cor.multiply": 0.47,
-    "cor.divide": 0.47
+    "cor.alu": 1.426094,
+    "cor.control": -1.551379,
+    "cor.data_transfer": 1.493955,
+    "cor.divide": -7.207644,
+    "cor.memory": -0.541008,
+    "cor.multiply": -9.817559
   },
   "residuals_before": {
-    "typical": -0.1343,
-    "compute": -0.0971,
-    "memory": -0.02,
-    "control": 0.0086,
-    "mixed": -0.1057
+    "typical": 0.0006,
+    "compute": 0.0003,
+    "memory": 0.0004,
+    "control": 0.0,
+    "mixed": -0.0012
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0371,
-    "memory": 0.1143,
-    "control": 0.1429,
-    "mixed": 0.0286
+    "typical": 0.0006,
+    "compute": 0.0003,
+    "memory": 0.0004,
+    "control": 0.0,
+    "mixed": -0.0012
   },
   "free_parameters": [
     "cor.alu",
-    "cor.data_transfer",
-    "cor.memory",
     "cor.control",
-    "cor.multiply",
-    "cor.divide"
+    "cor.data_transfer",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
   ]
 }

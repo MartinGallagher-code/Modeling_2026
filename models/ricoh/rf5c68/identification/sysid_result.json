@@ -1,0 +1,40 @@
+{
+  "processor": "rf5c68",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 29,
+  "loss_before": 0.09202,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.sample": 1.0,
+    "cor.interpolate": -0.0,
+    "cor.envelope": 0.75,
+    "cor.memory": -0.0,
+    "cor.control": -0.5,
+    "cor.mixing": 0.75
+  },
+  "residuals_before": {
+    "typical": -0.32,
+    "compute": -0.44,
+    "memory": -0.26,
+    "control": -0.17,
+    "mixed": -0.26
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
+  },
+  "free_parameters": [
+    "cor.control",
+    "cor.envelope",
+    "cor.interpolate",
+    "cor.memory",
+    "cor.mixing",
+    "cor.sample"
+  ]
+}

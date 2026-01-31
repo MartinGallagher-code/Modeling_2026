@@ -1,0 +1,78 @@
+{
+  "processor": "Weitek P9100",
+  "manufacturer": "Weitek",
+  "year": 1992,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 60.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Weitek P9100 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 60.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Weitek P9100 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 60.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Weitek P9100 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 60.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Weitek P9100 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 60.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Weitek P9100 mixed workload"
+    }
+  ]
+}

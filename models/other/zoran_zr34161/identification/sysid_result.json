@@ -1,40 +1,41 @@
 {
   "processor": "zoran_zr34161",
   "date": "2026-01-30",
-  "converged": true,
-  "iterations": 50,
-  "loss_before": 0.000667,
-  "loss_after": 0.0001,
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.mac": 0.1,
-    "cor.alu": 0.1,
-    "cor.load": 0.1,
-    "cor.store": 0.1,
-    "cor.branch": 0.1,
-    "cor.special": 0.1
+    "cor.alu": 0.534617,
+    "cor.branch": -0.465378,
+    "cor.load": -1.696681,
+    "cor.mac": 0.534624,
+    "cor.special": -0.465372,
+    "cor.store": -0.311771
   },
   "residuals_before": {
-    "typical": -0.0667,
-    "compute": -0.1667,
-    "memory": 0.0667,
-    "control": 0.0667,
-    "mixed": -0.0333
+    "typical": 0.0001,
+    "compute": 0.0,
+    "memory": 0.0001,
+    "control": 0.0001,
+    "mixed": 0.0001
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.1,
-    "memory": 0.1333,
-    "control": 0.1333,
-    "mixed": 0.0333
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
-    "cor.mac",
+    "cache.l1_hit_rate",
     "cor.alu",
-    "cor.load",
-    "cor.store",
     "cor.branch",
-    "cor.special"
+    "cor.load",
+    "cor.mac",
+    "cor.special",
+    "cor.store"
   ]
 }

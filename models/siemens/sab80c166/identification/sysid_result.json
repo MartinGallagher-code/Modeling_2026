@@ -1,31 +1,31 @@
 {
   "processor": "sab80c166",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 28,
-  "loss_before": 0.008525,
+  "iterations": 20,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": 1.040011,
-    "cor.memory": -0.86496,
+    "cor.bit_ops": -0.044201,
     "cor.control": -0.38272,
+    "cor.memory": -0.86496,
     "cor.multiply": -0.491707,
-    "cor.peripheral": 0.263469,
-    "cor.bit_ops": -0.044201
+    "cor.peripheral": 0.263469
   },
   "residuals_before": {
-    "typical": -0.0001,
-    "compute": -0.07,
-    "memory": 0.16,
-    "control": 0.06
-  },
-  "residuals_after": {
-    "typical": 0.0,
+    "typical": -0.0,
     "compute": -0.0,
     "memory": -0.0,
     "control": -0.0
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

@@ -1,28 +1,28 @@
 {
   "processor": "tms0800",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 19,
-  "loss_before": 0.17875,
+  "iterations": 18,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": 1.794319,
     "cor.bcd": -1.613335,
-    "cor.shift": 2.989945,
     "cor.control": 1.989945,
-    "cor.display": -3.211148
+    "cor.display": -3.211148,
+    "cor.shift": 2.989945
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": -0.3,
-    "memory": -0.65,
-    "control": -0.45
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
   },
   "residuals_after": {
     "typical": 0.0,
-    "compute": -0.0,
+    "compute": 0.0,
     "memory": -0.0,
     "control": -0.0
   },

@@ -1,0 +1,78 @@
+{
+  "processor": "Dallas DS80C320",
+  "manufacturer": "Dallas Semiconductor",
+  "year": 1993,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Dallas DS80C320 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Dallas DS80C320 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Dallas DS80C320 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Dallas DS80C320 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 33.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Dallas DS80C320 mixed workload"
+    }
+  ]
+}

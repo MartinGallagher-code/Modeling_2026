@@ -1,6 +1,6 @@
 {
   "processor": "m68010",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
   "iterations": 24,
   "loss_before": 0.0,
@@ -11,9 +11,9 @@
     "cor.alu_reg": -2.671276,
     "cor.control": 1.723333,
     "cor.data_transfer": 2.543238,
-    "cor.divide": -4.804072,
+    "cor.divide": -4.804094,
     "cor.memory": -0.986308,
-    "cor.multiply": -2.418081
+    "cor.multiply": -2.418092
   },
   "residuals_before": {
     "typical": -0.0,

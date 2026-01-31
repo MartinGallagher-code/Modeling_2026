@@ -16,13 +16,32 @@
     "fully_validated": true,
     "validation_date": "2026-01-30",
     "per_workload": {
-      "typical": {"predicted_cpi": 6.0, "measured_cpi": 6.0, "error_percent": 0.0},
-      "compute": {"predicted_cpi": 5.9991, "measured_cpi": 6.0, "error_percent": 0.02},
-      "memory": {"predicted_cpi": 6.0003, "measured_cpi": 6.0, "error_percent": 0.0},
-      "control": {"predicted_cpi": 5.9994, "measured_cpi": 6.0, "error_percent": 0.01}
+      "typical": {
+        "predicted_cpi": 6.0,
+        "measured_cpi": 6.0,
+        "error_percent": 0.0
+      },
+      "compute": {
+        "predicted_cpi": 5.9991,
+        "measured_cpi": 6.0,
+        "error_percent": 0.02
+      },
+      "memory": {
+        "predicted_cpi": 6.0003,
+        "measured_cpi": 6.0,
+        "error_percent": 0.0
+      },
+      "control": {
+        "predicted_cpi": 5.9994,
+        "measured_cpi": 6.0,
+        "error_percent": 0.01
+      }
     },
     "max_workload_error_percent": 0.02,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-30",
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0
   }
 }

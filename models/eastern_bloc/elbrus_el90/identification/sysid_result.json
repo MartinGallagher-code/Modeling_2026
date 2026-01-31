@@ -1,40 +1,40 @@
 {
   "processor": "elbrus_el90",
   "date": "2026-01-30",
-  "converged": true,
-  "iterations": 50,
-  "loss_before": 0.003133,
-  "loss_after": 0.0001,
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": -0.47,
-    "cor.load": -0.47,
-    "cor.store": -0.47,
-    "cor.branch": -0.47,
-    "cor.multiply": -0.47,
-    "cor.divide": -0.47
+    "cor.alu": 0.898551,
+    "cor.branch": -0.584541,
+    "cor.divide": -11.169083,
+    "cor.load": -2.275363,
+    "cor.multiply": -5.0,
+    "cor.store": 1.830919
   },
   "residuals_before": {
-    "typical": 0.3133,
-    "compute": 0.6,
-    "memory": 0.4133,
-    "control": 0.38,
-    "mixed": 0.6333
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.2867,
-    "memory": 0.1,
-    "control": 0.0667,
-    "mixed": 0.32
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": -0.0
   },
   "free_parameters": [
     "cor.alu",
-    "cor.load",
-    "cor.store",
     "cor.branch",
+    "cor.divide",
+    "cor.load",
     "cor.multiply",
-    "cor.divide"
+    "cor.store"
   ]
 }

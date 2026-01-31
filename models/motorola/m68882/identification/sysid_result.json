@@ -1,26 +1,36 @@
 {
+  "processor": "m68882",
+  "date": "2026-01-30",
   "converged": true,
-  "corrections": {
-    "data_transfer": 0.079,
-    "fp_add": 0.047,
-    "fp_div": -0.052,
-    "fp_mul": -0.035,
-    "fp_transcendental": -0.07
-  },
-  "loss_before": 0.0,
+  "iterations": 17,
+  "loss_before": 2e-06,
   "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.data_transfer": 0.078532,
+    "cor.fp_add": 0.047444,
+    "cor.fp_div": -0.0521,
+    "cor.fp_mul": -0.035132,
+    "cor.fp_transcendental": -0.069982
+  },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0
+    "typical": -0.0005,
+    "compute": -0.0004,
+    "memory": -0.001,
+    "control": -0.0028
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0,
+    "typical": -0.0,
+    "compute": -0.0,
     "memory": 0.0,
     "control": 0.0
   },
-  "date": "2026-01-30",
-  "notes": "Workload profiles rebalanced to all produce base CPI=20.0. Corrections negligible."
+  "free_parameters": [
+    "cor.data_transfer",
+    "cor.fp_add",
+    "cor.fp_div",
+    "cor.fp_mul",
+    "cor.fp_transcendental"
+  ]
 }

@@ -2,39 +2,39 @@
   "processor": "ati_mach64",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": 50,
-  "loss_before": 0.000333,
-  "loss_after": 0.0001,
+  "iterations": 16,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.draw": -0.05,
-    "cor.pixel": -0.05,
-    "cor.register": -0.05,
-    "cor.memory": -0.05,
-    "cor.branch": -0.05,
-    "cor.blit": -0.05
+    "cor.blit": 0.544535,
+    "cor.branch": -1.010111,
+    "cor.draw": -0.900818,
+    "cor.memory": -0.455465,
+    "cor.pixel": 0.989889,
+    "cor.register": -0.346172
   },
   "residuals_before": {
-    "typical": 0.0333,
-    "compute": 0.0667,
-    "memory": 0.0667,
-    "control": 0.1667,
-    "mixed": 0.1
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.0333,
-    "memory": 0.0333,
-    "control": 0.1333,
-    "mixed": 0.0667
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
-    "cor.draw",
-    "cor.pixel",
-    "cor.register",
-    "cor.memory",
+    "cor.blit",
     "cor.branch",
-    "cor.blit"
+    "cor.draw",
+    "cor.memory",
+    "cor.pixel",
+    "cor.register"
   ]
 }

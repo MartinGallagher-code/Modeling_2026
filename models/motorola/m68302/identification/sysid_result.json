@@ -2,39 +2,40 @@
   "processor": "m68302",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": 50,
-  "loss_before": 0.000714,
-  "loss_after": 0.0001,
+  "iterations": 18,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.packet": -0.2,
-    "cor.dma": -0.2,
-    "cor.register": -0.2,
-    "cor.memory": -0.2,
-    "cor.control": -0.2,
-    "cor.protocol": -0.2
+    "cor.control": -0.178108,
+    "cor.dma": 0.967838,
+    "cor.memory": -0.35761,
+    "cor.packet": -1.214595,
+    "cor.protocol": -1.214595,
+    "cor.register": 1.675946
   },
   "residuals_before": {
-    "typical": 0.0714,
-    "compute": 0.1786,
-    "memory": 0.0179,
-    "control": 0.0714,
-    "mixed": 0.0714
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.1071,
-    "memory": -0.0536,
-    "control": -0.0,
-    "mixed": 0.0
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": -0.0
   },
   "free_parameters": [
-    "cor.packet",
-    "cor.dma",
-    "cor.register",
-    "cor.memory",
+    "cache.l1_hit_rate",
     "cor.control",
-    "cor.protocol"
+    "cor.dma",
+    "cor.memory",
+    "cor.packet",
+    "cor.protocol",
+    "cor.register"
   ]
 }

@@ -1,31 +1,31 @@
 {
   "processor": "microvax_78032",
-  "date": "2026-01-29",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.57425,
-  "loss_after": 0.000224,
-  "cpi_error_percent": 0.44,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 23,
+  "loss_before": 0.000224,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 2.936848,
-    "cor.memory": -3.716697,
-    "cor.control": 0.161701,
-    "cor.string": 4.997354,
-    "cor.decimal": -7.499802,
-    "cor.float": -6.0
+    "cor.alu": 3.171823,
+    "cor.control": 0.117144,
+    "cor.decimal": -8.906347,
+    "cor.float": -6.000689,
+    "cor.memory": -3.74397,
+    "cor.string": 5.230257
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": 1.12,
-    "memory": 0.99,
-    "control": 0.25
-  },
-  "residuals_after": {
     "typical": -0.0243,
     "compute": 0.0148,
     "memory": 0.0047,
     "control": 0.008
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

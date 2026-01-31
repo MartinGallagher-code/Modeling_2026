@@ -1,0 +1,35 @@
+{
+  "processor": "Sega VDP1",
+  "year": 1994,
+  "specifications": {
+    "data_width_bits": 16,
+    "address_width_bits": 24,
+    "clock_mhz": 28.6,
+    "transistors": 200000
+  },
+  "timing": {
+    "typical_cpi": 2.5
+  },
+  "model_accuracy": {
+    "target_error_pct": 5.0,
+    "confidence": "high"
+  },
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 2.5,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "validation_passed": true,
+    "fully_validated": false,
+    "sysid_loss_before": 0.0091,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

@@ -1,18 +1,18 @@
 {
   "processor": "dec_t11",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": false,
   "iterations": 200,
   "loss_before": 0.008317,
-  "loss_after": 0.008317,
-  "cpi_error_percent": 0.01,
+  "loss_after": 0.008314,
+  "cpi_error_percent": 0.0,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
     "cor.alu": -5.0,
-    "cor.control": 2.95401,
+    "cor.control": 2.953527,
     "cor.data_transfer": 5.0,
-    "cor.memory": 0.485713,
-    "cor.stack": -4.653027
+    "cor.memory": 0.507715,
+    "cor.stack": -4.682674
   },
   "residuals_before": {
     "typical": 0.0004,
@@ -21,9 +21,9 @@
     "control": 0.0
   },
   "residuals_after": {
-    "typical": 0.0004,
-    "compute": 0.0932,
-    "memory": -0.1568,
+    "typical": 0.0003,
+    "compute": 0.0933,
+    "memory": -0.1567,
     "control": 0.0
   },
   "free_parameters": [

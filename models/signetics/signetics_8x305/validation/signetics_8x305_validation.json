@@ -42,11 +42,11 @@
     "fully_validated": true,
     "validation_date": "2026-01-29",
     "notes": "Enhanced version of 8X300 with improved I/O capabilities",
-    "sysid_loss_before": 0.071,
+    "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-29"
+    "sysid_date": "2026-01-30"
   },
   "instruction_timing_tests": [
     {

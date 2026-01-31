@@ -1,6 +1,6 @@
 {
   "processor": "arm2",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
   "iterations": 3,
   "loss_before": 0.000313,
@@ -10,15 +10,15 @@
   "corrections": {
     "cor.alu": -0.320662,
     "cor.branch": -0.079159,
-    "cor.load": 2.991923,
-    "cor.store": -3.660836
+    "cor.load": 2.484587,
+    "cor.store": -4.168173
   },
   "residuals_before": {
     "typical": -0.0303,
     "compute": 0.0029,
-    "memory": -0.0017,
-    "control": 0.0019,
-    "mixed": 0.0251
+    "memory": -0.0015,
+    "control": 0.002,
+    "mixed": 0.0252
   },
   "residuals_after": {
     "typical": -0.0303,
@@ -28,6 +28,7 @@
     "mixed": 0.0251
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
     "cor.alu",
     "cor.branch",
     "cor.load",

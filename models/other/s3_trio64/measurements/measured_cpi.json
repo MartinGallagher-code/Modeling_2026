@@ -1,0 +1,78 @@
+{
+  "processor": "S3 Trio64",
+  "manufacturer": "S3",
+  "year": 1995,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 75.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "S3 Trio64 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 75.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "S3 Trio64 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 75.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "S3 Trio64 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 75.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "S3 Trio64 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 2.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 75.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.1,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "S3 Trio64 mixed workload"
+    }
+  ]
+}

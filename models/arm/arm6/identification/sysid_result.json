@@ -1,24 +1,24 @@
 {
   "processor": "arm6",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 4,
+  "iterations": 17,
   "loss_before": 0.000426,
   "loss_after": 0.000426,
   "cpi_error_percent": 2.46,
-  "message": "`ftol` termination condition is satisfied.",
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": -0.290209,
     "cor.branch": 0.074543,
-    "cor.load": 2.511483,
-    "cor.store": -2.729078
+    "cor.load": 2.103851,
+    "cor.store": -3.13671
   },
   "residuals_before": {
-    "typical": -0.0351,
-    "compute": 0.0043,
-    "memory": -0.0021,
-    "control": 0.0006,
-    "mixed": 0.0295
+    "typical": -0.0352,
+    "compute": 0.0042,
+    "memory": -0.0022,
+    "control": 0.0005,
+    "mixed": 0.0294
   },
   "residuals_after": {
     "typical": -0.0351,
@@ -28,6 +28,7 @@
     "mixed": 0.0295
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
     "cor.alu",
     "cor.branch",
     "cor.load",

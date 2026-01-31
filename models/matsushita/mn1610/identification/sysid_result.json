@@ -1,31 +1,31 @@
 {
   "processor": "mn1610",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": false,
   "iterations": 200,
   "loss_before": 0.006453,
-  "loss_after": 0.006453,
-  "cpi_error_percent": 1.69,
+  "loss_after": 0.003461,
+  "cpi_error_percent": 1.24,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.branch": -1.553086,
-    "cor.call_return": -6.999967,
-    "cor.immediate": -3.24785,
-    "cor.memory_read": 0.412589,
-    "cor.memory_write": -4.999814,
+    "cor.branch": 2.087058,
+    "cor.call_return": -13.999818,
+    "cor.immediate": -4.419205,
+    "cor.memory_read": 4.207264,
+    "cor.memory_write": -9.997853,
     "cor.register_ops": 5.0
   },
   "residuals_before": {
     "typical": -0.1393,
     "compute": 0.0451,
-    "memory": 0.0627,
+    "memory": 0.0626,
     "control": 0.0212
   },
   "residuals_after": {
-    "typical": -0.1393,
-    "compute": 0.0451,
-    "memory": 0.0626,
-    "control": 0.0212
+    "typical": -0.102,
+    "compute": 0.033,
+    "memory": 0.0459,
+    "control": 0.0155
   },
   "free_parameters": [
     "cor.branch",

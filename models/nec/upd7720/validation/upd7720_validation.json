@@ -49,7 +49,7 @@
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-29"
+    "sysid_date": "2026-01-30"
   },
   "instruction_timing_tests": [
     {

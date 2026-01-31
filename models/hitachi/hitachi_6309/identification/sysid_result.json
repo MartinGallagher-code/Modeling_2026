@@ -1,12 +1,12 @@
 {
   "processor": "hitachi_6309",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 35,
+  "iterations": 28,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": -1.50817,
     "cor.alu_16bit": -2.1573,
@@ -30,9 +30,9 @@
   "residuals_after": {
     "typical": -0.0,
     "compute": 0.0,
-    "memory": -0.0,
+    "memory": 0.0,
     "control": -0.0,
-    "graphics": 0.0
+    "graphics": -0.0
   },
   "free_parameters": [
     "cor.alu",

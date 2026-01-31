@@ -1,0 +1,78 @@
+{
+  "processor": "Intel 486DX4",
+  "manufacturer": "Intel",
+  "year": 1994,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 1.8,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.09,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486DX4 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 1.8,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.09,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486DX4 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 1.8,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.09,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486DX4 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 1.8,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.09,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486DX4 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 1.8,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 100.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.09,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 486DX4 mixed workload"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "processor": "z80000",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 14,
+  "iterations": 20,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
@@ -12,9 +12,9 @@
     "cor.alu_reg": -1.866159,
     "cor.call_return": 4.953877,
     "cor.control": 2.686241,
-    "cor.divide": -11.053969,
+    "cor.divide": -11.053971,
     "cor.load": 1.251992,
-    "cor.multiply": -14.342494,
+    "cor.multiply": -14.342493,
     "cor.store": 1.363931
   },
   "residuals_before": {
@@ -25,8 +25,8 @@
   },
   "residuals_after": {
     "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
     "control": 0.0
   },
   "free_parameters": [

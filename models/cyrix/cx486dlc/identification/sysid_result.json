@@ -1,40 +1,41 @@
 {
   "processor": "cx486dlc",
   "date": "2026-01-30",
-  "converged": true,
-  "iterations": 50,
-  "loss_before": 0.00058,
-  "loss_after": 0.0001,
-  "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.000252,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.01,
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": -0.145,
-    "cor.data_transfer": -0.145,
-    "cor.memory": -0.145,
-    "cor.control": -0.145,
-    "cor.multiply": -0.145,
-    "cor.divide": -0.145
+    "cor.alu": 0.989086,
+    "cor.control": -2.496758,
+    "cor.data_transfer": 1.031665,
+    "cor.divide": -29.983559,
+    "cor.memory": -0.497442,
+    "cor.multiply": -7.998857
   },
   "residuals_before": {
-    "typical": 0.058,
-    "compute": 0.184,
-    "memory": 0.178,
-    "control": 0.308,
-    "mixed": 0.088
+    "typical": 0.0143,
+    "compute": 0.0062,
+    "memory": 0.0091,
+    "control": 0.0008,
+    "mixed": -0.0305
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.126,
-    "memory": 0.12,
-    "control": 0.25,
-    "mixed": 0.03
+    "typical": 0.0004,
+    "compute": 0.0002,
+    "memory": 0.0002,
+    "control": 0.0,
+    "mixed": -0.0007
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
     "cor.alu",
-    "cor.data_transfer",
-    "cor.memory",
     "cor.control",
-    "cor.multiply",
-    "cor.divide"
+    "cor.data_transfer",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
   ]
 }

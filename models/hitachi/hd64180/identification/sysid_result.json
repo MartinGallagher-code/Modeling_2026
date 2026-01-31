@@ -1,8 +1,8 @@
 {
   "processor": "hd64180",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 10,
+  "iterations": 18,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,

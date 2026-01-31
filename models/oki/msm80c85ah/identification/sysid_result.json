@@ -1,24 +1,24 @@
 {
   "processor": "msm80c85ah",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 143,
-  "loss_before": 0.0306,
+  "iterations": 6,
+  "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.560209,
+    "cor.alu": 0.56021,
+    "cor.control": -1.277487,
     "cor.data_transfer": 4.120418,
     "cor.memory": -4.999999,
-    "cor.control": -1.277487,
     "cor.stack": -3.136125
   },
   "residuals_before": {
-    "typical": 0.0,
-    "compute": -0.1,
-    "memory": 0.1,
-    "control": 0.32
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
   },
   "residuals_after": {
     "typical": -0.0,

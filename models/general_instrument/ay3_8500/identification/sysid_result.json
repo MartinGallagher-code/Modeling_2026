@@ -1,17 +1,17 @@
 {
   "processor": "ay3_8500",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 2,
+  "iterations": 19,
   "loss_before": 0.042692,
   "loss_after": 0.042692,
   "cpi_error_percent": 1.38,
-  "message": "`gtol` termination condition is satisfied.",
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.game_logic": 0.024785,
-    "cor.io": 0.024785,
-    "cor.sync": -0.108216,
-    "cor.video_gen": -0.108216
+    "cor.game_logic": -0.043805,
+    "cor.io": -0.043805,
+    "cor.sync": -0.06249,
+    "cor.video_gen": -0.06249
   },
   "residuals_before": {
     "typical": -0.055,

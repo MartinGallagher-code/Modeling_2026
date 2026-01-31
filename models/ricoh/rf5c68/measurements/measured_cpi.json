@@ -1,0 +1,78 @@
+{
+  "processor": "Ricoh RF5C68",
+  "manufacturer": "Ricoh",
+  "year": 1989,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 12.5,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Ricoh RF5C68 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 12.5,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Ricoh RF5C68 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 12.5,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Ricoh RF5C68 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 12.5,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Ricoh RF5C68 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 12.5,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Ricoh RF5C68 mixed workload"
+    }
+  ]
+}

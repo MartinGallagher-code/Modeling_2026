@@ -1,0 +1,40 @@
+{
+  "processor": "i80c196kb",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 38,
+  "loss_before": 1.995445,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 1.0,
+    "cor.memory": -0.5,
+    "cor.multiply": -0.75,
+    "cor.divide": -6.5,
+    "cor.branch": -0.0,
+    "cor.peripheral": -0.75
+  },
+  "residuals_before": {
+    "typical": 1.295,
+    "compute": 0.89,
+    "memory": 2.24,
+    "control": 1.07,
+    "mixed": 1.16
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.branch",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply",
+    "cor.peripheral"
+  ]
+}

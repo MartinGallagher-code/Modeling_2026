@@ -1,0 +1,35 @@
+{
+  "processor": "Intel 486SX",
+  "year": 1991,
+  "specifications": {
+    "data_width_bits": 32,
+    "address_width_bits": 32,
+    "clock_mhz": 25.0,
+    "transistors": 1185000
+  },
+  "timing": {
+    "typical_cpi": 2.0
+  },
+  "model_accuracy": {
+    "target_error_pct": 5.0,
+    "confidence": "high"
+  },
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 2.0,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "validation_passed": true,
+    "fully_validated": false,
+    "sysid_loss_before": 0.192213,
+    "sysid_loss_after": 9e-06,
+    "sysid_cpi_error_percent": 0.26,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-30"
+  }
+}

@@ -281,7 +281,7 @@
     "sysid_loss_after": 0.000426,
     "sysid_cpi_error_percent": 2.46,
     "sysid_converged": true,
-    "sysid_date": "2026-01-29"
+    "sysid_date": "2026-01-30"
   },
   "cross_validation": {
     "family": "ARM",

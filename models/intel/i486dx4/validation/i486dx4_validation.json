@@ -1,0 +1,35 @@
+{
+  "processor": "Intel 486DX4",
+  "year": 1994,
+  "specifications": {
+    "data_width_bits": 32,
+    "address_width_bits": 32,
+    "clock_mhz": 100.0,
+    "transistors": 1600000
+  },
+  "timing": {
+    "typical_cpi": 1.8
+  },
+  "model_accuracy": {
+    "target_error_pct": 5.0,
+    "confidence": "high"
+  },
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 1.8,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "validation_passed": true,
+    "fully_validated": false,
+    "sysid_loss_before": 0.045065,
+    "sysid_loss_after": 2.1e-05,
+    "sysid_cpi_error_percent": 0.49,
+    "sysid_converged": false,
+    "sysid_date": "2026-01-30"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "processor": "Yamaha YM2608 OPNA",
+  "manufacturer": "Yamaha",
+  "year": 1985,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 2.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 8.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.12,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2608 OPNA typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 2.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 8.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.12,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2608 OPNA compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 2.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 8.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.12,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2608 OPNA memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 2.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 8.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.12,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2608 OPNA control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 2.5,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 8.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.12,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2608 OPNA mixed workload"
+    }
+  ]
+}

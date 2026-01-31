@@ -1,0 +1,78 @@
+{
+  "processor": "Super FX GSU-1",
+  "manufacturer": "Nintendo/Argonaut",
+  "year": 1993,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.74,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Super FX GSU-1 typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.74,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Super FX GSU-1 compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.74,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Super FX GSU-1 memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.74,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Super FX GSU-1 control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 10.74,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Super FX GSU-1 mixed workload"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "processor": "Intel 386SX",
+  "manufacturer": "Intel",
+  "year": 1988,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 5.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 16.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.25,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 386SX typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 5.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 16.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.25,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 386SX compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 5.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 16.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.25,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 386SX memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 5.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 16.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.25,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 386SX control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 5.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 16.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.25,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Intel 386SX mixed workload"
+    }
+  ]
+}

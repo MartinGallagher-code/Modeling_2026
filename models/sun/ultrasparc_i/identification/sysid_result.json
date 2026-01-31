@@ -2,39 +2,41 @@
   "processor": "ultrasparc_i",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": 50,
-  "loss_before": 0.007714,
-  "loss_after": 0.0001,
+  "iterations": 165,
+  "loss_before": 0.000403,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.54,
-    "cor.load": -0.54,
-    "cor.store": -0.54,
-    "cor.branch": -0.54,
-    "cor.multiply": -0.54,
-    "cor.divide": -0.54
+    "cor.alu": 0.128533,
+    "cor.branch": -0.390901,
+    "cor.divide": -6.793727,
+    "cor.load": -2.232907,
+    "cor.multiply": -4.988072,
+    "cor.store": 2.18228
   },
   "residuals_before": {
-    "typical": 0.7714,
-    "compute": 1.3571,
-    "memory": 0.7714,
-    "control": 0.7714,
-    "mixed": 1.2143
+    "typical": -0.0318,
+    "compute": 0.0054,
+    "memory": -0.0007,
+    "control": -0.0008,
+    "mixed": 0.0312
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.5857,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": 0.4429
+    "typical": -0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
+    "cache.l2_hit_rate",
     "cor.alu",
-    "cor.load",
-    "cor.store",
     "cor.branch",
+    "cor.divide",
+    "cor.load",
     "cor.multiply",
-    "cor.divide"
+    "cor.store"
   ]
 }

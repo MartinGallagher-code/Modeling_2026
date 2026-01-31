@@ -1,6 +1,6 @@
 {
   "processor": "rca1805",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
   "iterations": 13,
   "loss_before": 0.0,
@@ -9,10 +9,10 @@
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
     "cor.branch": -1.032936,
-    "cor.call_return": -2.114987,
+    "cor.call_return": -2.114986,
     "cor.immediate": 0.694733,
     "cor.memory_read": -1.669058,
-    "cor.memory_write": -2.677445,
+    "cor.memory_write": -2.677444,
     "cor.register_ops": 1.681232
   },
   "residuals_before": {

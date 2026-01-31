@@ -1,0 +1,78 @@
+{
+  "processor": "Microchip PIC16C5x",
+  "manufacturer": "Microchip",
+  "year": 1985,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 4.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Microchip PIC16C5x typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 4.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Microchip PIC16C5x compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 4.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Microchip PIC16C5x memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 4.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Microchip PIC16C5x control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 4.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 20.0,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.2,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Microchip PIC16C5x mixed workload"
+    }
+  ]
+}

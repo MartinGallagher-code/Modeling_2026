@@ -1,0 +1,40 @@
+{
+  "processor": "am7990",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 42,
+  "loss_before": 0.20488,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.register": 3.0,
+    "cor.dma": -0.0,
+    "cor.packet": -1.636364,
+    "cor.crc": 1.0,
+    "cor.memory": 1.0,
+    "cor.control": -1.363636
+  },
+  "residuals_before": {
+    "typical": -0.28,
+    "compute": -0.76,
+    "memory": -0.4,
+    "control": -0.4,
+    "mixed": -0.22
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0,
+    "mixed": -0.0
+  },
+  "free_parameters": [
+    "cor.control",
+    "cor.crc",
+    "cor.dma",
+    "cor.memory",
+    "cor.packet",
+    "cor.register"
+  ]
+}

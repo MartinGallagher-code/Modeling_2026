@@ -1,40 +1,41 @@
 {
   "processor": "sgs_d950",
   "date": "2026-01-30",
-  "converged": true,
-  "iterations": 50,
-  "loss_before": 0.001429,
-  "loss_after": 0.0001,
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.mac": 0.2,
-    "cor.alu": 0.2,
-    "cor.load": 0.2,
-    "cor.store": 0.2,
-    "cor.branch": 0.2,
-    "cor.special": 0.2
+    "cor.alu": 0.301242,
+    "cor.branch": -0.698758,
+    "cor.load": 2.206389,
+    "cor.mac": 0.301243,
+    "cor.special": -1.698756,
+    "cor.store": -1.743903
   },
   "residuals_before": {
-    "typical": -0.1429,
-    "compute": -0.1786,
-    "memory": -0.1429,
-    "control": 0.0357,
-    "mixed": -0.0714
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0357,
+    "typical": -0.0,
+    "compute": 0.0,
     "memory": 0.0,
-    "control": 0.1786,
-    "mixed": 0.0714
+    "control": 0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
-    "cor.mac",
+    "cache.l1_hit_rate",
     "cor.alu",
-    "cor.load",
-    "cor.store",
     "cor.branch",
-    "cor.special"
+    "cor.load",
+    "cor.mac",
+    "cor.special",
+    "cor.store"
   ]
 }

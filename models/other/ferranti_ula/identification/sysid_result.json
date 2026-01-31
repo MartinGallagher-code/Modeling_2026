@@ -1,17 +1,17 @@
 {
   "processor": "ferranti_ula",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 15,
+  "iterations": 17,
   "loss_before": 0.096668,
   "loss_after": 0.096668,
   "cpi_error_percent": 0.82,
-  "message": "`ftol` termination condition is satisfied.",
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.contention": 0.022613,
-    "cor.io_decode": -0.083145,
-    "cor.memory_ctrl": 0.022613,
-    "cor.video_gen": -0.083145
+    "cor.contention": 0.027179,
+    "cor.io_decode": -0.085936,
+    "cor.memory_ctrl": 0.02642,
+    "cor.video_gen": -0.085936
   },
   "residuals_before": {
     "typical": -0.0408,

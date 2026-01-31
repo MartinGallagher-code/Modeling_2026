@@ -1,19 +1,19 @@
 {
   "processor": "we32000",
-  "date": "2026-01-29",
-  "converged": true,
-  "iterations": 10,
+  "date": "2026-01-30",
+  "converged": false,
+  "iterations": 200,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.branch": 3.442257,
-    "cor.call_return": -4.999954,
-    "cor.immediate": -4.998023,
-    "cor.memory_read": 1.930279,
-    "cor.memory_write": -4.977015,
-    "cor.register_ops": 3.168212
+    "cor.branch": 3.442438,
+    "cor.call_return": -5.000225,
+    "cor.immediate": -4.99804,
+    "cor.memory_read": 1.930287,
+    "cor.memory_write": -4.977022,
+    "cor.register_ops": 3.16822
   },
   "residuals_before": {
     "typical": 0.0,

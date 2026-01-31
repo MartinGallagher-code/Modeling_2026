@@ -396,7 +396,10 @@
       "data_transfer": 3.1759,
       "memory": 1.0108,
       "stack": -1.4258
-    }
+    },
+    "sysid_loss_before": 0.0,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0
   },
   "cross_validation": {
     "method": "Instruction timing analysis with realistic program mix",

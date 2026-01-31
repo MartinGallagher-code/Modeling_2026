@@ -1,40 +1,41 @@
 {
   "processor": "sparclite",
   "date": "2026-01-30",
-  "converged": true,
-  "iterations": 50,
-  "loss_before": 0.002875,
-  "loss_after": 0.0001,
-  "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "converged": false,
+  "iterations": 200,
+  "loss_before": 0.000267,
+  "loss_after": 0.000145,
+  "cpi_error_percent": 1.36,
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": -0.46,
-    "cor.load": -0.46,
-    "cor.store": -0.46,
-    "cor.branch": -0.46,
-    "cor.multiply": -0.46,
-    "cor.divide": -0.46
+    "cor.alu": 0.823831,
+    "cor.branch": -0.443314,
+    "cor.divide": -14.299919,
+    "cor.load": -3.592233,
+    "cor.multiply": -5.0,
+    "cor.store": 0.619922
   },
   "residuals_before": {
-    "typical": 0.2875,
-    "compute": 0.6562,
-    "memory": 0.3812,
-    "control": 0.35,
-    "mixed": 0.6562
+    "typical": -0.0297,
+    "compute": 0.0164,
+    "memory": 0.0126,
+    "control": 0.0046,
+    "mixed": -0.0027
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": 0.3688,
-    "memory": 0.0938,
-    "control": 0.0625,
-    "mixed": 0.3688
+    "typical": -0.0218,
+    "compute": 0.0121,
+    "memory": 0.0093,
+    "control": 0.0034,
+    "mixed": -0.002
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
     "cor.alu",
-    "cor.load",
-    "cor.store",
     "cor.branch",
+    "cor.divide",
+    "cor.load",
     "cor.multiply",
-    "cor.divide"
+    "cor.store"
   ]
 }

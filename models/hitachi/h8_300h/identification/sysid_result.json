@@ -1,0 +1,40 @@
+{
+  "processor": "h8_300h",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 44,
+  "loss_before": 4.4865,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
+  "corrections": {
+    "cor.alu": 1.0,
+    "cor.memory": 0.0,
+    "cor.branch": -1e-06,
+    "cor.multiply": -3.0,
+    "cor.divide": -9.0,
+    "cor.bitop": 1e-06
+  },
+  "residuals_before": {
+    "typical": 1.89,
+    "compute": 1.38,
+    "memory": 2.1,
+    "control": 3.18,
+    "mixed": 1.56
+  },
+  "residuals_after": {
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": 0.0
+  },
+  "free_parameters": [
+    "cor.alu",
+    "cor.bitop",
+    "cor.branch",
+    "cor.divide",
+    "cor.memory",
+    "cor.multiply"
+  ]
+}

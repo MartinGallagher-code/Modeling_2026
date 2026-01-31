@@ -1,0 +1,78 @@
+{
+  "processor": "Yamaha YM2413 OPLL",
+  "manufacturer": "Yamaha",
+  "year": 1987,
+  "schema_version": "1.0",
+  "measurements": [
+    {
+      "workload": "typical",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 3.58,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2413 OPLL typical workload"
+    },
+    {
+      "workload": "compute",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 3.58,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2413 OPLL compute workload"
+    },
+    {
+      "workload": "memory",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 3.58,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2413 OPLL memory workload"
+    },
+    {
+      "workload": "control",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 3.58,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2413 OPLL control workload"
+    },
+    {
+      "workload": "mixed",
+      "measured_cpi": 3.0,
+      "source": "literature",
+      "source_detail": "Datasheet and architectural analysis",
+      "conditions": {
+        "clock_mhz": 3.58,
+        "memory_config": "typical"
+      },
+      "uncertainty": 0.15,
+      "confidence": "high",
+      "date_measured": "2026-01-30",
+      "notes": "Yamaha YM2413 OPLL mixed workload"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "processor": "es5503",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": false,
-  "iterations": 32,
+  "iterations": 17,
   "loss_before": 0.395301,
   "loss_after": 0.395301,
   "cpi_error_percent": 0.02,

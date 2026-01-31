@@ -1,17 +1,17 @@
 {
   "processor": "staran",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 2,
+  "iterations": 6,
   "loss_before": 0.001659,
-  "loss_after": 0.001659,
-  "cpi_error_percent": 0.75,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.bit_op": 1.036424,
-    "cor.control": 5.0,
-    "cor.search": -4.942926,
-    "cor.word_op": 5.0
+    "cor.bit_op": 1.818028,
+    "cor.control": 5.833065,
+    "cor.search": -6.273106,
+    "cor.word_op": 6.233065
   },
   "residuals_before": {
     "typical": 0.0598,
@@ -20,10 +20,10 @@
     "control": -0.0133
   },
   "residuals_after": {
-    "typical": 0.0598,
-    "compute": -0.0065,
-    "memory": -0.0533,
-    "control": -0.0133
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": 0.0,
+    "control": -0.0
   },
   "free_parameters": [
     "cor.bit_op",

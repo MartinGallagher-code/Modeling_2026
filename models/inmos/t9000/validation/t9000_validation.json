@@ -1,0 +1,35 @@
+{
+  "processor": "INMOS T9000",
+  "year": 1994,
+  "specifications": {
+    "data_width_bits": 32,
+    "address_width_bits": 32,
+    "clock_mhz": 50.0,
+    "transistors": 2000000
+  },
+  "timing": {
+    "typical_cpi": 1.0
+  },
+  "model_accuracy": {
+    "target_error_pct": 5.0,
+    "confidence": "high"
+  },
+  "validation_date": "2026-01-30",
+  "accuracy": {
+    "expected_cpi": 1.0,
+    "validated_workloads": [
+      "typical",
+      "compute",
+      "memory",
+      "control",
+      "mixed"
+    ],
+    "validation_passed": true,
+    "fully_validated": false,
+    "sysid_loss_before": 0.028364,
+    "sysid_loss_after": 0.0,
+    "sysid_cpi_error_percent": 0.0,
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30"
+  }
+}

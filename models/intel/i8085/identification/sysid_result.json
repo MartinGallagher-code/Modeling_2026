@@ -1,12 +1,12 @@
 {
   "processor": "i8085",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
-  "iterations": 3,
+  "iterations": 7,
   "loss_before": 0.000367,
   "loss_after": 0.000367,
   "cpi_error_percent": 0.34,
-  "message": "`ftol` termination condition is satisfied.",
+  "message": "`xtol` termination condition is satisfied.",
   "corrections": {
     "cor.alu": -1.567857,
     "cor.control": -1.559078,

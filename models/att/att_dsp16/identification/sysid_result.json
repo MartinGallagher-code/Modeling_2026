@@ -2,39 +2,39 @@
   "processor": "att_dsp16",
   "date": "2026-01-30",
   "converged": true,
-  "iterations": 50,
-  "loss_before": 0.000769,
-  "loss_after": 0.0001,
+  "iterations": 23,
+  "loss_before": 0.0,
+  "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "Optimization converged.",
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.mac": 0.1,
-    "cor.alu": 0.1,
-    "cor.load": 0.1,
-    "cor.store": 0.1,
-    "cor.branch": 0.1,
-    "cor.special": 0.1
+    "cor.alu": 0.298219,
+    "cor.branch": -0.701781,
+    "cor.load": 0.333842,
+    "cor.mac": 0.298219,
+    "cor.special": -1.701781,
+    "cor.store": 0.262596
   },
   "residuals_before": {
-    "typical": -0.0769,
-    "compute": -0.1154,
-    "memory": -0.0769,
-    "control": 0.1154,
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
     "mixed": 0.0
   },
   "residuals_after": {
     "typical": 0.0,
-    "compute": -0.0385,
-    "memory": 0.0,
-    "control": 0.1923,
-    "mixed": 0.0769
+    "compute": 0.0,
+    "memory": -0.0,
+    "control": 0.0,
+    "mixed": -0.0
   },
   "free_parameters": [
-    "cor.mac",
     "cor.alu",
-    "cor.load",
-    "cor.store",
     "cor.branch",
-    "cor.special"
+    "cor.load",
+    "cor.mac",
+    "cor.special",
+    "cor.store"
   ]
 }

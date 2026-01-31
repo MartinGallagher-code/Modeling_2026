@@ -1,30 +1,30 @@
 {
   "processor": "sequoia_s16",
-  "date": "2026-01-29",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.438726,
-  "loss_after": 5.8e-05,
-  "cpi_error_percent": 0.25,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "date": "2026-01-30",
+  "converged": true,
+  "iterations": 127,
+  "loss_before": 5.8e-05,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 2.095285,
-    "cor.memory": -0.714327,
-    "cor.control": 0.755717,
-    "cor.compare_swap": -4.995317,
-    "cor.checkpoint": -4.940763
+    "cor.alu": 2.068811,
+    "cor.checkpoint": -5.278273,
+    "cor.compare_swap": -5.108379,
+    "cor.control": 0.966869,
+    "cor.memory": -0.661771
   },
   "residuals_before": {
-    "typical": 0.002,
-    "compute": -0.18,
-    "memory": 1.0,
-    "control": 0.85
-  },
-  "residuals_after": {
     "typical": -0.0127,
     "compute": 0.007,
     "memory": 0.0033,
     "control": 0.003
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": -0.0,
+    "memory": -0.0,
+    "control": -0.0
   },
   "free_parameters": [
     "cor.alu",

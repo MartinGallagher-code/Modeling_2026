@@ -1,17 +1,17 @@
 {
   "processor": "i80188",
-  "date": "2026-01-29",
+  "date": "2026-01-30",
   "converged": true,
   "iterations": 4,
   "loss_before": 0.001072,
-  "loss_after": 0.001072,
-  "cpi_error_percent": 0.81,
-  "message": "`ftol` termination condition is satisfied.",
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 2.112338,
-    "cor.control": -5.0,
-    "cor.data_transfer": 1.677701,
-    "cor.memory": -2.300454
+    "cor.alu": 2.0,
+    "cor.control": -5.3,
+    "cor.data_transfer": 2.0,
+    "cor.memory": -2.3
   },
   "residuals_before": {
     "typical": -0.0342,
@@ -21,11 +21,11 @@
     "mixed": -0.0181
   },
   "residuals_after": {
-    "typical": -0.0342,
-    "compute": 0.0055,
-    "memory": 0.0028,
-    "control": 0.0618,
-    "mixed": -0.0181
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0,
+    "mixed": -0.0
   },
   "free_parameters": [
     "cor.alu",

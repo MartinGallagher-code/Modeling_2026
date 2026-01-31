@@ -8,7 +8,10 @@
     "technology": "p-channel MOS"
   },
   "timing": {
-    "cycles_per_instruction_range": [8, 14],
+    "cycles_per_instruction_range": [
+      8,
+      14
+    ],
     "typical_cpi": 10.24
   },
   "validated_performance": {
@@ -46,9 +49,9 @@
   "instruction_mix": {
     "register_ops": 0.25,
     "immediate": 0.15,
-    "memory_read": 0.20,
+    "memory_read": 0.2,
     "memory_write": 0.12,
-    "branch": 0.10,
+    "branch": 0.1,
     "call_return": 0.08,
     "stack": 0.05,
     "io": 0.05

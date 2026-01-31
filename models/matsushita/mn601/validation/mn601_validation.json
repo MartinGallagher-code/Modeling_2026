@@ -8,7 +8,10 @@
     "technology": "single-chip Nova"
   },
   "timing": {
-    "cycles_per_instruction_range": [3, 6],
+    "cycles_per_instruction_range": [
+      3,
+      6
+    ],
     "typical_cpi": 4.0
   },
   "validated_performance": {
@@ -39,16 +42,16 @@
     "validation_date": "2026-01-30",
     "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
-    "sysid_cpi_error_percent": 0.5,
+    "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
     "sysid_date": "2026-01-30"
   },
   "instruction_mix": {
-    "alu_ops": 0.30,
+    "alu_ops": 0.3,
     "memory_read": 0.18,
     "memory_write": 0.15,
     "jump": 0.12,
-    "io": 0.10,
+    "io": 0.1,
     "skip": 0.08,
     "shift": 0.04,
     "stack": 0.03

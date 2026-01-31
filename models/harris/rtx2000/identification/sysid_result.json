@@ -1,23 +1,23 @@
 {
   "processor": "rtx2000",
-  "date": "2026-01-29",
-  "converged": true,
-  "iterations": 1,
+  "date": "2026-01-30",
+  "converged": false,
+  "iterations": 200,
   "loss_before": 0.0,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
+  "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": 0.1,
-    "cor.branch": -0.4,
-    "cor.literals": 0.1,
-    "cor.memory": -0.4,
+    "cor.alu": 0.100001,
+    "cor.branch": -0.399999,
+    "cor.literals": 0.099992,
+    "cor.memory": -0.548111,
     "cor.stack_ops": 0.1
   },
   "residuals_before": {
     "typical": 0.0,
     "compute": 0.0,
-    "memory": 0.0,
+    "memory": 0.0001,
     "control": 0.0,
     "mixed": 0.0
   },
@@ -26,9 +26,10 @@
     "compute": 0.0,
     "memory": 0.0,
     "control": 0.0,
-    "mixed": 0.0
+    "mixed": -0.0
   },
   "free_parameters": [
+    "cache.l1_hit_rate",
     "cor.alu",
     "cor.branch",
     "cor.literals",

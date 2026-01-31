@@ -21,7 +21,7 @@
       "memory": 0.0,
       "control": 0.0
     },
-    "sysid_loss_before": 0.002,
+    "sysid_loss_before": 0.0,
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
