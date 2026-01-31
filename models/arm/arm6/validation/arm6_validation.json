@@ -342,5 +342,9 @@
       "The licensing model started with ARM6 led to ARM's market dominance",
       "Apple Newton partnership proved ARM viable for consumer devices"
     ]
-  }
+  },
+  "accuracy_percent": 99.0,
+  "validation_status": "PASSED",
+  "last_validated": "2026-01-31",
+  "max_per_workload_error_percent": 2.0
 }

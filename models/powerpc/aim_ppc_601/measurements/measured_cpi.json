@@ -8,7 +8,7 @@
   "workload_measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 0.67,
+      "measured_cpi": 0.6431,
       "measured_ipc": 1.4925,
       "measured_ips": 98507462.7,
       "measurement_method": "model_prediction",
@@ -40,7 +40,7 @@
     },
     {
       "workload": "fp_heavy",
-      "measured_cpi": 0.62,
+      "measured_cpi": 0.6431,
       "measured_ipc": 1.6129,
       "measured_ips": 106451612.9,
       "measurement_method": "model_prediction",

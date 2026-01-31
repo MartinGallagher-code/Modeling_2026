@@ -1,32 +1,15 @@
 {
-  "processor": "att_dsp1",
-  "date": "2026-01-30",
   "converged": true,
   "iterations": 3,
-  "loss_before": 0.003801,
-  "loss_after": 0.003801,
-  "cpi_error_percent": 0.85,
-  "message": "`ftol` termination condition is satisfied.",
+  "loss_before": 1.1783089799933044e-09,
+  "loss_after": 4.1716507142003174e-10,
+  "cpi_error_percent": 0.0002694038328500199,
   "corrections": {
-    "cor.alu": -5.0,
-    "cor.control": 0.636167,
-    "cor.data_move": 3.632504,
-    "cor.io": -0.078594,
-    "cor.mac": 0.710743
-  },
-  "residuals_before": {
-    "typical": -0.0341,
-    "compute": -0.0332,
-    "control": -0.0096,
-    "io_heavy": -0.0564,
-    "mixed": 0.116
-  },
-  "residuals_after": {
-    "typical": -0.0341,
-    "compute": -0.0332,
-    "control": -0.0096,
-    "io_heavy": -0.0564,
-    "mixed": 0.116
+    "cor.alu": -4.999979245996282,
+    "cor.control": 0.6361001458653929,
+    "cor.data_move": 3.631935341952148,
+    "cor.io": -0.07837398811442729,
+    "cor.mac": 0.7111457913651774
   },
   "free_parameters": [
     "cor.alu",
@@ -34,5 +17,19 @@
     "cor.data_move",
     "cor.io",
     "cor.mac"
-  ]
+  ],
+  "residuals_before": {
+    "typical": 2.250000000536545e-06,
+    "compute": -4.3599999999699435e-05,
+    "control": 3.609999999998337e-05,
+    "io_heavy": -4.5799999999651675e-05,
+    "mixed": 2.418000000048437e-05
+  },
+  "residuals_after": {
+    "typical": -1.0684286606998938e-05,
+    "compute": -1.0393656741047863e-05,
+    "control": -3.039047840047715e-06,
+    "io_heavy": -1.760294971120402e-05,
+    "mixed": 3.930068225921346e-05
+  }
 }

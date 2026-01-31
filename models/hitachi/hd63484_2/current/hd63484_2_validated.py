@@ -188,12 +188,12 @@ class Hd634842Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'draw': 0.650000,
-            'pixel': 0.650000,
-            'register': 0.650000,
-            'memory': 0.650000,
-            'branch': 0.650000,
-            'blit': 0.650000,
+            'blit': 0.65,
+            'branch': 0.65,
+            'draw': 0.65,
+            'memory': 0.65,
+            'pixel': 0.65,
+            'register': 0.65,
         }
 
         # No cache on this processor

@@ -155,10 +155,10 @@ class Arm6Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.2902094293169388,
-            'branch': 0.07454268090155833,
-            'load': 2.1038508166733205,
-            'store': -3.1367098591218765,
+            'alu': -0.2902378482455488,
+            'branch': 0.07445496047900921,
+            'load': 2.1029011196337626,
+            'store': -3.1353643103173092,
         }
 
         # Cache configuration for memory hierarchy modeling

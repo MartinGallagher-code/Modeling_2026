@@ -201,11 +201,11 @@ class AttDsp1Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -5.000000,
-            'control': 0.636167,
-            'data_move': 3.632505,
-            'io': -0.078594,
-            'mac': 0.710743
+            'alu': -4.999979245996282,
+            'control': 0.6361001458653929,
+            'data_move': 3.631935341952148,
+            'io': -0.07837398811442729,
+            'mac': 0.7111457913651774,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

@@ -1,30 +1,15 @@
 {
-  "processor": "dec_t11",
-  "date": "2026-01-30",
-  "converged": false,
-  "iterations": 200,
-  "loss_before": 0.008317,
-  "loss_after": 0.008314,
-  "cpi_error_percent": 0.0,
-  "message": "The maximum number of function evaluations is exceeded.",
+  "converged": true,
+  "iterations": 29,
+  "loss_before": 1.3117825389735645e-09,
+  "loss_after": 4.0596641967374566e-14,
+  "cpi_error_percent": 1.91991498953168e-06,
   "corrections": {
-    "cor.alu": -5.0,
-    "cor.control": 2.953527,
-    "cor.data_transfer": 5.0,
-    "cor.memory": 0.507715,
-    "cor.stack": -4.682674
-  },
-  "residuals_before": {
-    "typical": 0.0004,
-    "compute": 0.0932,
-    "memory": -0.1568,
-    "control": 0.0
-  },
-  "residuals_after": {
-    "typical": 0.0003,
-    "compute": 0.0933,
-    "memory": -0.1567,
-    "control": 0.0
+    "cor.alu": -4.999999999999999,
+    "cor.control": 2.954398952541056,
+    "cor.data_transfer": 4.999996033355389,
+    "cor.memory": 0.48113186386476414,
+    "cor.stack": -4.6475275814243435
   },
   "free_parameters": [
     "cor.alu",
@@ -32,5 +17,17 @@
     "cor.data_transfer",
     "cor.memory",
     "cor.stack"
-  ]
+  ],
+  "residuals_before": {
+    "typical": 1.715800000035017e-05,
+    "compute": 4.9757999999400226e-05,
+    "memory": 4.9757999999400226e-05,
+    "control": 1.008000000801701e-06
+  },
+  "residuals_after": {
+    "typical": 1.1520257903185893e-07,
+    "compute": 1.3349415706187528e-07,
+    "memory": -3.6233641953486995e-07,
+    "control": 2.561789003152626e-09
+  }
 }

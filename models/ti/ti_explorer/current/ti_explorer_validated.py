@@ -203,12 +203,12 @@ class TiExplorerModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'car_cdr': -0.479599,
-            'cons': -1.614048,
-            'eval': -0.519192,
-            'gc': -0.207920,
-            'memory': 1.107823,
-            'type_check': 1.139669
+            'car_cdr': -0.47963593911102337,
+            'cons': -1.6140580968626617,
+            'eval': -0.519142708971353,
+            'gc': -0.20802336957819723,
+            'memory': 1.107788562548515,
+            'type_check': 1.139687345764705,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

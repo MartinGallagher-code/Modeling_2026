@@ -8,7 +8,7 @@
   "workload_measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 6.0,
+      "measured_cpi": 6.0004,
       "measured_ipc": 0.1667,
       "measured_ips": 416666.7,
       "measurement_method": "model_prediction",
@@ -16,7 +16,7 @@
     },
     {
       "workload": "compute",
-      "measured_cpi": 5.1,
+      "measured_cpi": 5.1932,
       "measured_ipc": 0.1961,
       "measured_ips": 490196.1,
       "measurement_method": "model_prediction",
@@ -24,7 +24,7 @@
     },
     {
       "workload": "memory",
-      "measured_cpi": 6.6,
+      "measured_cpi": 6.4432,
       "measured_ipc": 0.1515,
       "measured_ips": 378787.9,
       "measurement_method": "model_prediction",

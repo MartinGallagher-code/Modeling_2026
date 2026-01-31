@@ -204,12 +204,12 @@ class SymbolicsCadrModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'car_cdr': -0.592365,
-            'cons': -0.778561,
-            'eval': -1.906034,
-            'gc': -4.633551,
-            'memory': 2.801913,
-            'type_check': 1.887585
+            'car_cdr': -0.5923327307746936,
+            'cons': -0.7785377558704388,
+            'eval': -1.9060539661287315,
+            'gc': -4.63364560095979,
+            'memory': 2.8019459943375935,
+            'type_check': 1.8875647836891554,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

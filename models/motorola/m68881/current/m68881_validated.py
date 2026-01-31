@@ -168,12 +168,12 @@ class M68881Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'fp_add': -0.454596,
-            'fp_div': -12.500000,
-            'fp_move': 4.255259,
-            'fp_mul': 5.000000,
-            'fp_sqrt': -17.500000,
-            'fp_trig': -27.500000
+            'fp_add': -0.4535370057497912,
+            'fp_div': -12.506350602183131,
+            'fp_move': 4.255514715205455,
+            'fp_mul': 5.000264062883197,
+            'fp_sqrt': -17.496214384704693,
+            'fp_trig': -27.500705605604786,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

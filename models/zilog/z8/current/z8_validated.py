@@ -204,12 +204,12 @@ class Z8Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'call_return': 10.000000,
-            'control': -1.485123,
-            'immediate': -4.999827,
-            'memory': -1.603573,
-            'register_ops': 2.372060,
-            'stack': 6.999913
+            'call_return': 10.003474798378209,
+            'control': -1.4845134670845923,
+            'immediate': -5.000089140185705,
+            'memory': -1.6025158148548597,
+            'register_ops': 2.3722292378496403,
+            'stack': 6.992726819953314,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

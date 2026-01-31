@@ -188,12 +188,12 @@ class IitAgxModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'draw': 0.250000,
-            'pixel': 0.250000,
-            'register': 0.250000,
-            'memory': 0.250000,
-            'branch': 0.250000,
-            'blit': 0.250000,
+            'blit': 0.25,
+            'branch': 0.25,
+            'draw': 0.25,
+            'memory': 0.25,
+            'pixel': 0.25,
+            'register': 0.25,
         }
 
         # No cache on this processor

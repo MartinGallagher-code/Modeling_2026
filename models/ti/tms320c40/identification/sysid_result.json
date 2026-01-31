@@ -1,33 +1,16 @@
 {
-  "processor": "tms320c40",
-  "date": "2026-01-30",
   "converged": true,
-  "iterations": 31,
-  "loss_before": 0.001,
-  "loss_after": 0.0,
+  "iterations": 1,
+  "loss_before": 1.9721522630525296e-32,
+  "loss_after": 1.9721522630525296e-32,
   "cpi_error_percent": 0.0,
-  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.mac": 0.128861,
-    "cor.alu": 0.128861,
-    "cor.load": -0.448356,
-    "cor.store": 0.706077,
-    "cor.branch": 0.128861,
-    "cor.special": -0.871139
-  },
-  "residuals_before": {
-    "typical": 0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.05,
-    "mixed": 0.05
-  },
-  "residuals_after": {
-    "typical": -0.0,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "mixed": 0.0
+    "cor.mac": 0.05,
+    "cor.alu": 0.05,
+    "cor.load": 0.05,
+    "cor.store": 0.05,
+    "cor.branch": 0.05,
+    "cor.special": 0.05
   },
   "free_parameters": [
     "cor.alu",
@@ -36,5 +19,19 @@
     "cor.mac",
     "cor.special",
     "cor.store"
-  ]
+  ],
+  "residuals_before": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 2.220446049250313e-16,
+    "mixed": 2.220446049250313e-16
+  },
+  "residuals_after": {
+    "typical": 0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 2.220446049250313e-16,
+    "mixed": 2.220446049250313e-16
+  }
 }

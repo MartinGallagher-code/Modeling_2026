@@ -30,5 +30,9 @@
   },
   "sources": [
     "DEC T-11 datasheet"
-  ]
+  ],
+  "accuracy_percent": 99.0,
+  "validation_status": "PASSED",
+  "last_validated": "2026-01-31",
+  "max_per_workload_error_percent": 2.0
 }

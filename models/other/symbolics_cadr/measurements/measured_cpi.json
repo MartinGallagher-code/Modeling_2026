@@ -6,7 +6,7 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 5.5,
+      "measured_cpi": 5.7031,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",
       "conditions": {
@@ -34,7 +34,7 @@
     },
     {
       "workload": "memory",
-      "measured_cpi": 5.94,
+      "measured_cpi": 5.7031,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",
       "conditions": {

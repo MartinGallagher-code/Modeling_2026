@@ -195,14 +195,14 @@ class HpPaRiscModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.435762783399857,
-            'branch': -0.2032009478237062,
-            'divide': 4.999964827213707,
-            'fp_complex': -1.3697286996719584,
-            'fp_ops': -1.3160263767185678,
-            'load': 3.033101877520287,
-            'multiply': -0.7791404688919025,
-            'store': -4.9999995690619246,
+            'alu': -0.4353077733927806,
+            'branch': -0.20325766655959338,
+            'divide': 4.999999989653222,
+            'fp_complex': -1.3682626499231871,
+            'fp_ops': -1.3171292307934475,
+            'load': 3.0329157072260244,
+            'multiply': -0.7814913910461547,
+            'store': -4.999999945061463,
         }
 
         # Cache configuration for memory hierarchy modeling

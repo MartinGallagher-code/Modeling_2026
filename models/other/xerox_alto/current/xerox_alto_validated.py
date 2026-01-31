@@ -205,12 +205,12 @@ class XeroxAltoModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.627786,
-            'control': -1.138760,
-            'disk': -0.414510,
-            'display': 0.911645,
-            'ethernet': 1.513624,
-            'memory': 2.548590
+            'alu': -0.627801199064871,
+            'control': -1.1388221224147317,
+            'disk': -0.4144905752895572,
+            'display': 0.9117056028985266,
+            'ethernet': 1.5137129223063768,
+            'memory': 2.5486428328336905,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

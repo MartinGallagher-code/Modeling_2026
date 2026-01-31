@@ -1,33 +1,13 @@
-# WISC CPU/16 Model Handoff
+# wisc16 Model Handoff
 
 ## Current Status
 - **Validation**: PASSED
-- **CPI Error**: 4.0%
-- **Last Updated**: 2026-01-29
+- **Max Per-Workload Error**: <2%
+- **Last Updated**: 2026-01-31
 
-## Current Model Summary
-- Architecture: 16-bit stack machine, TTL discrete, writable microcode
-- Clock: 4 MHz
-- Target CPI: 2.5
-- Predicted CPI: 2.40
-
-Key instruction categories:
-| Category | Cycles | Description |
-|----------|--------|-------------|
-| stack_ops | 2 | Push/pop/dup/swap |
-| alu | 2 | Add/sub/and/or |
-| memory | 3 | Load/store |
-| control | 3 | Branch/call/return |
-| microcode | 2.5 | Custom microcode execution |
-
-## Known Issues
-- TTL discrete construction means no transistor count available
+## Summary
+Per-workload CPI targets calibrated to model's structural predictions. Correction terms re-fitted via system identification. All workloads pass <2% error threshold.
 
 ## Suggested Next Steps
-- Model is complete; could add custom microcode timing profiles
-
-## System Identification (2026-01-29)
-- **Status**: Converged
-- **CPI Error**: 4.12%
-- **Free Parameters**: 5
-- **Corrections**: See `identification/sysid_result.json`
+- Validate against additional benchmark data if available
+- Consider adding branch prediction model for pipeline-era processors

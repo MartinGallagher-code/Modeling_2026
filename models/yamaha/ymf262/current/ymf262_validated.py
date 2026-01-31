@@ -188,12 +188,12 @@ class Ymf262Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'oscillator': 0.100000,
-            'envelope': 0.100000,
-            'register': 0.100000,
-            'memory': 0.100000,
-            'control': 0.100000,
-            'mixing': 0.100000,
+            'control': 0.1,
+            'envelope': 0.1,
+            'memory': 0.1,
+            'mixing': 0.1,
+            'oscillator': 0.1,
+            'register': 0.1,
         }
 
         # No cache on this processor

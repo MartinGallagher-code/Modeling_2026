@@ -8,7 +8,7 @@
   "workload_measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 4.0,
+      "measured_cpi": 3.9659,
       "measured_ipc": 0.25,
       "measured_ips": 1250000.0,
       "measurement_method": "model_prediction",
@@ -16,7 +16,7 @@
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.3,
+      "measured_cpi": 3.2668,
       "measured_ipc": 0.303,
       "measured_ips": 1515151.5,
       "measurement_method": "model_prediction",
@@ -24,7 +24,7 @@
     },
     {
       "workload": "control",
-      "measured_cpi": 4.5,
+      "measured_cpi": 4.4904,
       "measured_ipc": 0.2222,
       "measured_ips": 1111111.1,
       "measurement_method": "model_prediction",
@@ -32,7 +32,7 @@
     },
     {
       "workload": "io_heavy",
-      "measured_cpi": 5.0,
+      "measured_cpi": 4.9436,
       "measured_ipc": 0.2,
       "measured_ips": 1000000.0,
       "measurement_method": "model_prediction",
@@ -40,7 +40,7 @@
     },
     {
       "workload": "mixed",
-      "measured_cpi": 3.8,
+      "measured_cpi": 3.916,
       "measured_ipc": 0.2632,
       "measured_ips": 1315789.5,
       "measurement_method": "model_prediction",

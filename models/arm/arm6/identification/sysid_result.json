@@ -1,36 +1,14 @@
 {
-  "processor": "arm6",
-  "date": "2026-01-31",
   "converged": true,
-  "iterations": 17,
-  "loss_before": 0.000426,
-  "loss_after": 0.000426,
-  "cpi_error_percent": 2.4558,
-  "message": "`xtol` termination condition is satisfied.",
+  "iterations": 3,
+  "loss_before": 6.785617592654883e-10,
+  "loss_after": 1.325275321632219e-10,
+  "cpi_error_percent": 0.0013501164367416974,
   "corrections": {
-    "cor.alu": -0.290209,
-    "cor.branch": 0.074543,
-    "cor.load": 2.103851,
-    "cor.store": -3.13671
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.941767,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
-  },
-  "residuals_before": {
-    "typical": -0.0352,
-    "compute": 0.0042,
-    "memory": -0.0022,
-    "control": 0.0005,
-    "mixed": 0.0294
-  },
-  "residuals_after": {
-    "typical": -0.0351,
-    "compute": 0.0043,
-    "memory": -0.0021,
-    "control": 0.0006,
-    "mixed": 0.0295
+    "cor.alu": -0.2902378482455488,
+    "cor.branch": 0.07445496047900921,
+    "cor.load": 2.1029011196337626,
+    "cor.store": -3.1353643103173092
   },
   "free_parameters": [
     "cache.l1_hit_rate",
@@ -38,5 +16,24 @@
     "cor.branch",
     "cor.load",
     "cor.store"
-  ]
+  ],
+  "residuals_before": {
+    "typical": 8.342632925373294e-06,
+    "compute": 7.694265238500364e-06,
+    "memory": -2.1513033107156687e-05,
+    "control": 2.519766665565193e-05,
+    "mixed": 4.654325468078646e-05
+  },
+  "residuals_after": {
+    "typical": -1.8831424059673196e-05,
+    "compute": 2.420180114315329e-06,
+    "memory": -1.1783376780982735e-06,
+    "control": 3.2894032497843284e-07,
+    "mixed": 1.733958406346936e-05
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.9417873510892654,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0
+  }
 }

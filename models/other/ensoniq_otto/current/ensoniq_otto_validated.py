@@ -188,12 +188,12 @@ class EnsoniqOttoModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'oscillator': 0.200000,
-            'envelope': 0.200000,
-            'register': 0.200000,
-            'memory': 0.200000,
-            'control': 0.200000,
-            'mixing': 0.200000,
+            'control': 0.2,
+            'envelope': 0.2,
+            'memory': 0.2,
+            'mixing': 0.2,
+            'oscillator': 0.2,
+            'register': 0.2,
         }
 
         # No cache on this processor

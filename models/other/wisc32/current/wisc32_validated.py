@@ -202,11 +202,11 @@ class WISC32Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.22184015179344957,
-            'control': 0.320119163044078,
-            'memory': -0.14119062989357503,
-            'microcode': 0.3773727104151509,
-            'stack_ops': 0.19529711882912365,
+            'alu': -0.22171120638558686,
+            'control': 0.32003019015967976,
+            'memory': -0.14127937945621566,
+            'microcode': 0.3773739109891065,
+            'stack_ops': 0.19518643835732705,
         }
 
         # Cache configuration for memory hierarchy modeling

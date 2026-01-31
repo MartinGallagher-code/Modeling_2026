@@ -188,12 +188,12 @@ class Adsp21020Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'mac': 0.150000,
-            'alu': 0.150000,
-            'load': 0.150000,
-            'store': 0.150000,
-            'branch': 0.150000,
-            'special': 0.150000,
+            'alu': 0.15,
+            'branch': 0.15,
+            'load': 0.15,
+            'mac': 0.15,
+            'special': 0.15,
+            'store': 0.15,
         }
 
         # No cache on this processor

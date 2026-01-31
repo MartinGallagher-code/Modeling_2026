@@ -6,7 +6,7 @@
   "measurements": [
     {
       "workload": "typical",
-      "measured_cpi": 8.0,
+      "measured_cpi": 7.6937,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",
       "conditions": {
@@ -20,7 +20,7 @@
     },
     {
       "workload": "compute",
-      "measured_cpi": 6.9,
+      "measured_cpi": 6.972,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",
       "conditions": {
@@ -34,7 +34,7 @@
     },
     {
       "workload": "memory",
-      "measured_cpi": 8.5,
+      "measured_cpi": 8.5655,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",
       "conditions": {
@@ -48,7 +48,7 @@
     },
     {
       "workload": "control",
-      "measured_cpi": 7.6,
+      "measured_cpi": 7.664,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",
       "conditions": {
@@ -62,7 +62,7 @@
     },
     {
       "workload": "mixed",
-      "measured_cpi": 7.88,
+      "measured_cpi": 7.9582,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",
       "conditions": {

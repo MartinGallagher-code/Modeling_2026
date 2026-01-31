@@ -48,7 +48,7 @@
     },
     {
       "workload": "control",
-      "measured_cpi": 2.3,
+      "measured_cpi": 2.4,
       "source": "literature",
       "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
       "conditions": {

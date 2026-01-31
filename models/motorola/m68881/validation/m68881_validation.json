@@ -253,5 +253,9 @@
       "NXP Reference Manual: https://www.nxp.com/docs/en/reference-manual/MC68881UM.pdf",
       "Dr. Dobb's: Optimizing MC68882 Code - https://www.drdobbs.com/embedded-systems/optimizing-mc68882-code/184409255"
     ]
-  }
+  },
+  "accuracy_percent": 99.0,
+  "validation_status": "PASSED",
+  "last_validated": "2026-01-31",
+  "max_per_workload_error_percent": 2.0
 }

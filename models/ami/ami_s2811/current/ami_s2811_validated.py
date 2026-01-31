@@ -189,10 +189,10 @@ class AmiS2811Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 4.111915,
-            'control': -1.296823,
-            'memory': 0.309178,
-            'multiply': -3.507364
+            'alu': 4.111658367431694,
+            'control': -1.2968634650675286,
+            'memory': 0.3091364500999533,
+            'multiply': -3.507072710897491,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

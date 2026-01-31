@@ -1,35 +1,15 @@
 {
-  "processor": "wisc32",
-  "date": "2026-01-31",
   "converged": true,
-  "iterations": 6,
-  "loss_before": 0.00328,
-  "loss_after": 0.00328,
-  "cpi_error_percent": 4.1217,
-  "message": "`ftol` termination condition is satisfied.",
+  "iterations": 26,
+  "loss_before": 1.6145106536429246e-09,
+  "loss_after": 1.6117463673603374e-26,
+  "cpi_error_percent": 3.881302160618104e-12,
   "corrections": {
-    "cor.alu": -0.22184,
-    "cor.control": 0.320119,
-    "cor.memory": -0.141191,
-    "cor.microcode": 0.377373,
-    "cor.stack_ops": 0.195297
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.913009,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
-  },
-  "residuals_before": {
-    "typical": 0.0825,
-    "compute": 0.0001,
-    "memory": -0.0775,
-    "control": -0.0175
-  },
-  "residuals_after": {
-    "typical": 0.0824,
-    "compute": -0.0,
-    "memory": -0.0776,
-    "control": -0.0176
+    "cor.alu": -0.22171120638558686,
+    "cor.control": 0.32003019015967976,
+    "cor.memory": -0.14127937945621566,
+    "cor.microcode": 0.3773739109891065,
+    "cor.stack_ops": 0.19518643835732705
   },
   "free_parameters": [
     "cache.l1_hit_rate",
@@ -38,5 +18,22 @@
     "cor.memory",
     "cor.microcode",
     "cor.stack_ops"
-  ]
+  ],
+  "residuals_before": {
+    "typical": 4.611721978697858e-05,
+    "compute": 8.811851787804414e-06,
+    "memory": 4.611721978697858e-05,
+    "control": 4.611721978697858e-05
+  },
+  "residuals_after": {
+    "typical": 8.08242361927114e-14,
+    "compute": -2.1183055309847987e-13,
+    "memory": 8.08242361927114e-14,
+    "control": 8.08242361927114e-14
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.9130101240302431,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0
+  }
 }

@@ -1,40 +1,18 @@
 {
-  "processor": "aim_ppc_601",
-  "date": "2026-01-31",
   "converged": true,
-  "iterations": 7,
-  "loss_before": 0.000251,
-  "loss_after": 0.000251,
-  "cpi_error_percent": 4.0202,
-  "message": "`ftol` termination condition is satisfied.",
+  "iterations": 122,
+  "loss_before": 1.1301720265600129e-09,
+  "loss_after": 7.765409703844497e-19,
+  "cpi_error_percent": 1.1000732279703927e-07,
   "corrections": {
-    "cor.alu": -0.199065,
-    "cor.branch": -0.131066,
-    "cor.divide": -0.61839,
-    "cor.fp_div": -0.766757,
-    "cor.fp_ops": 4.999998,
-    "cor.load": 0.084994,
-    "cor.multiply": -1.221732,
-    "cor.store": 0.893834
-  },
-  "cache_parameters": {
-    "cache.l1_hit_rate": 0.988493,
-    "cache.l1_latency": 1.0,
-    "cache.dram_latency": 8.0
-  },
-  "residuals_before": {
-    "typical": -0.0269,
-    "compute": 0.0,
-    "memory": 0.0001,
-    "control": 0.0,
-    "fp_heavy": 0.0231
-  },
-  "residuals_after": {
-    "typical": -0.0269,
-    "compute": 0.0,
-    "memory": 0.0,
-    "control": 0.0,
-    "fp_heavy": 0.0231
+    "cor.alu": -0.19885226875057707,
+    "cor.branch": -0.1310992895950263,
+    "cor.divide": -0.6183448841075486,
+    "cor.fp_div": -0.7667547070225322,
+    "cor.fp_ops": 4.999999992837859,
+    "cor.load": 0.0848911714017065,
+    "cor.multiply": -1.2227923910338567,
+    "cor.store": 0.8937407590340349
   },
   "free_parameters": [
     "cache.l1_hit_rate",
@@ -46,5 +24,24 @@
     "cor.load",
     "cor.multiply",
     "cor.store"
-  ]
+  ],
+  "residuals_before": {
+    "typical": -4.880305913845806e-05,
+    "compute": -7.502961281824483e-06,
+    "memory": -2.6554966112035672e-05,
+    "control": -1.1221511353132207e-05,
+    "fp_heavy": -4.880305913845806e-05
+  },
+  "residuals_after": {
+    "typical": -7.074570929077595e-10,
+    "compute": 8.613674218338474e-10,
+    "memory": 1.2950920336152194e-09,
+    "control": -6.800709995147258e-10,
+    "fp_heavy": -7.074570929077595e-10
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.9884864873184357,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0
+  }
 }

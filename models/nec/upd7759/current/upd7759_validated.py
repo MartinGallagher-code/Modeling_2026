@@ -188,12 +188,12 @@ class Upd7759Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'oscillator': 0.700000,
-            'envelope': 0.700000,
-            'register': 0.700000,
-            'memory': 0.700000,
-            'control': 0.700000,
-            'mixing': 0.700000,
+            'control': 0.7,
+            'envelope': 0.7,
+            'memory': 0.7,
+            'mixing': 0.7,
+            'oscillator': 0.7,
+            'register': 0.7,
         }
 
         # No cache on this processor

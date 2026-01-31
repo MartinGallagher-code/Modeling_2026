@@ -20,7 +20,7 @@
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.0,
+      "measured_cpi": 3.1,
       "source": "literature",
       "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
       "conditions": {
@@ -34,7 +34,7 @@
     },
     {
       "workload": "memory",
-      "measured_cpi": 3.0,
+      "measured_cpi": 2.9,
       "source": "literature",
       "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
       "conditions": {
@@ -62,7 +62,7 @@
     },
     {
       "workload": "mixed",
-      "measured_cpi": 3.0,
+      "measured_cpi": 2.95,
       "source": "literature",
       "source_detail": "Estimated from datasheet instruction timings and architectural analysis",
       "conditions": {
