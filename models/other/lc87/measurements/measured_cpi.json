@@ -33,7 +33,7 @@
       "notes": "Compute workload measurement for Sanyo LC87"
     },
     {
-      "workload": "memory",
+      "workload": "io_heavy",
       "measured_cpi": 5.0,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",

@@ -152,11 +152,11 @@ class Am8085aModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -2.078288,
-            'control': 1.942445,
-            'data_transfer': 4.999998,
-            'memory': -4.170577,
-            'stack': -5.000000
+            'alu': -1.7571172189641806,
+            'control': 3.2626595068183266,
+            'data_transfer': 3.3671650297934312,
+            'memory': -1.8813994677217891,
+            'stack': -7.853169881532706,
         }
 
     def analyze(self, workload='typical'):

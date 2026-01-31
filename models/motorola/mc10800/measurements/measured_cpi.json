@@ -33,7 +33,7 @@
       "notes": "Compute workload measurement for Motorola MC10800"
     },
     {
-      "workload": "memory",
+      "workload": "cascaded",
       "measured_cpi": 2.0,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",

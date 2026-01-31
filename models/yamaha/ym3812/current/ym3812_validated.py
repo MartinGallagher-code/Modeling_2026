@@ -166,12 +166,12 @@ class Ym3812Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'envelope': 4.999979,
-            'operator': -3.871614,
-            'output': 2.528115,
-            'register': 1.408200,
-            'rhythm': -3.862481,
-            'waveform': 1.018061
+            'envelope': 3.051544604645889,
+            'operator': -2.110259783859994,
+            'output': -0.1660045427932614,
+            'register': 4.13586923641959,
+            'rhythm': -1.8465137767364146,
+            'waveform': -0.8780347250733492,
         }
 
     def analyze(self, workload='typical'):

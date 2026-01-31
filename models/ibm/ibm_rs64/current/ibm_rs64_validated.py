@@ -188,12 +188,12 @@ class IbmRs64Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.26758791853140274,
-            'branch': -0.4203578296030351,
-            'divide': -5.950571112102905,
-            'load': -2.8614856198022,
-            'multiply': -4.871254394723844,
-            'store': 3.0215941744108012,
+            'alu': 0.06469561473724875,
+            'branch': -0.3773596758533571,
+            'divide': -7.167083222900345,
+            'load': -1.9426476929204692,
+            'multiply': -3.587636128806371,
+            'store': 1.8148222770996663,
         }
 
         # Cache configuration for memory hierarchy modeling

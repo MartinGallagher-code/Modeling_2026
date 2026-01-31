@@ -197,11 +197,11 @@ class Am9511Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'fixed_point': 5.000000,
-            'fp_add': 8.000000,
-            'fp_div': -16.000000,
-            'fp_mul': 12.000000,
-            'fp_sqrt': -10.563218
+            'fixed_point': 11.111932773109245,
+            'fp_add': 8.48137039431157,
+            'fp_div': -15.657013574660647,
+            'fp_mul': 5.935048480930841,
+            'fp_sqrt': -7.765326438267616,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

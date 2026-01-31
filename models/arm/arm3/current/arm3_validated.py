@@ -132,32 +132,34 @@ class Arm3Model(BaseProcessorModel):
             'load': InstructionCategory('load', 1.7, 0, "LDR (cached)"),
             'store': InstructionCategory('store', 1.4, 0, "STR"),
             'branch': InstructionCategory('branch', 1.8, 0, "Branch"),
+            'multiply': InstructionCategory('multiply', 3.0, 0, "Multiply/complex ALU"),
         }
 
         self.workload_profiles = {
             'typical': WorkloadProfile('typical', {
-                'alu': 0.52, 'load': 0.20, 'store': 0.12, 'branch': 0.16,
-            }, "Typical workload"),
+                'alu': 0.47, 'load': 0.20, 'store': 0.12, 'branch': 0.16,
+                'multiply': 0.05,}, "Typical workload"),
             'compute': WorkloadProfile('compute', {
-                'alu': 0.62, 'load': 0.14, 'store': 0.10, 'branch': 0.14,
-            }, "Compute-intensive"),
+                'alu': 0.54, 'load': 0.14, 'store': 0.10, 'branch': 0.14,
+                'multiply': 0.08,}, "Compute-intensive"),
             'memory': WorkloadProfile('memory', {
-                'alu': 0.32, 'load': 0.32, 'store': 0.22, 'branch': 0.14,
-            }, "Memory-intensive"),
+                'alu': 0.29, 'load': 0.32, 'store': 0.22, 'branch': 0.14,
+                'multiply': 0.03,}, "Memory-intensive"),
             'control': WorkloadProfile('control', {
-                'alu': 0.42, 'load': 0.15, 'store': 0.10, 'branch': 0.33,
-            }, "Control-intensive"),
+                'alu': 0.4, 'load': 0.15, 'store': 0.10, 'branch': 0.33,
+                'multiply': 0.02,}, "Control-intensive"),
             'mixed': WorkloadProfile('mixed', {
-                'alu': 0.50, 'load': 0.22, 'store': 0.13, 'branch': 0.15,
-            }, "Mixed workload"),
+                'alu': 0.46, 'load': 0.22, 'store': 0.13, 'branch': 0.15,
+                'multiply': 0.04,}, "Mixed workload"),
         }
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.27899884259222896,
-            'branch': 0.016846706775440652,
-            'load': 1.7126004172801443,
-            'store': -2.823561635055981,
+            'alu': -0.9813500000000022,
+            'branch': 0.59115,
+            'load': 3.895050000000009,
+            'multiply': 1.5336500000000115,
+            'store': -5.954950000000012,
         }
 
         # Cache configuration for memory hierarchy modeling

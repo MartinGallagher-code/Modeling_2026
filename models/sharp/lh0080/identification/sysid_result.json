@@ -8,11 +8,11 @@
   "cpi_error_percent": 0.0,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": 1.209911,
-    "cor.block": -4.918176,
-    "cor.control": -0.498599,
-    "cor.data_transfer": 2.973557,
-    "cor.memory": -3.96017
+    "cor.alu": 1.259056056733584,
+    "cor.block": -5.898668538928546,
+    "cor.control": -0.3345300993039592,
+    "cor.data_transfer": 2.0545383830526385,
+    "cor.memory": -2.1681328228388983
   },
   "residuals_before": {
     "typical": -0.0008,

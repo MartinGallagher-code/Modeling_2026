@@ -188,12 +188,12 @@ class Arm610Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.7384116475202389,
-            'branch': -1.5500443294656066,
-            'divide': -13.06620718096104,
-            'load': -1.6361773175398713,
-            'multiply': -4.999407348664558,
-            'store': 0.9821536279590033,
+            'alu': 0.9876770311362401,
+            'branch': -1.6034466429682928,
+            'divide': -11.64782827244566,
+            'load': -2.679379502334156,
+            'multiply': -6.559065013490936,
+            'store': 2.3451717275543684,
         }
 
         # Cache configuration for memory hierarchy modeling

@@ -165,12 +165,12 @@ class MicroVAX78032Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 2.936848,
-            'control': 0.161701,
-            'decimal': -7.499802,
-            'float': -6.000000,
-            'memory': -3.716697,
-            'string': 4.997354
+            'alu': 3.0285207305720045,
+            'control': 0.6568993029546667,
+            'decimal': -1.6757478569961664,
+            'float': -7.899949092906745,
+            'memory': -2.364884499323639,
+            'string': -0.08529961638105454,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

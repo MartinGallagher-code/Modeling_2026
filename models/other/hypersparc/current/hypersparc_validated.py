@@ -188,12 +188,12 @@ class HypersparcModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.5109746246525972,
-            'branch': 0.012286284192223022,
-            'divide': -8.476174322014682,
-            'load': -3.0364456498437895,
-            'multiply': -4.496613815268859,
-            'store': 1.0883109684206516,
+            'alu': 0.5158353396376738,
+            'branch': 0.011792503713220867,
+            'divide': -8.467993316664536,
+            'load': -3.103105822022362,
+            'multiply': -4.508421675909029,
+            'store': 1.1812582833354819,
         }
 
         # Cache configuration for memory hierarchy modeling

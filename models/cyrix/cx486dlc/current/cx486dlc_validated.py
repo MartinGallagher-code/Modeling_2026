@@ -188,12 +188,12 @@ class Cx486dlcModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.9890856109116131,
-            'control': -2.4967575066041965,
-            'data_transfer': 1.0316645925600931,
-            'divide': -29.983558881278338,
-            'memory': -0.4974424388672675,
-            'multiply': -7.998857185905325,
+            'alu': 0.9094086455447215,
+            'control': -2.590591354455284,
+            'data_transfer': 0.9094086455447074,
+            'divide': -9.472320463397999,
+            'memory': -0.5975913544552834,
+            'multiply': -18.649726799984016,
         }
 
         # Cache configuration for memory hierarchy modeling

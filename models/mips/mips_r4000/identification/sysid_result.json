@@ -8,12 +8,12 @@
   "cpi_error_percent": 0.0,
   "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.73913,
-    "cor.branch": -1.550725,
-    "cor.divide": -12.101449,
-    "cor.load": -1.57331,
-    "cor.multiply": -5.0,
-    "cor.store": 0.890458
+    "cor.alu": 0.9422286055214368,
+    "cor.branch": -1.593806067837882,
+    "cor.divide": -10.913632701041307,
+    "cor.load": -2.478210864595485,
+    "cor.multiply": -6.27397943463446,
+    "cor.store": 2.0780838589587005
   },
   "cache_parameters": {
     "cache.l1_hit_rate": 0.998925,

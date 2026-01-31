@@ -161,44 +161,19 @@ class IAPX432Model(BaseProcessorModel):
                 'object_ops': 0.10,
             }, "Control-intensive"),
             'mixed': WorkloadProfile('mixed', {
-                'alu': 0.25,
-                'data_transfer': 0.30,
-                'memory': 0.20,
-                'control': 0.15,
+                'alu': 0.22,
+                'data_transfer': 0.28,
+                'memory': 0.22,
+                'control': 0.18,
                 'object_ops': 0.10,
             }, "Mixed workload"),
         }
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -6.577419,
-            'control': -19.420681,
-            'data_transfer': 11.676266,
-            'memory': 3.515898,
-            'object_ops': 11.952367
+            'alu': -91.15000000000032,
+            'control': 6.850000000000156,
+            'data_transfer': 246.85000000000102,
+            'memory': -50.15000000000057,
+            'object_ops': -405.1500000000012,
         }
-
-    def analyze(self, workload: str = 'typical') -> AnalysisResult:
-        profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])
-
-        base_cpi = 0
-        for cat_name, weight in profile.category_weights.items():
-            cat = self.instruction_categories[cat_name]
-            base_cpi += weight * cat.total_cycles
-
-        correction_delta = sum(
-            self.corrections.get(cat_name, 0.0) * weight
-            for cat_name, weight in profile.category_weights.items()
-        )
-        corrected_cpi = base_cpi + correction_delta
-
-        return AnalysisResult.from_cpi(
-            processor=self.name,
-            workload=workload,
-            cpi=corrected_cpi,
-            clock_mhz=self.clock_mhz,
-            bottleneck="oo_overhead",
-            utilizations={cat: profile.category_weights[cat] for cat in self.instruction_categories},
-            base_cpi=base_cpi,
-            correction_delta=correction_delta
-        )

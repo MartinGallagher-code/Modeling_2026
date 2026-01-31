@@ -2,14 +2,14 @@
   "converged": true,
   "iterations": 26,
   "loss_before": 1.6145106536429246e-09,
-  "loss_after": 1.6117463673603374e-26,
-  "cpi_error_percent": 3.881302160618104e-12,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
   "corrections": {
-    "cor.alu": -0.22171120638558686,
-    "cor.control": 0.32003019015967976,
-    "cor.memory": -0.14127937945621566,
-    "cor.microcode": 0.3773739109891065,
-    "cor.stack_ops": 0.19518643835732705
+    "cor.alu": -0.19023420074349345,
+    "cor.control": 0.13550185873605855,
+    "cor.memory": 0.1509498141263931,
+    "cor.microcode": 0.030895910780668914,
+    "cor.stack_ops": 0.18184572490706197
   },
   "free_parameters": [
     "cache.l1_hit_rate",

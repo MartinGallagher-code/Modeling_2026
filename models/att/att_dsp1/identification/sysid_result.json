@@ -2,14 +2,14 @@
   "converged": true,
   "iterations": 3,
   "loss_before": 1.1783089799933044e-09,
-  "loss_after": 4.1716507142003174e-10,
-  "cpi_error_percent": 0.0002694038328500199,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
   "corrections": {
-    "cor.alu": -4.999979245996282,
-    "cor.control": 0.6361001458653929,
-    "cor.data_move": 3.631935341952148,
-    "cor.io": -0.07837398811442729,
-    "cor.mac": 0.7111457913651774
+    "cor.alu": -5.003380952380967,
+    "cor.control": 0.636333333333335,
+    "cor.data_move": 3.6344285714285816,
+    "cor.io": -0.07880952380952701,
+    "cor.mac": 0.7121428571428603
   },
   "free_parameters": [
     "cor.alu",

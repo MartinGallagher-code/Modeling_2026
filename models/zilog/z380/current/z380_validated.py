@@ -188,12 +188,12 @@ class Z380Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.934149,
-            'control': -3.046060,
-            'data_transfer': 0.994014,
-            'divide': -20.429400,
-            'memory': -1.036904,
-            'multiply': -13.997890
+            'alu': 0.914468136369104,
+            'control': -3.0855318636308944,
+            'data_transfer': 0.9144681363691199,
+            'divide': -9.979159137453268,
+            'memory': -1.0855318636308886,
+            'multiply': -19.638718226719625,
         }
 
         # No cache on this processor

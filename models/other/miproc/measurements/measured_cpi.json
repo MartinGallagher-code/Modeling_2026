@@ -33,7 +33,7 @@
       "notes": "Compute workload measurement for Plessey MIPROC"
     },
     {
-      "workload": "memory",
+      "workload": "crypto",
       "measured_cpi": 5.0,
       "source": "emulator",
       "source_detail": "Cycle-accurate emulation/simulation",

@@ -188,12 +188,12 @@ class Ks86c4004Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.9705597437388215,
-            'control': -3.0294404324356017,
-            'data_transfer': 0.97055920816433,
-            'divide': -11.141330637893889,
-            'memory': -1.296232524498936,
-            'multiply': -9.973498509317638,
+            'alu': 0.9463170441312255,
+            'control': -3.053682955868771,
+            'data_transfer': 0.9463170441312286,
+            'divide': -6.317091782114568,
+            'memory': -1.320382955868769,
+            'multiply': -12.42197854274581,
         }
 
         # Cache configuration for memory hierarchy modeling

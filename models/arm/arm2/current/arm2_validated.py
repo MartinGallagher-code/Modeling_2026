@@ -155,10 +155,10 @@ class Arm2Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.3206760877809217,
-            'branch': -0.07930024587197758,
-            'load': 2.486080669118593,
-            'store': -4.169599717995246,
+            'alu': -0.3206781174490375,
+            'branch': -0.07929814737235669,
+            'load': 2.485831065270243,
+            'store': -4.169981764353841,
         }
 
         # Cache configuration for memory hierarchy modeling

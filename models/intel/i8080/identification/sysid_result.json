@@ -4,15 +4,15 @@
   "converged": true,
   "iterations": 6,
   "loss_before": 0.005321,
-  "loss_after": 0.003574,
-  "cpi_error_percent": 0.25,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
   "message": "`ftol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": -0.827821,
-    "cor.control": -2.931643,
-    "cor.data_transfer": 0.727462,
-    "cor.memory": -2.619771,
-    "cor.stack": 11.0
+    "cor.alu": 1.6187499999999448,
+    "cor.control": -11.006250000000042,
+    "cor.data_transfer": -4.256249999999864,
+    "cor.memory": -4.756250000000064,
+    "cor.stack": 35.99375000000001
   },
   "residuals_before": {
     "typical": 0.0276,

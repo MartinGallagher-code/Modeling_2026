@@ -188,12 +188,12 @@ class Hyundai486Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.37283823166528407,
-            'control': -1.3481449734313198,
-            'data_transfer': 1.2126225349715998,
-            'divide': -10.010216923669132,
-            'memory': -0.8671753732926579,
-            'multiply': -12.996633879229865,
+            'alu': 0.8302141810223719,
+            'control': -1.1697858189776307,
+            'data_transfer': 0.8302141810223614,
+            'divide': -9.212622023450992,
+            'memory': -0.817285818977631,
+            'multiply': -18.14836771674101,
         }
 
         # Cache configuration for memory hierarchy modeling

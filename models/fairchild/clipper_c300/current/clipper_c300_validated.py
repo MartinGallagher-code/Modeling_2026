@@ -149,12 +149,12 @@ class ClipperC300Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.4999999927903046,
-            'branch': -0.5000000073072312,
-            'divide': -3.9681975235100917,
-            'load': 0.051678239447544606,
-            'multiply': -1.5000000075081128,
-            'store': -2.480124194077173,
+            'alu': 0.5000000000000023,
+            'branch': -0.5000000000000002,
+            'divide': -3.2241000000000057,
+            'load': 0.05180000000000053,
+            'multiply': -1.500000000000001,
+            'store': -3.2241000000000057,
         }
 
         self.cache_config = CacheConfig(

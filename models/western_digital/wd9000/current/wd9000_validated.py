@@ -202,12 +202,12 @@ class Wd9000Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'arithmetic': -1.533049,
-            'comparison': -4.999973,
-            'control': 5.000000,
-            'memory': 4.021382,
-            'procedure': -3.489572,
-            'stack_ops': 5.000000
+            'arithmetic': -1.9129971364669864,
+            'comparison': -4.366643697381594,
+            'control': 5.6574172661693245,
+            'memory': 3.2740441158072078,
+            'procedure': -4.2227754528309145,
+            'stack_ops': 6.448616170800206,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

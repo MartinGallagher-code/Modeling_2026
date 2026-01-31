@@ -188,12 +188,12 @@ class M88110Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.6451674892570401,
-            'branch': 0.10285780815156224,
-            'divide': -10.185534625601637,
-            'load': -2.776403318630849,
-            'multiply': -4.999696896866741,
-            'store': 2.719155681315993,
+            'alu': 0.7427505717589638,
+            'branch': 0.084871090839006,
+            'divide': -10.625731504561235,
+            'load': -2.8204070923808313,
+            'multiply': -5.204526313760762,
+            'store': 2.771568495438782,
         }
 
         # Cache configuration for memory hierarchy modeling

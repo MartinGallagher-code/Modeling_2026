@@ -5,15 +5,15 @@
   "iterations": 200,
   "loss_before": 9e-06,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.0146,
+  "cpi_error_percent": 0.0,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": 0.30093,
-    "cor.control": -1.706575,
-    "cor.data_transfer": 0.278231,
-    "cor.divide": -11.406254,
-    "cor.memory": -1.522876,
-    "cor.multiply": -4.991855
+    "cor.alu": 0.25281718406228637,
+    "cor.control": -1.747182815937716,
+    "cor.data_transfer": 0.2528171840622773,
+    "cor.divide": -4.310619628394053,
+    "cor.memory": -1.5598522219377162,
+    "cor.multiply": -8.465464409709586
   },
   "cache_parameters": {
     "cache.l1_hit_rate": 0.929688,

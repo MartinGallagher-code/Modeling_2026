@@ -152,11 +152,11 @@ class DecJ11Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -4.761346,
-            'control': 2.806755,
-            'data_transfer': 5.000000,
-            'memory': 1.239684,
-            'stack': -5.000000
+            'alu': -4.5512382169675645,
+            'control': 3.048761783032437,
+            'data_transfer': 5.848761783032431,
+            'memory': -2.8163125099856257,
+            'stack': -2.7861639239495153,
         }
 
     def analyze(self, workload='typical'):

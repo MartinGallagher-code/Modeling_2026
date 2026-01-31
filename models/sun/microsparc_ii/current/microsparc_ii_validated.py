@@ -188,12 +188,12 @@ class MicrosparcIiModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.609892961215364,
-            'branch': -0.7657347248881008,
-            'divide': -10.887614575127872,
-            'load': -3.2405449775936455,
-            'multiply': -4.643865483530304,
-            'store': -0.04772248783263356,
+            'alu': 0.7623926379851399,
+            'branch': -0.798083286845334,
+            'divide': -9.995703662692987,
+            'load': -3.9202458787519827,
+            'multiply': -5.6004629109976864,
+            'store': 0.8437994823070268,
         }
 
         # Cache configuration for memory hierarchy modeling

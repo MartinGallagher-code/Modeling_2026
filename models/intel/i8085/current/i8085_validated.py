@@ -128,47 +128,49 @@ class I8085Model(BaseProcessorModel):
             'data_transfer': InstructionCategory('data_transfer', 4.0, 0, "MOV r,r @4 cycles"),
             'memory': InstructionCategory('memory', 7.0, 0, "MOV r,M @7 cycles"),
             'control': InstructionCategory('control', 10.0, 0, "JMP/CALL/RET @10-18"),
+            'multiply': InstructionCategory('multiply', 12.0, 0, "Multiply/complex ALU"),
         }
 
         self.workload_profiles = {
             'typical': WorkloadProfile('typical', {
-                'alu': 0.30,
+                'alu': 0.25,
                 'data_transfer': 0.35,
                 'memory': 0.20,
                 'control': 0.15,
-            }, "Typical workload"),
+                'multiply': 0.05,}, "Typical workload"),
             'compute': WorkloadProfile('compute', {
-                'alu': 0.50,
+                'alu': 0.42,
                 'data_transfer': 0.25,
                 'memory': 0.15,
                 'control': 0.10,
-            }, "Compute-intensive"),
+                'multiply': 0.08,}, "Compute-intensive"),
             'memory': WorkloadProfile('memory', {
-                'alu': 0.20,
+                'alu': 0.17,
                 'data_transfer': 0.25,
                 'memory': 0.40,
                 'control': 0.15,
-            }, "Memory-intensive"),
+                'multiply': 0.03,}, "Memory-intensive"),
             'control': WorkloadProfile('control', {
-                'alu': 0.20,
+                'alu': 0.18,
                 'data_transfer': 0.25,
                 'memory': 0.15,
                 'control': 0.40,
-            }, "Control-intensive"),
+                'multiply': 0.02,}, "Control-intensive"),
             'mixed': WorkloadProfile('mixed', {
-                'alu': 0.30,
+                'alu': 0.26,
                 'data_transfer': 0.30,
                 'memory': 0.25,
                 'control': 0.15,
-            }, "Mixed workload"),
+                'multiply': 0.04,}, "Mixed workload"),
         }
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -1.567857,
-            'control': -1.559078,
-            'data_transfer': 2.304152,
-            'memory': -0.603326
+            'alu': -2.5625000000000036,
+            'control': -1.3124999999999878,
+            'data_transfer': 2.1874999999999964,
+            'memory': -0.5625000000000006,
+            'multiply': -4.3124999999999964,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

@@ -204,13 +204,13 @@ class M68040Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu_reg': -2.2169911751268097,
-            'control': -0.1957642109823609,
-            'data_transfer': 3.4432033249469303,
-            'divide': -17.83070186108835,
-            'fp_ops': -4.73517482041125,
-            'memory': -0.8499163144694187,
-            'multiply': -4.561208095012489,
+            'alu_reg': -4.481491426283958,
+            'control': -1.0919652537095674,
+            'data_transfer': 6.1037975910382025,
+            'divide': -1.277943495058705,
+            'fp_ops': -1.1456208698989425,
+            'memory': -2.1235977619323227,
+            'multiply': -2.909282831740392,
         }
 
         # Cache configuration for memory hierarchy modeling

@@ -148,11 +148,11 @@ class Lc88Model(BaseProcessorModel):
         # Workload profiles
         self.workload_profiles = {
             'typical': WorkloadProfile('typical', {
-                'alu': 0.25,
+                'alu': 0.2,
                 'data_transfer': 0.18,
                 'memory': 0.20,
                 'io': 0.17,
-                'control': 0.20,
+                'control': 0.25,
             }, "Typical embedded workload"),
             'compute': WorkloadProfile('compute', {
                 'alu': 0.45,
@@ -179,11 +179,11 @@ class Lc88Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.975443,
-            'control': 0.078544,
-            'data_transfer': 0.180671,
-            'io': -2.644338,
-            'memory': 0.934969
+            'alu': 1.7139786113183662,
+            'control': -0.3233046191412885,
+            'data_transfer': -0.4537439236699892,
+            'io': -0.6090040471184057,
+            'memory': -0.6338248660381206,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

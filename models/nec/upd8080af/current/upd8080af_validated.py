@@ -154,11 +154,11 @@ class Upd8080afModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.689809,
-            'control': -1.323471,
-            'data_transfer': -3.215367,
-            'memory': 4.999998,
-            'stack': 4.999985
+            'alu': 0.885968750000003,
+            'control': 0.3908125000000679,
+            'data_transfer': -12.489031249999993,
+            'memory': 17.410968749999885,
+            'stack': 0.42909375000008076,
         }
 
     def analyze(self, workload='typical'):

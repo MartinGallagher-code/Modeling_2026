@@ -4,15 +4,15 @@
   "converged": true,
   "iterations": 14,
   "loss_before": 0.000412,
-  "loss_after": 0.000412,
-  "cpi_error_percent": 0.84,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
   "message": "`xtol` termination condition is satisfied.",
   "corrections": {
-    "cor.envelope": -5.0,
-    "cor.operator": -1.189561,
-    "cor.output": -1.746937,
-    "cor.register": 5.0,
-    "cor.rhythm": 3.104116
+    "cor.envelope": -7.5529411764706555,
+    "cor.operator": -0.5588235294117554,
+    "cor.output": -3.1705882352941352,
+    "cor.register": 6.247058823529434,
+    "cor.rhythm": 5.035294117647107
   },
   "residuals_before": {
     "typical": 0.0335,

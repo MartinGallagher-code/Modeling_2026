@@ -8,11 +8,11 @@
   "cpi_error_percent": 0.0,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": 0.100001,
-    "cor.branch": -0.399999,
-    "cor.literals": 0.099992,
-    "cor.memory": -0.548111,
-    "cor.stack_ops": 0.1
+    "cor.alu": 0.10000000000000282,
+    "cor.branch": -0.39999999999999764,
+    "cor.literals": 0.09999999999997324,
+    "cor.memory": -0.548199999999998,
+    "cor.stack_ops": 0.10000000000000021
   },
   "cache_parameters": {
     "cache.l1_hit_rate": 0.907413,

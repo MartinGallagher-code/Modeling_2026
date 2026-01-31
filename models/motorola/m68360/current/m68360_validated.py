@@ -188,12 +188,12 @@ class M68360Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'control': -0.7401447188500028,
-            'dma': 0.6588906627073807,
-            'memory': -0.04668516830742275,
-            'packet': -0.8399035267716252,
-            'protocol': -0.8399035507172824,
-            'register': 0.860820035928991,
+            'control': -0.7469376915219673,
+            'dma': 0.6068110316649742,
+            'memory': -0.019249233912170195,
+            'packet': -0.8353748723186921,
+            'protocol': -0.8353748723186958,
+            'register': 0.8993135852911367,
         }
 
         # Cache configuration for memory hierarchy modeling

@@ -188,12 +188,12 @@ class V810Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.7444750603283158,
-            'branch': -0.5510661853662568,
-            'divide': -12.125258583646774,
-            'load': -3.0125018881931402,
-            'multiply': -4.99913412616471,
-            'store': -0.4346016779434796,
+            'alu': 0.9589575570688288,
+            'branch': -0.5973546333176326,
+            'divide': -10.815793681385369,
+            'load': -3.944447299670221,
+            'multiply': -6.3789155852499055,
+            'store': 0.7842063186146513,
         }
 
         # Cache configuration for memory hierarchy modeling

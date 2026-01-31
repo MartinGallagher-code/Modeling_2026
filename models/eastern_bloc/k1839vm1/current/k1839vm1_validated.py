@@ -188,12 +188,12 @@ class K1839vm1Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.9603957030743997,
-            'control': -4.039604065599774,
-            'data_transfer': 0.9603963993912101,
-            'divide': -33.11882104398357,
-            'memory': -1.0471002684739907,
-            'multiply': -19.999991414023285,
+            'alu': 0.8686906738144015,
+            'control': -4.131309326185599,
+            'data_transfer': 0.8686906738143987,
+            'divide': -14.869444089065556,
+            'memory': -1.1390093261855991,
+            'multiply': -29.262241944745654,
         }
 
         # Cache configuration for memory hierarchy modeling

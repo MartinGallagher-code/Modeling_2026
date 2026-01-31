@@ -122,37 +122,37 @@ class Weitek1064Model(BaseProcessorModel):
         }
         self.workload_profiles = {
             'typical': WorkloadProfile('typical', {
-                'fp_add': 0.33,
-                'fp_mul': 0.02,
+                'fp_add': 0.32,
+                'fp_mul': 0.03,
                 'fp_div': 0.319,
                 'data_transfer': 0.331,
             }, "Typical workload"),
             'compute': WorkloadProfile('compute', {
-                'fp_add': 0.43,
-                'fp_mul': 0.02,
+                'fp_add': 0.39,
+                'fp_mul': 0.06,
                 'fp_div': 0.286,
                 'data_transfer': 0.264,
             }, "Compute-intensive"),
             'memory': WorkloadProfile('memory', {
-                'fp_add': 0.297,
-                'fp_mul': 0.02,
-                'fp_div': 0.286,
-                'data_transfer': 0.397,
+                'fp_add': 0.352,
+                'fp_mul': 0.015,
+                'fp_div': 0.296,
+                'data_transfer': 0.337,
             }, "Memory-intensive"),
             'control': WorkloadProfile('control', {
-                'fp_add': 0.297,
-                'fp_mul': 0.02,
-                'fp_div': 0.286,
-                'data_transfer': 0.397,
+                'fp_add': 0.312,
+                'fp_mul': 0.005,
+                'fp_div': 0.276,
+                'data_transfer': 0.407,
             }, "Control-flow intensive"),
         }
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'data_transfer': 2.390274,
-            'fp_add': -0.194182,
-            'fp_div': -2.395957,
-            'fp_mul': 2.435490
+            'data_transfer': -1.1761065074335888,
+            'fp_add': 2.715558128198878,
+            'fp_div': -0.25227029003167856,
+            'fp_mul': -13.090437484767255,
         }
 
     def analyze(self, workload='typical'):

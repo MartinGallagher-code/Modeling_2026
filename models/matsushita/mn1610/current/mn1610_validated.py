@@ -188,12 +188,12 @@ class Mn1610Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'branch': -1.553086,
-            'call_return': -6.999967,
-            'immediate': -3.247850,
-            'memory_read': 0.412589,
-            'memory_write': -4.999814,
-            'register_ops': 5.000000
+            'branch': -0.9498430141287346,
+            'call_return': -9.078669544740977,
+            'immediate': -18.880945839874475,
+            'memory_read': 1.1515109890109885,
+            'memory_write': -4.386715070643639,
+            'register_ops': 12.503963893249642,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

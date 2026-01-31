@@ -2,17 +2,17 @@
   "converged": true,
   "iterations": 45,
   "loss_before": 9.855941424837528e-10,
-  "loss_after": 2.4496308457669523e-20,
-  "cpi_error_percent": 5.76599083206744e-09,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
   "corrections": {
-    "cor.alu": -0.4353077733927806,
-    "cor.branch": -0.20325766655959338,
-    "cor.divide": 4.999999989653222,
-    "cor.fp_complex": -1.3682626499231871,
-    "cor.fp_ops": -1.3171292307934475,
-    "cor.load": 3.0329157072260244,
-    "cor.multiply": -0.7814913910461547,
-    "cor.store": -4.999999945061463
+    "cor.alu": 0.12390529163084216,
+    "cor.branch": -0.14966073467640933,
+    "cor.divide": -0.3002715221898498,
+    "cor.fp_complex": -0.6319422304979048,
+    "cor.fp_ops": -1.0502570186502702,
+    "cor.load": 0.3143579424235201,
+    "cor.multiply": -2.0419304326041887,
+    "cor.store": -0.596405287651308
   },
   "free_parameters": [
     "cache.l1_hit_rate",

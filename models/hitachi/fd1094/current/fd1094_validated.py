@@ -200,12 +200,12 @@ class FD1094Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'address': -5.000000,
-            'alu': -2.935516,
-            'control': -0.963074,
-            'data_transfer': 5.000000,
-            'decrypt': 5.000000,
-            'memory': 1.346358
+            'address': -2.6632623285672894,
+            'alu': -4.80194047271665,
+            'control': -0.68157280420191,
+            'data_transfer': 8.83805077327108,
+            'decrypt': 3.537131601984242,
+            'memory': -0.26138021593231425,
         }
 
         # No cache on this processor

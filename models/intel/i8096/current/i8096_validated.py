@@ -241,12 +241,12 @@ class I8096Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.008645,
-            'branch': -1.050855,
-            'divide': -6.000000,
-            'memory': 0.809417,
-            'multiply': -4.999985,
-            'peripheral': 0.005701
+            'alu': 0.8391000652870553,
+            'branch': -0.9355843455091283,
+            'divide': -7.192544421217739,
+            'memory': 0.8580867571898867,
+            'multiply': -3.8564731292472993,
+            'peripheral': -0.02084656713051897,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

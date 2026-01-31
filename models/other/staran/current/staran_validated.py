@@ -149,10 +149,10 @@ class StaranModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'bit_op': 1.036424,
-            'control': 5.000000,
-            'search': -4.942926,
-            'word_op': 5.000000
+            'bit_op': 1.8180287081340019,
+            'control': 5.833066302118963,
+            'search': -6.2731082251082695,
+            'word_op': 6.233066302118953,
         }
 
     def analyze(self, workload='typical'):

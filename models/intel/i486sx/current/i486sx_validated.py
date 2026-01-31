@@ -149,12 +149,12 @@ class I486SXModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.963703,
-            'control': -2.035618,
-            'data_transfer': 0.963487,
-            'divide': -33.627342,
-            'memory': -4.203419,
-            'multiply': -11.034571,
+            'alu': 0.9999999999999871,
+            'control': -1.9999999999999944,
+            'data_transfer': 1.0000000000000109,
+            'divide': -19.00000000000003,
+            'memory': -19.00000000000003,
+            'multiply': -10.999999999999991,
         }
 
         self.cache_config = None

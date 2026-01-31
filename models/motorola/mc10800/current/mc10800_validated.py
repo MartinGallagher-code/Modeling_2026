@@ -157,10 +157,10 @@ class Mc10800Model(BaseProcessorModel):
         # Typical: 0.30*1.5 + 0.15*2.0 + 0.25*1.5 + 0.20*3.0 + 0.10*2.5 = 1.975
         self.workload_profiles = {
             'typical': WorkloadProfile('typical', {
-                'alu': 0.30,
+                'alu': 0.25,
                 'shift': 0.15,
                 'logic': 0.25,
-                'control': 0.20,
+                'control': 0.25,
                 'cascade': 0.10,
             }, "Typical ECL bit-slice workload"),
             'compute': WorkloadProfile('compute', {
@@ -195,11 +195,11 @@ class Mc10800Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.035370,
-            'cascade': 0.231045,
-            'control': -1.014102,
-            'logic': 0.134916,
-            'shift': -1.015208
+            'alu': 0.550152774817023,
+            'cascade': -0.36813046258793564,
+            'control': -0.8844738151069437,
+            'logic': 0.009294393519509685,
+            'shift': 0.2871313863426436,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

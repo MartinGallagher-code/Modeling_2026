@@ -195,14 +195,14 @@ class AimPpc601Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.19885226875057707,
-            'branch': -0.1310992895950263,
-            'divide': -0.6183448841075486,
-            'fp_div': -0.7667547070225322,
-            'fp_ops': 4.999999992837859,
-            'load': 0.0848911714017065,
-            'multiply': -1.2227923910338567,
-            'store': 0.8937407590340349,
+            'alu': -0.1775597627150525,
+            'branch': 0.0997410447743711,
+            'divide': -0.08978139579174092,
+            'fp_div': -0.10587876966463886,
+            'fp_ops': -0.10468330533863146,
+            'load': 0.30353633968770777,
+            'multiply': -0.48993575007297896,
+            'store': 0.684108031721705,
         }
 
         # Cache configuration for memory hierarchy modeling

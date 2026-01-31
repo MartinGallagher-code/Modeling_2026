@@ -4,16 +4,16 @@
   "converged": false,
   "iterations": 200,
   "loss_before": 0.000267,
-  "loss_after": 0.000145,
-  "cpi_error_percent": 1.3641,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.alu": 0.823831,
-    "cor.branch": -0.443314,
-    "cor.divide": -14.299919,
-    "cor.load": -3.592233,
-    "cor.multiply": -5.0,
-    "cor.store": 0.619922
+    "cor.alu": 1.193963159021799,
+    "cor.branch": -0.5259921852470494,
+    "cor.divide": -12.92621546390281,
+    "cor.load": -4.444435890188017,
+    "cor.multiply": -7.125768906591284,
+    "cor.store": 1.6751845360971966
   },
   "cache_parameters": {
     "cache.l1_hit_rate": 0.800156,

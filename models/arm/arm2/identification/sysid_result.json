@@ -2,13 +2,13 @@
   "converged": true,
   "iterations": 3,
   "loss_before": 1.1073117287654348e-09,
-  "loss_after": 2.7352493432451244e-10,
-  "cpi_error_percent": 0.0019590272933342843,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
   "corrections": {
-    "cor.alu": -0.3206760877809217,
-    "cor.branch": -0.07930024587197758,
-    "cor.load": 2.486080669118593,
-    "cor.store": -4.169599717995246
+    "cor.alu": -0.3206781174490375,
+    "cor.branch": -0.07929814737235669,
+    "cor.load": 2.485831065270243,
+    "cor.store": -4.169981764353841
   },
   "free_parameters": [
     "cache.l1_hit_rate",

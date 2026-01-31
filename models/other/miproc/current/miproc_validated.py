@@ -158,11 +158,11 @@ class MiprocModel(BaseProcessorModel):
         # Workload profiles
         self.workload_profiles = {
             'typical': WorkloadProfile('typical', {
-                'alu': 0.20,
+                'alu': 0.15,
                 'data_transfer': 0.15,
                 'memory': 0.20,
                 'io': 0.10,
-                'control': 0.20,
+                'control': 0.25,
                 'stack': 0.15,
             }, "Typical PDP-11 compatible workload"),
             'compute': WorkloadProfile('compute', {
@@ -193,12 +193,12 @@ class MiprocModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 2.126798,
-            'control': 1.023128,
-            'data_transfer': 0.937426,
-            'io': -3.332895,
-            'memory': -0.041971,
-            'stack': -2.374660
+            'alu': 3.12495600140797,
+            'control': 0.5033438929954206,
+            'data_transfer': 0.03965739762992279,
+            'io': -1.153701748210721,
+            'memory': -2.1681332864015137,
+            'stack': -1.0102076733544438,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

@@ -197,11 +197,11 @@ class Mos6502Model(BaseProcessorModel):
         # Correction terms from system identification (2026-01-30)
         # Fitted via least-squares against perfect6502 emulator measurements
         self.corrections = {
-            'alu': -3.1036,
-            'control': 2.8693,
-            'data_transfer': 3.1759,
-            'memory': 1.0108,
-            'stack': -1.4258
+            'alu': -2.9845059514301355,
+            'control': 2.0149339993901005,
+            'data_transfer': 3.398532351674092,
+            'memory': 0.6535178542904029,
+            'stack': 0.7230447894127985,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

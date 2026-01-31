@@ -188,12 +188,12 @@ class Sparc64HalModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.20634077180428553,
-            'branch': -0.28619349705763886,
-            'divide': -8.823522151701793,
-            'load': -2.0402756268303928,
-            'multiply': -4.748864841865361,
-            'store': 2.146265658367974,
+            'alu': 0.205622938883892,
+            'branch': -0.2860412294602196,
+            'divide': -8.827720387739665,
+            'load': -2.036865818664611,
+            'multiply': -4.7443620711807775,
+            'store': 2.1422796122603445,
         }
 
         # Cache configuration for memory hierarchy modeling

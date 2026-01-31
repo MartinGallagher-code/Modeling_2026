@@ -188,12 +188,12 @@ class U80701Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.4470877203084254,
-            'control': -3.542907144411812,
-            'data_transfer': 1.4772663550552052,
-            'divide': -24.267702879107006,
-            'memory': -0.5455452615167614,
-            'multiply': -14.999990997948748,
+            'alu': 1.3974823716018252,
+            'control': -3.6025176283981795,
+            'data_transfer': 1.3974823716018048,
+            'divide': -11.098991948761205,
+            'memory': -0.6095176283981827,
+            'multiply': -21.854280468216757,
         }
 
         # Cache configuration for memory hierarchy modeling

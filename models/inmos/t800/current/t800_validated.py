@@ -174,11 +174,11 @@ class T800Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.10179339086636936,
-            'channel': -1.9951972426179911,
-            'control': 0.20179337119634227,
-            'fp': -0.4812170832876587,
-            'memory': 1.0852181916997679,
+            'alu': 0.1257251117190937,
+            'channel': -1.1992712844391324,
+            'control': 0.22572511171909457,
+            'fp': -1.2292784921226723,
+            'memory': 1.1091251117190972,
         }
 
         # Cache configuration for memory hierarchy modeling

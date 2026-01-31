@@ -188,12 +188,12 @@ class ZoranZr34161Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.5346171377952432,
-            'branch': -0.4653780947238673,
-            'load': -1.6966810592649118,
-            'mac': 0.5346244103839842,
-            'special': -0.46537224497739244,
-            'store': -0.311770587152738,
+            'alu': 0.5025781637717138,
+            'branch': -0.49742183622828906,
+            'load': -1.087985111662531,
+            'mac': 0.5025781637717112,
+            'special': -0.49742183622828684,
+            'store': -0.9848585607940441,
         }
 
         # Cache configuration for memory hierarchy modeling

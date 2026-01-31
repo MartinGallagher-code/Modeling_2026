@@ -174,11 +174,11 @@ class Z80SIOModel(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'char_process': -1.299719,
-            'control': -0.921619,
-            'interrupt': 4.999376,
-            'register_io': -3.738368,
-            'sync': 2.622081
+            'char_process': -1.512756467439789,
+            'control': -1.0127564674397866,
+            'interrupt': 0.7218554861730684,
+            'register_io': -1.002497769848354,
+            'sync': 4.242372881355934,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

@@ -177,11 +177,11 @@ class Rtx2000Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.10000066225966708,
-            'branch': -0.39999942047155285,
-            'literals': 0.09999229170690996,
-            'memory': -0.5481108711822376,
-            'stack_ops': 0.10000017282618635,
+            'alu': 0.10000000000000282,
+            'branch': -0.39999999999999764,
+            'literals': 0.09999999999997324,
+            'memory': -0.548199999999998,
+            'stack_ops': 0.10000000000000021,
         }
 
         # Cache configuration for memory hierarchy modeling

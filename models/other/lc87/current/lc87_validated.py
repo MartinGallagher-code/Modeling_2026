@@ -145,11 +145,11 @@ class Lc87Model(BaseProcessorModel):
         # Workload profiles
         self.workload_profiles = {
             'typical': WorkloadProfile('typical', {
-                'alu': 0.20,
+                'alu': 0.15,
                 'data_transfer': 0.15,
                 'memory': 0.25,
                 'io': 0.22,
-                'control': 0.18,
+                'control': 0.23,
             }, "Typical embedded workload"),
             'compute': WorkloadProfile('compute', {
                 'alu': 0.45,
@@ -176,11 +176,11 @@ class Lc87Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 1.519412,
-            'control': 0.349323,
-            'data_transfer': 1.377312,
-            'io': -2.529339,
-            'memory': 0.089808
+            'alu': 2.4651111468446962,
+            'control': 0.1969059646126653,
+            'data_transfer': 0.42570932701957714,
+            'io': -0.7552307496104744,
+            'memory': -1.651042712105003,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

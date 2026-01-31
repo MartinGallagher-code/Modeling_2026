@@ -188,12 +188,12 @@ class Z8s180Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.050721,
-            'control': -2.666382,
-            'data_transfer': 1.900456,
-            'divide': -19.964530,
-            'memory': -0.537740,
-            'multiply': 0.051105
+            'alu': 1.4472553507609451,
+            'control': -2.552744649239052,
+            'data_transfer': 1.4472553507609576,
+            'divide': -6.003814801429498,
+            'memory': -0.5527446492390486,
+            'multiply': -11.827209573143731,
         }
 
         # No cache on this processor

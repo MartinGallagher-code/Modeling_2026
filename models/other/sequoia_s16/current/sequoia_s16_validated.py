@@ -160,11 +160,11 @@ class SequoiaS16Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 2.095285,
-            'checkpoint': -4.940763,
-            'compare_swap': -4.995317,
-            'control': 0.755717,
-            'memory': -0.714327
+            'alu': 2.0544713412707925,
+            'checkpoint': -5.637063635610684,
+            'compare_swap': -4.669013424863314,
+            'control': 0.9737730579066641,
+            'memory': -0.7322546241239822,
         }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:

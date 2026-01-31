@@ -188,12 +188,12 @@ class I960cfModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.3111157285027853,
-            'branch': -0.24781242703913575,
-            'divide': -4.4531716359247095,
-            'load': -2.666652617028788,
-            'multiply': -4.042453212690973,
-            'store': 2.084236715533885,
+            'alu': 0.12653917084243427,
+            'branch': -0.208659824118093,
+            'divide': -5.532664849315461,
+            'load': -1.8445563064799357,
+            'multiply': -2.8846547989207236,
+            'store': 1.0046351506845421,
         }
 
         # Cache configuration for memory hierarchy modeling

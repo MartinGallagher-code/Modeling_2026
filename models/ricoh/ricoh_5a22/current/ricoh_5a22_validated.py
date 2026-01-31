@@ -188,12 +188,12 @@ class Ricoh5a22Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.033434,
-            'control': -1.887304,
-            'data_transfer': 1.272048,
-            'divide': -9.734556,
-            'memory': -0.850833,
-            'multiply': -7.036994
+            'alu': 1.1426133397582559,
+            'control': -1.8573866602417428,
+            'data_transfer': 1.142613339758269,
+            'divide': -5.380054611894115,
+            'memory': -0.8573866602417383,
+            'multiply': -10.596052684415493,
         }
 
         # No cache on this processor

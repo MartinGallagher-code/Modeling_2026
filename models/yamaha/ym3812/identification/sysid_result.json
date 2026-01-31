@@ -8,12 +8,12 @@
   "cpi_error_percent": 0.0,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
-    "cor.envelope": 4.999999,
-    "cor.operator": -3.870969,
-    "cor.output": 2.525994,
-    "cor.register": 1.410196,
-    "cor.rhythm": -3.862709,
-    "cor.waveform": 1.018018
+    "cor.envelope": 3.051544604645889,
+    "cor.operator": -2.110259783859994,
+    "cor.output": -0.1660045427932614,
+    "cor.register": 4.13586923641959,
+    "cor.rhythm": -1.8465137767364146,
+    "cor.waveform": -0.8780347250733492
   },
   "residuals_before": {
     "typical": 0.0,

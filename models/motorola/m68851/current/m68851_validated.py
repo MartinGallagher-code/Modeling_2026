@@ -179,11 +179,11 @@ class Motorola68851Model(BaseProcessorModel):
 
         # Correction terms for system identification
         self.corrections = {
-            'flush': 0.0,
-            'load_descriptor': 0.0,
-            'table_walk': 0.0,
-            'translate': 0.0,
-            'validate': 0.0
+            'flush': 0.022696480784350992,
+            'load_descriptor': -0.01631206839341113,
+            'table_walk': -0.003179058415044136,
+            'translate': 0.006735449806993934,
+            'validate': -0.014540446587652063,
         }
 
     def analyze(self, workload='typical'):

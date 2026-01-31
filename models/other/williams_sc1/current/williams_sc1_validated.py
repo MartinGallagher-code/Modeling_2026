@@ -149,10 +149,10 @@ class WilliamsSc1Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'blit': -5.000000,
-            'control': 4.554750,
-            'setup': 0.585738,
-            'transform': 0.370432
+            'blit': -6.69537480063797,
+            'control': 5.215311004784691,
+            'setup': 1.2002734107997253,
+            'transform': 1.0198222829801937,
         }
 
     def analyze(self, workload='typical'):
