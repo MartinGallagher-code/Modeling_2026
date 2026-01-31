@@ -174,12 +174,12 @@ class Tms34010Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 2.182750,
-            'control': -0.933899,
-            'data_transfer': 0.405092,
-            'graphics': -1.531106,
-            'memory': -0.281123,
-            'pixel': -1.531106
+            'alu': 2.1827569482875426,
+            'control': -0.9338963888368886,
+            'data_transfer': 0.40506777130352206,
+            'graphics': -1.5311087316747298,
+            'memory': -0.281208530625143,
+            'pixel': -1.5311064731558346,
         }
 
         # Cache configuration for memory hierarchy modeling

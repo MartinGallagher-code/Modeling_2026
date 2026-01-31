@@ -188,12 +188,12 @@ class Alpha21066Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.566617,
-            'branch': -0.756555,
-            'divide': -12.140696,
-            'load': -3.051114,
-            'multiply': -4.372414,
-            'store': -0.304154
+            'alu': 0.5666068049421208,
+            'branch': -0.7565531332773638,
+            'divide': -12.14067611447025,
+            'load': -3.051146607597782,
+            'multiply': -4.3723836486683085,
+            'store': -0.30422398512791227,
         }
 
         # Cache configuration for memory hierarchy modeling

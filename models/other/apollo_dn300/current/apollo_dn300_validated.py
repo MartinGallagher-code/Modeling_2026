@@ -159,7 +159,13 @@ class ApolloDN300Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 2.978634805242624,
+            'control': -1.793543835842244,
+            'float': -6.72216848717497,
+            'graphics': 3.6077647051508244,
+            'memory': -2.239108099100932,
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

@@ -188,22 +188,22 @@ class Cx5x86Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.141039,
-            'control': -1.664607,
-            'data_transfer': 0.725610,
-            'divide': -9.000000,
-            'memory': -0.902661,
-            'multiply': -5.000000
+            'alu': 0.48177859725033645,
+            'control': -1.5163668891235054,
+            'data_transfer': 0.48734205656798135,
+            'divide': -13.482577639378013,
+            'memory': -0.84360491944532,
+            'multiply': -5.999998522519447,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9747,
+            l1_hit_rate=0.9746,
             has_l2=True,
             l2_latency=15.0,
-            l2_hit_rate=0.8477,
+            l2_hit_rate=0.8455,
             dram_latency=8.0,
         )
         self.memory_categories = ['memory']

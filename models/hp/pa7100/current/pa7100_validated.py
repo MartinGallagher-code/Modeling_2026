@@ -188,22 +188,22 @@ class Pa7100Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.774925,
-            'branch': 0.073046,
-            'divide': -6.000000,
-            'load': -2.951376,
-            'multiply': -5.000000,
-            'store': 4.093120
+            'alu': 0.8695652012497767,
+            'branch': 0.057971013513481176,
+            'divide': -6.884057907532276,
+            'load': -2.790066109695793,
+            'multiply': -4.99999999553397,
+            'store': 4.108484158658256,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9858,
+            l1_hit_rate=0.9990,
             has_l2=True,
             l2_latency=8.0,
-            l2_hit_rate=0.8897,
+            l2_hit_rate=0.8894,
             dram_latency=12.0,
         )
         self.memory_categories = ['load', 'store']

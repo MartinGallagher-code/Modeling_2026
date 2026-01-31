@@ -1,27 +1,27 @@
 {
   "processor": "ay3_8900",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": true,
-  "iterations": 19,
-  "loss_before": 0.294882,
-  "loss_after": 0.294882,
-  "cpi_error_percent": 0.16,
-  "message": "`xtol` termination condition is satisfied.",
+  "iterations": 32,
+  "loss_before": 8.8e-05,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.background": 0.009989,
-    "cor.collision": 0.011137,
-    "cor.sprite_engine": 0.009989,
-    "cor.sync": -0.000721
+    "cor.background": 0.005731,
+    "cor.collision": -0.017972,
+    "cor.sprite_engine": 0.005731,
+    "cor.sync": -0.000826
   },
   "residuals_before": {
     "typical": 0.0094,
-    "sprite_heavy": 0.5094,
-    "collision_heavy": -0.7906
+    "sprite_heavy": 0.0094,
+    "collision_heavy": 0.0094
   },
   "residuals_after": {
-    "typical": 0.0094,
-    "sprite_heavy": 0.5094,
-    "collision_heavy": -0.7906
+    "typical": -0.0,
+    "sprite_heavy": -0.0,
+    "collision_heavy": -0.0
   },
   "free_parameters": [
     "cor.background",

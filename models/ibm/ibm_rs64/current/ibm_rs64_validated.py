@@ -188,22 +188,22 @@ class IbmRs64Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.198835,
-            'branch': -0.410622,
-            'divide': -5.000000,
-            'load': -3.193949,
-            'multiply': -5.000000,
-            'store': 3.023709
+            'alu': 0.26758791853140274,
+            'branch': -0.4203578296030351,
+            'divide': -5.950571112102905,
+            'load': -2.8614856198022,
+            'multiply': -4.871254394723844,
+            'store': 3.0215941744108012,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9886,
+            l1_hit_rate=0.9990,
             has_l2=True,
             l2_latency=20.2,
-            l2_hit_rate=0.8346,
+            l2_hit_rate=0.8350,
             dram_latency=13.5,
         )
         self.memory_categories = ['load', 'store']

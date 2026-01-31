@@ -158,7 +158,13 @@ class Es5503Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'control': -0.00047624010816088504,
+            'interpolation': -0.0018511601893917956,
+            'output': -0.0006918768337999155,
+            'volume': -0.0005794773121770622,
+            'wavetable_read': -0.0009853630168846078,
+        }
 
     def analyze(self, workload='typical'):
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

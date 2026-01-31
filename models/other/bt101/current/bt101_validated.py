@@ -191,7 +191,13 @@ class Bt101Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'control': 0.0,
+            'dac_convert': 0.0,
+            'lookup': 0.0,
+            'palette_read': 0.0,
+            'pixel_clock': 0.0,
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """Analyze performance for a given workload profile."""

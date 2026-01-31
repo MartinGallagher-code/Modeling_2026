@@ -188,19 +188,19 @@ class I960Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.032630,
-            'branch': -0.614321,
-            'divide': -5.000000,
-            'load': -3.072484,
-            'multiply': -5.000000,
-            'store': 2.715386
+            'alu': 1.058153189967535,
+            'branch': -0.6183316879860482,
+            'divide': -5.2377654198236305,
+            'load': -2.9970969974519037,
+            'multiply': -4.999207597551751,
+            'store': 2.7629141986377626,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9900,
+            l1_hit_rate=0.9990,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

@@ -188,22 +188,22 @@ class Ibm486slc2Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.271090,
-            'control': -2.198278,
-            'data_transfer': 1.867111,
-            'divide': -12.500000,
-            'memory': -1.162797,
-            'multiply': -6.000000
+            'alu': 1.1940218781152019,
+            'control': -1.8059707992748837,
+            'data_transfer': 1.1940439129983742,
+            'divide': -21.61276325810878,
+            'memory': -1.0219665573393808,
+            'multiply': -10.40244280414457,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9702,
+            l1_hit_rate=0.9691,
             has_l2=True,
             l2_latency=8.0,
-            l2_hit_rate=0.7000,
+            l2_hit_rate=0.9990,
             dram_latency=8.0,
         )
         self.memory_categories = ['memory']

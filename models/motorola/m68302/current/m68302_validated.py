@@ -188,12 +188,12 @@ class M68302Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'control': -0.178110,
-            'dma': 0.967827,
-            'memory': -0.357645,
-            'packet': -1.214594,
-            'protocol': -1.214594,
-            'register': 1.675954
+            'control': -0.17810806856543052,
+            'dma': 0.9678380612784121,
+            'memory': -0.35760997065149747,
+            'packet': -1.2145946172317268,
+            'protocol': -1.214594610206376,
+            'register': 1.675945739029161,
         }
 
         # Cache configuration for memory hierarchy modeling

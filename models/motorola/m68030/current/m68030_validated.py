@@ -202,14 +202,14 @@ class M68030Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.797279,
-            'branch': -0.342667,
-            'divide': -14.297768,
-            'fp_double': -4.999253,
-            'fp_single': -1.788057,
-            'load': 1.470761,
-            'multiply': -3.655554,
-            'store': 1.164499
+            'alu': 0.7972786417790813,
+            'branch': -0.342667389093637,
+            'divide': -14.297767516066445,
+            'fp_double': -4.9992531398131845,
+            'fp_single': -1.788057055716417,
+            'load': 1.4707611518902481,
+            'multiply': -3.655553836228865,
+            'store': 1.164499100120524,
         }
 
         # Cache configuration for memory hierarchy modeling

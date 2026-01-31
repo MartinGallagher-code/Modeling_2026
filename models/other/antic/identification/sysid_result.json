@@ -1,30 +1,30 @@
 {
   "processor": "antic",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": true,
-  "iterations": 19,
-  "loss_before": 0.032772,
-  "loss_after": 0.032772,
-  "cpi_error_percent": 1.66,
-  "message": "`xtol` termination condition is satisfied.",
+  "iterations": 49,
+  "loss_before": 0.00442,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.char_mode": -0.043916,
-    "cor.control": -0.043916,
-    "cor.display_list": 0.142373,
-    "cor.dma": -0.382008,
-    "cor.map_mode": -0.043916
+    "cor.char_mode": 0.017767,
+    "cor.control": 0.017767,
+    "cor.display_list": 0.078637,
+    "cor.dma": -0.16457,
+    "cor.map_mode": 0.017767
   },
   "residuals_before": {
     "typical": -0.0665,
-    "text_heavy": 0.2335,
-    "graphics_heavy": -0.2665,
-    "mixed": 0.0335
+    "text_heavy": -0.0665,
+    "graphics_heavy": -0.0665,
+    "mixed": -0.0665
   },
   "residuals_after": {
-    "typical": -0.0665,
-    "text_heavy": 0.2335,
-    "graphics_heavy": -0.2665,
-    "mixed": 0.0335
+    "typical": -0.0,
+    "text_heavy": -0.0,
+    "graphics_heavy": -0.0,
+    "mixed": -0.0
   },
   "free_parameters": [
     "cor.char_mode",

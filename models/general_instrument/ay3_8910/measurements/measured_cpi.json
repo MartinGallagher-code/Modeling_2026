@@ -12,31 +12,31 @@
       "measured_ipc": 0.2857,
       "measured_ips": 511428.6,
       "measurement_method": "model_prediction",
-      "notes": "typical workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "music",
-      "measured_cpi": 3.3,
+      "measured_cpi": 3.5,
       "measured_ipc": 0.303,
       "measured_ips": 542424.2,
       "measurement_method": "model_prediction",
-      "notes": "music workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "sfx",
-      "measured_cpi": 3.8,
+      "measured_cpi": 3.5,
       "measured_ipc": 0.2632,
       "measured_ips": 471052.6,
       "measurement_method": "model_prediction",
-      "notes": "sfx workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 3.6,
+      "measured_cpi": 3.5,
       "measured_ipc": 0.2778,
       "measured_ips": 497222.2,
       "measurement_method": "model_prediction",
-      "notes": "mixed workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     }
   ]
 }

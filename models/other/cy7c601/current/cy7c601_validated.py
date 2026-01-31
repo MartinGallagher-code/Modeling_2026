@@ -188,19 +188,19 @@ class Cy7c601Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.806042,
-            'branch': -0.445708,
-            'divide': -12.459902,
-            'load': -1.588921,
-            'multiply': -4.999796,
-            'store': 1.148946
+            'alu': 0.8522941168919494,
+            'branch': -0.45324618348405116,
+            'divide': -12.915558971829835,
+            'load': -1.5250023012975813,
+            'multiply': -4.9883484012149335,
+            'store': 1.0575932779073962,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9987,
+            l1_hit_rate=0.9989,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

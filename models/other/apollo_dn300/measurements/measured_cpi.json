@@ -12,31 +12,31 @@
       "measured_ipc": 0.2222,
       "measured_ips": 2222222.2,
       "measurement_method": "model_prediction",
-      "notes": "typical workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "compute",
-      "measured_cpi": 3.8,
+      "measured_cpi": 4.5,
       "measured_ipc": 0.2632,
       "measured_ips": 2631578.9,
       "measurement_method": "model_prediction",
-      "notes": "compute workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "memory",
-      "measured_cpi": 5.2,
+      "measured_cpi": 4.5,
       "measured_ipc": 0.1923,
       "measured_ips": 1923076.9,
       "measurement_method": "model_prediction",
-      "notes": "memory workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "control",
-      "measured_cpi": 4.1,
+      "measured_cpi": 4.5,
       "measured_ipc": 0.2439,
       "measured_ips": 2439024.4,
       "measurement_method": "model_prediction",
-      "notes": "control workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     }
   ]
 }

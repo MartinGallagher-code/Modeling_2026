@@ -1,11 +1,11 @@
 {
   "processor": "ibm_power2",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": false,
   "iterations": 200,
   "loss_before": 1e-06,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.04,
+  "cpi_error_percent": 0.0388,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
     "cor.alu": 0.751302,
@@ -14,6 +14,13 @@
     "cor.load": -3.552519,
     "cor.multiply": -5.0,
     "cor.store": 3.187393
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.921874,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0,
+    "cache.l2_hit_rate": 0.907867,
+    "cache.l2_latency": 10.7
   },
   "residuals_before": {
     "typical": -0.0014,

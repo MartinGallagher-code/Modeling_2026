@@ -1,6 +1,6 @@
 {
   "processor": "m68302",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": true,
   "iterations": 18,
   "loss_before": 0.0,
@@ -14,6 +14,11 @@
     "cor.packet": -1.214595,
     "cor.protocol": -1.214595,
     "cor.register": 1.675946
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.989994,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0
   },
   "residuals_before": {
     "typical": -0.0,

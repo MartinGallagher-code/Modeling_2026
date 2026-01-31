@@ -188,12 +188,12 @@ class SgsD950Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.301238,
-            'branch': -0.698758,
-            'load': 2.206390,
-            'mac': 0.301244,
-            'special': -1.698753,
-            'store': -1.743903
+            'alu': 0.30124153069573795,
+            'branch': -0.6987575117423531,
+            'load': 2.206388836827532,
+            'mac': 0.3012430246069628,
+            'special': -1.6987561858124396,
+            'store': -1.743903363233293,
         }
 
         # Cache configuration for memory hierarchy modeling

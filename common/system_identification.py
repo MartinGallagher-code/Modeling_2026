@@ -134,12 +134,13 @@ def identify_model(
     original_params = dict(all_params)
     all_bounds = get_model_parameter_bounds(model)
 
-    # --- identify free parameters (cor.* and free cache.*) ---
+    # --- identify free parameters (cor.*, free cache.*, free bp.*) ---
     all_metadata = get_model_parameter_metadata(model)
     free_names = sorted(
         k for k in all_params
         if k.startswith("cor.")
         or (k.startswith("cache.") and not all_metadata.get(k, {}).get('fixed', True))
+        or (k.startswith("bp.") and not all_metadata.get(k, {}).get('fixed', True))
     )
     if not free_names:
         # No correction terms — initialize them from categories
@@ -151,6 +152,7 @@ def identify_model(
             k for k in all_params
             if k.startswith("cor.")
             or (k.startswith("cache.") and not all_metadata.get(k, {}).get('fixed', True))
+            or (k.startswith("bp.") and not all_metadata.get(k, {}).get('fixed', True))
         )
 
     if not free_names:

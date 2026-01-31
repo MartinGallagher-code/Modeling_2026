@@ -1,11 +1,11 @@
 {
   "processor": "supersparc",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": false,
   "iterations": 200,
   "loss_before": 4.7e-05,
   "loss_after": 2.8e-05,
-  "cpi_error_percent": 1.11,
+  "cpi_error_percent": 1.1138,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
     "cor.alu": 0.197146,
@@ -14,6 +14,13 @@
     "cor.load": -2.741443,
     "cor.multiply": -4.999747,
     "cor.store": 1.99207
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.92917,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0,
+    "cache.l2_hit_rate": 0.700515,
+    "cache.l2_latency": 8.0
   },
   "residuals_before": {
     "typical": -0.0118,

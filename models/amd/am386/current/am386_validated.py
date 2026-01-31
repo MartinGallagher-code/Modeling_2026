@@ -188,19 +188,19 @@ class Am386Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.990590,
-            'control': -4.444367,
-            'data_transfer': 2.690110,
-            'divide': -19.000000,
-            'memory': -0.386509,
-            'multiply': -6.000000
+            'alu': 1.9613141032906884,
+            'control': -4.0386857305944055,
+            'data_transfer': 1.9613146107171764,
+            'divide': -26.301561756958712,
+            'memory': -0.22013235469447737,
+            'multiply': -11.907244716050787,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9712,
+            l1_hit_rate=0.9741,
             dram_latency=8.0,
         )
         self.memory_categories = ['memory']

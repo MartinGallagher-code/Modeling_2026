@@ -1,6 +1,6 @@
 {
   "processor": "v850",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": false,
   "iterations": 200,
   "loss_before": 0.0,
@@ -14,6 +14,11 @@
     "cor.load": -4.029242,
     "cor.multiply": -4.865741,
     "cor.store": 2.977287
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.800007,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0
   },
   "residuals_before": {
     "typical": 0.0,

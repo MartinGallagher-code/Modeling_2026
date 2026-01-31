@@ -159,7 +159,13 @@ class ClipperC100Model(BaseProcessorModel):
         }
 
         # Correction terms for system identification (initially zero)
-        self.corrections = {cat: 0.0 for cat in self.instruction_categories}
+        self.corrections = {
+            'alu': 0.4503773930706207,
+            'branch': -0.4750477232204213,
+            'float': -1.4351522750350296,
+            'load': -0.7351434896518223,
+            'store': 0.8329789703583429,
+        }
 
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         profile = self.workload_profiles.get(workload, self.workload_profiles['typical'])

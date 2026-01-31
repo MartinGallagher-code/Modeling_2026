@@ -147,10 +147,10 @@ class Ay38500Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'game_logic': 0.024785,
-            'io': 0.024785,
-            'sync': -0.108216,
-            'video_gen': -0.108216
+            'game_logic': 0.06213113257403421,
+            'io': 0.062131132574034166,
+            'sync': -0.041420755043703635,
+            'video_gen': -0.04142075504370366,
         }
 
     def analyze(self, workload='typical'):

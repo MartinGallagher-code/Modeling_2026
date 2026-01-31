@@ -163,12 +163,12 @@ class Am29000Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.515402,
-            'branch': -0.718188,
-            'call_return': -0.114962,
-            'load': -0.094613,
-            'multiply': -2.512835,
-            'store': -1.853504
+            'alu': 0.5154015312917489,
+            'branch': -0.7181882138553166,
+            'call_return': -0.11496198707221451,
+            'load': -0.09461221283824496,
+            'multiply': -2.5128346697640174,
+            'store': -1.8535032254811332,
         }
 
         # Cache configuration for memory hierarchy modeling

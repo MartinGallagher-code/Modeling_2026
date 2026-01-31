@@ -188,19 +188,19 @@ class Cx486dlcModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': -0.019307,
-            'control': -2.940677,
-            'data_transfer': 1.721080,
-            'divide': -15.000000,
-            'memory': -0.857144,
-            'multiply': -6.000000
+            'alu': 0.9890856109116131,
+            'control': -2.4967575066041965,
+            'data_transfer': 1.0316645925600931,
+            'divide': -29.983558881278338,
+            'memory': -0.4974424388672675,
+            'multiply': -7.998857185905325,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9740,
+            l1_hit_rate=0.9990,
             dram_latency=8.0,
         )
         self.memory_categories = ['memory']

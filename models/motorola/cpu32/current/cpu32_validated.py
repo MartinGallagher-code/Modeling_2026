@@ -188,19 +188,19 @@ class Cpu32Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': -1.179654,
-            'control': -3.216746,
-            'data_transfer': 1.716549,
-            'divide': -20.000000,
-            'memory': -1.267296,
-            'multiply': -10.000000
+            'alu': 0.20006034385736465,
+            'control': -2.620375404833371,
+            'data_transfer': 0.7403127505583664,
+            'divide': -36.91630383049622,
+            'memory': -0.9894987254820341,
+            'multiply': -14.745316352584894,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9296,
+            l1_hit_rate=0.9354,
             dram_latency=8.0,
         )
         self.memory_categories = ['memory']

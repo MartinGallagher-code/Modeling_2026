@@ -1,30 +1,30 @@
 {
   "processor": "apollo_dn300",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": true,
-  "iterations": 36,
-  "loss_before": 0.88885,
+  "iterations": 131,
+  "loss_before": 0.41835,
   "loss_after": 0.0,
   "cpi_error_percent": 0.0,
   "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.alu": 0.987849,
-    "cor.memory": 3.392655,
-    "cor.control": 0.243857,
-    "cor.float": -7.280162,
-    "cor.graphics": -5.754629
+    "cor.alu": 2.978635,
+    "cor.memory": -2.239108,
+    "cor.control": -1.793544,
+    "cor.float": -6.722168,
+    "cor.graphics": 3.607765
   },
   "residuals_before": {
     "typical": 0.0001,
-    "compute": 1.73,
-    "memory": 0.0,
-    "control": 0.75
+    "compute": 1.03,
+    "memory": 0.7,
+    "control": 0.35
   },
   "residuals_after": {
-    "typical": 0.0,
-    "compute": -0.0,
-    "memory": -0.0,
-    "control": -0.0
+    "typical": -0.0,
+    "compute": 0.0,
+    "memory": 0.0,
+    "control": 0.0
   },
   "free_parameters": [
     "cor.alu",

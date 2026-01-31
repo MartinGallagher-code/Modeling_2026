@@ -1,6 +1,6 @@
 {
   "processor": "microsparc_ii",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": false,
   "iterations": 200,
   "loss_before": 0.001604,
@@ -14,6 +14,13 @@
     "cor.load": -3.240545,
     "cor.multiply": -4.643865,
     "cor.store": -0.047722
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.925125,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 11.0,
+    "cache.l2_hit_rate": 0.998934,
+    "cache.l2_latency": 16.5
   },
   "residuals_before": {
     "typical": -0.0641,

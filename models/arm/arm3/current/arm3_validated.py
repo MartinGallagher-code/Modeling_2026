@@ -154,17 +154,17 @@ class Arm3Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.278999,
-            'branch': 0.016847,
-            'load': 1.711289,
-            'store': -2.824872
+            'alu': -0.27899884259222896,
+            'branch': 0.016846706775440652,
+            'load': 1.7126004172801443,
+            'store': -2.823561635055981,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9376,
+            l1_hit_rate=0.9377,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

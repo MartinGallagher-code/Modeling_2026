@@ -1,11 +1,11 @@
 {
   "processor": "ibm_rs64",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": false,
   "iterations": 200,
   "loss_before": 9.2e-05,
   "loss_after": 0.0,
-  "cpi_error_percent": 0.06,
+  "cpi_error_percent": 0.0624,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
     "cor.alu": 0.267588,
@@ -14,6 +14,13 @@
     "cor.load": -2.861486,
     "cor.multiply": -4.871254,
     "cor.store": 3.021594
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.998997,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 13.5,
+    "cache.l2_hit_rate": 0.834973,
+    "cache.l2_latency": 20.2
   },
   "residuals_before": {
     "typical": -0.015,

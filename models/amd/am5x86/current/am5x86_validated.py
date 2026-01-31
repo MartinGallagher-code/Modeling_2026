@@ -188,22 +188,22 @@ class Am5x86Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': -0.338303,
-            'control': -1.799252,
-            'data_transfer': 1.283038,
-            'divide': -11.000000,
-            'memory': -0.847635,
-            'multiply': -6.000000
+            'alu': 0.5841587598038078,
+            'control': -1.4158412392439184,
+            'data_transfer': 0.5841587626963818,
+            'divide': -17.247593516171214,
+            'memory': -0.731861215754697,
+            'multiply': -11.999965083624677,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9835,
+            l1_hit_rate=0.9829,
             has_l2=True,
             l2_latency=20.0,
-            l2_hit_rate=0.8905,
+            l2_hit_rate=0.9485,
             dram_latency=10.6,
         )
         self.memory_categories = ['memory']

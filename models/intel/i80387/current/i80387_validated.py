@@ -194,12 +194,12 @@ class I80387Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'fp_add': 28.620111,
-            'fp_div': -36.379883,
-            'fp_mul': -64.664945,
-            'fp_sqrt': 122.533640,
-            'fp_transfer': 15.977584,
-            'fp_trig': 174.945334
+            'fp_add': 28.620111042210805,
+            'fp_div': -36.37988273789739,
+            'fp_mul': -64.6649443218561,
+            'fp_sqrt': 122.53364001155614,
+            'fp_transfer': 15.977584000161022,
+            'fp_trig': 174.9453340000241,
         }
 
         # Cache configuration for memory hierarchy modeling

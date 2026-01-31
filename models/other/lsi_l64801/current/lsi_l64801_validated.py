@@ -188,12 +188,12 @@ class LsiL64801Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.075980,
-            'branch': -0.257317,
-            'divide': -14.591024,
-            'load': -1.522067,
-            'multiply': -4.907793,
-            'store': 1.530960
+            'alu': 1.074173805748707,
+            'branch': -0.25811425351147965,
+            'divide': -14.599877445486644,
+            'load': -1.4308154710552274,
+            'multiply': -4.917578315948332,
+            'store': 1.4002368023053018,
         }
 
         # Cache configuration for memory hierarchy modeling

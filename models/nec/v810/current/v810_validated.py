@@ -188,19 +188,19 @@ class V810Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.762359,
-            'branch': -0.552262,
-            'divide': -12.208796,
-            'load': -3.141171,
-            'multiply': -4.999076,
-            'store': -0.252239
+            'alu': 0.7444750603283158,
+            'branch': -0.5510661853662568,
+            'divide': -12.125258583646774,
+            'load': -3.0125018881931402,
+            'multiply': -4.99913412616471,
+            'store': -0.4346016779434796,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.8001,
+            l1_hit_rate=0.8000,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

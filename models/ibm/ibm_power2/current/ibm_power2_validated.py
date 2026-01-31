@@ -188,12 +188,12 @@ class IbmPower2Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.745349,
-            'branch': -0.037329,
-            'divide': -5.000000,
-            'load': -3.555429,
-            'multiply': -5.000000,
-            'store': 3.191631
+            'alu': 0.7513023965583,
+            'branch': -0.03812417859174067,
+            'divide': -5.054620759723135,
+            'load': -3.5525190351769393,
+            'multiply': -4.999999999505087,
+            'store': 3.1873932309776953,
         }
 
         # Cache configuration for memory hierarchy modeling

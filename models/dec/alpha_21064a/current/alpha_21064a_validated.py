@@ -188,22 +188,22 @@ class Alpha21064aModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.256462,
-            'branch': -0.827524,
-            'divide': -6.000000,
-            'load': -3.131838,
-            'multiply': -5.000000,
-            'store': 0.935496
+            'alu': 0.5439279847786737,
+            'branch': -0.873108311403833,
+            'divide': -8.679089700171005,
+            'load': -2.7381512589554617,
+            'multiply': -4.999999079159263,
+            'store': 0.9142166169179404,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9259,
+            l1_hit_rate=0.9493,
             has_l2=True,
             l2_latency=8.0,
-            l2_hit_rate=0.9673,
+            l2_hit_rate=0.9962,
             dram_latency=30.0,
         )
         self.memory_categories = ['load', 'store']

@@ -210,14 +210,14 @@ class I860Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.285998,
-            'branch': -0.761297,
-            'divide': 1.017041,
-            'fp_double': -0.448496,
-            'fp_single': -0.115342,
-            'load': -0.010879,
-            'multiply': 0.303138,
-            'store': -0.171470
+            'alu': 0.28599824602750484,
+            'branch': -0.7612968125987817,
+            'divide': 1.0170408857715774,
+            'fp_double': -0.4484960689208486,
+            'fp_single': -0.11534204934631394,
+            'load': -0.010878971382604805,
+            'multiply': 0.3031380261015099,
+            'store': -0.17146998036186986,
         }
 
         # Cache configuration for memory hierarchy modeling
@@ -227,7 +227,7 @@ class I860Model(BaseProcessorModel):
             l1_hit_rate=0.9300,
             has_l2=True,
             l2_latency=8.0,
-            l2_hit_rate=0.7000,
+            l2_hit_rate=0.9990,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

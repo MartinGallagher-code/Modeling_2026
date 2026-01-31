@@ -1,11 +1,11 @@
 {
   "processor": "m88110",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": false,
   "iterations": 200,
   "loss_before": 0.001396,
   "loss_after": 5.1e-05,
-  "cpi_error_percent": 1.03,
+  "cpi_error_percent": 1.0289,
   "message": "The maximum number of function evaluations is exceeded.",
   "corrections": {
     "cor.alu": 0.645167,
@@ -14,6 +14,13 @@
     "cor.load": -2.776403,
     "cor.multiply": -4.999697,
     "cor.store": 2.719156
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.913856,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0,
+    "cache.l2_hit_rate": 0.99,
+    "cache.l2_latency": 8.0
   },
   "residuals_before": {
     "typical": -0.0596,

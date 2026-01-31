@@ -188,19 +188,19 @@ class SparcliteModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.812136,
-            'branch': -0.439253,
-            'divide': -14.080413,
-            'load': -3.824325,
-            'multiply': -5.000000,
-            'store': 0.951534
+            'alu': 0.8238309612984568,
+            'branch': -0.4433137830429783,
+            'divide': -14.299918783517297,
+            'load': -3.592233474080969,
+            'multiply': -4.999999999535899,
+            'store': 0.6199224733841555,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.8004,
+            l1_hit_rate=0.8002,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

@@ -1,30 +1,30 @@
 {
   "processor": "es5503",
-  "date": "2026-01-30",
-  "converged": false,
-  "iterations": 17,
-  "loss_before": 0.395301,
-  "loss_after": 0.395301,
-  "cpi_error_percent": 0.02,
-  "message": "Rolled back: optimization worsened typical-workload error",
+  "date": "2026-01-31",
+  "converged": true,
+  "iterations": 34,
+  "loss_before": 1e-06,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.wavetable_read": 0.0,
-    "cor.interpolation": 0.0,
-    "cor.volume": 0.0,
-    "cor.output": 0.0,
-    "cor.control": 0.0
+    "cor.wavetable_read": -0.000985,
+    "cor.interpolation": -0.001851,
+    "cor.volume": -0.000579,
+    "cor.output": -0.000692,
+    "cor.control": -0.000476
   },
   "residuals_before": {
     "typical": 0.001,
-    "full_poly": -0.699,
-    "simple": 1.001,
-    "mixed": 0.301
+    "full_poly": 0.001,
+    "simple": 0.001,
+    "mixed": 0.001
   },
   "residuals_after": {
-    "typical": 0.001,
-    "full_poly": -0.699,
-    "simple": 1.001,
-    "mixed": 0.301
+    "typical": 0.0,
+    "full_poly": 0.0,
+    "simple": 0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
     "cor.control",

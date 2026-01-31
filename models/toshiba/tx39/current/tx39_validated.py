@@ -188,19 +188,19 @@ class Tx39Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.529717,
-            'branch': -0.640876,
-            'divide': -6.000000,
-            'load': -2.543902,
-            'multiply': -5.000000,
-            'store': 1.788113
+            'alu': 0.7801912477956161,
+            'branch': -0.6799043592151801,
+            'divide': -8.295401183361065,
+            'load': -2.4082272510620926,
+            'multiply': -4.999944052672218,
+            'store': 1.7674647862084898,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9900,
+            l1_hit_rate=0.9990,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

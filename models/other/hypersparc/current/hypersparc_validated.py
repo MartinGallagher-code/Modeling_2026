@@ -188,22 +188,22 @@ class HypersparcModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.379070,
-            'branch': 0.029437,
-            'divide': -6.000000,
-            'load': -3.652426,
-            'multiply': -5.000000,
-            'store': 1.771151
+            'alu': 0.5109746246525972,
+            'branch': 0.012286284192223022,
+            'divide': -8.476174322014682,
+            'load': -3.0364456498437895,
+            'multiply': -4.496613815268859,
+            'store': 1.0883109684206516,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9318,
+            l1_hit_rate=0.9348,
             has_l2=True,
             l2_latency=22.5,
-            l2_hit_rate=0.8840,
+            l2_hit_rate=0.8956,
             dram_latency=15.0,
         )
         self.memory_categories = ['load', 'store']

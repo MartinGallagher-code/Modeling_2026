@@ -188,19 +188,19 @@ class M88110Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.355115,
-            'branch': 0.148340,
-            'divide': -7.500000,
-            'load': -2.904530,
-            'multiply': -5.000000,
-            'store': 2.899004
+            'alu': 0.6451674892570401,
+            'branch': 0.10285780815156224,
+            'divide': -10.185534625601637,
+            'load': -2.776403318630849,
+            'multiply': -4.999696896866741,
+            'store': 2.719155681315993,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9151,
+            l1_hit_rate=0.9139,
             has_l2=True,
             l2_latency=8.0,
             l2_hit_rate=0.9900,

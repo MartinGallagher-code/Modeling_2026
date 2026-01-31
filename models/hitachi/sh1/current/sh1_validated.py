@@ -188,19 +188,19 @@ class Sh1Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.896002,
-            'branch': -0.707644,
-            'divide': -5.000000,
-            'load': -2.675871,
-            'multiply': -5.000000,
-            'store': 2.979649
+            'alu': 0.9249123131549082,
+            'branch': -0.7120931282065845,
+            'divide': -5.291351259217167,
+            'load': -2.66067425213669,
+            'multiply': -4.989626252421426,
+            'store': 2.9589244827594383,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9099,
+            l1_hit_rate=0.9098,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

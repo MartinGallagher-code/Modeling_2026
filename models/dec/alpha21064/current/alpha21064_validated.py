@@ -161,22 +161,22 @@ class Alpha21064Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': -0.105237,
-            'branch': 0.372299,
-            'divide': -4.930767,
-            'load': 0.538861,
-            'multiply': -3.288036,
-            'store': -0.497257
+            'alu': -0.10478121572317128,
+            'branch': 0.37052638122320036,
+            'divide': -4.9317595894477515,
+            'load': 0.5162810204238508,
+            'multiply': -3.291643276516884,
+            'store': -0.47673299009163733,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9900,
+            l1_hit_rate=0.9892,
             has_l2=True,
             l2_latency=8.0,
-            l2_hit_rate=0.9259,
+            l2_hit_rate=0.9262,
             dram_latency=30.0,
         )
         self.memory_categories = ['load', 'store']

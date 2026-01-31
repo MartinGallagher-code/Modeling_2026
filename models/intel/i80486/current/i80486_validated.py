@@ -196,19 +196,19 @@ class I80486Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'alu': 0.616988,
-            'control': -2.219677,
-            'data_transfer': 0.896556,
-            'divide': -20.000000,
-            'memory': -0.718422,
-            'multiply': -6.500000
+            'alu': 0.21062729355715157,
+            'control': -2.7881598598692015,
+            'data_transfer': 0.21270305730609243,
+            'divide': 39.99999686977218,
+            'memory': -1.5637686577866385,
+            'multiply': -11.753118636580725,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9574,
+            l1_hit_rate=0.9295,
             dram_latency=12.0,
         )
         self.memory_categories = ['memory']

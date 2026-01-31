@@ -188,19 +188,19 @@ class Mb86900Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 1.088672,
-            'branch': -0.259887,
-            'divide': -16.484451,
-            'load': -1.584544,
-            'multiply': -4.999701,
-            'store': 1.609391
+            'alu': 1.0868420823381997,
+            'branch': -0.2607407797785253,
+            'divide': -16.514957911864308,
+            'load': -1.4988809149558524,
+            'multiply': -4.999711173408532,
+            'store': 1.4905654373725914,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9989,
+            l1_hit_rate=0.9990,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

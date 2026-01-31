@@ -188,19 +188,19 @@ class U80701Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.350603,
-            'control': -3.996629,
-            'data_transfer': 2.313980,
-            'divide': -17.500000,
-            'memory': -0.939879,
-            'multiply': -7.500000
+            'alu': 1.4470877203084254,
+            'control': -3.542907144411812,
+            'data_transfer': 1.4772663550552052,
+            'divide': -24.267702879107006,
+            'memory': -0.5455452615167614,
+            'multiply': -14.999990997948748,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9653,
+            l1_hit_rate=0.9990,
             dram_latency=8.0,
         )
         self.memory_categories = ['memory']

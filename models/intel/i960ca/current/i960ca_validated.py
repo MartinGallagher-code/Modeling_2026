@@ -188,12 +188,12 @@ class I960caModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.362623,
-            'branch': -0.198132,
-            'divide': -4.394355,
-            'load': -2.656829,
-            'multiply': -4.001909,
-            'store': 2.109592
+            'alu': 0.36261857279864557,
+            'branch': -0.19813121225175165,
+            'divide': -4.394382274867855,
+            'load': -2.6569018206615462,
+            'multiply': -4.001880144333795,
+            'store': 2.109471361278025,
         }
 
         # Cache configuration for memory hierarchy modeling

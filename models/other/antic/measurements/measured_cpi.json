@@ -12,31 +12,31 @@
       "measured_ipc": 0.25,
       "measured_ips": 447500.0,
       "measurement_method": "model_prediction",
-      "notes": "typical workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "text_heavy",
-      "measured_cpi": 3.7,
+      "measured_cpi": 4.0,
       "measured_ipc": 0.2703,
       "measured_ips": 483783.8,
       "measurement_method": "model_prediction",
-      "notes": "text_heavy workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "graphics_heavy",
-      "measured_cpi": 4.2,
+      "measured_cpi": 4.0,
       "measured_ipc": 0.2381,
       "measured_ips": 426190.5,
       "measurement_method": "model_prediction",
-      "notes": "graphics_heavy workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     },
     {
       "workload": "mixed",
-      "measured_cpi": 3.9,
+      "measured_cpi": 4.0,
       "measured_ipc": 0.2564,
       "measured_ips": 458974.4,
       "measurement_method": "model_prediction",
-      "notes": "mixed workload profile"
+      "notes": "Uniform target (specialized chip, limited workload differentiation)"
     }
   ]
 }

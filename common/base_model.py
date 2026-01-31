@@ -54,6 +54,46 @@ class CacheConfig:
 
 
 @dataclass
+class BranchPredictionConfig:
+    """Branch prediction configuration for pipeline-aware branch cost modeling.
+
+    Models branch cost as:
+        effective_branch_cycles =
+            predict_accuracy * taken_cycles +
+            (1 - predict_accuracy) * (taken_cycles + flush_penalty)
+
+    where flush_penalty ~ pipeline_depth (cycles to refill after misprediction).
+
+    Predictor types by era:
+        - No prediction (pre-1985): accuracy=0, always pay full penalty
+        - Static predict not-taken (i486): accuracy ~0.60-0.70
+        - BTB (Pentium): accuracy ~0.80-0.85
+        - 2-level adaptive (PPC604, R10000): accuracy ~0.90-0.93
+        - Per-address history (Alpha 21264): accuracy ~0.95+
+    """
+    has_branch_prediction: bool = False
+    predict_accuracy: float = 0.80       # fraction of branches correctly predicted
+    pipeline_depth: int = 5              # stages; determines flush penalty
+    btb_hit_rate: float = 0.90           # BTB hit rate (for BTB-based predictors)
+    taken_cycles: float = 1.0            # cycles for correctly predicted taken branch
+
+    def effective_branch_penalty(self) -> float:
+        """Compute average branch cost in cycles.
+
+        Returns the expected cycles per branch instruction, accounting for
+        prediction accuracy and pipeline flush cost on misprediction.
+        """
+        if not self.has_branch_prediction:
+            return 0.0  # no prediction = use base_cycles as-is
+
+        flush_penalty = float(self.pipeline_depth)
+        correct_cost = self.taken_cycles
+        mispredict_cost = self.taken_cycles + flush_penalty
+        return (self.predict_accuracy * correct_cost +
+                (1.0 - self.predict_accuracy) * mispredict_cost)
+
+
+@dataclass
 class InstructionCategory:
     """Represents an instruction category with timing information"""
     name: str
@@ -173,6 +213,9 @@ class BaseProcessorModel:
         # Apply cache miss penalty to memory-accessing categories
         cache_miss_cpi = self._apply_cache_penalty(categories, profile)
 
+        # Apply branch prediction model to branch categories
+        self._apply_branch_prediction(categories, profile)
+
         # Compute base CPI as weighted sum of category cycles
         base_cpi = 0.0
         contributions = {}
@@ -247,7 +290,39 @@ class BaseProcessorModel:
                 cache_miss_cpi += penalty * weight
 
         return cache_miss_cpi
-    
+
+    def _apply_branch_prediction(self, categories: Dict[str, InstructionCategory],
+                                  profile: WorkloadProfile) -> float:
+        """Apply branch prediction model to branch instruction categories.
+
+        Replaces the branch category's base_cycles with the expected cost
+        accounting for prediction accuracy and pipeline flush penalty.
+        Returns the CPI change from branch prediction modeling.
+
+        Args:
+            categories: Instruction category dict
+            profile: Current workload profile
+
+        Returns:
+            Branch prediction CPI delta (positive = slower, negative = faster than base)
+        """
+        bp_config = getattr(self, 'branch_prediction', None)
+        if bp_config is None or not getattr(bp_config, 'has_branch_prediction', False):
+            return 0.0
+
+        effective_cost = bp_config.effective_branch_penalty()
+        branch_cats = getattr(self, 'branch_categories', ['branch', 'control'])
+        bp_delta = 0.0
+
+        for cat_name in branch_cats:
+            if cat_name in categories:
+                old_cycles = categories[cat_name].base_cycles
+                categories[cat_name].base_cycles = effective_cost
+                weight = profile.category_weights.get(cat_name, 0.0)
+                bp_delta += (effective_cost - old_cycles) * weight
+
+        return bp_delta
+
     def validate(self) -> Dict[str, Any]:
         """
         Run validation tests against known data.
@@ -400,6 +475,11 @@ def _get_corrections(model) -> Dict[str, float]:
     return getattr(model, 'corrections', {})
 
 
+def _get_branch_prediction(model) -> Optional['BranchPredictionConfig']:
+    """Get branch prediction configuration from any model object."""
+    return getattr(model, 'branch_prediction', None)
+
+
 def _get_cache_config(model) -> Optional['CacheConfig']:
     """Get cache configuration from any model object."""
     return getattr(model, 'cache_config', None)
@@ -441,6 +521,13 @@ def get_model_parameters(model) -> Dict[str, float]:
             params['cache.l2_hit_rate'] = cache.l2_hit_rate
             params['cache.l2_latency'] = cache.l2_latency
 
+    bp = _get_branch_prediction(model)
+    if bp is not None and bp.has_branch_prediction:
+        params['bp.predict_accuracy'] = bp.predict_accuracy
+        params['bp.pipeline_depth'] = float(bp.pipeline_depth)
+        params['bp.btb_hit_rate'] = bp.btb_hit_rate
+        params['bp.taken_cycles'] = bp.taken_cycles
+
     return params
 
 
@@ -470,6 +557,15 @@ def set_model_parameters(model, params: Dict[str, float]):
                 field_name = key[6:]  # strip 'cache.'
                 if hasattr(cache, field_name):
                     setattr(cache, field_name, value)
+        elif key.startswith('bp.'):
+            bp = _get_branch_prediction(model)
+            if bp is not None:
+                field_name = key[3:]  # strip 'bp.'
+                if hasattr(bp, field_name):
+                    if field_name == 'pipeline_depth':
+                        setattr(bp, field_name, int(round(value)))
+                    else:
+                        setattr(bp, field_name, value)
 
 
 def get_model_parameter_bounds(model) -> Dict[str, tuple]:
@@ -521,6 +617,16 @@ def get_model_parameter_bounds(model) -> Dict[str, tuple]:
                 bounds[key] = (5.0, 30.0)
             elif field_name == 'dram_latency':
                 bounds[key] = (20.0, 200.0)
+        elif key.startswith('bp.'):
+            field_name = key[3:]
+            if field_name == 'predict_accuracy':
+                bounds[key] = (0.50, 0.99)
+            elif field_name == 'pipeline_depth':
+                bounds[key] = (3.0, 15.0)
+            elif field_name == 'btb_hit_rate':
+                bounds[key] = (0.60, 0.99)
+            elif field_name == 'taken_cycles':
+                bounds[key] = (1.0, 5.0)
 
     return bounds
 
@@ -570,6 +676,15 @@ def get_model_parameter_metadata(model) -> Dict[str, dict]:
                 'fixed': not is_hit_rate,
                 'source': 'identification' if is_hit_rate else 'datasheet',
                 'description': f'Cache parameter: {field_name}',
+            }
+        elif key.startswith('bp.'):
+            field_name = key[3:]
+            # predict_accuracy is free for identification; others are fixed
+            is_accuracy = field_name == 'predict_accuracy'
+            metadata[key] = {
+                'fixed': not is_accuracy,
+                'source': 'identification' if is_accuracy else 'datasheet',
+                'description': f'Branch prediction: {field_name}',
             }
 
     return metadata

@@ -159,11 +159,11 @@ class Ay38910Model(BaseProcessorModel):
 
         # Correction terms for system identification (initially zero)
         self.corrections = {
-            'envelope': -0.059401,
-            'io_port': 0.007225,
-            'mixer': 0.060062,
-            'noise_gen': 0.006889,
-            'tone_gen': 0.060062
+            'envelope': -0.04460060889568372,
+            'io_port': 0.024200297553302916,
+            'mixer': -0.008329645313474559,
+            'noise_gen': 0.025829874576010766,
+            'tone_gen': -0.00832964531347493,
         }
 
     def analyze(self, workload='typical'):

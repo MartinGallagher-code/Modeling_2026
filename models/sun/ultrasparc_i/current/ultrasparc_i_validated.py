@@ -188,22 +188,22 @@ class UltrasparcIModel(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': -0.060397,
-            'branch': -0.360907,
-            'divide': -5.000000,
-            'load': -2.595904,
-            'multiply': -5.000000,
-            'store': 2.133163
+            'alu': 0.12853287263689622,
+            'branch': -0.3909009415179547,
+            'divide': -6.793727447487577,
+            'load': -2.2329072228740308,
+            'multiply': -4.9880720832454974,
+            'store': 2.1822801712270663,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9890,
+            l1_hit_rate=0.9990,
             has_l2=True,
             l2_latency=25.0,
-            l2_hit_rate=0.9002,
+            l2_hit_rate=0.9990,
             dram_latency=13.4,
         )
         self.memory_categories = ['load', 'store']

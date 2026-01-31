@@ -188,19 +188,19 @@ class Chinese863Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.686534,
-            'control': -2.853279,
-            'data_transfer': 2.070670,
-            'divide': -15.000000,
-            'memory': -0.713523,
-            'multiply': -7.000000
+            'alu': 1.4594644422880345,
+            'control': -2.5405359049736607,
+            'data_transfer': 1.4594633831246768,
+            'divide': -17.43330873707554,
+            'memory': -0.5475365874940373,
+            'multiply': -13.594155759261678,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9898,
+            l1_hit_rate=0.9990,
             dram_latency=8.0,
         )
         self.memory_categories = ['memory']

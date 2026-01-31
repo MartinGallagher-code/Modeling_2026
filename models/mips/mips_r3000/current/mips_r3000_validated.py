@@ -188,19 +188,19 @@ class MipsR3000Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.529718,
-            'branch': -0.640877,
-            'divide': -6.000000,
-            'load': -2.788814,
-            'multiply': -5.000000,
-            'store': 1.543200
+            'alu': 0.7824363026466389,
+            'branch': -0.681138770232473,
+            'divide': -8.360903968475892,
+            'load': -2.3119590087088353,
+            'multiply': -4.999999456918966,
+            'store': 1.6292546271861141,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9550,
+            l1_hit_rate=0.9989,
             dram_latency=8.0,
         )
         self.memory_categories = ['load', 'store']

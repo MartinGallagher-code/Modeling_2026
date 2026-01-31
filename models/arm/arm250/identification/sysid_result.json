@@ -1,6 +1,6 @@
 {
   "processor": "arm250",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": false,
   "iterations": 200,
   "loss_before": 0.0,
@@ -14,6 +14,11 @@
     "cor.load": -1.158057,
     "cor.multiply": -7.498405,
     "cor.store": 0.810376
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.999,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0
   },
   "residuals_before": {
     "typical": 0.0,

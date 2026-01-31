@@ -1,6 +1,6 @@
 {
   "processor": "sparc",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": true,
   "iterations": 24,
   "loss_before": 0.0,
@@ -16,6 +16,11 @@
     "cor.multiply": -0.37084,
     "cor.shift": 0.319984,
     "cor.store": -0.296209
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.945183,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 8.0
   },
   "residuals_before": {
     "typical": -0.0001,

@@ -1,6 +1,6 @@
 {
   "processor": "pa7100",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": true,
   "iterations": 151,
   "loss_before": 9.9e-05,
@@ -14,6 +14,13 @@
     "cor.load": -2.790066,
     "cor.multiply": -5.0,
     "cor.store": 4.108484
+  },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.998998,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 12.0,
+    "cache.l2_hit_rate": 0.889392,
+    "cache.l2_latency": 8.0
   },
   "residuals_before": {
     "typical": -0.0158,

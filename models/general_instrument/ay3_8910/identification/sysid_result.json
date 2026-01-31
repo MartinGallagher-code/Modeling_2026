@@ -1,30 +1,30 @@
 {
   "processor": "ay3_8910",
-  "date": "2026-01-30",
+  "date": "2026-01-31",
   "converged": true,
-  "iterations": 19,
-  "loss_before": 0.032836,
-  "loss_after": 0.032836,
-  "cpi_error_percent": 0.9,
-  "message": "`xtol` termination condition is satisfied.",
+  "iterations": 21,
+  "loss_before": 0.001002,
+  "loss_after": 0.0,
+  "cpi_error_percent": 0.0,
+  "message": "`gtol` termination condition is satisfied.",
   "corrections": {
-    "cor.envelope": -0.159286,
-    "cor.io_port": 0.024239,
-    "cor.mixer": 0.060805,
-    "cor.noise_gen": 0.027214,
-    "cor.tone_gen": 0.060805
+    "cor.envelope": -0.044601,
+    "cor.io_port": 0.0242,
+    "cor.mixer": -0.00833,
+    "cor.noise_gen": 0.02583,
+    "cor.tone_gen": -0.00833
   },
   "residuals_before": {
     "typical": 0.0317,
-    "music": 0.2317,
-    "sfx": -0.2683,
-    "mixed": -0.0683
+    "music": 0.0317,
+    "sfx": 0.0317,
+    "mixed": 0.0317
   },
   "residuals_after": {
-    "typical": 0.0317,
-    "music": 0.2317,
-    "sfx": -0.2683,
-    "mixed": -0.0683
+    "typical": 0.0,
+    "music": 0.0,
+    "sfx": 0.0,
+    "mixed": 0.0
   },
   "free_parameters": [
     "cor.envelope",
