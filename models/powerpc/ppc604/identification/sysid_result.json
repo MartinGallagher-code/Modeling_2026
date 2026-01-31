@@ -15,6 +15,13 @@
     "cor.multiply": -4.91312,
     "cor.store": 1.09914
   },
+  "cache_parameters": {
+    "cache.l1_hit_rate": 0.886126,
+    "cache.l1_latency": 1.0,
+    "cache.dram_latency": 13.3,
+    "cache.l2_hit_rate": 0.999,
+    "cache.l2_latency": 20.0
+  },
   "residuals_before": {
     "typical": -0.039,
     "compute": 0.0063,

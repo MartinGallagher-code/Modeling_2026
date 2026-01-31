@@ -188,22 +188,22 @@ class Ppc604Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.174886,
-            'branch': -0.291721,
-            'divide': -6.500000,
-            'load': -4.848946,
-            'multiply': -5.000000,
-            'store': 1.748690
+            'alu': 0.391947,
+            'branch': -0.325564,
+            'divide': -8.738009,
+            'load': -4.999704,
+            'multiply': -4.91312,
+            'store': 1.09914,
         }
 
         # Cache configuration for memory hierarchy modeling
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.9048,
+            l1_hit_rate=0.8861,
             has_l2=True,
             l2_latency=20.0,
-            l2_hit_rate=0.9788,
+            l2_hit_rate=0.9990,
             dram_latency=13.3,
         )
         self.memory_categories = ['load', 'store']

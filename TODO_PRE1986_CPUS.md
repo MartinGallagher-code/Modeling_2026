@@ -10,8 +10,8 @@ Processors from the pre-1986 era that could be added to the collection.
 **Phase 6 Status: ALL COMPLETE ✓** (101 post-1985 processors modeled as of 2026-01-30)
 **Phase 7 Status: ALL COMPLETE ✓** (422 instruction timing JSON files created as of 2026-01-30)
 **Phase 8 Status: PENDING** (integrate timing data into models — see Phase 8 section)
-**Phase 9 Status: PENDING** (~45 additional 1986–1994 processors — see Phase 9 section)
-**Phase 10 Status: PENDING** (advanced queueing & microarchitectural modeling — see Phase 10 section)
+**Phase 9 Status: ALL COMPLETE ✓** (45 additional 1986–1994 processors, total now 467 as of 2026-01-30)
+**Phase 10 Status: IN PROGRESS** (advanced queueing & microarchitectural modeling — see Phase 10 section)
 
 ---
 

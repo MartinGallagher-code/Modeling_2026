@@ -12,7 +12,6 @@ Author: Grey-Box Performance Modeling Research
 Date: January 2026
 """
 
-from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any, Tuple
 import math
@@ -101,12 +100,14 @@ class AnalysisResult:
     stage_details: Dict[str, Any] = field(default_factory=dict)
     base_cpi: float = 0.0          # Physics-only prediction (before corrections)
     correction_delta: float = 0.0   # Total correction applied: cpi = base_cpi + correction_delta
+    cache_miss_cpi: float = 0.0    # CPI contribution from cache miss penalties
 
     @classmethod
     def from_cpi(cls, processor: str, workload: str, cpi: float,
                  clock_mhz: float, bottleneck: str,
                  utilizations: Dict[str, float] = None,
-                 base_cpi: float = None, correction_delta: float = 0.0):
+                 base_cpi: float = None, correction_delta: float = 0.0,
+                 cache_miss_cpi: float = 0.0):
         """Create result from CPI value"""
         ipc = 1.0 / cpi if cpi > 0 else 0.0
         ips = clock_mhz * 1e6 * ipc
@@ -119,11 +120,12 @@ class AnalysisResult:
             bottleneck=bottleneck,
             utilizations=utilizations or {},
             base_cpi=base_cpi if base_cpi is not None else cpi,
-            correction_delta=correction_delta
+            correction_delta=correction_delta,
+            cache_miss_cpi=cache_miss_cpi,
         )
 
 
-class BaseProcessorModel(ABC):
+class BaseProcessorModel:
     """
     Abstract base class for all processor models.
     
@@ -146,18 +148,105 @@ class BaseProcessorModel(ABC):
         # Per-category correction terms for system identification (initially zero)
         self.corrections: Dict[str, float] = {}
     
-    @abstractmethod
     def analyze(self, workload: str = 'typical') -> AnalysisResult:
         """
         Analyze processor performance for a given workload.
-        
+
+        Default implementation computes CPI as a weighted sum of instruction
+        category cycles (with cache miss penalties applied to memory categories)
+        plus per-category correction terms fitted by system identification.
+
+        Subclasses may override for processor-specific behavior.
+
         Args:
             workload: Name of workload profile ('typical', 'compute', 'memory', 'control')
-            
+
         Returns:
             AnalysisResult with IPC, CPI, IPS, and bottleneck information
         """
-        pass
+        categories = self._get_categories_dict()
+        profiles = self._get_profiles_dict()
+        profile = profiles.get(workload, profiles.get('typical'))
+        if profile is None:
+            profile = next(iter(profiles.values()))
+
+        # Apply cache miss penalty to memory-accessing categories
+        cache_miss_cpi = self._apply_cache_penalty(categories, profile)
+
+        # Compute base CPI as weighted sum of category cycles
+        base_cpi = 0.0
+        contributions = {}
+        for cat_name, weight in profile.category_weights.items():
+            cat = categories.get(cat_name)
+            if cat is not None:
+                contrib = weight * cat.total_cycles
+                base_cpi += contrib
+                contributions[cat_name] = contrib
+
+        # Apply correction terms
+        corrections = getattr(self, 'corrections', {})
+        correction_delta = sum(
+            corrections.get(cat_name, 0.0) * weight
+            for cat_name, weight in profile.category_weights.items()
+        )
+        corrected_cpi = base_cpi + correction_delta
+
+        # Identify bottleneck
+        bottleneck = max(contributions, key=contributions.get) if contributions else "unknown"
+
+        return AnalysisResult.from_cpi(
+            processor=self.name,
+            workload=workload,
+            cpi=corrected_cpi,
+            clock_mhz=self.clock_mhz,
+            bottleneck=bottleneck,
+            utilizations=contributions,
+            base_cpi=base_cpi,
+            correction_delta=correction_delta,
+            cache_miss_cpi=cache_miss_cpi,
+        )
+
+    def _get_categories_dict(self) -> Dict[str, InstructionCategory]:
+        """Get instruction categories dict (handles both naming conventions)."""
+        return getattr(self, 'instruction_categories',
+                       getattr(self, '_instruction_categories', {}))
+
+    def _get_profiles_dict(self) -> Dict[str, WorkloadProfile]:
+        """Get workload profiles dict (handles both naming conventions)."""
+        return getattr(self, 'workload_profiles',
+                       getattr(self, '_workload_profiles', {}))
+
+    def _apply_cache_penalty(self, categories: Dict[str, InstructionCategory],
+                             profile: WorkloadProfile) -> float:
+        """Apply cache miss penalty to memory-accessing instruction categories.
+
+        Sets memory_cycles on each memory category based on the cache hierarchy.
+        Returns the total CPI contribution from cache misses (for decomposition).
+
+        Args:
+            categories: Instruction category dict
+            profile: Current workload profile
+
+        Returns:
+            Cache miss CPI contribution (sum of penalty * weight for memory categories)
+        """
+        cache_config = getattr(self, 'cache_config', None)
+        if cache_config is None or not getattr(cache_config, 'has_cache', False):
+            return 0.0
+
+        penalty = cache_config.effective_memory_penalty()
+        if penalty <= 0.0:
+            return 0.0
+
+        memory_cats = getattr(self, 'memory_categories', [])
+        cache_miss_cpi = 0.0
+        for cat_name in memory_cats:
+            if cat_name in categories:
+                categories[cat_name].memory_cycles = penalty
+                weight = profile.category_weights.get(cat_name, 0.0)
+                cache_miss_cpi += penalty * weight
+
+        return cache_miss_cpi
     
     def validate(self) -> Dict[str, Any]:
         """

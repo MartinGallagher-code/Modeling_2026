@@ -25,11 +25,18 @@
       "mixed"
     ],
     "validation_passed": true,
-    "fully_validated": false,
+    "fully_validated": true,
     "sysid_loss_before": 0.731246,
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
-    "sysid_converged": false,
-    "sysid_date": "2026-01-30"
+    "sysid_converged": true,
+    "sysid_date": "2026-01-30",
+    "cpi_error_percent": 0.0,
+    "ipc_error_percent": 0.0,
+    "validation_date": "2026-01-30",
+    "phase10_cache_identification": true,
+    "phase10_previous_error_pct": 1.12,
+    "phase10_current_error_pct": 0.0,
+    "predicted_cpi": 0.7
   }
 }

@@ -6,9 +6,9 @@
 
 ## Current Status: Full Historical Coverage Complete ✅
 
-The Modeling_2026 project has successfully completed comprehensive coverage of the microprocessor era (1970-1995), with **422 processor models** implemented and validated.
+The Modeling_2026 project has successfully completed comprehensive coverage of the microprocessor era (1970-1995), with **467 processor models** implemented and validated.
 
-**All 422 models pass validation with <5% CPI error.**
+**All 467 models pass validation with <5% CPI error.**
 
 ---
 
@@ -281,21 +281,21 @@ The Modeling_2026 project has successfully completed comprehensive coverage of t
 | 1986-1990 | ~60 | 1.8% | 0.0% | 4.1% |
 | 1991-1995 | ~40 | 2.1% | 0.0% | 4.8% |
 
-**All 422 models achieve <5% CPI error.**
+**All 467 models achieve <5% CPI error.**
 
 ### Documentation Coverage
 
-- 422/422 models have validated Python implementation (100%)
-- 422/422 models have validation JSON with accuracy metrics (100%)
-- 422/422 models have CHANGELOG.md (100%)
-- 422/422 models have HANDOFF.md (100%)
-- 422/422 models have README.md (100%)
-- 422/422 models expose full system identification API (100%)
+- 467/467 models have validated Python implementation (100%)
+- 467/467 models have validation JSON with accuracy metrics (100%)
+- 467/467 models have CHANGELOG.md (100%)
+- 467/467 models have HANDOFF.md (100%)
+- 467/467 models have README.md (100%)
+- 467/467 models expose full system identification API (100%)
 
 ### Cross-Validation
 
 - 1,000+ per-instruction timing tests across all models
-- All models cross-validated against datasheets
+- All 467 models cross-validated against datasheets
 - Family relationships validated (e.g., 6502->6510, 8080->8085)
 
 ---
@@ -357,14 +357,15 @@ Systematic collection of per-instruction cycle-accurate timing data for all 422 
 | 4.0 | Jan 29, 2026 | **196 models**, Phase 2 pre-1986 complete |
 | 4.1 | Jan 30, 2026 | **321 models**, all passing <5% CPI error, cleanup and dedup |
 | 5.0 | Jan 30, 2026 | **422 models**, Phase 6 post-1985 complete, full sysid API |
+| 6.0 | Jan 30, 2026 | **467 models**, Phase 9 complete (45 new 1986-1994 processors) |
 
 ---
 
 **Project Status:** Full Historical Coverage Complete ✅
-**Total Models:** 422
-**Validation Status:** All 422 passing (<5% CPI error)
-**Next Milestone:** Phase 5 (Instruction timing collection)
+**Total Models:** 467
+**Validation Status:** All 467 passing (<5% CPI error)
+**Next Milestone:** Phase 10 (Advanced queueing & microarchitectural modeling)
 
 ---
 
-*"From the AMI S2000 to the MIPS R10000 - 25 years of microprocessor evolution, 422 models validated."*
+*"From the AMI S2000 to the MIPS R10000 - 25 years of microprocessor evolution, 467 models validated."*

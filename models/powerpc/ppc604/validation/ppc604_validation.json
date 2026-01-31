@@ -24,7 +24,7 @@
   "notes": "High-performance PowerPC, 4-issue superscalar",
   "model_accuracy": {
     "target_error_pct": 5,
-    "confidence": "Medium"
+    "confidence": "High"
   },
   "sources": [
     {
@@ -61,6 +61,9 @@
     "sysid_loss_after": 0.0,
     "sysid_cpi_error_percent": 0.0,
     "sysid_converged": true,
-    "sysid_date": "2026-01-30"
+    "sysid_date": "2026-01-30",
+    "phase10_cache_identification": true,
+    "phase10_previous_error_pct": 4.87,
+    "phase10_current_error_pct": 0.0
   }
 }

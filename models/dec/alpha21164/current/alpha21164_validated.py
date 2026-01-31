@@ -149,21 +149,21 @@ class Alpha21164Model(BaseProcessorModel):
         }
 
         self.corrections = {
-            'alu': 0.350000,
-            'branch': -0.100000,
-            'divide': -2.117214,
-            'load': -0.134427,
-            'multiply': -1.300000,
-            'store': -2.117214,
+            'alu': 0.349875,
+            'branch': -0.100124,
+            'divide': -2.127375,
+            'load': -0.15548,
+            'multiply': -1.300121,
+            'store': -2.127375,
         }
 
         self.cache_config = CacheConfig(
             has_cache=True,
             l1_latency=1.0,
-            l1_hit_rate=0.99,
+            l1_hit_rate=0.9904,
             has_l2=True,
             l2_latency=5.0,
-            l2_hit_rate=0.95,
+            l2_hit_rate=0.9501,
             dram_latency=40.0,
         )
         self.memory_categories = ['load', 'store']
